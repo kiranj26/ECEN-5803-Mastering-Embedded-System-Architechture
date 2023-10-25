@@ -1,0 +1,157 @@
+\doxysubsubsubsection{GPIO\+\_\+mode\+\_\+define}
+\hypertarget{group___g_p_i_o__mode__define}{}\label{group___g_p_i_o__mode__define}\index{GPIO\_mode\_define@{GPIO\_mode\_define}}
+
+
+GPIO Configuration Mode Elements values convention\+: 0x\+X0yz00\+YZ.  
+
+
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_gaf40bec3146810028a84b628d37d3b391}{GPIO\+\_\+\+MODE\+\_\+\+INPUT}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_ga1013838a64cec2f8c88f079c449d1982}{GPIO\+\_\+\+MODE\+\_\+\+OUTPUT\+\_\+\+PP}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_ga2f91757829f6e9505ec386b840941929}{GPIO\+\_\+\+MODE\+\_\+\+OUTPUT\+\_\+\+OD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000011)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_ga526c72c5264316fc05c775b6cad4aa6a}{GPIO\+\_\+\+MODE\+\_\+\+AF\+\_\+\+PP}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_ga282b9fd37c8ef31daba314ffae6bf023}{GPIO\+\_\+\+MODE\+\_\+\+AF\+\_\+\+OD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000012)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_ga7a04f9ab65ad572ad20791a35009220c}{GPIO\+\_\+\+MODE\+\_\+\+ANALOG}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000003)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_ga088659562e68426d9a72821ea4fd8d50}{GPIO\+\_\+\+MODE\+\_\+\+IT\+\_\+\+RISING}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10110000)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_gaa166210a6da3ac7e8d7504702520e522}{GPIO\+\_\+\+MODE\+\_\+\+IT\+\_\+\+FALLING}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10210000)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_ga0678e61090ed61e91a6496f22ddfb3d1}{GPIO\+\_\+\+MODE\+\_\+\+IT\+\_\+\+RISING\+\_\+\+FALLING}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10310000)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_ga97d78b82ea178ff7a4c35aa60b4e9338}{GPIO\+\_\+\+MODE\+\_\+\+EVT\+\_\+\+RISING}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10120000)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_gadbfa532b3566783ac6c0e07c2e0ffe5e}{GPIO\+\_\+\+MODE\+\_\+\+EVT\+\_\+\+FALLING}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10220000)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_ga1b760771297ed2fc55a6b13071188491}{GPIO\+\_\+\+MODE\+\_\+\+EVT\+\_\+\+RISING\+\_\+\+FALLING}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10320000)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__mode__define_gacc5fde3eef57ec3c558c11d0011d900c}{IS\+\_\+\+GPIO\+\_\+\+MODE}}(MODE)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+GPIO Configuration Mode Elements values convention\+: 0x\+X0yz00\+YZ. 
+
+
+\begin{DoxyItemize}
+\item X \+: GPIO mode or EXTI Mode
+\item y \+: External IT or Event trigger detection
+\item z \+: IO configuration on External IT or Event
+\item Y \+: Output type (Push Pull or Open Drain)
+\item Z \+: IO Direction mode (Input, Output, Alternate or Analog) 
+\end{DoxyItemize}
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___g_p_i_o__mode__define_ga282b9fd37c8ef31daba314ffae6bf023}\label{group___g_p_i_o__mode__define_ga282b9fd37c8ef31daba314ffae6bf023} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!GPIO\_MODE\_AF\_OD@{GPIO\_MODE\_AF\_OD}}
+\index{GPIO\_MODE\_AF\_OD@{GPIO\_MODE\_AF\_OD}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_MODE\_AF\_OD}{GPIO\_MODE\_AF\_OD}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE\+\_\+\+AF\+\_\+\+OD~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000012)}
+
+Alternate Function Open Drain Mode ~\newline
+ \Hypertarget{group___g_p_i_o__mode__define_ga526c72c5264316fc05c775b6cad4aa6a}\label{group___g_p_i_o__mode__define_ga526c72c5264316fc05c775b6cad4aa6a} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!GPIO\_MODE\_AF\_PP@{GPIO\_MODE\_AF\_PP}}
+\index{GPIO\_MODE\_AF\_PP@{GPIO\_MODE\_AF\_PP}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_MODE\_AF\_PP}{GPIO\_MODE\_AF\_PP}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE\+\_\+\+AF\+\_\+\+PP~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000002)}
+
+Alternate Function Push Pull Mode ~\newline
+ \Hypertarget{group___g_p_i_o__mode__define_ga7a04f9ab65ad572ad20791a35009220c}\label{group___g_p_i_o__mode__define_ga7a04f9ab65ad572ad20791a35009220c} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!GPIO\_MODE\_ANALOG@{GPIO\_MODE\_ANALOG}}
+\index{GPIO\_MODE\_ANALOG@{GPIO\_MODE\_ANALOG}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_MODE\_ANALOG}{GPIO\_MODE\_ANALOG}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE\+\_\+\+ANALOG~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000003)}
+
+Analog Mode ~\newline
+ \Hypertarget{group___g_p_i_o__mode__define_gadbfa532b3566783ac6c0e07c2e0ffe5e}\label{group___g_p_i_o__mode__define_gadbfa532b3566783ac6c0e07c2e0ffe5e} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!GPIO\_MODE\_EVT\_FALLING@{GPIO\_MODE\_EVT\_FALLING}}
+\index{GPIO\_MODE\_EVT\_FALLING@{GPIO\_MODE\_EVT\_FALLING}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_MODE\_EVT\_FALLING}{GPIO\_MODE\_EVT\_FALLING}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE\+\_\+\+EVT\+\_\+\+FALLING~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10220000)}
+
+External Event Mode with Falling edge trigger detection ~\newline
+ \Hypertarget{group___g_p_i_o__mode__define_ga97d78b82ea178ff7a4c35aa60b4e9338}\label{group___g_p_i_o__mode__define_ga97d78b82ea178ff7a4c35aa60b4e9338} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!GPIO\_MODE\_EVT\_RISING@{GPIO\_MODE\_EVT\_RISING}}
+\index{GPIO\_MODE\_EVT\_RISING@{GPIO\_MODE\_EVT\_RISING}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_MODE\_EVT\_RISING}{GPIO\_MODE\_EVT\_RISING}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE\+\_\+\+EVT\+\_\+\+RISING~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10120000)}
+
+External Event Mode with Rising edge trigger detection ~\newline
+ \Hypertarget{group___g_p_i_o__mode__define_ga1b760771297ed2fc55a6b13071188491}\label{group___g_p_i_o__mode__define_ga1b760771297ed2fc55a6b13071188491} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!GPIO\_MODE\_EVT\_RISING\_FALLING@{GPIO\_MODE\_EVT\_RISING\_FALLING}}
+\index{GPIO\_MODE\_EVT\_RISING\_FALLING@{GPIO\_MODE\_EVT\_RISING\_FALLING}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_MODE\_EVT\_RISING\_FALLING}{GPIO\_MODE\_EVT\_RISING\_FALLING}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE\+\_\+\+EVT\+\_\+\+RISING\+\_\+\+FALLING~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10320000)}
+
+External Event Mode with Rising/\+Falling edge trigger detection ~\newline
+ \Hypertarget{group___g_p_i_o__mode__define_gaf40bec3146810028a84b628d37d3b391}\label{group___g_p_i_o__mode__define_gaf40bec3146810028a84b628d37d3b391} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!GPIO\_MODE\_INPUT@{GPIO\_MODE\_INPUT}}
+\index{GPIO\_MODE\_INPUT@{GPIO\_MODE\_INPUT}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_MODE\_INPUT}{GPIO\_MODE\_INPUT}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE\+\_\+\+INPUT~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)}
+
+Input Floating Mode ~\newline
+ \Hypertarget{group___g_p_i_o__mode__define_gaa166210a6da3ac7e8d7504702520e522}\label{group___g_p_i_o__mode__define_gaa166210a6da3ac7e8d7504702520e522} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!GPIO\_MODE\_IT\_FALLING@{GPIO\_MODE\_IT\_FALLING}}
+\index{GPIO\_MODE\_IT\_FALLING@{GPIO\_MODE\_IT\_FALLING}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_MODE\_IT\_FALLING}{GPIO\_MODE\_IT\_FALLING}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE\+\_\+\+IT\+\_\+\+FALLING~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10210000)}
+
+External Interrupt Mode with Falling edge trigger detection ~\newline
+ \Hypertarget{group___g_p_i_o__mode__define_ga088659562e68426d9a72821ea4fd8d50}\label{group___g_p_i_o__mode__define_ga088659562e68426d9a72821ea4fd8d50} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!GPIO\_MODE\_IT\_RISING@{GPIO\_MODE\_IT\_RISING}}
+\index{GPIO\_MODE\_IT\_RISING@{GPIO\_MODE\_IT\_RISING}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_MODE\_IT\_RISING}{GPIO\_MODE\_IT\_RISING}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE\+\_\+\+IT\+\_\+\+RISING~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10110000)}
+
+External Interrupt Mode with Rising edge trigger detection ~\newline
+ \Hypertarget{group___g_p_i_o__mode__define_ga0678e61090ed61e91a6496f22ddfb3d1}\label{group___g_p_i_o__mode__define_ga0678e61090ed61e91a6496f22ddfb3d1} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!GPIO\_MODE\_IT\_RISING\_FALLING@{GPIO\_MODE\_IT\_RISING\_FALLING}}
+\index{GPIO\_MODE\_IT\_RISING\_FALLING@{GPIO\_MODE\_IT\_RISING\_FALLING}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_MODE\_IT\_RISING\_FALLING}{GPIO\_MODE\_IT\_RISING\_FALLING}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE\+\_\+\+IT\+\_\+\+RISING\+\_\+\+FALLING~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10310000)}
+
+External Interrupt Mode with Rising/\+Falling edge trigger detection ~\newline
+ \Hypertarget{group___g_p_i_o__mode__define_ga2f91757829f6e9505ec386b840941929}\label{group___g_p_i_o__mode__define_ga2f91757829f6e9505ec386b840941929} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!GPIO\_MODE\_OUTPUT\_OD@{GPIO\_MODE\_OUTPUT\_OD}}
+\index{GPIO\_MODE\_OUTPUT\_OD@{GPIO\_MODE\_OUTPUT\_OD}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_MODE\_OUTPUT\_OD}{GPIO\_MODE\_OUTPUT\_OD}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE\+\_\+\+OUTPUT\+\_\+\+OD~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000011)}
+
+Output Open Drain Mode ~\newline
+ \Hypertarget{group___g_p_i_o__mode__define_ga1013838a64cec2f8c88f079c449d1982}\label{group___g_p_i_o__mode__define_ga1013838a64cec2f8c88f079c449d1982} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!GPIO\_MODE\_OUTPUT\_PP@{GPIO\_MODE\_OUTPUT\_PP}}
+\index{GPIO\_MODE\_OUTPUT\_PP@{GPIO\_MODE\_OUTPUT\_PP}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_MODE\_OUTPUT\_PP}{GPIO\_MODE\_OUTPUT\_PP}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE\+\_\+\+OUTPUT\+\_\+\+PP~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)}
+
+Output Push Pull Mode ~\newline
+ \Hypertarget{group___g_p_i_o__mode__define_gacc5fde3eef57ec3c558c11d0011d900c}\label{group___g_p_i_o__mode__define_gacc5fde3eef57ec3c558c11d0011d900c} 
+\index{GPIO\_mode\_define@{GPIO\_mode\_define}!IS\_GPIO\_MODE@{IS\_GPIO\_MODE}}
+\index{IS\_GPIO\_MODE@{IS\_GPIO\_MODE}!GPIO\_mode\_define@{GPIO\_mode\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_GPIO\_MODE}{IS\_GPIO\_MODE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+GPIO\+\_\+\+MODE(\begin{DoxyParamCaption}\item[{}]{MODE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((MODE)\ ==\ \mbox{\hyperlink{group___g_p_i_o__mode__define_gaf40bec3146810028a84b628d37d3b391}{GPIO\_MODE\_INPUT}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga1013838a64cec2f8c88f079c449d1982}{GPIO\_MODE\_OUTPUT\_PP}})\ \ \ \ \ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga2f91757829f6e9505ec386b840941929}{GPIO\_MODE\_OUTPUT\_OD}})\ \ \ \ \ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga526c72c5264316fc05c775b6cad4aa6a}{GPIO\_MODE\_AF\_PP}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga282b9fd37c8ef31daba314ffae6bf023}{GPIO\_MODE\_AF\_OD}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga088659562e68426d9a72821ea4fd8d50}{GPIO\_MODE\_IT\_RISING}})\ \ \ \ \ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___g_p_i_o__mode__define_gaa166210a6da3ac7e8d7504702520e522}{GPIO\_MODE\_IT\_FALLING}})\ \ \ \ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga0678e61090ed61e91a6496f22ddfb3d1}{GPIO\_MODE\_IT\_RISING\_FALLING}})\ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga97d78b82ea178ff7a4c35aa60b4e9338}{GPIO\_MODE\_EVT\_RISING}})\ \ \ \ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___g_p_i_o__mode__define_gadbfa532b3566783ac6c0e07c2e0ffe5e}{GPIO\_MODE\_EVT\_FALLING}})\ \ \ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga1b760771297ed2fc55a6b13071188491}{GPIO\_MODE\_EVT\_RISING\_FALLING}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga7a04f9ab65ad572ad20791a35009220c}{GPIO\_MODE\_ANALOG}}))}
+
+\end{DoxyCode}

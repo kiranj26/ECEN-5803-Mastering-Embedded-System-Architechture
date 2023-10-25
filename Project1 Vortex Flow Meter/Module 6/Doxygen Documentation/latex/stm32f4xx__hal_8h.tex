@@ -1,0 +1,177 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+hal.h File Reference}
+\hypertarget{stm32f4xx__hal_8h}{}\label{stm32f4xx__hal_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal.h}}
+
+
+This file contains all the functions prototypes for the HAL module driver.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+conf.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gae94f46d13e13b22f9a745e7bb43a96a5}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM2\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaae3c5b87084934a18748f5ec168f5aef}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM2\+\_\+\+STOP}}))
+\begin{DoxyCompactList}\small\item\em Freeze/\+Unfreeze Peripherals in Debug mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga80ca043a15ebde5fa5ab8fc7516b7d0d}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM3\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2fea6834f4ef9fc6b403cd079a001cec}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM3\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga93240320e1975c344710110b8326cfb9}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM4\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7ac65bf9342bb8acbcb25938e93abc45}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM4\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gaa618551f3549a0e978832683ab255990}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM5\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga42d29d40515d36ce6ed7e5d34ed17dcf}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM5\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga0d38e5832a227798fa986371db9f2ac1}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM6\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gadea6a1e90739bcf1d0723a0566c66de7}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM6\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga2a1d10a72ad1cacb9f07d668c2f85a58}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM7\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gafdade78c3d28a668f9826d0b72e5844b}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM7\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gae998488501df5c9cb114b0f5399de640}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM12\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7ca0e04ad8c94e5b7fe29d8b9c20ebff}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM12\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga5f8dc357c1ad8e3dd4e424f0f21f8c64}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM13\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga68ef63b3c086ede54396596798553299}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM13\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga63e073e7e274e175ace1a953a0362adc}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM14\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gafd3acb3e632c74e326da7016073c7871}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM14\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gad71eabc97bf9b1ee126368a3403fd52b}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+RTC\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1e20246d389229ff46006b405bb56b1d}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+RTC\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gaa8247a99404002df4e17c4ea9c4f2347}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+WWDG\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8a49d5e849185d09ee6c7594512ffe88}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+WWDG\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gad86970cfaa0fe5971280714524a05900}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+IWDG\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gada8989cb96dd5d6dbdaaf16e1f127c6a}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+IWDG\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga238779a7568f51907fb9bf5aead0f277}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+I2\+C1\+\_\+\+TIMEOUT\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gae83fb5d62c6e6fa1c2fd06084528404e}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+I2\+C1\+\_\+\+SMBUS\+\_\+\+TIMEOUT}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga97935f0dfdd76f3705fa53cfed90fce1}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+I2\+C2\+\_\+\+TIMEOUT\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8f6320aba695f6c3f97608e478533e96}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+I2\+C2\+\_\+\+SMBUS\+\_\+\+TIMEOUT}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gac85472fc99d3c2b4d3408dd8f6fe0b2d}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+I2\+C3\+\_\+\+TIMEOUT\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7f7e5c708387aa1ddae35b892811b4e9}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+I2\+C3\+\_\+\+SMBUS\+\_\+\+TIMEOUT}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga9e4185b64391d19485ee5e22764a5a78}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+CAN1\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1b404dcea4857bccabbb03d6cce6be8c}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+CAN1\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gafab1f115db3b30f9ebec154900ad195d}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+CAN2\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaadc3889d6b84d143c98ecbfd873a9a1a}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+CAN2\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga5bcbe69f9fd13b2bb28de1a16060864b}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM1\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB2\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3eb7be194b6ffb258b9e9f5ed08a931e}{DBGMCU\+\_\+\+APB2\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM1\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga98c5cba9630c2b2aa4d8a5656ba27709}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM8\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB2\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga37128bf689254919b07f64ee41cad1cf}{DBGMCU\+\_\+\+APB2\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM8\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gabd4ea78bb7f783ab1a917789e6262a99}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM9\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB2\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf12c17533a1e3262ee11f760e44f5127}{DBGMCU\+\_\+\+APB2\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM9\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga405dc9ab10a2f13d9323ad0b28914f72}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM10\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB2\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga24d4bbf803a65e8202b0019ed0ce0ebb}{DBGMCU\+\_\+\+APB2\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM10\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga11ce07209e9b719b74827fadd11278ef}{\+\_\+\+\_\+\+HAL\+\_\+\+FREEZE\+\_\+\+TIM11\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB2\+FZ \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga354671c942db40e69820fd783ef955b4}{DBGMCU\+\_\+\+APB2\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM11\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga19c4fad18aaa0f4da31092fb7067c6eb}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM2\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaae3c5b87084934a18748f5ec168f5aef}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM2\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga8b9d11278a9b43a1b6504d0e46ae2057}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM3\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2fea6834f4ef9fc6b403cd079a001cec}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM3\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga4649fe505d460ef51735985a49c7bf53}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM4\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7ac65bf9342bb8acbcb25938e93abc45}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM4\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gac0d74fb194f12a9c939f8fcdc73ffff0}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM5\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga42d29d40515d36ce6ed7e5d34ed17dcf}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM5\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga8ef11089824b15b0b293f8c9c906f0aa}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM6\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gadea6a1e90739bcf1d0723a0566c66de7}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM6\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga73bb80c5f5ce998aa3afe6aced8fabf0}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM7\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gafdade78c3d28a668f9826d0b72e5844b}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM7\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga1c95dbf18c52f6fb3d9c3430294957eb}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM12\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7ca0e04ad8c94e5b7fe29d8b9c20ebff}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM12\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga85305a85a589a840f92d7ae24a5d208a}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM13\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga68ef63b3c086ede54396596798553299}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM13\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gac44e6c209b3d5d38f00bc87956bb8d39}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM14\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gafd3acb3e632c74e326da7016073c7871}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM14\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga4eea11865aa798b69690d39ef99e1b1f}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+RTC\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1e20246d389229ff46006b405bb56b1d}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+RTC\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga9b6c00e8ebd03de21b1cd1a58f4f2218}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+WWDG\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8a49d5e849185d09ee6c7594512ffe88}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+WWDG\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga75161e4b44879ecb4f137f6eeff29ec6}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+IWDG\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gada8989cb96dd5d6dbdaaf16e1f127c6a}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+IWDG\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga1fa54398139f2ae8d341851ba83bb3cb}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+I2\+C1\+\_\+\+TIMEOUT\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gae83fb5d62c6e6fa1c2fd06084528404e}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+I2\+C1\+\_\+\+SMBUS\+\_\+\+TIMEOUT}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga78efc0af370d4a5cb03b0fccc072fef5}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+I2\+C2\+\_\+\+TIMEOUT\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8f6320aba695f6c3f97608e478533e96}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+I2\+C2\+\_\+\+SMBUS\+\_\+\+TIMEOUT}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gaf1cae70c6f88210590c0b37bd35005da}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+I2\+C3\+\_\+\+TIMEOUT\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7f7e5c708387aa1ddae35b892811b4e9}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+I2\+C3\+\_\+\+SMBUS\+\_\+\+TIMEOUT}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gac8abbc1038288896517ed4a8f24fc6a9}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+CAN1\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1b404dcea4857bccabbb03d6cce6be8c}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+CAN1\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga1fbe1ec60b7c66973ce01b1ad7c081e4}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+CAN2\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB1\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaadc3889d6b84d143c98ecbfd873a9a1a}{DBGMCU\+\_\+\+APB1\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+CAN2\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga6ca710542d59e1e94cc84971e8dbc8ae}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM1\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB2\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3eb7be194b6ffb258b9e9f5ed08a931e}{DBGMCU\+\_\+\+APB2\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM1\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga3699c08944fc0e47960d9fa0ae69ac85}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM8\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB2\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga37128bf689254919b07f64ee41cad1cf}{DBGMCU\+\_\+\+APB2\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM8\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga444005295949c48a14cf3f69f9b2d58f}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM9\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB2\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf12c17533a1e3262ee11f760e44f5127}{DBGMCU\+\_\+\+APB2\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM9\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gaebe34d1cbf7d69b85a5f715baaec145a}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM10\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB2\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga24d4bbf803a65e8202b0019ed0ce0ebb}{DBGMCU\+\_\+\+APB2\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM10\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gac3c15e66f4e03b567f55a01b82736691}{\+\_\+\+\_\+\+HAL\+\_\+\+UNFREEZE\+\_\+\+TIM11\+\_\+\+DBGMCU}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga92ec6d9ec2251fda7d4ce09748cd74b4}{DBGMCU}}-\/$>$APB2\+FZ \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga354671c942db40e69820fd783ef955b4}{DBGMCU\+\_\+\+APB2\+\_\+\+FZ\+\_\+\+DBG\+\_\+\+TIM11\+\_\+\+STOP}}))
+\item 
+\#define \mbox{\hyperlink{group___h_a_l_gac680edf54d13c42b4efe3cff457e30f9}{\+\_\+\+\_\+\+HAL\+\_\+\+REMAPMEMORY\+\_\+\+FLASH}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga3c833fe1c486cb62250ccbca32899cb8}{SYSCFG}}-\/$>$MEMRMP \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3c05039ec67573c00da29f58b914f258}{SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE}}))
+\begin{DoxyCompactList}\small\item\em Main Flash memory mapped at 0x00000000. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___h_a_l_gae1512eafc016b01a1b19889d1aaf949e}{\+\_\+\+\_\+\+HAL\+\_\+\+REMAPMEMORY\+\_\+\+SYSTEMFLASH}}()
+\begin{DoxyCompactList}\small\item\em System Flash memory mapped at 0x00000000. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___h_a_l_ga7f21740bd6fb94f36cf56f75be5e431d}{\+\_\+\+\_\+\+HAL\+\_\+\+REMAPMEMORY\+\_\+\+SRAM}}()
+\begin{DoxyCompactList}\small\item\em Embedded SRAM mapped at 0x00000000. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___h_a_l_gaecac54d350c3730e6831eb404e557dc4}{HAL\+\_\+\+Init}} (void)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___h_a_l_ga95911129a26afb05232caaaefa31956f}{HAL\+\_\+\+De\+Init}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_gae4fb8e66865c87d0ebab74a726a6891f}{HAL\+\_\+\+Msp\+Init}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_gadd10d026ef02d00e32e80c9eab9db830}{HAL\+\_\+\+Msp\+De\+Init}} (void)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___h_a_l_ga879cdb21ef051eb81ec51c18147397d5}{HAL\+\_\+\+Init\+Tick}} (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Tick\+Priority)
+\item 
+void \mbox{\hyperlink{group___h_a_l_gaa8361d44d76b7f6256834f828165837a}{HAL\+\_\+\+Inc\+Tick}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_gad0304dec8e33aca8c99e2836947b76d6}{HAL\+\_\+\+Delay}} (\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Delay)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___h_a_l_gaf2c4f03d53e997a54e1fd5e80daa55c4}{HAL\+\_\+\+Get\+Tick}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_gaaf651af2afe688a991c657f64f8fa5f9}{HAL\+\_\+\+Suspend\+Tick}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_ga24e0ee9dae1ec0f9d19200f5575ff790}{HAL\+\_\+\+Resume\+Tick}} (void)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___h_a_l_gafb139b375512ad2a234e4619b129b966}{HAL\+\_\+\+Get\+Hal\+Version}} (void)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___h_a_l_gae051ef9e932404b21f5877c7186406b8}{HAL\+\_\+\+Get\+REVID}} (void)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___h_a_l_gaff785f069ed650de77ff82ac407f7c84}{HAL\+\_\+\+Get\+DEVID}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_ga3ed681c529de5f554597b8f7c573230b}{HAL\+\_\+\+Enable\+DBGSleep\+Mode}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_gab82804d717ac78455ab32584fb660002}{HAL\+\_\+\+Disable\+DBGSleep\+Mode}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_ga31fcc761f84aae6f5376b90f5eafcd68}{HAL\+\_\+\+Enable\+DBGStop\+Mode}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_ga6e1045f920bbd32ca710ccdafcc674fd}{HAL\+\_\+\+Disable\+DBGStop\+Mode}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_ga657f30a09fabbba2531fadfcd85de8e2}{HAL\+\_\+\+Enable\+DBGStandby\+Mode}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_ga2cf908e8075c9c6dc2baf01a368ec12b}{HAL\+\_\+\+Disable\+DBGStandby\+Mode}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_ga20b6ca07582e10aec5e15ad2fda7dfc1}{HAL\+\_\+\+Enable\+Compensation\+Cell}} (void)
+\item 
+void \mbox{\hyperlink{group___h_a_l_ga653f1166b0e37afd40372550d806e667}{HAL\+\_\+\+Disable\+Compensation\+Cell}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the HAL module driver. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

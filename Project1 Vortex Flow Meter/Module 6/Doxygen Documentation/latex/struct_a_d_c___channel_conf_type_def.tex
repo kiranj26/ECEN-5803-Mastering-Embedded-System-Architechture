@@ -1,0 +1,57 @@
+\doxysection{ADC\+\_\+\+Channel\+Conf\+Type\+Def Struct Reference}
+\hypertarget{struct_a_d_c___channel_conf_type_def}{}\label{struct_a_d_c___channel_conf_type_def}\index{ADC\_ChannelConfTypeDef@{ADC\_ChannelConfTypeDef}}
+
+
+ADC Configuration regular Channel structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal\+\_\+adc.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___channel_conf_type_def_a771e64a3695f61cb1cce4fd65e956f6b}{Channel}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___channel_conf_type_def_a106e52a928aefb7778802bac0b75cf2d}{Rank}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___channel_conf_type_def_ae9486a657d515b87e2c2853db59afaaa}{Sampling\+Time}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___channel_conf_type_def_a481e92707be00870f495e8a63c6cc788}{Offset}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ADC Configuration regular Channel structure definition. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_a_d_c___channel_conf_type_def_a771e64a3695f61cb1cce4fd65e956f6b}\label{struct_a_d_c___channel_conf_type_def_a771e64a3695f61cb1cce4fd65e956f6b} 
+\index{ADC\_ChannelConfTypeDef@{ADC\_ChannelConfTypeDef}!Channel@{Channel}}
+\index{Channel@{Channel}!ADC\_ChannelConfTypeDef@{ADC\_ChannelConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{Channel}{Channel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Channel\+Conf\+Type\+Def\+::\+Channel}
+
+The ADC channel to configure. This parameter can be a value of \doxylink{group___a_d_c__channels}{ADC\+\_\+channels} \Hypertarget{struct_a_d_c___channel_conf_type_def_a481e92707be00870f495e8a63c6cc788}\label{struct_a_d_c___channel_conf_type_def_a481e92707be00870f495e8a63c6cc788} 
+\index{ADC\_ChannelConfTypeDef@{ADC\_ChannelConfTypeDef}!Offset@{Offset}}
+\index{Offset@{Offset}!ADC\_ChannelConfTypeDef@{ADC\_ChannelConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{Offset}{Offset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Channel\+Conf\+Type\+Def\+::\+Offset}
+
+Reserved for future use, can be set to 0 \Hypertarget{struct_a_d_c___channel_conf_type_def_a106e52a928aefb7778802bac0b75cf2d}\label{struct_a_d_c___channel_conf_type_def_a106e52a928aefb7778802bac0b75cf2d} 
+\index{ADC\_ChannelConfTypeDef@{ADC\_ChannelConfTypeDef}!Rank@{Rank}}
+\index{Rank@{Rank}!ADC\_ChannelConfTypeDef@{ADC\_ChannelConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{Rank}{Rank}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Channel\+Conf\+Type\+Def\+::\+Rank}
+
+The rank in the regular group sequencer. This parameter must be a number between Min\+\_\+\+Data = 1 and Max\+\_\+\+Data = 16 \Hypertarget{struct_a_d_c___channel_conf_type_def_ae9486a657d515b87e2c2853db59afaaa}\label{struct_a_d_c___channel_conf_type_def_ae9486a657d515b87e2c2853db59afaaa} 
+\index{ADC\_ChannelConfTypeDef@{ADC\_ChannelConfTypeDef}!SamplingTime@{SamplingTime}}
+\index{SamplingTime@{SamplingTime}!ADC\_ChannelConfTypeDef@{ADC\_ChannelConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{SamplingTime}{SamplingTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Channel\+Conf\+Type\+Def\+::\+Sampling\+Time}
+
+The sample time value to be set for the selected channel. This parameter can be a value of \doxylink{group___a_d_c__sampling__times}{ADC\+\_\+sampling\+\_\+times} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/\mbox{\hyperlink{stm32f4xx__hal__adc_8h}{stm32f4xx\+\_\+hal\+\_\+adc.\+h}}\end{DoxyCompactItemize}

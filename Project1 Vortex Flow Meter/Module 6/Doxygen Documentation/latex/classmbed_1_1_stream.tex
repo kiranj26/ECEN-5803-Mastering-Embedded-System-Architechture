@@ -1,0 +1,311 @@
+\doxysection{mbed\+::Stream Class Reference}
+\hypertarget{classmbed_1_1_stream}{}\label{classmbed_1_1_stream}\index{mbed::Stream@{mbed::Stream}}
+
+
+{\ttfamily \#include $<$Stream.\+h$>$}
+
+Inheritance diagram for mbed\+::Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmbed_1_1_stream}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_stream_a32d590dce747212c986b9c8fa8f626f8}{Stream}} (const char \texorpdfstring{$\ast$}{*}name=NULL)
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_stream_a51ed7dd14c12b99f3e84f990bf06da26}{\texorpdfstring{$\sim$}{\string~}\+Stream}} ()
+\item 
+int \mbox{\hyperlink{classmbed_1_1_stream_ae948b0f3eaf7736ca0f6a1648e9390d6}{putc}} (int c)
+\item 
+int \mbox{\hyperlink{classmbed_1_1_stream_aaf7d4a2bb6c38f35d369f51cb2e3ba36}{puts}} (const char \texorpdfstring{$\ast$}{*}s)
+\item 
+int \mbox{\hyperlink{classmbed_1_1_stream_a6167659331a6d841b0f766c4db1333e5}{getc}} ()
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_stream_a3753737df2182a34b253d28a4a70e9a2}{gets}} (char \texorpdfstring{$\ast$}{*}s, int size)
+\item 
+int \mbox{\hyperlink{classmbed_1_1_stream_adca0a93ea6add55996848e0f4e148533}{printf}} (const char \texorpdfstring{$\ast$}{*}format,...)
+\item 
+int \mbox{\hyperlink{classmbed_1_1_stream_a07d45029be0f9cab42572f717d3d6e09}{scanf}} (const char \texorpdfstring{$\ast$}{*}format,...)
+\item 
+\mbox{\hyperlink{classmbed_1_1_stream_ac18fba9194addd424fe10b7f7cb6376d}{operator std\+::\+FILE \texorpdfstring{$\ast$}{*}}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_file_like}{mbed\+::\+File\+Like}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_file_like_a45088db3d27b7f4461bf3017dfa959b5}{File\+Like}} (const char \texorpdfstring{$\ast$}{*}name)
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_file_like_adf84a707afcad2c9d4a26bc0babd7e9c}{\texorpdfstring{$\sim$}{\string~}\+File\+Like}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_file_handle}{mbed\+::\+File\+Handle}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_file_handle_ab120bb24baa47fb9b86a489ac321a433}{\texorpdfstring{$\sim$}{\string~}\+File\+Handle}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_file_base}{mbed\+::\+File\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_file_base_a8b19f5dfe489eaa641c32a5096c71af1}{File\+Base}} (const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} t)
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_file_base_ac8cc9e6d230ddfe9f9987338071998ec}{\texorpdfstring{$\sim$}{\string~}\+File\+Base}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_a22078733b15abf28045948d24555ceaf}{get\+Name}} (void)
+\item 
+\mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} \mbox{\hyperlink{classmbed_1_1_file_base_a59dd77df265c99a2fa0f7c209d0dba18}{get\+Path\+Type}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classmbed_1_1_stream_af6289a4ebd6e3e39e713434ee0b5ae1a}{close}} ()
+\item 
+virtual ssize\+\_\+t \mbox{\hyperlink{classmbed_1_1_stream_a1da24e639462b324eaf9a7fa4ebbe9c5}{write}} (const void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t length)
+\item 
+virtual ssize\+\_\+t \mbox{\hyperlink{classmbed_1_1_stream_a23d92c19945db06a616481bfdad5b41b}{read}} (void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t length)
+\item 
+virtual off\+\_\+t \mbox{\hyperlink{classmbed_1_1_stream_ab5d71558dfc46985f9b3ca66099f845e}{lseek}} (off\+\_\+t offset, int whence)
+\item 
+virtual int \mbox{\hyperlink{classmbed_1_1_stream_a1ad0b3f218c68d8f7aeb24f4878b6347}{isatty}} ()
+\item 
+virtual int \mbox{\hyperlink{classmbed_1_1_stream_a9964211822494845a9ef8fe514aa5bbd}{fsync}} ()
+\item 
+virtual off\+\_\+t \mbox{\hyperlink{classmbed_1_1_stream_a33cb53db6b3d6182d2acdd6d3c1a072b}{flen}} ()
+\item 
+virtual int \mbox{\hyperlink{classmbed_1_1_stream_a28fbd18ed2335b37b896ce73f3cf9941}{\+\_\+putc}} (int c)=0
+\item 
+virtual int \mbox{\hyperlink{classmbed_1_1_stream_a262e3791dc36a057eb1a6a7461bacc8f}{\+\_\+getc}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::\+FILE \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_stream_ae4ee478b704c5cc1e55fed9b17398875}{\+\_\+file}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classmbed_1_1_file_base}{mbed\+::\+File\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_acef47c84dc296ce35d5d2aa3695062af}{\+\_\+next}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_a9f22fa8bd5986c32dcf8e0a19f95e3b5}{\+\_\+name}}
+\item 
+\mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} \mbox{\hyperlink{classmbed_1_1_file_base_ae4a065275d45e77c512ec2d7c10f5d7b}{\+\_\+path\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_file_base}{mbed\+::\+File\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_a512479427a1a8e4c23bf353babeea9ce}{lookup}} (const char \texorpdfstring{$\ast$}{*}name, unsigned int len)
+\item 
+static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_ab2f9954a536d2c678b9630ffd68c68f2}{get}} (int n)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classmbed_1_1_file_base}{mbed\+::\+File\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_ae9af3d7b863ca499d4e4a779632094f5}{\+\_\+head}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmbed_1_1_stream_a32d590dce747212c986b9c8fa8f626f8}\label{classmbed_1_1_stream_a32d590dce747212c986b9c8fa8f626f8} 
+\index{mbed::Stream@{mbed::Stream}!Stream@{Stream}}
+\index{Stream@{Stream}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{Stream()}{Stream()}}
+{\footnotesize\ttfamily mbed\+::\+Stream\+::\+Stream (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+\Hypertarget{classmbed_1_1_stream_a51ed7dd14c12b99f3e84f990bf06da26}\label{classmbed_1_1_stream_a51ed7dd14c12b99f3e84f990bf06da26} 
+\index{mbed::Stream@{mbed::Stream}!````~Stream@{\texorpdfstring{$\sim$}{\string~}Stream}}
+\index{````~Stream@{\texorpdfstring{$\sim$}{\string~}Stream}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Stream()}{\string~Stream()}}
+{\footnotesize\ttfamily virtual mbed\+::\+Stream\+::\texorpdfstring{$\sim$}{\string~}\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmbed_1_1_stream_a262e3791dc36a057eb1a6a7461bacc8f}\label{classmbed_1_1_stream_a262e3791dc36a057eb1a6a7461bacc8f} 
+\index{mbed::Stream@{mbed::Stream}!\_getc@{\_getc}}
+\index{\_getc@{\_getc}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{\_getc()}{\_getc()}}
+{\footnotesize\ttfamily virtual int mbed\+::\+Stream\+::\+\_\+getc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\Hypertarget{classmbed_1_1_stream_a28fbd18ed2335b37b896ce73f3cf9941}\label{classmbed_1_1_stream_a28fbd18ed2335b37b896ce73f3cf9941} 
+\index{mbed::Stream@{mbed::Stream}!\_putc@{\_putc}}
+\index{\_putc@{\_putc}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{\_putc()}{\_putc()}}
+{\footnotesize\ttfamily virtual int mbed\+::\+Stream\+::\+\_\+putc (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\Hypertarget{classmbed_1_1_stream_af6289a4ebd6e3e39e713434ee0b5ae1a}\label{classmbed_1_1_stream_af6289a4ebd6e3e39e713434ee0b5ae1a} 
+\index{mbed::Stream@{mbed::Stream}!close@{close}}
+\index{close@{close}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily virtual int mbed\+::\+Stream\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Close the file
+
+\begin{DoxyReturn}{Returns}
+Zero on success, -\/1 on error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmbed_1_1_file_handle_ac1b885028d295f74d73ff40bf6a352a2}{mbed\+::\+File\+Handle}}.
+
+\Hypertarget{classmbed_1_1_stream_a33cb53db6b3d6182d2acdd6d3c1a072b}\label{classmbed_1_1_stream_a33cb53db6b3d6182d2acdd6d3c1a072b} 
+\index{mbed::Stream@{mbed::Stream}!flen@{flen}}
+\index{flen@{flen}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{flen()}{flen()}}
+{\footnotesize\ttfamily virtual off\+\_\+t mbed\+::\+Stream\+::flen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classmbed_1_1_file_handle_a991dddade770154bd53b613b15a251a9}{mbed\+::\+File\+Handle}}.
+
+\Hypertarget{classmbed_1_1_stream_a9964211822494845a9ef8fe514aa5bbd}\label{classmbed_1_1_stream_a9964211822494845a9ef8fe514aa5bbd} 
+\index{mbed::Stream@{mbed::Stream}!fsync@{fsync}}
+\index{fsync@{fsync}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{fsync()}{fsync()}}
+{\footnotesize\ttfamily virtual int mbed\+::\+Stream\+::fsync (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Flush any buffers associated with the \doxylink{classmbed_1_1_file_handle}{File\+Handle}, ensuring it is up to date on disk
+
+\begin{DoxyReturn}{Returns}
+0 on success or un-\/needed, -\/1 on error 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmbed_1_1_file_handle_a125e7fa0507f9b935f28852ca79190b7}{mbed\+::\+File\+Handle}}.
+
+\Hypertarget{classmbed_1_1_stream_a6167659331a6d841b0f766c4db1333e5}\label{classmbed_1_1_stream_a6167659331a6d841b0f766c4db1333e5} 
+\index{mbed::Stream@{mbed::Stream}!getc@{getc}}
+\index{getc@{getc}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{getc()}{getc()}}
+{\footnotesize\ttfamily int mbed\+::\+Stream\+::getc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classmbed_1_1_stream_a3753737df2182a34b253d28a4a70e9a2}\label{classmbed_1_1_stream_a3753737df2182a34b253d28a4a70e9a2} 
+\index{mbed::Stream@{mbed::Stream}!gets@{gets}}
+\index{gets@{gets}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{gets()}{gets()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} mbed\+::\+Stream\+::gets (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\Hypertarget{classmbed_1_1_stream_a1ad0b3f218c68d8f7aeb24f4878b6347}\label{classmbed_1_1_stream_a1ad0b3f218c68d8f7aeb24f4878b6347} 
+\index{mbed::Stream@{mbed::Stream}!isatty@{isatty}}
+\index{isatty@{isatty}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{isatty()}{isatty()}}
+{\footnotesize\ttfamily virtual int mbed\+::\+Stream\+::isatty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Check if the handle is for a interactive terminal device. If so, line buffered behaviour is used by default
+
+\begin{DoxyReturn}{Returns}
+1 if it is a terminal, 0 otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmbed_1_1_file_handle_a7e7936ba41fb44a4f98795fba1d92e83}{mbed\+::\+File\+Handle}}.
+
+\Hypertarget{classmbed_1_1_stream_ab5d71558dfc46985f9b3ca66099f845e}\label{classmbed_1_1_stream_ab5d71558dfc46985f9b3ca66099f845e} 
+\index{mbed::Stream@{mbed::Stream}!lseek@{lseek}}
+\index{lseek@{lseek}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{lseek()}{lseek()}}
+{\footnotesize\ttfamily virtual off\+\_\+t mbed\+::\+Stream\+::lseek (\begin{DoxyParamCaption}\item[{off\+\_\+t}]{offset,  }\item[{int}]{whence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Move the file position to a given offset from a given location.
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The offset from whence to move to \\
+\hline
+{\em whence} & SEEK\+\_\+\+SET for the start of the file, SEEK\+\_\+\+CUR for the current file position, or SEEK\+\_\+\+END for the end of the file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new file position on success, -\/1 on failure or unsupported 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmbed_1_1_file_handle_a75046a7181de9902af9256302d57316a}{mbed\+::\+File\+Handle}}.
+
+\Hypertarget{classmbed_1_1_stream_ac18fba9194addd424fe10b7f7cb6376d}\label{classmbed_1_1_stream_ac18fba9194addd424fe10b7f7cb6376d} 
+\index{mbed::Stream@{mbed::Stream}!operator std::FILE \texorpdfstring{$\ast$}{*}@{operator std::FILE \texorpdfstring{$\ast$}{*}}}
+\index{operator std::FILE \texorpdfstring{$\ast$}{*}@{operator std::FILE \texorpdfstring{$\ast$}{*}}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{operator std::FILE \texorpdfstring{$\ast$}{*}()}{operator std::FILE *()}}
+{\footnotesize\ttfamily mbed\+::\+Stream\+::operator std\+::\+FILE \texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classmbed_1_1_stream_adca0a93ea6add55996848e0f4e148533}\label{classmbed_1_1_stream_adca0a93ea6add55996848e0f4e148533} 
+\index{mbed::Stream@{mbed::Stream}!printf@{printf}}
+\index{printf@{printf}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{printf()}{printf()}}
+{\footnotesize\ttfamily int mbed\+::\+Stream\+::printf (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\Hypertarget{classmbed_1_1_stream_ae948b0f3eaf7736ca0f6a1648e9390d6}\label{classmbed_1_1_stream_ae948b0f3eaf7736ca0f6a1648e9390d6} 
+\index{mbed::Stream@{mbed::Stream}!putc@{putc}}
+\index{putc@{putc}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{putc()}{putc()}}
+{\footnotesize\ttfamily int mbed\+::\+Stream\+::putc (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+\Hypertarget{classmbed_1_1_stream_aaf7d4a2bb6c38f35d369f51cb2e3ba36}\label{classmbed_1_1_stream_aaf7d4a2bb6c38f35d369f51cb2e3ba36} 
+\index{mbed::Stream@{mbed::Stream}!puts@{puts}}
+\index{puts@{puts}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{puts()}{puts()}}
+{\footnotesize\ttfamily int mbed\+::\+Stream\+::puts (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{classmbed_1_1_stream_a23d92c19945db06a616481bfdad5b41b}\label{classmbed_1_1_stream_a23d92c19945db06a616481bfdad5b41b} 
+\index{mbed::Stream@{mbed::Stream}!read@{read}}
+\index{read@{read}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily virtual ssize\+\_\+t mbed\+::\+Stream\+::read (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Function read Reads the contents of the file into a buffer
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the buffer to read in to \\
+\hline
+{\em length} & the number of characters to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of characters read (zero at end of file) on success, -\/1 on error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmbed_1_1_file_handle_ae51be2d8f51d767ba8cd8c646f211f24}{mbed\+::\+File\+Handle}}.
+
+\Hypertarget{classmbed_1_1_stream_a07d45029be0f9cab42572f717d3d6e09}\label{classmbed_1_1_stream_a07d45029be0f9cab42572f717d3d6e09} 
+\index{mbed::Stream@{mbed::Stream}!scanf@{scanf}}
+\index{scanf@{scanf}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{scanf()}{scanf()}}
+{\footnotesize\ttfamily int mbed\+::\+Stream\+::scanf (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\Hypertarget{classmbed_1_1_stream_a1da24e639462b324eaf9a7fa4ebbe9c5}\label{classmbed_1_1_stream_a1da24e639462b324eaf9a7fa4ebbe9c5} 
+\index{mbed::Stream@{mbed::Stream}!write@{write}}
+\index{write@{write}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily virtual ssize\+\_\+t mbed\+::\+Stream\+::write (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Write the contents of a buffer to the file
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the buffer to write from \\
+\hline
+{\em length} & the number of characters to write\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of characters written (possibly 0) on success, -\/1 on error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classmbed_1_1_file_handle_afecb50bd072d06e2a56dbc4f4e68bbf5}{mbed\+::\+File\+Handle}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmbed_1_1_stream_ae4ee478b704c5cc1e55fed9b17398875}\label{classmbed_1_1_stream_ae4ee478b704c5cc1e55fed9b17398875} 
+\index{mbed::Stream@{mbed::Stream}!\_file@{\_file}}
+\index{\_file@{\_file}!mbed::Stream@{mbed::Stream}}
+\doxysubsubsection{\texorpdfstring{\_file}{\_file}}
+{\footnotesize\ttfamily std\+::\+FILE\texorpdfstring{$\ast$}{*} mbed\+::\+Stream\+::\+\_\+file\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\mbox{\hyperlink{_stream_8h}{Stream.\+h}}\end{DoxyCompactItemize}

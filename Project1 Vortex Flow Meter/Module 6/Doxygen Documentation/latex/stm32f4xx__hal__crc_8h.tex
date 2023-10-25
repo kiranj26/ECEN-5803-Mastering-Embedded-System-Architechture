@@ -1,0 +1,77 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+hal\+\_\+crc.h File Reference}
+\hypertarget{stm32f4xx__hal__crc_8h}{}\label{stm32f4xx__hal__crc_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_crc.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_crc.h}}
+
+
+Header file of CRC HAL module.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em CRC handle Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___c_r_c_gab6ec5d74fdff177143f4b22652a18114}{\+\_\+\+\_\+\+HAL\+\_\+\+CRC\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea313bbe8353f8a8b48fbd129261266a97}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset CRC handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_r_c_ga0007a05fb01806007181e12eedc14d28}{\+\_\+\+\_\+\+HAL\+\_\+\+CRC\+\_\+\+DR\+\_\+\+RESET}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7d57481fb891a0964b40f721354c56d7}{CRC\+\_\+\+CR\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Resets CRC Data Register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___c_r_c_ga1021d6f27a072d45f6f3b233eefd8bbe}{HAL\+\_\+\+CRC\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea313bbe8353f8a8b48fbd129261266a97}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbeaa47f50129543b87fac3a83df1a634474}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea9d03b0c1d233e87e35b9c5c8353a4b70}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea5d803dcd1d578edb76b57e3d34adc5a8}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \newline
+\mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbeadb51c35f7716430bb0c893069466a1b2}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em CRC HAL State Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___c_r_c_ga23e7df2eaecf59615e13b2cad8b7185f}{HAL\+\_\+\+CRC\+\_\+\+Init}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___c_r_c_gac600b9a1785f2372ca40ed5449c23739}{HAL\+\_\+\+CRC\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc)
+\item 
+void \mbox{\hyperlink{group___c_r_c_ga5167ffd293de5d86f5873910416b36d0}{HAL\+\_\+\+CRC\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc)
+\item 
+void \mbox{\hyperlink{group___c_r_c_gac19b8df939b3490e690bdf1e1e04ead3}{HAL\+\_\+\+CRC\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___c_r_c_ga124a77d595e4982ad6e9a64c22f28b7b}{HAL\+\_\+\+CRC\+\_\+\+Accumulate}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} p\+Buffer\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Buffer\+Length)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___c_r_c_ga298593a6fb0bbd109cdbed3851806371}{HAL\+\_\+\+CRC\+\_\+\+Calculate}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} p\+Buffer\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Buffer\+Length)
+\item 
+\mbox{\hyperlink{group___c_r_c_ga1021d6f27a072d45f6f3b233eefd8bbe}{HAL\+\_\+\+CRC\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___c_r_c_ga4fb3d3460bd83853c28215bc5e14babe}{HAL\+\_\+\+CRC\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of CRC HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

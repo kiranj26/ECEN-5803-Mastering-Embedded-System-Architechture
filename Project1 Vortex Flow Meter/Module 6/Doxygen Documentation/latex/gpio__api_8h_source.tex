@@ -1,0 +1,57 @@
+\doxysection{gpio\+\_\+api.\+h}
+\hypertarget{gpio__api_8h_source}{}\label{gpio__api_8h_source}\index{mbed/gpio\_api.h@{mbed/gpio\_api.h}}
+\mbox{\hyperlink{gpio__api_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_GPIO\_API\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_GPIO\_API\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{device_8h}{device.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/*\ Set\ the\ given\ pin\ as\ GPIO}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ @param\ pin\ The\ pin\ to\ be\ set\ as\ GPIO}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ @return\ The\ GPIO\ port\ mask\ for\ this\ pin}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **/}}
+\DoxyCodeLine{00029\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{gpio__api_8h_ae7303f79f43bab40cf7fdb0e7f596d5b}{gpio\_set}}(\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ pin);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ GPIO\ object\ */}}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio__api_8h_a80305b9e955f6ce5e555096932e76d8c}{gpio\_init}}(\mbox{\hyperlink{structgpio__t}{gpio\_t}}\ *obj,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ pin);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio__api_8h_a980b8f8055986ffc177267488a4bd19d}{gpio\_mode}}\ (\mbox{\hyperlink{structgpio__t}{gpio\_t}}\ *obj,\ \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{PinMode}}\ mode);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio__api_8h_a5a6594d03628bb652d45bdd5bf266348}{gpio\_dir}}\ \ (\mbox{\hyperlink{structgpio__t}{gpio\_t}}\ *obj,\ \mbox{\hyperlink{_pin_names_8h_a8ff912d511000d542e6ad34966166f38}{PinDirection}}\ direction);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio__api_8h_aedd478762e37aeafcf9ade8e255718b0}{gpio\_write}}(\mbox{\hyperlink{structgpio__t}{gpio\_t}}\ *obj,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{gpio__api_8h_abb97298a1eb6f6c11b6290abe7a1823b}{gpio\_read}}\ (\mbox{\hyperlink{structgpio__t}{gpio\_t}}\ *obj);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ the\ following\ set\ of\ functions\ are\ generic\ and\ are\ implemented\ in\ the\ common\ gpio.c\ file}}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio__api_8h_a673e8a1c56bae84724ba155f3c99e959}{gpio\_init\_in}}(\mbox{\hyperlink{structgpio__t}{gpio\_t}}*\ gpio,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ pin);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio__api_8h_ad5c80e0949e35a2b2180387bae5bec27}{gpio\_init\_in\_ex}}(\mbox{\hyperlink{structgpio__t}{gpio\_t}}*\ gpio,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ pin,\ \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{PinMode}}\ mode);}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio__api_8h_a5f5c43c977d7e2b7d242b7827036e32d}{gpio\_init\_out}}(\mbox{\hyperlink{structgpio__t}{gpio\_t}}*\ gpio,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ pin);}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio__api_8h_af00a2b6d3827ce1ed52950d8a8bc5c72}{gpio\_init\_out\_ex}}(\mbox{\hyperlink{structgpio__t}{gpio\_t}}*\ gpio,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ pin,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio__api_8h_ada71c18e8fe139d522d63f2a7f9f2f3e}{gpio\_init\_inout}}(\mbox{\hyperlink{structgpio__t}{gpio\_t}}*\ gpio,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ pin,\ \mbox{\hyperlink{_pin_names_8h_a8ff912d511000d542e6ad34966166f38}{PinDirection}}\ direction,\ \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{PinMode}}\ mode,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,252 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+hal\+\_\+i2s.h File Reference}
+\hypertarget{stm32f4xx__hal__i2s_8h}{}\label{stm32f4xx__hal__i2s_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_i2s.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_i2s.h}}
+
+
+Header file of I2S HAL module.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+i2s\+\_\+ex.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_i2_s___init_type_def}{I2\+S\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em I2S Init structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em I2S handle Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___i2_s___exported___constants_ga7f7ad7e03f972cf5f24f4842fe28beca}{I2\+Sx\+EXT}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+) == (\mbox{\hyperlink{group___peripheral__declaration_gaf2c3d8ce359dcfbb2261e07ed42af72b}{SPI2}})? (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{group___peripheral__registers__structures_gaa5f7b241ed5b756decd835300c9e7bc9}{I2\+S2ext\+\_\+\+BASE}})\+: (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{group___peripheral__registers__structures_ga89b61d6e6b09e94f3fccb7bef34e0263}{I2\+S3ext\+\_\+\+BASE}}))
+\item 
+\#define \mbox{\hyperlink{group___i2_s___clock___source_ga5ea0e2b2803b77f9eff8701bec18f72c}{I2\+S\+\_\+\+CLOCK\+\_\+\+PLL}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___clock___source_ga5aeda901ff98c213b8faf4dabb15af12}{I2\+S\+\_\+\+CLOCK\+\_\+\+EXTERNAL}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___clock___source_ga2728627931f0e5febb9e584a60199543}{IS\+\_\+\+I2\+S\+\_\+\+CLOCKSOURCE}}(CLOCK)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___mode_ga319dc7c9a746bb69bc8f0a2747b3ee0c}{I2\+S\+\_\+\+MODE\+\_\+\+SLAVE\+\_\+\+TX}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___mode_ga0016b5776f96b393adf00ebcfec46eb7}{I2\+S\+\_\+\+MODE\+\_\+\+SLAVE\+\_\+\+RX}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___mode_ga2d70b3c9f774250186aa08c193f06c0d}{I2\+S\+\_\+\+MODE\+\_\+\+MASTER\+\_\+\+TX}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___mode_ga368748b1b6170fd660bfee81c83d1e3f}{I2\+S\+\_\+\+MODE\+\_\+\+MASTER\+\_\+\+RX}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000300)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___mode_ga942c37b2c1274c4c5773ddcf8b46d9b5}{IS\+\_\+\+I2\+S\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___standard_ga58725c7158549d3852a3acdfe7ac83cc}{I2\+S\+\_\+\+STANDARD\+\_\+\+PHILIPS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___standard_ga1d7e47055dc23008211ed60d0bd59bc3}{I2\+S\+\_\+\+STANDARD\+\_\+\+MSB}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___standard_gaa71f6368c1113d02da713994fe735f37}{I2\+S\+\_\+\+STANDARD\+\_\+\+LSB}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000020)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___standard_ga2d9b2e3bec0a61f345aed2698720facc}{I2\+S\+\_\+\+STANDARD\+\_\+\+PCM\+\_\+\+SHORT}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000030)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___standard_gae0755adecb5f500d2dfc87f91bd0c9a9}{I2\+S\+\_\+\+STANDARD\+\_\+\+PCM\+\_\+\+LONG}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x000000\+B0)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___standard_ga826b9ddb34520b8fa64c2b65c9bfd528}{IS\+\_\+\+I2\+S\+\_\+\+STANDARD}}(STANDARD)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___legacy_ga589f7a2d1f758277adfd369c2a3e4188}{I2\+S\+\_\+\+STANDARD\+\_\+\+PHILLIPS}}~\mbox{\hyperlink{group___i2_s___standard_ga58725c7158549d3852a3acdfe7ac83cc}{I2\+S\+\_\+\+STANDARD\+\_\+\+PHILIPS}}
+\item 
+\#define \mbox{\hyperlink{group___i2_s___data___format_ga84607e206fe566512a525b9f0e361142}{I2\+S\+\_\+\+DATAFORMAT\+\_\+16B}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___data___format_ga7d247401de428096b986a1c88e494d71}{I2\+S\+\_\+\+DATAFORMAT\+\_\+16\+B\+\_\+\+EXTENDED}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___data___format_ga32b56d268efb591d0dfd437c68e21819}{I2\+S\+\_\+\+DATAFORMAT\+\_\+24B}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000003)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___data___format_gac37d00c83e0bfc6dd21261cf94ff14c6}{I2\+S\+\_\+\+DATAFORMAT\+\_\+32B}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000005)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___data___format_gac467da829eca4a5c4ce41a6abd2d8e81}{IS\+\_\+\+I2\+S\+\_\+\+DATA\+\_\+\+FORMAT}}(FORMAT)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___m_c_l_k___output_gad02b0b79e2a7b8786228bbd902db6266}{I2\+S\+\_\+\+MCLKOUTPUT\+\_\+\+ENABLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga25669c3686c0c577d2d371ac09200ff0}{SPI\+\_\+\+I2\+SPR\+\_\+\+MCKOE}})
+\item 
+\#define \mbox{\hyperlink{group___i2_s___m_c_l_k___output_gad751d9da31ef7b7b63b5a4028331f36d}{I2\+S\+\_\+\+MCLKOUTPUT\+\_\+\+DISABLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___m_c_l_k___output_ga829ae526d1d11f14592e881f800fbb8a}{IS\+\_\+\+I2\+S\+\_\+\+MCLK\+\_\+\+OUTPUT}}(OUTPUT)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___audio___frequency_ga835e684fdb326d62c1cfc8d4b8fde944}{I2\+S\+\_\+\+AUDIOFREQ\+\_\+192K}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})192000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___audio___frequency_ga0b51976937c47ce42db565ec053ce80b}{I2\+S\+\_\+\+AUDIOFREQ\+\_\+96K}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})96000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___audio___frequency_ga7e33aad8b5089783d2d73771c8bd8c30}{I2\+S\+\_\+\+AUDIOFREQ\+\_\+48K}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})48000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___audio___frequency_ga62c764ebc2037c6a394909a899e1d3c3}{I2\+S\+\_\+\+AUDIOFREQ\+\_\+44K}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})44100)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___audio___frequency_ga64bb1c92ca88c0cbf102bba816f796a5}{I2\+S\+\_\+\+AUDIOFREQ\+\_\+32K}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})32000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___audio___frequency_gaec6b3447020cbf5234ac36c53474c9b5}{I2\+S\+\_\+\+AUDIOFREQ\+\_\+22K}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})22050)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___audio___frequency_gac4a77b9683937fbab4b270814a280fab}{I2\+S\+\_\+\+AUDIOFREQ\+\_\+16K}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})16000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___audio___frequency_gad4123d406d056ee5412f2fefc4959813}{I2\+S\+\_\+\+AUDIOFREQ\+\_\+11K}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})11025)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___audio___frequency_ga111b7c5be04f5d91fbb2ef2bafe755de}{I2\+S\+\_\+\+AUDIOFREQ\+\_\+8K}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})8000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___audio___frequency_gaed7cf575d5cae24315f18b38ea83310e}{I2\+S\+\_\+\+AUDIOFREQ\+\_\+\+DEFAULT}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})2)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___audio___frequency_gaf39d917f4a38fd9916ec347fb055391c}{IS\+\_\+\+I2\+S\+\_\+\+AUDIO\+\_\+\+FREQ}}(FREQ)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___full_duplex___mode_ga7da4a3f7309dacfd363893dced2cea9c}{I2\+S\+\_\+\+FULLDUPLEXMODE\+\_\+\+DISABLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___full_duplex___mode_ga48be599b5762d3c4e4c52ec3bb210938}{I2\+S\+\_\+\+FULLDUPLEXMODE\+\_\+\+ENABLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___full_duplex___mode_ga5be53aa8147cb6b018f9e4529a317938}{IS\+\_\+\+I2\+S\+\_\+\+FULLDUPLEX\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___clock___polarity_gad930e30055218df3f34d9ab96d31a3f4}{I2\+S\+\_\+\+CPOL\+\_\+\+LOW}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___clock___polarity_gab86bbe2d41b941d9949868ca3578e607}{I2\+S\+\_\+\+CPOL\+\_\+\+HIGH}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5c5be1f1c8b4689643e04cd5034e7f5f}{SPI\+\_\+\+I2\+SCFGR\+\_\+\+CKPOL}})
+\item 
+\#define \mbox{\hyperlink{group___i2_s___clock___polarity_ga6323375bf0b6fa6e2ee2a9ce6f9ef82f}{IS\+\_\+\+I2\+S\+\_\+\+CPOL}}(CPOL)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___interrupt__configuration__definition_ga84eabe0973f1fdceecbe9ff650a2bee4}{I2\+S\+\_\+\+IT\+\_\+\+TXE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga23f683a1252ccaf625cae1a978989b2c}{SPI\+\_\+\+CR2\+\_\+\+TXEIE}}
+\item 
+\#define \mbox{\hyperlink{group___i2_s___interrupt__configuration__definition_ga09b5f25a752905586daa4cb170043f71}{I2\+S\+\_\+\+IT\+\_\+\+RXNE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa7d4c37fbbcced7f2a0421e6ffd103ea}{SPI\+\_\+\+CR2\+\_\+\+RXNEIE}}
+\item 
+\#define \mbox{\hyperlink{group___i2_s___interrupt__configuration__definition_ga7dc89e4d9188a5b7122f9f6948c28a00}{I2\+S\+\_\+\+IT\+\_\+\+ERR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf18705567de7ab52a62e5ef3ba27418b}{SPI\+\_\+\+CR2\+\_\+\+ERRIE}}
+\item 
+\#define \mbox{\hyperlink{group___i2_s___flag__definition_gab27cd9fbeceffcefd9b7cce1a87fafdd}{I2\+S\+\_\+\+FLAG\+\_\+\+TXE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5bd5d21816947fcb25ccae7d3bf8eb2c}{SPI\+\_\+\+SR\+\_\+\+TXE}}
+\item 
+\#define \mbox{\hyperlink{group___i2_s___flag__definition_ga031025a60bf1efca05f5ad5ace442795}{I2\+S\+\_\+\+FLAG\+\_\+\+RXNE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga40e14de547aa06864abcd4b0422d8b48}{SPI\+\_\+\+SR\+\_\+\+RXNE}}
+\item 
+\#define \mbox{\hyperlink{group___i2_s___flag__definition_gaec08a8ad716bef1b87a8c8d992ab89ec}{I2\+S\+\_\+\+FLAG\+\_\+\+UDR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga13d3292e963499c0e9a36869909229e6}{SPI\+\_\+\+SR\+\_\+\+UDR}}
+\item 
+\#define \mbox{\hyperlink{group___i2_s___flag__definition_ga02033ad3c8128ecbc74dcce213beaf0f}{I2\+S\+\_\+\+FLAG\+\_\+\+OVR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa8d902302c5eb81ce4a57029de281232}{SPI\+\_\+\+SR\+\_\+\+OVR}}
+\item 
+\#define \mbox{\hyperlink{group___i2_s___flag__definition_ga8024182f5fa967ff82f10a822855f539}{I2\+S\+\_\+\+FLAG\+\_\+\+FRE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gace2c7cac9431231663af42e6f5aabce6}{SPI\+\_\+\+SR\+\_\+\+FRE}}
+\item 
+\#define \mbox{\hyperlink{group___i2_s___flag__definition_gaf0d629fd522a15aff188236d3254b2ad}{I2\+S\+\_\+\+FLAG\+\_\+\+CHSIDE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga81bd052f0b2e819ddd6bb16c2292a2de}{SPI\+\_\+\+SR\+\_\+\+CHSIDE}}
+\item 
+\#define \mbox{\hyperlink{group___i2_s___flag__definition_gac22af2422186105d08a83a7614b54f03}{I2\+S\+\_\+\+FLAG\+\_\+\+BSY}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa3498df67729ae048dc5f315ef7c16bf}{SPI\+\_\+\+SR\+\_\+\+BSY}}
+\item 
+\#define \mbox{\hyperlink{group___i2_s_ga6c4a9d76f38d834137575776a5b7f60f}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a2b69279eb021ef38d711edcdc5c95054}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset I2S handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s_ga4b5ca1e0e5bf616c99d38b8f0c5bdded}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$I2\+SCFGR \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga30d76c7552c91bbd5cbac70d9c56ebb3}{SPI\+\_\+\+I2\+SCFGR\+\_\+\+I2\+SE}})
+\begin{DoxyCompactList}\small\item\em Enable or disable the specified SPI peripheral (in I2S mode). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s_gac4f398db7f68fb8354bff61a9a6372b9}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$I2\+SCFGR \&= \texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga30d76c7552c91bbd5cbac70d9c56ebb3}{SPI\+\_\+\+I2\+SCFGR\+\_\+\+I2\+SE}})
+\item 
+\#define \mbox{\hyperlink{group___i2_s_gad6f90125be5ad17065e5378c7580708a}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR2 \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable or disable the specified I2S interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s_gaa78db4341e43a5fb30c815b22137a9e7}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR2 \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___i2_s_ga722512f6ff5e3bc5c6ef34ae2ab93f4e}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR2 \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) ? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\begin{DoxyCompactList}\small\item\em Checks if the specified I2S interrupt source is enabled or disabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s_gab4dcaccc00ab76a11c23a49e973df009}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Checks whether the specified I2S flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s_gabe5bab581b9d997faeb0132672376444}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+CLEAR\+\_\+\+OVRFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clears the I2S OVR pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s_gafc275594559c5c1e26c23f3246260937}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+CLEAR\+\_\+\+UDRFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR)
+\begin{DoxyCompactList}\small\item\em Clears the I2S UDR pending flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___i2_s_ga2588a0c71baf7cd6d2c1b9b11120bef0}{HAL\+\_\+\+I2\+S\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a2b69279eb021ef38d711edcdc5c95054}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0afb3efb92ef3bcfce6f4d34570b31a602}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a0d9faadcd5b6010c6071905345a282e7}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0ab8386636ae24469508b8312e7bfbc4b3}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX}} = 0x12
+, \newline
+\mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a641d635762b2ebb2e8e16917efc13162}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+RX}} = 0x22
+, \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a4135585ed147654154c0b7be15f3807e}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX\+\_\+\+RX}} = 0x32
+, \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a95d3eabfe7ff5d52af473e7fc96f9536}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a011e8568b5b81c7074f2cbfa38b8a2d8}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em HAL State structures definition. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___i2_s_ga4edd8d1e0ae70e8eaf7235b74f159c1c}{HAL\+\_\+\+I2\+S\+\_\+\+Error\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1cae1841841d09bac859ee229c88c5a7c66}{HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+NONE}} = 0x00
+, \mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1cab2d5b6e490f69ea8d54249a13b72d9fc}{HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+UDR}} = 0x01
+, \mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1caf2aca8edd9e7b144cc0551fad11a651d}{HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+OVR}} = 0x02
+, \mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca9d350f371086ae93b82921308ab53a23}{HAL\+\_\+\+I2\+SEX\+\_\+\+ERROR\+\_\+\+UDR}} = 0x04
+, \newline
+\mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca7524a96d7131a2fd4b33455d0f4051e3}{HAL\+\_\+\+I2\+SEX\+\_\+\+ERROR\+\_\+\+OVR}} = 0x08
+, \mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca53cb4e77eadd45cfae55b024703c4361}{HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+FRE}} = 0x10
+, \mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca511a7f86226ae6ae893f8e716fcf6eb8}{HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+DMA}} = 0x20
+ \}
+\begin{DoxyCompactList}\small\item\em HAL I2S Error Code structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga605f23b9dc1f0979f4b59702fb8d058d}{HAL\+\_\+\+I2\+S\+\_\+\+Init}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga9119fe0f644a9f011415afaf8661232a}{HAL\+\_\+\+I2\+S\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga5033142a7bf0de4513782bbee1823a97}{HAL\+\_\+\+I2\+S\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga7ef92677a8ff770f754d4dfc2aceb39b}{HAL\+\_\+\+I2\+S\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_gad53c7444525547c934ee322ca1197dfb}{HAL\+\_\+\+I2\+S\+\_\+\+Transmit}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga41a95495dff412204cd4c5b631c061ea}{HAL\+\_\+\+I2\+S\+\_\+\+Receive}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga476c3a3540e53c0905e80bfb5d309db2}{HAL\+\_\+\+I2\+S\+\_\+\+Transmit\+\_\+\+IT}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga0018752e02b7221625aca82b532b5864}{HAL\+\_\+\+I2\+S\+\_\+\+Receive\+\_\+\+IT}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+void \mbox{\hyperlink{group___i2_s_gad5fe9157152a3c5baac47b877d534f4e}{HAL\+\_\+\+I2\+S\+\_\+\+IRQHandler}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga97fa0c086e3980597e1e3962b2dfc322}{HAL\+\_\+\+I2\+S\+\_\+\+Transmit\+\_\+\+DMA}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_gaadf898fd8ef5c8349c3a61c2e3e7720e}{HAL\+\_\+\+I2\+S\+\_\+\+Receive\+\_\+\+DMA}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga374ecf3a61ff460938af93e9b788f09b}{HAL\+\_\+\+I2\+S\+\_\+\+DMAPause}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_gaa86501283bd6988e4106af51cda75945}{HAL\+\_\+\+I2\+S\+\_\+\+DMAResume}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_gae8d79cd1625530f161cd6651ef5135a3}{HAL\+\_\+\+I2\+S\+\_\+\+DMAStop}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{group___i2_s_ga2588a0c71baf7cd6d2c1b9b11120bef0}{HAL\+\_\+\+I2\+S\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga575e5ecf94a8a288b8a07e034dcb18c8}{HAL\+\_\+\+I2\+S\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{group___i2_s_ga4edd8d1e0ae70e8eaf7235b74f159c1c}{HAL\+\_\+\+I2\+S\+\_\+\+Error\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga1b0d52620b1b93914d9ef7cad845fc68}{HAL\+\_\+\+I2\+S\+\_\+\+Get\+Error}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga5bef3c73683b81e822368c9029e495bc}{HAL\+\_\+\+I2\+S\+\_\+\+Tx\+Half\+Cplt\+Callback}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga1ef4021384eddbd41ca60454a2483bf3}{HAL\+\_\+\+I2\+S\+\_\+\+Tx\+Cplt\+Callback}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga6c4cd3b18c42c6de0c3f4fe7068a5b12}{HAL\+\_\+\+I2\+S\+\_\+\+Rx\+Half\+Cplt\+Callback}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga18c33b2d429b06674ec30e5b2b81862c}{HAL\+\_\+\+I2\+S\+\_\+\+Rx\+Cplt\+Callback}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga8ca0ebeda8edc26d4201fe8657be294e}{HAL\+\_\+\+I2\+S\+\_\+\+Error\+Callback}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga716b431b25e7fd7c359dcc0ed9ffb6e2}{I2\+S\+\_\+\+DMATx\+Cplt}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+void \mbox{\hyperlink{group___i2_s_gaf2d811c698cf13db91942c5b7e0c4a85}{I2\+S\+\_\+\+DMATx\+Half\+Cplt}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga8d2bf0ca3ff0f11da49d3e8616c75d36}{I2\+S\+\_\+\+DMARx\+Cplt}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga21556bd3ebfc035450de4628b5b029d8}{I2\+S\+\_\+\+DMARx\+Half\+Cplt}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+void \mbox{\hyperlink{group___i2_s_gaba9556ceca0ad8bffa4946c2bb2598ae}{I2\+S\+\_\+\+DMAError}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_gab49e7928ef4021ca00931059b0cc3545}{I2\+S\+\_\+\+Wait\+Flag\+State\+Until\+Timeout}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Flag, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Status, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of I2S HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

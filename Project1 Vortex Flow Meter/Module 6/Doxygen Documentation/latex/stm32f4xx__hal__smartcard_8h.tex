@@ -1,0 +1,229 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+hal\+\_\+smartcard.h File Reference}
+\hypertarget{stm32f4xx__hal__smartcard_8h}{}\label{stm32f4xx__hal__smartcard_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_smartcard.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_smartcard.h}}
+
+
+Header file of SMARTCARD HAL module.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def}{SMARTCARD\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SMARTCARD Init Structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SMARTCARD handle Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___word___length_ga36d8236ce7c45ba2bf01ba4b28561861}{SMARTCARD\+\_\+\+WORDLENGTH\+\_\+8B}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___word___length_ga22f73d114cf13ee0041537303faef14b}{SMARTCARD\+\_\+\+WORDLENGTH\+\_\+9B}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga95f0288b9c6aaeca7cb6550a2e6833e2}{USART\+\_\+\+CR1\+\_\+M}})
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___word___length_ga963c514e557b58c5c11bb60ab2660259}{IS\+\_\+\+SMARTCARD\+\_\+\+WORD\+\_\+\+LENGTH}}(LENGTH)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___stop___bits_gaad1a5a08d00d268990232301b9f2c828}{SMARTCARD\+\_\+\+STOPBITS\+\_\+1}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___stop___bits_gacb1f23b1dd63c60d9823d1ec65475ae0}{SMARTCARD\+\_\+\+STOPBITS\+\_\+0\+\_\+5}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaee6ee01c6e5325b378b2209ef20d0a61}{USART\+\_\+\+CR2\+\_\+\+STOP\+\_\+0}})
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___stop___bits_gab777f0e142c5d29e7b83e4b1a18bdecc}{SMARTCARD\+\_\+\+STOPBITS\+\_\+2}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2b24d14f0e5d1c76c878b08aad44d02b}{USART\+\_\+\+CR2\+\_\+\+STOP\+\_\+1}})
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___stop___bits_ga60cf2b59a8e70d1039e8ce1dcdb7c97b}{SMARTCARD\+\_\+\+STOPBITS\+\_\+1\+\_\+5}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaee6ee01c6e5325b378b2209ef20d0a61}{USART\+\_\+\+CR2\+\_\+\+STOP\+\_\+0}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2b24d14f0e5d1c76c878b08aad44d02b}{USART\+\_\+\+CR2\+\_\+\+STOP\+\_\+1}}))
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___stop___bits_ga55a0c0a41cc21f1c11d34457bf45b97b}{IS\+\_\+\+SMARTCARD\+\_\+\+STOPBITS}}(STOPBITS)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___parity_gabdf3059c7a116ab8a104954a1a4ec5b6}{SMARTCARD\+\_\+\+PARITY\+\_\+\+NONE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___parity_ga94ae871b29c18b59dab9a045443d11c8}{SMARTCARD\+\_\+\+PARITY\+\_\+\+EVEN}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga60f8fcf084f9a8514efafb617c70b074}{USART\+\_\+\+CR1\+\_\+\+PCE}})
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___parity_gaef2239030beeb07577e43965b013f65d}{SMARTCARD\+\_\+\+PARITY\+\_\+\+ODD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga60f8fcf084f9a8514efafb617c70b074}{USART\+\_\+\+CR1\+\_\+\+PCE}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2e159d36ab2c93a2c1942df60e9eebbe}{USART\+\_\+\+CR1\+\_\+\+PS}}))
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___parity_ga958995a8f043b3057cee33a8098ca095}{IS\+\_\+\+SMARTCARD\+\_\+\+PARITY}}(PARITY)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___mode_ga88cae88197abe0d85a82c6335454ab84}{SMARTCARD\+\_\+\+MODE\+\_\+\+RX}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_gada0d5d407a22264de847bc1b40a17aeb}{USART\+\_\+\+CR1\+\_\+\+RE}})
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___mode_ga32859d392982097d1c2c95cd7332bcf7}{SMARTCARD\+\_\+\+MODE\+\_\+\+TX}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_gade7f090b04fd78b755b43357ecaa9622}{USART\+\_\+\+CR1\+\_\+\+TE}})
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___mode_gac481921bcb3a053264f1ddc92164bda6}{SMARTCARD\+\_\+\+MODE\+\_\+\+TX\+\_\+\+RX}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gade7f090b04fd78b755b43357ecaa9622}{USART\+\_\+\+CR1\+\_\+\+TE}} \texorpdfstring{$\vert$}{|}\mbox{\hyperlink{group___peripheral___registers___bits___definition_gada0d5d407a22264de847bc1b40a17aeb}{USART\+\_\+\+CR1\+\_\+\+RE}}))
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___mode_ga2dc06686d0651b6a8504ccffd028d2c4}{IS\+\_\+\+SMARTCARD\+\_\+\+MODE}}(MODE)~((((MODE) \& (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0000\+FFF3) == 0x00) \&\& ((MODE) != (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x000000))
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___clock___polarity_ga07e246426d125fbc19f8e363f09b21e5}{SMARTCARD\+\_\+\+POLARITY\+\_\+\+LOW}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___clock___polarity_ga69e81ca7759a40f9e13c4051fe44a95f}{SMARTCARD\+\_\+\+POLARITY\+\_\+\+HIGH}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_gafbb4336ac93d94d4e78f9fb7b3a0dc68}{USART\+\_\+\+CR2\+\_\+\+CPOL}})
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___clock___polarity_gab728caa9af7ecfe085a67603df18e567}{IS\+\_\+\+SMARTCARD\+\_\+\+POLARITY}}(CPOL)~(((CPOL) == \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___clock___polarity_ga07e246426d125fbc19f8e363f09b21e5}{SMARTCARD\+\_\+\+POLARITY\+\_\+\+LOW}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((CPOL) == \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___clock___polarity_ga69e81ca7759a40f9e13c4051fe44a95f}{SMARTCARD\+\_\+\+POLARITY\+\_\+\+HIGH}}))
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___clock___phase_ga6b5dfd540b22b8a6cbd956688d17cfce}{SMARTCARD\+\_\+\+PHASE\+\_\+1\+EDGE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___clock___phase_ga744e424283994e4c92a4db8b247582d6}{SMARTCARD\+\_\+\+PHASE\+\_\+2\+EDGE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga362976ce813e58310399d113d2cf09cb}{USART\+\_\+\+CR2\+\_\+\+CPHA}})
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___clock___phase_gad4f2566348232722026dc4861ed76125}{IS\+\_\+\+SMARTCARD\+\_\+\+PHASE}}(CPHA)~(((CPHA) == \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___clock___phase_ga6b5dfd540b22b8a6cbd956688d17cfce}{SMARTCARD\+\_\+\+PHASE\+\_\+1\+EDGE}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((CPHA) == \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___clock___phase_ga744e424283994e4c92a4db8b247582d6}{SMARTCARD\+\_\+\+PHASE\+\_\+2\+EDGE}}))
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___last___bit_ga8ce0dd5ed70e0ce9799c9b056363e884}{SMARTCARD\+\_\+\+LASTBIT\+\_\+\+DISABLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___last___bit_ga11edb8d6ed3ba95eade9a1a6d35a2468}{SMARTCARD\+\_\+\+LASTBIT\+\_\+\+ENABLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4a62e93ae7864e89622bdd92508b615e}{USART\+\_\+\+CR2\+\_\+\+LBCL}})
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___last___bit_ga77540ed09a99dfb4b1283b4d4560733f}{IS\+\_\+\+SMARTCARD\+\_\+\+LASTBIT}}(LASTBIT)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___n_a_c_k___state_gacfa3faf135d8fb291f6b1db598e29110}{SMARTCARD\+\_\+\+NACK\+\_\+\+ENABLED}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3f3b70b2ee9ff0b59e952fd7ab04373c}{USART\+\_\+\+CR3\+\_\+\+NACK}})
+\item 
+\#define \mbox{\hyperlink{group___smart_card___n_a_c_k___state_gae04c68df21068299eac9bf3590b68986}{SMARTCARD\+\_\+\+NACK\+\_\+\+DISABLED}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___n_a_c_k___state_ga2ee3e5dd705563b63d6551497b514fe1}{IS\+\_\+\+SMARTCARD\+\_\+\+NACK\+\_\+\+STATE}}(NACK)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___d_m_a___requests_gafc7f43a4fd2402ac26d5ca9f7e398471}{SMARTCARD\+\_\+\+DMAREQ\+\_\+\+TX}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5bb515d3814d448f84e2c98bf44f3993}{USART\+\_\+\+CR3\+\_\+\+DMAT}})
+\item 
+\#define \mbox{\hyperlink{group___smart_card___d_m_a___requests_ga6b694a965ea96e1e33646a538ea10d87}{SMARTCARD\+\_\+\+DMAREQ\+\_\+\+RX}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaff130f15493c765353ec2fd605667c5a}{USART\+\_\+\+CR3\+\_\+\+DMAR}})
+\item 
+\#define \mbox{\hyperlink{group___smart_card___flags_ga5ac591d03dcadd10c53f6d586a0e485c}{SMARTCARD\+\_\+\+FLAG\+\_\+\+TXE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___flags_ga778899c7c536fcbbcf3d6cc00b4139fb}{SMARTCARD\+\_\+\+FLAG\+\_\+\+TC}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___flags_ga1f617725b179572983789cbc7da1a955}{SMARTCARD\+\_\+\+FLAG\+\_\+\+RXNE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000020)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___flags_ga5576e74148257291b05dcc410f501e8a}{SMARTCARD\+\_\+\+FLAG\+\_\+\+IDLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___flags_ga48dfe32b52249f43c0e4396a29c07a85}{SMARTCARD\+\_\+\+FLAG\+\_\+\+ORE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___flags_ga14a7b77b47b2e83a4cf4ef6f8e8ee23b}{SMARTCARD\+\_\+\+FLAG\+\_\+\+NE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___flags_gaa85318d22a73dbbf1498363545999bf3}{SMARTCARD\+\_\+\+FLAG\+\_\+\+FE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___flags_ga19dfcc02f14bb270f559601cca5f433d}{SMARTCARD\+\_\+\+FLAG\+\_\+\+PE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___interrupt__definition_gac56e07a71ab82a23930ad58e9a8dc806}{SMARTCARD\+\_\+\+IT\+\_\+\+PE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000100)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___interrupt__definition_ga758561a96d28254dc3504cb5325dad1f}{SMARTCARD\+\_\+\+IT\+\_\+\+TXE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000080)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___interrupt__definition_ga808ee7d7c209374af004e8bf1d2ca492}{SMARTCARD\+\_\+\+IT\+\_\+\+TC}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000040)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___interrupt__definition_ga75b6c6e283a114afa1130f6f1bc98da6}{SMARTCARD\+\_\+\+IT\+\_\+\+RXNE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000020)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___interrupt__definition_ga0b1a5f7e611a976c71168a5b9e3a1f0e}{SMARTCARD\+\_\+\+IT\+\_\+\+IDLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000010)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___interrupt__definition_ga751761f820948ee230b30a244ca85725}{SMARTCARD\+\_\+\+IT\+\_\+\+ERR}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x20000001)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga080b197f190ae36b8db1745a4db94bf4}{\+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea3bb178c89408959b462cf8bc607034cb}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset SMARTCARD handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga942e652bb57d4f12e7273f4e97035ff4}{\+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+FLUSH\+\_\+\+DRREGISTER}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DR)
+\begin{DoxyCompactList}\small\item\em Flushs the Smartcard DR register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga38f995afc135ddbaafc0c68e12c31f11}{\+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Checks whether the specified Smartcard flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gab40a9ea5252be0340f074b1cab9c2264}{\+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the specified Smartcard pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga2d4be8e0259fd370f82c53579c96ede5}{SMARTCARD\+\_\+\+IT\+\_\+\+MASK}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0000\+FFFF)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified Smart\+Card interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gac28ac71a5048913946c0b2cb43869606}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gafb2e783e25efa42568e587d88a32dbc4}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga8bae0fc7f068414790697698adafc4f2}{\+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+IT\+\_\+\+\_\+)~(((((\+\_\+\+\_\+\+IT\+\_\+\+\_\+) $>$$>$ 28) == 1)? (\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1\+: (\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR3) \& (((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\+\_\+\+\_\+\+IT\+\_\+\+\_\+)) \& \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga2d4be8e0259fd370f82c53579c96ede5}{SMARTCARD\+\_\+\+IT\+\_\+\+MASK}}))
+\begin{DoxyCompactList}\small\item\em Checks whether the specified Smart\+Card interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga41d6f263ca49881a482e053cdb452278}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 \texorpdfstring{$\vert$}{|}=  \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2bb650676aaae4a5203f372d497d5947}{USART\+\_\+\+CR1\+\_\+\+UE}})
+\begin{DoxyCompactList}\small\item\em Macros to enable or disable the Smart\+Card interface. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga93fe2e3f814dd564f485ab67b7f757c9}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 \&=  \texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2bb650676aaae4a5203f372d497d5947}{USART\+\_\+\+CR1\+\_\+\+UE}})
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga5266d13bd56e0c5eada58c461ea5c22d}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+DMA\+\_\+\+REQUEST\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR3 \texorpdfstring{$\vert$}{|}=  (\+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macros to enable or disable the Smart\+Card DMA request. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga2ede2a184afa4076809092b357c96853}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+DMA\+\_\+\+REQUEST\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR3 \&=  \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gafbb1fab320969bc5f2f726523765efd9}{\+\_\+\+\_\+\+DIV}}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~(((\+\_\+\+PCLK\+\_\+)\texorpdfstring{$\ast$}{*}25)/(4\texorpdfstring{$\ast$}{*}(\+\_\+\+BAUD\+\_\+)))
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gab53df89950c58100a4f14842b43877f0}{\+\_\+\+\_\+\+DIVMANT}}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~(\mbox{\hyperlink{group___i_r_d_a_gafbb1fab320969bc5f2f726523765efd9}{\+\_\+\+\_\+\+DIV}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+))/100)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga093009531672e6074b05430492830c24}{\+\_\+\+\_\+\+DIVFRAQ}}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~(((\mbox{\hyperlink{group___i_r_d_a_gafbb1fab320969bc5f2f726523765efd9}{\+\_\+\+\_\+\+DIV}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) -\/ (\mbox{\hyperlink{group___i_r_d_a_gab53df89950c58100a4f14842b43877f0}{\+\_\+\+\_\+\+DIVMANT}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) \texorpdfstring{$\ast$}{*} 100)) \texorpdfstring{$\ast$}{*} 16 + 50) / 100)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gafe466e58e1f1d8c87e0677e604709cc8}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+BRR}}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~((\mbox{\hyperlink{group___i_r_d_a_gab53df89950c58100a4f14842b43877f0}{\+\_\+\+\_\+\+DIVMANT}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) $<$$<$ 4)\texorpdfstring{$\vert$}{|}(\mbox{\hyperlink{group___i_r_d_a_ga093009531672e6074b05430492830c24}{\+\_\+\+\_\+\+DIVFRAQ}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) \& 0x0F))
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga8af8fc5fa79cca4a3bf1bce5d051e371}{IS\+\_\+\+SMARTCARD\+\_\+\+BAUDRATE}}(BAUDRATE)~((BAUDRATE) $<$ 10500001)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga79d6a3b95636861dcfd70913746e087e}{HAL\+\_\+\+SMARTCARD\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea3bb178c89408959b462cf8bc607034cb}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea574c38a9650163fcf757974c7a6c4a44}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea2cb929aaef6e779ed7cd6b3909ddd9dc}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eae782bca07469b811467a60454fd3789d}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX}} = 0x12
+, \newline
+\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eaebf962d48014d5c46f262a1e7c6fe5a3}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+RX}} = 0x22
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eadce24f292ca00c111d393cbc11a823bf}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX\+\_\+\+RX}} = 0x32
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eac871d68a9fe445e9cdcef0d3eb374a1c}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eabd76a0e440c55bb7d040626f2134afee}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em HAL State structures definition. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gae3ce190c726f8059f7280e4e7b091651}{HAL\+\_\+\+SMARTCARD\+\_\+\+Error\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a319651c709199001748835687ca790d4}{HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+NONE}} = 0x00
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a50cbf86dd5395fd9a328f153a86adba9}{HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+PE}} = 0x01
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a8aca04ab3abf42b68d93c9ffa2827e07}{HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+NE}} = 0x02
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651ad181472c6486cbc8c8f126144817a06c}{HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+FE}} = 0x04
+, \newline
+\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651ad292f9248d5ee9036ba769c4e36adfae}{HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+ORE}} = 0x08
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651add9e313d077e62b0c93150876e965e03}{HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+DMA}} = 0x10
+ \}
+\begin{DoxyCompactList}\small\item\em HAL SMARTCARD Error Code structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga95235c14cb192c26cf72bf44ddaaf551}{HAL\+\_\+\+SMARTCARD\+\_\+\+Init}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga1701fcf5d66117782a06569af1e40077}{HAL\+\_\+\+SMARTCARD\+\_\+\+Re\+Init}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga4b54b33c61b5284adbb7c98760425c2e}{HAL\+\_\+\+SMARTCARD\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+void \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga13e9aae9f5dd3b332fc8e431596793dc}{HAL\+\_\+\+SMARTCARD\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+void \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gaf8e8fa8ca8058656fdd091880424565a}{HAL\+\_\+\+SMARTCARD\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga4dd0a7c6916ca2423c50f432a38a7328}{HAL\+\_\+\+SMARTCARD\+\_\+\+Transmit}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga82240fa2bcafd64a28ffbb1b01893e84}{HAL\+\_\+\+SMARTCARD\+\_\+\+Receive}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gab671c1bdba9ed83fb08142c4c38caee8}{HAL\+\_\+\+SMARTCARD\+\_\+\+Transmit\+\_\+\+IT}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga52b04b11f8793a859f2105fd748d75cd}{HAL\+\_\+\+SMARTCARD\+\_\+\+Receive\+\_\+\+IT}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gab39a7dd50e44fd5c6cfc6af60bf8a4f5}{HAL\+\_\+\+SMARTCARD\+\_\+\+Transmit\+\_\+\+DMA}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gaa8506576688d14e1f10f99d8c3f104fa}{HAL\+\_\+\+SMARTCARD\+\_\+\+Receive\+\_\+\+DMA}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+void \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga5c09daa91f4d5f44c9b4c927a1c50b3e}{HAL\+\_\+\+SMARTCARD\+\_\+\+IRQHandler}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+void \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gafb56eef6e839e909823cc16bf96c845b}{HAL\+\_\+\+SMARTCARD\+\_\+\+Tx\+Cplt\+Callback}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+void \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga955fe3e5402e8a2797af8b605701dde4}{HAL\+\_\+\+SMARTCARD\+\_\+\+Rx\+Cplt\+Callback}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+void \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga6a5255ea10c1c5c0d3b037ce61d5dc91}{HAL\+\_\+\+SMARTCARD\+\_\+\+Error\+Callback}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga79d6a3b95636861dcfd70913746e087e}{HAL\+\_\+\+SMARTCARD\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga0edb69af10195dfde9b0451943990ad0}{HAL\+\_\+\+SMARTCARD\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gaf42409d25813eeca7cca2df14a6f7b7a}{HAL\+\_\+\+SMARTCARD\+\_\+\+Get\+Error}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of SMARTCARD HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

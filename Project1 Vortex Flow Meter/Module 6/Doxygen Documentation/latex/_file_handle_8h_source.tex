@@ -1,0 +1,70 @@
+\doxysection{File\+Handle.\+h}
+\hypertarget{_file_handle_8h_source}{}\label{_file_handle_8h_source}\index{mbed/FileHandle.h@{mbed/FileHandle.h}}
+\mbox{\hyperlink{_file_handle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_FILEHANDLE\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_FILEHANDLE\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_file_handle_8h_ae3c686f9cfb2c0113bc42a8c3f7f26b6}{FILEHANDLE}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#if\ defined(\_\_ARMCC\_VERSION)\ ||\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ ssize\_t;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{long}\ off\_t;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#\ \ \ include\ <sys/types.h>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacembed}{mbed}}\ \{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmbed_1_1_file_handle}{FileHandle}}\ \{}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ ssize\_t\ \mbox{\hyperlink{classmbed_1_1_file_handle_afecb50bd072d06e2a56dbc4f4e68bbf5}{write}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ length)\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmbed_1_1_file_handle_ac1b885028d295f74d73ff40bf6a352a2}{close}}()\ =\ 0;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ ssize\_t\ \mbox{\hyperlink{classmbed_1_1_file_handle_ae51be2d8f51d767ba8cd8c646f211f24}{read}}(\textcolor{keywordtype}{void}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ length)\ =\ 0;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmbed_1_1_file_handle_a7e7936ba41fb44a4f98795fba1d92e83}{isatty}}()\ =\ 0;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ off\_t\ \mbox{\hyperlink{classmbed_1_1_file_handle_a75046a7181de9902af9256302d57316a}{lseek}}(off\_t\ offset,\ \textcolor{keywordtype}{int}\ whence)\ =\ 0;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmbed_1_1_file_handle_a125e7fa0507f9b935f28852ca79190b7}{fsync}}()\ =\ 0;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{virtual}\ off\_t\ \mbox{\hyperlink{classmbed_1_1_file_handle_a991dddade770154bd53b613b15a251a9}{flen}}()\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ remember\ our\ current\ position\ */}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ off\_t\ pos\ =\ \mbox{\hyperlink{classmbed_1_1_file_handle_a75046a7181de9902af9256302d57316a}{lseek}}(0,\ SEEK\_CUR);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pos\ ==\ -\/1)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ seek\ to\ the\ end\ to\ get\ the\ file\ length\ */}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ off\_t\ res\ =\ \mbox{\hyperlink{classmbed_1_1_file_handle_a75046a7181de9902af9256302d57316a}{lseek}}(0,\ SEEK\_END);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ return\ to\ our\ old\ position\ */}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_file_handle_a75046a7181de9902af9256302d57316a}{lseek}}(pos,\ SEEK\_SET);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmbed_1_1_file_handle_ab120bb24baa47fb9b86a489ac321a433}{\string~FileHandle}}();}
+\DoxyCodeLine{00115\ \};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \}\ \textcolor{comment}{//\ namespace\ mbed}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

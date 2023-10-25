@@ -1,0 +1,66 @@
+\doxysection{mbed\+\_\+interface.\+h}
+\hypertarget{mbed__interface_8h_source}{}\label{mbed__interface_8h_source}\index{mbed/mbed\_interface.h@{mbed/mbed\_interface.h}}
+\mbox{\hyperlink{mbed__interface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_INTERFACE\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_INTERFACE\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{device_8h}{device.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ Mbed\ interface\ mac\ address}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ if\ MBED\_MAC\_ADD\_x\ are\ zero,\ interface\ uid\ sets\ mac\ address,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ otherwise\ MAC\_ADD\_x\ are\ used.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ MBED\_MAC\_ADDR\_INTERFACE\ 0x00}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ MBED\_MAC\_ADDR\_0\ \ MBED\_MAC\_ADDR\_INTERFACE}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ MBED\_MAC\_ADDR\_1\ \ MBED\_MAC\_ADDR\_INTERFACE}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ MBED\_MAC\_ADDR\_2\ \ MBED\_MAC\_ADDR\_INTERFACE}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ MBED\_MAC\_ADDR\_3\ \ MBED\_MAC\_ADDR\_INTERFACE}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ MBED\_MAC\_ADDR\_4\ \ MBED\_MAC\_ADDR\_INTERFACE}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ MBED\_MAC\_ADDR\_5\ \ MBED\_MAC\_ADDR\_INTERFACE}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ MBED\_MAC\_ADDRESS\_SUM\ (MBED\_MAC\_ADDR\_0\ |\ MBED\_MAC\_ADDR\_1\ |\ MBED\_MAC\_ADDR\_2\ |\ MBED\_MAC\_ADDR\_3\ |\ MBED\_MAC\_ADDR\_4\ |\ MBED\_MAC\_ADDR\_5)}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#if\ DEVICE\_SEMIHOST}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{int}\ mbed\_interface\_connected(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{int}\ mbed\_interface\_reset(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{int}\ mbed\_interface\_disconnect(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{int}\ mbed\_interface\_powerdown(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{int}\ mbed\_interface\_uid(\textcolor{keywordtype}{char}\ *uid);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mbed__interface_8h_a03e34b12eea1c3ad7258231bcf98121b}{mbed\_mac\_address}}(\textcolor{keywordtype}{char}\ *mac);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mbed__interface_8h_a539c73852cd4510b6bf5319d8b4c46d2}{mbed\_die}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

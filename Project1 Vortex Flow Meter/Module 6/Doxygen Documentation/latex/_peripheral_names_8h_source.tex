@@ -1,0 +1,86 @@
+\doxysection{Peripheral\+Names.\+h}
+\hypertarget{_peripheral_names_8h_source}{}\label{_peripheral_names_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/TARGET\_STM/TARGET\_NUCLEO\_F401RE/PeripheralNames.h@{mbed/TARGET\_NUCLEO\_F401RE/TARGET\_STM/TARGET\_NUCLEO\_F401RE/PeripheralNames.h}}
+\mbox{\hyperlink{_peripheral_names_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *******************************************************************************}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014,\ STMicroelectronics}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ All\ rights\ reserved.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions\ are\ met:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the\ documentation}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ \ \ \ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 3.\ Neither\ the\ name\ of\ STMicroelectronics\ nor\ the\ names\ of\ its\ contributors}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ \ \ \ may\ be\ used\ to\ endorse\ or\ promote\ products\ derived\ from\ this\ software}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ \ \ \ without\ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS\ "{}AS\ IS"{}}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *******************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ MBED\_PERIPHERALNAMES\_H}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ MBED\_PERIPHERALNAMES\_H}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cmsis_8h}{cmsis.h}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_ad006a1e84e1ac337633cb06868e31c17ac7f9ee52a56e7cb14a6f4ab1104436a1}{ADC\_1}}\ =\ (int)\mbox{\hyperlink{group___peripheral__registers__structures_ga695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}}}
+\DoxyCodeLine{00041\ \}\ \mbox{\hyperlink{_peripheral_names_8h_ad006a1e84e1ac337633cb06868e31c17}{ADCName}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a5eef3fdc1a1c7363ef67d4c8b94eef23ad420827b105fb9530a7c190140cb3bb1}{UART\_1}}\ =\ (int)\mbox{\hyperlink{group___peripheral__registers__structures_ga86162ab3f740db9026c1320d46938b4d}{USART1\_BASE}},}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a5eef3fdc1a1c7363ef67d4c8b94eef23a023175174a6ab5d0eb02be31a406a729}{UART\_2}}\ =\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{group___peripheral__registers__structures_gade83162a04bca0b15b39018a8e8ec090}{USART2\_BASE}},}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a5eef3fdc1a1c7363ef67d4c8b94eef23a42d3a36be9f0746244ef0972bad6686e}{UART\_6}}\ =\ (int)\mbox{\hyperlink{group___peripheral__registers__structures_gade4d3907fd0387ee832f426f52d568bb}{USART6\_BASE}}}
+\DoxyCodeLine{00047\ \}\ \mbox{\hyperlink{_peripheral_names_8h_a5eef3fdc1a1c7363ef67d4c8b94eef23}{UARTName}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ STDIO\_UART\_TX\ \ PA\_2}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ STDIO\_UART\_RX\ \ PA\_3}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ STDIO\_UART\ \ \ \ \ UART\_2}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a5c1a3bc20ef2aa223f65ce7a99b678dcaa4b24f86e59b845990862af6481c321f}{SPI\_1}}\ =\ (int)\mbox{\hyperlink{group___peripheral__registers__structures_ga50cd8b47929f18b05efbd0f41253bf8d}{SPI1\_BASE}},}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a5c1a3bc20ef2aa223f65ce7a99b678dca78d05bc33881e02031f9bb60dc5312ee}{SPI\_2}}\ =\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{group___peripheral__registers__structures_gac3e357b4c25106ed375fb1affab6bb86}{SPI2\_BASE}},}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a5c1a3bc20ef2aa223f65ce7a99b678dca58b58ba7b098bbfb9fbb252304863a63}{SPI\_3}}\ =\ (int)\mbox{\hyperlink{group___peripheral__registers__structures_gae634fe8faa6922690e90fbec2fc86162}{SPI3\_BASE}}}
+\DoxyCodeLine{00057\ \}\ \mbox{\hyperlink{_peripheral_names_8h_a5c1a3bc20ef2aa223f65ce7a99b678dc}{SPIName}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a862d0f364c14e50ed5ec6013efd7bc37a0694e914eba7d01884dd5cb4bec24ea8}{I2C\_1}}\ =\ (int)\mbox{\hyperlink{group___peripheral__registers__structures_gacd72dbffb1738ca87c838545c4eb85a3}{I2C1\_BASE}},}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a862d0f364c14e50ed5ec6013efd7bc37ad988f65ed2bdb7911a7d0d6468cac3ac}{I2C\_2}}\ =\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{group___peripheral__registers__structures_ga04bda70f25c795fb79f163b633ad4a5d}{I2C2\_BASE}},}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a862d0f364c14e50ed5ec6013efd7bc37aa119b33d35f79b6989be7b30d191eff8}{I2C\_3}}\ =\ (int)\mbox{\hyperlink{group___peripheral__registers__structures_ga4e8b9198748235a1729e1e8f8f24983b}{I2C3\_BASE}}}
+\DoxyCodeLine{00063\ \}\ \mbox{\hyperlink{_peripheral_names_8h_a862d0f364c14e50ed5ec6013efd7bc37}{I2CName}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a82d9c7d9104cac5a0dbed541471ea395aea3b5b1dcb8647c430bc9391799f4703}{PWM\_1}}\ \ =\ (int)\mbox{\hyperlink{group___peripheral__registers__structures_gaf8aa324ca5011b8173ab16585ed7324a}{TIM1\_BASE}},}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a82d9c7d9104cac5a0dbed541471ea395ab8296af41c4fdd6fd2dc62d6c761bdf6}{PWM\_2}}\ \ =\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{group___peripheral__registers__structures_ga00d0fe6ad532ab32f0f81cafca8d3aa5}{TIM2\_BASE}},}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a82d9c7d9104cac5a0dbed541471ea395a44646d1313a5c911c1500447f531f542}{PWM\_3}}\ \ =\ (int)\mbox{\hyperlink{group___peripheral__registers__structures_gaf0c34a518f87e1e505cd2332e989564a}{TIM3\_BASE}},}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a82d9c7d9104cac5a0dbed541471ea395ae05454e483b89fa5573dc4846c991dfa}{PWM\_4}}\ \ =\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{group___peripheral__registers__structures_ga56e2d44b0002f316527b8913866a370d}{TIM4\_BASE}},}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a82d9c7d9104cac5a0dbed541471ea395af54add8e1985934150859253bb4f0bb5}{PWM\_5}}\ \ =\ (int)\mbox{\hyperlink{group___peripheral__registers__structures_ga3e1671477190d065ba7c944558336d7e}{TIM5\_BASE}},}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a82d9c7d9104cac5a0dbed541471ea395a226121c8002fdf70e33b39313c78a41b}{PWM\_9}}\ \ =\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{group___peripheral__registers__structures_ga92ae902be7902560939223dd765ece08}{TIM9\_BASE}},}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a82d9c7d9104cac5a0dbed541471ea395a507a62eefac3b23b6179227ca1c77afc}{PWM\_10}}\ =\ (int)\mbox{\hyperlink{group___peripheral__registers__structures_ga3eff32f3801db31fb4b61d5618cad54a}{TIM10\_BASE}},}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{_peripheral_names_8h_a82d9c7d9104cac5a0dbed541471ea395ab37515bc8d44d117f9c2d46ba4a93582}{PWM\_11}}\ =\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{group___peripheral__registers__structures_ga3a4a06bb84c703084f0509e105ffaf1d}{TIM11\_BASE}}}
+\DoxyCodeLine{00074\ \}\ \mbox{\hyperlink{_peripheral_names_8h_a82d9c7d9104cac5a0dbed541471ea395}{PWMName}};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00077\ \}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

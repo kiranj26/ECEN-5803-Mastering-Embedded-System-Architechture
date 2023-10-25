@@ -1,0 +1,84 @@
+\doxysubsubsubsection{IRDA\+\_\+\+Interrupt\+\_\+definition}
+\hypertarget{group___i_r_d_a___interrupt__definition}{}\label{group___i_r_d_a___interrupt__definition}\index{IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_ga1d2b4b601ece8f1ab0b2542412bb2533}{IRDA\+\_\+\+IT\+\_\+\+PE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000100)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_ga5e81e9fd3d52bafcf21281c10d2ca257}{IRDA\+\_\+\+IT\+\_\+\+TXE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000080)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_gadd3e4b796b67db171ca04c5297d4e667}{IRDA\+\_\+\+IT\+\_\+\+TC}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000040)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_ga8f2de9c6c3cccfb2de0277ce10f23b13}{IRDA\+\_\+\+IT\+\_\+\+RXNE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000020)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_ga32dfb69029c5576d82feb59129d11000}{IRDA\+\_\+\+IT\+\_\+\+IDLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000010)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_ga2d08dacfa9795cec98fa67f91a29ba53}{IRDA\+\_\+\+IT\+\_\+\+LBD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x20000040)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_gaf74d3cd0cf4b22c53718a267ae9a1174}{IRDA\+\_\+\+IT\+\_\+\+CTS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000400)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_ga5649210cc5343a80483178849a11ac66}{IRDA\+\_\+\+IT\+\_\+\+ERR}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000001)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Elements values convention\+: 0x\+Y000\+XXXX
+\begin{DoxyItemize}
+\item XXXX \+: Interrupt mask in the XX register
+\item Y \+: Interrupt source register (2bits)
+\begin{DoxyItemize}
+\item 01\+: CR1 register
+\item 10\+: CR2 register
+\item 11\+: CR3 register 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___i_r_d_a___interrupt__definition_gaf74d3cd0cf4b22c53718a267ae9a1174}\label{group___i_r_d_a___interrupt__definition_gaf74d3cd0cf4b22c53718a267ae9a1174} 
+\index{IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}!IRDA\_IT\_CTS@{IRDA\_IT\_CTS}}
+\index{IRDA\_IT\_CTS@{IRDA\_IT\_CTS}!IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IRDA\_IT\_CTS}{IRDA\_IT\_CTS}}
+{\footnotesize\ttfamily \#define IRDA\+\_\+\+IT\+\_\+\+CTS~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000400)}
+
+\Hypertarget{group___i_r_d_a___interrupt__definition_ga5649210cc5343a80483178849a11ac66}\label{group___i_r_d_a___interrupt__definition_ga5649210cc5343a80483178849a11ac66} 
+\index{IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}!IRDA\_IT\_ERR@{IRDA\_IT\_ERR}}
+\index{IRDA\_IT\_ERR@{IRDA\_IT\_ERR}!IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IRDA\_IT\_ERR}{IRDA\_IT\_ERR}}
+{\footnotesize\ttfamily \#define IRDA\+\_\+\+IT\+\_\+\+ERR~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000001)}
+
+\Hypertarget{group___i_r_d_a___interrupt__definition_ga32dfb69029c5576d82feb59129d11000}\label{group___i_r_d_a___interrupt__definition_ga32dfb69029c5576d82feb59129d11000} 
+\index{IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}!IRDA\_IT\_IDLE@{IRDA\_IT\_IDLE}}
+\index{IRDA\_IT\_IDLE@{IRDA\_IT\_IDLE}!IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IRDA\_IT\_IDLE}{IRDA\_IT\_IDLE}}
+{\footnotesize\ttfamily \#define IRDA\+\_\+\+IT\+\_\+\+IDLE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000010)}
+
+\Hypertarget{group___i_r_d_a___interrupt__definition_ga2d08dacfa9795cec98fa67f91a29ba53}\label{group___i_r_d_a___interrupt__definition_ga2d08dacfa9795cec98fa67f91a29ba53} 
+\index{IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}!IRDA\_IT\_LBD@{IRDA\_IT\_LBD}}
+\index{IRDA\_IT\_LBD@{IRDA\_IT\_LBD}!IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IRDA\_IT\_LBD}{IRDA\_IT\_LBD}}
+{\footnotesize\ttfamily \#define IRDA\+\_\+\+IT\+\_\+\+LBD~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x20000040)}
+
+\Hypertarget{group___i_r_d_a___interrupt__definition_ga1d2b4b601ece8f1ab0b2542412bb2533}\label{group___i_r_d_a___interrupt__definition_ga1d2b4b601ece8f1ab0b2542412bb2533} 
+\index{IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}!IRDA\_IT\_PE@{IRDA\_IT\_PE}}
+\index{IRDA\_IT\_PE@{IRDA\_IT\_PE}!IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IRDA\_IT\_PE}{IRDA\_IT\_PE}}
+{\footnotesize\ttfamily \#define IRDA\+\_\+\+IT\+\_\+\+PE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000100)}
+
+\Hypertarget{group___i_r_d_a___interrupt__definition_ga8f2de9c6c3cccfb2de0277ce10f23b13}\label{group___i_r_d_a___interrupt__definition_ga8f2de9c6c3cccfb2de0277ce10f23b13} 
+\index{IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}!IRDA\_IT\_RXNE@{IRDA\_IT\_RXNE}}
+\index{IRDA\_IT\_RXNE@{IRDA\_IT\_RXNE}!IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IRDA\_IT\_RXNE}{IRDA\_IT\_RXNE}}
+{\footnotesize\ttfamily \#define IRDA\+\_\+\+IT\+\_\+\+RXNE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000020)}
+
+\Hypertarget{group___i_r_d_a___interrupt__definition_gadd3e4b796b67db171ca04c5297d4e667}\label{group___i_r_d_a___interrupt__definition_gadd3e4b796b67db171ca04c5297d4e667} 
+\index{IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}!IRDA\_IT\_TC@{IRDA\_IT\_TC}}
+\index{IRDA\_IT\_TC@{IRDA\_IT\_TC}!IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IRDA\_IT\_TC}{IRDA\_IT\_TC}}
+{\footnotesize\ttfamily \#define IRDA\+\_\+\+IT\+\_\+\+TC~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000040)}
+
+\Hypertarget{group___i_r_d_a___interrupt__definition_ga5e81e9fd3d52bafcf21281c10d2ca257}\label{group___i_r_d_a___interrupt__definition_ga5e81e9fd3d52bafcf21281c10d2ca257} 
+\index{IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}!IRDA\_IT\_TXE@{IRDA\_IT\_TXE}}
+\index{IRDA\_IT\_TXE@{IRDA\_IT\_TXE}!IRDA\_Interrupt\_definition@{IRDA\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IRDA\_IT\_TXE}{IRDA\_IT\_TXE}}
+{\footnotesize\ttfamily \#define IRDA\+\_\+\+IT\+\_\+\+TXE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000080)}
+

@@ -1,0 +1,83 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/hal\+\_\+tick.h File Reference}
+\hypertarget{hal__tick_8h}{}\label{hal__tick_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/hal\_tick.h@{mbed/TARGET\_NUCLEO\_F401RE/hal\_tick.h}}
+
+
+Initialization of HAL tick.  
+
+
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+{\ttfamily \#include "{}cmsis\+\_\+nvic.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{hal__tick_8h_ad2b99757a526068ad1844e1ad922819b}{TIM\+\_\+\+MST}}~\mbox{\hyperlink{group___peripheral__declaration_ga5125ff6a23a2ed66e2e19bd196128c14}{TIM5}}
+\item 
+\#define \mbox{\hyperlink{hal__tick_8h_acf115d485a4f16d7054e9f9eeefd6829}{TIM\+\_\+\+MST\+\_\+\+IRQ}}~\mbox{\hyperlink{group___peripheral__interrupt__number__definition_gga7e1129cd8a196f4284d41db3e82ad5c8aed2eb3f4bb721d55fcc1003125956645}{TIM5\+\_\+\+IRQn}}
+\item 
+\#define \mbox{\hyperlink{hal__tick_8h_a0e271dbcf7843b6e1c9e3166e31dfbf4}{TIM\+\_\+\+MST\+\_\+\+RCC}}~\mbox{\hyperlink{group___r_c_c_gad2485d0197a56254fc9c80570784f5fe}{\+\_\+\+\_\+\+TIM5\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{hal__tick_8h_a1ccbe995990c4491505333e9344427a7}{TIM\+\_\+\+MST\+\_\+\+RESET\+\_\+\+ON}}~\mbox{\hyperlink{group___r_c_c_ga217564823b49010e8db839aaa99a1ad2}{\+\_\+\+\_\+\+TIM5\+\_\+\+FORCE\+\_\+\+RESET}}()
+\item 
+\#define \mbox{\hyperlink{hal__tick_8h_ae077c54e7078e604f0e846744498f540}{TIM\+\_\+\+MST\+\_\+\+RESET\+\_\+\+OFF}}~\mbox{\hyperlink{group___r_c_c_ga66d74a61010bd19adeb2717aa434081e}{\+\_\+\+\_\+\+TIM5\+\_\+\+RELEASE\+\_\+\+RESET}}()
+\item 
+\#define \mbox{\hyperlink{hal__tick_8h_a9df533781a3f6b1dc447313e50f618fd}{HAL\+\_\+\+TICK\+\_\+\+DELAY}}~(1000)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Initialization of HAL tick. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{hal__tick_8h_a9df533781a3f6b1dc447313e50f618fd}\label{hal__tick_8h_a9df533781a3f6b1dc447313e50f618fd} 
+\index{hal\_tick.h@{hal\_tick.h}!HAL\_TICK\_DELAY@{HAL\_TICK\_DELAY}}
+\index{HAL\_TICK\_DELAY@{HAL\_TICK\_DELAY}!hal\_tick.h@{hal\_tick.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_TICK\_DELAY}{HAL\_TICK\_DELAY}}
+{\footnotesize\ttfamily \#define HAL\+\_\+\+TICK\+\_\+\+DELAY~(1000)}
+
+\Hypertarget{hal__tick_8h_ad2b99757a526068ad1844e1ad922819b}\label{hal__tick_8h_ad2b99757a526068ad1844e1ad922819b} 
+\index{hal\_tick.h@{hal\_tick.h}!TIM\_MST@{TIM\_MST}}
+\index{TIM\_MST@{TIM\_MST}!hal\_tick.h@{hal\_tick.h}}
+\doxysubsubsection{\texorpdfstring{TIM\_MST}{TIM\_MST}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+MST~\mbox{\hyperlink{group___peripheral__declaration_ga5125ff6a23a2ed66e2e19bd196128c14}{TIM5}}}
+
+\Hypertarget{hal__tick_8h_acf115d485a4f16d7054e9f9eeefd6829}\label{hal__tick_8h_acf115d485a4f16d7054e9f9eeefd6829} 
+\index{hal\_tick.h@{hal\_tick.h}!TIM\_MST\_IRQ@{TIM\_MST\_IRQ}}
+\index{TIM\_MST\_IRQ@{TIM\_MST\_IRQ}!hal\_tick.h@{hal\_tick.h}}
+\doxysubsubsection{\texorpdfstring{TIM\_MST\_IRQ}{TIM\_MST\_IRQ}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+MST\+\_\+\+IRQ~\mbox{\hyperlink{group___peripheral__interrupt__number__definition_gga7e1129cd8a196f4284d41db3e82ad5c8aed2eb3f4bb721d55fcc1003125956645}{TIM5\+\_\+\+IRQn}}}
+
+\Hypertarget{hal__tick_8h_a0e271dbcf7843b6e1c9e3166e31dfbf4}\label{hal__tick_8h_a0e271dbcf7843b6e1c9e3166e31dfbf4} 
+\index{hal\_tick.h@{hal\_tick.h}!TIM\_MST\_RCC@{TIM\_MST\_RCC}}
+\index{TIM\_MST\_RCC@{TIM\_MST\_RCC}!hal\_tick.h@{hal\_tick.h}}
+\doxysubsubsection{\texorpdfstring{TIM\_MST\_RCC}{TIM\_MST\_RCC}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+MST\+\_\+\+RCC~\mbox{\hyperlink{group___r_c_c_gad2485d0197a56254fc9c80570784f5fe}{\+\_\+\+\_\+\+TIM5\+\_\+\+CLK\+\_\+\+ENABLE}}()}
+
+\Hypertarget{hal__tick_8h_ae077c54e7078e604f0e846744498f540}\label{hal__tick_8h_ae077c54e7078e604f0e846744498f540} 
+\index{hal\_tick.h@{hal\_tick.h}!TIM\_MST\_RESET\_OFF@{TIM\_MST\_RESET\_OFF}}
+\index{TIM\_MST\_RESET\_OFF@{TIM\_MST\_RESET\_OFF}!hal\_tick.h@{hal\_tick.h}}
+\doxysubsubsection{\texorpdfstring{TIM\_MST\_RESET\_OFF}{TIM\_MST\_RESET\_OFF}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+MST\+\_\+\+RESET\+\_\+\+OFF~\mbox{\hyperlink{group___r_c_c_ga66d74a61010bd19adeb2717aa434081e}{\+\_\+\+\_\+\+TIM5\+\_\+\+RELEASE\+\_\+\+RESET}}()}
+
+\Hypertarget{hal__tick_8h_a1ccbe995990c4491505333e9344427a7}\label{hal__tick_8h_a1ccbe995990c4491505333e9344427a7} 
+\index{hal\_tick.h@{hal\_tick.h}!TIM\_MST\_RESET\_ON@{TIM\_MST\_RESET\_ON}}
+\index{TIM\_MST\_RESET\_ON@{TIM\_MST\_RESET\_ON}!hal\_tick.h@{hal\_tick.h}}
+\doxysubsubsection{\texorpdfstring{TIM\_MST\_RESET\_ON}{TIM\_MST\_RESET\_ON}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+MST\+\_\+\+RESET\+\_\+\+ON~\mbox{\hyperlink{group___r_c_c_ga217564823b49010e8db839aaa99a1ad2}{\+\_\+\+\_\+\+TIM5\+\_\+\+FORCE\+\_\+\+RESET}}()}
+

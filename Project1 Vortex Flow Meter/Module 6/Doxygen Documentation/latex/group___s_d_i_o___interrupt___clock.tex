@@ -1,0 +1,596 @@
+\doxysubsubsection{SDIO\+\_\+\+Interrupt\+\_\+\+Clock}
+\hypertarget{group___s_d_i_o___interrupt___clock}{}\label{group___s_d_i_o___interrupt___clock}\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+
+
+macros to handle interrupts and specific clock configurations  
+
+
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga25d754a9f19a69345b6af096f1f5b2a2}{\+\_\+\+\_\+\+SDIO\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{group___s_d_m_m_c_gabfb5772b9b734972b576309f7ca8bf92}{CLKCR\+\_\+\+CLKEN\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enable the SDIO device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_gad3078138e51a29cf0f1c69c078347d80}{\+\_\+\+\_\+\+SDIO\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{group___s_d_m_m_c_gabfb5772b9b734972b576309f7ca8bf92}{CLKCR\+\_\+\+CLKEN\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})
+\begin{DoxyCompactList}\small\item\em Disable the SDIO device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga6bda6c5413d3924024b84c98547233fa}{\+\_\+\+\_\+\+SDIO\+\_\+\+DMA\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{group___s_d_m_m_c_ga43f7336d4f955c6cf1f676ccbc043fe9}{DCTRL\+\_\+\+DMAEN\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enable the SDIO DMA transfer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga001ffe6053dc5141eb08980da3851c42}{\+\_\+\+\_\+\+SDIO\+\_\+\+DMA\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{group___s_d_m_m_c_ga43f7336d4f955c6cf1f676ccbc043fe9}{DCTRL\+\_\+\+DMAEN\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})
+\begin{DoxyCompactList}\small\item\em Disable the SDIO DMA transfer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_gaa9e3afaf168e4ca1e0db3384ec19e1b2}{\+\_\+\+\_\+\+SDIO\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$MASK \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the SDIO device interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_gaaf2ed87824de8d4506734a5d1676cc9a}{\+\_\+\+\_\+\+SDIO\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$MASK \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the SDIO device interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_gad758b5b751fca4580841ee7a790fcce7}{\+\_\+\+\_\+\+SDIO\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$STA \&(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) != \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\begin{DoxyCompactList}\small\item\em Checks whether the specified SDIO flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga087683825553ad90ae5a84912fb2596f}{\+\_\+\+\_\+\+SDIO\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$ICR = (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the SDIO\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga813e28dac36317a9b302ddf3ce59d36c}{\+\_\+\+\_\+\+SDIO\+\_\+\+GET\+\_\+\+IT}}~(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+, \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)   (((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$STA \&(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Checks whether the specified SDIO interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_gad93c671a251adeeeaabbc30ed9c49fe4}{\+\_\+\+\_\+\+SDIO\+\_\+\+CLEAR\+\_\+\+IT}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$ICR = (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the SDIO\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga4fa51db0706642889e424baea68cebbd}{\+\_\+\+\_\+\+SDIO\+\_\+\+START\+\_\+\+READWAIT\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_gac776c39dfac0e1ed007217133e1145c3}{DCTRL\+\_\+\+RWSTART\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enable Start the SD I/O Read Wait operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga8956e49532802f7b56606dc618ad3f14}{\+\_\+\+\_\+\+SDIO\+\_\+\+START\+\_\+\+READWAIT\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_gac776c39dfac0e1ed007217133e1145c3}{DCTRL\+\_\+\+RWSTART\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})
+\begin{DoxyCompactList}\small\item\em Disable Start the SD I/O Read Wait operations. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga2ea775c7ca459015fb99c16acf3052d4}{\+\_\+\+\_\+\+SDIO\+\_\+\+STOP\+\_\+\+READWAIT\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga678da1db835676b0fb1976cf3408e2d1}{DCTRL\+\_\+\+RWSTOP\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enable Start the SD I/O Read Wait operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga9009c516ab41025c09c4e69cd585cc47}{\+\_\+\+\_\+\+SDIO\+\_\+\+STOP\+\_\+\+READWAIT\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga678da1db835676b0fb1976cf3408e2d1}{DCTRL\+\_\+\+RWSTOP\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})
+\begin{DoxyCompactList}\small\item\em Disable Stop the SD I/O Read Wait operations. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga4120d9386ab66509dec2c98955720ba5}{\+\_\+\+\_\+\+SDIO\+\_\+\+OPERATION\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga894f7da62b89ddd9f4b79d066056a3c7}{DCTRL\+\_\+\+SDIOEN\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enable the SD I/O Mode Operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga9249a178a8353c1dd851d794c3fedb0e}{\+\_\+\+\_\+\+SDIO\+\_\+\+OPERATION\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga894f7da62b89ddd9f4b79d066056a3c7}{DCTRL\+\_\+\+SDIOEN\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})
+\begin{DoxyCompactList}\small\item\em Disable the SD I/O Mode Operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga99032ee66d0e6c1eaa0ac4a78d769cbf}{\+\_\+\+\_\+\+SDIO\+\_\+\+SUSPEND\+\_\+\+CMD\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga931e48aa282e2a937308f57f807e0781}{CMD\+\_\+\+SDIOSUSPEND\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enable the SD I/O Suspend command sending. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga7cfca795ba8a4a68b2a00dba4d81b243}{\+\_\+\+\_\+\+SDIO\+\_\+\+SUSPEND\+\_\+\+CMD\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga931e48aa282e2a937308f57f807e0781}{CMD\+\_\+\+SDIOSUSPEND\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})
+\begin{DoxyCompactList}\small\item\em Disable the SD I/O Suspend command sending. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga3c30ddb66cb268431f13ce2bb1a8013c}{\+\_\+\+\_\+\+SDIO\+\_\+\+CEATA\+\_\+\+CMD\+\_\+\+COMPLETION\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_gade06098d1616639ce5f1b70675280b7c}{CMD\+\_\+\+ENCMDCOMPL\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enable the command completion signal. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_gaff7be6d6e71a9857ab99a121d75e65e3}{\+\_\+\+\_\+\+SDIO\+\_\+\+CEATA\+\_\+\+CMD\+\_\+\+COMPLETION\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_gade06098d1616639ce5f1b70675280b7c}{CMD\+\_\+\+ENCMDCOMPL\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})
+\begin{DoxyCompactList}\small\item\em Disable the command completion signal. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_gaaac661a6c74687fb348b4de5503168c3}{\+\_\+\+\_\+\+SDIO\+\_\+\+CEATA\+\_\+\+ENABLE\+\_\+\+IT}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga08623f1d053677de8b20a6f5f5090edd}{CMD\+\_\+\+NIEN\+\_\+\+BB}} = (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0)
+\begin{DoxyCompactList}\small\item\em Enable the CE-\/\+ATA interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_ga6526c46ef91d13f230ec35f03a69d196}{\+\_\+\+\_\+\+SDIO\+\_\+\+CEATA\+\_\+\+DISABLE\+\_\+\+IT}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga08623f1d053677de8b20a6f5f5090edd}{CMD\+\_\+\+NIEN\+\_\+\+BB}} = (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})1)
+\begin{DoxyCompactList}\small\item\em Disable the CE-\/\+ATA interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_gaed1d0441c3daaf6c0ebb3b54fa9de9f7}{\+\_\+\+\_\+\+SDIO\+\_\+\+CEATA\+\_\+\+SENDCMD\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_gabb7e537f931b6fdd3b49e826f2e19d7c}{CMD\+\_\+\+ATACMD\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enable send CE-\/\+ATA command (CMD61). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt___clock_gaddcc2515dfadbeaa63c6538c15bcfedb}{\+\_\+\+\_\+\+SDIO\+\_\+\+CEATA\+\_\+\+SENDCMD\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_gabb7e537f931b6fdd3b49e826f2e19d7c}{CMD\+\_\+\+ATACMD\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})
+\begin{DoxyCompactList}\small\item\em Disable send CE-\/\+ATA command (CMD61). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+macros to handle interrupts and specific clock configurations 
+
+
+
+\doxysubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___s_d_i_o___interrupt___clock_gaff7be6d6e71a9857ab99a121d75e65e3}\label{group___s_d_i_o___interrupt___clock_gaff7be6d6e71a9857ab99a121d75e65e3} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_CEATA\_CMD\_COMPLETION\_DISABLE@{\_\_SDIO\_CEATA\_CMD\_COMPLETION\_DISABLE}}
+\index{\_\_SDIO\_CEATA\_CMD\_COMPLETION\_DISABLE@{\_\_SDIO\_CEATA\_CMD\_COMPLETION\_DISABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_CEATA\_CMD\_COMPLETION\_DISABLE}{\_\_SDIO\_CEATA\_CMD\_COMPLETION\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+CEATA\+\_\+\+CMD\+\_\+\+COMPLETION\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_gade06098d1616639ce5f1b70675280b7c}{CMD\+\_\+\+ENCMDCOMPL\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})}
+
+
+
+Disable the command completion signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga3c30ddb66cb268431f13ce2bb1a8013c}\label{group___s_d_i_o___interrupt___clock_ga3c30ddb66cb268431f13ce2bb1a8013c} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_CEATA\_CMD\_COMPLETION\_ENABLE@{\_\_SDIO\_CEATA\_CMD\_COMPLETION\_ENABLE}}
+\index{\_\_SDIO\_CEATA\_CMD\_COMPLETION\_ENABLE@{\_\_SDIO\_CEATA\_CMD\_COMPLETION\_ENABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_CEATA\_CMD\_COMPLETION\_ENABLE}{\_\_SDIO\_CEATA\_CMD\_COMPLETION\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+CEATA\+\_\+\+CMD\+\_\+\+COMPLETION\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_gade06098d1616639ce5f1b70675280b7c}{CMD\+\_\+\+ENCMDCOMPL\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})}
+
+
+
+Enable the command completion signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga6526c46ef91d13f230ec35f03a69d196}\label{group___s_d_i_o___interrupt___clock_ga6526c46ef91d13f230ec35f03a69d196} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_CEATA\_DISABLE\_IT@{\_\_SDIO\_CEATA\_DISABLE\_IT}}
+\index{\_\_SDIO\_CEATA\_DISABLE\_IT@{\_\_SDIO\_CEATA\_DISABLE\_IT}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_CEATA\_DISABLE\_IT}{\_\_SDIO\_CEATA\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+CEATA\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga08623f1d053677de8b20a6f5f5090edd}{CMD\+\_\+\+NIEN\+\_\+\+BB}} = (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})1)}
+
+
+
+Disable the CE-\/\+ATA interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_gaaac661a6c74687fb348b4de5503168c3}\label{group___s_d_i_o___interrupt___clock_gaaac661a6c74687fb348b4de5503168c3} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_CEATA\_ENABLE\_IT@{\_\_SDIO\_CEATA\_ENABLE\_IT}}
+\index{\_\_SDIO\_CEATA\_ENABLE\_IT@{\_\_SDIO\_CEATA\_ENABLE\_IT}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_CEATA\_ENABLE\_IT}{\_\_SDIO\_CEATA\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+CEATA\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga08623f1d053677de8b20a6f5f5090edd}{CMD\+\_\+\+NIEN\+\_\+\+BB}} = (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0)}
+
+
+
+Enable the CE-\/\+ATA interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_gaddcc2515dfadbeaa63c6538c15bcfedb}\label{group___s_d_i_o___interrupt___clock_gaddcc2515dfadbeaa63c6538c15bcfedb} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_CEATA\_SENDCMD\_DISABLE@{\_\_SDIO\_CEATA\_SENDCMD\_DISABLE}}
+\index{\_\_SDIO\_CEATA\_SENDCMD\_DISABLE@{\_\_SDIO\_CEATA\_SENDCMD\_DISABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_CEATA\_SENDCMD\_DISABLE}{\_\_SDIO\_CEATA\_SENDCMD\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+CEATA\+\_\+\+SENDCMD\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_gabb7e537f931b6fdd3b49e826f2e19d7c}{CMD\+\_\+\+ATACMD\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})}
+
+
+
+Disable send CE-\/\+ATA command (CMD61). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_gaed1d0441c3daaf6c0ebb3b54fa9de9f7}\label{group___s_d_i_o___interrupt___clock_gaed1d0441c3daaf6c0ebb3b54fa9de9f7} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_CEATA\_SENDCMD\_ENABLE@{\_\_SDIO\_CEATA\_SENDCMD\_ENABLE}}
+\index{\_\_SDIO\_CEATA\_SENDCMD\_ENABLE@{\_\_SDIO\_CEATA\_SENDCMD\_ENABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_CEATA\_SENDCMD\_ENABLE}{\_\_SDIO\_CEATA\_SENDCMD\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+CEATA\+\_\+\+SENDCMD\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_gabb7e537f931b6fdd3b49e826f2e19d7c}{CMD\+\_\+\+ATACMD\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})}
+
+
+
+Enable send CE-\/\+ATA command (CMD61). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga087683825553ad90ae5a84912fb2596f}\label{group___s_d_i_o___interrupt___clock_ga087683825553ad90ae5a84912fb2596f} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_CLEAR\_FLAG@{\_\_SDIO\_CLEAR\_FLAG}}
+\index{\_\_SDIO\_CLEAR\_FLAG@{\_\_SDIO\_CLEAR\_FLAG}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_CLEAR\_FLAG}{\_\_SDIO\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$ICR = (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))}
+
+
+
+Clears the SDIO\textquotesingle{}s pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+} & \+: Pointer to SDIO register base ~\newline
+ \\
+\hline
+{\em \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+} & specifies the flag to clear. ~\newline
+ This parameter can be one or a combination of the following values\+: \begin{DoxyItemize}
+\item SDIO\+\_\+\+FLAG\+\_\+\+CCRCFAIL\+: Command response received (CRC check failed) \item SDIO\+\_\+\+FLAG\+\_\+\+DCRCFAIL\+: Data block sent/received (CRC check failed) \item SDIO\+\_\+\+FLAG\+\_\+\+CTIMEOUT\+: Command response timeout \item SDIO\+\_\+\+FLAG\+\_\+\+DTIMEOUT\+: Data timeout \item SDIO\+\_\+\+FLAG\+\_\+\+TXUNDERR\+: Transmit FIFO underrun error \item SDIO\+\_\+\+FLAG\+\_\+\+RXOVERR\+: Received FIFO overrun error \item SDIO\+\_\+\+FLAG\+\_\+\+CMDREND\+: Command response received (CRC check passed) \item SDIO\+\_\+\+FLAG\+\_\+\+CMDSENT\+: Command sent (no response required) \item SDIO\+\_\+\+FLAG\+\_\+\+DATAEND\+: Data end (data counter, SDIDCOUNT, is zero) \item SDIO\+\_\+\+FLAG\+\_\+\+STBITERR\+: Start bit not detected on all data signals in wide bus mode \item SDIO\+\_\+\+FLAG\+\_\+\+DBCKEND\+: Data block sent/received (CRC check passed) \item SDIO\+\_\+\+FLAG\+\_\+\+SDIOIT\+: SD I/O interrupt received \item SDIO\+\_\+\+FLAG\+\_\+\+CEATAEND\+: CE-\/\+ATA command completion signal received for CMD61 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_gad93c671a251adeeeaabbc30ed9c49fe4}\label{group___s_d_i_o___interrupt___clock_gad93c671a251adeeeaabbc30ed9c49fe4} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_CLEAR\_IT@{\_\_SDIO\_CLEAR\_IT}}
+\index{\_\_SDIO\_CLEAR\_IT@{\_\_SDIO\_CLEAR\_IT}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_CLEAR\_IT}{\_\_SDIO\_CLEAR\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+CLEAR\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$ICR = (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Clears the SDIO\textquotesingle{}s interrupt pending bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+} & \+: Pointer to SDIO register base \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & specifies the interrupt pending bit to clear. This parameter can be one or a combination of the following values\+: \begin{DoxyItemize}
+\item SDIO\+\_\+\+IT\+\_\+\+CCRCFAIL\+: Command response received (CRC check failed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+DCRCFAIL\+: Data block sent/received (CRC check failed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+CTIMEOUT\+: Command response timeout interrupt \item SDIO\+\_\+\+IT\+\_\+\+DTIMEOUT\+: Data timeout interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXUNDERR\+: Transmit FIFO underrun error interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXOVERR\+: Received FIFO overrun error interrupt \item SDIO\+\_\+\+IT\+\_\+\+CMDREND\+: Command response received (CRC check passed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+CMDSENT\+: Command sent (no response required) interrupt \item SDIO\+\_\+\+IT\+\_\+\+DATAEND\+: Data end (data counter, SDIO\+\_\+\+DCOUNT, is zero) interrupt \item SDIO\+\_\+\+IT\+\_\+\+STBITERR\+: Start bit not detected on all data signals in wide bus mode interrupt \item SDIO\+\_\+\+IT\+\_\+\+SDIOIT\+: SD I/O interrupt received interrupt \item SDIO\+\_\+\+IT\+\_\+\+CEATAEND\+: CE-\/\+ATA command completion signal received for CMD61 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_gad3078138e51a29cf0f1c69c078347d80}\label{group___s_d_i_o___interrupt___clock_gad3078138e51a29cf0f1c69c078347d80} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_DISABLE@{\_\_SDIO\_DISABLE}}
+\index{\_\_SDIO\_DISABLE@{\_\_SDIO\_DISABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_DISABLE}{\_\_SDIO\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{group___s_d_m_m_c_gabfb5772b9b734972b576309f7ca8bf92}{CLKCR\+\_\+\+CLKEN\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})}
+
+
+
+Disable the SDIO device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_gaaf2ed87824de8d4506734a5d1676cc9a}\label{group___s_d_i_o___interrupt___clock_gaaf2ed87824de8d4506734a5d1676cc9a} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_DISABLE\_IT@{\_\_SDIO\_DISABLE\_IT}}
+\index{\_\_SDIO\_DISABLE\_IT@{\_\_SDIO\_DISABLE\_IT}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_DISABLE\_IT}{\_\_SDIO\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$MASK \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Disable the SDIO device interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+} & \+: Pointer to SDIO register base ~\newline
+ \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & \+: specifies the SDIO interrupt sources to be disabled. This parameter can be one or a combination of the following values\+: \begin{DoxyItemize}
+\item SDIO\+\_\+\+IT\+\_\+\+CCRCFAIL\+: Command response received (CRC check failed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+DCRCFAIL\+: Data block sent/received (CRC check failed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+CTIMEOUT\+: Command response timeout interrupt \item SDIO\+\_\+\+IT\+\_\+\+DTIMEOUT\+: Data timeout interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXUNDERR\+: Transmit FIFO underrun error interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXOVERR\+: Received FIFO overrun error interrupt \item SDIO\+\_\+\+IT\+\_\+\+CMDREND\+: Command response received (CRC check passed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+CMDSENT\+: Command sent (no response required) interrupt \item SDIO\+\_\+\+IT\+\_\+\+DATAEND\+: Data end (data counter, SDIDCOUNT, is zero) interrupt \item SDIO\+\_\+\+IT\+\_\+\+STBITERR\+: Start bit not detected on all data signals in wide bus mode interrupt \item SDIO\+\_\+\+IT\+\_\+\+DBCKEND\+: Data block sent/received (CRC check passed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+CMDACT\+: Command transfer in progress interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXACT\+: Data transmit in progress interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXACT\+: Data receive in progress interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXFIFOHE\+: Transmit FIFO Half Empty interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXFIFOHF\+: Receive FIFO Half Full interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXFIFOF\+: Transmit FIFO full interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXFIFOF\+: Receive FIFO full interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXFIFOE\+: Transmit FIFO empty interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXFIFOE\+: Receive FIFO empty interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXDAVL\+: Data available in transmit FIFO interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXDAVL\+: Data available in receive FIFO interrupt \item SDIO\+\_\+\+IT\+\_\+\+SDIOIT\+: SD I/O interrupt received interrupt \item SDIO\+\_\+\+IT\+\_\+\+CEATAEND\+: CE-\/\+ATA command completion signal received for CMD61 interrupt ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga001ffe6053dc5141eb08980da3851c42}\label{group___s_d_i_o___interrupt___clock_ga001ffe6053dc5141eb08980da3851c42} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_DMA\_DISABLE@{\_\_SDIO\_DMA\_DISABLE}}
+\index{\_\_SDIO\_DMA\_DISABLE@{\_\_SDIO\_DMA\_DISABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_DMA\_DISABLE}{\_\_SDIO\_DMA\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+DMA\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{group___s_d_m_m_c_ga43f7336d4f955c6cf1f676ccbc043fe9}{DCTRL\+\_\+\+DMAEN\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})}
+
+
+
+Disable the SDIO DMA transfer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga6bda6c5413d3924024b84c98547233fa}\label{group___s_d_i_o___interrupt___clock_ga6bda6c5413d3924024b84c98547233fa} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_DMA\_ENABLE@{\_\_SDIO\_DMA\_ENABLE}}
+\index{\_\_SDIO\_DMA\_ENABLE@{\_\_SDIO\_DMA\_ENABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_DMA\_ENABLE}{\_\_SDIO\_DMA\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+DMA\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{group___s_d_m_m_c_ga43f7336d4f955c6cf1f676ccbc043fe9}{DCTRL\+\_\+\+DMAEN\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})}
+
+
+
+Enable the SDIO DMA transfer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga25d754a9f19a69345b6af096f1f5b2a2}\label{group___s_d_i_o___interrupt___clock_ga25d754a9f19a69345b6af096f1f5b2a2} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_ENABLE@{\_\_SDIO\_ENABLE}}
+\index{\_\_SDIO\_ENABLE@{\_\_SDIO\_ENABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_ENABLE}{\_\_SDIO\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{group___s_d_m_m_c_gabfb5772b9b734972b576309f7ca8bf92}{CLKCR\+\_\+\+CLKEN\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})}
+
+
+
+Enable the SDIO device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_gaa9e3afaf168e4ca1e0db3384ec19e1b2}\label{group___s_d_i_o___interrupt___clock_gaa9e3afaf168e4ca1e0db3384ec19e1b2} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_ENABLE\_IT@{\_\_SDIO\_ENABLE\_IT}}
+\index{\_\_SDIO\_ENABLE\_IT@{\_\_SDIO\_ENABLE\_IT}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_ENABLE\_IT}{\_\_SDIO\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$MASK \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Enable the SDIO device interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+} & \+: Pointer to SDIO register base ~\newline
+ \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & \+: specifies the SDIO interrupt sources to be enabled. This parameter can be one or a combination of the following values\+: \begin{DoxyItemize}
+\item SDIO\+\_\+\+IT\+\_\+\+CCRCFAIL\+: Command response received (CRC check failed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+DCRCFAIL\+: Data block sent/received (CRC check failed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+CTIMEOUT\+: Command response timeout interrupt \item SDIO\+\_\+\+IT\+\_\+\+DTIMEOUT\+: Data timeout interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXUNDERR\+: Transmit FIFO underrun error interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXOVERR\+: Received FIFO overrun error interrupt \item SDIO\+\_\+\+IT\+\_\+\+CMDREND\+: Command response received (CRC check passed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+CMDSENT\+: Command sent (no response required) interrupt \item SDIO\+\_\+\+IT\+\_\+\+DATAEND\+: Data end (data counter, SDIDCOUNT, is zero) interrupt \item SDIO\+\_\+\+IT\+\_\+\+STBITERR\+: Start bit not detected on all data signals in wide bus mode interrupt \item SDIO\+\_\+\+IT\+\_\+\+DBCKEND\+: Data block sent/received (CRC check passed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+CMDACT\+: Command transfer in progress interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXACT\+: Data transmit in progress interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXACT\+: Data receive in progress interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXFIFOHE\+: Transmit FIFO Half Empty interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXFIFOHF\+: Receive FIFO Half Full interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXFIFOF\+: Transmit FIFO full interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXFIFOF\+: Receive FIFO full interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXFIFOE\+: Transmit FIFO empty interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXFIFOE\+: Receive FIFO empty interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXDAVL\+: Data available in transmit FIFO interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXDAVL\+: Data available in receive FIFO interrupt \item SDIO\+\_\+\+IT\+\_\+\+SDIOIT\+: SD I/O interrupt received interrupt \item SDIO\+\_\+\+IT\+\_\+\+CEATAEND\+: CE-\/\+ATA command completion signal received for CMD61 interrupt ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_gad758b5b751fca4580841ee7a790fcce7}\label{group___s_d_i_o___interrupt___clock_gad758b5b751fca4580841ee7a790fcce7} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_GET\_FLAG@{\_\_SDIO\_GET\_FLAG}}
+\index{\_\_SDIO\_GET\_FLAG@{\_\_SDIO\_GET\_FLAG}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_GET\_FLAG}{\_\_SDIO\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$STA \&(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) != \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+
+
+Checks whether the specified SDIO flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+} & \+: Pointer to SDIO register base ~\newline
+ \\
+\hline
+{\em \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item SDIO\+\_\+\+FLAG\+\_\+\+CCRCFAIL\+: Command response received (CRC check failed) \item SDIO\+\_\+\+FLAG\+\_\+\+DCRCFAIL\+: Data block sent/received (CRC check failed) \item SDIO\+\_\+\+FLAG\+\_\+\+CTIMEOUT\+: Command response timeout \item SDIO\+\_\+\+FLAG\+\_\+\+DTIMEOUT\+: Data timeout \item SDIO\+\_\+\+FLAG\+\_\+\+TXUNDERR\+: Transmit FIFO underrun error \item SDIO\+\_\+\+FLAG\+\_\+\+RXOVERR\+: Received FIFO overrun error \item SDIO\+\_\+\+FLAG\+\_\+\+CMDREND\+: Command response received (CRC check passed) \item SDIO\+\_\+\+FLAG\+\_\+\+CMDSENT\+: Command sent (no response required) \item SDIO\+\_\+\+FLAG\+\_\+\+DATAEND\+: Data end (data counter, SDIDCOUNT, is zero) \item SDIO\+\_\+\+FLAG\+\_\+\+STBITERR\+: Start bit not detected on all data signals in wide bus mode. \item SDIO\+\_\+\+FLAG\+\_\+\+DBCKEND\+: Data block sent/received (CRC check passed) \item SDIO\+\_\+\+FLAG\+\_\+\+CMDACT\+: Command transfer in progress \item SDIO\+\_\+\+FLAG\+\_\+\+TXACT\+: Data transmit in progress \item SDIO\+\_\+\+FLAG\+\_\+\+RXACT\+: Data receive in progress \item SDIO\+\_\+\+FLAG\+\_\+\+TXFIFOHE\+: Transmit FIFO Half Empty \item SDIO\+\_\+\+FLAG\+\_\+\+RXFIFOHF\+: Receive FIFO Half Full \item SDIO\+\_\+\+FLAG\+\_\+\+TXFIFOF\+: Transmit FIFO full \item SDIO\+\_\+\+FLAG\+\_\+\+RXFIFOF\+: Receive FIFO full \item SDIO\+\_\+\+FLAG\+\_\+\+TXFIFOE\+: Transmit FIFO empty \item SDIO\+\_\+\+FLAG\+\_\+\+RXFIFOE\+: Receive FIFO empty \item SDIO\+\_\+\+FLAG\+\_\+\+TXDAVL\+: Data available in transmit FIFO \item SDIO\+\_\+\+FLAG\+\_\+\+RXDAVL\+: Data available in receive FIFO \item SDIO\+\_\+\+FLAG\+\_\+\+SDIOIT\+: SD I/O interrupt received \item SDIO\+\_\+\+FLAG\+\_\+\+CEATAEND\+: CE-\/\+ATA command completion signal received for CMD61 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of SDIO\+\_\+\+FLAG (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga813e28dac36317a9b302ddf3ce59d36c}\label{group___s_d_i_o___interrupt___clock_ga813e28dac36317a9b302ddf3ce59d36c} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_GET\_IT@{\_\_SDIO\_GET\_IT}}
+\index{\_\_SDIO\_GET\_IT@{\_\_SDIO\_GET\_IT}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_GET\_IT}{\_\_SDIO\_GET\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+GET\+\_\+\+IT~(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+, \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)   (((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$STA \&(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Checks whether the specified SDIO interrupt has occurred or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+} & \+: Pointer to SDIO register base ~\newline
+ \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & specifies the SDIO interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item SDIO\+\_\+\+IT\+\_\+\+CCRCFAIL\+: Command response received (CRC check failed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+DCRCFAIL\+: Data block sent/received (CRC check failed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+CTIMEOUT\+: Command response timeout interrupt \item SDIO\+\_\+\+IT\+\_\+\+DTIMEOUT\+: Data timeout interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXUNDERR\+: Transmit FIFO underrun error interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXOVERR\+: Received FIFO overrun error interrupt \item SDIO\+\_\+\+IT\+\_\+\+CMDREND\+: Command response received (CRC check passed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+CMDSENT\+: Command sent (no response required) interrupt \item SDIO\+\_\+\+IT\+\_\+\+DATAEND\+: Data end (data counter, SDIDCOUNT, is zero) interrupt \item SDIO\+\_\+\+IT\+\_\+\+STBITERR\+: Start bit not detected on all data signals in wide bus mode interrupt \item SDIO\+\_\+\+IT\+\_\+\+DBCKEND\+: Data block sent/received (CRC check passed) interrupt \item SDIO\+\_\+\+IT\+\_\+\+CMDACT\+: Command transfer in progress interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXACT\+: Data transmit in progress interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXACT\+: Data receive in progress interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXFIFOHE\+: Transmit FIFO Half Empty interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXFIFOHF\+: Receive FIFO Half Full interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXFIFOF\+: Transmit FIFO full interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXFIFOF\+: Receive FIFO full interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXFIFOE\+: Transmit FIFO empty interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXFIFOE\+: Receive FIFO empty interrupt \item SDIO\+\_\+\+IT\+\_\+\+TXDAVL\+: Data available in transmit FIFO interrupt \item SDIO\+\_\+\+IT\+\_\+\+RXDAVL\+: Data available in receive FIFO interrupt \item SDIO\+\_\+\+IT\+\_\+\+SDIOIT\+: SD I/O interrupt received interrupt \item SDIO\+\_\+\+IT\+\_\+\+CEATAEND\+: CE-\/\+ATA command completion signal received for CMD61 interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of SDIO\+\_\+\+IT (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga9249a178a8353c1dd851d794c3fedb0e}\label{group___s_d_i_o___interrupt___clock_ga9249a178a8353c1dd851d794c3fedb0e} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_OPERATION\_DISABLE@{\_\_SDIO\_OPERATION\_DISABLE}}
+\index{\_\_SDIO\_OPERATION\_DISABLE@{\_\_SDIO\_OPERATION\_DISABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_OPERATION\_DISABLE}{\_\_SDIO\_OPERATION\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+OPERATION\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga894f7da62b89ddd9f4b79d066056a3c7}{DCTRL\+\_\+\+SDIOEN\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})}
+
+
+
+Disable the SD I/O Mode Operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga4120d9386ab66509dec2c98955720ba5}\label{group___s_d_i_o___interrupt___clock_ga4120d9386ab66509dec2c98955720ba5} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_OPERATION\_ENABLE@{\_\_SDIO\_OPERATION\_ENABLE}}
+\index{\_\_SDIO\_OPERATION\_ENABLE@{\_\_SDIO\_OPERATION\_ENABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_OPERATION\_ENABLE}{\_\_SDIO\_OPERATION\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+OPERATION\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga894f7da62b89ddd9f4b79d066056a3c7}{DCTRL\+\_\+\+SDIOEN\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})}
+
+
+
+Enable the SD I/O Mode Operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga8956e49532802f7b56606dc618ad3f14}\label{group___s_d_i_o___interrupt___clock_ga8956e49532802f7b56606dc618ad3f14} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_START\_READWAIT\_DISABLE@{\_\_SDIO\_START\_READWAIT\_DISABLE}}
+\index{\_\_SDIO\_START\_READWAIT\_DISABLE@{\_\_SDIO\_START\_READWAIT\_DISABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_START\_READWAIT\_DISABLE}{\_\_SDIO\_START\_READWAIT\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+START\+\_\+\+READWAIT\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_gac776c39dfac0e1ed007217133e1145c3}{DCTRL\+\_\+\+RWSTART\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})}
+
+
+
+Disable Start the SD I/O Read Wait operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga4fa51db0706642889e424baea68cebbd}\label{group___s_d_i_o___interrupt___clock_ga4fa51db0706642889e424baea68cebbd} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_START\_READWAIT\_ENABLE@{\_\_SDIO\_START\_READWAIT\_ENABLE}}
+\index{\_\_SDIO\_START\_READWAIT\_ENABLE@{\_\_SDIO\_START\_READWAIT\_ENABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_START\_READWAIT\_ENABLE}{\_\_SDIO\_START\_READWAIT\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+START\+\_\+\+READWAIT\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_gac776c39dfac0e1ed007217133e1145c3}{DCTRL\+\_\+\+RWSTART\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})}
+
+
+
+Enable Start the SD I/O Read Wait operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga9009c516ab41025c09c4e69cd585cc47}\label{group___s_d_i_o___interrupt___clock_ga9009c516ab41025c09c4e69cd585cc47} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_STOP\_READWAIT\_DISABLE@{\_\_SDIO\_STOP\_READWAIT\_DISABLE}}
+\index{\_\_SDIO\_STOP\_READWAIT\_DISABLE@{\_\_SDIO\_STOP\_READWAIT\_DISABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_STOP\_READWAIT\_DISABLE}{\_\_SDIO\_STOP\_READWAIT\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+STOP\+\_\+\+READWAIT\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga678da1db835676b0fb1976cf3408e2d1}{DCTRL\+\_\+\+RWSTOP\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})}
+
+
+
+Disable Stop the SD I/O Read Wait operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga2ea775c7ca459015fb99c16acf3052d4}\label{group___s_d_i_o___interrupt___clock_ga2ea775c7ca459015fb99c16acf3052d4} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_STOP\_READWAIT\_ENABLE@{\_\_SDIO\_STOP\_READWAIT\_ENABLE}}
+\index{\_\_SDIO\_STOP\_READWAIT\_ENABLE@{\_\_SDIO\_STOP\_READWAIT\_ENABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_STOP\_READWAIT\_ENABLE}{\_\_SDIO\_STOP\_READWAIT\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+STOP\+\_\+\+READWAIT\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga678da1db835676b0fb1976cf3408e2d1}{DCTRL\+\_\+\+RWSTOP\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})}
+
+
+
+Enable Start the SD I/O Read Wait operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga7cfca795ba8a4a68b2a00dba4d81b243}\label{group___s_d_i_o___interrupt___clock_ga7cfca795ba8a4a68b2a00dba4d81b243} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_SUSPEND\_CMD\_DISABLE@{\_\_SDIO\_SUSPEND\_CMD\_DISABLE}}
+\index{\_\_SDIO\_SUSPEND\_CMD\_DISABLE@{\_\_SDIO\_SUSPEND\_CMD\_DISABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_SUSPEND\_CMD\_DISABLE}{\_\_SDIO\_SUSPEND\_CMD\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+SUSPEND\+\_\+\+CMD\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga931e48aa282e2a937308f57f807e0781}{CMD\+\_\+\+SDIOSUSPEND\+\_\+\+BB}} = \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}})}
+
+
+
+Disable the SD I/O Suspend command sending. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_d_i_o___interrupt___clock_ga99032ee66d0e6c1eaa0ac4a78d769cbf}\label{group___s_d_i_o___interrupt___clock_ga99032ee66d0e6c1eaa0ac4a78d769cbf} 
+\index{SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}!\_\_SDIO\_SUSPEND\_CMD\_ENABLE@{\_\_SDIO\_SUSPEND\_CMD\_ENABLE}}
+\index{\_\_SDIO\_SUSPEND\_CMD\_ENABLE@{\_\_SDIO\_SUSPEND\_CMD\_ENABLE}!SDIO\_Interrupt\_Clock@{SDIO\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_SDIO\_SUSPEND\_CMD\_ENABLE}{\_\_SDIO\_SUSPEND\_CMD\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SDIO\+\_\+\+SUSPEND\+\_\+\+CMD\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___s_d_m_m_c_ga931e48aa282e2a937308f57f807e0781}{CMD\+\_\+\+SDIOSUSPEND\+\_\+\+BB}} = \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}})}
+
+
+
+Enable the SD I/O Suspend command sending. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

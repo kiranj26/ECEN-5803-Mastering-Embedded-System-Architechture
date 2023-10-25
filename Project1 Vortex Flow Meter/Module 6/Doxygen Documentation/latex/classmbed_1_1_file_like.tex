@@ -1,0 +1,91 @@
+\doxysection{mbed\+::File\+Like Class Reference}
+\hypertarget{classmbed_1_1_file_like}{}\label{classmbed_1_1_file_like}\index{mbed::FileLike@{mbed::FileLike}}
+
+
+{\ttfamily \#include $<$File\+Like.\+h$>$}
+
+Inheritance diagram for mbed\+::File\+Like\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmbed_1_1_file_like}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_file_like_a45088db3d27b7f4461bf3017dfa959b5}{File\+Like}} (const char \texorpdfstring{$\ast$}{*}name)
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_file_like_adf84a707afcad2c9d4a26bc0babd7e9c}{\texorpdfstring{$\sim$}{\string~}\+File\+Like}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_file_handle}{mbed\+::\+File\+Handle}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual ssize\+\_\+t \mbox{\hyperlink{classmbed_1_1_file_handle_afecb50bd072d06e2a56dbc4f4e68bbf5}{write}} (const void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t length)=0
+\item 
+virtual int \mbox{\hyperlink{classmbed_1_1_file_handle_ac1b885028d295f74d73ff40bf6a352a2}{close}} ()=0
+\item 
+virtual ssize\+\_\+t \mbox{\hyperlink{classmbed_1_1_file_handle_ae51be2d8f51d767ba8cd8c646f211f24}{read}} (void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t length)=0
+\item 
+virtual int \mbox{\hyperlink{classmbed_1_1_file_handle_a7e7936ba41fb44a4f98795fba1d92e83}{isatty}} ()=0
+\item 
+virtual off\+\_\+t \mbox{\hyperlink{classmbed_1_1_file_handle_a75046a7181de9902af9256302d57316a}{lseek}} (off\+\_\+t offset, int whence)=0
+\item 
+virtual int \mbox{\hyperlink{classmbed_1_1_file_handle_a125e7fa0507f9b935f28852ca79190b7}{fsync}} ()=0
+\item 
+virtual off\+\_\+t \mbox{\hyperlink{classmbed_1_1_file_handle_a991dddade770154bd53b613b15a251a9}{flen}} ()
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_file_handle_ab120bb24baa47fb9b86a489ac321a433}{\texorpdfstring{$\sim$}{\string~}\+File\+Handle}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_file_base}{mbed\+::\+File\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_file_base_a8b19f5dfe489eaa641c32a5096c71af1}{File\+Base}} (const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} t)
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_file_base_ac8cc9e6d230ddfe9f9987338071998ec}{\texorpdfstring{$\sim$}{\string~}\+File\+Base}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_a22078733b15abf28045948d24555ceaf}{get\+Name}} (void)
+\item 
+\mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} \mbox{\hyperlink{classmbed_1_1_file_base_a59dd77df265c99a2fa0f7c209d0dba18}{get\+Path\+Type}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_file_base}{mbed\+::\+File\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_a512479427a1a8e4c23bf353babeea9ce}{lookup}} (const char \texorpdfstring{$\ast$}{*}name, unsigned int len)
+\item 
+static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_ab2f9954a536d2c678b9630ffd68c68f2}{get}} (int n)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classmbed_1_1_file_base}{mbed\+::\+File\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_acef47c84dc296ce35d5d2aa3695062af}{\+\_\+next}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_a9f22fa8bd5986c32dcf8e0a19f95e3b5}{\+\_\+name}}
+\item 
+\mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} \mbox{\hyperlink{classmbed_1_1_file_base_ae4a065275d45e77c512ec2d7c10f5d7b}{\+\_\+path\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classmbed_1_1_file_base}{mbed\+::\+File\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_ae9af3d7b863ca499d4e4a779632094f5}{\+\_\+head}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmbed_1_1_file_like_a45088db3d27b7f4461bf3017dfa959b5}\label{classmbed_1_1_file_like_a45088db3d27b7f4461bf3017dfa959b5} 
+\index{mbed::FileLike@{mbed::FileLike}!FileLike@{FileLike}}
+\index{FileLike@{FileLike}!mbed::FileLike@{mbed::FileLike}}
+\doxysubsubsection{\texorpdfstring{FileLike()}{FileLike()}}
+{\footnotesize\ttfamily mbed\+::\+File\+Like\+::\+File\+Like (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{classmbed_1_1_file_like_adf84a707afcad2c9d4a26bc0babd7e9c}\label{classmbed_1_1_file_like_adf84a707afcad2c9d4a26bc0babd7e9c} 
+\index{mbed::FileLike@{mbed::FileLike}!````~FileLike@{\texorpdfstring{$\sim$}{\string~}FileLike}}
+\index{````~FileLike@{\texorpdfstring{$\sim$}{\string~}FileLike}!mbed::FileLike@{mbed::FileLike}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FileLike()}{\string~FileLike()}}
+{\footnotesize\ttfamily virtual mbed\+::\+File\+Like\+::\texorpdfstring{$\sim$}{\string~}\+File\+Like (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\mbox{\hyperlink{_file_like_8h}{File\+Like.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,111 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+def.\+h}
+\hypertarget{stm32f4xx__hal__def_8h_source}{}\label{stm32f4xx__hal__def_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_def.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_def.h}}
+\mbox{\hyperlink{stm32f4xx__hal__def_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_DEF}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_DEF}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00044\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx_8h}{stm32f4xx.h}}"{}}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ }
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}}\ \ \ \ \ \ \ =\ 0x00,}
+\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa5a04e395e501e4e400172c610478c4a4}{HAL\_ERROR}}\ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa8532fa3641ae7c14cb1b0554e2d9cbc7}{HAL\_BUSY}}\ \ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa00c89549bc881c35e8e4cd9e718337e5}{HAL\_TIMEOUT}}\ \ =\ 0x03}
+\DoxyCodeLine{00061\ \}\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ }
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284ba9bd487430440139444e6e7ff226005c0}{HAL\_UNLOCKED}}\ =\ 0x00,}
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284ba656ad5f6dad97210cf3ccf107c033e4d}{HAL\_LOCKED}}\ \ \ =\ 0x01\ \ }
+\DoxyCodeLine{00070\ \}\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\_LockTypeDef}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ \#define\ NULL\ \ \ \ \ \ (void\ *)\ 0}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ HAL\_MAX\_DELAY\ \ \ \ \ \ 0xFFFFFFFF}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ HAL\_IS\_BIT\_SET(REG,\ BIT)\ \ \ \ \ \ \ \ \ (((REG)\ \&\ (BIT))\ !=\ RESET)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ HAL\_IS\_BIT\_CLR(REG,\ BIT)\ \ \ \ \ \ \ \ \ (((REG)\ \&\ (BIT))\ ==\ RESET)}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LINKDMA(\_\_HANDLE\_\_,\ \_\_PPP\_DMA\_FIELD\_\_,\ \_\_DMA\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ do\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>\_\_PPP\_DMA\_FIELD\_\_\ =\ \&(\_\_DMA\_HANDLE\_\_);\ \(\backslash\)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_DMA\_HANDLE\_\_).Parent\ =\ (\_\_HANDLE\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#if\ (USE\_RTOS\ ==\ 1)}}
+\DoxyCodeLine{00089\ \ \ \textcolor{comment}{/*\ Reserved\ for\ future\ use\ */}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \#define\ \_\_HAL\_LOCK(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ do\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if((\_\_HANDLE\_\_)-\/>Lock\ ==\ HAL\_LOCKED)\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ HAL\_BUSY;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Lock\ =\ HAL\_LOCKED;\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}while\ (0)}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \#define\ \_\_HAL\_UNLOCK(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ do\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Lock\ =\ HAL\_UNLOCKED;\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}while\ (0)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USE\_RTOS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#if\ \ defined\ (\ \_\_GNUC\_\_\ )}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\ \ \#ifndef\ \_\_weak}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_weak\ \ \ \_\_attribute\_\_((weak))}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\ \ \#endif\ }\textcolor{comment}{/*\ \_\_weak\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\ \ \#ifndef\ \_\_packed}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_packed\ \_\_attribute\_\_((\_\_packed\_\_))}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ \#endif\ }\textcolor{comment}{/*\ \_\_packed\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_GNUC\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{comment}{/*\ Macro\ to\ get\ variable\ aligned\ on\ 4-\/bytes,\ for\ \_\_ICCARM\_\_\ the\ directive\ "{}\#pragma\ data\_alignment=4"{}\ must\ be\ used\ instead\ */}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#if\ defined\ \ \ (\_\_GNUC\_\_)\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ GNU\ Compiler\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \#ifndef\ \_\_ALIGN\_END}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_ALIGN\_END\ \ \ \ \_\_attribute\_\_\ ((aligned\ (4)))}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\ \ \#endif\ }\textcolor{comment}{/*\ \_\_ALIGN\_END\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \#ifndef\ \_\_ALIGN\_BEGIN\ \ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_ALIGN\_BEGIN}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \#endif\ }\textcolor{comment}{/*\ \_\_ALIGN\_BEGIN\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \#ifndef\ \_\_ALIGN\_END}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_ALIGN\_END}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\ \ \#endif\ }\textcolor{comment}{/*\ \_\_ALIGN\_END\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\ \ \#ifndef\ \_\_ALIGN\_BEGIN\ \ \ \ \ \ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined\ \ \ (\_\_CC\_ARM)\ \ \ \ \ \ }\textcolor{comment}{/*\ ARM\ Compiler\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_ALIGN\_BEGIN\ \ \ \ \_\_align(4)\ \ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\ \ \ \ \#elif\ defined\ (\_\_ICCARM\_\_)\ \ \ \ }\textcolor{comment}{/*\ IAR\ Compiler\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_ALIGN\_BEGIN\ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\ \ \ \ \#elif\ defined\ \ (\_\_TASKING\_\_)\ \ }\textcolor{comment}{/*\ TASKING\ Compiler\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_ALIGN\_BEGIN\ \ \ \ \_\_align(4)\ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\ \ \ \ \#endif\ }\textcolor{comment}{/*\ \_\_CC\_ARM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\ \ \#endif\ }\textcolor{comment}{/*\ \_\_ALIGN\_BEGIN\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_GNUC\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00143\ \}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_\_STM32F4xx\_HAL\_DEF\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

@@ -1,0 +1,82 @@
+\doxysection{IRDA\+\_\+\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_i_r_d_a___init_type_def}{}\label{struct_i_r_d_a___init_type_def}\index{IRDA\_InitTypeDef@{IRDA\_InitTypeDef}}
+
+
+IRDA Init Structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal\+\_\+irda.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_i_r_d_a___init_type_def_a3a96057c13882e04fde01040b18a0eec}{Baud\+Rate}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_i_r_d_a___init_type_def_a0a9bfafe2a9b00be86cd7b75788391ed}{Word\+Length}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_i_r_d_a___init_type_def_ac8a66f175e3502bba61409c7c08649b0}{Parity}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_i_r_d_a___init_type_def_ad10e4fcdb63d30534ce771d57c0f3ffb}{Mode}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_i_r_d_a___init_type_def_afb7e30279f08cd39a40ec49e8887fe36}{Prescaler}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_i_r_d_a___init_type_def_a88f1b73ae470fddd4e75b70cf5175040}{Ir\+DAMode}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+IRDA Init Structure definition ~\newline
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_i_r_d_a___init_type_def_a3a96057c13882e04fde01040b18a0eec}\label{struct_i_r_d_a___init_type_def_a3a96057c13882e04fde01040b18a0eec} 
+\index{IRDA\_InitTypeDef@{IRDA\_InitTypeDef}!BaudRate@{BaudRate}}
+\index{BaudRate@{BaudRate}!IRDA\_InitTypeDef@{IRDA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{BaudRate}{BaudRate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} IRDA\+\_\+\+Init\+Type\+Def\+::\+Baud\+Rate}
+
+This member configures the IRDA communication baud rate. The baud rate is computed using the following formula\+:
+\begin{DoxyItemize}
+\item Integer\+Divider = ((PCLKx) / (8 \texorpdfstring{$\ast$}{*} (hirda-\/\texorpdfstring{$>$}{>}Init.\+Baud\+Rate)))
+\item Fractional\+Divider = ((Integer\+Divider -\/ ((uint32\+\_\+t) Integer\+Divider)) \texorpdfstring{$\ast$}{*} 8) + 0.\+5 
+\end{DoxyItemize}\Hypertarget{struct_i_r_d_a___init_type_def_a88f1b73ae470fddd4e75b70cf5175040}\label{struct_i_r_d_a___init_type_def_a88f1b73ae470fddd4e75b70cf5175040} 
+\index{IRDA\_InitTypeDef@{IRDA\_InitTypeDef}!IrDAMode@{IrDAMode}}
+\index{IrDAMode@{IrDAMode}!IRDA\_InitTypeDef@{IRDA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{IrDAMode}{IrDAMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} IRDA\+\_\+\+Init\+Type\+Def\+::\+Ir\+DAMode}
+
+Specifies the Ir\+DA mode This parameter can be a value of \doxylink{group___ir_d_a___low___power}{Ir\+DA\+\_\+\+Low\+\_\+\+Power} \Hypertarget{struct_i_r_d_a___init_type_def_ad10e4fcdb63d30534ce771d57c0f3ffb}\label{struct_i_r_d_a___init_type_def_ad10e4fcdb63d30534ce771d57c0f3ffb} 
+\index{IRDA\_InitTypeDef@{IRDA\_InitTypeDef}!Mode@{Mode}}
+\index{Mode@{Mode}!IRDA\_InitTypeDef@{IRDA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} IRDA\+\_\+\+Init\+Type\+Def\+::\+Mode}
+
+Specifies wether the Receive or Transmit mode is enabled or disabled. This parameter can be a value of \doxylink{group___i_r_d_a___mode}{IRDA\+\_\+\+Mode} \Hypertarget{struct_i_r_d_a___init_type_def_ac8a66f175e3502bba61409c7c08649b0}\label{struct_i_r_d_a___init_type_def_ac8a66f175e3502bba61409c7c08649b0} 
+\index{IRDA\_InitTypeDef@{IRDA\_InitTypeDef}!Parity@{Parity}}
+\index{Parity@{Parity}!IRDA\_InitTypeDef@{IRDA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Parity}{Parity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} IRDA\+\_\+\+Init\+Type\+Def\+::\+Parity}
+
+Specifies the parity mode. This parameter can be a value of \doxylink{group___i_r_d_a___parity}{IRDA\+\_\+\+Parity} \begin{DoxyNote}{Note}
+When parity is enabled, the computed parity is inserted at the MSB position of the transmitted data (9th bit when the word length is set to 9 data bits; 8th bit when the word length is set to 8 data bits). 
+\end{DoxyNote}
+\Hypertarget{struct_i_r_d_a___init_type_def_afb7e30279f08cd39a40ec49e8887fe36}\label{struct_i_r_d_a___init_type_def_afb7e30279f08cd39a40ec49e8887fe36} 
+\index{IRDA\_InitTypeDef@{IRDA\_InitTypeDef}!Prescaler@{Prescaler}}
+\index{Prescaler@{Prescaler}!IRDA\_InitTypeDef@{IRDA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Prescaler}{Prescaler}}
+{\footnotesize\ttfamily uint8\+\_\+t IRDA\+\_\+\+Init\+Type\+Def\+::\+Prescaler}
+
+Specifies the Prescaler \Hypertarget{struct_i_r_d_a___init_type_def_a0a9bfafe2a9b00be86cd7b75788391ed}\label{struct_i_r_d_a___init_type_def_a0a9bfafe2a9b00be86cd7b75788391ed} 
+\index{IRDA\_InitTypeDef@{IRDA\_InitTypeDef}!WordLength@{WordLength}}
+\index{WordLength@{WordLength}!IRDA\_InitTypeDef@{IRDA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{WordLength}{WordLength}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} IRDA\+\_\+\+Init\+Type\+Def\+::\+Word\+Length}
+
+Specifies the number of data bits transmitted or received in a frame. This parameter can be a value of \doxylink{group___i_r_d_a___word___length}{IRDA\+\_\+\+Word\+\_\+\+Length} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/\mbox{\hyperlink{stm32f4xx__hal__irda_8h}{stm32f4xx\+\_\+hal\+\_\+irda.\+h}}\end{DoxyCompactItemize}

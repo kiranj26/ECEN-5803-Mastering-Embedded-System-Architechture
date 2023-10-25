@@ -1,0 +1,92 @@
+\doxysection{flow.\+cpp File Reference}
+\hypertarget{flow_8cpp}{}\label{flow_8cpp}\index{flow.cpp@{flow.cpp}}
+
+
+Implements flow calculation based on temperature and ADC readings for STM32\+F401xE.  
+
+
+{\ttfamily \#include "{}flow.\+h"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include "{}adc.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{flow_8cpp_a0ebb1d831778fb42f1350547a2bc65fb}{calculate\+\_\+flow}} (void)
+\begin{DoxyCompactList}\small\item\em Calculates the fluid flow based on temperature, density, and viscosity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{flow_8cpp_ac46e821ae08930cc9e257642e34275a3}{velocity}} = 10
+\begin{DoxyCompactList}\small\item\em Initial velocity value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{flow_8cpp_a8c01ee33c4f18e77d6d860d1017ca532}{flow}}
+\begin{DoxyCompactList}\small\item\em Calculated flow value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{flow_8cpp_afc1d28cfbce795d6ea954ebe725241f5}{temperature}}
+\begin{DoxyCompactList}\small\item\em Temperature in Celsius. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{flow_8cpp_a9d3c19e881c80a6596884ecb8da4a0f4}{Frequency}}
+\begin{DoxyCompactList}\small\item\em External reference to frequency calculated from ADC readings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements flow calculation based on temperature and ADC readings for STM32\+F401xE. 
+
+\begin{DoxyAuthor}{Author}
+Kiran Jojare, Viraj Patel 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{flow_8cpp_a0ebb1d831778fb42f1350547a2bc65fb}\label{flow_8cpp_a0ebb1d831778fb42f1350547a2bc65fb} 
+\index{flow.cpp@{flow.cpp}!calculate\_flow@{calculate\_flow}}
+\index{calculate\_flow@{calculate\_flow}!flow.cpp@{flow.cpp}}
+\doxysubsubsection{\texorpdfstring{calculate\_flow()}{calculate\_flow()}}
+{\footnotesize\ttfamily void calculate\+\_\+flow (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the fluid flow based on temperature, density, and viscosity. 
+
+Calculates the fluid flow.
+
+The function reads the temperature and based on it calculates the fluid\textquotesingle{}s density and viscosity. Using these values and the Reynold\textquotesingle{}s number, it computes the Strouhal number and uses it to adjust the velocity. Finally, it calculates and sets the flow rate. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{flow_8cpp_a8c01ee33c4f18e77d6d860d1017ca532}\label{flow_8cpp_a8c01ee33c4f18e77d6d860d1017ca532} 
+\index{flow.cpp@{flow.cpp}!flow@{flow}}
+\index{flow@{flow}!flow.cpp@{flow.cpp}}
+\doxysubsubsection{\texorpdfstring{flow}{flow}}
+{\footnotesize\ttfamily float flow}
+
+
+
+Calculated flow value. 
+
+\Hypertarget{flow_8cpp_a9d3c19e881c80a6596884ecb8da4a0f4}\label{flow_8cpp_a9d3c19e881c80a6596884ecb8da4a0f4} 
+\index{flow.cpp@{flow.cpp}!Frequency@{Frequency}}
+\index{Frequency@{Frequency}!flow.cpp@{flow.cpp}}
+\doxysubsubsection{\texorpdfstring{Frequency}{Frequency}}
+{\footnotesize\ttfamily float Frequency\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+External reference to frequency calculated from ADC readings. 
+
+External reference to frequency calculated from ADC readings. \Hypertarget{flow_8cpp_afc1d28cfbce795d6ea954ebe725241f5}\label{flow_8cpp_afc1d28cfbce795d6ea954ebe725241f5} 
+\index{flow.cpp@{flow.cpp}!temperature@{temperature}}
+\index{temperature@{temperature}!flow.cpp@{flow.cpp}}
+\doxysubsubsection{\texorpdfstring{temperature}{temperature}}
+{\footnotesize\ttfamily float temperature}
+
+
+
+Temperature in Celsius. 
+
+\Hypertarget{flow_8cpp_ac46e821ae08930cc9e257642e34275a3}\label{flow_8cpp_ac46e821ae08930cc9e257642e34275a3} 
+\index{flow.cpp@{flow.cpp}!velocity@{velocity}}
+\index{velocity@{velocity}!flow.cpp@{flow.cpp}}
+\doxysubsubsection{\texorpdfstring{velocity}{velocity}}
+{\footnotesize\ttfamily float velocity = 10}
+
+
+
+Initial velocity value. 
+

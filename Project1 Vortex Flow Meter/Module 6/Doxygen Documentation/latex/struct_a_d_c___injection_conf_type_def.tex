@@ -1,0 +1,97 @@
+\doxysection{ADC\+\_\+\+Injection\+Conf\+Type\+Def Struct Reference}
+\hypertarget{struct_a_d_c___injection_conf_type_def}{}\label{struct_a_d_c___injection_conf_type_def}\index{ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}}
+
+
+ADC Configuration injected Channel structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal\+\_\+adc\+\_\+ex.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_aad0cab6ed3f66e8ffa4bd0490298b715}{Injected\+Channel}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_af8a1717c0f5a5d0c7a705224f28a844f}{Injected\+Rank}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_a3d15c0590dbafc9e99e21ea4df5b0c6b}{Injected\+Sampling\+Time}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_ac7d28d71ec3aec4d1587ee04fc585f09}{Injected\+Offset}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_ac59f9795b1b8c4ce6745d99f8231b768}{Injected\+Nbr\+Of\+Conversion}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_ab0e74342214a5610e6b4f1f080f10544}{Auto\+Injected\+Conv}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_adf871acec9ab869d14b5d58e1549739b}{Injected\+Discontinuous\+Conv\+Mode}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_a4f2cfa808b5ace1e47fc3f94da7b850f}{External\+Trig\+Injec\+Conv\+Edge}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_ac3431d4d3e3089f0db271bfb06dbffc0}{External\+Trig\+Injec\+Conv}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ADC Configuration injected Channel structure definition. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_a_d_c___injection_conf_type_def_ab0e74342214a5610e6b4f1f080f10544}\label{struct_a_d_c___injection_conf_type_def_ab0e74342214a5610e6b4f1f080f10544} 
+\index{ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}!AutoInjectedConv@{AutoInjectedConv}}
+\index{AutoInjectedConv@{AutoInjectedConv}!ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{AutoInjectedConv}{AutoInjectedConv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Injection\+Conf\+Type\+Def\+::\+Auto\+Injected\+Conv}
+
+Enables or disables the selected ADC automatic injected group conversion after regular one \Hypertarget{struct_a_d_c___injection_conf_type_def_ac3431d4d3e3089f0db271bfb06dbffc0}\label{struct_a_d_c___injection_conf_type_def_ac3431d4d3e3089f0db271bfb06dbffc0} 
+\index{ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}!ExternalTrigInjecConv@{ExternalTrigInjecConv}}
+\index{ExternalTrigInjecConv@{ExternalTrigInjecConv}!ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{ExternalTrigInjecConv}{ExternalTrigInjecConv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Injection\+Conf\+Type\+Def\+::\+External\+Trig\+Injec\+Conv}
+
+Select the external event used to trigger the start of conversion of a injected channels. This parameter can be a value of \doxylink{group___a_d_c_ex___external__trigger___source___injected}{ADCEx\+\_\+\+External\+\_\+trigger\+\_\+\+Source\+\_\+\+Injected} \Hypertarget{struct_a_d_c___injection_conf_type_def_a4f2cfa808b5ace1e47fc3f94da7b850f}\label{struct_a_d_c___injection_conf_type_def_a4f2cfa808b5ace1e47fc3f94da7b850f} 
+\index{ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}!ExternalTrigInjecConvEdge@{ExternalTrigInjecConvEdge}}
+\index{ExternalTrigInjecConvEdge@{ExternalTrigInjecConvEdge}!ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{ExternalTrigInjecConvEdge}{ExternalTrigInjecConvEdge}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Injection\+Conf\+Type\+Def\+::\+External\+Trig\+Injec\+Conv\+Edge}
+
+Select the external trigger edge and enable the trigger of an injected channels. This parameter can be a value of \doxylink{group___a_d_c_ex___external__trigger__edge___injected}{ADCEx\+\_\+\+External\+\_\+trigger\+\_\+edge\+\_\+\+Injected} \Hypertarget{struct_a_d_c___injection_conf_type_def_aad0cab6ed3f66e8ffa4bd0490298b715}\label{struct_a_d_c___injection_conf_type_def_aad0cab6ed3f66e8ffa4bd0490298b715} 
+\index{ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}!InjectedChannel@{InjectedChannel}}
+\index{InjectedChannel@{InjectedChannel}!ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{InjectedChannel}{InjectedChannel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Injection\+Conf\+Type\+Def\+::\+Injected\+Channel}
+
+Configure the ADC injected channel. This parameter can be a value of \doxylink{group___a_d_c__channels}{ADC\+\_\+channels} \Hypertarget{struct_a_d_c___injection_conf_type_def_adf871acec9ab869d14b5d58e1549739b}\label{struct_a_d_c___injection_conf_type_def_adf871acec9ab869d14b5d58e1549739b} 
+\index{ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}!InjectedDiscontinuousConvMode@{InjectedDiscontinuousConvMode}}
+\index{InjectedDiscontinuousConvMode@{InjectedDiscontinuousConvMode}!ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{InjectedDiscontinuousConvMode}{InjectedDiscontinuousConvMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Injection\+Conf\+Type\+Def\+::\+Injected\+Discontinuous\+Conv\+Mode}
+
+Specifies whether the conversion is performed in Discontinuous mode or not for injected channels. This parameter can be set to ENABLE or DISABLE. \Hypertarget{struct_a_d_c___injection_conf_type_def_ac59f9795b1b8c4ce6745d99f8231b768}\label{struct_a_d_c___injection_conf_type_def_ac59f9795b1b8c4ce6745d99f8231b768} 
+\index{ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}!InjectedNbrOfConversion@{InjectedNbrOfConversion}}
+\index{InjectedNbrOfConversion@{InjectedNbrOfConversion}!ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{InjectedNbrOfConversion}{InjectedNbrOfConversion}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Injection\+Conf\+Type\+Def\+::\+Injected\+Nbr\+Of\+Conversion}
+
+Specifies the number of ADC conversions that will be done using the sequencer for injected channel group. This parameter must be a number between Min\+\_\+\+Data = 1 and Max\+\_\+\+Data = 4. \Hypertarget{struct_a_d_c___injection_conf_type_def_ac7d28d71ec3aec4d1587ee04fc585f09}\label{struct_a_d_c___injection_conf_type_def_ac7d28d71ec3aec4d1587ee04fc585f09} 
+\index{ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}!InjectedOffset@{InjectedOffset}}
+\index{InjectedOffset@{InjectedOffset}!ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{InjectedOffset}{InjectedOffset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Injection\+Conf\+Type\+Def\+::\+Injected\+Offset}
+
+Defines the offset to be subtracted from the raw converted data when convert injected channels. This parameter must be a number between Min\+\_\+\+Data = 0x000 and Max\+\_\+\+Data = 0x\+FFF. \Hypertarget{struct_a_d_c___injection_conf_type_def_af8a1717c0f5a5d0c7a705224f28a844f}\label{struct_a_d_c___injection_conf_type_def_af8a1717c0f5a5d0c7a705224f28a844f} 
+\index{ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}!InjectedRank@{InjectedRank}}
+\index{InjectedRank@{InjectedRank}!ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{InjectedRank}{InjectedRank}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Injection\+Conf\+Type\+Def\+::\+Injected\+Rank}
+
+The rank in the injected group sequencer This parameter must be a number between Min\+\_\+\+Data = 1 and Max\+\_\+\+Data = 4. \Hypertarget{struct_a_d_c___injection_conf_type_def_a3d15c0590dbafc9e99e21ea4df5b0c6b}\label{struct_a_d_c___injection_conf_type_def_a3d15c0590dbafc9e99e21ea4df5b0c6b} 
+\index{ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}!InjectedSamplingTime@{InjectedSamplingTime}}
+\index{InjectedSamplingTime@{InjectedSamplingTime}!ADC\_InjectionConfTypeDef@{ADC\_InjectionConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{InjectedSamplingTime}{InjectedSamplingTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Injection\+Conf\+Type\+Def\+::\+Injected\+Sampling\+Time}
+
+The sample time value to be set for the selected channel. This parameter can be a value of \doxylink{group___a_d_c__sampling__times}{ADC\+\_\+sampling\+\_\+times} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/\mbox{\hyperlink{stm32f4xx__hal__adc__ex_8h}{stm32f4xx\+\_\+hal\+\_\+adc\+\_\+ex.\+h}}\end{DoxyCompactItemize}

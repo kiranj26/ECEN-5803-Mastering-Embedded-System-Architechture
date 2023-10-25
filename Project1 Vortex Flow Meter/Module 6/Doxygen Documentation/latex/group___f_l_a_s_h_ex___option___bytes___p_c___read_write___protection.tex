@@ -1,0 +1,101 @@
+\doxysubsubsubsection{FLASH Option Bytes PC Read\+Write Protection}
+\hypertarget{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection}{}\label{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection}\index{FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga15e8470575c118dd98fd6fa744a8163c}{OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+0}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga37b79b9eb0dbeaa7ca8b04f6c8c89faa}{OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+1}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_gafba6661c0a4510edc55b9d08ba7b1820}{OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+2}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_gad93b4f27b039c007d1ed5ca79d744230}{OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+3}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga10c0d89c778f8920b40adf107eb5ffc8}{OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+4}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga1d0e173b3e184682b2c90a34e11b0a24}{OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+5}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000020)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga10d6b7983ed196511c8150c12965b407}{OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+6}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga7d74caf6e88d230f4dcdcbf9ab6d7e1e}{OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+7}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_gab0ae871624f4cdff9b41b3fea88a5698}{OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+\+All}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000\+FFF)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga4366c6db141b2c0024429b5808eef6e8}{IS\+\_\+\+OB\+\_\+\+PCROP}}(SECTOR)~((((SECTOR) \& (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x\+FFFFF000) == 0x00000000) \&\& ((SECTOR) != 0x00000000))
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga4366c6db141b2c0024429b5808eef6e8}\label{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga4366c6db141b2c0024429b5808eef6e8} 
+\index{FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}!IS\_OB\_PCROP@{IS\_OB\_PCROP}}
+\index{IS\_OB\_PCROP@{IS\_OB\_PCROP}!FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_OB\_PCROP}{IS\_OB\_PCROP}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+PCROP(\begin{DoxyParamCaption}\item[{}]{SECTOR }\end{DoxyParamCaption})~((((SECTOR) \& (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x\+FFFFF000) == 0x00000000) \&\& ((SECTOR) != 0x00000000))}
+
+\Hypertarget{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga15e8470575c118dd98fd6fa744a8163c}\label{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga15e8470575c118dd98fd6fa744a8163c} 
+\index{FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}!OB\_PCROP\_SECTOR\_0@{OB\_PCROP\_SECTOR\_0}}
+\index{OB\_PCROP\_SECTOR\_0@{OB\_PCROP\_SECTOR\_0}!FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}}
+\doxysubsubsubsubsubsection{\texorpdfstring{OB\_PCROP\_SECTOR\_0}{OB\_PCROP\_SECTOR\_0}}
+{\footnotesize\ttfamily \#define OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+0~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)}
+
+PC Read/\+Write protection of Sector0 ~\newline
+ \Hypertarget{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga37b79b9eb0dbeaa7ca8b04f6c8c89faa}\label{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga37b79b9eb0dbeaa7ca8b04f6c8c89faa} 
+\index{FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}!OB\_PCROP\_SECTOR\_1@{OB\_PCROP\_SECTOR\_1}}
+\index{OB\_PCROP\_SECTOR\_1@{OB\_PCROP\_SECTOR\_1}!FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}}
+\doxysubsubsubsubsubsection{\texorpdfstring{OB\_PCROP\_SECTOR\_1}{OB\_PCROP\_SECTOR\_1}}
+{\footnotesize\ttfamily \#define OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+1~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000002)}
+
+PC Read/\+Write protection of Sector1 ~\newline
+ \Hypertarget{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_gafba6661c0a4510edc55b9d08ba7b1820}\label{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_gafba6661c0a4510edc55b9d08ba7b1820} 
+\index{FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}!OB\_PCROP\_SECTOR\_2@{OB\_PCROP\_SECTOR\_2}}
+\index{OB\_PCROP\_SECTOR\_2@{OB\_PCROP\_SECTOR\_2}!FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}}
+\doxysubsubsubsubsubsection{\texorpdfstring{OB\_PCROP\_SECTOR\_2}{OB\_PCROP\_SECTOR\_2}}
+{\footnotesize\ttfamily \#define OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+2~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000004)}
+
+PC Read/\+Write protection of Sector2 ~\newline
+ \Hypertarget{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_gad93b4f27b039c007d1ed5ca79d744230}\label{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_gad93b4f27b039c007d1ed5ca79d744230} 
+\index{FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}!OB\_PCROP\_SECTOR\_3@{OB\_PCROP\_SECTOR\_3}}
+\index{OB\_PCROP\_SECTOR\_3@{OB\_PCROP\_SECTOR\_3}!FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}}
+\doxysubsubsubsubsubsection{\texorpdfstring{OB\_PCROP\_SECTOR\_3}{OB\_PCROP\_SECTOR\_3}}
+{\footnotesize\ttfamily \#define OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+3~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000008)}
+
+PC Read/\+Write protection of Sector3 ~\newline
+ \Hypertarget{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga10c0d89c778f8920b40adf107eb5ffc8}\label{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga10c0d89c778f8920b40adf107eb5ffc8} 
+\index{FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}!OB\_PCROP\_SECTOR\_4@{OB\_PCROP\_SECTOR\_4}}
+\index{OB\_PCROP\_SECTOR\_4@{OB\_PCROP\_SECTOR\_4}!FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}}
+\doxysubsubsubsubsubsection{\texorpdfstring{OB\_PCROP\_SECTOR\_4}{OB\_PCROP\_SECTOR\_4}}
+{\footnotesize\ttfamily \#define OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+4~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000010)}
+
+PC Read/\+Write protection of Sector4 ~\newline
+ \Hypertarget{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga1d0e173b3e184682b2c90a34e11b0a24}\label{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga1d0e173b3e184682b2c90a34e11b0a24} 
+\index{FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}!OB\_PCROP\_SECTOR\_5@{OB\_PCROP\_SECTOR\_5}}
+\index{OB\_PCROP\_SECTOR\_5@{OB\_PCROP\_SECTOR\_5}!FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}}
+\doxysubsubsubsubsubsection{\texorpdfstring{OB\_PCROP\_SECTOR\_5}{OB\_PCROP\_SECTOR\_5}}
+{\footnotesize\ttfamily \#define OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+5~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000020)}
+
+PC Read/\+Write protection of Sector5 ~\newline
+ \Hypertarget{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga10d6b7983ed196511c8150c12965b407}\label{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga10d6b7983ed196511c8150c12965b407} 
+\index{FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}!OB\_PCROP\_SECTOR\_6@{OB\_PCROP\_SECTOR\_6}}
+\index{OB\_PCROP\_SECTOR\_6@{OB\_PCROP\_SECTOR\_6}!FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}}
+\doxysubsubsubsubsubsection{\texorpdfstring{OB\_PCROP\_SECTOR\_6}{OB\_PCROP\_SECTOR\_6}}
+{\footnotesize\ttfamily \#define OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+6~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000040)}
+
+PC Read/\+Write protection of Sector6 ~\newline
+ \Hypertarget{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga7d74caf6e88d230f4dcdcbf9ab6d7e1e}\label{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_ga7d74caf6e88d230f4dcdcbf9ab6d7e1e} 
+\index{FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}!OB\_PCROP\_SECTOR\_7@{OB\_PCROP\_SECTOR\_7}}
+\index{OB\_PCROP\_SECTOR\_7@{OB\_PCROP\_SECTOR\_7}!FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}}
+\doxysubsubsubsubsubsection{\texorpdfstring{OB\_PCROP\_SECTOR\_7}{OB\_PCROP\_SECTOR\_7}}
+{\footnotesize\ttfamily \#define OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+7~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000080)}
+
+PC Read/\+Write protection of Sector7 ~\newline
+ \Hypertarget{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_gab0ae871624f4cdff9b41b3fea88a5698}\label{group___f_l_a_s_h_ex___option___bytes___p_c___read_write___protection_gab0ae871624f4cdff9b41b3fea88a5698} 
+\index{FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}!OB\_PCROP\_SECTOR\_All@{OB\_PCROP\_SECTOR\_All}}
+\index{OB\_PCROP\_SECTOR\_All@{OB\_PCROP\_SECTOR\_All}!FLASH Option Bytes PC ReadWrite Protection@{FLASH Option Bytes PC ReadWrite Protection}}
+\doxysubsubsubsubsubsection{\texorpdfstring{OB\_PCROP\_SECTOR\_All}{OB\_PCROP\_SECTOR\_All}}
+{\footnotesize\ttfamily \#define OB\+\_\+\+PCROP\+\_\+\+SECTOR\+\_\+\+All~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000\+FFF)}
+
+PC Read/\+Write protection of all Sectors ~\newline
+ 

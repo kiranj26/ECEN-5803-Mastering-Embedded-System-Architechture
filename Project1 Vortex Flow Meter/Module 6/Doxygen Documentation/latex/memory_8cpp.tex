@@ -1,0 +1,286 @@
+\doxysection{memory.\+cpp File Reference}
+\hypertarget{memory_8cpp}{}\label{memory_8cpp}\index{memory.cpp@{memory.cpp}}
+
+
+Functions to interact with memory, registers, and the UART interface.  
+
+
+{\ttfamily \#include "{}memory.\+h"{}}\newline
+{\ttfamily \#include "{}mbed.\+h"{}}\newline
+{\ttfamily \#include "{}stdio.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{memory_8cpp_a3a6578da0c0edfc8c006b76f7e35e68b}{read\+\_\+serial\+\_\+input}} (char \texorpdfstring{$\ast$}{*}buffer, int length)
+\begin{DoxyCompactList}\small\item\em Reads input from the serial interface. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_abaaa3711521950cbadfef0da49cbb84b}{get\+\_\+r0}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R1 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_aeb344c0f01ebc91ac77f726a55d4b78b}{get\+\_\+r1}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R2 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_ae145ddc6875ae5f86f82cc2b052a449c}{get\+\_\+r2}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R3 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_aec40cab73fd306ed4a26ead53a3b870c}{get\+\_\+r3}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R4 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_ae62a1c08ae50221cb88b333db920eef3}{get\+\_\+r4}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R5 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_a4df9c24c3472c17ba1ee7ee00194411d}{get\+\_\+r5}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R6 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_a4472be1e23a015b0463a96045c3e50e8}{get\+\_\+r6}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R7 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_a60af5de3dcc97efd1c2754d996d24a66}{get\+\_\+r7}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R8 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_a098fb1888d9f2624e16c8dd763669fec}{get\+\_\+r8}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R9 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_a3f25362d70e05ef66624f8780f71ffc8}{get\+\_\+r9}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R10 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_a3892360f59c6507c265b1af68e0f6d4a}{get\+\_\+r10}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R11 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_a32f987bee6fb876bd4b573fc6e7dacf8}{get\+\_\+r11}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R12 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_aedb2070dd571800dca66fb4b4ff690b7}{get\+\_\+r12}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of R13 register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_a39159427cb550b6a2c92dc6f27df6501}{get\+\_\+sp}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of Stack Pointer register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_a194b5f14ef1294679d1cc49f6730b3ac}{get\+\_\+lr}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of Link Register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{memory_8cpp_afa565d6166f028a14d1a87fa81d4f850}{get\+\_\+pc}} ()
+\begin{DoxyCompactList}\small\item\em Fetch value of Program Counter register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{memory_8cpp_a443d8ebaaf7d2251347e71a58f2bafa0}{print\+\_\+registers}} ()
+\begin{DoxyCompactList}\small\item\em Prints the values of the registers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{memory_8cpp_a20c6e65f1cc09f83c5768707ccf170ed}{dump\+\_\+memory}} (void)
+\begin{DoxyCompactList}\small\item\em Dumps memory content from a given address for a given length. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{memory_8cpp_a731758b7ff30442a617296ca3f6306d2}{display\+\_\+last\+\_\+16\+\_\+stack\+\_\+words}} ()
+\begin{DoxyCompactList}\small\item\em Displays the last 16 words in the stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Serial \mbox{\hyperlink{memory_8cpp_a3cbc824c5561efcb87f86e3e817d3d74}{pc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions to interact with memory, registers, and the UART interface. 
+
+\begin{DoxyAuthor}{Author}
+Kiran Jojare, Viraj Patel 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{memory_8cpp_a731758b7ff30442a617296ca3f6306d2}\label{memory_8cpp_a731758b7ff30442a617296ca3f6306d2} 
+\index{memory.cpp@{memory.cpp}!display\_last\_16\_stack\_words@{display\_last\_16\_stack\_words}}
+\index{display\_last\_16\_stack\_words@{display\_last\_16\_stack\_words}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{display\_last\_16\_stack\_words()}{display\_last\_16\_stack\_words()}}
+{\footnotesize\ttfamily void display\+\_\+last\+\_\+16\+\_\+stack\+\_\+words (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Displays the last 16 words in the stack. 
+
+Displays the last 16 words of the stack.
+
+This function sends the last 16 words of the current stack over UART. \Hypertarget{memory_8cpp_a20c6e65f1cc09f83c5768707ccf170ed}\label{memory_8cpp_a20c6e65f1cc09f83c5768707ccf170ed} 
+\index{memory.cpp@{memory.cpp}!dump\_memory@{dump\_memory}}
+\index{dump\_memory@{dump\_memory}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{dump\_memory()}{dump\_memory()}}
+{\footnotesize\ttfamily void dump\+\_\+memory (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Dumps memory content from a given address for a given length. 
+
+Dumps the memory contents in hex format.
+
+This function sends the content of the memory from a specified address and for a given length over UART. \Hypertarget{memory_8cpp_a194b5f14ef1294679d1cc49f6730b3ac}\label{memory_8cpp_a194b5f14ef1294679d1cc49f6730b3ac} 
+\index{memory.cpp@{memory.cpp}!get\_lr@{get\_lr}}
+\index{get\_lr@{get\_lr}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_lr()}{get\_lr()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+lr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of Link Register. 
+
+\Hypertarget{memory_8cpp_afa565d6166f028a14d1a87fa81d4f850}\label{memory_8cpp_afa565d6166f028a14d1a87fa81d4f850} 
+\index{memory.cpp@{memory.cpp}!get\_pc@{get\_pc}}
+\index{get\_pc@{get\_pc}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_pc()}{get\_pc()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+pc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of Program Counter register. 
+
+\Hypertarget{memory_8cpp_abaaa3711521950cbadfef0da49cbb84b}\label{memory_8cpp_abaaa3711521950cbadfef0da49cbb84b} 
+\index{memory.cpp@{memory.cpp}!get\_r0@{get\_r0}}
+\index{get\_r0@{get\_r0}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r0()}{get\_r0()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R1 register. 
+
+\Hypertarget{memory_8cpp_aeb344c0f01ebc91ac77f726a55d4b78b}\label{memory_8cpp_aeb344c0f01ebc91ac77f726a55d4b78b} 
+\index{memory.cpp@{memory.cpp}!get\_r1@{get\_r1}}
+\index{get\_r1@{get\_r1}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r1()}{get\_r1()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R2 register. 
+
+\Hypertarget{memory_8cpp_a3892360f59c6507c265b1af68e0f6d4a}\label{memory_8cpp_a3892360f59c6507c265b1af68e0f6d4a} 
+\index{memory.cpp@{memory.cpp}!get\_r10@{get\_r10}}
+\index{get\_r10@{get\_r10}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r10()}{get\_r10()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r10 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R11 register. 
+
+\Hypertarget{memory_8cpp_a32f987bee6fb876bd4b573fc6e7dacf8}\label{memory_8cpp_a32f987bee6fb876bd4b573fc6e7dacf8} 
+\index{memory.cpp@{memory.cpp}!get\_r11@{get\_r11}}
+\index{get\_r11@{get\_r11}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r11()}{get\_r11()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r11 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R12 register. 
+
+\Hypertarget{memory_8cpp_aedb2070dd571800dca66fb4b4ff690b7}\label{memory_8cpp_aedb2070dd571800dca66fb4b4ff690b7} 
+\index{memory.cpp@{memory.cpp}!get\_r12@{get\_r12}}
+\index{get\_r12@{get\_r12}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r12()}{get\_r12()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r12 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R13 register. 
+
+\Hypertarget{memory_8cpp_ae145ddc6875ae5f86f82cc2b052a449c}\label{memory_8cpp_ae145ddc6875ae5f86f82cc2b052a449c} 
+\index{memory.cpp@{memory.cpp}!get\_r2@{get\_r2}}
+\index{get\_r2@{get\_r2}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r2()}{get\_r2()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R3 register. 
+
+\Hypertarget{memory_8cpp_aec40cab73fd306ed4a26ead53a3b870c}\label{memory_8cpp_aec40cab73fd306ed4a26ead53a3b870c} 
+\index{memory.cpp@{memory.cpp}!get\_r3@{get\_r3}}
+\index{get\_r3@{get\_r3}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r3()}{get\_r3()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R4 register. 
+
+\Hypertarget{memory_8cpp_ae62a1c08ae50221cb88b333db920eef3}\label{memory_8cpp_ae62a1c08ae50221cb88b333db920eef3} 
+\index{memory.cpp@{memory.cpp}!get\_r4@{get\_r4}}
+\index{get\_r4@{get\_r4}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r4()}{get\_r4()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R5 register. 
+
+\Hypertarget{memory_8cpp_a4df9c24c3472c17ba1ee7ee00194411d}\label{memory_8cpp_a4df9c24c3472c17ba1ee7ee00194411d} 
+\index{memory.cpp@{memory.cpp}!get\_r5@{get\_r5}}
+\index{get\_r5@{get\_r5}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r5()}{get\_r5()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r5 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R6 register. 
+
+\Hypertarget{memory_8cpp_a4472be1e23a015b0463a96045c3e50e8}\label{memory_8cpp_a4472be1e23a015b0463a96045c3e50e8} 
+\index{memory.cpp@{memory.cpp}!get\_r6@{get\_r6}}
+\index{get\_r6@{get\_r6}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r6()}{get\_r6()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r6 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R7 register. 
+
+\Hypertarget{memory_8cpp_a60af5de3dcc97efd1c2754d996d24a66}\label{memory_8cpp_a60af5de3dcc97efd1c2754d996d24a66} 
+\index{memory.cpp@{memory.cpp}!get\_r7@{get\_r7}}
+\index{get\_r7@{get\_r7}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r7()}{get\_r7()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r7 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R8 register. 
+
+\Hypertarget{memory_8cpp_a098fb1888d9f2624e16c8dd763669fec}\label{memory_8cpp_a098fb1888d9f2624e16c8dd763669fec} 
+\index{memory.cpp@{memory.cpp}!get\_r8@{get\_r8}}
+\index{get\_r8@{get\_r8}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r8()}{get\_r8()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r8 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R9 register. 
+
+\Hypertarget{memory_8cpp_a3f25362d70e05ef66624f8780f71ffc8}\label{memory_8cpp_a3f25362d70e05ef66624f8780f71ffc8} 
+\index{memory.cpp@{memory.cpp}!get\_r9@{get\_r9}}
+\index{get\_r9@{get\_r9}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_r9()}{get\_r9()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+r9 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of R10 register. 
+
+\Hypertarget{memory_8cpp_a39159427cb550b6a2c92dc6f27df6501}\label{memory_8cpp_a39159427cb550b6a2c92dc6f27df6501} 
+\index{memory.cpp@{memory.cpp}!get\_sp@{get\_sp}}
+\index{get\_sp@{get\_sp}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_sp()}{get\_sp()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} get\+\_\+sp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetch value of Stack Pointer register. 
+
+\Hypertarget{memory_8cpp_a443d8ebaaf7d2251347e71a58f2bafa0}\label{memory_8cpp_a443d8ebaaf7d2251347e71a58f2bafa0} 
+\index{memory.cpp@{memory.cpp}!print\_registers@{print\_registers}}
+\index{print\_registers@{print\_registers}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_registers()}{print\_registers()}}
+{\footnotesize\ttfamily void print\+\_\+registers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Prints the values of the registers. 
+
+Prints the values of the core registers to the UART interface.
+
+This function sends the current values of the processor\textquotesingle{}s registers over UART. \Hypertarget{memory_8cpp_a3a6578da0c0edfc8c006b76f7e35e68b}\label{memory_8cpp_a3a6578da0c0edfc8c006b76f7e35e68b} 
+\index{memory.cpp@{memory.cpp}!read\_serial\_input@{read\_serial\_input}}
+\index{read\_serial\_input@{read\_serial\_input}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{read\_serial\_input()}{read\_serial\_input()}}
+{\footnotesize\ttfamily void read\+\_\+serial\+\_\+input (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{int}]{length }\end{DoxyParamCaption})}
+
+
+
+Reads input from the serial interface. 
+
+Reads serial input into a buffer.
+
+This function captures characters from the UART until a newline or a carriage return character is detected. Additionally, it handles backspaces by erasing the previously entered character. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{memory_8cpp_a3cbc824c5561efcb87f86e3e817d3d74}\label{memory_8cpp_a3cbc824c5561efcb87f86e3e817d3d74} 
+\index{memory.cpp@{memory.cpp}!pc@{pc}}
+\index{pc@{pc}!memory.cpp@{memory.cpp}}
+\doxysubsubsection{\texorpdfstring{pc}{pc}}
+{\footnotesize\ttfamily Serial pc\hspace{0.3cm}{\ttfamily [extern]}}
+

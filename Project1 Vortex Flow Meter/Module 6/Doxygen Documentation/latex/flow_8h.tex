@@ -1,0 +1,80 @@
+\doxysection{flow.\+h File Reference}
+\hypertarget{flow_8h}{}\label{flow_8h}\index{flow.h@{flow.h}}
+
+
+Header file for flow calculations related constants and functions for STM32\+F401xE.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{flow_8h_af316c33cc298530f245e8b55330e86b5}{D}}~0.\+5
+\begin{DoxyCompactList}\small\item\em Bluff body width in inches. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{flow_8h_a271c10dbd67f3606a71de8c88a46c5b6}{PID\+\_\+\+INCH}}~2.\+900
+\begin{DoxyCompactList}\small\item\em Pipe inner diameter in inches. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{flow_8h_aeba8210b53811de808f111c43b4e3a5c}{PID\+\_\+\+METER}}~0.\+07366
+\begin{DoxyCompactList}\small\item\em Pipe inner diameter in meters (Equivalent of 2.\+900 inches in meters). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{flow_8h_a0ebb1d831778fb42f1350547a2bc65fb}{calculate\+\_\+flow}} (void)
+\begin{DoxyCompactList}\small\item\em Calculates the fluid flow. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for flow calculations related constants and functions for STM32\+F401xE. 
+
+\begin{DoxyAuthor}{Author}
+Kiran Jojare, Viraj Patel 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{flow_8h_af316c33cc298530f245e8b55330e86b5}\label{flow_8h_af316c33cc298530f245e8b55330e86b5} 
+\index{flow.h@{flow.h}!D@{D}}
+\index{D@{D}!flow.h@{flow.h}}
+\doxysubsubsection{\texorpdfstring{D}{D}}
+{\footnotesize\ttfamily \#define D~0.\+5}
+
+
+
+Bluff body width in inches. 
+
+\Hypertarget{flow_8h_a271c10dbd67f3606a71de8c88a46c5b6}\label{flow_8h_a271c10dbd67f3606a71de8c88a46c5b6} 
+\index{flow.h@{flow.h}!PID\_INCH@{PID\_INCH}}
+\index{PID\_INCH@{PID\_INCH}!flow.h@{flow.h}}
+\doxysubsubsection{\texorpdfstring{PID\_INCH}{PID\_INCH}}
+{\footnotesize\ttfamily \#define PID\+\_\+\+INCH~2.\+900}
+
+
+
+Pipe inner diameter in inches. 
+
+\Hypertarget{flow_8h_aeba8210b53811de808f111c43b4e3a5c}\label{flow_8h_aeba8210b53811de808f111c43b4e3a5c} 
+\index{flow.h@{flow.h}!PID\_METER@{PID\_METER}}
+\index{PID\_METER@{PID\_METER}!flow.h@{flow.h}}
+\doxysubsubsection{\texorpdfstring{PID\_METER}{PID\_METER}}
+{\footnotesize\ttfamily \#define PID\+\_\+\+METER~0.\+07366}
+
+
+
+Pipe inner diameter in meters (Equivalent of 2.\+900 inches in meters). 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{flow_8h_a0ebb1d831778fb42f1350547a2bc65fb}\label{flow_8h_a0ebb1d831778fb42f1350547a2bc65fb} 
+\index{flow.h@{flow.h}!calculate\_flow@{calculate\_flow}}
+\index{calculate\_flow@{calculate\_flow}!flow.h@{flow.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_flow()}{calculate\_flow()}}
+{\footnotesize\ttfamily void calculate\+\_\+flow (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the fluid flow. 
+
+Computes the fluid flow based on various parameters including temperature, density, and viscosity. Uses predefined constants for bluff body width and pipe inner diameter.
+
+Calculates the fluid flow.
+
+The function reads the temperature and based on it calculates the fluid\textquotesingle{}s density and viscosity. Using these values and the Reynold\textquotesingle{}s number, it computes the Strouhal number and uses it to adjust the velocity. Finally, it calculates and sets the flow rate. 

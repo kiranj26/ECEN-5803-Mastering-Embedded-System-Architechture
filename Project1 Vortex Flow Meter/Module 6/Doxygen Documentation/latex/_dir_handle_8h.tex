@@ -1,0 +1,92 @@
+\doxysection{mbed/\+Dir\+Handle.h File Reference}
+\hypertarget{_dir_handle_8h}{}\label{_dir_handle_8h}\index{mbed/DirHandle.h@{mbed/DirHandle.h}}
+{\ttfamily \#include $<$sys/syslimits.\+h$>$}\newline
+{\ttfamily \#include "{}File\+Handle.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdirent}{dirent}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_dir_handle}{mbed\+::\+Dir\+Handle}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacembed}{mbed}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classmbed_1_1_dir_handle}{mbed\+::\+Dir\+Handle}} \mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_dir_handle_8h_aab3004462f9600cbca87f31807214b23}{opendir}} (const char \texorpdfstring{$\ast$}{*})
+\item 
+struct \mbox{\hyperlink{structdirent}{dirent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_dir_handle_8h_a7e8226cf83a9afb3578268c806fb797a}{readdir}} (\mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}} \texorpdfstring{$\ast$}{*})
+\item 
+int \mbox{\hyperlink{_dir_handle_8h_a008fe2cb2468b06197c2f9bc406300a4}{closedir}} (\mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{_dir_handle_8h_a3fb58a6b4088367ccb71909e80ebbb1d}{rewinddir}} (\mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}} \texorpdfstring{$\ast$}{*})
+\item 
+long \mbox{\hyperlink{_dir_handle_8h_a02343c3edead3efa2926e37d340b9cbe}{telldir}} (\mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{_dir_handle_8h_a32bca3b3ef688933b676d4511e78cb5d}{seekdir}} (\mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}} \texorpdfstring{$\ast$}{*}, long)
+\item 
+int \mbox{\hyperlink{_dir_handle_8h_a62a2a28943c326ccd2abd27293002b98}{mkdir}} (const char \texorpdfstring{$\ast$}{*}name, mode\+\_\+t n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}\label{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698} 
+\index{DirHandle.h@{DirHandle.h}!DIR@{DIR}}
+\index{DIR@{DIR}!DirHandle.h@{DirHandle.h}}
+\doxysubsubsection{\texorpdfstring{DIR}{DIR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classmbed_1_1_dir_handle}{mbed\+::\+Dir\+Handle}} \mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_dir_handle_8h_a008fe2cb2468b06197c2f9bc406300a4}\label{_dir_handle_8h_a008fe2cb2468b06197c2f9bc406300a4} 
+\index{DirHandle.h@{DirHandle.h}!closedir@{closedir}}
+\index{closedir@{closedir}!DirHandle.h@{DirHandle.h}}
+\doxysubsubsection{\texorpdfstring{closedir()}{closedir()}}
+{\footnotesize\ttfamily int closedir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}} \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_dir_handle_8h_a62a2a28943c326ccd2abd27293002b98}\label{_dir_handle_8h_a62a2a28943c326ccd2abd27293002b98} 
+\index{DirHandle.h@{DirHandle.h}!mkdir@{mkdir}}
+\index{mkdir@{mkdir}!DirHandle.h@{DirHandle.h}}
+\doxysubsubsection{\texorpdfstring{mkdir()}{mkdir()}}
+{\footnotesize\ttfamily int mkdir (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{mode\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+\Hypertarget{_dir_handle_8h_aab3004462f9600cbca87f31807214b23}\label{_dir_handle_8h_aab3004462f9600cbca87f31807214b23} 
+\index{DirHandle.h@{DirHandle.h}!opendir@{opendir}}
+\index{opendir@{opendir}!DirHandle.h@{DirHandle.h}}
+\doxysubsubsection{\texorpdfstring{opendir()}{opendir()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}} \texorpdfstring{$\ast$}{*} opendir (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_dir_handle_8h_a7e8226cf83a9afb3578268c806fb797a}\label{_dir_handle_8h_a7e8226cf83a9afb3578268c806fb797a} 
+\index{DirHandle.h@{DirHandle.h}!readdir@{readdir}}
+\index{readdir@{readdir}!DirHandle.h@{DirHandle.h}}
+\doxysubsubsection{\texorpdfstring{readdir()}{readdir()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structdirent}{dirent}} \texorpdfstring{$\ast$}{*} readdir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}} \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_dir_handle_8h_a3fb58a6b4088367ccb71909e80ebbb1d}\label{_dir_handle_8h_a3fb58a6b4088367ccb71909e80ebbb1d} 
+\index{DirHandle.h@{DirHandle.h}!rewinddir@{rewinddir}}
+\index{rewinddir@{rewinddir}!DirHandle.h@{DirHandle.h}}
+\doxysubsubsection{\texorpdfstring{rewinddir()}{rewinddir()}}
+{\footnotesize\ttfamily void rewinddir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}} \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_dir_handle_8h_a32bca3b3ef688933b676d4511e78cb5d}\label{_dir_handle_8h_a32bca3b3ef688933b676d4511e78cb5d} 
+\index{DirHandle.h@{DirHandle.h}!seekdir@{seekdir}}
+\index{seekdir@{seekdir}!DirHandle.h@{DirHandle.h}}
+\doxysubsubsection{\texorpdfstring{seekdir()}{seekdir()}}
+{\footnotesize\ttfamily void seekdir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}} \texorpdfstring{$\ast$}{*}}]{,  }\item[{long}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_dir_handle_8h_a02343c3edead3efa2926e37d340b9cbe}\label{_dir_handle_8h_a02343c3edead3efa2926e37d340b9cbe} 
+\index{DirHandle.h@{DirHandle.h}!telldir@{telldir}}
+\index{telldir@{telldir}!DirHandle.h@{DirHandle.h}}
+\doxysubsubsection{\texorpdfstring{telldir()}{telldir()}}
+{\footnotesize\ttfamily long telldir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}} \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})}
+

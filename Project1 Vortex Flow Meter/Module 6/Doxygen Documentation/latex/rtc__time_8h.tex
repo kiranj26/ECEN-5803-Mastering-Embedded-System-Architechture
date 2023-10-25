@@ -1,0 +1,63 @@
+\doxysection{mbed/rtc\+\_\+time.h File Reference}
+\hypertarget{rtc__time_8h}{}\label{rtc__time_8h}\index{mbed/rtc\_time.h@{mbed/rtc\_time.h}}
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{rtc__time_8h_a5d1e10825bf4a6ecdd567e9f2f384ed1}{set\+\_\+time}} (time\+\_\+t t)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{rtc__time_8h_a5d1e10825bf4a6ecdd567e9f2f384ed1}\label{rtc__time_8h_a5d1e10825bf4a6ecdd567e9f2f384ed1} 
+\index{rtc\_time.h@{rtc\_time.h}!set\_time@{set\_time}}
+\index{set\_time@{set\_time}!rtc\_time.h@{rtc\_time.h}}
+\doxysubsubsection{\texorpdfstring{set\_time()}{set\_time()}}
+{\footnotesize\ttfamily void set\+\_\+time (\begin{DoxyParamCaption}\item[{time\+\_\+t}]{t }\end{DoxyParamCaption})}
+
+Implementation of the C time.\+h functions
+
+Provides mechanisms to set and read the current time, based on the microcontroller Real-\/\+Time Clock (RTC), plus some standard C manipulation and formating functions.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mbed_8h}{mbed.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{rtc__time_8h_a5d1e10825bf4a6ecdd567e9f2f384ed1}{set\_time}}(1256729737);\ \ \textcolor{comment}{//\ Set\ RTC\ time\ to\ Wed,\ 28\ Oct\ 2009\ 11:35:37}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(1)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ time\_t\ seconds\ =\ time(NULL);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Time\ as\ seconds\ since\ January\ 1,\ 1970\ =\ \%d\(\backslash\)n"{}},\ seconds);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Time\ as\ a\ basic\ string\ =\ \%s"{}},\ ctime(\&seconds));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ buffer[32];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ strftime(buffer,\ 32,\ \textcolor{stringliteral}{"{}\%I:\%M\ \%p\(\backslash\)n"{}},\ localtime(\&seconds));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Time\ as\ a\ custom\ formatted\ string\ =\ \%s"{}},\ buffer);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ wait(1);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Set the current time
+
+Initialises and sets the time of the microcontroller Real-\/\+Time Clock (RTC) to the time represented by the number of seconds since January 1, 1970 (the UNIX timestamp).
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Number of seconds since January 1, 1970 (the UNIX timestamp)\\
+\hline
+\end{DoxyParams}
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mbed_8h}{mbed.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{rtc__time_8h_a5d1e10825bf4a6ecdd567e9f2f384ed1}{set\_time}}(1256729737);\ \textcolor{comment}{//\ Set\ time\ to\ Wed,\ 28\ Oct\ 2009\ 11:35:37}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

@@ -1,0 +1,126 @@
+\doxysection{adc.\+h File Reference}
+\hypertarget{adc_8h}{}\label{adc_8h}\index{adc.h@{adc.h}}
+
+
+ADC configurations and function declarations for STM32\+F401xE.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{adc_8h_a1cf4c51406ee48942e669ce752bcc745}{ZERO\+\_\+\+CROSSING\+\_\+\+LEVEL}}~0x7\+FFF
+\begin{DoxyCompactList}\small\item\em Defined value for zero crossing level (mid of 16-\/bit ADC range) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{adc_8h_ad0c329adebc27917fc0a4f51079acf6a}{SAMPLES}}~(1000U)
+\begin{DoxyCompactList}\small\item\em Number of samples for the read\+ADC function. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{adc_8h_a6f6f49388c74bb24a8f63771bd997d97}{SAMPLE\+\_\+\+TIME}}~(100E-\/06)
+\begin{DoxyCompactList}\small\item\em Time interval between each ADC sample. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{adc_8h_aa6d62e92fb29e034961e1d80462c9c06}{ADC\+\_\+\+V25}}~0.\+76
+\begin{DoxyCompactList}\small\item\em Voltage corresponding to ADC value at 25 degrees Celsius (refer to the specific MCU\textquotesingle{}s datasheet) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{adc_8h_a4c8b60a8aedc57d7676e7ecebeb6dfc3}{ADC\+\_\+\+AVG\+\_\+\+SLOPE}}~0.\+0025
+\begin{DoxyCompactList}\small\item\em Average slope value for temperature calculation based on the ADC reading. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{adc_8h_abf443c1618ef0b16d6c5748cdf41ed2e}{read\+ADC}} (void)
+\begin{DoxyCompactList}\small\item\em Read ADC samples and compute the frequency based on zero crossing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{adc_8h_ac00e48e19894ab2bd9d7caa86750d6fe}{ADC\+\_\+\+Custom\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em Custom configuration for the ADC module. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{adc_8h_a0393a147a0ce447ea39025735e31cf85}{read\+Temperature}} (void)
+\begin{DoxyCompactList}\small\item\em Read the on-\/chip temperature sensor and return the temperature value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ADC configurations and function declarations for STM32\+F401xE. 
+
+\begin{DoxyAuthor}{Author}
+Kiran Jojare, Viraj Patel 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{adc_8h_a4c8b60a8aedc57d7676e7ecebeb6dfc3}\label{adc_8h_a4c8b60a8aedc57d7676e7ecebeb6dfc3} 
+\index{adc.h@{adc.h}!ADC\_AVG\_SLOPE@{ADC\_AVG\_SLOPE}}
+\index{ADC\_AVG\_SLOPE@{ADC\_AVG\_SLOPE}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_AVG\_SLOPE}{ADC\_AVG\_SLOPE}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+AVG\+\_\+\+SLOPE~0.\+0025}
+
+
+
+Average slope value for temperature calculation based on the ADC reading. 
+
+\Hypertarget{adc_8h_aa6d62e92fb29e034961e1d80462c9c06}\label{adc_8h_aa6d62e92fb29e034961e1d80462c9c06} 
+\index{adc.h@{adc.h}!ADC\_V25@{ADC\_V25}}
+\index{ADC\_V25@{ADC\_V25}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_V25}{ADC\_V25}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+V25~0.\+76}
+
+
+
+Voltage corresponding to ADC value at 25 degrees Celsius (refer to the specific MCU\textquotesingle{}s datasheet) 
+
+\Hypertarget{adc_8h_a6f6f49388c74bb24a8f63771bd997d97}\label{adc_8h_a6f6f49388c74bb24a8f63771bd997d97} 
+\index{adc.h@{adc.h}!SAMPLE\_TIME@{SAMPLE\_TIME}}
+\index{SAMPLE\_TIME@{SAMPLE\_TIME}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_TIME}{SAMPLE\_TIME}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+TIME~(100E-\/06)}
+
+
+
+Time interval between each ADC sample. 
+
+\Hypertarget{adc_8h_ad0c329adebc27917fc0a4f51079acf6a}\label{adc_8h_ad0c329adebc27917fc0a4f51079acf6a} 
+\index{adc.h@{adc.h}!SAMPLES@{SAMPLES}}
+\index{SAMPLES@{SAMPLES}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{SAMPLES}{SAMPLES}}
+{\footnotesize\ttfamily \#define SAMPLES~(1000U)}
+
+
+
+Number of samples for the read\+ADC function. 
+
+\Hypertarget{adc_8h_a1cf4c51406ee48942e669ce752bcc745}\label{adc_8h_a1cf4c51406ee48942e669ce752bcc745} 
+\index{adc.h@{adc.h}!ZERO\_CROSSING\_LEVEL@{ZERO\_CROSSING\_LEVEL}}
+\index{ZERO\_CROSSING\_LEVEL@{ZERO\_CROSSING\_LEVEL}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{ZERO\_CROSSING\_LEVEL}{ZERO\_CROSSING\_LEVEL}}
+{\footnotesize\ttfamily \#define ZERO\+\_\+\+CROSSING\+\_\+\+LEVEL~0x7\+FFF}
+
+
+
+Defined value for zero crossing level (mid of 16-\/bit ADC range) 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{adc_8h_ac00e48e19894ab2bd9d7caa86750d6fe}\label{adc_8h_ac00e48e19894ab2bd9d7caa86750d6fe} 
+\index{adc.h@{adc.h}!ADC\_Custom\_Config@{ADC\_Custom\_Config}}
+\index{ADC\_Custom\_Config@{ADC\_Custom\_Config}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_Custom\_Config()}{ADC\_Custom\_Config()}}
+{\footnotesize\ttfamily void ADC\+\_\+\+Custom\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Custom configuration for the ADC module. 
+
+The function sets up the ADC for continuous conversion mode and configures it to measure from the on-\/chip temperature sensor. It also sets the sampling time and starts the ADC conversion. \Hypertarget{adc_8h_abf443c1618ef0b16d6c5748cdf41ed2e}\label{adc_8h_abf443c1618ef0b16d6c5748cdf41ed2e} 
+\index{adc.h@{adc.h}!readADC@{readADC}}
+\index{readADC@{readADC}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{readADC()}{readADC()}}
+{\footnotesize\ttfamily void read\+ADC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read ADC samples and compute the frequency based on zero crossing. 
+
+The function counts the number of zero crossings in the provided samples and calculates the frequency based on the sample time and the number of samples. \Hypertarget{adc_8h_a0393a147a0ce447ea39025735e31cf85}\label{adc_8h_a0393a147a0ce447ea39025735e31cf85} 
+\index{adc.h@{adc.h}!readTemperature@{readTemperature}}
+\index{readTemperature@{readTemperature}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{readTemperature()}{readTemperature()}}
+{\footnotesize\ttfamily float read\+Temperature (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read the on-\/chip temperature sensor and return the temperature value. 
+
+\begin{DoxyReturn}{Returns}
+The calculated temperature based on the ADC reading and the STM32 reference manual formula. 
+\end{DoxyReturn}

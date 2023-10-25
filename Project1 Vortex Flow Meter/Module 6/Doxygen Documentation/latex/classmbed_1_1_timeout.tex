@@ -1,0 +1,116 @@
+\doxysection{mbed\+::Timeout Class Reference}
+\hypertarget{classmbed_1_1_timeout}{}\label{classmbed_1_1_timeout}\index{mbed::Timeout@{mbed::Timeout}}
+
+
+{\ttfamily \#include $<$Timeout.\+h$>$}
+
+Inheritance diagram for mbed\+::Timeout\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmbed_1_1_timeout}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmbed_1_1_timeout_a2324f9b01f39fa36f4b799541a46112b}{handler}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_ticker}{mbed\+::\+Ticker}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmbed_1_1_ticker_a6fd1d373f091d147fc3d4d2cb52b7178}{setup}} (unsigned int t)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_timer_event}{mbed\+::\+Timer\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmbed_1_1_timer_event_aa9123e5e1aff20d0112e1de3f3d621b5}{insert}} (unsigned int timestamp)
+\item 
+void \mbox{\hyperlink{classmbed_1_1_timer_event_ac8dddb3d9affcc3267e910fb305d956f}{remove}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_ticker}{mbed\+::\+Ticker}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmbed_1_1_ticker_a1fa23f99146b5bbe90791fad6fe47d36}{attach}} (void(\texorpdfstring{$\ast$}{*}fptr)(void), float t)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classmbed_1_1_ticker_ab09230bc20507a3c2b57b98ca14a0aab}{attach}} (T \texorpdfstring{$\ast$}{*}tptr, void(T\+::\texorpdfstring{$\ast$}{*}mptr)(void), float t)
+\item 
+void \mbox{\hyperlink{classmbed_1_1_ticker_ada6018d46fe613429c6159b411a524c2}{attach\+\_\+us}} (void(\texorpdfstring{$\ast$}{*}fptr)(void), unsigned int t)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classmbed_1_1_ticker_a39467eabe9e7958b512cdbfb1801db7c}{attach\+\_\+us}} (T \texorpdfstring{$\ast$}{*}tptr, void(T\+::\texorpdfstring{$\ast$}{*}mptr)(void), unsigned int t)
+\item 
+void \mbox{\hyperlink{classmbed_1_1_ticker_a07a1e3eae57ba0586ad5680f7efdb3db}{detach}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_timer_event}{mbed\+::\+Timer\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_timer_event_abeda500413955133108bad0668e2d77b}{Timer\+Event}} ()
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_timer_event_a6a2a3c2acee5b36ce21e40d84a4f9b71}{\texorpdfstring{$\sim$}{\string~}\+Timer\+Event}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_timer_event}{mbed\+::\+Timer\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classmbed_1_1_timer_event_a5c57cce06f037a5682fdee29b8dd384e}{irq}} (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classmbed_1_1_ticker}{mbed\+::\+Ticker}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classmbed_1_1_ticker_ad3c0eea07cfd5a1104f81d47a153f43b}{\+\_\+delay}}
+\item 
+\mbox{\hyperlink{classmbed_1_1_function_pointer}{Function\+Pointer}} \mbox{\hyperlink{classmbed_1_1_ticker_a1258396e7210d369b75fc227ea1dce4d}{\+\_\+function}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classmbed_1_1_timer_event}{mbed\+::\+Timer\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47}{ticker\+\_\+event\+\_\+t}} \mbox{\hyperlink{classmbed_1_1_timer_event_a80ea97a2c88250aa898f4adda12a9228}{event}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classmbed_1_1_timeout}{Timeout} is used to call a function at a point in the future
+
+You can use as many seperate \doxylink{classmbed_1_1_timeout}{Timeout} objects as you require.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Blink\ until\ timeout.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mbed_8h}{mbed.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Timeout\ timeout;}
+\DoxyCodeLine{DigitalOut\ led(\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adac6477842247cab1a8c02c65f431b44}{LED1}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ on\ =\ 1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ attimeout()\ \{}
+\DoxyCodeLine{\ \ \ \ on\ =\ 0;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ timeout.attach(\&attimeout,\ 5);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(on)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ led\ =\ !led;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ wait(0.2);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmbed_1_1_timeout_a2324f9b01f39fa36f4b799541a46112b}\label{classmbed_1_1_timeout_a2324f9b01f39fa36f4b799541a46112b} 
+\index{mbed::Timeout@{mbed::Timeout}!handler@{handler}}
+\index{handler@{handler}!mbed::Timeout@{mbed::Timeout}}
+\doxysubsubsection{\texorpdfstring{handler()}{handler()}}
+{\footnotesize\ttfamily virtual void mbed\+::\+Timeout\+::handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classmbed_1_1_ticker_a9e700f503716083f8549eec801f13710}{mbed\+::\+Ticker}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\mbox{\hyperlink{_timeout_8h}{Timeout.\+h}}\end{DoxyCompactItemize}

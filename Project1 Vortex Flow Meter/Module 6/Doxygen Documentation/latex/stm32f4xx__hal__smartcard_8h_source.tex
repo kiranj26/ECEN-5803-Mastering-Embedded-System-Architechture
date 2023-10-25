@@ -1,0 +1,201 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+smartcard.\+h}
+\hypertarget{stm32f4xx__hal__smartcard_8h_source}{}\label{stm32f4xx__hal__smartcard_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_smartcard.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_smartcard.h}}
+\mbox{\hyperlink{stm32f4xx__hal__smartcard_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_SMARTCARD\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_SMARTCARD\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__hal__def_8h}{stm32f4xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00061\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_ab7fd32cfbfc629344b4e4d5844e798cd}{BaudRate}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_a16a8ba82fbc742510824bb0d8e85fbbc}{WordLength}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_ac0eb966bac71de17ace31fa5214c23f9}{StopBits}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_aaefc9fdd7fd84b066ded393a3830743f}{Parity}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_acf1faf22e7003550470b97b9f77425f9}{Mode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_abb3ca75bd370b08fcdf0d47c00741b0a}{CLKPolarity}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_aea57d654156ac6b3eff7dae2bc4d6c5d}{CLKPhase}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_a484c956dcdfc4e604758698b3541c128}{CLKLastBit}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_a7ff96c14ecfbe219a2773a1a2cf897a4}{Prescaler}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_a5bfb799c3c7ee1faed6b1eda12c79f1a}{GuardTime}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_a3be795a888d187da69f8dcdfab38da74}{NACKState}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \}\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def}{SMARTCARD\_InitTypeDef}};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00108\ \{}
+\DoxyCodeLine{00109\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea3bb178c89408959b462cf8bc607034cb}{HAL\_SMARTCARD\_STATE\_RESET}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00,\ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea574c38a9650163fcf757974c7a6c4a44}{HAL\_SMARTCARD\_STATE\_READY}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x01,\ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea2cb929aaef6e779ed7cd6b3909ddd9dc}{HAL\_SMARTCARD\_STATE\_BUSY}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x02,\ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eae782bca07469b811467a60454fd3789d}{HAL\_SMARTCARD\_STATE\_BUSY\_TX}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x12,\ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eaebf962d48014d5c46f262a1e7c6fe5a3}{HAL\_SMARTCARD\_STATE\_BUSY\_RX}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x22,\ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eadce24f292ca00c111d393cbc11a823bf}{HAL\_SMARTCARD\_STATE\_BUSY\_TX\_RX}}\ \ \ \ \ \ \ \ =\ 0x32,\ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eac871d68a9fe445e9cdcef0d3eb374a1c}{HAL\_SMARTCARD\_STATE\_TIMEOUT}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x03,\ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eabd76a0e440c55bb7d040626f2134afee}{HAL\_SMARTCARD\_STATE\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x04\ \ \ \ \ }
+\DoxyCodeLine{00117\ \}\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga79d6a3b95636861dcfd70913746e087e}{HAL\_SMARTCARD\_StateTypeDef}};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00123\ \{}
+\DoxyCodeLine{00124\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a319651c709199001748835687ca790d4}{HAL\_SMARTCARD\_ERROR\_NONE}}\ \ \ \ \ \ =\ 0x00,\ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a50cbf86dd5395fd9a328f153a86adba9}{HAL\_SMARTCARD\_ERROR\_PE}}\ \ \ \ \ \ \ \ =\ 0x01,\ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a8aca04ab3abf42b68d93c9ffa2827e07}{HAL\_SMARTCARD\_ERROR\_NE}}\ \ \ \ \ \ \ \ =\ 0x02,\ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651ad181472c6486cbc8c8f126144817a06c}{HAL\_SMARTCARD\_ERROR\_FE}}\ \ \ \ \ \ \ \ =\ 0x04,\ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651ad292f9248d5ee9036ba769c4e36adfae}{HAL\_SMARTCARD\_ERROR\_ORE}}\ \ \ \ \ \ \ =\ 0x08,\ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651add9e313d077e62b0c93150876e965e03}{HAL\_SMARTCARD\_ERROR\_DMA}}\ \ \ \ \ \ \ =\ 0x10\ \ \ \ \ }
+\DoxyCodeLine{00130\ \}\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gae3ce190c726f8059f7280e4e7b091651}{HAL\_SMARTCARD\_ErrorTypeDef}};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00136\ \{}
+\DoxyCodeLine{00137\ \ \ \mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\_TypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_aa10c19ecef00e6bd27853a78fc319745}{Instance}};\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ USART\ registers\ base\ address\ */}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def}{SMARTCARD\_InitTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_a032d574f1eb6ad5d7da2f72445ddab6c}{Init}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ SmartCard\ communication\ parameters\ */}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_a0a1d59a6c21d26a7a55a93224e0eaec1}{pTxBuffPtr}};\ \ \ \ \ \ \textcolor{comment}{/*\ Pointer\ to\ SmartCard\ Tx\ transfer\ Buffer\ */}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_aa9d723a9653e99d5106e999b64e3dee7}{TxXferSize}};\ \ \ \ \ \ \ \textcolor{comment}{/*\ SmartCard\ Tx\ Transfer\ size\ */}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_a69a46d92d536e661f123cecdfec46cb0}{TxXferCount}};\ \ \ \ \ \ \textcolor{comment}{/*\ SmartCard\ Tx\ Transfer\ Counter\ */}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_a174c5603ed2edd3d13e3e523da2d6777}{pRxBuffPtr}};\ \ \ \ \ \ \textcolor{comment}{/*\ Pointer\ to\ SmartCard\ Rx\ transfer\ Buffer\ */}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_a4fcce033d2f5aeb697d6094e0a0cbe41}{RxXferSize}};\ \ \ \ \ \ \ \textcolor{comment}{/*\ SmartCard\ Rx\ Transfer\ size\ */}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_a6a7fc5f00626ce4e114af79b2471c687}{RxXferCount}};\ \ \ \ \ \ \textcolor{comment}{/*\ SmartCard\ Rx\ Transfer\ Counter\ */}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \mbox{\hyperlink{struct_____d_m_a___handle_type_def}{DMA\_HandleTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_ae3fec6fd1eae5624682c646448e018ce}{hdmatx}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ SmartCard\ Tx\ DMA\ Handle\ parameters\ */}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \mbox{\hyperlink{struct_____d_m_a___handle_type_def}{DMA\_HandleTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_afb70bd7a1b23c58a20b9af41bc9483b1}{hdmarx}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ SmartCard\ Rx\ DMA\ Handle\ parameters\ */}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\_LockTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_aef5a4eb8f0754c9e640ad780c85f89c6}{Lock}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Locking\ object\ */}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga79d6a3b95636861dcfd70913746e087e}{HAL\_SMARTCARD\_StateTypeDef}}\ \ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_a1e4236925a5326bedce6784a35d98ed7}{State}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ SmartCard\ communication\ state\ */}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gae3ce190c726f8059f7280e4e7b091651}{HAL\_SMARTCARD\_ErrorTypeDef}}\ \ \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def_af7be12188366c9ffac490ea3a97fdbe6}{ErrorCode}};\ \ \ \ \ \ \ \textcolor{comment}{/*\ SMARTCARD\ Error\ code\ */}}
+\DoxyCodeLine{00162\ \}\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ SMARTCARD\_WORDLENGTH\_8B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ SMARTCARD\_WORDLENGTH\_9B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)USART\_CR1\_M)}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ IS\_SMARTCARD\_WORD\_LENGTH(LENGTH)\ (((LENGTH)\ ==\ SMARTCARD\_WORDLENGTH\_8B)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LENGTH)\ ==\ SMARTCARD\_WORDLENGTH\_9B))}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ SMARTCARD\_STOPBITS\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ SMARTCARD\_STOPBITS\_0\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)USART\_CR2\_STOP\_0)}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ SMARTCARD\_STOPBITS\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)USART\_CR2\_STOP\_1)}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ SMARTCARD\_STOPBITS\_1\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)(USART\_CR2\_STOP\_0\ |\ USART\_CR2\_STOP\_1))}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ IS\_SMARTCARD\_STOPBITS(STOPBITS)\ (((STOPBITS)\ ==\ SMARTCARD\_STOPBITS\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STOPBITS)\ ==\ SMARTCARD\_STOPBITS\_0\_5)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STOPBITS)\ ==\ SMARTCARD\_STOPBITS\_1\_5)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STOPBITS)\ ==\ SMARTCARD\_STOPBITS\_2))}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ SMARTCARD\_PARITY\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ SMARTCARD\_PARITY\_EVEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)USART\_CR1\_PCE)}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ SMARTCARD\_PARITY\_ODD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)(USART\_CR1\_PCE\ |\ USART\_CR1\_PS))\ }}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ IS\_SMARTCARD\_PARITY(PARITY)\ (((PARITY)\ ==\ SMARTCARD\_PARITY\_NONE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PARITY)\ ==\ SMARTCARD\_PARITY\_EVEN)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PARITY)\ ==\ SMARTCARD\_PARITY\_ODD))}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ SMARTCARD\_MODE\_RX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)USART\_CR1\_RE)}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ SMARTCARD\_MODE\_TX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)USART\_CR1\_TE)}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ SMARTCARD\_MODE\_TX\_RX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)(USART\_CR1\_TE\ |USART\_CR1\_RE))}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ IS\_SMARTCARD\_MODE(MODE)\ ((((MODE)\ \&\ (uint32\_t)0x0000FFF3)\ ==\ 0x00)\ \&\&\ ((MODE)\ !=\ (uint32\_t)0x000000))}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ SMARTCARD\_POLARITY\_LOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ SMARTCARD\_POLARITY\_HIGH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)USART\_CR2\_CPOL)}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ IS\_SMARTCARD\_POLARITY(CPOL)\ (((CPOL)\ ==\ SMARTCARD\_POLARITY\_LOW)\ ||\ ((CPOL)\ ==\ SMARTCARD\_POLARITY\_HIGH))}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ SMARTCARD\_PHASE\_1EDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ SMARTCARD\_PHASE\_2EDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)USART\_CR2\_CPHA)}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ IS\_SMARTCARD\_PHASE(CPHA)\ (((CPHA)\ ==\ SMARTCARD\_PHASE\_1EDGE)\ ||\ ((CPHA)\ ==\ SMARTCARD\_PHASE\_2EDGE))}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ SMARTCARD\_LASTBIT\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ SMARTCARD\_LASTBIT\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)USART\_CR2\_LBCL)}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ IS\_SMARTCARD\_LASTBIT(LASTBIT)\ (((LASTBIT)\ ==\ SMARTCARD\_LASTBIT\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LASTBIT)\ ==\ SMARTCARD\_LASTBIT\_ENABLE))}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ SMARTCARD\_NACK\_ENABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)USART\_CR3\_NACK)}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ SMARTCARD\_NACK\_DISABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ IS\_SMARTCARD\_NACK\_STATE(NACK)\ (((NACK)\ ==\ SMARTCARD\_NACK\_ENABLED)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((NACK)\ ==\ SMARTCARD\_NACK\_DISABLED))}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ SMARTCARD\_DMAREQ\_TX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)USART\_CR3\_DMAT)}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ SMARTCARD\_DMAREQ\_RX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)USART\_CR3\_DMAR)}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ SMARTCARD\_FLAG\_TXE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000080)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#define\ SMARTCARD\_FLAG\_TC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ SMARTCARD\_FLAG\_RXNE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000020)}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ SMARTCARD\_FLAG\_IDLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)}}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ SMARTCARD\_FLAG\_ORE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)}}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\#define\ SMARTCARD\_FLAG\_NE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ SMARTCARD\_FLAG\_FE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ SMARTCARD\_FLAG\_PE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ SMARTCARD\_IT\_PE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x10000100)}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ SMARTCARD\_IT\_TXE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x10000080)}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ SMARTCARD\_IT\_TC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x10000040)}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ SMARTCARD\_IT\_RXNE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x10000020)}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ SMARTCARD\_IT\_IDLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x10000010)}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ SMARTCARD\_IT\_ERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x20000001)}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00315\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SMARTCARD\_RESET\_HANDLE\_STATE(\_\_HANDLE\_\_)\ ((\_\_HANDLE\_\_)-\/>State\ =\ HAL\_SMARTCARD\_STATE\_RESET)}}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SMARTCARD\_FLUSH\_DRREGISTER(\_\_HANDLE\_\_)\ ((\_\_HANDLE\_\_)-\/>Instance-\/>DR)}}
+\DoxyCodeLine{00327\ \ \ \ \ }
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SMARTCARD\_GET\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ (((\_\_HANDLE\_\_)-\/>Instance-\/>SR\ \&\ (\_\_FLAG\_\_))\ ==\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SMARTCARD\_CLEAR\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ ((\_\_HANDLE\_\_)-\/>Instance-\/>SR\ \&=\ \string~(\_\_FLAG\_\_))}}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ SMARTCARD\_IT\_MASK\ \ ((uint32\_t)0x0000FFFF)}}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ \_\_SMARTCARD\_ENABLE\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ ((((\_\_INTERRUPT\_\_)\ >>\ 28)\ ==\ 1)?\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR1\ |=\ ((\_\_INTERRUPT\_\_)\ \&\ SMARTCARD\_IT\_MASK)):\ \(\backslash\)}}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR3\ |=\ ((\_\_INTERRUPT\_\_)\ \&\ SMARTCARD\_IT\_MASK)))}}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#define\ \_\_SMARTCARD\_DISABLE\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \ ((((\_\_INTERRUPT\_\_)\ >>\ 28)\ ==\ 1)?\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR1\ \&=\ \string~((\_\_INTERRUPT\_\_)\ \&\ SMARTCARD\_IT\_MASK)):\ \(\backslash\)}}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR3\ \&=\ \string~\ ((\_\_INTERRUPT\_\_)\ \&\ SMARTCARD\_IT\_MASK)))}}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SMARTCARD\_GET\_IT\_SOURCE(\_\_HANDLE\_\_,\ \_\_IT\_\_)\ (((((\_\_IT\_\_)\ >>\ 28)\ ==\ 1)?\ (\_\_HANDLE\_\_)-\/>Instance-\/>CR1:\ (\_\_HANDLE\_\_)-\/>Instance-\/>CR3)\ \&\ (((uint32\_t)(\_\_IT\_\_))\ \&\ SMARTCARD\_IT\_MASK))}}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#define\ \_\_SMARTCARD\_ENABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR1\ |=\ \ USART\_CR1\_UE)}}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#define\ \_\_SMARTCARD\_DISABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR1\ \&=\ \ \string~USART\_CR1\_UE)}}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ \_\_SMARTCARD\_DMA\_REQUEST\_ENABLE(\_\_HANDLE\_\_,\ \_\_REQUEST\_\_)\ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR3\ |=\ \ (\_\_REQUEST\_\_))}}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ \_\_SMARTCARD\_DMA\_REQUEST\_DISABLE(\_\_HANDLE\_\_,\ \_\_REQUEST\_\_)\ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR3\ \&=\ \ \string~(\_\_REQUEST\_\_))}}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ \_\_DIV(\_PCLK\_,\ \_BAUD\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_PCLK\_)*25)/(4*(\_BAUD\_)))}}
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#define\ \_\_DIVMANT(\_PCLK\_,\ \_BAUD\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_DIV((\_PCLK\_),\ (\_BAUD\_))/100)}}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#define\ \_\_DIVFRAQ(\_PCLK\_,\ \_BAUD\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_DIV((\_PCLK\_),\ (\_BAUD\_))\ -\/\ (\_\_DIVMANT((\_PCLK\_),\ (\_BAUD\_))\ *\ 100))\ *\ 16\ +\ 50)\ /\ 100)}}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ \_\_SMARTCARD\_BRR(\_PCLK\_,\ \_BAUD\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_DIVMANT((\_PCLK\_),\ (\_BAUD\_))\ <<\ 4)|(\_\_DIVFRAQ((\_PCLK\_),\ (\_BAUD\_))\ \&\ 0x0F))}}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ IS\_SMARTCARD\_BAUDRATE(BAUDRATE)\ ((BAUDRATE)\ <\ 10500001)}}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00415\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00416\ \textcolor{comment}{/*\ Initialization/de-\/initialization\ functions\ \ **********************************/}}
+\DoxyCodeLine{00417\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga95235c14cb192c26cf72bf44ddaaf551}{HAL\_SMARTCARD\_Init}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc);}
+\DoxyCodeLine{00418\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga1701fcf5d66117782a06569af1e40077}{HAL\_SMARTCARD\_ReInit}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc);}
+\DoxyCodeLine{00419\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga4b54b33c61b5284adbb7c98760425c2e}{HAL\_SMARTCARD\_DeInit}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc);}
+\DoxyCodeLine{00420\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga13e9aae9f5dd3b332fc8e431596793dc}{HAL\_SMARTCARD\_MspInit}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc);}
+\DoxyCodeLine{00421\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gaf8e8fa8ca8058656fdd091880424565a}{HAL\_SMARTCARD\_MspDeInit}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc);}
+\DoxyCodeLine{00422\ \textcolor{comment}{/*\ IO\ operation\ functions\ *******************************************************/}}
+\DoxyCodeLine{00423\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga4dd0a7c6916ca2423c50f432a38a7328}{HAL\_SMARTCARD\_Transmit}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc,\ uint8\_t\ *pData,\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Size,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00424\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga82240fa2bcafd64a28ffbb1b01893e84}{HAL\_SMARTCARD\_Receive}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc,\ uint8\_t\ *pData,\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Size,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00425\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gab671c1bdba9ed83fb08142c4c38caee8}{HAL\_SMARTCARD\_Transmit\_IT}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc,\ uint8\_t\ *pData,\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Size);}
+\DoxyCodeLine{00426\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga52b04b11f8793a859f2105fd748d75cd}{HAL\_SMARTCARD\_Receive\_IT}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc,\ uint8\_t\ *pData,\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Size);}
+\DoxyCodeLine{00427\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gab39a7dd50e44fd5c6cfc6af60bf8a4f5}{HAL\_SMARTCARD\_Transmit\_DMA}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc,\ uint8\_t\ *pData,\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Size);}
+\DoxyCodeLine{00428\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gaa8506576688d14e1f10f99d8c3f104fa}{HAL\_SMARTCARD\_Receive\_DMA}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc,\ uint8\_t\ *pData,\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Size);}
+\DoxyCodeLine{00429\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga5c09daa91f4d5f44c9b4c927a1c50b3e}{HAL\_SMARTCARD\_IRQHandler}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc);}
+\DoxyCodeLine{00430\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gafb56eef6e839e909823cc16bf96c845b}{HAL\_SMARTCARD\_TxCpltCallback}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc);}
+\DoxyCodeLine{00431\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga955fe3e5402e8a2797af8b605701dde4}{HAL\_SMARTCARD\_RxCpltCallback}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc);}
+\DoxyCodeLine{00432\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga6a5255ea10c1c5c0d3b037ce61d5dc91}{HAL\_SMARTCARD\_ErrorCallback}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc);}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \textcolor{comment}{/*\ Peripheral\ State\ functions\ \ **************************************************/}}
+\DoxyCodeLine{00435\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga79d6a3b95636861dcfd70913746e087e}{HAL\_SMARTCARD\_StateTypeDef}}\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga0edb69af10195dfde9b0451943990ad0}{HAL\_SMARTCARD\_GetState}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc);}
+\DoxyCodeLine{00436\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gaf42409d25813eeca7cca2df14a6f7b7a}{HAL\_SMARTCARD\_GetError}}(\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\_HandleTypeDef}}\ *hsc);}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00447\ \}}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_HAL\_SMARTCARD\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

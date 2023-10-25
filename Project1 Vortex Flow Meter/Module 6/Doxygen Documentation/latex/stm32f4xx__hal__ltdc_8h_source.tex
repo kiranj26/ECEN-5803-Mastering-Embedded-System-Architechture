@@ -1,0 +1,241 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+ltdc.\+h}
+\hypertarget{stm32f4xx__hal__ltdc_8h_source}{}\label{stm32f4xx__hal__ltdc_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_ltdc.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_ltdc.h}}
+\mbox{\hyperlink{stm32f4xx__hal__ltdc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_LTDC\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_LTDC\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#if\ defined(STM32F429xx)\ ||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00047\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__hal__def_8h}{stm32f4xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ MAX\_LAYER\ \ 2}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ uint8\_t\ Blue;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ uint8\_t\ Green;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ uint8\_t\ Red;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ uint8\_t\ Reserved;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \}\ LTDC\_ColorTypeDef;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00084\ \{}
+\DoxyCodeLine{00085\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ HSPolarity;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ VSPolarity;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ DEPolarity;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ PCPolarity;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ HorizontalSync;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ VerticalSync;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ AccumulatedHBP;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ AccumulatedVBP;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ AccumulatedActiveW;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ AccumulatedActiveH;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ TotalWidth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ TotalHeigh;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ LTDC\_ColorTypeDef\ \ \ Backcolor;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \}\ LTDC\_InitTypeDef;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00129\ \{}
+\DoxyCodeLine{00130\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WindowX0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WindowX1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WindowY0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00139\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WindowY1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PixelFormat;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00145\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Alpha;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00148\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Alpha0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BlendingFactor1;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00154\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BlendingFactor2;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00157\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FBStartAdress;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00159\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ImageWidth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00162\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ImageHeight;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00165\ \ \ LTDC\_ColorTypeDef\ \ \ Backcolor;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00166\ \}\ LTDC\_LayerCfgTypeDef;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00171\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00172\ \{}
+\DoxyCodeLine{00173\ \ \ HAL\_LTDC\_STATE\_RESET\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00,\ \ \ \ }
+\DoxyCodeLine{00174\ \ \ HAL\_LTDC\_STATE\_READY\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x01,\ \ \ \ }
+\DoxyCodeLine{00175\ \ \ HAL\_LTDC\_STATE\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x02,\ \ \ \ }
+\DoxyCodeLine{00176\ \ \ HAL\_LTDC\_STATE\_TIMEOUT\ \ \ \ \ \ \ \ \ \ \ =\ 0x03,\ \ \ \ }
+\DoxyCodeLine{00177\ \ \ HAL\_LTDC\_STATE\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x04\ \ \ \ \ }
+\DoxyCodeLine{00178\ \}HAL\_LTDC\_StateTypeDef;}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00184\ \{}
+\DoxyCodeLine{00185\ \ \ LTDC\_TypeDef\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Instance;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00187\ \ \ LTDC\_InitTypeDef\ \ \ \ \ \ \ \ \ \ \ \ Init;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ LTDC\_LayerCfgTypeDef\ \ \ \ \ \ \ \ LayerCfg[MAX\_LAYER];\ \ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\_LockTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ Lock;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00193\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ HAL\_LTDC\_StateTypeDef\ \ State;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00195\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ErrorCode;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00197\ \}\ LTDC\_HandleTypeDef;}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_LAYER(LAYER)\ ((LAYER)\ <=\ MAX\_LAYER)}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ HAL\_LTDC\_ERROR\_NONE\ \ \ \ \ \ ((uint32\_t)0x00000000)\ \ \ \ }}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ HAL\_LTDC\_ERROR\_TE\ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)\ \ \ \ }}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ HAL\_LTDC\_ERROR\_FU\ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)\ \ \ \ }}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ HAL\_LTDC\_ERROR\_TIMEOUT\ \ \ ((uint32\_t)0x00000020)\ \ \ \ }}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ LTDC\_HSPOLARITY\_AL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ LTDC\_HSPOLARITY\_AH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_GCR\_HSPOL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_HSPOL(HSPOL)\ (((HSPOL)\ ==\ LTDC\_HSPOLARITY\_AL)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((HSPOL)\ ==\ LTDC\_HSPOLARITY\_AH))\ \ }}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ LTDC\_VSPOLARITY\_AL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ LTDC\_VSPOLARITY\_AH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_GCR\_VSPOL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_VSPOL(VSPOL)\ (((VSPOL)\ ==\ LTDC\_VSPOLARITY\_AL)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VSPOL)\ ==\ LTDC\_VSPOLARITY\_AH))}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ LTDC\_DEPOLARITY\_AL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ LTDC\_DEPOLARITY\_AH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_GCR\_DEPOL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_DEPOL(DEPOL)\ (((DEPOL)\ ==\ \ LTDC\_DEPOLARITY\_AL)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DEPOL)\ ==\ \ LTDC\_DEPOLARITY\_AH))}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ LTDC\_PCPOLARITY\_IPC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#define\ LTDC\_PCPOLARITY\_IIPC\ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_GCR\_PCPOL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_PCPOL(PCPOL)\ (((PCPOL)\ ==\ \ LTDC\_PCPOLARITY\_IPC)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PCPOL)\ ==\ \ LTDC\_PCPOLARITY\_IIPC))}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#define\ LTDC\_HORIZONTALSYNC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LTDC\_SSCR\_HSW\ >>\ 16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#define\ LTDC\_VERTICALSYNC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_SSCR\_VSH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_HSYNC(HSYNC)\ \ \ ((HSYNC)\ \ <=\ LTDC\_HORIZONTALSYNC)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_VSYNC(VSYNC)\ \ \ ((VSYNC)\ \ <=\ LTDC\_VERTICALSYNC)}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_AHBP(AHBP)\ \ \ \ \ ((AHBP)\ \ \ <=\ LTDC\_HORIZONTALSYNC)}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_AVBP(AVBP)\ \ \ \ \ ((AVBP)\ \ \ <=\ LTDC\_VERTICALSYNC)}}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_AAW(AAW)\ \ \ \ \ \ \ ((AAW)\ \ \ \ <=\ LTDC\_HORIZONTALSYNC)}}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_AAH(AAH)\ \ \ \ \ \ \ ((AAH)\ \ \ \ <=\ LTDC\_VERTICALSYNC)}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_TOTALW(TOTALW)\ ((TOTALW)\ <=\ LTDC\_HORIZONTALSYNC)}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_TOTALH(TOTALH)\ ((TOTALH)\ <=\ LTDC\_VERTICALSYNC)}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ LTDC\_COLOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x000000FF)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_BLUEVALUE(BBLUE)\ \ \ \ ((BBLUE)\ \ <=\ LTDC\_COLOR)}}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_GREENVALUE(BGREEN)\ \ ((BGREEN)\ <=\ LTDC\_COLOR)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_REDVALUE(BRED)\ \ \ \ \ \ ((BRED)\ \ \ <=\ LTDC\_COLOR)\ }}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ LTDC\_BLENDING\_FACTOR1\_CA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000400)\ \ \ }}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ LTDC\_BLENDING\_FACTOR1\_PAxCA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000600)\ \ \ }}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_BLENDING\_FACTOR1(BlendingFactor1)\ (((BlendingFactor1)\ ==\ LTDC\_BLENDING\_FACTOR1\_CA)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BlendingFactor1)\ ==\ LTDC\_BLENDING\_FACTOR1\_PAxCA))}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ LTDC\_BLENDING\_FACTOR2\_CA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000005)\ \ \ }}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ LTDC\_BLENDING\_FACTOR2\_PAxCA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000007)\ \ \ }}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_BLENDING\_FACTOR2(BlendingFactor2)\ (((BlendingFactor2)\ ==\ LTDC\_BLENDING\_FACTOR2\_CA)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BlendingFactor2)\ ==\ LTDC\_BLENDING\_FACTOR2\_PAxCA))}}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#define\ LTDC\_PIXEL\_FORMAT\_ARGB8888\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ \ \ \ \ \ }}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#define\ LTDC\_PIXEL\_FORMAT\_RGB888\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)\ \ \ \ \ \ }}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#define\ LTDC\_PIXEL\_FORMAT\_RGB565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)\ \ \ \ \ \ }}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#define\ LTDC\_PIXEL\_FORMAT\_ARGB1555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000003)\ \ \ \ \ \ }}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ LTDC\_PIXEL\_FORMAT\_ARGB4444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ \ \ \ \ \ }}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#define\ LTDC\_PIXEL\_FORMAT\_L8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000005)\ \ \ \ \ \ }}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ LTDC\_PIXEL\_FORMAT\_AL44\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000006)\ \ \ \ \ \ }}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ LTDC\_PIXEL\_FORMAT\_AL88\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000007)\ \ \ \ \ \ }}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_PIXEL\_FORMAT(Pixelformat)\ (((Pixelformat)\ ==\ LTDC\_PIXEL\_FORMAT\_ARGB8888)\ ||\ ((Pixelformat)\ ==\ LTDC\_PIXEL\_FORMAT\_RGB888)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((Pixelformat)\ ==\ LTDC\_PIXEL\_FORMAT\_RGB565)\ \ \ ||\ ((Pixelformat)\ ==\ LTDC\_PIXEL\_FORMAT\_ARGB1555)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((Pixelformat)\ ==\ LTDC\_PIXEL\_FORMAT\_ARGB4444)\ ||\ ((Pixelformat)\ ==\ LTDC\_PIXEL\_FORMAT\_L8)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((Pixelformat)\ ==\ LTDC\_PIXEL\_FORMAT\_AL44)\ \ \ \ \ ||\ ((Pixelformat)\ ==\ LTDC\_PIXEL\_FORMAT\_AL88))}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ LTDC\_ALPHA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_LxCACR\_CONSTA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_ALPHA(ALPHA)\ ((ALPHA)\ <=\ LTDC\_ALPHA)}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ LTDC\_STOPPOSITION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LTDC\_LxWHPCR\_WHSPPOS\ >>\ 16)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ LTDC\_STARTPOSITION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_LxWHPCR\_WHSTPOS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#define\ LTDC\_COLOR\_FRAME\_BUFFER\ \ \ \ \ \ \ \ \ \ \ LTDC\_LxCFBLR\_CFBLL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\#define\ LTDC\_LINE\_NUMBER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_LxCFBLNR\_CFBLNBR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_HCONFIGST(HCONFIGST)\ ((HCONFIGST)\ <=\ LTDC\_STARTPOSITION)}}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_HCONFIGSP(HCONFIGSP)\ ((HCONFIGSP)\ <=\ LTDC\_STOPPOSITION)}}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_VCONFIGST(VCONFIGST)\ \ ((VCONFIGST)\ <=\ LTDC\_STARTPOSITION)}}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_VCONFIGSP(VCONFIGSP)\ ((VCONFIGSP)\ <=\ LTDC\_STOPPOSITION)}}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_CFBP(CFBP)\ ((CFBP)\ <=\ LTDC\_COLOR\_FRAME\_BUFFER)}}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_CFBLL(CFBLL)\ ((CFBLL)\ <=\ LTDC\_COLOR\_FRAME\_BUFFER)}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_CFBLNBR(CFBLNBR)\ ((CFBLNBR)\ <=\ LTDC\_LINE\_NUMBER)}}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_LIPOS(LIPOS)\ ((LIPOS)\ <=\ 0x7FF)}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#define\ LTDC\_IT\_LI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_IER\_LIE}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ LTDC\_IT\_FU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_IER\_FUIE}}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ LTDC\_IT\_TE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_IER\_TERRIE}}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ LTDC\_IT\_RR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_IER\_RRIE}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_IT(IT)\ ((((IT)\ \&\ (uint32\_t)0xFFFFFFF0)\ ==\ 0x00)\ \&\&\ ((IT)\ !=\ 0x00))}}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ LTDC\_FLAG\_LI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_ISR\_LIF}}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#define\ LTDC\_FLAG\_FU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_ISR\_FUIF}}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ LTDC\_FLAG\_TE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_ISR\_TERRIF}}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ LTDC\_FLAG\_RR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LTDC\_ISR\_RRIF}}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ IS\_LTDC\_FLAG(FLAG)\ (((FLAG)\ ==\ LTDC\_FLAG\_LI)\ ||\ ((FLAG)\ ==\ LTDC\_FLAG\_FU)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ LTDC\_FLAG\_TERR)\ ||\ ((FLAG)\ ==\ LTDC\_FLAG\_RR))}}
+\DoxyCodeLine{00417\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LTDC\_RESET\_HANDLE\_STATE(\_\_HANDLE\_\_)\ ((\_\_HANDLE\_\_)-\/>State\ =\ HAL\_LTDC\_STATE\_RESET)}}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LTDC\_ENABLE(\_\_HANDLE\_\_)\ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>GCR\ |=\ LTDC\_GCR\_LTDCEN)}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LTDC\_DISABLE(\_\_HANDLE\_\_)\ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>GCR\ \&=\ \string~(LTDC\_GCR\_LTDCEN))}}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LTDC\_LAYER(\_\_HANDLE\_\_,\ \_\_LAYER\_\_)\ \ \ ((LTDC\_Layer\_TypeDef\ *)(((uint32\_t)((\_\_HANDLE\_\_)-\/>Instance))\ +\ 0x84\ +\ (0x80*(\_\_LAYER\_\_))))}}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LTDC\_LAYER\_ENABLE(\_\_HANDLE\_\_,\ \_\_LAYER\_\_)\ \ ((\_\_HAL\_LTDC\_LAYER((\_\_HANDLE\_\_),\ (\_\_LAYER\_\_)))-\/>CR\ |=\ (uint32\_t)LTDC\_LxCR\_LEN)}}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LTDC\_LAYER\_DISABLE(\_\_HANDLE\_\_,\ \_\_LAYER\_\_)\ ((\_\_HAL\_LTDC\_LAYER((\_\_HANDLE\_\_),\ (\_\_LAYER\_\_)))-\/>CR\ \&=\ \string~(uint32\_t)LTDC\_LxCR\_LEN)}}
+\DoxyCodeLine{00458\ }
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LTDC\_RELOAD\_CONFIG(\_\_HANDLE\_\_)\ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>SRCR\ |=\ LTDC\_SRCR\_IMR)}}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \textcolor{comment}{/*\ Interrupt\ \&\ Flag\ management\ */}}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LTDC\_GET\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ ((\_\_HANDLE\_\_)-\/>Instance-\/>ISR\ \&\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LTDC\_CLEAR\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ ((\_\_HANDLE\_\_)-\/>Instance-\/>ICR\ |=\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LTDC\_ENABLE\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ ((\_\_HANDLE\_\_)-\/>Instance-\/>IER\ |=\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LTDC\_DISABLE\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ ((\_\_HANDLE\_\_)-\/>Instance-\/>IER\ \&=\ \string~(\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ \_\_HAL\_LTDC\_GET\_IT\_SOURCE(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ ((\_\_HANDLE\_\_)-\/>Instance-\/>ISR\ \&\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00533\ }
+\DoxyCodeLine{00534\ \textcolor{comment}{/*\ Initialization\ and\ de-\/initialization\ functions\ *****************************/}}
+\DoxyCodeLine{00535\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_Init(LTDC\_HandleTypeDef\ *hltdc);}
+\DoxyCodeLine{00536\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_DeInit(LTDC\_HandleTypeDef\ *hltdc);}
+\DoxyCodeLine{00537\ \textcolor{keywordtype}{void}\ HAL\_LTDC\_MspInit(LTDC\_HandleTypeDef*\ hltdc);}
+\DoxyCodeLine{00538\ \textcolor{keywordtype}{void}\ HAL\_LTDC\_MspDeInit(LTDC\_HandleTypeDef*\ hltdc);}
+\DoxyCodeLine{00539\ \textcolor{keywordtype}{void}\ HAL\_LTDC\_ErrorCallback(LTDC\_HandleTypeDef\ *hltdc);}
+\DoxyCodeLine{00540\ \textcolor{keywordtype}{void}\ HAL\_LTDC\_LineEvenCallback(LTDC\_HandleTypeDef\ *hltdc);}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \textcolor{comment}{/*\ IO\ operation\ functions\ *****************************************************/}}
+\DoxyCodeLine{00543\ \textcolor{keywordtype}{void}\ \ HAL\_LTDC\_IRQHandler(LTDC\_HandleTypeDef\ *hltdc);}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00545\ \textcolor{comment}{/*\ Peripheral\ Control\ functions\ ***********************************************/}}
+\DoxyCodeLine{00546\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_ConfigLayer(LTDC\_HandleTypeDef\ *hltdc,\ LTDC\_LayerCfgTypeDef\ *pLayerCfg,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LayerIdx);}
+\DoxyCodeLine{00547\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_SetWindowSize(LTDC\_HandleTypeDef\ *hltdc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ XSize,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ YSize,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LayerIdx);}
+\DoxyCodeLine{00548\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_SetWindowPosition(LTDC\_HandleTypeDef\ *hltdc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ X0,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Y0,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LayerIdx);}
+\DoxyCodeLine{00549\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_SetPixelFormat(LTDC\_HandleTypeDef\ *hltdc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Pixelformat,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LayerIdx);}
+\DoxyCodeLine{00550\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_SetAlpha(LTDC\_HandleTypeDef\ *hltdc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Alpha,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LayerIdx);}
+\DoxyCodeLine{00551\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_SetAddress(LTDC\_HandleTypeDef\ *hltdc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Address,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LayerIdx);}
+\DoxyCodeLine{00552\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_ConfigColorKeying(LTDC\_HandleTypeDef\ *hltdc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RGBValue,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LayerIdx);}
+\DoxyCodeLine{00553\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_ConfigCLUT(LTDC\_HandleTypeDef\ *hltdc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *pCLUT,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CLUTSize,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LayerIdx);}
+\DoxyCodeLine{00554\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_EnableColorKeying(LTDC\_HandleTypeDef\ *hltdc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LayerIdx);}
+\DoxyCodeLine{00555\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_DisableColorKeying(LTDC\_HandleTypeDef\ *hltdc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LayerIdx);}
+\DoxyCodeLine{00556\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_EnableCLUT(LTDC\_HandleTypeDef\ *hltdc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LayerIdx);}
+\DoxyCodeLine{00557\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_DisableCLUT(LTDC\_HandleTypeDef\ *hltdc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LayerIdx);}
+\DoxyCodeLine{00558\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_ProgramLineEvent(LTDC\_HandleTypeDef\ *hltdc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Line);}
+\DoxyCodeLine{00559\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_EnableDither(LTDC\_HandleTypeDef\ *hltdc);}
+\DoxyCodeLine{00560\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_LTDC\_DisableDither(LTDC\_HandleTypeDef\ *hltdc);}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00562\ \textcolor{comment}{/*\ Peripheral\ State\ functions\ *************************************************/}}
+\DoxyCodeLine{00563\ HAL\_LTDC\_StateTypeDef\ HAL\_LTDC\_GetState(LTDC\_HandleTypeDef\ *hltdc);}
+\DoxyCodeLine{00564\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_LTDC\_GetError(LTDC\_HandleTypeDef\ *hltdc);}
+\DoxyCodeLine{00565\ }
+\DoxyCodeLine{00566\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F429xx\ ||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00567\ }
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00577\ \}}
+\DoxyCodeLine{00578\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00579\ }
+\DoxyCodeLine{00580\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_HAL\_LTDC\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00581\ }
+\DoxyCodeLine{00582\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

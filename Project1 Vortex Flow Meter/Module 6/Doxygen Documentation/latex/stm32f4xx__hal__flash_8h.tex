@@ -1,0 +1,182 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+hal\+\_\+flash.h File Reference}
+\hypertarget{stm32f4xx__hal__flash_8h}{}\label{stm32f4xx__hal__flash_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_flash.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_flash.h}}
+
+
+Header file of FLASH HAL module.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_l_a_s_h___process_type_def}{FLASH\+\_\+\+Process\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em FLASH handle Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___type___program_ga458b1d485bc541d4a9f2196881146026}{TYPEPROGRAM\+\_\+\+BYTE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___type___program_ga7f3aba0ba4426991096af46fb513eb4a}{TYPEPROGRAM\+\_\+\+HALFWORD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x01)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___type___program_ga30d98b2839798f48f8a6e0289ab2677a}{TYPEPROGRAM\+\_\+\+WORD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x02)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___type___program_ga12da935a6f8f2870015e55ff8aa9a7b0}{TYPEPROGRAM\+\_\+\+DOUBLEWORD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x03)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___type___program_ga82f9990301f63110719910443dc713df}{IS\+\_\+\+TYPEPROGRAM}}(VALUE)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___flag__definition_gaf043ba4d8f837350bfc7754a99fae5a9}{FLASH\+\_\+\+FLAG\+\_\+\+EOP}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gae1301c6b487cfefa247c54a576a0c12b}{FLASH\+\_\+\+SR\+\_\+\+EOP}}
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___flag__definition_gad8a96ceda91fcf0d1299da933b5816f1}{FLASH\+\_\+\+FLAG\+\_\+\+OPERR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gab779aa8b88258e15c183041744a846ff}{FLASH\+\_\+\+SR\+\_\+\+SOP}}
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___flag__definition_ga6abf64f916992585899369166db3f266}{FLASH\+\_\+\+FLAG\+\_\+\+WRPERR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gabf6f52f59b01530928d747cf32bd4d01}{FLASH\+\_\+\+SR\+\_\+\+WRPERR}}
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___flag__definition_ga2c3f4dbea065f8ea2987eada4dab30bd}{FLASH\+\_\+\+FLAG\+\_\+\+PGAERR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gac98c2458e114e7f419f3222673878ce0}{FLASH\+\_\+\+SR\+\_\+\+PGAERR}}
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___flag__definition_ga88a93907641f5eeb4091a26b84c94897}{FLASH\+\_\+\+FLAG\+\_\+\+PGPERR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7fd2704724528be959f82089f67e3869}{FLASH\+\_\+\+SR\+\_\+\+PGPERR}}
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___flag__definition_ga25b80c716320e667162846da8be09b68}{FLASH\+\_\+\+FLAG\+\_\+\+PGSERR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5d76ad3629a288bee0136b8b34f274f4}{FLASH\+\_\+\+SR\+\_\+\+PGSERR}}
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___flag__definition_ga0d1faec4c7bcca54d543ff3cd8983d3b}{FLASH\+\_\+\+FLAG\+\_\+\+RDERR}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___flag__definition_gad3bc368f954ad7744deda3315da2fff7}{FLASH\+\_\+\+FLAG\+\_\+\+BSY}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4b86181a96fd2f1cc3828e9d8d83d368}{FLASH\+\_\+\+SR\+\_\+\+BSY}}
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___interrupt__definition_gaea20e80e1806d58a7544cfe8659e7f11}{FLASH\+\_\+\+IT\+\_\+\+EOP}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gab9e69856f654ec430a42791a34799db0}{FLASH\+\_\+\+CR\+\_\+\+EOPIE}}
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___interrupt__definition_ga4e2c23ab8c1b9a5ee49bf6d695d9ae8c}{FLASH\+\_\+\+IT\+\_\+\+ERR}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x02000000)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___program___parallelism_ga83c67710aa697216193654e1e90cc953}{FLASH\+\_\+\+PSIZE\+\_\+\+BYTE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___program___parallelism_gad3210ba7423b45cb3063f4294cdeab16}{FLASH\+\_\+\+PSIZE\+\_\+\+HALF\+\_\+\+WORD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___program___parallelism_gac3ac337ed43efc869a9f734527e44673}{FLASH\+\_\+\+PSIZE\+\_\+\+WORD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___program___parallelism_ga0fd17c4e281f199f09a6a6365e9243ee}{FLASH\+\_\+\+PSIZE\+\_\+\+DOUBLE\+\_\+\+WORD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000300)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___program___parallelism_ga7c755f15e36221021a1438857e40365c}{CR\+\_\+\+PSIZE\+\_\+\+MASK}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x\+FFFFFCFF)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___keys_gae497135e5528d69274bf8daf7f077f23}{RDP\+\_\+\+KEY}}~((\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}})0x00\+A5)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___keys_gafd77e7bf91765d891ce63e2f0084b019}{FLASH\+\_\+\+KEY1}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x45670123)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___keys_gaee83d0f557e158da52f4a205db6b60a7}{FLASH\+\_\+\+KEY2}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x\+CDEF89\+AB)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___keys_gacebe54ff9ff12abcf0e4d3e697b2f116}{FLASH\+\_\+\+OPT\+\_\+\+KEY1}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x08192\+A3B)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___keys_ga636d46db38e376f0483eed4b7346697c}{FLASH\+\_\+\+OPT\+\_\+\+KEY2}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x4\+C5\+D6\+E7F)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___exported___constants_gaeaca61fbcff69df08100280868bff214}{ACR\+\_\+\+BYTE0\+\_\+\+ADDRESS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x40023\+C00)
+\begin{DoxyCompactList}\small\item\em ACR register byte 0 (Bits\mbox{[}7\+:0\mbox{]}) base address ~\newline
+ \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___exported___constants_ga8223df020203a97af44e4b14e219d01e}{OPTCR\+\_\+\+BYTE0\+\_\+\+ADDRESS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x40023\+C14)
+\begin{DoxyCompactList}\small\item\em OPTCR register byte 0 (Bits\mbox{[}7\+:0\mbox{]}) base address ~\newline
+ \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___exported___constants_ga3c08568a9b3a9d213a70eff8e87117ac}{OPTCR\+\_\+\+BYTE1\+\_\+\+ADDRESS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x40023\+C15)
+\begin{DoxyCompactList}\small\item\em OPTCR register byte 1 (Bits\mbox{[}15\+:8\mbox{]}) base address ~\newline
+ \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___exported___constants_ga600e8029b876676da246a62924a294c7}{OPTCR\+\_\+\+BYTE2\+\_\+\+ADDRESS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x40023\+C16)
+\begin{DoxyCompactList}\small\item\em OPTCR register byte 2 (Bits\mbox{[}23\+:16\mbox{]}) base address ~\newline
+ \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h___exported___constants_gab0cdb1b585010a65ca09ecf67055fb94}{OPTCR\+\_\+\+BYTE3\+\_\+\+ADDRESS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x40023\+C17)
+\begin{DoxyCompactList}\small\item\em OPTCR register byte 3 (Bits\mbox{[}31\+:24\mbox{]}) base address ~\newline
+ \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_gac1c9f459b798cc3700b90a6245df5a1a}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+SET\+\_\+\+LATENCY}}(\+\_\+\+\_\+\+LATENCY\+\_\+\+\_\+)~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint8\+\_\+t \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{group___f_l_a_s_h___exported___constants_gaeaca61fbcff69df08100280868bff214}{ACR\+\_\+\+BYTE0\+\_\+\+ADDRESS}} = (uint8\+\_\+t)(\+\_\+\+\_\+\+LATENCY\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Set the FLASH Latency. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_gad36059641057f824516303ea92734e6f}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+PREFETCH\+\_\+\+BUFFER\+\_\+\+ENABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga844ea28ba1e0a5a0e497f16b61ea306b}{FLASH}}-\/$>$ACR \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga082e7e91fffee86db39676396d01a8e0}{FLASH\+\_\+\+ACR\+\_\+\+PRFTEN}})
+\begin{DoxyCompactList}\small\item\em Enable the FLASH prefetch buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ga646a4cb92e85659334d14a8c78f0ede8}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+PREFETCH\+\_\+\+BUFFER\+\_\+\+DISABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga844ea28ba1e0a5a0e497f16b61ea306b}{FLASH}}-\/$>$ACR \&= (\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga082e7e91fffee86db39676396d01a8e0}{FLASH\+\_\+\+ACR\+\_\+\+PRFTEN}}))
+\begin{DoxyCompactList}\small\item\em Disable the FLASH prefetch buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_gaddb00cd85fe48a524fad33c7fe63e038}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+INSTRUCTION\+\_\+\+CACHE\+\_\+\+ENABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga844ea28ba1e0a5a0e497f16b61ea306b}{FLASH}}-\/$>$ACR \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga51d8b1dd2c46942d377c579a38dce711}{FLASH\+\_\+\+ACR\+\_\+\+ICEN}})
+\begin{DoxyCompactList}\small\item\em Enable the FLASH instruction cache. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ga01bf00ed6e7c0e74ed0931f3b8b033ed}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+INSTRUCTION\+\_\+\+CACHE\+\_\+\+DISABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga844ea28ba1e0a5a0e497f16b61ea306b}{FLASH}}-\/$>$ACR \&= (\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga51d8b1dd2c46942d377c579a38dce711}{FLASH\+\_\+\+ACR\+\_\+\+ICEN}}))
+\begin{DoxyCompactList}\small\item\em Disable the FLASH instruction cache. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_gad94db5b43a234c8dd3dde8fcf0e4cedd}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+DATA\+\_\+\+CACHE\+\_\+\+ENABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga844ea28ba1e0a5a0e497f16b61ea306b}{FLASH}}-\/$>$ACR \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5a9a5cc3aa05dc62264addab1008c896}{FLASH\+\_\+\+ACR\+\_\+\+DCEN}})
+\begin{DoxyCompactList}\small\item\em Enable the FLASH data cache. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ga247f85a1fcc780be21f9fc2f1d29ee7e}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+DATA\+\_\+\+CACHE\+\_\+\+DISABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga844ea28ba1e0a5a0e497f16b61ea306b}{FLASH}}-\/$>$ACR \&= (\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5a9a5cc3aa05dc62264addab1008c896}{FLASH\+\_\+\+ACR\+\_\+\+DCEN}}))
+\begin{DoxyCompactList}\small\item\em Disable the FLASH data cache. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ga69dff538775ee23738d54eef4a259b66}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+INSTRUCTION\+\_\+\+CACHE\+\_\+\+RESET}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga844ea28ba1e0a5a0e497f16b61ea306b}{FLASH}}-\/$>$ACR \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga923ff88475799eea9285f77f5383ced5}{FLASH\+\_\+\+ACR\+\_\+\+ICRST}})
+\begin{DoxyCompactList}\small\item\em Resets the FLASH instruction Cache. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ga3b94f4f103ddab361802c8defd3a9c34}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+DATA\+\_\+\+CACHE\+\_\+\+RESET}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga844ea28ba1e0a5a0e497f16b61ea306b}{FLASH}}-\/$>$ACR \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac53d7c85551a9829014d6027d67ce6c7}{FLASH\+\_\+\+ACR\+\_\+\+DCRST}})
+\begin{DoxyCompactList}\small\item\em Resets the FLASH data Cache. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ga13fa137a911f02a2f94fb9fb0762a340}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga844ea28ba1e0a5a0e497f16b61ea306b}{FLASH}}-\/$>$CR \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the specified FLASH interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ga1f40f507b5d4b3a4da68e4244a1097ee}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga844ea28ba1e0a5a0e497f16b61ea306b}{FLASH}}-\/$>$CR \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the specified FLASH interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ga0d3dd161fecc0e47c9e109c7c28672c1}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\mbox{\hyperlink{group___peripheral__declaration_ga844ea28ba1e0a5a0e497f16b61ea306b}{FLASH}}-\/$>$SR \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)))
+\begin{DoxyCompactList}\small\item\em Get the specified FLASH flag status. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ga68e49c4675761e2ec35153e747de7622}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga844ea28ba1e0a5a0e497f16b61ea306b}{FLASH}}-\/$>$SR = (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clear the specified FLASH flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___f_l_a_s_h_ga0635292464d38cedf0ae05d2a0434076}{FLASH\+\_\+\+Error\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___f_l_a_s_h_gga0635292464d38cedf0ae05d2a0434076acf05509f292c5ab8f2879d63ba2665ff}{FLASH\+\_\+\+ERROR\+\_\+\+RD}} = 0x01
+, \mbox{\hyperlink{group___f_l_a_s_h_gga0635292464d38cedf0ae05d2a0434076aee7da388d2f5c589a3cb34efea767ad2}{FLASH\+\_\+\+ERROR\+\_\+\+PGS}} = 0x02
+, \mbox{\hyperlink{group___f_l_a_s_h_gga0635292464d38cedf0ae05d2a0434076ae4f20fb81a812fb65473373c3c36765d}{FLASH\+\_\+\+ERROR\+\_\+\+PGP}} = 0x04
+, \mbox{\hyperlink{group___f_l_a_s_h_gga0635292464d38cedf0ae05d2a0434076ab2ac5838863aa3dcf727587bc3264d95}{FLASH\+\_\+\+ERROR\+\_\+\+PGA}} = 0x08
+, \newline
+\mbox{\hyperlink{group___f_l_a_s_h_gga0635292464d38cedf0ae05d2a0434076ac9e2d95d3ba415fb7392d72a2458f4d8}{FLASH\+\_\+\+ERROR\+\_\+\+WRP}} = 0x10
+, \mbox{\hyperlink{group___f_l_a_s_h_gga0635292464d38cedf0ae05d2a0434076a22a777a65972676f311e20de5a0f0beb}{FLASH\+\_\+\+ERROR\+\_\+\+OPERATION}} = 0x20
+ \}
+\begin{DoxyCompactList}\small\item\em FLASH Error structure definition. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___f_l_a_s_h_ga2b0268387bc11bcab76be9ce7c43eaaf}{FLASH\+\_\+\+Procedure\+Type\+Def}} \{ \mbox{\hyperlink{group___f_l_a_s_h_gga2b0268387bc11bcab76be9ce7c43eaafa8d1dcf61f621d71484d13ac02f651b3d}{FLASH\+\_\+\+PROC\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{group___f_l_a_s_h_gga2b0268387bc11bcab76be9ce7c43eaafade0899d9d9503dc5c8d926071bffee44}{FLASH\+\_\+\+PROC\+\_\+\+SECTERASE}}
+, \mbox{\hyperlink{group___f_l_a_s_h_gga2b0268387bc11bcab76be9ce7c43eaafa1b046d01356b498d6675040f17362f0b}{FLASH\+\_\+\+PROC\+\_\+\+MASSERASE}}
+, \mbox{\hyperlink{group___f_l_a_s_h_gga2b0268387bc11bcab76be9ce7c43eaafad4f5d611b11f7ac9577d34df07dc94ea}{FLASH\+\_\+\+PROC\+\_\+\+PROGRAM}}
+ \}
+\begin{DoxyCompactList}\small\item\em FLASH Procedure structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_gab94b3dc16c5c6fcc30ba2cb897de8bae}{HAL\+\_\+\+FLASH\+\_\+\+Program}} (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Type\+Program, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Address, uint64\+\_\+t Data)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_ga85ee0375f81ac12bf0acd013189f68d3}{HAL\+\_\+\+FLASH\+\_\+\+Program\+\_\+\+IT}} (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Type\+Program, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Address, uint64\+\_\+t Data)
+\item 
+void \mbox{\hyperlink{group___f_l_a_s_h_ga083f13f6a000dfcb80c7a27853eba528}{HAL\+\_\+\+FLASH\+\_\+\+IRQHandler}} (void)
+\item 
+void \mbox{\hyperlink{group___f_l_a_s_h_ga71a7e85ede66fae4eadaf8854f81b5c8}{HAL\+\_\+\+FLASH\+\_\+\+End\+Of\+Operation\+Callback}} (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Return\+Value)
+\item 
+void \mbox{\hyperlink{group___f_l_a_s_h_ga237e17bd9b1d257bd8e2880227b8484e}{HAL\+\_\+\+FLASH\+\_\+\+Operation\+Error\+Callback}} (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Return\+Value)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_ga23d4ff42a8873bac585c92ce4f633747}{HAL\+\_\+\+FLASH\+\_\+\+Unlock}} (void)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_gae07eeca0b0aa9d5047f8df88d82f4bcd}{HAL\+\_\+\+FLASH\+\_\+\+Lock}} (void)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_ga6e8f380b7a938592f0b6f05d0ebf69c3}{HAL\+\_\+\+FLASH\+\_\+\+OB\+\_\+\+Unlock}} (void)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_ga3ff599bd7eba88f7a169a537ccbf3e3f}{HAL\+\_\+\+FLASH\+\_\+\+OB\+\_\+\+Lock}} (void)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_ga046c539c76aaae3d487d59193f74c9db}{HAL\+\_\+\+FLASH\+\_\+\+OB\+\_\+\+Launch}} (void)
+\item 
+\mbox{\hyperlink{group___f_l_a_s_h_ga0635292464d38cedf0ae05d2a0434076}{FLASH\+\_\+\+Error\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_ga12ef94688909c4fd5b16a5d59dc52705}{HAL\+\_\+\+FLASH\+\_\+\+Get\+Error}} (void)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_gaf89afc110a32ac9dcf0d06b89ffd9224}{FLASH\+\_\+\+Wait\+For\+Last\+Operation}} (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of FLASH HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

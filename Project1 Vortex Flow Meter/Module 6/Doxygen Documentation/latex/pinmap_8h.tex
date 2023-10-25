@@ -1,0 +1,62 @@
+\doxysection{mbed/pinmap.h File Reference}
+\hypertarget{pinmap_8h}{}\label{pinmap_8h}\index{mbed/pinmap.h@{mbed/pinmap.h}}
+{\ttfamily \#include "{}Pin\+Names.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pin_map}{Pin\+Map}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pinmap_8h_a8cdc00e264ff6f64af766066fde9a24e}{pin\+\_\+function}} (\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin, int function)
+\item 
+void \mbox{\hyperlink{pinmap_8h_a81bb3aa963b924fa3afb7892f4475057}{pin\+\_\+mode}} (\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin, \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{Pin\+Mode}} mode)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{pinmap_8h_a61c659a204f78a585f6042ff085ab25d}{pinmap\+\_\+peripheral}} (\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin, const \mbox{\hyperlink{struct_pin_map}{Pin\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{pinmap_8h_a760aa1a96c8d61db778028b2f97c3d92}{pinmap\+\_\+merge}} (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} a, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} b)
+\item 
+void \mbox{\hyperlink{pinmap_8h_a6dad6e87e1855c89644f2954b09c0eef}{pinmap\+\_\+pinout}} (\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin, const \mbox{\hyperlink{struct_pin_map}{Pin\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{pinmap_8h_a2caf0f4b74c5a1be05865169a673674b}{pinmap\+\_\+find\+\_\+peripheral}} (\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin, const \mbox{\hyperlink{struct_pin_map}{Pin\+Map}} \texorpdfstring{$\ast$}{*}map)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pinmap_8h_a8cdc00e264ff6f64af766066fde9a24e}\label{pinmap_8h_a8cdc00e264ff6f64af766066fde9a24e} 
+\index{pinmap.h@{pinmap.h}!pin\_function@{pin\_function}}
+\index{pin\_function@{pin\_function}!pinmap.h@{pinmap.h}}
+\doxysubsubsection{\texorpdfstring{pin\_function()}{pin\_function()}}
+{\footnotesize\ttfamily void pin\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin,  }\item[{int}]{function }\end{DoxyParamCaption})}
+
+\Hypertarget{pinmap_8h_a81bb3aa963b924fa3afb7892f4475057}\label{pinmap_8h_a81bb3aa963b924fa3afb7892f4475057} 
+\index{pinmap.h@{pinmap.h}!pin\_mode@{pin\_mode}}
+\index{pin\_mode@{pin\_mode}!pinmap.h@{pinmap.h}}
+\doxysubsubsection{\texorpdfstring{pin\_mode()}{pin\_mode()}}
+{\footnotesize\ttfamily void pin\+\_\+mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin,  }\item[{\mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{Pin\+Mode}}}]{mode }\end{DoxyParamCaption})}
+
+\Hypertarget{pinmap_8h_a2caf0f4b74c5a1be05865169a673674b}\label{pinmap_8h_a2caf0f4b74c5a1be05865169a673674b} 
+\index{pinmap.h@{pinmap.h}!pinmap\_find\_peripheral@{pinmap\_find\_peripheral}}
+\index{pinmap\_find\_peripheral@{pinmap\_find\_peripheral}!pinmap.h@{pinmap.h}}
+\doxysubsubsection{\texorpdfstring{pinmap\_find\_peripheral()}{pinmap\_find\_peripheral()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} pinmap\+\_\+find\+\_\+peripheral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin,  }\item[{const \mbox{\hyperlink{struct_pin_map}{Pin\+Map}} \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})}
+
+\Hypertarget{pinmap_8h_a760aa1a96c8d61db778028b2f97c3d92}\label{pinmap_8h_a760aa1a96c8d61db778028b2f97c3d92} 
+\index{pinmap.h@{pinmap.h}!pinmap\_merge@{pinmap\_merge}}
+\index{pinmap\_merge@{pinmap\_merge}!pinmap.h@{pinmap.h}}
+\doxysubsubsection{\texorpdfstring{pinmap\_merge()}{pinmap\_merge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} pinmap\+\_\+merge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{a,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{pinmap_8h_a61c659a204f78a585f6042ff085ab25d}\label{pinmap_8h_a61c659a204f78a585f6042ff085ab25d} 
+\index{pinmap.h@{pinmap.h}!pinmap\_peripheral@{pinmap\_peripheral}}
+\index{pinmap\_peripheral@{pinmap\_peripheral}!pinmap.h@{pinmap.h}}
+\doxysubsubsection{\texorpdfstring{pinmap\_peripheral()}{pinmap\_peripheral()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} pinmap\+\_\+peripheral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin,  }\item[{const \mbox{\hyperlink{struct_pin_map}{Pin\+Map}} \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})}
+
+\Hypertarget{pinmap_8h_a6dad6e87e1855c89644f2954b09c0eef}\label{pinmap_8h_a6dad6e87e1855c89644f2954b09c0eef} 
+\index{pinmap.h@{pinmap.h}!pinmap\_pinout@{pinmap\_pinout}}
+\index{pinmap\_pinout@{pinmap\_pinout}!pinmap.h@{pinmap.h}}
+\doxysubsubsection{\texorpdfstring{pinmap\_pinout()}{pinmap\_pinout()}}
+{\footnotesize\ttfamily void pinmap\+\_\+pinout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin,  }\item[{const \mbox{\hyperlink{struct_pin_map}{Pin\+Map}} \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})}
+

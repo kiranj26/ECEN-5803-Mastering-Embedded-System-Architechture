@@ -1,0 +1,80 @@
+\doxysection{SDIO\+\_\+\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_s_d_i_o___init_type_def}{}\label{struct_s_d_i_o___init_type_def}\index{SDIO\_InitTypeDef@{SDIO\_InitTypeDef}}
+
+
+SDMMC Configuration Structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+ll\+\_\+sdmmc.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_d_i_o___init_type_def_a9ef62f2e92065da3919e2622a68e7bb2}{Clock\+Edge}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_d_i_o___init_type_def_a6e0bf400b91fde924aa3213683161713}{Clock\+Bypass}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_d_i_o___init_type_def_a8da300c100438bff2f040b65d6611935}{Clock\+Power\+Save}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_d_i_o___init_type_def_a510dda7683dc0409c8c4746226cebb8f}{Bus\+Wide}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_d_i_o___init_type_def_a51d5b31ee5be2ebc295125c0e55801ef}{Hardware\+Flow\+Control}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_d_i_o___init_type_def_a749340110817470696d75a000fb0ce86}{Clock\+Div}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SDMMC Configuration Structure definition ~\newline
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_s_d_i_o___init_type_def_a510dda7683dc0409c8c4746226cebb8f}\label{struct_s_d_i_o___init_type_def_a510dda7683dc0409c8c4746226cebb8f} 
+\index{SDIO\_InitTypeDef@{SDIO\_InitTypeDef}!BusWide@{BusWide}}
+\index{BusWide@{BusWide}!SDIO\_InitTypeDef@{SDIO\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{BusWide}{BusWide}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SDIO\+\_\+\+Init\+Type\+Def\+::\+Bus\+Wide}
+
+Specifies the SDIO bus width. This parameter can be a value of \doxylink{group___s_d_i_o___bus___wide}{SDIO\+\_\+\+Bus\+\_\+\+Wide} ~\newline
+ \Hypertarget{struct_s_d_i_o___init_type_def_a6e0bf400b91fde924aa3213683161713}\label{struct_s_d_i_o___init_type_def_a6e0bf400b91fde924aa3213683161713} 
+\index{SDIO\_InitTypeDef@{SDIO\_InitTypeDef}!ClockBypass@{ClockBypass}}
+\index{ClockBypass@{ClockBypass}!SDIO\_InitTypeDef@{SDIO\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{ClockBypass}{ClockBypass}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SDIO\+\_\+\+Init\+Type\+Def\+::\+Clock\+Bypass}
+
+Specifies whether the SDIO Clock divider bypass is enabled or disabled. This parameter can be a value of \doxylink{group___s_d_i_o___clock___bypass}{SDIO\+\_\+\+Clock\+\_\+\+Bypass} ~\newline
+ \Hypertarget{struct_s_d_i_o___init_type_def_a749340110817470696d75a000fb0ce86}\label{struct_s_d_i_o___init_type_def_a749340110817470696d75a000fb0ce86} 
+\index{SDIO\_InitTypeDef@{SDIO\_InitTypeDef}!ClockDiv@{ClockDiv}}
+\index{ClockDiv@{ClockDiv}!SDIO\_InitTypeDef@{SDIO\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{ClockDiv}{ClockDiv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SDIO\+\_\+\+Init\+Type\+Def\+::\+Clock\+Div}
+
+Specifies the clock frequency of the SDIO controller. This parameter can be a value between Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 255 \Hypertarget{struct_s_d_i_o___init_type_def_a9ef62f2e92065da3919e2622a68e7bb2}\label{struct_s_d_i_o___init_type_def_a9ef62f2e92065da3919e2622a68e7bb2} 
+\index{SDIO\_InitTypeDef@{SDIO\_InitTypeDef}!ClockEdge@{ClockEdge}}
+\index{ClockEdge@{ClockEdge}!SDIO\_InitTypeDef@{SDIO\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{ClockEdge}{ClockEdge}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SDIO\+\_\+\+Init\+Type\+Def\+::\+Clock\+Edge}
+
+Specifies the clock transition on which the bit capture is made. This parameter can be a value of \doxylink{group___s_d_i_o___clock___edge}{SDIO\+\_\+\+Clock\+\_\+\+Edge} ~\newline
+ \Hypertarget{struct_s_d_i_o___init_type_def_a8da300c100438bff2f040b65d6611935}\label{struct_s_d_i_o___init_type_def_a8da300c100438bff2f040b65d6611935} 
+\index{SDIO\_InitTypeDef@{SDIO\_InitTypeDef}!ClockPowerSave@{ClockPowerSave}}
+\index{ClockPowerSave@{ClockPowerSave}!SDIO\_InitTypeDef@{SDIO\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{ClockPowerSave}{ClockPowerSave}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SDIO\+\_\+\+Init\+Type\+Def\+::\+Clock\+Power\+Save}
+
+Specifies whether SDIO Clock output is enabled or disabled when the bus is idle. This parameter can be a value of \doxylink{group___s_d_i_o___clock___power___save}{SDIO\+\_\+\+Clock\+\_\+\+Power\+\_\+\+Save} ~\newline
+ \Hypertarget{struct_s_d_i_o___init_type_def_a51d5b31ee5be2ebc295125c0e55801ef}\label{struct_s_d_i_o___init_type_def_a51d5b31ee5be2ebc295125c0e55801ef} 
+\index{SDIO\_InitTypeDef@{SDIO\_InitTypeDef}!HardwareFlowControl@{HardwareFlowControl}}
+\index{HardwareFlowControl@{HardwareFlowControl}!SDIO\_InitTypeDef@{SDIO\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{HardwareFlowControl}{HardwareFlowControl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SDIO\+\_\+\+Init\+Type\+Def\+::\+Hardware\+Flow\+Control}
+
+Specifies whether the SDIO hardware flow control is enabled or disabled. This parameter can be a value of \doxylink{group___s_d_i_o___hardware___flow___control}{SDIO\+\_\+\+Hardware\+\_\+\+Flow\+\_\+\+Control} ~\newline
+ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/\mbox{\hyperlink{stm32f4xx__ll__sdmmc_8h}{stm32f4xx\+\_\+ll\+\_\+sdmmc.\+h}}\end{DoxyCompactItemize}

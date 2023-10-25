@@ -1,0 +1,84 @@
+\doxysubsubsubsection{UART\+\_\+\+Interrupt\+\_\+definition}
+\hypertarget{group___u_a_r_t___interrupt__definition}{}\label{group___u_a_r_t___interrupt__definition}\index{UART\_Interrupt\_definition@{UART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___interrupt__definition_ga55f922ddcf513509710ade5d7c40a1db}{UART\+\_\+\+IT\+\_\+\+PE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000100)
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___interrupt__definition_ga552636e2af516d578856f5ee2ba71ed7}{UART\+\_\+\+IT\+\_\+\+TXE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000080)
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___interrupt__definition_gab9a4dc4e8cea354fd60f4117513b2004}{UART\+\_\+\+IT\+\_\+\+TC}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000040)
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___interrupt__definition_gac1bedf7a65eb8c3f3c4b52bdb24b139d}{UART\+\_\+\+IT\+\_\+\+RXNE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000020)
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___interrupt__definition_ga9781808d4f9999061fc2da36572191d9}{UART\+\_\+\+IT\+\_\+\+IDLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000010)
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___interrupt__definition_gabca5e77508dc2dd9aa26fcb683d9b988}{UART\+\_\+\+IT\+\_\+\+LBD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x20000040)
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___interrupt__definition_ga986d271478550f9afa918262ca642333}{UART\+\_\+\+IT\+\_\+\+CTS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000400)
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___interrupt__definition_ga8eb26d8edd9bf78ae8d3ad87dd51b618}{UART\+\_\+\+IT\+\_\+\+ERR}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000001)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Elements values convention\+: 0x\+Y000\+XXXX
+\begin{DoxyItemize}
+\item XXXX \+: Interrupt mask in the XX register
+\item Y \+: Interrupt source register (2bits)
+\begin{DoxyItemize}
+\item 01\+: CR1 register
+\item 10\+: CR2 register
+\item 11\+: CR3 register 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___u_a_r_t___interrupt__definition_ga986d271478550f9afa918262ca642333}\label{group___u_a_r_t___interrupt__definition_ga986d271478550f9afa918262ca642333} 
+\index{UART\_Interrupt\_definition@{UART\_Interrupt\_definition}!UART\_IT\_CTS@{UART\_IT\_CTS}}
+\index{UART\_IT\_CTS@{UART\_IT\_CTS}!UART\_Interrupt\_definition@{UART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{UART\_IT\_CTS}{UART\_IT\_CTS}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+IT\+\_\+\+CTS~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000400)}
+
+\Hypertarget{group___u_a_r_t___interrupt__definition_ga8eb26d8edd9bf78ae8d3ad87dd51b618}\label{group___u_a_r_t___interrupt__definition_ga8eb26d8edd9bf78ae8d3ad87dd51b618} 
+\index{UART\_Interrupt\_definition@{UART\_Interrupt\_definition}!UART\_IT\_ERR@{UART\_IT\_ERR}}
+\index{UART\_IT\_ERR@{UART\_IT\_ERR}!UART\_Interrupt\_definition@{UART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{UART\_IT\_ERR}{UART\_IT\_ERR}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+IT\+\_\+\+ERR~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000001)}
+
+\Hypertarget{group___u_a_r_t___interrupt__definition_ga9781808d4f9999061fc2da36572191d9}\label{group___u_a_r_t___interrupt__definition_ga9781808d4f9999061fc2da36572191d9} 
+\index{UART\_Interrupt\_definition@{UART\_Interrupt\_definition}!UART\_IT\_IDLE@{UART\_IT\_IDLE}}
+\index{UART\_IT\_IDLE@{UART\_IT\_IDLE}!UART\_Interrupt\_definition@{UART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{UART\_IT\_IDLE}{UART\_IT\_IDLE}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+IT\+\_\+\+IDLE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000010)}
+
+\Hypertarget{group___u_a_r_t___interrupt__definition_gabca5e77508dc2dd9aa26fcb683d9b988}\label{group___u_a_r_t___interrupt__definition_gabca5e77508dc2dd9aa26fcb683d9b988} 
+\index{UART\_Interrupt\_definition@{UART\_Interrupt\_definition}!UART\_IT\_LBD@{UART\_IT\_LBD}}
+\index{UART\_IT\_LBD@{UART\_IT\_LBD}!UART\_Interrupt\_definition@{UART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{UART\_IT\_LBD}{UART\_IT\_LBD}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+IT\+\_\+\+LBD~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x20000040)}
+
+\Hypertarget{group___u_a_r_t___interrupt__definition_ga55f922ddcf513509710ade5d7c40a1db}\label{group___u_a_r_t___interrupt__definition_ga55f922ddcf513509710ade5d7c40a1db} 
+\index{UART\_Interrupt\_definition@{UART\_Interrupt\_definition}!UART\_IT\_PE@{UART\_IT\_PE}}
+\index{UART\_IT\_PE@{UART\_IT\_PE}!UART\_Interrupt\_definition@{UART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{UART\_IT\_PE}{UART\_IT\_PE}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+IT\+\_\+\+PE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000100)}
+
+\Hypertarget{group___u_a_r_t___interrupt__definition_gac1bedf7a65eb8c3f3c4b52bdb24b139d}\label{group___u_a_r_t___interrupt__definition_gac1bedf7a65eb8c3f3c4b52bdb24b139d} 
+\index{UART\_Interrupt\_definition@{UART\_Interrupt\_definition}!UART\_IT\_RXNE@{UART\_IT\_RXNE}}
+\index{UART\_IT\_RXNE@{UART\_IT\_RXNE}!UART\_Interrupt\_definition@{UART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{UART\_IT\_RXNE}{UART\_IT\_RXNE}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+IT\+\_\+\+RXNE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000020)}
+
+\Hypertarget{group___u_a_r_t___interrupt__definition_gab9a4dc4e8cea354fd60f4117513b2004}\label{group___u_a_r_t___interrupt__definition_gab9a4dc4e8cea354fd60f4117513b2004} 
+\index{UART\_Interrupt\_definition@{UART\_Interrupt\_definition}!UART\_IT\_TC@{UART\_IT\_TC}}
+\index{UART\_IT\_TC@{UART\_IT\_TC}!UART\_Interrupt\_definition@{UART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{UART\_IT\_TC}{UART\_IT\_TC}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+IT\+\_\+\+TC~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000040)}
+
+\Hypertarget{group___u_a_r_t___interrupt__definition_ga552636e2af516d578856f5ee2ba71ed7}\label{group___u_a_r_t___interrupt__definition_ga552636e2af516d578856f5ee2ba71ed7} 
+\index{UART\_Interrupt\_definition@{UART\_Interrupt\_definition}!UART\_IT\_TXE@{UART\_IT\_TXE}}
+\index{UART\_IT\_TXE@{UART\_IT\_TXE}!UART\_Interrupt\_definition@{UART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{UART\_IT\_TXE}{UART\_IT\_TXE}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+IT\+\_\+\+TXE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000080)}
+

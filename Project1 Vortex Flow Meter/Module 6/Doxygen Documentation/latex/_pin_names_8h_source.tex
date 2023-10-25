@@ -1,0 +1,187 @@
+\doxysection{Pin\+Names.\+h}
+\hypertarget{_pin_names_8h_source}{}\label{_pin_names_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/TARGET\_STM/TARGET\_NUCLEO\_F401RE/PinNames.h@{mbed/TARGET\_NUCLEO\_F401RE/TARGET\_STM/TARGET\_NUCLEO\_F401RE/PinNames.h}}
+\mbox{\hyperlink{_pin_names_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *******************************************************************************}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014,\ STMicroelectronics}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ All\ rights\ reserved.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions\ are\ met:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the\ documentation}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ \ \ \ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 3.\ Neither\ the\ name\ of\ STMicroelectronics\ nor\ the\ names\ of\ its\ contributors}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ \ \ \ may\ be\ used\ to\ endorse\ or\ promote\ products\ derived\ from\ this\ software}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ \ \ \ without\ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS\ "{}AS\ IS"{}}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *******************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ MBED\_PINNAMES\_H}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ MBED\_PINNAMES\_H}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cmsis_8h}{cmsis.h}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ See\ stm32f4xx\_hal\_gpio.h\ and\ stm32f4xx\_hal\_gpio\_ex.h\ for\ values\ of\ MODE,\ PUPD\ and\ AFNUM}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ STM\_PIN\_DATA(MODE,\ PUPD,\ AFNUM)\ \ ((int)(((AFNUM)\ <<\ 7)\ |\ ((PUPD)\ <<\ 4)\ |\ ((MODE)\ <<\ 0)))}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ STM\_PIN\_MODE(X)\ \ \ (((X)\ >>\ 0)\ \&\ 0x0F)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ STM\_PIN\_PUPD(X)\ \ \ (((X)\ >>\ 4)\ \&\ 0x07)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ STM\_PIN\_AFNUM(X)\ \ (((X)\ >>\ 7)\ \&\ 0x0F)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ STM\_MODE\_INPUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ STM\_MODE\_OUTPUT\_PP\ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ STM\_MODE\_OUTPUT\_OD\ \ \ \ \ \ \ \ \ \ (2)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ STM\_MODE\_AF\_PP\ \ \ \ \ \ \ \ \ \ \ \ \ \ (3)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ STM\_MODE\_AF\_OD\ \ \ \ \ \ \ \ \ \ \ \ \ \ (4)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ STM\_MODE\_ANALOG\ \ \ \ \ \ \ \ \ \ \ \ \ (5)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ STM\_MODE\_IT\_RISING\ \ \ \ \ \ \ \ \ \ (6)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ STM\_MODE\_IT\_FALLING\ \ \ \ \ \ \ \ \ (7)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ STM\_MODE\_IT\_RISING\_FALLING\ \ (8)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ STM\_MODE\_EVT\_RISING\ \ \ \ \ \ \ \ \ (9)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ STM\_MODE\_EVT\_FALLING\ \ \ \ \ \ \ \ (10)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ STM\_MODE\_EVT\_RISING\_FALLING\ (11)}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ High\ nibble\ =\ port\ number\ (0=A,\ 1=B,\ 2=C,\ 3=D,\ 4=E,\ 5=F,\ 6=G,\ 7=H)}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ Low\ nibble\ \ =\ pin\ number}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ STM\_PORT(X)\ (((uint32\_t)(X)\ >>\ 4)\ \&\ 0xF)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ STM\_PIN(X)\ \ ((uint32\_t)(X)\ \&\ 0xF)}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a8ff912d511000d542e6ad34966166f38a9473a73f5d4f521d8dd4459d84a5e580}{PIN\_INPUT}},}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a8ff912d511000d542e6ad34966166f38a7a0976acb2666b52e320497c547ea647}{PIN\_OUTPUT}}}
+\DoxyCodeLine{00065\ \}\ \mbox{\hyperlink{_pin_names_8h_a8ff912d511000d542e6ad34966166f38}{PinDirection}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a375a763c1c2d27bb6e2e21bc8c367a21}{PA\_0}}\ \ =\ 0x00,}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a6923c16d8d9d79f8742ac91a133fd6f6}{PA\_1}}\ \ =\ 0x01,}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a85618d80c323e35aef27584d26d0933b}{PA\_2}}\ \ =\ 0x02,}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aed01b69c5cfa6af470984ec888b8d395}{PA\_3}}\ \ =\ 0x03,}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a7a3904c5744d620ba9965c0e9e3b7d97}{PA\_4}}\ \ =\ 0x04,}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adf270d193644a80ade8c26b881b08f81}{PA\_5}}\ \ =\ 0x05,}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a387e0d864c1f773085701a7237053d44}{PA\_6}}\ \ =\ 0x06,}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aee1caff1f31a5e060318712895f5daa3}{PA\_7}}\ \ =\ 0x07,}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a07cedc29dbe73cd8d4ba623f7e553c03}{PA\_8}}\ \ =\ 0x08,}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a995091eb3b8d1cb614f15209bf66e0ed}{PA\_9}}\ \ =\ 0x09,}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a19d16ed7b1ae25ddebdf1af7b70c6e52}{PA\_10}}\ =\ 0x0A,}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a1d6f54ca8075f2113c1a2ef5a304fbf2}{PA\_11}}\ =\ 0x0B,}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adc16951020f29ed581f578df3f8d8fb7}{PA\_12}}\ =\ 0x0C,}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a6b78d15223132d0fa8632e18192b88c5}{PA\_13}}\ =\ 0x0D,}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ac64e5e470cc0bb3be17ccfbc1d85d066}{PA\_14}}\ =\ 0x0E,}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a61c6e2de446b02eaf50dff8452387e4b}{PA\_15}}\ =\ 0x0F,}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a1875c843863636e4d3e568d88714be68}{PB\_0}}\ \ =\ 0x10,}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a965c067ff6ddcb68ec209b60d1748a54}{PB\_1}}\ \ =\ 0x11,}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a8b1b08a8319c546d312f18ea3ad7e303}{PB\_2}}\ \ =\ 0x12,}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ae449230f3a5e944f98b8a5b217d5ffc0}{PB\_3}}\ \ =\ 0x13,}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a0a514b69f7b61d63630c97aa16297969}{PB\_4}}\ \ =\ 0x14,}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adab3d73753fc9ab599c991d1419b907b}{PB\_5}}\ \ =\ 0x15,}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a76212493e652fc8262ed4d054ec6586c}{PB\_6}}\ \ =\ 0x16,}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ab92d8cd6e96d9c0b8d01066fba92bc3a}{PB\_7}}\ \ =\ 0x17,}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a115536dc4db97f12ca5281e7e3ec861f}{PB\_8}}\ \ =\ 0x18,}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ae58e0d355985d0ec18336006664630da}{PB\_9}}\ \ =\ 0x19,}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a0a1b46e1055dee7cc919d4cf9aa02a21}{PB\_10}}\ =\ 0x1A,}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a31138415701cb9ff8bf0fe56c37b656f}{PB\_12}}\ =\ 0x1C,}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a5fe0dfec56a8a5e1554cb2c1d2e990f1}{PB\_13}}\ =\ 0x1D,}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a12d54a825000c01fdd7433412f0ae91e}{PB\_14}}\ =\ 0x1E,}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a3bcf436a81547dbf6615b48a44544a62}{PB\_15}}\ =\ 0x1F,}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aedaa921d2b4724a0d50166d00c4fc2cd}{PC\_0}}\ \ =\ 0x20,}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adc750c722aa8b3d8a8a68f7c086c2a8b}{PC\_1}}\ \ =\ 0x21,}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ae4ecf045b1508a71f05017a611315ad8}{PC\_2}}\ \ =\ 0x22,}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a74372d114968e250abda30074038cadb}{PC\_3}}\ \ =\ 0x23,}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a2af5727054ef4ce5d9abdf59fb381c7c}{PC\_4}}\ \ =\ 0x24,}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a71768d5974f86710758a0fc695bba19f}{PC\_5}}\ \ =\ 0x25,}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a86e3a2f87486ca801334e6089c481d62}{PC\_6}}\ \ =\ 0x26,}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ac97a8e19d982244786f7ff90d73fb6c7}{PC\_7}}\ \ =\ 0x27,}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ad39865ac0088f540b44b1283d805aece}{PC\_8}}\ \ =\ 0x28,}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a1c1d754d4d5c505db86b14df3aab28d8}{PC\_9}}\ \ =\ 0x29,}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ade10b11d8f228f71e6f108008280646a}{PC\_10}}\ =\ 0x2A,}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aa6d12cb6b81df608d96cf5fa64e6b6aa}{PC\_11}}\ =\ 0x2B,}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1af18bc58e8ed0769ea6d97fbdb62429d7}{PC\_12}}\ =\ 0x2C,}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a9c48cb3112e4d858966bf0df2101fdd7}{PC\_13}}\ =\ 0x2D,}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a154505e413ca9655e2532d6d6959b725}{PC\_14}}\ =\ 0x2E,}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a2d67a713825ab6aedfcc4228e7e64c56}{PC\_15}}\ =\ 0x2F,}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a6ae7aa1bd8e1e0eca2ce6d31aa867f27}{PD\_2}}\ \ =\ 0x32,}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a86ab8ef6f8b9121c0e1d79fb2c1d445f}{PH\_0}}\ \ =\ 0x70,}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a7ab44bda22f88cb53ca12b4aee652a6c}{PH\_1}}\ \ =\ 0x71,}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//\ Arduino\ connector\ namings}}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a294c0da68841a5fb30c53f510c3adf56}{A0}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a375a763c1c2d27bb6e2e21bc8c367a21}{PA\_0}},}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a6ff26890857c886c86453f0c8078bf95}{A1}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a6923c16d8d9d79f8742ac91a133fd6f6}{PA\_1}},}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a47329f455692c2a8284d7594405f16d4}{A2}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a7a3904c5744d620ba9965c0e9e3b7d97}{PA\_4}},}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a47dbfcefc8fabadcd82806b21de14bfc}{A3}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a1875c843863636e4d3e568d88714be68}{PB\_0}},}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ada06582608e19a3f2438f54eeb0bcad5}{A4}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adc750c722aa8b3d8a8a68f7c086c2a8b}{PC\_1}},}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aacdd5acf9dd0376a4073a1f27d8df74e}{A5}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aedaa921d2b4724a0d50166d00c4fc2cd}{PC\_0}},}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a5484c6144a8cba103d5d23f4be32afcf}{D0}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aed01b69c5cfa6af470984ec888b8d395}{PA\_3}},}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a29b8ecb29049f38cbf752d95f479bff7}{D1}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a85618d80c323e35aef27584d26d0933b}{PA\_2}},}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a86c69dc8849d17673b52b9a8d94d8b9f}{D2}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a19d16ed7b1ae25ddebdf1af7b70c6e52}{PA\_10}},}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ade8ef7573c5fa770f07ac7616cbf5d34}{D3}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ae449230f3a5e944f98b8a5b217d5ffc0}{PB\_3}},}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a12761dd9f3b74590b720d87d6ca9fbcf}{D4}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adab3d73753fc9ab599c991d1419b907b}{PB\_5}},}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a9bfc9615ce2836fe43fe37e0eda2a68a}{D5}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a0a514b69f7b61d63630c97aa16297969}{PB\_4}},}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ab6e74cb404ad3a7370b6cbb05f004fcb}{D6}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a0a1b46e1055dee7cc919d4cf9aa02a21}{PB\_10}},}
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a0701f86c777d8dde5be3a916a510cdfa}{D7}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a07cedc29dbe73cd8d4ba623f7e553c03}{PA\_8}},}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aea0726597b1f1d4e1fbe5bc51978a5e1}{D8}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a995091eb3b8d1cb614f15209bf66e0ed}{PA\_9}},}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ad8ff471f40b06f8793851f05c87d4fdf}{D9}}\ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ac97a8e19d982244786f7ff90d73fb6c7}{PC\_7}},}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adc4009866f9c8c1611854e1e70b683d9}{D10}}\ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a76212493e652fc8262ed4d054ec6586c}{PB\_6}},}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a3875f0f8761e76cc3c581ae7eaf346a2}{D11}}\ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aee1caff1f31a5e060318712895f5daa3}{PA\_7}},}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a2d33aedca327f4bc5671e43de930ae6d}{D12}}\ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a387e0d864c1f773085701a7237053d44}{PA\_6}},}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a5b09fede8072db2deedbfb5fa2647234}{D13}}\ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adf270d193644a80ade8c26b881b08f81}{PA\_5}},}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a5d8e140b8d4b1f912ab573a095724d57}{D14}}\ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ae58e0d355985d0ec18336006664630da}{PB\_9}},}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a9ed51b980e2b1824af26a0b7873c80ea}{D15}}\ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a115536dc4db97f12ca5281e7e3ec861f}{PB\_8}},}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{comment}{//\ Generic\ signals\ namings}}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adac6477842247cab1a8c02c65f431b44}{LED1}}\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adf270d193644a80ade8c26b881b08f81}{PA\_5}},}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a8379bbaa96d151e6adac488b2a147b7a}{LED2}}\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adf270d193644a80ade8c26b881b08f81}{PA\_5}},}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a5dec293e081e0fc78369c842fab8452b}{LED3}}\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adf270d193644a80ade8c26b881b08f81}{PA\_5}},}
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ad60e39b8d1701d30aa64f80343217342}{LED4}}\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adf270d193644a80ade8c26b881b08f81}{PA\_5}},}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1af4d5b254b31198407788849a82e23f25}{USER\_BUTTON}}\ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a9c48cb3112e4d858966bf0df2101fdd7}{PC\_13}},}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aeabfc02d4ccd637570870381394b0bbd}{SERIAL\_TX}}\ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a85618d80c323e35aef27584d26d0933b}{PA\_2}},}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aba1ef9d1ebae9877675c542721c5de02}{SERIAL\_RX}}\ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aed01b69c5cfa6af470984ec888b8d395}{PA\_3}},}
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ab0b3485ee128eeaf77e597f07d57fa14}{USBTX}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a85618d80c323e35aef27584d26d0933b}{PA\_2}},}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a14487e3f82cb25ae9d18d84396ef1da7}{USBRX}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aed01b69c5cfa6af470984ec888b8d395}{PA\_3}},}
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a534ddbbf6eacc8aac5fef71be474c64d}{I2C\_SCL}}\ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a115536dc4db97f12ca5281e7e3ec861f}{PB\_8}},}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a9d51a8c100ce438db65f67d821052ea1}{I2C\_SDA}}\ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ae58e0d355985d0ec18336006664630da}{PB\_9}},}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1add37bcc343ce0aead026109fc50b2cac}{SPI\_MOSI}}\ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1aee1caff1f31a5e060318712895f5daa3}{PA\_7}},}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a4db1f29a4b23def8195011b407d61189}{SPI\_MISO}}\ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a387e0d864c1f773085701a7237053d44}{PA\_6}},}
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a0fe4e8dd583eaf1ca7aeb51d6e6ed371}{SPI\_SCK}}\ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adf270d193644a80ade8c26b881b08f81}{PA\_5}},}
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a725d2eb77bb2c06481f7bec69674ae96}{SPI\_CS}}\ \ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a76212493e652fc8262ed4d054ec6586c}{PB\_6}},}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1acad31e7a50984434a012aefe22dd812f}{PWM\_OUT}}\ \ \ \ \ =\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ae449230f3a5e944f98b8a5b217d5ffc0}{PB\_3}},}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{comment}{//\ Not\ connected}}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a3dbd1016ea99d087d747530418b89a01}{NC}}\ =\ (int)0xFFFFFFFF}
+\DoxyCodeLine{00167\ \}\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96a0df1b71118634a6490a1548b635625ce}{PullNone}}\ \ =\ 0,}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96a3be493d0479ea10ea2b1fdcd7b33ec3b}{PullUp}}\ \ \ \ =\ 1,}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96ac71cd2b9d40cca631e53f37874c53f5f}{PullDown}}\ \ =\ 2,}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96aa9f4f68ab790fe8e5989ce3a13a81bf3}{OpenDrain}}\ =\ 3,}
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96a74530c15ddfc1beca27642fded9e0d37}{PullDefault}}\ =\ \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96a0df1b71118634a6490a1548b635625ce}{PullNone}}}
+\DoxyCodeLine{00175\ \}\ \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{PinMode}};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00178\ \}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

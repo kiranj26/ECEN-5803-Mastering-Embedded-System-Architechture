@@ -1,0 +1,59 @@
+\doxysubsubsubsection{UART\+\_\+\+Hardware\+\_\+\+Flow\+\_\+\+Control}
+\hypertarget{group___u_a_r_t___hardware___flow___control}{}\label{group___u_a_r_t___hardware___flow___control}\index{UART\_Hardware\_Flow\_Control@{UART\_Hardware\_Flow\_Control}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___hardware___flow___control_gae0569001c06b7760cd38c481f84116cf}{UART\+\_\+\+HWCONTROL\+\_\+\+NONE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___hardware___flow___control_ga6d5dad09c6abf30f252084ba0f8c0b7d}{UART\+\_\+\+HWCONTROL\+\_\+\+RTS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7c5d6fcd84a4728cda578a0339b4cac2}{USART\+\_\+\+CR3\+\_\+\+RTSE}})
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___hardware___flow___control_ga352f517245986e3b86bc75f8472c51ea}{UART\+\_\+\+HWCONTROL\+\_\+\+CTS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa125f026b1ca2d76eab48b191baed265}{USART\+\_\+\+CR3\+\_\+\+CTSE}})
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___hardware___flow___control_ga7c91698e8f08ba7ed3f2a0ba9aa27d73}{UART\+\_\+\+HWCONTROL\+\_\+\+RTS\+\_\+\+CTS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7c5d6fcd84a4728cda578a0339b4cac2}{USART\+\_\+\+CR3\+\_\+\+RTSE}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa125f026b1ca2d76eab48b191baed265}{USART\+\_\+\+CR3\+\_\+\+CTSE}}))
+\item 
+\#define \mbox{\hyperlink{group___u_a_r_t___hardware___flow___control_ga4da792d3bbb8e04d97dd45b963ac2464}{IS\+\_\+\+UART\+\_\+\+HARDWARE\+\_\+\+FLOW\+\_\+\+CONTROL}}(CONTROL)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___u_a_r_t___hardware___flow___control_ga4da792d3bbb8e04d97dd45b963ac2464}\label{group___u_a_r_t___hardware___flow___control_ga4da792d3bbb8e04d97dd45b963ac2464} 
+\index{UART\_Hardware\_Flow\_Control@{UART\_Hardware\_Flow\_Control}!IS\_UART\_HARDWARE\_FLOW\_CONTROL@{IS\_UART\_HARDWARE\_FLOW\_CONTROL}}
+\index{IS\_UART\_HARDWARE\_FLOW\_CONTROL@{IS\_UART\_HARDWARE\_FLOW\_CONTROL}!UART\_Hardware\_Flow\_Control@{UART\_Hardware\_Flow\_Control}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_UART\_HARDWARE\_FLOW\_CONTROL}{IS\_UART\_HARDWARE\_FLOW\_CONTROL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+UART\+\_\+\+HARDWARE\+\_\+\+FLOW\+\_\+\+CONTROL(\begin{DoxyParamCaption}\item[{}]{CONTROL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((CONTROL)\ ==\ \mbox{\hyperlink{group___u_a_r_t___hardware___flow___control_gae0569001c06b7760cd38c481f84116cf}{UART\_HWCONTROL\_NONE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CONTROL)\ ==\ \mbox{\hyperlink{group___u_a_r_t___hardware___flow___control_ga6d5dad09c6abf30f252084ba0f8c0b7d}{UART\_HWCONTROL\_RTS}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CONTROL)\ ==\ \mbox{\hyperlink{group___u_a_r_t___hardware___flow___control_ga352f517245986e3b86bc75f8472c51ea}{UART\_HWCONTROL\_CTS}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CONTROL)\ ==\ \mbox{\hyperlink{group___u_a_r_t___hardware___flow___control_ga7c91698e8f08ba7ed3f2a0ba9aa27d73}{UART\_HWCONTROL\_RTS\_CTS}}))}
+
+\end{DoxyCode}
+\Hypertarget{group___u_a_r_t___hardware___flow___control_ga352f517245986e3b86bc75f8472c51ea}\label{group___u_a_r_t___hardware___flow___control_ga352f517245986e3b86bc75f8472c51ea} 
+\index{UART\_Hardware\_Flow\_Control@{UART\_Hardware\_Flow\_Control}!UART\_HWCONTROL\_CTS@{UART\_HWCONTROL\_CTS}}
+\index{UART\_HWCONTROL\_CTS@{UART\_HWCONTROL\_CTS}!UART\_Hardware\_Flow\_Control@{UART\_Hardware\_Flow\_Control}}
+\doxysubsubsubsubsubsection{\texorpdfstring{UART\_HWCONTROL\_CTS}{UART\_HWCONTROL\_CTS}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+HWCONTROL\+\_\+\+CTS~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa125f026b1ca2d76eab48b191baed265}{USART\+\_\+\+CR3\+\_\+\+CTSE}})}
+
+\Hypertarget{group___u_a_r_t___hardware___flow___control_gae0569001c06b7760cd38c481f84116cf}\label{group___u_a_r_t___hardware___flow___control_gae0569001c06b7760cd38c481f84116cf} 
+\index{UART\_Hardware\_Flow\_Control@{UART\_Hardware\_Flow\_Control}!UART\_HWCONTROL\_NONE@{UART\_HWCONTROL\_NONE}}
+\index{UART\_HWCONTROL\_NONE@{UART\_HWCONTROL\_NONE}!UART\_Hardware\_Flow\_Control@{UART\_Hardware\_Flow\_Control}}
+\doxysubsubsubsubsubsection{\texorpdfstring{UART\_HWCONTROL\_NONE}{UART\_HWCONTROL\_NONE}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+HWCONTROL\+\_\+\+NONE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)}
+
+\Hypertarget{group___u_a_r_t___hardware___flow___control_ga6d5dad09c6abf30f252084ba0f8c0b7d}\label{group___u_a_r_t___hardware___flow___control_ga6d5dad09c6abf30f252084ba0f8c0b7d} 
+\index{UART\_Hardware\_Flow\_Control@{UART\_Hardware\_Flow\_Control}!UART\_HWCONTROL\_RTS@{UART\_HWCONTROL\_RTS}}
+\index{UART\_HWCONTROL\_RTS@{UART\_HWCONTROL\_RTS}!UART\_Hardware\_Flow\_Control@{UART\_Hardware\_Flow\_Control}}
+\doxysubsubsubsubsubsection{\texorpdfstring{UART\_HWCONTROL\_RTS}{UART\_HWCONTROL\_RTS}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+HWCONTROL\+\_\+\+RTS~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7c5d6fcd84a4728cda578a0339b4cac2}{USART\+\_\+\+CR3\+\_\+\+RTSE}})}
+
+\Hypertarget{group___u_a_r_t___hardware___flow___control_ga7c91698e8f08ba7ed3f2a0ba9aa27d73}\label{group___u_a_r_t___hardware___flow___control_ga7c91698e8f08ba7ed3f2a0ba9aa27d73} 
+\index{UART\_Hardware\_Flow\_Control@{UART\_Hardware\_Flow\_Control}!UART\_HWCONTROL\_RTS\_CTS@{UART\_HWCONTROL\_RTS\_CTS}}
+\index{UART\_HWCONTROL\_RTS\_CTS@{UART\_HWCONTROL\_RTS\_CTS}!UART\_Hardware\_Flow\_Control@{UART\_Hardware\_Flow\_Control}}
+\doxysubsubsubsubsubsection{\texorpdfstring{UART\_HWCONTROL\_RTS\_CTS}{UART\_HWCONTROL\_RTS\_CTS}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+HWCONTROL\+\_\+\+RTS\+\_\+\+CTS~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7c5d6fcd84a4728cda578a0339b4cac2}{USART\+\_\+\+CR3\+\_\+\+RTSE}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa125f026b1ca2d76eab48b191baed265}{USART\+\_\+\+CR3\+\_\+\+CTSE}}))}
+

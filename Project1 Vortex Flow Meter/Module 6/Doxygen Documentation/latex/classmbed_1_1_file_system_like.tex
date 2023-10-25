@@ -1,0 +1,207 @@
+\doxysection{mbed\+::File\+System\+Like Class Reference}
+\hypertarget{classmbed_1_1_file_system_like}{}\label{classmbed_1_1_file_system_like}\index{mbed::FileSystemLike@{mbed::FileSystemLike}}
+
+
+{\ttfamily \#include $<$File\+System\+Like.\+h$>$}
+
+Inheritance diagram for mbed\+::File\+System\+Like\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmbed_1_1_file_system_like}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_file_system_like_adaf42774569bda270f4f686623722b19}{File\+System\+Like}} (const char \texorpdfstring{$\ast$}{*}name)
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_file_system_like_a16512da0183ff65d17748d75252f8a85}{\texorpdfstring{$\sim$}{\string~}\+File\+System\+Like}} ()
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_file_handle}{File\+Handle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_system_like_a1283408c952faf4d0872a0a96361fe7c}{open}} (const char \texorpdfstring{$\ast$}{*}filename, int flags)=0
+\item 
+virtual int \mbox{\hyperlink{classmbed_1_1_file_system_like_af3db57c1a612e1ca59c88da3488194ee}{remove}} (const char \texorpdfstring{$\ast$}{*}filename)
+\item 
+virtual int \mbox{\hyperlink{classmbed_1_1_file_system_like_a32cef6f224a3fa357d8e7e1d59002f16}{rename}} (const char \texorpdfstring{$\ast$}{*}oldname, const char \texorpdfstring{$\ast$}{*}newname)
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_dir_handle}{Dir\+Handle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_system_like_a34bf769cc9ee447af685a10bd0ae3758}{opendir}} (const char \texorpdfstring{$\ast$}{*}name)
+\item 
+virtual int \mbox{\hyperlink{classmbed_1_1_file_system_like_ac397d79d5aead33cdda1070ef3f56b38}{mkdir}} (const char \texorpdfstring{$\ast$}{*}name, mode\+\_\+t mode)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_file_base}{mbed\+::\+File\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_file_base_a8b19f5dfe489eaa641c32a5096c71af1}{File\+Base}} (const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} t)
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_file_base_ac8cc9e6d230ddfe9f9987338071998ec}{\texorpdfstring{$\sim$}{\string~}\+File\+Base}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_a22078733b15abf28045948d24555ceaf}{get\+Name}} (void)
+\item 
+\mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} \mbox{\hyperlink{classmbed_1_1_file_base_a59dd77df265c99a2fa0f7c209d0dba18}{get\+Path\+Type}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmbed_1_1_dir_handle}{Dir\+Handle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_system_like_ab16304820d9e879fe105c7dab3bf9c7d}{opendir}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_file_base}{mbed\+::\+File\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_a512479427a1a8e4c23bf353babeea9ce}{lookup}} (const char \texorpdfstring{$\ast$}{*}name, unsigned int len)
+\item 
+static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_ab2f9954a536d2c678b9630ffd68c68f2}{get}} (int n)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_file_system_like_a675ca106d6ffb5f78d71d004be2166b4}{Base\+Dir\+Handle}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classmbed_1_1_file_base}{mbed\+::\+File\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_acef47c84dc296ce35d5d2aa3695062af}{\+\_\+next}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_a9f22fa8bd5986c32dcf8e0a19f95e3b5}{\+\_\+name}}
+\item 
+\mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} \mbox{\hyperlink{classmbed_1_1_file_base_ae4a065275d45e77c512ec2d7c10f5d7b}{\+\_\+path\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classmbed_1_1_file_base}{mbed\+::\+File\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_ae9af3d7b863ca499d4e4a779632094f5}{\+\_\+head}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A filesystem-\/like object is one that can be used to open files though it by fopen("{}/name/filename"{}, mode)
+
+Implementations must define at least open (the default definitions of the rest of the functions just return error values). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmbed_1_1_file_system_like_adaf42774569bda270f4f686623722b19}\label{classmbed_1_1_file_system_like_adaf42774569bda270f4f686623722b19} 
+\index{mbed::FileSystemLike@{mbed::FileSystemLike}!FileSystemLike@{FileSystemLike}}
+\index{FileSystemLike@{FileSystemLike}!mbed::FileSystemLike@{mbed::FileSystemLike}}
+\doxysubsubsection{\texorpdfstring{FileSystemLike()}{FileSystemLike()}}
+{\footnotesize\ttfamily mbed\+::\+File\+System\+Like\+::\+File\+System\+Like (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+\doxylink{classmbed_1_1_file_system_like}{File\+System\+Like} constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to use for the filesystem. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmbed_1_1_file_system_like_a16512da0183ff65d17748d75252f8a85}\label{classmbed_1_1_file_system_like_a16512da0183ff65d17748d75252f8a85} 
+\index{mbed::FileSystemLike@{mbed::FileSystemLike}!````~FileSystemLike@{\texorpdfstring{$\sim$}{\string~}FileSystemLike}}
+\index{````~FileSystemLike@{\texorpdfstring{$\sim$}{\string~}FileSystemLike}!mbed::FileSystemLike@{mbed::FileSystemLike}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FileSystemLike()}{\string~FileSystemLike()}}
+{\footnotesize\ttfamily virtual mbed\+::\+File\+System\+Like\+::\texorpdfstring{$\sim$}{\string~}\+File\+System\+Like (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmbed_1_1_file_system_like_ac397d79d5aead33cdda1070ef3f56b38}\label{classmbed_1_1_file_system_like_ac397d79d5aead33cdda1070ef3f56b38} 
+\index{mbed::FileSystemLike@{mbed::FileSystemLike}!mkdir@{mkdir}}
+\index{mkdir@{mkdir}!mbed::FileSystemLike@{mbed::FileSystemLike}}
+\doxysubsubsection{\texorpdfstring{mkdir()}{mkdir()}}
+{\footnotesize\ttfamily virtual int mbed\+::\+File\+System\+Like\+::mkdir (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{mode\+\_\+t}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Creates a directory in the filesystem.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the directory to create. \\
+\hline
+{\em mode} & The permissions to create the directory with.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on failure. 
+\end{DoxyReturn}
+\Hypertarget{classmbed_1_1_file_system_like_a1283408c952faf4d0872a0a96361fe7c}\label{classmbed_1_1_file_system_like_a1283408c952faf4d0872a0a96361fe7c} 
+\index{mbed::FileSystemLike@{mbed::FileSystemLike}!open@{open}}
+\index{open@{open}!mbed::FileSystemLike@{mbed::FileSystemLike}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classmbed_1_1_file_handle}{File\+Handle}} \texorpdfstring{$\ast$}{*} mbed\+::\+File\+System\+Like\+::open (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{int}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Opens a file from the filesystem
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to open. \\
+\hline
+{\em flags} & One of O\+\_\+\+RDONLY, O\+\_\+\+WRONLY, or O\+\_\+\+RDWR, OR\textquotesingle{}d with zero or more of O\+\_\+\+CREAT, O\+\_\+\+TRUNC, or O\+\_\+\+APPEND.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a \doxylink{classmbed_1_1_file_handle}{File\+Handle} object representing the file on success, or NULL on failure. 
+\end{DoxyReturn}
+\Hypertarget{classmbed_1_1_file_system_like_ab16304820d9e879fe105c7dab3bf9c7d}\label{classmbed_1_1_file_system_like_ab16304820d9e879fe105c7dab3bf9c7d} 
+\index{mbed::FileSystemLike@{mbed::FileSystemLike}!opendir@{opendir}}
+\index{opendir@{opendir}!mbed::FileSystemLike@{mbed::FileSystemLike}}
+\doxysubsubsection{\texorpdfstring{opendir()}{opendir()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classmbed_1_1_dir_handle}{Dir\+Handle}} \texorpdfstring{$\ast$}{*} mbed\+::\+File\+System\+Like\+::opendir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmbed_1_1_file_system_like_a34bf769cc9ee447af685a10bd0ae3758}\label{classmbed_1_1_file_system_like_a34bf769cc9ee447af685a10bd0ae3758} 
+\index{mbed::FileSystemLike@{mbed::FileSystemLike}!opendir@{opendir}}
+\index{opendir@{opendir}!mbed::FileSystemLike@{mbed::FileSystemLike}}
+\doxysubsubsection{\texorpdfstring{opendir()}{opendir()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classmbed_1_1_dir_handle}{Dir\+Handle}} \texorpdfstring{$\ast$}{*} mbed\+::\+File\+System\+Like\+::opendir (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Opens a directory in the filesystem and returns a \doxylink{classmbed_1_1_dir_handle}{Dir\+Handle} representing the directory stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the directory to open.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classmbed_1_1_dir_handle}{Dir\+Handle} representing the directory stream, or NULL on failure. 
+\end{DoxyReturn}
+\Hypertarget{classmbed_1_1_file_system_like_af3db57c1a612e1ca59c88da3488194ee}\label{classmbed_1_1_file_system_like_af3db57c1a612e1ca59c88da3488194ee} 
+\index{mbed::FileSystemLike@{mbed::FileSystemLike}!remove@{remove}}
+\index{remove@{remove}!mbed::FileSystemLike@{mbed::FileSystemLike}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily virtual int mbed\+::\+File\+System\+Like\+::remove (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Remove a file from the filesystem.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & the name of the file to remove. \\
+\hline
+{\em returns} & 0 on success, -\/1 on failure. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmbed_1_1_file_system_like_a32cef6f224a3fa357d8e7e1d59002f16}\label{classmbed_1_1_file_system_like_a32cef6f224a3fa357d8e7e1d59002f16} 
+\index{mbed::FileSystemLike@{mbed::FileSystemLike}!rename@{rename}}
+\index{rename@{rename}!mbed::FileSystemLike@{mbed::FileSystemLike}}
+\doxysubsubsection{\texorpdfstring{rename()}{rename()}}
+{\footnotesize\ttfamily virtual int mbed\+::\+File\+System\+Like\+::rename (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{oldname,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{newname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Rename a file in the filesystem.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oldname} & the name of the file to rename. \\
+\hline
+{\em newname} & the name to rename it to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on failure. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classmbed_1_1_file_system_like_a675ca106d6ffb5f78d71d004be2166b4}\label{classmbed_1_1_file_system_like_a675ca106d6ffb5f78d71d004be2166b4} 
+\index{mbed::FileSystemLike@{mbed::FileSystemLike}!BaseDirHandle@{BaseDirHandle}}
+\index{BaseDirHandle@{BaseDirHandle}!mbed::FileSystemLike@{mbed::FileSystemLike}}
+\doxysubsubsection{\texorpdfstring{BaseDirHandle}{BaseDirHandle}}
+{\footnotesize\ttfamily friend class Base\+Dir\+Handle\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\mbox{\hyperlink{_file_system_like_8h}{File\+System\+Like.\+h}}\end{DoxyCompactItemize}

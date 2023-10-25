@@ -1,0 +1,98 @@
+\doxysubsubsection{HCD\+\_\+\+Interrupt\+\_\+\+Clock}
+\hypertarget{group___h_c_d___interrupt___clock}{}\label{group___h_c_d___interrupt___clock}\index{HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}}
+
+
+macros to handle interrupts and specific clock configurations  
+
+
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___h_c_d___interrupt___clock_gab019adbb887485cd9893e96c86da13c1}{\+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___p_c_d___exported___constants_gaa8938bc57ec4994b1d2a04dceb12c67a}{USB\+\_\+\+Enable\+Global\+Int}} ((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance)
+\item 
+\#define \mbox{\hyperlink{group___h_c_d___interrupt___clock_ga1030fbf31ad94f0d9684339358d04df5}{\+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___p_c_d___exported___constants_ga81380ef9f6be2f72b70284d2108b4aed}{USB\+\_\+\+Disable\+Global\+Int}} ((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance)
+\item 
+\#define \mbox{\hyperlink{group___h_c_d___interrupt___clock_ga7f3604641a19c15a294c542a24ffc55f}{\+\_\+\+\_\+\+HAL\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\mbox{\hyperlink{group___p_c_d___exported___constants_ga11d36625a0724ef12a0021226ceeefd8}{USB\+\_\+\+Read\+Interrupts}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance) \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___h_c_d___interrupt___clock_ga8459525389520201c570fd1b61b830ec}{\+\_\+\+\_\+\+HAL\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$GINTSTS) \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___h_c_d___interrupt___clock_ga4fe23b08c61f807591978300b6a378c6}{\+\_\+\+\_\+\+HAL\+\_\+\+IS\+\_\+\+INVALID\+\_\+\+INTERRUPT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~(\mbox{\hyperlink{group___p_c_d___exported___constants_ga11d36625a0724ef12a0021226ceeefd8}{USB\+\_\+\+Read\+Interrupts}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance) == 0)
+\item 
+\#define \mbox{\hyperlink{group___h_c_d___interrupt___clock_ga5948edd0a938ae816e548e6dec0f2459}{\+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+CLEAR\+\_\+\+HC\+\_\+\+INT}}(chnum,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~(\mbox{\hyperlink{group___p_c_d___exported___constants_gaabde8c1753d544ba0caa940a3617b09c}{USBx\+\_\+\+HC}}(chnum)-\/$>$HCINT = (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___h_c_d___interrupt___clock_ga437a6680938a77582f041492ea10c3e9}{\+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+MASK\+\_\+\+HALT\+\_\+\+HC\+\_\+\+INT}}(chnum)~(\mbox{\hyperlink{group___p_c_d___exported___constants_gaabde8c1753d544ba0caa940a3617b09c}{USBx\+\_\+\+HC}}(chnum)-\/$>$HCINTMSK \&= \texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8f359b89c79fba4414e0838645f13a6b}{USB\+\_\+\+OTG\+\_\+\+HCINTMSK\+\_\+\+CHHM}})
+\item 
+\#define \mbox{\hyperlink{group___h_c_d___interrupt___clock_ga81a4da11f8bbfb69a7331ff062222fd3}{\+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+UNMASK\+\_\+\+HALT\+\_\+\+HC\+\_\+\+INT}}(chnum)~(\mbox{\hyperlink{group___p_c_d___exported___constants_gaabde8c1753d544ba0caa940a3617b09c}{USBx\+\_\+\+HC}}(chnum)-\/$>$HCINTMSK \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8f359b89c79fba4414e0838645f13a6b}{USB\+\_\+\+OTG\+\_\+\+HCINTMSK\+\_\+\+CHHM}})
+\item 
+\#define \mbox{\hyperlink{group___h_c_d___interrupt___clock_ga666c0aa06c7ff5b3ec5853f0abfcfd4c}{\+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+MASK\+\_\+\+ACK\+\_\+\+HC\+\_\+\+INT}}(chnum)~(\mbox{\hyperlink{group___p_c_d___exported___constants_gaabde8c1753d544ba0caa940a3617b09c}{USBx\+\_\+\+HC}}(chnum)-\/$>$HCINTMSK \&= \texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga21eb5c0fa8aafa12a725ab52f85023d1}{USB\+\_\+\+OTG\+\_\+\+HCINTMSK\+\_\+\+ACKM}})
+\item 
+\#define \mbox{\hyperlink{group___h_c_d___interrupt___clock_ga614399c25c8b2e6614aa7b7b4927b6bd}{\+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+UNMASK\+\_\+\+ACK\+\_\+\+HC\+\_\+\+INT}}(chnum)~(\mbox{\hyperlink{group___p_c_d___exported___constants_gaabde8c1753d544ba0caa940a3617b09c}{USBx\+\_\+\+HC}}(chnum)-\/$>$HCINTMSK \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga21eb5c0fa8aafa12a725ab52f85023d1}{USB\+\_\+\+OTG\+\_\+\+HCINTMSK\+\_\+\+ACKM}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+macros to handle interrupts and specific clock configurations 
+
+
+
+\doxysubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___h_c_d___interrupt___clock_ga8459525389520201c570fd1b61b830ec}\label{group___h_c_d___interrupt___clock_ga8459525389520201c570fd1b61b830ec} 
+\index{HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}!\_\_HAL\_CLEAR\_FLAG@{\_\_HAL\_CLEAR\_FLAG}}
+\index{\_\_HAL\_CLEAR\_FLAG@{\_\_HAL\_CLEAR\_FLAG}!HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_CLEAR\_FLAG}{\_\_HAL\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$GINTSTS) \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+\Hypertarget{group___h_c_d___interrupt___clock_ga7f3604641a19c15a294c542a24ffc55f}\label{group___h_c_d___interrupt___clock_ga7f3604641a19c15a294c542a24ffc55f} 
+\index{HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}!\_\_HAL\_GET\_FLAG@{\_\_HAL\_GET\_FLAG}}
+\index{\_\_HAL\_GET\_FLAG@{\_\_HAL\_GET\_FLAG}!HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_GET\_FLAG}{\_\_HAL\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\mbox{\hyperlink{group___p_c_d___exported___constants_ga11d36625a0724ef12a0021226ceeefd8}{USB\+\_\+\+Read\+Interrupts}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance) \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+\Hypertarget{group___h_c_d___interrupt___clock_ga5948edd0a938ae816e548e6dec0f2459}\label{group___h_c_d___interrupt___clock_ga5948edd0a938ae816e548e6dec0f2459} 
+\index{HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}!\_\_HAL\_HCD\_CLEAR\_HC\_INT@{\_\_HAL\_HCD\_CLEAR\_HC\_INT}}
+\index{\_\_HAL\_HCD\_CLEAR\_HC\_INT@{\_\_HAL\_HCD\_CLEAR\_HC\_INT}!HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_HCD\_CLEAR\_HC\_INT}{\_\_HAL\_HCD\_CLEAR\_HC\_INT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+CLEAR\+\_\+\+HC\+\_\+\+INT(\begin{DoxyParamCaption}\item[{}]{chnum,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___p_c_d___exported___constants_gaabde8c1753d544ba0caa940a3617b09c}{USBx\+\_\+\+HC}}(chnum)-\/$>$HCINT = (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+\Hypertarget{group___h_c_d___interrupt___clock_ga1030fbf31ad94f0d9684339358d04df5}\label{group___h_c_d___interrupt___clock_ga1030fbf31ad94f0d9684339358d04df5} 
+\index{HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}!\_\_HAL\_HCD\_DISABLE@{\_\_HAL\_HCD\_DISABLE}}
+\index{\_\_HAL\_HCD\_DISABLE@{\_\_HAL\_HCD\_DISABLE}!HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_HCD\_DISABLE}{\_\_HAL\_HCD\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~\mbox{\hyperlink{group___p_c_d___exported___constants_ga81380ef9f6be2f72b70284d2108b4aed}{USB\+\_\+\+Disable\+Global\+Int}} ((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance)}
+
+\Hypertarget{group___h_c_d___interrupt___clock_gab019adbb887485cd9893e96c86da13c1}\label{group___h_c_d___interrupt___clock_gab019adbb887485cd9893e96c86da13c1} 
+\index{HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}!\_\_HAL\_HCD\_ENABLE@{\_\_HAL\_HCD\_ENABLE}}
+\index{\_\_HAL\_HCD\_ENABLE@{\_\_HAL\_HCD\_ENABLE}!HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_HCD\_ENABLE}{\_\_HAL\_HCD\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~\mbox{\hyperlink{group___p_c_d___exported___constants_gaa8938bc57ec4994b1d2a04dceb12c67a}{USB\+\_\+\+Enable\+Global\+Int}} ((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance)}
+
+\Hypertarget{group___h_c_d___interrupt___clock_ga666c0aa06c7ff5b3ec5853f0abfcfd4c}\label{group___h_c_d___interrupt___clock_ga666c0aa06c7ff5b3ec5853f0abfcfd4c} 
+\index{HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}!\_\_HAL\_HCD\_MASK\_ACK\_HC\_INT@{\_\_HAL\_HCD\_MASK\_ACK\_HC\_INT}}
+\index{\_\_HAL\_HCD\_MASK\_ACK\_HC\_INT@{\_\_HAL\_HCD\_MASK\_ACK\_HC\_INT}!HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_HCD\_MASK\_ACK\_HC\_INT}{\_\_HAL\_HCD\_MASK\_ACK\_HC\_INT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+MASK\+\_\+\+ACK\+\_\+\+HC\+\_\+\+INT(\begin{DoxyParamCaption}\item[{}]{chnum }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___p_c_d___exported___constants_gaabde8c1753d544ba0caa940a3617b09c}{USBx\+\_\+\+HC}}(chnum)-\/$>$HCINTMSK \&= \texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga21eb5c0fa8aafa12a725ab52f85023d1}{USB\+\_\+\+OTG\+\_\+\+HCINTMSK\+\_\+\+ACKM}})}
+
+\Hypertarget{group___h_c_d___interrupt___clock_ga437a6680938a77582f041492ea10c3e9}\label{group___h_c_d___interrupt___clock_ga437a6680938a77582f041492ea10c3e9} 
+\index{HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}!\_\_HAL\_HCD\_MASK\_HALT\_HC\_INT@{\_\_HAL\_HCD\_MASK\_HALT\_HC\_INT}}
+\index{\_\_HAL\_HCD\_MASK\_HALT\_HC\_INT@{\_\_HAL\_HCD\_MASK\_HALT\_HC\_INT}!HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_HCD\_MASK\_HALT\_HC\_INT}{\_\_HAL\_HCD\_MASK\_HALT\_HC\_INT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+MASK\+\_\+\+HALT\+\_\+\+HC\+\_\+\+INT(\begin{DoxyParamCaption}\item[{}]{chnum }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___p_c_d___exported___constants_gaabde8c1753d544ba0caa940a3617b09c}{USBx\+\_\+\+HC}}(chnum)-\/$>$HCINTMSK \&= \texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8f359b89c79fba4414e0838645f13a6b}{USB\+\_\+\+OTG\+\_\+\+HCINTMSK\+\_\+\+CHHM}})}
+
+\Hypertarget{group___h_c_d___interrupt___clock_ga614399c25c8b2e6614aa7b7b4927b6bd}\label{group___h_c_d___interrupt___clock_ga614399c25c8b2e6614aa7b7b4927b6bd} 
+\index{HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}!\_\_HAL\_HCD\_UNMASK\_ACK\_HC\_INT@{\_\_HAL\_HCD\_UNMASK\_ACK\_HC\_INT}}
+\index{\_\_HAL\_HCD\_UNMASK\_ACK\_HC\_INT@{\_\_HAL\_HCD\_UNMASK\_ACK\_HC\_INT}!HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_HCD\_UNMASK\_ACK\_HC\_INT}{\_\_HAL\_HCD\_UNMASK\_ACK\_HC\_INT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+UNMASK\+\_\+\+ACK\+\_\+\+HC\+\_\+\+INT(\begin{DoxyParamCaption}\item[{}]{chnum }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___p_c_d___exported___constants_gaabde8c1753d544ba0caa940a3617b09c}{USBx\+\_\+\+HC}}(chnum)-\/$>$HCINTMSK \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga21eb5c0fa8aafa12a725ab52f85023d1}{USB\+\_\+\+OTG\+\_\+\+HCINTMSK\+\_\+\+ACKM}})}
+
+\Hypertarget{group___h_c_d___interrupt___clock_ga81a4da11f8bbfb69a7331ff062222fd3}\label{group___h_c_d___interrupt___clock_ga81a4da11f8bbfb69a7331ff062222fd3} 
+\index{HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}!\_\_HAL\_HCD\_UNMASK\_HALT\_HC\_INT@{\_\_HAL\_HCD\_UNMASK\_HALT\_HC\_INT}}
+\index{\_\_HAL\_HCD\_UNMASK\_HALT\_HC\_INT@{\_\_HAL\_HCD\_UNMASK\_HALT\_HC\_INT}!HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_HCD\_UNMASK\_HALT\_HC\_INT}{\_\_HAL\_HCD\_UNMASK\_HALT\_HC\_INT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+HCD\+\_\+\+UNMASK\+\_\+\+HALT\+\_\+\+HC\+\_\+\+INT(\begin{DoxyParamCaption}\item[{}]{chnum }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___p_c_d___exported___constants_gaabde8c1753d544ba0caa940a3617b09c}{USBx\+\_\+\+HC}}(chnum)-\/$>$HCINTMSK \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8f359b89c79fba4414e0838645f13a6b}{USB\+\_\+\+OTG\+\_\+\+HCINTMSK\+\_\+\+CHHM}})}
+
+\Hypertarget{group___h_c_d___interrupt___clock_ga4fe23b08c61f807591978300b6a378c6}\label{group___h_c_d___interrupt___clock_ga4fe23b08c61f807591978300b6a378c6} 
+\index{HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}!\_\_HAL\_IS\_INVALID\_INTERRUPT@{\_\_HAL\_IS\_INVALID\_INTERRUPT}}
+\index{\_\_HAL\_IS\_INVALID\_INTERRUPT@{\_\_HAL\_IS\_INVALID\_INTERRUPT}!HCD\_Interrupt\_Clock@{HCD\_Interrupt\_Clock}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_HAL\_IS\_INVALID\_INTERRUPT}{\_\_HAL\_IS\_INVALID\_INTERRUPT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+IS\+\_\+\+INVALID\+\_\+\+INTERRUPT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___p_c_d___exported___constants_ga11d36625a0724ef12a0021226ceeefd8}{USB\+\_\+\+Read\+Interrupts}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance) == 0)}
+

@@ -1,0 +1,86 @@
+\doxysection{memory.\+h File Reference}
+\hypertarget{memory_8h}{}\label{memory_8h}\index{memory.h@{memory.h}}
+
+
+Header file to interact with memory, registers, and the UART interface.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{memory_8h_a3a6578da0c0edfc8c006b76f7e35e68b}{read\+\_\+serial\+\_\+input}} (char \texorpdfstring{$\ast$}{*}buffer, int length)
+\begin{DoxyCompactList}\small\item\em Reads serial input into a buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{memory_8h_a443d8ebaaf7d2251347e71a58f2bafa0}{print\+\_\+registers}} ()
+\begin{DoxyCompactList}\small\item\em Prints the values of the core registers to the UART interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{memory_8h_a20c6e65f1cc09f83c5768707ccf170ed}{dump\+\_\+memory}} (void)
+\begin{DoxyCompactList}\small\item\em Dumps the memory contents in hex format. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{memory_8h_a731758b7ff30442a617296ca3f6306d2}{display\+\_\+last\+\_\+16\+\_\+stack\+\_\+words}} ()
+\begin{DoxyCompactList}\small\item\em Displays the last 16 words of the stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file to interact with memory, registers, and the UART interface. 
+
+\begin{DoxyAuthor}{Author}
+Kiran Jojare, Viraj Patel 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{memory_8h_a731758b7ff30442a617296ca3f6306d2}\label{memory_8h_a731758b7ff30442a617296ca3f6306d2} 
+\index{memory.h@{memory.h}!display\_last\_16\_stack\_words@{display\_last\_16\_stack\_words}}
+\index{display\_last\_16\_stack\_words@{display\_last\_16\_stack\_words}!memory.h@{memory.h}}
+\doxysubsubsection{\texorpdfstring{display\_last\_16\_stack\_words()}{display\_last\_16\_stack\_words()}}
+{\footnotesize\ttfamily void display\+\_\+last\+\_\+16\+\_\+stack\+\_\+words (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Displays the last 16 words of the stack. 
+
+Displays the last 16 words of the stack.
+
+This function sends the last 16 words of the current stack over UART. \Hypertarget{memory_8h_a20c6e65f1cc09f83c5768707ccf170ed}\label{memory_8h_a20c6e65f1cc09f83c5768707ccf170ed} 
+\index{memory.h@{memory.h}!dump\_memory@{dump\_memory}}
+\index{dump\_memory@{dump\_memory}!memory.h@{memory.h}}
+\doxysubsubsection{\texorpdfstring{dump\_memory()}{dump\_memory()}}
+{\footnotesize\ttfamily void dump\+\_\+memory (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Dumps the memory contents in hex format. 
+
+Dumps the memory contents in hex format.
+
+This function sends the content of the memory from a specified address and for a given length over UART. \Hypertarget{memory_8h_a443d8ebaaf7d2251347e71a58f2bafa0}\label{memory_8h_a443d8ebaaf7d2251347e71a58f2bafa0} 
+\index{memory.h@{memory.h}!print\_registers@{print\_registers}}
+\index{print\_registers@{print\_registers}!memory.h@{memory.h}}
+\doxysubsubsection{\texorpdfstring{print\_registers()}{print\_registers()}}
+{\footnotesize\ttfamily void print\+\_\+registers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Prints the values of the core registers to the UART interface. 
+
+Prints the values of the core registers to the UART interface.
+
+This function sends the current values of the processor\textquotesingle{}s registers over UART. \Hypertarget{memory_8h_a3a6578da0c0edfc8c006b76f7e35e68b}\label{memory_8h_a3a6578da0c0edfc8c006b76f7e35e68b} 
+\index{memory.h@{memory.h}!read\_serial\_input@{read\_serial\_input}}
+\index{read\_serial\_input@{read\_serial\_input}!memory.h@{memory.h}}
+\doxysubsubsection{\texorpdfstring{read\_serial\_input()}{read\_serial\_input()}}
+{\footnotesize\ttfamily void read\+\_\+serial\+\_\+input (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{int}]{length }\end{DoxyParamCaption})}
+
+
+
+Reads serial input into a buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The buffer to store the read data. \\
+\hline
+{\em length} & The maximum number of characters to read.\\
+\hline
+\end{DoxyParams}
+Reads serial input into a buffer.
+
+This function captures characters from the UART until a newline or a carriage return character is detected. Additionally, it handles backspaces by erasing the previously entered character. 

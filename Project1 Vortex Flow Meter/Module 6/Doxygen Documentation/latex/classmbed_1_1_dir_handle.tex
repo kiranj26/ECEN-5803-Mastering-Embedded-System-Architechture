@@ -1,0 +1,97 @@
+\doxysection{mbed\+::Dir\+Handle Class Reference}
+\hypertarget{classmbed_1_1_dir_handle}{}\label{classmbed_1_1_dir_handle}\index{mbed::DirHandle@{mbed::DirHandle}}
+
+
+{\ttfamily \#include $<$Dir\+Handle.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classmbed_1_1_dir_handle_a4c26b9d7fc438b1f7d9b01ced8629f6e}{closedir}} ()=0
+\item 
+virtual struct \mbox{\hyperlink{structdirent}{dirent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_dir_handle_ad1c5380dc2ea56c4741014a0fdb05811}{readdir}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classmbed_1_1_dir_handle_af21ed332757da752a1286e1a0189957a}{rewinddir}} ()=0
+\item 
+virtual off\+\_\+t \mbox{\hyperlink{classmbed_1_1_dir_handle_a6b509a9d24905b38e3883e998de13ae1}{telldir}} ()
+\item 
+virtual void \mbox{\hyperlink{classmbed_1_1_dir_handle_a5f4511c471648633570515cc9ff9e9e5}{seekdir}} (off\+\_\+t location)
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_dir_handle_ad299bc250f18149694f8c077df61bf11}{\texorpdfstring{$\sim$}{\string~}\+Dir\+Handle}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a directory stream. Objects of this type are returned by a \doxylink{classmbed_1_1_file_system_like}{File\+System\+Like}\textquotesingle{}s opendir method. Implementations must define at least closedir, readdir and rewinddir.
+
+If a \doxylink{classmbed_1_1_file_system_like}{File\+System\+Like} class defines the opendir method, then the directories of an object of that type can be accessed by DIR \texorpdfstring{$\ast$}{*}d = opendir("{}/example/directory"{}) (or opendir("{}/example"{}) to open the root of the filesystem), and then using readdir(d) etc.
+
+The root directory is considered to contain all \doxylink{classmbed_1_1_file_like}{File\+Like} and \doxylink{classmbed_1_1_file_system_like}{File\+System\+Like} objects, so the DIR\texorpdfstring{$\ast$}{*} returned by opendir("{}/"{}) will reflect this. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmbed_1_1_dir_handle_ad299bc250f18149694f8c077df61bf11}\label{classmbed_1_1_dir_handle_ad299bc250f18149694f8c077df61bf11} 
+\index{mbed::DirHandle@{mbed::DirHandle}!````~DirHandle@{\texorpdfstring{$\sim$}{\string~}DirHandle}}
+\index{````~DirHandle@{\texorpdfstring{$\sim$}{\string~}DirHandle}!mbed::DirHandle@{mbed::DirHandle}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DirHandle()}{\string~DirHandle()}}
+{\footnotesize\ttfamily virtual mbed\+::\+Dir\+Handle\+::\texorpdfstring{$\sim$}{\string~}\+Dir\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmbed_1_1_dir_handle_a4c26b9d7fc438b1f7d9b01ced8629f6e}\label{classmbed_1_1_dir_handle_a4c26b9d7fc438b1f7d9b01ced8629f6e} 
+\index{mbed::DirHandle@{mbed::DirHandle}!closedir@{closedir}}
+\index{closedir@{closedir}!mbed::DirHandle@{mbed::DirHandle}}
+\doxysubsubsection{\texorpdfstring{closedir()}{closedir()}}
+{\footnotesize\ttfamily virtual int mbed\+::\+Dir\+Handle\+::closedir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Closes the directory.
+
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+\Hypertarget{classmbed_1_1_dir_handle_ad1c5380dc2ea56c4741014a0fdb05811}\label{classmbed_1_1_dir_handle_ad1c5380dc2ea56c4741014a0fdb05811} 
+\index{mbed::DirHandle@{mbed::DirHandle}!readdir@{readdir}}
+\index{readdir@{readdir}!mbed::DirHandle@{mbed::DirHandle}}
+\doxysubsubsection{\texorpdfstring{readdir()}{readdir()}}
+{\footnotesize\ttfamily virtual struct \mbox{\hyperlink{structdirent}{dirent}} \texorpdfstring{$\ast$}{*} mbed\+::\+Dir\+Handle\+::readdir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Return the directory entry at the current position, and advances the position to the next entry.
+
+\begin{DoxyReturn}{Returns}
+A pointer to a dirent structure representing the directory entry at the current position, or NULL on reaching end of directory or error. 
+\end{DoxyReturn}
+\Hypertarget{classmbed_1_1_dir_handle_af21ed332757da752a1286e1a0189957a}\label{classmbed_1_1_dir_handle_af21ed332757da752a1286e1a0189957a} 
+\index{mbed::DirHandle@{mbed::DirHandle}!rewinddir@{rewinddir}}
+\index{rewinddir@{rewinddir}!mbed::DirHandle@{mbed::DirHandle}}
+\doxysubsubsection{\texorpdfstring{rewinddir()}{rewinddir()}}
+{\footnotesize\ttfamily virtual void mbed\+::\+Dir\+Handle\+::rewinddir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Resets the position to the beginning of the directory. \Hypertarget{classmbed_1_1_dir_handle_a5f4511c471648633570515cc9ff9e9e5}\label{classmbed_1_1_dir_handle_a5f4511c471648633570515cc9ff9e9e5} 
+\index{mbed::DirHandle@{mbed::DirHandle}!seekdir@{seekdir}}
+\index{seekdir@{seekdir}!mbed::DirHandle@{mbed::DirHandle}}
+\doxysubsubsection{\texorpdfstring{seekdir()}{seekdir()}}
+{\footnotesize\ttfamily virtual void mbed\+::\+Dir\+Handle\+::seekdir (\begin{DoxyParamCaption}\item[{off\+\_\+t}]{location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets the position of the \doxylink{classmbed_1_1_dir_handle}{Dir\+Handle}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & The location to seek to. Must be a value returned by telldir. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmbed_1_1_dir_handle_a6b509a9d24905b38e3883e998de13ae1}\label{classmbed_1_1_dir_handle_a6b509a9d24905b38e3883e998de13ae1} 
+\index{mbed::DirHandle@{mbed::DirHandle}!telldir@{telldir}}
+\index{telldir@{telldir}!mbed::DirHandle@{mbed::DirHandle}}
+\doxysubsubsection{\texorpdfstring{telldir()}{telldir()}}
+{\footnotesize\ttfamily virtual off\+\_\+t mbed\+::\+Dir\+Handle\+::telldir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the current position of the \doxylink{classmbed_1_1_dir_handle}{Dir\+Handle}.
+
+\begin{DoxyReturn}{Returns}
+the current position, -\/1 on error. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\mbox{\hyperlink{_dir_handle_8h}{Dir\+Handle.\+h}}\end{DoxyCompactItemize}

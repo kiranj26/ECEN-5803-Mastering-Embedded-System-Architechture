@@ -1,0 +1,84 @@
+\doxysection{Interrupt\+In.\+h}
+\hypertarget{_interrupt_in_8h_source}{}\label{_interrupt_in_8h_source}\index{mbed/InterruptIn.h@{mbed/InterruptIn.h}}
+\mbox{\hyperlink{_interrupt_in_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_INTERRUPTIN\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_INTERRUPTIN\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{platform_8h}{platform.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#if\ DEVICE\_INTERRUPTIN}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gpio__api_8h}{gpio\_api.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gpio__irq__api_8h}{gpio\_irq\_api.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_function_pointer_8h}{FunctionPointer.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacembed}{mbed}}\ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{class\ }InterruptIn\ \{}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ InterruptIn(\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ pin);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~InterruptIn();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \textcolor{keywordtype}{int}\ read();}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#ifdef\ MBED\_OPERATORS}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{operator}\ int();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ rise(\textcolor{keywordtype}{void}\ (*fptr)(\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ rise(T*\ tptr,\ \textcolor{keywordtype}{void}\ (T::*mptr)(void))\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \_rise.attach(tptr,\ mptr);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ gpio\_irq\_set(\&gpio\_irq,\ IRQ\_RISE,\ 1);}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ fall(\textcolor{keywordtype}{void}\ (*fptr)(\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ fall(T*\ tptr,\ \textcolor{keywordtype}{void}\ (T::*mptr)(void))\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \_fall.attach(tptr,\ mptr);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ gpio\_irq\_set(\&gpio\_irq,\ IRQ\_FALL,\ 1);}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ mode(\mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{PinMode}}\ pull);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ enable\_irq();}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ disable\_irq();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \_irq\_handler(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \textcolor{keywordtype}{id},\ gpio\_irq\_event\ event);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{structgpio__t}{gpio\_t}}\ gpio;}
+\DoxyCodeLine{00125\ \ \ \ \ gpio\_irq\_t\ gpio\_irq;}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ FunctionPointer\ \_rise;}
+\DoxyCodeLine{00128\ \ \ \ \ FunctionPointer\ \_fall;}
+\DoxyCodeLine{00129\ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \}\ \textcolor{comment}{//\ namespace\ mbed}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,137 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+hcd.\+h}
+\hypertarget{stm32f4xx__hal__hcd_8h_source}{}\label{stm32f4xx__hal__hcd_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_hcd.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_hcd.h}}
+\mbox{\hyperlink{stm32f4xx__hal__hcd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_HCD\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_HCD\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__ll__usb_8h}{stm32f4xx\_ll\_usb.h}}"{}}}
+\DoxyCodeLine{00048\ \ \ \ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ }
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{group___h_c_d_gga0e764aeccc0cc959f3385794d42f6a75a40ccdca0c9143ee65ed72d1ebe1f29a3}{HCD\_READY}}\ \ \ \ =\ 0x00,}
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{group___h_c_d_gga0e764aeccc0cc959f3385794d42f6a75a9b430ed215df260a25e0faf0a378cbfb}{HCD\_ERROR}}\ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{group___h_c_d_gga0e764aeccc0cc959f3385794d42f6a75af648083a2e58892cc8127fb63b0325e0}{HCD\_BUSY}}\ \ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{group___h_c_d_gga0e764aeccc0cc959f3385794d42f6a75abde7fbbdf9c60dfd79c6fea15e9669f1}{HCD\_TIMEOUT}}\ \ =\ 0x03}
+\DoxyCodeLine{00068\ \}\ \mbox{\hyperlink{group___h_c_d_ga0e764aeccc0cc959f3385794d42f6a75}{HCD\_StateTypeDef}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\_OTG\_GlobalTypeDef}}\ \ \ \mbox{\hyperlink{group___h_c_d_gaaec59ef8fc3a41cdd7273ba04c96c7e7}{HCD\_TypeDef}};}
+\DoxyCodeLine{00071\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_u_s_b___o_t_g___cfg_type_def}{USB\_OTG\_CfgTypeDef}}\ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga2efbc940fee7983aa6be61a59fea1c17}{HCD\_InitTypeDef}};}
+\DoxyCodeLine{00072\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_u_s_b___o_t_g___h_c_type_def}{USB\_OTG\_HCTypeDef}}\ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_gab59585410331db8a3af5e7ae61cb3e57}{HCD\_HCTypeDef}}\ ;\ \ \ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{group___u_s_b___core_ga04b2bca306495588fec3a5245daa5221}{USB\_OTG\_URBStateTypeDef}}\ \mbox{\hyperlink{group___h_c_d_gaa0c5f0cd192863615fe22c2c5c933f03}{HCD\_URBStateTypeDef}}\ ;}
+\DoxyCodeLine{00074\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{group___u_s_b___core_ga8fa88c2e8e5fe41147028ba11af65294}{USB\_OTG\_HCStateTypeDef}}\ \ \mbox{\hyperlink{group___h_c_d_gaddc71ebd6c2bdf5d1ee527525611647a}{HCD\_HCStateTypeDef}}\ ;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \ \ \mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{HCD\_TypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{struct_h_c_d___handle_type_def_aa7361dd1e84ad6482148c27b6f111289}{Instance}};\ \ }
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{struct_u_s_b___o_t_g___cfg_type_def}{HCD\_InitTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_c_d___handle_type_def_acf333f6140aeeb8377282b2e50520cf7}{Init}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \mbox{\hyperlink{struct_u_s_b___o_t_g___h_c_type_def}{HCD\_HCTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ hc[15];\ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\_LockTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_c_d___handle_type_def_a960ae01d7172213849c4fa2d1460f0bc}{Lock}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{group___h_c_d_ga0e764aeccc0cc959f3385794d42f6a75}{HCD\_StateTypeDef}}\ \ \ \ \ \mbox{\hyperlink{struct_h_c_d___handle_type_def_a3fd21602587e92a68a77b029b58cc7d9}{State}};\ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{struct_h_c_d___handle_type_def_a9846fc273f2391e3d7662169fc125b5d}{pData}};\ \ \ \ \ }
+\DoxyCodeLine{00088\ \}\ \mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}};}
+\DoxyCodeLine{00089\ \ \ }
+\DoxyCodeLine{00090\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \_\_HAL\_HCD\_GET\_FLAG(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ \ \ \ ((USB\_ReadInterrupts((\_\_HANDLE\_\_)-\/>Instance)\ \&\ (\_\_INTERRUPT\_\_))\ ==\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_\_HAL\_HCD\_CLEAR\_FLAG(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ \ (((\_\_HANDLE\_\_)-\/>Instance-\/>GINTSTS)\ |=\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \_\_HAL\_HCD\_IS\_INVALID\_INTERRUPT(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ (USB\_ReadInterrupts((\_\_HANDLE\_\_)-\/>Instance)\ ==\ 0)\ \ \ }}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#if\ defined(STM32F405xx)\ ||\ defined(STM32F415xx)\ ||\ defined(STM32F407xx)\ ||\ defined(STM32F417xx)\ ||\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)\ ||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \#define\ IS\_HCD\_ALL\_INSTANCE(INSTANCE)\ (((INSTANCE)\ ==\ USB\_OTG\_FS)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((INSTANCE)\ ==\ USB\_OTG\_HS))}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#elif\ defined(STM32F401xC)\ ||\ defined(STM32F401xE)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \#define\ IS\_HCD\_ALL\_INSTANCE(INSTANCE)\ (((INSTANCE)\ ==\ USB\_OTG\_FS))}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ HCD\_SPEED\_HIGH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ HCD\_SPEED\_LOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ HCD\_SPEED\_FULL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ HCD\_PHY\_ULPI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ HCD\_PHY\_EMBEDDED\ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00138\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ \_\_HAL\_HCD\_ENABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ USB\_EnableGlobalInt\ ((\_\_HANDLE\_\_)-\/>Instance)}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ \_\_HAL\_HCD\_DISABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ USB\_DisableGlobalInt\ ((\_\_HANDLE\_\_)-\/>Instance)}}
+\DoxyCodeLine{00146\ \ \ \ }
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ \_\_HAL\_GET\_FLAG(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ \ \ \ ((USB\_ReadInterrupts((\_\_HANDLE\_\_)-\/>Instance)\ \&\ (\_\_INTERRUPT\_\_))\ ==\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ \_\_HAL\_CLEAR\_FLAG(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ \ (((\_\_HANDLE\_\_)-\/>Instance-\/>GINTSTS)\ |=\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ \_\_HAL\_IS\_INVALID\_INTERRUPT(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ (USB\_ReadInterrupts((\_\_HANDLE\_\_)-\/>Instance)\ ==\ 0)\ \ \ }}
+\DoxyCodeLine{00150\ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ \_\_HAL\_HCD\_CLEAR\_HC\_INT(chnum,\ \_\_INTERRUPT\_\_)\ \ (USBx\_HC(chnum)-\/>HCINT\ =\ (\_\_INTERRUPT\_\_))\ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ \_\_HAL\_HCD\_MASK\_HALT\_HC\_INT(chnum)\ \ \ \ \ \ \ \ \ \ \ \ \ (USBx\_HC(chnum)-\/>HCINTMSK\ \&=\ \string~USB\_OTG\_HCINTMSK\_CHHM)\ }}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ \_\_HAL\_HCD\_UNMASK\_HALT\_HC\_INT(chnum)\ \ \ \ \ \ \ \ \ \ \ (USBx\_HC(chnum)-\/>HCINTMSK\ |=\ USB\_OTG\_HCINTMSK\_CHHM)\ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ \_\_HAL\_HCD\_MASK\_ACK\_HC\_INT(chnum)\ \ \ \ \ \ \ \ \ \ \ \ \ \ (USBx\_HC(chnum)-\/>HCINTMSK\ \&=\ \string~USB\_OTG\_HCINTMSK\_ACKM)\ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ \_\_HAL\_HCD\_UNMASK\_ACK\_HC\_INT(chnum)\ \ \ \ \ \ \ \ \ \ \ \ (USBx\_HC(chnum)-\/>HCINTMSK\ |=\ USB\_OTG\_HCINTMSK\_ACKM)\ }}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00162\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{comment}{/*\ Initialization/de-\/initialization\ functions\ \ **********************************/}}
+\DoxyCodeLine{00165\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_gadec73166fd88ee54c404ed024b8f4e50}{HAL\_HCD\_Init}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00166\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_gacf8b69f077f676198c3a09593b635327}{HAL\_HCD\_DeInit}}\ (\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00167\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_gacce9dba79edecc8c3f12254d5d0faf90}{HAL\_HCD\_HC\_Init}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd,\ \ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ ch\_num,}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ epnum,}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ dev\_address,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ speed,}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ ep\_type,}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ mps);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga7167252777c15a2d723d65802088fb5d}{HAL\_HCD\_HC\_Halt}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd,\ \ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ ch\_num);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_gae0bbb4527b7b68699a7c17d30500842d}{HAL\_HCD\_MspInit}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00179\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_gaecb264553245a0de4e234d51f4a0d207}{HAL\_HCD\_MspDeInit}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{comment}{/*\ I/O\ operation\ functions\ \ *****************************************************/}}
+\DoxyCodeLine{00182\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga90a533f4facf2b2502808fb555078023}{HAL\_HCD\_HC\_SubmitRequest}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd,}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ pipe,\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ direction\ ,}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ ep\_type,\ \ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ token,\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t*\ pbuff,\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ length,}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ do\_ping);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \textcolor{comment}{/*\ Non-\/Blocking\ mode:\ Interrupt\ */}}
+\DoxyCodeLine{00192\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_gae18bf9327c37d11bf981a7c2b30ee973}{HAL\_HCD\_IRQHandler}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00193\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga4db2ea557e081600238759cb55353628}{HAL\_HCD\_SOF\_Callback}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00194\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga95cbb5d1910e3cbf9bd462e057b3df33}{HAL\_HCD\_Connect\_Callback}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00195\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_gad59d0d3fdd9ef512faa0b0e56d83bfdc}{HAL\_HCD\_Disconnect\_Callback}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00196\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga668704f16414d9ec2fa8023506b28e76}{HAL\_HCD\_HC\_NotifyURBChange\_Callback}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd,\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ chnum,\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___u_s_b___core_ga04b2bca306495588fec3a5245daa5221}{HCD\_URBStateTypeDef}}\ urb\_state);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{comment}{/*\ Peripheral\ Control\ functions\ \ ************************************************/}}
+\DoxyCodeLine{00201\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga8cef0fe9a69fa43a73d22010027b832e}{HAL\_HCD\_ResetPort}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00202\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_gaeca62d02971ad8fd6f71b3bde9e7e0ac}{HAL\_HCD\_Start}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00203\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga4172d9c4c0d05c951dae4aa5151406fc}{HAL\_HCD\_Stop}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{comment}{/*\ Peripheral\ State\ functions\ \ **************************************************/}}
+\DoxyCodeLine{00206\ \mbox{\hyperlink{group___h_c_d_ga0e764aeccc0cc959f3385794d42f6a75}{HCD\_StateTypeDef}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_gaaa383694f6303347de1b2a216e214e0a}{HAL\_HCD\_GetState}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00207\ \mbox{\hyperlink{group___u_s_b___core_ga04b2bca306495588fec3a5245daa5221}{HCD\_URBStateTypeDef}}\ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga79e6f19f7b9876c2adefde77864e818e}{HAL\_HCD\_HC\_GetURBState}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd,\ uint8\_t\ chnum);}
+\DoxyCodeLine{00208\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga770cc82abd6a9bcca1e4841c277aafa9}{HAL\_HCD\_HC\_GetXferCount}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd,\ uint8\_t\ chnum);}
+\DoxyCodeLine{00209\ \mbox{\hyperlink{group___u_s_b___core_ga8fa88c2e8e5fe41147028ba11af65294}{HCD\_HCStateTypeDef}}\ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga39ed5c784ad69c394b09fdfcacd13c03}{HAL\_HCD\_HC\_GetState}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd,\ uint8\_t\ chnum);}
+\DoxyCodeLine{00210\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga61a086092e452f7c706d890e266d482c}{HAL\_HCD\_GetCurrentFrame}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00211\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___h_c_d_ga6622593856d3d6adbce6362d23537448}{HAL\_HCD\_GetCurrentSpeed}}(\mbox{\hyperlink{struct_h_c_d___handle_type_def}{HCD\_HandleTypeDef}}\ *hhcd);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00222\ \}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_HAL\_HCD\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

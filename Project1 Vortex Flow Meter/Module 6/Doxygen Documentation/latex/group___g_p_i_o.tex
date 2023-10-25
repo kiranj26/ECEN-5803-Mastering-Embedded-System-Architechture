@@ -1,0 +1,219 @@
+\doxysubsection{GPIO}
+\hypertarget{group___g_p_i_o}{}\label{group___g_p_i_o}\index{GPIO@{GPIO}}
+\doxysubsubsubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___g_p_i_o___exported___constants}{GPIO\+\_\+\+Exported\+\_\+\+Constants}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em GPIO Init structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o_ga6da646a4924c5cfae3024c660476f26f}{IS\+\_\+\+GPIO\+\_\+\+PIN\+\_\+\+ACTION}}(ACTION)~(((ACTION) == \mbox{\hyperlink{group___g_p_i_o_gga5b3ef0486b179415581eb342e0ea6b43a90af2af95004ea61d76950ff3f2f6ec2}{GPIO\+\_\+\+PIN\+\_\+\+RESET}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((ACTION) == \mbox{\hyperlink{group___g_p_i_o_gga5b3ef0486b179415581eb342e0ea6b43a746c062509db3ad1e47beed7527f9f8a}{GPIO\+\_\+\+PIN\+\_\+\+SET}}))
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o_gaae18fc8d92ffa4df2172c78869e712fc}{\+\_\+\+\_\+\+HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$PR \& (\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Checks whether the specified EXTI line flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_p_i_o_ga2f28fc349d1812cdc55a77c68d2b278d}{\+\_\+\+\_\+\+HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$PR = (\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the EXTI\textquotesingle{}s line pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_p_i_o_ga27f0e1f6c38745169d74620f6a178a94}{\+\_\+\+\_\+\+HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+GET\+\_\+\+IT}}(\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$PR \& (\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Checks whether the specified EXTI line is asserted or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___g_p_i_o_ga2a086506eec826f49b200fba64beb9f1}{\+\_\+\+\_\+\+HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+CLEAR\+\_\+\+IT}}(\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$PR = (\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the EXTI\textquotesingle{}s line pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___g_p_i_o_ga5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}} \{ \mbox{\hyperlink{group___g_p_i_o_gga5b3ef0486b179415581eb342e0ea6b43a90af2af95004ea61d76950ff3f2f6ec2}{GPIO\+\_\+\+PIN\+\_\+\+RESET}} = 0
+, \mbox{\hyperlink{group___g_p_i_o_gga5b3ef0486b179415581eb342e0ea6b43a746c062509db3ad1e47beed7527f9f8a}{GPIO\+\_\+\+PIN\+\_\+\+SET}}
+ \}
+\begin{DoxyCompactList}\small\item\em GPIO Bit SET and Bit RESET enumeration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___g_p_i_o_ga41bda93b6dd639e4905fdb1454eff98e}{HAL\+\_\+\+GPIO\+\_\+\+Init}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, \mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIO\+\_\+\+Init)
+\item 
+void \mbox{\hyperlink{group___g_p_i_o_gafe9c756b5aa18961032a3f8aa572959b}{HAL\+\_\+\+GPIO\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} GPIO\+\_\+\+Pin)
+\item 
+\mbox{\hyperlink{group___g_p_i_o_ga5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}} \mbox{\hyperlink{group___g_p_i_o_gaf2b819ea6551319ddd5670db318d2e4e}{HAL\+\_\+\+GPIO\+\_\+\+Read\+Pin}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} GPIO\+\_\+\+Pin)
+\item 
+void \mbox{\hyperlink{group___g_p_i_o_gaf4b97bdf533a02f51ef696d43b6da5c4}{HAL\+\_\+\+GPIO\+\_\+\+Write\+Pin}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} GPIO\+\_\+\+Pin, \mbox{\hyperlink{group___g_p_i_o_ga5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}} Pin\+State)
+\item 
+void \mbox{\hyperlink{group___g_p_i_o_gaf5e0c89f752de5cdedcc30db068133f6}{HAL\+\_\+\+GPIO\+\_\+\+Toggle\+Pin}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} GPIO\+\_\+\+Pin)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___g_p_i_o_gad03c868b4a4fb25883c1bb86d0c7e9ca}{HAL\+\_\+\+GPIO\+\_\+\+Lock\+Pin}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} GPIO\+\_\+\+Pin)
+\item 
+void \mbox{\hyperlink{group___g_p_i_o_gaa5de1ec4ebdd47e3e2b786224adaa9d0}{HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+IRQHandler}} (\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} GPIO\+\_\+\+Pin)
+\item 
+void \mbox{\hyperlink{group___g_p_i_o_ga0cd91fd3a9608559c2a87a8ba6cba55f}{HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback}} (\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} GPIO\+\_\+\+Pin)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{group___g_p_i_o_ga2f28fc349d1812cdc55a77c68d2b278d}\label{group___g_p_i_o_ga2f28fc349d1812cdc55a77c68d2b278d} 
+\index{GPIO@{GPIO}!\_\_HAL\_GPIO\_EXTI\_CLEAR\_FLAG@{\_\_HAL\_GPIO\_EXTI\_CLEAR\_FLAG}}
+\index{\_\_HAL\_GPIO\_EXTI\_CLEAR\_FLAG@{\_\_HAL\_GPIO\_EXTI\_CLEAR\_FLAG}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_GPIO\_EXTI\_CLEAR\_FLAG}{\_\_HAL\_GPIO\_EXTI\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$PR = (\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+))}
+
+
+
+Clears the EXTI\textquotesingle{}s line pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+} & specifies the EXTI lines flags to clear. This parameter can be any combination of GPIO\+\_\+\+PIN\+\_\+x where x can be (0..15) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o_ga2a086506eec826f49b200fba64beb9f1}\label{group___g_p_i_o_ga2a086506eec826f49b200fba64beb9f1} 
+\index{GPIO@{GPIO}!\_\_HAL\_GPIO\_EXTI\_CLEAR\_IT@{\_\_HAL\_GPIO\_EXTI\_CLEAR\_IT}}
+\index{\_\_HAL\_GPIO\_EXTI\_CLEAR\_IT@{\_\_HAL\_GPIO\_EXTI\_CLEAR\_IT}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_GPIO\_EXTI\_CLEAR\_IT}{\_\_HAL\_GPIO\_EXTI\_CLEAR\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+CLEAR\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$PR = (\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+))}
+
+
+
+Clears the EXTI\textquotesingle{}s line pending bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+} & specifies the EXTI lines to clear. This parameter can be any combination of GPIO\+\_\+\+PIN\+\_\+x where x can be (0..15) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o_gaae18fc8d92ffa4df2172c78869e712fc}\label{group___g_p_i_o_gaae18fc8d92ffa4df2172c78869e712fc} 
+\index{GPIO@{GPIO}!\_\_HAL\_GPIO\_EXTI\_GET\_FLAG@{\_\_HAL\_GPIO\_EXTI\_GET\_FLAG}}
+\index{\_\_HAL\_GPIO\_EXTI\_GET\_FLAG@{\_\_HAL\_GPIO\_EXTI\_GET\_FLAG}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_GPIO\_EXTI\_GET\_FLAG}{\_\_HAL\_GPIO\_EXTI\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$PR \& (\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+))}
+
+
+
+Checks whether the specified EXTI line flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+} & specifies the EXTI line flag to check. This parameter can be GPIO\+\_\+\+PIN\+\_\+x where x can be(0..15) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of {\bfseries{EXTI\+\_\+\+LINE}} (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o_ga27f0e1f6c38745169d74620f6a178a94}\label{group___g_p_i_o_ga27f0e1f6c38745169d74620f6a178a94} 
+\index{GPIO@{GPIO}!\_\_HAL\_GPIO\_EXTI\_GET\_IT@{\_\_HAL\_GPIO\_EXTI\_GET\_IT}}
+\index{\_\_HAL\_GPIO\_EXTI\_GET\_IT@{\_\_HAL\_GPIO\_EXTI\_GET\_IT}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_GPIO\_EXTI\_GET\_IT}{\_\_HAL\_GPIO\_EXTI\_GET\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+GET\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$PR \& (\+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+))}
+
+
+
+Checks whether the specified EXTI line is asserted or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+\_\+} & specifies the EXTI line to check. This parameter can be GPIO\+\_\+\+PIN\+\_\+x where x can be(0..15) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of {\bfseries{EXTI\+\_\+\+LINE}} (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o_ga6da646a4924c5cfae3024c660476f26f}\label{group___g_p_i_o_ga6da646a4924c5cfae3024c660476f26f} 
+\index{GPIO@{GPIO}!IS\_GPIO\_PIN\_ACTION@{IS\_GPIO\_PIN\_ACTION}}
+\index{IS\_GPIO\_PIN\_ACTION@{IS\_GPIO\_PIN\_ACTION}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{IS\_GPIO\_PIN\_ACTION}{IS\_GPIO\_PIN\_ACTION}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+GPIO\+\_\+\+PIN\+\_\+\+ACTION(\begin{DoxyParamCaption}\item[{}]{ACTION }\end{DoxyParamCaption})~(((ACTION) == \mbox{\hyperlink{group___g_p_i_o_gga5b3ef0486b179415581eb342e0ea6b43a90af2af95004ea61d76950ff3f2f6ec2}{GPIO\+\_\+\+PIN\+\_\+\+RESET}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((ACTION) == \mbox{\hyperlink{group___g_p_i_o_gga5b3ef0486b179415581eb342e0ea6b43a746c062509db3ad1e47beed7527f9f8a}{GPIO\+\_\+\+PIN\+\_\+\+SET}}))}
+
+
+
+\doxysubsubsection{Enumeration Type Documentation}
+\Hypertarget{group___g_p_i_o_ga5b3ef0486b179415581eb342e0ea6b43}\label{group___g_p_i_o_ga5b3ef0486b179415581eb342e0ea6b43} 
+\index{GPIO@{GPIO}!GPIO\_PinState@{GPIO\_PinState}}
+\index{GPIO\_PinState@{GPIO\_PinState}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{GPIO\_PinState}{GPIO\_PinState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___g_p_i_o_ga5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}}}
+
+
+
+GPIO Bit SET and Bit RESET enumeration. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPIO\_PIN\_RESET@{GPIO\_PIN\_RESET}!GPIO@{GPIO}}\index{GPIO@{GPIO}!GPIO\_PIN\_RESET@{GPIO\_PIN\_RESET}}}\Hypertarget{group___g_p_i_o_gga5b3ef0486b179415581eb342e0ea6b43a90af2af95004ea61d76950ff3f2f6ec2}\label{group___g_p_i_o_gga5b3ef0486b179415581eb342e0ea6b43a90af2af95004ea61d76950ff3f2f6ec2} 
+GPIO\+\_\+\+PIN\+\_\+\+RESET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPIO\_PIN\_SET@{GPIO\_PIN\_SET}!GPIO@{GPIO}}\index{GPIO@{GPIO}!GPIO\_PIN\_SET@{GPIO\_PIN\_SET}}}\Hypertarget{group___g_p_i_o_gga5b3ef0486b179415581eb342e0ea6b43a746c062509db3ad1e47beed7527f9f8a}\label{group___g_p_i_o_gga5b3ef0486b179415581eb342e0ea6b43a746c062509db3ad1e47beed7527f9f8a} 
+GPIO\+\_\+\+PIN\+\_\+\+SET&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group___g_p_i_o_gafe9c756b5aa18961032a3f8aa572959b}\label{group___g_p_i_o_gafe9c756b5aa18961032a3f8aa572959b} 
+\index{GPIO@{GPIO}!HAL\_GPIO\_DeInit@{HAL\_GPIO\_DeInit}}
+\index{HAL\_GPIO\_DeInit@{HAL\_GPIO\_DeInit}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_GPIO\_DeInit()}{HAL\_GPIO\_DeInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+GPIO\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+\Hypertarget{group___g_p_i_o_ga0cd91fd3a9608559c2a87a8ba6cba55f}\label{group___g_p_i_o_ga0cd91fd3a9608559c2a87a8ba6cba55f} 
+\index{GPIO@{GPIO}!HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}}
+\index{HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_GPIO\_EXTI\_Callback()}{HAL\_GPIO\_EXTI\_Callback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+\Hypertarget{group___g_p_i_o_gaa5de1ec4ebdd47e3e2b786224adaa9d0}\label{group___g_p_i_o_gaa5de1ec4ebdd47e3e2b786224adaa9d0} 
+\index{GPIO@{GPIO}!HAL\_GPIO\_EXTI\_IRQHandler@{HAL\_GPIO\_EXTI\_IRQHandler}}
+\index{HAL\_GPIO\_EXTI\_IRQHandler@{HAL\_GPIO\_EXTI\_IRQHandler}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_GPIO\_EXTI\_IRQHandler()}{HAL\_GPIO\_EXTI\_IRQHandler()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+\Hypertarget{group___g_p_i_o_ga41bda93b6dd639e4905fdb1454eff98e}\label{group___g_p_i_o_ga41bda93b6dd639e4905fdb1454eff98e} 
+\index{GPIO@{GPIO}!HAL\_GPIO\_Init@{HAL\_GPIO\_Init}}
+\index{HAL\_GPIO\_Init@{HAL\_GPIO\_Init}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_GPIO\_Init()}{HAL\_GPIO\_Init()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+GPIO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{\mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIO\+\_\+\+Init }\end{DoxyParamCaption})}
+
+\Hypertarget{group___g_p_i_o_gad03c868b4a4fb25883c1bb86d0c7e9ca}\label{group___g_p_i_o_gad03c868b4a4fb25883c1bb86d0c7e9ca} 
+\index{GPIO@{GPIO}!HAL\_GPIO\_LockPin@{HAL\_GPIO\_LockPin}}
+\index{HAL\_GPIO\_LockPin@{HAL\_GPIO\_LockPin}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_GPIO\_LockPin()}{HAL\_GPIO\_LockPin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+GPIO\+\_\+\+Lock\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+\Hypertarget{group___g_p_i_o_gaf2b819ea6551319ddd5670db318d2e4e}\label{group___g_p_i_o_gaf2b819ea6551319ddd5670db318d2e4e} 
+\index{GPIO@{GPIO}!HAL\_GPIO\_ReadPin@{HAL\_GPIO\_ReadPin}}
+\index{HAL\_GPIO\_ReadPin@{HAL\_GPIO\_ReadPin}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_GPIO\_ReadPin()}{HAL\_GPIO\_ReadPin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___g_p_i_o_ga5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}} HAL\+\_\+\+GPIO\+\_\+\+Read\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+\Hypertarget{group___g_p_i_o_gaf5e0c89f752de5cdedcc30db068133f6}\label{group___g_p_i_o_gaf5e0c89f752de5cdedcc30db068133f6} 
+\index{GPIO@{GPIO}!HAL\_GPIO\_TogglePin@{HAL\_GPIO\_TogglePin}}
+\index{HAL\_GPIO\_TogglePin@{HAL\_GPIO\_TogglePin}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_GPIO\_TogglePin()}{HAL\_GPIO\_TogglePin()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+GPIO\+\_\+\+Toggle\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+\Hypertarget{group___g_p_i_o_gaf4b97bdf533a02f51ef696d43b6da5c4}\label{group___g_p_i_o_gaf4b97bdf533a02f51ef696d43b6da5c4} 
+\index{GPIO@{GPIO}!HAL\_GPIO\_WritePin@{HAL\_GPIO\_WritePin}}
+\index{HAL\_GPIO\_WritePin@{HAL\_GPIO\_WritePin}!GPIO@{GPIO}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_GPIO\_WritePin()}{HAL\_GPIO\_WritePin()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+GPIO\+\_\+\+Write\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{GPIO\+\_\+\+Pin,  }\item[{\mbox{\hyperlink{group___g_p_i_o_ga5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}}}]{Pin\+State }\end{DoxyParamCaption})}
+
+\input{group___g_p_i_o___exported___constants}

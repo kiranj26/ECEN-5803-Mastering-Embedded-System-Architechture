@@ -1,0 +1,126 @@
+\doxysection{mbed Namespace Reference}
+\hypertarget{namespacembed}{}\label{namespacembed}\index{mbed@{mbed}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_bus_in}{Bus\+In}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_bus_in_out}{Bus\+In\+Out}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_bus_out}{Bus\+Out}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_call_chain}{Call\+Chain}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_digital_in}{Digital\+In}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_digital_in_out}{Digital\+In\+Out}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_digital_out}{Digital\+Out}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_dir_handle}{Dir\+Handle}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_file_handle}{File\+Handle}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_file_like}{File\+Like}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_file_path}{File\+Path}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_file_system_like}{File\+System\+Like}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_function_pointer}{Function\+Pointer}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_interrupt_manager}{Interrupt\+Manager}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_stream}{Stream}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_ticker}{Ticker}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_timeout}{Timeout}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_timer}{Timer}}
+\item 
+class \mbox{\hyperlink{classmbed_1_1_timer_event}{Timer\+Event}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classmbed_1_1_function_pointer}{Function\+Pointer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacembed_a750d6017837828b77123f35feeebaabf}{p\+Function\+Pointer\+\_\+t}}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacembed_a96208545c028c5a1f3013f51f7554b88}{pvoidf\+\_\+t}}) (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} \{ \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528aae21aa06867affca61853523b4194efc}{File\+Path\+Type}}
+, \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528a7e3447f48b14f3c9fb31d7ec1bac0364}{File\+System\+Path\+Type}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespacembed_a750d6017837828b77123f35feeebaabf}\label{namespacembed_a750d6017837828b77123f35feeebaabf} 
+\index{mbed@{mbed}!pFunctionPointer\_t@{pFunctionPointer\_t}}
+\index{pFunctionPointer\_t@{pFunctionPointer\_t}!mbed@{mbed}}
+\doxysubsubsection{\texorpdfstring{pFunctionPointer\_t}{pFunctionPointer\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classmbed_1_1_function_pointer}{Function\+Pointer}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacembed_a750d6017837828b77123f35feeebaabf}{mbed\+::p\+Function\+Pointer\+\_\+t}}}
+
+Group one or more functions in an instance of a \doxylink{classmbed_1_1_call_chain}{Call\+Chain}, then call them in sequence using \doxylink{classmbed_1_1_call_chain_ac911bd44ea0a14da0b0dd46187bf1081}{Call\+Chain\+::call()}. Used mostly by the interrupt chaining code, but can be used for other purposes.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mbed_8h}{mbed.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classmbed_1_1_call_chain}{CallChain}}\ chain;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ first(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ printf(\textcolor{stringliteral}{"{}'first'\ function.\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ second(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ printf(\textcolor{stringliteral}{"{}'second'\ function.\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }Test\ \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ f(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}A::f\ (class\ member).\(\backslash\)n"{}});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ Test\ test;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ chain.\mbox{\hyperlink{classmbed_1_1_call_chain_a232d59392bfaff0d3950a240f2fee952}{add}}(second);}
+\DoxyCodeLine{\ \ \ \ chain.\mbox{\hyperlink{classmbed_1_1_call_chain_a050f0042e62f8271a507ca57d19e6846}{add\_front}}(first);}
+\DoxyCodeLine{\ \ \ \ chain.\mbox{\hyperlink{classmbed_1_1_call_chain_a232d59392bfaff0d3950a240f2fee952}{add}}(\&test,\ \&Test::f);}
+\DoxyCodeLine{\ \ \ \ chain.\mbox{\hyperlink{classmbed_1_1_call_chain_ac911bd44ea0a14da0b0dd46187bf1081}{call}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \Hypertarget{namespacembed_a96208545c028c5a1f3013f51f7554b88}\label{namespacembed_a96208545c028c5a1f3013f51f7554b88} 
+\index{mbed@{mbed}!pvoidf\_t@{pvoidf\_t}}
+\index{pvoidf\_t@{pvoidf\_t}!mbed@{mbed}}
+\doxysubsubsection{\texorpdfstring{pvoidf\_t}{pvoidf\_t}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} mbed\+::pvoidf\+\_\+t) (void)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacembed_a14f9fc5a056230139f48f580d5429528}\label{namespacembed_a14f9fc5a056230139f48f580d5429528} 
+\index{mbed@{mbed}!PathType@{PathType}}
+\index{PathType@{PathType}!mbed@{mbed}}
+\doxysubsubsection{\texorpdfstring{PathType}{PathType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{mbed\+::\+Path\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FilePathType@{FilePathType}!mbed@{mbed}}\index{mbed@{mbed}!FilePathType@{FilePathType}}}\Hypertarget{namespacembed_a14f9fc5a056230139f48f580d5429528aae21aa06867affca61853523b4194efc}\label{namespacembed_a14f9fc5a056230139f48f580d5429528aae21aa06867affca61853523b4194efc} 
+File\+Path\+Type&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileSystemPathType@{FileSystemPathType}!mbed@{mbed}}\index{mbed@{mbed}!FileSystemPathType@{FileSystemPathType}}}\Hypertarget{namespacembed_a14f9fc5a056230139f48f580d5429528a7e3447f48b14f3c9fb31d7ec1bac0364}\label{namespacembed_a14f9fc5a056230139f48f580d5429528a7e3447f48b14f3c9fb31d7ec1bac0364} 
+File\+System\+Path\+Type&\\
+\hline
+
+\end{DoxyEnumFields}

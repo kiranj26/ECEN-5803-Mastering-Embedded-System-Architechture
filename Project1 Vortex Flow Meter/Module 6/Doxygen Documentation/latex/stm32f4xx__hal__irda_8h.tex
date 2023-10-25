@@ -1,0 +1,199 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+hal\+\_\+irda.h File Reference}
+\hypertarget{stm32f4xx__hal__irda_8h}{}\label{stm32f4xx__hal__irda_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_irda.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_irda.h}}
+
+
+Header file of IRDA HAL module.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_i_r_d_a___init_type_def}{IRDA\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em IRDA Init Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em IRDA handle Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___word___length_ga53b28028ae932349fcc40190dd8d7c9a}{IRDA\+\_\+\+WORDLENGTH\+\_\+8B}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___word___length_gad005e4d28476758d4e5b56a3d98f7cd4}{IRDA\+\_\+\+WORDLENGTH\+\_\+9B}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga95f0288b9c6aaeca7cb6550a2e6833e2}{USART\+\_\+\+CR1\+\_\+M}})
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___word___length_gac5f8051e9bbc581a294dfbca6d805542}{IS\+\_\+\+IRDA\+\_\+\+WORD\+\_\+\+LENGTH}}(LENGTH)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___parity_ga930d90dc494068f6e8fd34c2008af6c3}{IRDA\+\_\+\+PARITY\+\_\+\+NONE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___parity_ga1fa76c44ce474adc0d277d849217cc95}{IRDA\+\_\+\+PARITY\+\_\+\+EVEN}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga60f8fcf084f9a8514efafb617c70b074}{USART\+\_\+\+CR1\+\_\+\+PCE}})
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___parity_ga64282fa5873f188bb26429bbc88bf040}{IRDA\+\_\+\+PARITY\+\_\+\+ODD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga60f8fcf084f9a8514efafb617c70b074}{USART\+\_\+\+CR1\+\_\+\+PCE}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2e159d36ab2c93a2c1942df60e9eebbe}{USART\+\_\+\+CR1\+\_\+\+PS}}))
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___parity_ga34e19b19860989a491f71503e2da6345}{IS\+\_\+\+IRDA\+\_\+\+PARITY}}(PARITY)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___mode_ga510410f9b2126127f5f1a7e86b49427a}{IRDA\+\_\+\+MODE\+\_\+\+RX}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_gada0d5d407a22264de847bc1b40a17aeb}{USART\+\_\+\+CR1\+\_\+\+RE}})
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___mode_ga9f26f67fa86746fab0039fe60a1ccefd}{IRDA\+\_\+\+MODE\+\_\+\+TX}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_gade7f090b04fd78b755b43357ecaa9622}{USART\+\_\+\+CR1\+\_\+\+TE}})
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___mode_gada775794a25b76b7ecafc9bea3fc1f8a}{IRDA\+\_\+\+MODE\+\_\+\+TX\+\_\+\+RX}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gade7f090b04fd78b755b43357ecaa9622}{USART\+\_\+\+CR1\+\_\+\+TE}} \texorpdfstring{$\vert$}{|}\mbox{\hyperlink{group___peripheral___registers___bits___definition_gada0d5d407a22264de847bc1b40a17aeb}{USART\+\_\+\+CR1\+\_\+\+RE}}))
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___mode_ga0374a7ffe9d35087bc02ccdac0953a1d}{IS\+\_\+\+IRDA\+\_\+\+MODE}}(MODE)~((((MODE) \& (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0000\+FFF3) == 0x00) \&\& ((MODE) != (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x000000))
+\item 
+\#define \mbox{\hyperlink{group___ir_d_a___low___power_ga261eafd053023b5935b50767058c804b}{IRDA\+\_\+\+POWERMODE\+\_\+\+LOWPOWER}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga22af8d399f1adda62e31186f0309af80}{USART\+\_\+\+CR3\+\_\+\+IRLP}})
+\item 
+\#define \mbox{\hyperlink{group___ir_d_a___low___power_ga28e06e6f6e185f066d492e2d3cdb7e89}{IRDA\+\_\+\+POWERMODE\+\_\+\+NORMAL}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___ir_d_a___low___power_gaf4f91e06bf94c98a099156b035c4f6b0}{IS\+\_\+\+IRDA\+\_\+\+POWERMODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___flags_ga88d22267566352225a9ec253d3976b0f}{IRDA\+\_\+\+FLAG\+\_\+\+TXE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___flags_gaea9a2c5c33c5fb8e0109801ba005712a}{IRDA\+\_\+\+FLAG\+\_\+\+TC}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___flags_ga044e8008f094da17c9c7371832079a73}{IRDA\+\_\+\+FLAG\+\_\+\+RXNE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000020)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___flags_gac15abbde5b08303ceb59b77538e3fbfa}{IRDA\+\_\+\+FLAG\+\_\+\+IDLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___flags_gadd2f51365f80ae4ce344ba9eb6ab7b81}{IRDA\+\_\+\+FLAG\+\_\+\+ORE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___flags_ga01d432c277dde71d06e3452881affadd}{IRDA\+\_\+\+FLAG\+\_\+\+NE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___flags_ga9cfd704788e477a3af6a5df18c957962}{IRDA\+\_\+\+FLAG\+\_\+\+FE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___flags_ga54e075e6ed11a2b9bd7776ebd049211b}{IRDA\+\_\+\+FLAG\+\_\+\+PE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_ga1d2b4b601ece8f1ab0b2542412bb2533}{IRDA\+\_\+\+IT\+\_\+\+PE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000100)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_ga5e81e9fd3d52bafcf21281c10d2ca257}{IRDA\+\_\+\+IT\+\_\+\+TXE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000080)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_gadd3e4b796b67db171ca04c5297d4e667}{IRDA\+\_\+\+IT\+\_\+\+TC}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000040)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_ga8f2de9c6c3cccfb2de0277ce10f23b13}{IRDA\+\_\+\+IT\+\_\+\+RXNE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000020)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_ga32dfb69029c5576d82feb59129d11000}{IRDA\+\_\+\+IT\+\_\+\+IDLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000010)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_ga2d08dacfa9795cec98fa67f91a29ba53}{IRDA\+\_\+\+IT\+\_\+\+LBD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x20000040)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_gaf74d3cd0cf4b22c53718a267ae9a1174}{IRDA\+\_\+\+IT\+\_\+\+CTS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000400)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___interrupt__definition_ga5649210cc5343a80483178849a11ac66}{IRDA\+\_\+\+IT\+\_\+\+ERR}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000001)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_ga3cdb66f911dce4c8544139adbb314faa}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___i_r_d_a_ggab3e65b75c9d4ae39bc50a31222509e1eaa004e82e1ca1d36b3dc84cf9441954dd}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset IRDA handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_ga0c097de13209ede853a30d511cf5a00e}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+FLUSH\+\_\+\+DRREGISTER}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DR)
+\begin{DoxyCompactList}\small\item\em Flushs the IRDA DR register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_ga032a53fbbc65bfd0fff2b4a26c52e790}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Checks whether the specified IRDA flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_ga4ebf474ecfd858f9320bef9bc67c0bce}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the specified IRDA pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_ga38eeb904e4117f70c18bf3767c7ba4a6}{IRDA\+\_\+\+IT\+\_\+\+MASK}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0000\+FFFF)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified IRDA interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_gae9ccdc86c1bcb8ed3857474d8c3823fa}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_ga8c3dd373ded6fa0790e65f54ac1f548d}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_ga1c50dd0407d6e4159f90c9bc74545925}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+IT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified IRDA interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_ga5807a6868cde535b5d088925d43e6012}{\+\_\+\+\_\+\+IRDA\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~( (\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 \texorpdfstring{$\vert$}{|}=  \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2bb650676aaae4a5203f372d497d5947}{USART\+\_\+\+CR1\+\_\+\+UE}})
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_ga3bf368a8e0643c1b9186700ab47ceec5}{\+\_\+\+\_\+\+IRDA\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~( (\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 \&=  \texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2bb650676aaae4a5203f372d497d5947}{USART\+\_\+\+CR1\+\_\+\+UE}})
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_gafbb1fab320969bc5f2f726523765efd9}{\+\_\+\+\_\+\+DIV}}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~(((\+\_\+\+PCLK\+\_\+)\texorpdfstring{$\ast$}{*}25)/(4\texorpdfstring{$\ast$}{*}(\+\_\+\+BAUD\+\_\+)))
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_gab53df89950c58100a4f14842b43877f0}{\+\_\+\+\_\+\+DIVMANT}}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~(\mbox{\hyperlink{group___i_r_d_a_gafbb1fab320969bc5f2f726523765efd9}{\+\_\+\+\_\+\+DIV}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+))/100)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_ga093009531672e6074b05430492830c24}{\+\_\+\+\_\+\+DIVFRAQ}}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~(((\mbox{\hyperlink{group___i_r_d_a_gafbb1fab320969bc5f2f726523765efd9}{\+\_\+\+\_\+\+DIV}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) -\/ (\mbox{\hyperlink{group___i_r_d_a_gab53df89950c58100a4f14842b43877f0}{\+\_\+\+\_\+\+DIVMANT}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) \texorpdfstring{$\ast$}{*} 100)) \texorpdfstring{$\ast$}{*} 16 + 50) / 100)
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_gaa8c15c5873d5665cbafe6d4191a72c4d}{\+\_\+\+\_\+\+IRDA\+\_\+\+BRR}}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~((\mbox{\hyperlink{group___i_r_d_a_gab53df89950c58100a4f14842b43877f0}{\+\_\+\+\_\+\+DIVMANT}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) $<$$<$ 4)\texorpdfstring{$\vert$}{|}(\mbox{\hyperlink{group___i_r_d_a_ga093009531672e6074b05430492830c24}{\+\_\+\+\_\+\+DIVFRAQ}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) \& 0x0F))
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a_ga5816332e344ead2dcd06a1f0ed59ae27}{IS\+\_\+\+IRDA\+\_\+\+BAUDRATE}}(BAUDRATE)~((BAUDRATE) $<$ 115201)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___i_r_d_a_gab3e65b75c9d4ae39bc50a31222509e1e}{HAL\+\_\+\+IRDA\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___i_r_d_a_ggab3e65b75c9d4ae39bc50a31222509e1eaa004e82e1ca1d36b3dc84cf9441954dd}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___i_r_d_a_ggab3e65b75c9d4ae39bc50a31222509e1ea9bf218291b1a5ffe624b5a8f891f6244}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___i_r_d_a_ggab3e65b75c9d4ae39bc50a31222509e1ea637e8c6b87e1a3a02616c02a68d781f1}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___i_r_d_a_ggab3e65b75c9d4ae39bc50a31222509e1ea3d8ec588510a501071df3e3d332f9536}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX}} = 0x12
+, \newline
+\mbox{\hyperlink{group___i_r_d_a_ggab3e65b75c9d4ae39bc50a31222509e1ea1df28c166fea4a3a0cab0f1b9fc4dfbc}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+RX}} = 0x22
+, \mbox{\hyperlink{group___i_r_d_a_ggab3e65b75c9d4ae39bc50a31222509e1eaad510b2da75a1fa39f5ed1d33472a634}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX\+\_\+\+RX}} = 0x32
+, \mbox{\hyperlink{group___i_r_d_a_ggab3e65b75c9d4ae39bc50a31222509e1ea91524b40055b5b8d642867e4034cfa2f}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \mbox{\hyperlink{group___i_r_d_a_ggab3e65b75c9d4ae39bc50a31222509e1eae2e4e8686446bed256ead393fdb34d67}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em HAL State structures definition ~\newline
+ \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___i_r_d_a_ga52e4f73e14681655efa6d421e74811dd}{HAL\+\_\+\+IRDA\+\_\+\+Error\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___i_r_d_a_gga52e4f73e14681655efa6d421e74811ddad49559d0016f21f91e3521d8be2be340}{HAL\+\_\+\+IRDA\+\_\+\+ERROR\+\_\+\+NONE}} = 0x00
+, \mbox{\hyperlink{group___i_r_d_a_gga52e4f73e14681655efa6d421e74811dda53fa93b38ed5d3783d62e98353b4f3a4}{HAL\+\_\+\+IRDA\+\_\+\+ERROR\+\_\+\+PE}} = 0x01
+, \mbox{\hyperlink{group___i_r_d_a_gga52e4f73e14681655efa6d421e74811dda1eac21823ef37759e52497f63343b658}{HAL\+\_\+\+IRDA\+\_\+\+ERROR\+\_\+\+NE}} = 0x02
+, \mbox{\hyperlink{group___i_r_d_a_gga52e4f73e14681655efa6d421e74811ddaabd88543e045746413469b98f0df0841}{HAL\+\_\+\+IRDA\+\_\+\+ERROR\+\_\+\+FE}} = 0x04
+, \newline
+\mbox{\hyperlink{group___i_r_d_a_gga52e4f73e14681655efa6d421e74811ddac62bd262d8dd1697e418b918c76dcc18}{HAL\+\_\+\+IRDA\+\_\+\+ERROR\+\_\+\+ORE}} = 0x08
+, \mbox{\hyperlink{group___i_r_d_a_gga52e4f73e14681655efa6d421e74811dda920280b5d10a48abf1614aa590201452}{HAL\+\_\+\+IRDA\+\_\+\+ERROR\+\_\+\+DMA}} = 0x10
+ \}
+\begin{DoxyCompactList}\small\item\em HAL IRDA Error Code structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i_r_d_a_ga4a41c32a70503a33c238511e3a402aa6}{HAL\+\_\+\+IRDA\+\_\+\+Init}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i_r_d_a_ga2fc5f408dc349561f0a685144813ea77}{HAL\+\_\+\+IRDA\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda)
+\item 
+void \mbox{\hyperlink{group___i_r_d_a_ga76075c1def7959ef153a0cdeb564ee0d}{HAL\+\_\+\+IRDA\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda)
+\item 
+void \mbox{\hyperlink{group___i_r_d_a_ga1f75d9b05cc84c2ca82a5f453942ab7f}{HAL\+\_\+\+IRDA\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i_r_d_a_ga8581077ae166780a2bd0c8d9b38c1ab2}{HAL\+\_\+\+IRDA\+\_\+\+Transmit}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i_r_d_a_ga4148e8cd07056a07a827c537f2f7823c}{HAL\+\_\+\+IRDA\+\_\+\+Receive}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i_r_d_a_gac6ea111f9cf4b8a89059708e2e8f1b81}{HAL\+\_\+\+IRDA\+\_\+\+Transmit\+\_\+\+IT}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i_r_d_a_ga0ea98454afb5ec16a39ba1b5b8142005}{HAL\+\_\+\+IRDA\+\_\+\+Receive\+\_\+\+IT}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i_r_d_a_ga18d0f0c044c27c41223b2f0361fe3ae3}{HAL\+\_\+\+IRDA\+\_\+\+Transmit\+\_\+\+DMA}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i_r_d_a_gac62331245b03bde69283075bcfd8533c}{HAL\+\_\+\+IRDA\+\_\+\+Receive\+\_\+\+DMA}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+void \mbox{\hyperlink{group___i_r_d_a_ga816a681851f93d038e7bda5193b9d933}{HAL\+\_\+\+IRDA\+\_\+\+IRQHandler}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda)
+\item 
+void \mbox{\hyperlink{group___i_r_d_a_gaafb45ea63d8cd87e6856c320135b78dd}{HAL\+\_\+\+IRDA\+\_\+\+Tx\+Cplt\+Callback}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda)
+\item 
+void \mbox{\hyperlink{group___i_r_d_a_gafbebae7dda1e7b54dc664c95802127c6}{HAL\+\_\+\+IRDA\+\_\+\+Rx\+Cplt\+Callback}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda)
+\item 
+void \mbox{\hyperlink{group___i_r_d_a_ga85ffb4337deb42820d49f3882a728f7f}{HAL\+\_\+\+IRDA\+\_\+\+Error\+Callback}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda)
+\item 
+\mbox{\hyperlink{group___i_r_d_a_gab3e65b75c9d4ae39bc50a31222509e1e}{HAL\+\_\+\+IRDA\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___i_r_d_a_ga66ac92837c0eb309ae8c9513b83f5fe0}{HAL\+\_\+\+IRDA\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___i_r_d_a_ga5401e767569d4996aa48c0a81b645b44}{HAL\+\_\+\+IRDA\+\_\+\+Get\+Error}} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hirda)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of IRDA HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

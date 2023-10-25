@@ -1,0 +1,100 @@
+\doxysubsubsection{Library\+\_\+configuration\+\_\+section}
+\hypertarget{group___library__configuration__section}{}\label{group___library__configuration__section}\index{Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga4b150144bb57e6f25e7e2b03cb42b86c}{STM32\+F401xE}}
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga13fde7eed89250511adafbc8bbedcc62}{USE\+\_\+\+HAL\+\_\+\+DRIVER}}
+\begin{DoxyCompactList}\small\item\em Comment the line below if you will not use the peripherals drivers. In this case, these drivers will not be included and the application code will be based on direct access to peripherals registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga802582d9b7b4dea8c8c53f6ce296dad2}{\+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+MAIN}}~(0x02)
+\begin{DoxyCompactList}\small\item\em CMSIS Device version number V2.\+1.\+0\+RC2. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_gaa840ca8cc59044a45c604b95c546666b}{\+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+SUB1}}~(0x01)
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga5697f6bbcd478565105f00c06dc97a96}{\+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+SUB2}}~(0x00)
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga99153b788b5b5ef1d65a748495e5c4ca}{\+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+RC}}~(0x02)
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_gab71225daca4a310275d65a487422b1f7}{\+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___library__configuration__section_gab71225daca4a310275d65a487422b1f7}\label{group___library__configuration__section_gab71225daca4a310275d65a487422b1f7} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION@{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION}}
+\index{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION@{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION}{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CMSIS\_DEVICE\_VERSION\_MAIN\ \ \ \ \ <<\ 24)\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |(\_\_CMSIS\_DEVICE\_HAL\_VERSION\_SUB1\ <<\ 16)\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |(\_\_CMSIS\_DEVICE\_HAL\_VERSION\_SUB2\ <<\ 8\ )\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |(\_\_CMSIS\_DEVICE\_HAL\_VERSION\_RC))}
+
+\end{DoxyCode}
+\Hypertarget{group___library__configuration__section_ga802582d9b7b4dea8c8c53f6ce296dad2}\label{group___library__configuration__section_ga802582d9b7b4dea8c8c53f6ce296dad2} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_MAIN@{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_MAIN}}
+\index{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_MAIN@{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_MAIN}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_MAIN}{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_MAIN}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+MAIN~(0x02)}
+
+
+
+CMSIS Device version number V2.\+1.\+0\+RC2. 
+
+\mbox{[}31\+:24\mbox{]} main version \Hypertarget{group___library__configuration__section_ga99153b788b5b5ef1d65a748495e5c4ca}\label{group___library__configuration__section_ga99153b788b5b5ef1d65a748495e5c4ca} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_RC@{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_RC}}
+\index{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_RC@{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_RC}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_RC}{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_RC}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+RC~(0x02)}
+
+\mbox{[}7\+:0\mbox{]} release candidate \Hypertarget{group___library__configuration__section_gaa840ca8cc59044a45c604b95c546666b}\label{group___library__configuration__section_gaa840ca8cc59044a45c604b95c546666b} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_SUB1@{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_SUB1}}
+\index{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_SUB1@{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_SUB1}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_SUB1}{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_SUB1}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+SUB1~(0x01)}
+
+\mbox{[}23\+:16\mbox{]} sub1 version \Hypertarget{group___library__configuration__section_ga5697f6bbcd478565105f00c06dc97a96}\label{group___library__configuration__section_ga5697f6bbcd478565105f00c06dc97a96} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_SUB2@{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_SUB2}}
+\index{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_SUB2@{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_SUB2}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsubsubsection{\texorpdfstring{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_SUB2}{\_\_STM32F4xx\_CMSIS\_DEVICE\_VERSION\_SUB2}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+SUB2~(0x00)}
+
+\mbox{[}15\+:8\mbox{]} sub2 version \Hypertarget{group___library__configuration__section_ga4b150144bb57e6f25e7e2b03cb42b86c}\label{group___library__configuration__section_ga4b150144bb57e6f25e7e2b03cb42b86c} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!STM32F401xE@{STM32F401xE}}
+\index{STM32F401xE@{STM32F401xE}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsubsubsection{\texorpdfstring{STM32F401xE}{STM32F401xE}}
+{\footnotesize\ttfamily \#define STM32\+F401xE}
+
+\texorpdfstring{$<$}{<} STM32\+F405\+RG, STM32\+F405\+VG and STM32\+F405\+ZG Devices
+
+\texorpdfstring{$<$}{<} STM32\+F415\+RG, STM32\+F415\+VG and STM32\+F415\+ZG Devices
+
+\texorpdfstring{$<$}{<} STM32\+F407\+VG, STM32\+F407\+VE, STM32\+F407\+ZG, STM32\+F407\+ZE, STM32\+F407\+IG and STM32\+F407\+IE Devices
+
+\texorpdfstring{$<$}{<} STM32\+F417\+VG, STM32\+F417\+VE, STM32\+F417\+ZG, STM32\+F417\+ZE, STM32\+F417\+IG and STM32\+F417\+IE Devices
+
+\texorpdfstring{$<$}{<} STM32\+F427\+VG, STM32\+F427\+VI, STM32\+F427\+ZG, STM32\+F427\+ZI, STM32\+F427\+IG and STM32\+F427\+II Devices
+
+\texorpdfstring{$<$}{<} STM32\+F437\+VG, STM32\+F437\+VI, STM32\+F437\+ZG, STM32\+F437\+ZI, STM32\+F437\+IG and STM32\+F437\+II Devices
+
+\texorpdfstring{$<$}{<} STM32\+F429\+VG, STM32\+F429\+VI, STM32\+F429\+ZG, STM32\+F429\+ZI, STM32\+F429\+BG, STM32\+F429\+BI, STM32\+F429\+NG, STM32\+F439\+NI, STM32\+F429\+IG and STM32\+F429\+II Devices
+
+\texorpdfstring{$<$}{<} STM32\+F439\+VG, STM32\+F439\+VI, STM32\+F439\+ZG, STM32\+F439\+ZI, STM32\+F439\+BG, STM32\+F439\+BI, STM32\+F439\+NG, STM32\+F439\+NI, STM32\+F439\+IG and STM32\+F439\+II Devices
+
+\texorpdfstring{$<$}{<} STM32\+F401\+CB, STM32\+F401\+CC, STM32\+F401\+RB, STM32\+F401\+RC, STM32\+F401\+VB and STM32\+F401\+VC Devices STM32\+F401\+CD, STM32\+F401\+RD, STM32\+F401\+VD, STM32\+F401\+CE, STM32\+F401\+RE and STM32\+F401\+VE Devices \Hypertarget{group___library__configuration__section_ga13fde7eed89250511adafbc8bbedcc62}\label{group___library__configuration__section_ga13fde7eed89250511adafbc8bbedcc62} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!USE\_HAL\_DRIVER@{USE\_HAL\_DRIVER}}
+\index{USE\_HAL\_DRIVER@{USE\_HAL\_DRIVER}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsubsubsection{\texorpdfstring{USE\_HAL\_DRIVER}{USE\_HAL\_DRIVER}}
+{\footnotesize\ttfamily \#define USE\+\_\+\+HAL\+\_\+\+DRIVER}
+
+
+
+Comment the line below if you will not use the peripherals drivers. In this case, these drivers will not be included and the application code will be based on direct access to peripherals registers. 
+
+\texorpdfstring{$<$}{<} STM32\+F411\+CD, STM32\+F411\+RD, STM32\+F411\+VD, STM32\+F411\+CE, STM32\+F411\+RE and STM32\+F411\+VE Devices 

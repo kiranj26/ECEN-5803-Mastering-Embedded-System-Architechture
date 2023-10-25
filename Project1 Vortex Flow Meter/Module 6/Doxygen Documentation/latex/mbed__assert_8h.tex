@@ -1,0 +1,48 @@
+\doxysection{mbed/mbed\+\_\+assert.h File Reference}
+\hypertarget{mbed__assert_8h}{}\label{mbed__assert_8h}\index{mbed/mbed\_assert.h@{mbed/mbed\_assert.h}}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mbed__assert_8h_a2fb68573313abfce1681c990c68fb089}{MBED\+\_\+\+ASSERT}}(expr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mbed__assert_8h_a541eb099008f2c2c095391db5ecb6713}{mbed\+\_\+assert\+\_\+internal}} (const char \texorpdfstring{$\ast$}{*}expr, const char \texorpdfstring{$\ast$}{*}file, int line)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{mbed__assert_8h_a2fb68573313abfce1681c990c68fb089}\label{mbed__assert_8h_a2fb68573313abfce1681c990c68fb089} 
+\index{mbed\_assert.h@{mbed\_assert.h}!MBED\_ASSERT@{MBED\_ASSERT}}
+\index{MBED\_ASSERT@{MBED\_ASSERT}!mbed\_assert.h@{mbed\_assert.h}}
+\doxysubsubsection{\texorpdfstring{MBED\_ASSERT}{MBED\_ASSERT}}
+{\footnotesize\ttfamily \#define MBED\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (!(expr))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ mbed\_assert\_internal(\#expr,\ \_\_FILE\_\_,\ \_\_LINE\_\_);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mbed__assert_8h_a541eb099008f2c2c095391db5ecb6713}\label{mbed__assert_8h_a541eb099008f2c2c095391db5ecb6713} 
+\index{mbed\_assert.h@{mbed\_assert.h}!mbed\_assert\_internal@{mbed\_assert\_internal}}
+\index{mbed\_assert\_internal@{mbed\_assert\_internal}!mbed\_assert.h@{mbed\_assert.h}}
+\doxysubsubsection{\texorpdfstring{mbed\_assert\_internal()}{mbed\_assert\_internal()}}
+{\footnotesize\ttfamily void mbed\+\_\+assert\+\_\+internal (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{expr,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{file,  }\item[{int}]{line }\end{DoxyParamCaption})}
+
+Internal mbed assert function which is invoked when MBED\+\_\+\+ASSERT macro failes. This function is active only if NDEBUG is not defined prior to including this assert header file. In case of MBED\+\_\+\+ASSERT failing condition, the assertation message is printed to stderr and \doxylink{mbed__interface_8h_a539c73852cd4510b6bf5319d8b4c46d2}{mbed\+\_\+die()} is called. 
+\begin{DoxyParams}{Parameters}
+{\em expr} & Expresion to be checked. \\
+\hline
+{\em file} & File where assertation failed. \\
+\hline
+{\em line} & Failing assertation line number. \\
+\hline
+\end{DoxyParams}

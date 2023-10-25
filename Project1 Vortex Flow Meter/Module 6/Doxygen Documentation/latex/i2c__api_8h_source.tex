@@ -1,0 +1,64 @@
+\doxysection{i2c\+\_\+api.\+h}
+\hypertarget{i2c__api_8h_source}{}\label{i2c__api_8h_source}\index{mbed/i2c\_api.h@{mbed/i2c\_api.h}}
+\mbox{\hyperlink{i2c__api_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_I2C\_API\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_I2C\_API\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{device_8h}{device.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#if\ DEVICE\_I2C}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structi2c__s}{i2c\_s}}\ i2c\_t;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00030\ \ \ I2C\_ERROR\_NO\_SLAVE\ =\ -\/1,}
+\DoxyCodeLine{00031\ \ \ I2C\_ERROR\_BUS\_BUSY\ =\ -\/2}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ i2c\_init\ \ \ \ \ \ \ \ \ (i2c\_t\ *obj,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ sda,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ scl);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ i2c\_frequency\ \ \ \ (i2c\_t\ *obj,\ \textcolor{keywordtype}{int}\ hz);}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{int}\ \ i2c\_start\ \ \ \ \ \ \ \ (i2c\_t\ *obj);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{int}\ \ i2c\_stop\ \ \ \ \ \ \ \ \ (i2c\_t\ *obj);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{int}\ \ i2c\_read\ \ \ \ \ \ \ \ \ (i2c\_t\ *obj,\ \textcolor{keywordtype}{int}\ address,\ \textcolor{keywordtype}{char}\ *data,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ stop);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{int}\ \ i2c\_write\ \ \ \ \ \ \ \ (i2c\_t\ *obj,\ \textcolor{keywordtype}{int}\ address,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *data,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ stop);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ i2c\_reset\ \ \ \ \ \ \ \ (i2c\_t\ *obj);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{int}\ \ i2c\_byte\_read\ \ \ \ (i2c\_t\ *obj,\ \textcolor{keywordtype}{int}\ last);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ \ i2c\_byte\_write\ \ \ (i2c\_t\ *obj,\ \textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#if\ DEVICE\_I2CSLAVE}}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ i2c\_slave\_mode\ \ \ (i2c\_t\ *obj,\ \textcolor{keywordtype}{int}\ enable\_slave);}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{int}\ \ i2c\_slave\_receive(i2c\_t\ *obj);}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{int}\ \ i2c\_slave\_read\ \ \ (i2c\_t\ *obj,\ \textcolor{keywordtype}{char}\ *data,\ \textcolor{keywordtype}{int}\ length);}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{int}\ \ i2c\_slave\_write\ \ (i2c\_t\ *obj,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *data,\ \textcolor{keywordtype}{int}\ length);}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ i2c\_slave\_address(i2c\_t\ *obj,\ \textcolor{keywordtype}{int}\ idx,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ address,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ mask);}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

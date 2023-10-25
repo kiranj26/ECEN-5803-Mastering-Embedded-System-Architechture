@@ -1,0 +1,76 @@
+\doxysection{device.\+h}
+\hypertarget{device_8h_source}{}\label{device_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/TARGET\_STM/TARGET\_NUCLEO\_F401RE/device.h@{mbed/TARGET\_NUCLEO\_F401RE/TARGET\_STM/TARGET\_NUCLEO\_F401RE/device.h}}
+\mbox{\hyperlink{device_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *******************************************************************************}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014,\ STMicroelectronics}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ All\ rights\ reserved.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions\ are\ met:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the\ documentation}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ \ \ \ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 3.\ Neither\ the\ name\ of\ STMicroelectronics\ nor\ the\ names\ of\ its\ contributors}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ \ \ \ may\ be\ used\ to\ endorse\ or\ promote\ products\ derived\ from\ this\ software}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ \ \ \ without\ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS\ "{}AS\ IS"{}}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *******************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ MBED\_DEVICE\_H}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ MBED\_DEVICE\_H}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ DEVICE\_PORTIN\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ DEVICE\_PORTOUT\ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ DEVICE\_PORTINOUT\ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ DEVICE\_INTERRUPTIN\ \ \ \ \ \ 1}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ DEVICE\_ANALOGIN\ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ DEVICE\_ANALOGOUT\ \ \ \ \ \ \ \ 0\ }\textcolor{comment}{//\ Not\ present\ on\ this\ device}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ DEVICE\_SERIAL\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ DEVICE\_I2C\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ DEVICE\_I2CSLAVE\ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ DEVICE\_SPI\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ DEVICE\_SPISLAVE\ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ DEVICE\_RTC\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ DEVICE\_PWMOUT\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ DEVICE\_SLEEP\ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{//=======================================}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ DEVICE\_SEMIHOST\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ DEVICE\_LOCALFILESYSTEM\ \ 0}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ DEVICE\_ID\_LENGTH\ \ \ \ \ \ \ 24}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ DEVICE\_DEBUG\_AWARENESS\ \ 0}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ DEVICE\_STDIO\_MESSAGES\ \ \ 1}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ DEVICE\_ERROR\_RED\ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{objects_8h}{objects.h}}"{}}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

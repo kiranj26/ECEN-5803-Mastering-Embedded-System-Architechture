@@ -1,0 +1,695 @@
+\doxysubsection{TIM}
+\hypertarget{group___t_i_m}{}\label{group___t_i_m}\index{TIM@{TIM}}
+\doxysubsubsubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___t_i_m___exported___constants}{TIM\+\_\+\+Exported\+\_\+\+Constants}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t_i_m___base___init_type_def}{TIM\+\_\+\+Base\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em TIM Time base Configuration Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_i_m___o_c___init_type_def}{TIM\+\_\+\+OC\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em TIM Output Compare Configuration Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_i_m___one_pulse___init_type_def}{TIM\+\_\+\+One\+Pulse\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em TIM One Pulse Mode Configuration Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_i_m___i_c___init_type_def}{TIM\+\_\+\+IC\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em TIM Input Capture Configuration Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_i_m___encoder___init_type_def}{TIM\+\_\+\+Encoder\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em TIM Encoder Configuration Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_i_m___clock_config_type_def}{TIM\+\_\+\+Clock\+Config\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Clock Configuration Handle Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_i_m___clear_input_config_type_def}{TIM\+\_\+\+Clear\+Input\+Config\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Clear Input Configuration Handle Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_i_m___slave_config_type_def}{TIM\+\_\+\+Slave\+Config\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em TIM Slave configuration Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_i_m___handle_type_def}{TIM\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em TIM Time Base Handle Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_gace20fd4e38231b9682fbc83a80ec19a3}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca28011b79e60b74a6c55947c505c51cbc}{HAL\+\_\+\+TIM\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset TIM handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga1a90544705059e9f19f991651623b0c0}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1\texorpdfstring{$\vert$}{|}=(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga93d86355e5e3b399ed45e1ca83abed2a}{TIM\+\_\+\+CR1\+\_\+\+CEN}}))
+\begin{DoxyCompactList}\small\item\em Enable the TIM peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga04890dcef3ed061854721a3672585607}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+MOE\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$BDTR\texorpdfstring{$\vert$}{|}=(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga277a096614829feba2d0a4fbb7d3dffc}{TIM\+\_\+\+BDTR\+\_\+\+MOE}}))
+\begin{DoxyCompactList}\small\item\em Enable the TIM main Output. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga679b7f970f7ad7001de9d6f7b211d667}{CCER\+\_\+\+CCx\+E\+\_\+\+MASK}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3f494b9881e7b97bb2d79f7ad4e79937}{TIM\+\_\+\+CCER\+\_\+\+CC1E}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga76392a4d63674cd0db0a55762458f16c}{TIM\+\_\+\+CCER\+\_\+\+CC2E}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1da114e666b61f09cf25f50cdaa7f81f}{TIM\+\_\+\+CCER\+\_\+\+CC3E}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga940b041ab5975311f42f26d314a4b621}{TIM\+\_\+\+CCER\+\_\+\+CC4E}}))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_gadf1ac288d53d93679c086f9179dea88b}{CCER\+\_\+\+CCx\+NE\+\_\+\+MASK}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga813056b3f90a13c4432aeba55f28957e}{TIM\+\_\+\+CCER\+\_\+\+CC1\+NE}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6a784649120eddec31998f34323d4156}{TIM\+\_\+\+CCER\+\_\+\+CC2\+NE}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad46cce61d3bd83b64257ba75e54ee1aa}{TIM\+\_\+\+CCER\+\_\+\+CC3\+NE}}))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga6a5e653e0e06a04151b74eb1a5f96eb6}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Disable the TIM peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga69d63e147faeca8909e9679f684c0325}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+MOE\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Disable the TIM main Output. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga4d69943bc4716743c78e3194e259097e}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DIER \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_gabb91ccd46cd7204c87170a1ea5b38135}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+ENABLE\+\_\+\+DMA}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+DMA\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DIER \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+DMA\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga31d67e905bc62e3142179dc4bbf8ba64}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DIER \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga1a6e8b19efd23fd0295802d904c4702f}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+DISABLE\+\_\+\+DMA}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+DMA\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DIER \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+DMA\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga96d98c66ad9d85f00c148de99888ef19}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \&(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga2fe74db6b8cb4badd04ed48e0f5ac7b4}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga5d7a45eb9aa876fe115fbdcfe07d07a7}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+GET\+\_\+\+ITSTATUS}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DIER \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) ? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_gaea68155ce77e591e0c2582def061d6f0}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+CLEAR\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_gad8a9e037f1c12b9a37952e74054d7e79}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+DIRECTION\+\_\+\+STATUS}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 \&(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gacea10770904af189f3aaeb97b45722aa}{TIM\+\_\+\+CR1\+\_\+\+DIR}})) == (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gacea10770904af189f3aaeb97b45722aa}{TIM\+\_\+\+CR1\+\_\+\+DIR}}))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga64fdbe2a68fc8459071ee0dcb9096e34}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+PRESCALER}}~(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+, \+\_\+\+\_\+\+PRESC\+\_\+\+\_\+)       ((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$PSC \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+PRESC\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga16daed101c796beb70b2ed7afc13dd5f}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Set\+ICPrescaler\+Value}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+,  \+\_\+\+\_\+\+ICPSC\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_gacd53fb2c9e97b5c124b97145d0c09320}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Reset\+ICPrescaler\+Value}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_gad26791543e5289c81b6e169c38582de9}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Set\+Compare}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+,  \+\_\+\+\_\+\+COMPARE\+\_\+\+\_\+)~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})(\&((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CCR1) + ((\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+) $>$$>$ 2)) = (\+\_\+\+\_\+\+COMPARE\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Sets the TIM Capture Compare Register value on runtime without calling another time Config\+Channel function. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga460481f0401b3ff3d723f73ebb86c7dd}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Get\+Compare}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+)~  (\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})(\&((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CCR1) + ((\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+) $>$$>$ 2)))
+\begin{DoxyCompactList}\small\item\em Gets the TIM Capture Compare Register value on runtime. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_gacf163ad27212ed63b75588208a493679}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Set\+Counter}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+COUNTER\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CNT = (\+\_\+\+\_\+\+COUNTER\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Sets the TIM Counter Register value on runtime. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga6b4401a1d55628b4c5f3de1776b3b932}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Get\+Counter}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CNT)
+\begin{DoxyCompactList}\small\item\em Gets the TIM Counter Register value on runtime. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_gac8fc0ed9e0ac060bb27e09dd1603f345}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Set\+Autoreload}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+AUTORELOAD\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the TIM Autoreload Register value on runtime without calling another time any Init function. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga32d5ec268d72c142fe090be951731518}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Get\+Autoreload}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ARR)
+\begin{DoxyCompactList}\small\item\em Gets the TIM Autoreload Register value on runtime. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_gade878c10557a6d7ab9f675ed2c91070b}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Set\+Clock\+Division}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+CKD\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the TIM Clock Division value on runtime without calling another time any Init function. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga96d576fead1a1d314c51504244522661}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Get\+Clock\+Division}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gacacc4ff7e5b75fd2e4e6b672ccd33a72}{TIM\+\_\+\+CR1\+\_\+\+CKD}})
+\begin{DoxyCompactList}\small\item\em Gets the TIM Clock Division value on runtime. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_gac842aeb230e34f4effb920b09801bab2}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Set\+ICPrescaler}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+,  \+\_\+\+\_\+\+ICPSC\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the TIM Input Capture prescaler on runtime without calling another time \doxylink{group___s_t_m32_f4xx___h_a_l_ga34805dabaf748c6eb823275dad2f19f5}{HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Config\+Channel()} function. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___t_i_m_ga4e49ad7c43343e71a4c6f0163295722a}{\+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Get\+ICPrescaler}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Gets the TIM Input Capture prescaler on runtime. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___t_i_m_gae0994cf5970e56ca4903e9151f40010c}{HAL\+\_\+\+TIM\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca28011b79e60b74a6c55947c505c51cbc}{HAL\+\_\+\+TIM\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca4545554d7fa04d17e78d69d17cb7e4b3}{HAL\+\_\+\+TIM\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca1ddbfef19ad0562eb8143919b710cc12}{HAL\+\_\+\+TIM\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca03e3339df71a74ac37820f72c2989371}{HAL\+\_\+\+TIM\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \newline
+\mbox{\hyperlink{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca318cceb243cb9ca9e01833913e4f90ea}{HAL\+\_\+\+TIM\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em HAL State structures definition ~\newline
+ \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___t_i_m_gaa3fa7bcbb4707f1151ccfc90a8cf9706}{HAL\+\_\+\+TIM\+\_\+\+Active\+Channel}} \{ \newline
+\mbox{\hyperlink{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706a2024e95c48b58ec9b2115faa276e3fad}{HAL\+\_\+\+TIM\+\_\+\+ACTIVE\+\_\+\+CHANNEL\+\_\+1}} = 0x01
+, \mbox{\hyperlink{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706ae80e6a1dd1c479f504219c0fec2f3322}{HAL\+\_\+\+TIM\+\_\+\+ACTIVE\+\_\+\+CHANNEL\+\_\+2}} = 0x02
+, \mbox{\hyperlink{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706acc3fcf4ee6d91744c4bc6a5eccde2601}{HAL\+\_\+\+TIM\+\_\+\+ACTIVE\+\_\+\+CHANNEL\+\_\+3}} = 0x04
+, \mbox{\hyperlink{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706a7d98ec7e385cacb3aaa6cec601fa6ab6}{HAL\+\_\+\+TIM\+\_\+\+ACTIVE\+\_\+\+CHANNEL\+\_\+4}} = 0x08
+, \newline
+\mbox{\hyperlink{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706a574f72ac3bb41fe660318aa42dfdc98d}{HAL\+\_\+\+TIM\+\_\+\+ACTIVE\+\_\+\+CHANNEL\+\_\+\+CLEARED}} = 0x00
+ \}
+\begin{DoxyCompactList}\small\item\em HAL Active channel structures definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{group___t_i_m_ga2fe74db6b8cb4badd04ed48e0f5ac7b4}\label{group___t_i_m_ga2fe74db6b8cb4badd04ed48e0f5ac7b4} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_CLEAR\_FLAG@{\_\_HAL\_TIM\_CLEAR\_FLAG}}
+\index{\_\_HAL\_TIM\_CLEAR\_FLAG@{\_\_HAL\_TIM\_CLEAR\_FLAG}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_CLEAR\_FLAG}{\_\_HAL\_TIM\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))}
+
+\Hypertarget{group___t_i_m_gaea68155ce77e591e0c2582def061d6f0}\label{group___t_i_m_gaea68155ce77e591e0c2582def061d6f0} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_CLEAR\_IT@{\_\_HAL\_TIM\_CLEAR\_IT}}
+\index{\_\_HAL\_TIM\_CLEAR\_IT@{\_\_HAL\_TIM\_CLEAR\_IT}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_CLEAR\_IT}{\_\_HAL\_TIM\_CLEAR\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+CLEAR\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+\Hypertarget{group___t_i_m_gad8a9e037f1c12b9a37952e74054d7e79}\label{group___t_i_m_gad8a9e037f1c12b9a37952e74054d7e79} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_DIRECTION\_STATUS@{\_\_HAL\_TIM\_DIRECTION\_STATUS}}
+\index{\_\_HAL\_TIM\_DIRECTION\_STATUS@{\_\_HAL\_TIM\_DIRECTION\_STATUS}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_DIRECTION\_STATUS}{\_\_HAL\_TIM\_DIRECTION\_STATUS}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+DIRECTION\+\_\+\+STATUS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 \&(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gacea10770904af189f3aaeb97b45722aa}{TIM\+\_\+\+CR1\+\_\+\+DIR}})) == (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gacea10770904af189f3aaeb97b45722aa}{TIM\+\_\+\+CR1\+\_\+\+DIR}}))}
+
+\Hypertarget{group___t_i_m_ga6a5e653e0e06a04151b74eb1a5f96eb6}\label{group___t_i_m_ga6a5e653e0e06a04151b74eb1a5f96eb6} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_DISABLE@{\_\_HAL\_TIM\_DISABLE}}
+\index{\_\_HAL\_TIM\_DISABLE@{\_\_HAL\_TIM\_DISABLE}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_DISABLE}{\_\_HAL\_TIM\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (((\_\_HANDLE\_\_)-\/>Instance-\/>CCER\ \&\ \mbox{\hyperlink{group___t_i_m_ga679b7f970f7ad7001de9d6f7b211d667}{CCER\_CCxE\_MASK}})\ ==\ 0)\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(((\_\_HANDLE\_\_)-\/>Instance-\/>CCER\ \&\ \mbox{\hyperlink{group___t_i_m_gadf1ac288d53d93679c086f9179dea88b}{CCER\_CCxNE\_MASK}})\ ==\ 0)\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Instance-\/>CR1\ \&=\ \string~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga93d86355e5e3b399ed45e1ca83abed2a}{TIM\_CR1\_CEN}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Disable the TIM peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_ga1a6e8b19efd23fd0295802d904c4702f}\label{group___t_i_m_ga1a6e8b19efd23fd0295802d904c4702f} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_DISABLE\_DMA@{\_\_HAL\_TIM\_DISABLE\_DMA}}
+\index{\_\_HAL\_TIM\_DISABLE\_DMA@{\_\_HAL\_TIM\_DISABLE\_DMA}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_DISABLE\_DMA}{\_\_HAL\_TIM\_DISABLE\_DMA}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+DISABLE\+\_\+\+DMA(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+DMA\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DIER \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+DMA\+\_\+\+\_\+))}
+
+\Hypertarget{group___t_i_m_ga31d67e905bc62e3142179dc4bbf8ba64}\label{group___t_i_m_ga31d67e905bc62e3142179dc4bbf8ba64} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_DISABLE\_IT@{\_\_HAL\_TIM\_DISABLE\_IT}}
+\index{\_\_HAL\_TIM\_DISABLE\_IT@{\_\_HAL\_TIM\_DISABLE\_IT}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_DISABLE\_IT}{\_\_HAL\_TIM\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DIER \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+\Hypertarget{group___t_i_m_ga1a90544705059e9f19f991651623b0c0}\label{group___t_i_m_ga1a90544705059e9f19f991651623b0c0} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_ENABLE@{\_\_HAL\_TIM\_ENABLE}}
+\index{\_\_HAL\_TIM\_ENABLE@{\_\_HAL\_TIM\_ENABLE}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_ENABLE}{\_\_HAL\_TIM\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1\texorpdfstring{$\vert$}{|}=(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga93d86355e5e3b399ed45e1ca83abed2a}{TIM\+\_\+\+CR1\+\_\+\+CEN}}))}
+
+
+
+Enable the TIM peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_gabb91ccd46cd7204c87170a1ea5b38135}\label{group___t_i_m_gabb91ccd46cd7204c87170a1ea5b38135} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_ENABLE\_DMA@{\_\_HAL\_TIM\_ENABLE\_DMA}}
+\index{\_\_HAL\_TIM\_ENABLE\_DMA@{\_\_HAL\_TIM\_ENABLE\_DMA}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_ENABLE\_DMA}{\_\_HAL\_TIM\_ENABLE\_DMA}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+ENABLE\+\_\+\+DMA(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+DMA\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DIER \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+DMA\+\_\+\+\_\+))}
+
+\Hypertarget{group___t_i_m_ga4d69943bc4716743c78e3194e259097e}\label{group___t_i_m_ga4d69943bc4716743c78e3194e259097e} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_ENABLE\_IT@{\_\_HAL\_TIM\_ENABLE\_IT}}
+\index{\_\_HAL\_TIM\_ENABLE\_IT@{\_\_HAL\_TIM\_ENABLE\_IT}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_ENABLE\_IT}{\_\_HAL\_TIM\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DIER \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+\Hypertarget{group___t_i_m_ga96d98c66ad9d85f00c148de99888ef19}\label{group___t_i_m_ga96d98c66ad9d85f00c148de99888ef19} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_GET\_FLAG@{\_\_HAL\_TIM\_GET\_FLAG}}
+\index{\_\_HAL\_TIM\_GET\_FLAG@{\_\_HAL\_TIM\_GET\_FLAG}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_GET\_FLAG}{\_\_HAL\_TIM\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \&(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))}
+
+\Hypertarget{group___t_i_m_ga5d7a45eb9aa876fe115fbdcfe07d07a7}\label{group___t_i_m_ga5d7a45eb9aa876fe115fbdcfe07d07a7} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_GET\_ITSTATUS@{\_\_HAL\_TIM\_GET\_ITSTATUS}}
+\index{\_\_HAL\_TIM\_GET\_ITSTATUS@{\_\_HAL\_TIM\_GET\_ITSTATUS}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_GET\_ITSTATUS}{\_\_HAL\_TIM\_GET\_ITSTATUS}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+GET\+\_\+\+ITSTATUS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DIER \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) ? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+\Hypertarget{group___t_i_m_ga32d5ec268d72c142fe090be951731518}\label{group___t_i_m_ga32d5ec268d72c142fe090be951731518} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_GetAutoreload@{\_\_HAL\_TIM\_GetAutoreload}}
+\index{\_\_HAL\_TIM\_GetAutoreload@{\_\_HAL\_TIM\_GetAutoreload}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_GetAutoreload}{\_\_HAL\_TIM\_GetAutoreload}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Get\+Autoreload(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ARR)}
+
+
+
+Gets the TIM Autoreload Register value on runtime. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_ga96d576fead1a1d314c51504244522661}\label{group___t_i_m_ga96d576fead1a1d314c51504244522661} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_GetClockDivision@{\_\_HAL\_TIM\_GetClockDivision}}
+\index{\_\_HAL\_TIM\_GetClockDivision@{\_\_HAL\_TIM\_GetClockDivision}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_GetClockDivision}{\_\_HAL\_TIM\_GetClockDivision}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Get\+Clock\+Division(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gacacc4ff7e5b75fd2e4e6b672ccd33a72}{TIM\+\_\+\+CR1\+\_\+\+CKD}})}
+
+
+
+Gets the TIM Clock Division value on runtime. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_ga460481f0401b3ff3d723f73ebb86c7dd}\label{group___t_i_m_ga460481f0401b3ff3d723f73ebb86c7dd} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_GetCompare@{\_\_HAL\_TIM\_GetCompare}}
+\index{\_\_HAL\_TIM\_GetCompare@{\_\_HAL\_TIM\_GetCompare}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_GetCompare}{\_\_HAL\_TIM\_GetCompare}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Get\+Compare(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+ }\end{DoxyParamCaption})~  (\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})(\&((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CCR1) + ((\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+) $>$$>$ 2)))}
+
+
+
+Gets the TIM Capture Compare Register value on runtime. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle. \\
+\hline
+{\em \+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+} & \+: TIM Channel associated with the capture compare register This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+CHANNEL\+\_\+1\+: get capture/compare 1 register value \item TIM\+\_\+\+CHANNEL\+\_\+2\+: get capture/compare 2 register value \item TIM\+\_\+\+CHANNEL\+\_\+3\+: get capture/compare 3 register value \item TIM\+\_\+\+CHANNEL\+\_\+4\+: get capture/compare 4 register value \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_ga6b4401a1d55628b4c5f3de1776b3b932}\label{group___t_i_m_ga6b4401a1d55628b4c5f3de1776b3b932} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_GetCounter@{\_\_HAL\_TIM\_GetCounter}}
+\index{\_\_HAL\_TIM\_GetCounter@{\_\_HAL\_TIM\_GetCounter}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_GetCounter}{\_\_HAL\_TIM\_GetCounter}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Get\+Counter(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CNT)}
+
+
+
+Gets the TIM Counter Register value on runtime. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_ga4e49ad7c43343e71a4c6f0163295722a}\label{group___t_i_m_ga4e49ad7c43343e71a4c6f0163295722a} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_GetICPrescaler@{\_\_HAL\_TIM\_GetICPrescaler}}
+\index{\_\_HAL\_TIM\_GetICPrescaler@{\_\_HAL\_TIM\_GetICPrescaler}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_GetICPrescaler}{\_\_HAL\_TIM\_GetICPrescaler}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Get\+ICPrescaler(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (((\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___t_i_m___channel_ga6b1541e4a49d62610899e24bf23f4879}{TIM\_CHANNEL\_1}})\ ?\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CCMR1\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gab46b7186665f5308cd2ca52acfb63e72}{TIM\_CCMR1\_IC1PSC}})\ :\(\backslash\)}
+\DoxyCodeLine{\ \ \ ((\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___t_i_m___channel_ga33e02d43345a7ac5886f01b39e4f7ccd}{TIM\_CHANNEL\_2}})\ ?\ (((\_\_HANDLE\_\_)-\/>Instance-\/>CCMR1\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5e8e704f9ce5742f45e15e3b3126aa9d}{TIM\_CCMR1\_IC2PSC}})\ >>\ 8)\ :\(\backslash\)}
+\DoxyCodeLine{\ \ \ ((\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___t_i_m___channel_ga4ea100c1789b178f3cb46721b7257e2d}{TIM\_CHANNEL\_3}})\ ?\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CCMR2\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gafc3d11f2e968752bc9ec7131c986c3a6}{TIM\_CCMR2\_IC3PSC}})\ :\(\backslash\)}
+\DoxyCodeLine{\ \ \ (((\_\_HANDLE\_\_)-\/>Instance-\/>CCMR2\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6fd7591e2de10272f7fafb08cdd1b7b0}{TIM\_CCMR2\_IC4PSC}}))\ >>\ 8)}
+
+\end{DoxyCode}
+
+
+Gets the TIM Input Capture prescaler on runtime. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle. \\
+\hline
+{\em \+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+} & \+: TIM Channels to be configured. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+CHANNEL\+\_\+1\+: get input capture 1 prescaler value \item TIM\+\_\+\+CHANNEL\+\_\+2\+: get input capture 2 prescaler value \item TIM\+\_\+\+CHANNEL\+\_\+3\+: get input capture 3 prescaler value \item TIM\+\_\+\+CHANNEL\+\_\+4\+: get input capture 4 prescaler value \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_ga69d63e147faeca8909e9679f684c0325}\label{group___t_i_m_ga69d63e147faeca8909e9679f684c0325} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_MOE\_DISABLE@{\_\_HAL\_TIM\_MOE\_DISABLE}}
+\index{\_\_HAL\_TIM\_MOE\_DISABLE@{\_\_HAL\_TIM\_MOE\_DISABLE}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_MOE\_DISABLE}{\_\_HAL\_TIM\_MOE\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+MOE\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (((\_\_HANDLE\_\_)-\/>Instance-\/>CCER\ \&\ \mbox{\hyperlink{group___t_i_m_ga679b7f970f7ad7001de9d6f7b211d667}{CCER\_CCxE\_MASK}})\ ==\ 0)\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(((\_\_HANDLE\_\_)-\/>Instance-\/>CCER\ \&\ \mbox{\hyperlink{group___t_i_m_gadf1ac288d53d93679c086f9179dea88b}{CCER\_CCxNE\_MASK}})\ ==\ 0)\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Instance-\/>BDTR\ \&=\ \string~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga277a096614829feba2d0a4fbb7d3dffc}{TIM\_BDTR\_MOE}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Disable the TIM main Output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_ga04890dcef3ed061854721a3672585607}\label{group___t_i_m_ga04890dcef3ed061854721a3672585607} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_MOE\_ENABLE@{\_\_HAL\_TIM\_MOE\_ENABLE}}
+\index{\_\_HAL\_TIM\_MOE\_ENABLE@{\_\_HAL\_TIM\_MOE\_ENABLE}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_MOE\_ENABLE}{\_\_HAL\_TIM\_MOE\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+MOE\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$BDTR\texorpdfstring{$\vert$}{|}=(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga277a096614829feba2d0a4fbb7d3dffc}{TIM\+\_\+\+BDTR\+\_\+\+MOE}}))}
+
+
+
+Enable the TIM main Output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_ga64fdbe2a68fc8459071ee0dcb9096e34}\label{group___t_i_m_ga64fdbe2a68fc8459071ee0dcb9096e34} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_PRESCALER@{\_\_HAL\_TIM\_PRESCALER}}
+\index{\_\_HAL\_TIM\_PRESCALER@{\_\_HAL\_TIM\_PRESCALER}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_PRESCALER}{\_\_HAL\_TIM\_PRESCALER}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+PRESCALER~(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+, \+\_\+\+\_\+\+PRESC\+\_\+\+\_\+)       ((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$PSC \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+PRESC\+\_\+\+\_\+))}
+
+\Hypertarget{group___t_i_m_gace20fd4e38231b9682fbc83a80ec19a3}\label{group___t_i_m_gace20fd4e38231b9682fbc83a80ec19a3} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_RESET\_HANDLE\_STATE@{\_\_HAL\_TIM\_RESET\_HANDLE\_STATE}}
+\index{\_\_HAL\_TIM\_RESET\_HANDLE\_STATE@{\_\_HAL\_TIM\_RESET\_HANDLE\_STATE}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_RESET\_HANDLE\_STATE}{\_\_HAL\_TIM\_RESET\_HANDLE\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca28011b79e60b74a6c55947c505c51cbc}{HAL\+\_\+\+TIM\+\_\+\+STATE\+\_\+\+RESET}})}
+
+
+
+Reset TIM handle state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_gacd53fb2c9e97b5c124b97145d0c09320}\label{group___t_i_m_gacd53fb2c9e97b5c124b97145d0c09320} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_ResetICPrescalerValue@{\_\_HAL\_TIM\_ResetICPrescalerValue}}
+\index{\_\_HAL\_TIM\_ResetICPrescalerValue@{\_\_HAL\_TIM\_ResetICPrescalerValue}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_ResetICPrescalerValue}{\_\_HAL\_TIM\_ResetICPrescalerValue}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Reset\+ICPrescaler\+Value(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___t_i_m___channel_ga6b1541e4a49d62610899e24bf23f4879}{TIM\_CHANNEL\_1}})\ ?\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CCMR1\ \&=\ (\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}})\string~TIM\_CCMR1\_IC1PSC)\ :\(\backslash\)}
+\DoxyCodeLine{\ ((\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___t_i_m___channel_ga33e02d43345a7ac5886f01b39e4f7ccd}{TIM\_CHANNEL\_2}})\ ?\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CCMR1\ \&=\ (\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}})\string~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5e8e704f9ce5742f45e15e3b3126aa9d}{TIM\_CCMR1\_IC2PSC}})\ :\(\backslash\)}
+\DoxyCodeLine{\ ((\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___t_i_m___channel_ga4ea100c1789b178f3cb46721b7257e2d}{TIM\_CHANNEL\_3}})\ ?\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CCMR2\ \&=\ (\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}})\string~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gafc3d11f2e968752bc9ec7131c986c3a6}{TIM\_CCMR2\_IC3PSC}})\ :\(\backslash\)}
+\DoxyCodeLine{\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CCMR2\ \&=\ (\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}})\string~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6fd7591e2de10272f7fafb08cdd1b7b0}{TIM\_CCMR2\_IC4PSC}}))}
+
+\end{DoxyCode}
+\Hypertarget{group___t_i_m_gac8fc0ed9e0ac060bb27e09dd1603f345}\label{group___t_i_m_gac8fc0ed9e0ac060bb27e09dd1603f345} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_SetAutoreload@{\_\_HAL\_TIM\_SetAutoreload}}
+\index{\_\_HAL\_TIM\_SetAutoreload@{\_\_HAL\_TIM\_SetAutoreload}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_SetAutoreload}{\_\_HAL\_TIM\_SetAutoreload}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Set\+Autoreload(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+AUTORELOAD\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Instance-\/>ARR\ =\ (\_\_AUTORELOAD\_\_);\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Init.Period\ =\ (\_\_AUTORELOAD\_\_);\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Sets the TIM Autoreload Register value on runtime without calling another time any Init function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle. \\
+\hline
+{\em \+\_\+\+\_\+\+AUTORELOAD\+\_\+\+\_\+} & specifies the Counter register new value. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_gade878c10557a6d7ab9f675ed2c91070b}\label{group___t_i_m_gade878c10557a6d7ab9f675ed2c91070b} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_SetClockDivision@{\_\_HAL\_TIM\_SetClockDivision}}
+\index{\_\_HAL\_TIM\_SetClockDivision@{\_\_HAL\_TIM\_SetClockDivision}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_SetClockDivision}{\_\_HAL\_TIM\_SetClockDivision}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Set\+Clock\+Division(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+CKD\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Instance-\/>CR1\ \&=\ (\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}})(\string~TIM\_CR1\_CKD);\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Instance-\/>CR1\ |=\ (\_\_CKD\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Init.ClockDivision\ =\ (\_\_CKD\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Sets the TIM Clock Division value on runtime without calling another time any Init function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle. \\
+\hline
+{\em \+\_\+\+\_\+\+CKD\+\_\+\+\_\+} & specifies the clock division value. This parameter can be one of the following value\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+CLOCKDIVISION\+\_\+\+DIV1 \item TIM\+\_\+\+CLOCKDIVISION\+\_\+\+DIV2 \item TIM\+\_\+\+CLOCKDIVISION\+\_\+\+DIV4 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_gad26791543e5289c81b6e169c38582de9}\label{group___t_i_m_gad26791543e5289c81b6e169c38582de9} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_SetCompare@{\_\_HAL\_TIM\_SetCompare}}
+\index{\_\_HAL\_TIM\_SetCompare@{\_\_HAL\_TIM\_SetCompare}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_SetCompare}{\_\_HAL\_TIM\_SetCompare}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Set\+Compare(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+COMPARE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})(\&((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CCR1) + ((\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+) $>$$>$ 2)) = (\+\_\+\+\_\+\+COMPARE\+\_\+\+\_\+))}
+
+
+
+Sets the TIM Capture Compare Register value on runtime without calling another time Config\+Channel function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle. \\
+\hline
+{\em \+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+} & \+: TIM Channels to be configured. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+CHANNEL\+\_\+1\+: TIM Channel 1 selected \item TIM\+\_\+\+CHANNEL\+\_\+2\+: TIM Channel 2 selected \item TIM\+\_\+\+CHANNEL\+\_\+3\+: TIM Channel 3 selected \item TIM\+\_\+\+CHANNEL\+\_\+4\+: TIM Channel 4 selected \end{DoxyItemize}
+\\
+\hline
+{\em \+\_\+\+\_\+\+COMPARE\+\_\+\+\_\+} & specifies the Capture Compare register new value. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_gacf163ad27212ed63b75588208a493679}\label{group___t_i_m_gacf163ad27212ed63b75588208a493679} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_SetCounter@{\_\_HAL\_TIM\_SetCounter}}
+\index{\_\_HAL\_TIM\_SetCounter@{\_\_HAL\_TIM\_SetCounter}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_SetCounter}{\_\_HAL\_TIM\_SetCounter}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Set\+Counter(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+COUNTER\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CNT = (\+\_\+\+\_\+\+COUNTER\+\_\+\+\_\+))}
+
+
+
+Sets the TIM Counter Register value on runtime. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle. \\
+\hline
+{\em \+\_\+\+\_\+\+COUNTER\+\_\+\+\_\+} & specifies the Counter register new value. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_gac842aeb230e34f4effb920b09801bab2}\label{group___t_i_m_gac842aeb230e34f4effb920b09801bab2} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_SetICPrescaler@{\_\_HAL\_TIM\_SetICPrescaler}}
+\index{\_\_HAL\_TIM\_SetICPrescaler@{\_\_HAL\_TIM\_SetICPrescaler}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_SetICPrescaler}{\_\_HAL\_TIM\_SetICPrescaler}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Set\+ICPrescaler(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+ICPSC\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_HAL\_TIM\_ResetICPrescalerValue((\_\_HANDLE\_\_),\ (\_\_CHANNEL\_\_));\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_HAL\_TIM\_SetICPrescalerValue((\_\_HANDLE\_\_),\ (\_\_CHANNEL\_\_),\ (\_\_ICPSC\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Sets the TIM Input Capture prescaler on runtime without calling another time \doxylink{group___s_t_m32_f4xx___h_a_l_ga34805dabaf748c6eb823275dad2f19f5}{HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Config\+Channel()} function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & TIM handle. \\
+\hline
+{\em \+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+} & \+: TIM Channels to be configured. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+CHANNEL\+\_\+1\+: TIM Channel 1 selected \item TIM\+\_\+\+CHANNEL\+\_\+2\+: TIM Channel 2 selected \item TIM\+\_\+\+CHANNEL\+\_\+3\+: TIM Channel 3 selected \item TIM\+\_\+\+CHANNEL\+\_\+4\+: TIM Channel 4 selected \end{DoxyItemize}
+\\
+\hline
+{\em \+\_\+\+\_\+\+ICPSC\+\_\+\+\_\+} & specifies the Input Capture4 prescaler new value. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+ICPSC\+\_\+\+DIV1\+: no prescaler \item TIM\+\_\+\+ICPSC\+\_\+\+DIV2\+: capture is done once every 2 events \item TIM\+\_\+\+ICPSC\+\_\+\+DIV4\+: capture is done once every 4 events \item TIM\+\_\+\+ICPSC\+\_\+\+DIV8\+: capture is done once every 8 events \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m_ga16daed101c796beb70b2ed7afc13dd5f}\label{group___t_i_m_ga16daed101c796beb70b2ed7afc13dd5f} 
+\index{TIM@{TIM}!\_\_HAL\_TIM\_SetICPrescalerValue@{\_\_HAL\_TIM\_SetICPrescalerValue}}
+\index{\_\_HAL\_TIM\_SetICPrescalerValue@{\_\_HAL\_TIM\_SetICPrescalerValue}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_TIM\_SetICPrescalerValue}{\_\_HAL\_TIM\_SetICPrescalerValue}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+TIM\+\_\+\+Set\+ICPrescaler\+Value(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+ICPSC\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___t_i_m___channel_ga6b1541e4a49d62610899e24bf23f4879}{TIM\_CHANNEL\_1}})\ ?\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CCMR1\ |=\ (\_\_ICPSC\_\_))\ :\(\backslash\)}
+\DoxyCodeLine{\ ((\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___t_i_m___channel_ga33e02d43345a7ac5886f01b39e4f7ccd}{TIM\_CHANNEL\_2}})\ ?\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CCMR1\ |=\ ((\_\_ICPSC\_\_)\ <<\ 8))\ :\(\backslash\)}
+\DoxyCodeLine{\ ((\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___t_i_m___channel_ga4ea100c1789b178f3cb46721b7257e2d}{TIM\_CHANNEL\_3}})\ ?\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CCMR2\ |=\ (\_\_ICPSC\_\_))\ :\(\backslash\)}
+\DoxyCodeLine{\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CCMR2\ |=\ ((\_\_ICPSC\_\_)\ <<\ 8)))}
+
+\end{DoxyCode}
+\Hypertarget{group___t_i_m_ga679b7f970f7ad7001de9d6f7b211d667}\label{group___t_i_m_ga679b7f970f7ad7001de9d6f7b211d667} 
+\index{TIM@{TIM}!CCER\_CCxE\_MASK@{CCER\_CCxE\_MASK}}
+\index{CCER\_CCxE\_MASK@{CCER\_CCxE\_MASK}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{CCER\_CCxE\_MASK}{CCER\_CCxE\_MASK}}
+{\footnotesize\ttfamily \#define CCER\+\_\+\+CCx\+E\+\_\+\+MASK~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3f494b9881e7b97bb2d79f7ad4e79937}{TIM\+\_\+\+CCER\+\_\+\+CC1E}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga76392a4d63674cd0db0a55762458f16c}{TIM\+\_\+\+CCER\+\_\+\+CC2E}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1da114e666b61f09cf25f50cdaa7f81f}{TIM\+\_\+\+CCER\+\_\+\+CC3E}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga940b041ab5975311f42f26d314a4b621}{TIM\+\_\+\+CCER\+\_\+\+CC4E}}))}
+
+\Hypertarget{group___t_i_m_gadf1ac288d53d93679c086f9179dea88b}\label{group___t_i_m_gadf1ac288d53d93679c086f9179dea88b} 
+\index{TIM@{TIM}!CCER\_CCxNE\_MASK@{CCER\_CCxNE\_MASK}}
+\index{CCER\_CCxNE\_MASK@{CCER\_CCxNE\_MASK}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{CCER\_CCxNE\_MASK}{CCER\_CCxNE\_MASK}}
+{\footnotesize\ttfamily \#define CCER\+\_\+\+CCx\+NE\+\_\+\+MASK~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga813056b3f90a13c4432aeba55f28957e}{TIM\+\_\+\+CCER\+\_\+\+CC1\+NE}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6a784649120eddec31998f34323d4156}{TIM\+\_\+\+CCER\+\_\+\+CC2\+NE}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad46cce61d3bd83b64257ba75e54ee1aa}{TIM\+\_\+\+CCER\+\_\+\+CC3\+NE}}))}
+
+
+
+\doxysubsubsection{Enumeration Type Documentation}
+\Hypertarget{group___t_i_m_gaa3fa7bcbb4707f1151ccfc90a8cf9706}\label{group___t_i_m_gaa3fa7bcbb4707f1151ccfc90a8cf9706} 
+\index{TIM@{TIM}!HAL\_TIM\_ActiveChannel@{HAL\_TIM\_ActiveChannel}}
+\index{HAL\_TIM\_ActiveChannel@{HAL\_TIM\_ActiveChannel}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_TIM\_ActiveChannel}{HAL\_TIM\_ActiveChannel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___t_i_m_gaa3fa7bcbb4707f1151ccfc90a8cf9706}{HAL\+\_\+\+TIM\+\_\+\+Active\+Channel}}}
+
+
+
+HAL Active channel structures definition ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_TIM\_ACTIVE\_CHANNEL\_1@{HAL\_TIM\_ACTIVE\_CHANNEL\_1}!TIM@{TIM}}\index{TIM@{TIM}!HAL\_TIM\_ACTIVE\_CHANNEL\_1@{HAL\_TIM\_ACTIVE\_CHANNEL\_1}}}\Hypertarget{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706a2024e95c48b58ec9b2115faa276e3fad}\label{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706a2024e95c48b58ec9b2115faa276e3fad} 
+HAL\+\_\+\+TIM\+\_\+\+ACTIVE\+\_\+\+CHANNEL\+\_\+1&The active channel is 1 ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_TIM\_ACTIVE\_CHANNEL\_2@{HAL\_TIM\_ACTIVE\_CHANNEL\_2}!TIM@{TIM}}\index{TIM@{TIM}!HAL\_TIM\_ACTIVE\_CHANNEL\_2@{HAL\_TIM\_ACTIVE\_CHANNEL\_2}}}\Hypertarget{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706ae80e6a1dd1c479f504219c0fec2f3322}\label{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706ae80e6a1dd1c479f504219c0fec2f3322} 
+HAL\+\_\+\+TIM\+\_\+\+ACTIVE\+\_\+\+CHANNEL\+\_\+2&The active channel is 2 ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_TIM\_ACTIVE\_CHANNEL\_3@{HAL\_TIM\_ACTIVE\_CHANNEL\_3}!TIM@{TIM}}\index{TIM@{TIM}!HAL\_TIM\_ACTIVE\_CHANNEL\_3@{HAL\_TIM\_ACTIVE\_CHANNEL\_3}}}\Hypertarget{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706acc3fcf4ee6d91744c4bc6a5eccde2601}\label{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706acc3fcf4ee6d91744c4bc6a5eccde2601} 
+HAL\+\_\+\+TIM\+\_\+\+ACTIVE\+\_\+\+CHANNEL\+\_\+3&The active channel is 3 ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_TIM\_ACTIVE\_CHANNEL\_4@{HAL\_TIM\_ACTIVE\_CHANNEL\_4}!TIM@{TIM}}\index{TIM@{TIM}!HAL\_TIM\_ACTIVE\_CHANNEL\_4@{HAL\_TIM\_ACTIVE\_CHANNEL\_4}}}\Hypertarget{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706a7d98ec7e385cacb3aaa6cec601fa6ab6}\label{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706a7d98ec7e385cacb3aaa6cec601fa6ab6} 
+HAL\+\_\+\+TIM\+\_\+\+ACTIVE\+\_\+\+CHANNEL\+\_\+4&The active channel is 4 ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_TIM\_ACTIVE\_CHANNEL\_CLEARED@{HAL\_TIM\_ACTIVE\_CHANNEL\_CLEARED}!TIM@{TIM}}\index{TIM@{TIM}!HAL\_TIM\_ACTIVE\_CHANNEL\_CLEARED@{HAL\_TIM\_ACTIVE\_CHANNEL\_CLEARED}}}\Hypertarget{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706a574f72ac3bb41fe660318aa42dfdc98d}\label{group___t_i_m_ggaa3fa7bcbb4707f1151ccfc90a8cf9706a574f72ac3bb41fe660318aa42dfdc98d} 
+HAL\+\_\+\+TIM\+\_\+\+ACTIVE\+\_\+\+CHANNEL\+\_\+\+CLEARED&All active channels cleared \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___t_i_m_gae0994cf5970e56ca4903e9151f40010c}\label{group___t_i_m_gae0994cf5970e56ca4903e9151f40010c} 
+\index{TIM@{TIM}!HAL\_TIM\_StateTypeDef@{HAL\_TIM\_StateTypeDef}}
+\index{HAL\_TIM\_StateTypeDef@{HAL\_TIM\_StateTypeDef}!TIM@{TIM}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_TIM\_StateTypeDef}{HAL\_TIM\_StateTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___t_i_m_gae0994cf5970e56ca4903e9151f40010c}{HAL\+\_\+\+TIM\+\_\+\+State\+Type\+Def}}}
+
+
+
+HAL State structures definition ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_TIM\_STATE\_RESET@{HAL\_TIM\_STATE\_RESET}!TIM@{TIM}}\index{TIM@{TIM}!HAL\_TIM\_STATE\_RESET@{HAL\_TIM\_STATE\_RESET}}}\Hypertarget{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca28011b79e60b74a6c55947c505c51cbc}\label{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca28011b79e60b74a6c55947c505c51cbc} 
+HAL\+\_\+\+TIM\+\_\+\+STATE\+\_\+\+RESET&Peripheral not yet initialized or disabled ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_TIM\_STATE\_READY@{HAL\_TIM\_STATE\_READY}!TIM@{TIM}}\index{TIM@{TIM}!HAL\_TIM\_STATE\_READY@{HAL\_TIM\_STATE\_READY}}}\Hypertarget{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca4545554d7fa04d17e78d69d17cb7e4b3}\label{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca4545554d7fa04d17e78d69d17cb7e4b3} 
+HAL\+\_\+\+TIM\+\_\+\+STATE\+\_\+\+READY&Peripheral Initialized and ready for use ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_TIM\_STATE\_BUSY@{HAL\_TIM\_STATE\_BUSY}!TIM@{TIM}}\index{TIM@{TIM}!HAL\_TIM\_STATE\_BUSY@{HAL\_TIM\_STATE\_BUSY}}}\Hypertarget{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca1ddbfef19ad0562eb8143919b710cc12}\label{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca1ddbfef19ad0562eb8143919b710cc12} 
+HAL\+\_\+\+TIM\+\_\+\+STATE\+\_\+\+BUSY&An internal process is ongoing ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_TIM\_STATE\_TIMEOUT@{HAL\_TIM\_STATE\_TIMEOUT}!TIM@{TIM}}\index{TIM@{TIM}!HAL\_TIM\_STATE\_TIMEOUT@{HAL\_TIM\_STATE\_TIMEOUT}}}\Hypertarget{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca03e3339df71a74ac37820f72c2989371}\label{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca03e3339df71a74ac37820f72c2989371} 
+HAL\+\_\+\+TIM\+\_\+\+STATE\+\_\+\+TIMEOUT&Timeout state ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_TIM\_STATE\_ERROR@{HAL\_TIM\_STATE\_ERROR}!TIM@{TIM}}\index{TIM@{TIM}!HAL\_TIM\_STATE\_ERROR@{HAL\_TIM\_STATE\_ERROR}}}\Hypertarget{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca318cceb243cb9ca9e01833913e4f90ea}\label{group___t_i_m_ggae0994cf5970e56ca4903e9151f40010ca318cceb243cb9ca9e01833913e4f90ea} 
+HAL\+\_\+\+TIM\+\_\+\+STATE\+\_\+\+ERROR&Reception process is ongoing ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+\input{group___t_i_m___exported___constants}

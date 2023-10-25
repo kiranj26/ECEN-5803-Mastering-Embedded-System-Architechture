@@ -1,0 +1,86 @@
+\doxysection{File\+Base.\+h}
+\hypertarget{_file_base_8h_source}{}\label{_file_base_8h_source}\index{mbed/FileBase.h@{mbed/FileBase.h}}
+\mbox{\hyperlink{_file_base_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_FILEBASE\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_FILEBASE\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_file_base_8h_ae3c686f9cfb2c0113bc42a8c3f7f26b6}{FILEHANDLE}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#if\ defined(\_\_ARMCC\_VERSION)\ ||\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#\ \ \ \ define\ O\_RDONLY\ 0}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#\ \ \ \ define\ O\_WRONLY\ 1}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#\ \ \ \ define\ O\_RDWR\ \ \ 2}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#\ \ \ \ define\ O\_CREAT\ \ 0x0200}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#\ \ \ \ define\ O\_TRUNC\ \ 0x0400}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#\ \ \ \ define\ O\_APPEND\ 0x0008}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#\ \ \ \ define\ NAME\_MAX\ 255}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ mode\_t;}
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ ssize\_t;}
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{long}\ off\_t;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#\ \ \ \ include\ <sys/fcntl.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#\ \ \ \ include\ <sys/types.h>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#\ \ \ \ include\ <sys/syslimits.h>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{platform_8h}{platform.h}}"{}}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacembed}{mbed}}\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528aae21aa06867affca61853523b4194efc}{FilePathType}},}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528a7e3447f48b14f3c9fb31d7ec1bac0364}{FileSystemPathType}}}
+\DoxyCodeLine{00050\ \}\ \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{PathType}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmbed_1_1_file_base}{FileBase}}\ \{}
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_file_base_a8b19f5dfe489eaa641c32a5096c71af1}{FileBase}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name,\ \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{PathType}}\ t);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmbed_1_1_file_base_ac8cc9e6d230ddfe9f9987338071998ec}{\string~FileBase}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classmbed_1_1_file_base_a22078733b15abf28045948d24555ceaf}{getName}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{PathType}}\ \ \ \ \mbox{\hyperlink{classmbed_1_1_file_base_a59dd77df265c99a2fa0f7c209d0dba18}{getPathType}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classmbed_1_1_file_base}{FileBase}}\ *\mbox{\hyperlink{classmbed_1_1_file_base_a512479427a1a8e4c23bf353babeea9ce}{lookup}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ len);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classmbed_1_1_file_base}{FileBase}}\ *\mbox{\hyperlink{classmbed_1_1_file_base_ab2f9954a536d2c678b9630ffd68c68f2}{get}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classmbed_1_1_file_base}{FileBase}}\ *\mbox{\hyperlink{classmbed_1_1_file_base_ae9af3d7b863ca499d4e4a779632094f5}{\_head}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_file_base}{FileBase}}\ \ \ *\mbox{\hyperlink{classmbed_1_1_file_base_acef47c84dc296ce35d5d2aa3695062af}{\_next}};}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classmbed_1_1_file_base_a9f22fa8bd5986c32dcf8e0a19f95e3b5}{\_name}};}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{PathType}}\ \ \ \ \mbox{\hyperlink{classmbed_1_1_file_base_ae4a065275d45e77c512ec2d7c10f5d7b}{\_path\_type}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{/*\ disallow\ copy\ constructor\ and\ assignment\ operators\ */}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_file_base}{FileBase}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classmbed_1_1_file_base}{FileBase}}\&);}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_file_base}{FileBase}}\ \&\ operator\ =\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classmbed_1_1_file_base}{FileBase}}\&);}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \}\ \textcolor{comment}{//\ namespace\ mbed}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,62 @@
+[1m../Code6/Code5/memory.cpp:70:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R0
+    ^
+[1m../Code6/Code5/memory.cpp:76:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R1
+    ^
+[1m../Code6/Code5/memory.cpp:82:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R2
+    ^
+[1m../Code6/Code5/memory.cpp:88:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R3
+    ^
+[1m../Code6/Code5/memory.cpp:94:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R4
+    ^
+[1m../Code6/Code5/memory.cpp:100:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R5
+    ^
+[1m../Code6/Code5/memory.cpp:106:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R6
+    ^
+[1m../Code6/Code5/memory.cpp:112:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R7
+    ^
+[1m../Code6/Code5/memory.cpp:118:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R8
+    ^
+[1m../Code6/Code5/memory.cpp:124:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R9
+    ^
+[1m../Code6/Code5/memory.cpp:130:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R10
+    ^
+[1m../Code6/Code5/memory.cpp:136:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R11
+    ^
+[1m../Code6/Code5/memory.cpp:142:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, R12
+    ^
+[1m../Code6/Code5/memory.cpp:149:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, SP
+    ^
+[1m../Code6/Code5/memory.cpp:156:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, LR
+    ^
+[1m../Code6/Code5/memory.cpp:163:5: [31merror:[39m Found a exit path from function with non-void return type that has missing return statement [missingReturn][0m
+    MOV R0, PC
+    ^
+[1m../Code6/Code5/src/NHD_0216HZ.cpp:49:10: [31mwarning:[39m Redundant assignment of 'hi_n' to itself. [selfAssignment][0m
+    hi_n = hi_n = (data & 0xF0);
+         ^
+[1m../Code6/Code5/src/UART_poll.cpp:271:0: [31mstyle:[39m The function 'UART_direct_hex_put' is never used. [unusedFunction][0m
+
+^
+[1m../Code6/Code5/src/UART_poll.cpp:260:0: [31mstyle:[39m The function 'UART_hex_put' is never used. [unusedFunction][0m
+
+^
+[1m../Code6/Code5/src/UART_poll.cpp:248:0: [31mstyle:[39m The function 'asc_to_hex' is never used. [unusedFunction][0m
+
+^
+[1m../Code6/Code5/src/Monitor.cpp:303:0: [31mstyle:[39m The function 'is_hex' is never used. [unusedFunction][0m
+

@@ -1,0 +1,90 @@
+\doxysection{Call\+Chain.\+h}
+\hypertarget{_call_chain_8h_source}{}\label{_call_chain_8h_source}\index{mbed/CallChain.h@{mbed/CallChain.h}}
+\mbox{\hyperlink{_call_chain_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_CALLCHAIN\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_CALLCHAIN\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_function_pointer_8h}{FunctionPointer.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacembed}{mbed}}\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classmbed_1_1_function_pointer}{FunctionPointer}}*\ \mbox{\hyperlink{namespacembed_a750d6017837828b77123f35feeebaabf}{pFunctionPointer\_t}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmbed_1_1_call_chain}{CallChain}}\ \{}
+\DoxyCodeLine{00063\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_call_chain_a01b2b14e23b60c4d81522b19ef04cd9b}{CallChain}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmbed_1_1_call_chain_a914b04b74d74f02398f93600e7ec7b27}{size}}\ =\ 4);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmbed_1_1_call_chain_a844f3df70b4603b7859cc545a8ce2c8b}{\string~CallChain}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_function_pointer}{pFunctionPointer\_t}}\ \mbox{\hyperlink{classmbed_1_1_call_chain_a232d59392bfaff0d3950a240f2fee952}{add}}(\textcolor{keywordtype}{void}\ (*function)(\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_function_pointer}{pFunctionPointer\_t}}\ \mbox{\hyperlink{classmbed_1_1_call_chain_a9bd78a3e92768bfafb562d0257297247}{add}}(T\ *tptr,\ \textcolor{keywordtype}{void}\ (T::*mptr)(void))\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ common\_add(\textcolor{keyword}{new}\ \mbox{\hyperlink{classmbed_1_1_function_pointer}{FunctionPointer}}(tptr,\ mptr));}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_function_pointer}{pFunctionPointer\_t}}\ \mbox{\hyperlink{classmbed_1_1_call_chain_a050f0042e62f8271a507ca57d19e6846}{add\_front}}(\textcolor{keywordtype}{void}\ (*function)(\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_function_pointer}{pFunctionPointer\_t}}\ \mbox{\hyperlink{classmbed_1_1_call_chain_ae7f7fe79166ad44e24131a4609a61a14}{add\_front}}(T\ *tptr,\ \textcolor{keywordtype}{void}\ (T::*mptr)(void))\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ common\_add\_front(\textcolor{keyword}{new}\ \mbox{\hyperlink{classmbed_1_1_function_pointer}{FunctionPointer}}(tptr,\ mptr));}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmbed_1_1_call_chain_a914b04b74d74f02398f93600e7ec7b27}{size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_function_pointer}{pFunctionPointer\_t}}\ \mbox{\hyperlink{classmbed_1_1_call_chain_abea593f2dfc6d6e8dd5bb323eff6adab}{get}}(\textcolor{keywordtype}{int}\ i)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmbed_1_1_call_chain_a5881f835f221141fcf49ab9cb9aae5bd}{find}}(\mbox{\hyperlink{classmbed_1_1_function_pointer}{pFunctionPointer\_t}}\ f)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_call_chain_a65693758d2e75e3390e64d27b98556c2}{clear}}();}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classmbed_1_1_call_chain_a4396b8d6374b95f13c95775bd8e0137a}{remove}}(\mbox{\hyperlink{classmbed_1_1_function_pointer}{pFunctionPointer\_t}}\ f);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_call_chain_ac911bd44ea0a14da0b0dd46187bf1081}{call}}();}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#ifdef\ MBED\_OPERATORS}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ operator\ ()(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_call_chain_ac911bd44ea0a14da0b0dd46187bf1081}{call}}();}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_function_pointer}{pFunctionPointer\_t}}\ operator\ [](\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmbed_1_1_call_chain_abea593f2dfc6d6e8dd5bb323eff6adab}{get}}(i);}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \_check\_size();}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{namespacembed_a750d6017837828b77123f35feeebaabf}{pFunctionPointer\_t}}\ common\_add(\mbox{\hyperlink{namespacembed_a750d6017837828b77123f35feeebaabf}{pFunctionPointer\_t}}\ pf);}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{namespacembed_a750d6017837828b77123f35feeebaabf}{pFunctionPointer\_t}}\ common\_add\_front(\mbox{\hyperlink{namespacembed_a750d6017837828b77123f35feeebaabf}{pFunctionPointer\_t}}\ pf);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{namespacembed_a750d6017837828b77123f35feeebaabf}{pFunctionPointer\_t}}*\ \_chain;}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{int}\ \_size;}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{int}\ \_elements;}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{comment}{/*\ disallow\ copy\ constructor\ and\ assignment\ operators\ */}}
+\DoxyCodeLine{00173\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00174\ \ \ \ \ CallChain(\textcolor{keyword}{const}\ CallChain\&);}
+\DoxyCodeLine{00175\ \ \ \ \ CallChain\ \&\ operator\ =\ (\textcolor{keyword}{const}\ CallChain\&);}
+\DoxyCodeLine{00176\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \}\ \textcolor{comment}{//\ namespace\ mbed}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00181\ }
+
+\end{DoxyCode}

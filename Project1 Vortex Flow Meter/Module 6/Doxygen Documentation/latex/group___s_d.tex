@@ -1,0 +1,666 @@
+\doxysubsection{SD}
+\hypertarget{group___s_d}{}\label{group___s_d}\index{SD@{SD}}
+\doxysubsubsubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___s_d___exported___constants}{SD\+\_\+\+Exported\+\_\+\+Constants}}
+\item 
+\mbox{\hyperlink{group___s_d___interrupt___clock}{SD\+\_\+\+Interrupt\+\_\+\+Clock}}
+\begin{DoxyCompactList}\small\item\em macros to handle interrupts and specific clock configurations \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SDIO Handle Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef}{HAL\+\_\+\+SD\+\_\+\+CSDTypedef}}
+\begin{DoxyCompactList}\small\item\em Card Specific Data\+: CSD Register ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef}{HAL\+\_\+\+SD\+\_\+\+CIDTypedef}}
+\begin{DoxyCompactList}\small\item\em Card Identification Data\+: CID Register ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef}{HAL\+\_\+\+SD\+\_\+\+Card\+Status\+Typedef}}
+\begin{DoxyCompactList}\small\item\em SD Card Status returned by ACMD13 ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef}{HAL\+\_\+\+SD\+\_\+\+Card\+Info\+Typedef}}
+\begin{DoxyCompactList}\small\item\em SD Card information structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_d_ga0e053bc407d4d1001b3f3125f17340f7}{SD\+\_\+\+Init\+Type\+Def}}~\mbox{\hyperlink{struct_s_d_i_o___init_type_def}{SDIO\+\_\+\+Init\+Type\+Def}}
+\item 
+\#define \mbox{\hyperlink{group___s_d_gaba823a712a2920fb20f03f74651d0beb}{SD\+\_\+\+Type\+Def}}~\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\+\_\+\+Type\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \{ \newline
+\mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa6dfaca7c6ace1889e0294f4ec3ec535c}{SD\+\_\+\+CMD\+\_\+\+CRC\+\_\+\+FAIL}} = (1)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aad99fcef385ca3270d3bce97ed972ff1c}{SD\+\_\+\+DATA\+\_\+\+CRC\+\_\+\+FAIL}} = (2)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae1c1b2d0962bd3f40490b15aed01c8ff}{SD\+\_\+\+CMD\+\_\+\+RSP\+\_\+\+TIMEOUT}} = (3)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aac5f321853ccd7c8aaa571afab467dddd}{SD\+\_\+\+DATA\+\_\+\+TIMEOUT}} = (4)
+, \newline
+\mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa7b3c2c028697b45c7e4ab738dfb32732}{SD\+\_\+\+TX\+\_\+\+UNDERRUN}} = (5)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa8536106ed9ebb00c16d0f42d78f31e37}{SD\+\_\+\+RX\+\_\+\+OVERRUN}} = (6)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aacc0291fc528b2bb330ca1487a8a3f3cd}{SD\+\_\+\+START\+\_\+\+BIT\+\_\+\+ERR}} = (7)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa2435ce658dcb58fc0970c9750fecbf10}{SD\+\_\+\+CMD\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}} = (8)
+, \newline
+\mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aac862cc999fa6648eeb631ea82a07a51e}{SD\+\_\+\+ADDR\+\_\+\+MISALIGNED}} = (9)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aadd08e6cdc391423ee7c1ba246faf42c3}{SD\+\_\+\+BLOCK\+\_\+\+LEN\+\_\+\+ERR}} = (10)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae83866c46e2c68646ce05ff3707b042e}{SD\+\_\+\+ERASE\+\_\+\+SEQ\+\_\+\+ERR}} = (11)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aac52c7addfcb59055f5701898c3484d06}{SD\+\_\+\+BAD\+\_\+\+ERASE\+\_\+\+PARAM}} = (12)
+, \newline
+\mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa4e295d82b6481694f927367f35aa182d}{SD\+\_\+\+WRITE\+\_\+\+PROT\+\_\+\+VIOLATION}} = (13)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa093949ff310e17d6596e686804cd0e1e}{SD\+\_\+\+LOCK\+\_\+\+UNLOCK\+\_\+\+FAILED}} = (14)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa01a35bd6664353a1af3b9ac093acdf94}{SD\+\_\+\+COM\+\_\+\+CRC\+\_\+\+FAILED}} = (15)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa7fefea39264d07dd179b12be8bf2e51c}{SD\+\_\+\+ILLEGAL\+\_\+\+CMD}} = (16)
+, \newline
+\mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa283091b73f40d5c229c2c3f3d0f4cb74}{SD\+\_\+\+CARD\+\_\+\+ECC\+\_\+\+FAILED}} = (17)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa2c6401e2495de3d9fd3b41c273fda150}{SD\+\_\+\+CC\+\_\+\+ERROR}} = (18)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa46c693b1502d9e2137ead7857cfe5f9b}{SD\+\_\+\+GENERAL\+\_\+\+UNKNOWN\+\_\+\+ERROR}} = (19)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aaadb3266a9761e9e3d82c1b2512ef6668}{SD\+\_\+\+STREAM\+\_\+\+READ\+\_\+\+UNDERRUN}} = (20)
+, \newline
+\mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa3847c922ab4b7f94469768c63084af6b}{SD\+\_\+\+STREAM\+\_\+\+WRITE\+\_\+\+OVERRUN}} = (21)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aadc80e2b4a985f211d85fae68e15fd136}{SD\+\_\+\+CID\+\_\+\+CSD\+\_\+\+OVERWRITE}} = (22)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa07b0cc4f75330bdc7efb59f3b3492a3f}{SD\+\_\+\+WP\+\_\+\+ERASE\+\_\+\+SKIP}} = (23)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa4db59f403f83442543a1f1bef242efbd}{SD\+\_\+\+CARD\+\_\+\+ECC\+\_\+\+DISABLED}} = (24)
+, \newline
+\mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa59f8949439bd7871cb2cf3238c6282c5}{SD\+\_\+\+ERASE\+\_\+\+RESET}} = (25)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aafbcf7369094d1a0fa1932c552ab45382}{SD\+\_\+\+AKE\+\_\+\+SEQ\+\_\+\+ERROR}} = (26)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa97d498fc349b05a8945156a9f3ccdff5}{SD\+\_\+\+INVALID\+\_\+\+VOLTRANGE}} = (27)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa82b0b9ba6052f6f2bd0bee7e79cf8ef3}{SD\+\_\+\+ADDR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}} = (28)
+, \newline
+\mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa9566932cb0ad8fe80d5610da9d11fb55}{SD\+\_\+\+SWITCH\+\_\+\+ERROR}} = (29)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa9e97f8897dab543749255331f57ae1a7}{SD\+\_\+\+SDIO\+\_\+\+DISABLED}} = (30)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae4e66b4e0f2a5f5a49b3c785d9905e8b}{SD\+\_\+\+SDIO\+\_\+\+FUNCTION\+\_\+\+BUSY}} = (31)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aaab75aa11f151a11569079c41d019ef3c}{SD\+\_\+\+SDIO\+\_\+\+FUNCTION\+\_\+\+FAILED}} = (32)
+, \newline
+\mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa544f7094c7417e8e3be527d83c65d024}{SD\+\_\+\+SDIO\+\_\+\+UNKNOWN\+\_\+\+FUNCTION}} = (33)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa3edc8995af0f0ca919abd400d01d235d}{SD\+\_\+\+INTERNAL\+\_\+\+ERROR}} = (34)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aad2334607a2604507143ebbd5fcc82876}{SD\+\_\+\+NOT\+\_\+\+CONFIGURED}} = (35)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa48c30b9e7fbd21a2e3dc134b9d0c8bff}{SD\+\_\+\+REQUEST\+\_\+\+PENDING}} = (36)
+, \newline
+\mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aada6e80166445f5ee6b7e808a4e7aff23}{SD\+\_\+\+REQUEST\+\_\+\+NOT\+\_\+\+APPLICABLE}} = (37)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa1111de40fd22949b14d492954755a70c}{SD\+\_\+\+INVALID\+\_\+\+PARAMETER}} = (38)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa788dcef7dd77feb8a8ba97d84813a8fb}{SD\+\_\+\+UNSUPPORTED\+\_\+\+FEATURE}} = (39)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa280d7d545d73078027a223ff35a2b696}{SD\+\_\+\+UNSUPPORTED\+\_\+\+HW}} = (40)
+, \newline
+\mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa0002d0c8feceb0fb4cd7d9fc96066c3d}{SD\+\_\+\+ERROR}} = (41)
+, \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae7d9e30a15fd1bc4b2cd8f10208e76a6}{SD\+\_\+\+OK}} = (0)
+ \}
+\begin{DoxyCompactList}\small\item\em SD Error status enumeration Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___s_d_gaeac2ceb9473e8e4ea9cd587642d9cbca}{HAL\+\_\+\+SD\+\_\+\+Transfer\+State\+Typedef}} \{ \mbox{\hyperlink{group___s_d_ggaeac2ceb9473e8e4ea9cd587642d9cbcaa52c1686845d340ee5d8c0bc0325f9af3}{SD\+\_\+\+TRANSFER\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{group___s_d_ggaeac2ceb9473e8e4ea9cd587642d9cbcaaef1a870ef1c17e160d57d732328b042e}{SD\+\_\+\+TRANSFER\+\_\+\+BUSY}} = 1
+, \mbox{\hyperlink{group___s_d_ggaeac2ceb9473e8e4ea9cd587642d9cbcaa1c06f1ea5cd5d5f2ecb715654384b047}{SD\+\_\+\+TRANSFER\+\_\+\+ERROR}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em SD Transfer state enumeration structure. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___s_d_ga0e6f2367262980fc7e531981bab32df4}{HAL\+\_\+\+SD\+\_\+\+Card\+State\+Typedef}} \{ \newline
+\mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4a7105d3ddde877b8d09471eb482fb5520}{SD\+\_\+\+CARD\+\_\+\+READY}} = ((uint32\+\_\+t)0x00000001)
+, \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4a18689e3260641d154376eba9a1e3da47}{SD\+\_\+\+CARD\+\_\+\+IDENTIFICATION}} = ((uint32\+\_\+t)0x00000002)
+, \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4a6e24b45fe387177e2383bac672525f1a}{SD\+\_\+\+CARD\+\_\+\+STANDBY}} = ((uint32\+\_\+t)0x00000003)
+, \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4a090f585cfc114861ad07114914a3ad1d}{SD\+\_\+\+CARD\+\_\+\+TRANSFER}} = ((uint32\+\_\+t)0x00000004)
+, \newline
+\mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4a23dec93b22009b39f7b7311f22a7c396}{SD\+\_\+\+CARD\+\_\+\+SENDING}} = ((uint32\+\_\+t)0x00000005)
+, \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4a467165b416761a4858546d616c8dac12}{SD\+\_\+\+CARD\+\_\+\+RECEIVING}} = ((uint32\+\_\+t)0x00000006)
+, \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4aa72e3de9b7ac3217b05862ec2412c6cc}{SD\+\_\+\+CARD\+\_\+\+PROGRAMMING}} = ((uint32\+\_\+t)0x00000007)
+, \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4ac5dd213f085b94ecd3735f15d6a257ec}{SD\+\_\+\+CARD\+\_\+\+DISCONNECTED}} = ((uint32\+\_\+t)0x00000008)
+, \newline
+\mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4aed9c89d9fc0101e995ae957f132af14c}{SD\+\_\+\+CARD\+\_\+\+ERROR}} = ((uint32\+\_\+t)0x000000\+FF)
+ \}
+\begin{DoxyCompactList}\small\item\em SD Card State enumeration structure. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___s_d_ga82fe633c4b9fa45bede0890e9e23d4c1}{HAL\+\_\+\+SD\+\_\+\+Operation\+Typedef}} \{ \mbox{\hyperlink{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1a99c20a704cce28fee37b9b0f14b2ff15}{SD\+\_\+\+READ\+\_\+\+SINGLE\+\_\+\+BLOCK}} = 0
+, \mbox{\hyperlink{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1aa58b1d9f75b639dc1b28163988bc8aa3}{SD\+\_\+\+READ\+\_\+\+MULTIPLE\+\_\+\+BLOCK}} = 1
+, \mbox{\hyperlink{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1adca664fbf5ff0b4d174ca21641e01004}{SD\+\_\+\+WRITE\+\_\+\+SINGLE\+\_\+\+BLOCK}} = 2
+, \mbox{\hyperlink{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1a9cd6e9c88c3989531a71015147496895}{SD\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+BLOCK}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em SD Operation enumeration structure ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_ga55004d6b817f7e431bd97101ad2d0b62}{HAL\+\_\+\+SD\+\_\+\+Init}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd, \mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef}{HAL\+\_\+\+SD\+\_\+\+Card\+Info\+Typedef}} \texorpdfstring{$\ast$}{*}SDCard\+Info)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_ga6bba9fce639c7d476dbd443b8c9e3117}{HAL\+\_\+\+SD\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd)
+\item 
+void \mbox{\hyperlink{group___s_d_ga11b692d44079cb65eb037202d627ae96}{HAL\+\_\+\+SD\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd)
+\item 
+void \mbox{\hyperlink{group___s_d_gaad3ad0f8145fca4a29dbe8beef5db085}{HAL\+\_\+\+SD\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_gad0d930e6695258d4227f3cc85690b35e}{HAL\+\_\+\+SD\+\_\+\+Read\+Blocks}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Read\+Buffer, uint64\+\_\+t Read\+Addr, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Block\+Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Number\+Of\+Blocks)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_ga879dae58b5e4f8514be2d3fac5d99f2b}{HAL\+\_\+\+SD\+\_\+\+Write\+Blocks}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Write\+Buffer, uint64\+\_\+t Write\+Addr, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Block\+Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Number\+Of\+Blocks)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_ga49d1d5c7f592addea7b36c7cf49faba4}{HAL\+\_\+\+SD\+\_\+\+Erase}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd, uint64\+\_\+t startaddr, uint64\+\_\+t endaddr)
+\item 
+void \mbox{\hyperlink{group___s_d_ga78f4def85126ae50eba783a6b237ec0f}{HAL\+\_\+\+SD\+\_\+\+IRQHandler}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd)
+\item 
+void \mbox{\hyperlink{group___s_d_ga57b3c755c8430777cfe821c8a12e794e}{HAL\+\_\+\+SD\+\_\+\+DMA\+\_\+\+Rx\+Cplt\+Callback}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+void \mbox{\hyperlink{group___s_d_ga66cb9701bb00d0bb363ea06312ea4446}{HAL\+\_\+\+SD\+\_\+\+DMA\+\_\+\+Rx\+Error\+Callback}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+void \mbox{\hyperlink{group___s_d_ga98f37b0096e2d3dec374321524015a1f}{HAL\+\_\+\+SD\+\_\+\+DMA\+\_\+\+Tx\+Cplt\+Callback}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+void \mbox{\hyperlink{group___s_d_ga45c840786fabc5ef29d887b119b01442}{HAL\+\_\+\+SD\+\_\+\+DMA\+\_\+\+Tx\+Error\+Callback}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+void \mbox{\hyperlink{group___s_d_ga4d1214c3d3e6c1e5dd587592e7618177}{HAL\+\_\+\+SD\+\_\+\+Xfer\+Cplt\+Callback}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd)
+\item 
+void \mbox{\hyperlink{group___s_d_gad7d953cc31fbb7e875aef443027b3e5c}{HAL\+\_\+\+SD\+\_\+\+Xfer\+Error\+Callback}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_ga445d2fb6f83f1680ca2295ebc8fb591e}{HAL\+\_\+\+SD\+\_\+\+Read\+Blocks\+\_\+\+DMA}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Read\+Buffer, uint64\+\_\+t Read\+Addr, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Block\+Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Number\+Of\+Blocks)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_ga4e9138ffd8d54c138b21cc95e2b5955c}{HAL\+\_\+\+SD\+\_\+\+Write\+Blocks\+\_\+\+DMA}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Write\+Buffer, uint64\+\_\+t Write\+Addr, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Block\+Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Number\+Of\+Blocks)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_ga1e823fda07f8246994c13fe9397e38ae}{HAL\+\_\+\+SD\+\_\+\+Check\+Write\+Operation}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_ga91b0db763b2d9360f10cc959b1c8547e}{HAL\+\_\+\+SD\+\_\+\+Check\+Read\+Operation}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_ga757649bfd6987928fc7f968a881767b4}{HAL\+\_\+\+SD\+\_\+\+Get\+\_\+\+Card\+Info}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd, \mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef}{HAL\+\_\+\+SD\+\_\+\+Card\+Info\+Typedef}} \texorpdfstring{$\ast$}{*}p\+Card\+Info)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_ga55e5d39a7a3b67b4b236e014c429e4fd}{HAL\+\_\+\+SD\+\_\+\+Wide\+Bus\+Operation\+\_\+\+Config}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Wide\+Mode)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_ga28d4283c9c7caafe6b0f65c15d805e16}{HAL\+\_\+\+SD\+\_\+\+Stop\+Transfer}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_ga5c1fb71046436127d873a16511b40777}{HAL\+\_\+\+SD\+\_\+\+High\+Speed}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_ga0f6201bbcab5c9a4fbb059d3659a2d56}{HAL\+\_\+\+SD\+\_\+\+Send\+SDStatus}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+SDstatus)
+\item 
+\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} \mbox{\hyperlink{group___s_d_gaa21f427748a4d59b41b45fff21342e3f}{HAL\+\_\+\+SD\+\_\+\+Get\+Card\+Status}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd, \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef}{HAL\+\_\+\+SD\+\_\+\+Card\+Status\+Typedef}} \texorpdfstring{$\ast$}{*}p\+Card\+Status)
+\item 
+\mbox{\hyperlink{group___s_d_gaeac2ceb9473e8e4ea9cd587642d9cbca}{HAL\+\_\+\+SD\+\_\+\+Transfer\+State\+Typedef}} \mbox{\hyperlink{group___s_d_ga7e359042aa28a3ceab37d70885af3051}{HAL\+\_\+\+SD\+\_\+\+Get\+Status}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{group___s_d_ga0e053bc407d4d1001b3f3125f17340f7}\label{group___s_d_ga0e053bc407d4d1001b3f3125f17340f7} 
+\index{SD@{SD}!SD\_InitTypeDef@{SD\_InitTypeDef}}
+\index{SD\_InitTypeDef@{SD\_InitTypeDef}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{SD\_InitTypeDef}{SD\_InitTypeDef}}
+{\footnotesize\ttfamily \#define SD\+\_\+\+Init\+Type\+Def~\mbox{\hyperlink{struct_s_d_i_o___init_type_def}{SDIO\+\_\+\+Init\+Type\+Def}}}
+
+\Hypertarget{group___s_d_gaba823a712a2920fb20f03f74651d0beb}\label{group___s_d_gaba823a712a2920fb20f03f74651d0beb} 
+\index{SD@{SD}!SD\_TypeDef@{SD\_TypeDef}}
+\index{SD\_TypeDef@{SD\_TypeDef}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{SD\_TypeDef}{SD\_TypeDef}}
+{\footnotesize\ttfamily \#define SD\+\_\+\+Type\+Def~\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\+\_\+\+Type\+Def}}}
+
+
+
+\doxysubsubsection{Enumeration Type Documentation}
+\Hypertarget{group___s_d_ga0e6f2367262980fc7e531981bab32df4}\label{group___s_d_ga0e6f2367262980fc7e531981bab32df4} 
+\index{SD@{SD}!HAL\_SD\_CardStateTypedef@{HAL\_SD\_CardStateTypedef}}
+\index{HAL\_SD\_CardStateTypedef@{HAL\_SD\_CardStateTypedef}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_CardStateTypedef}{HAL\_SD\_CardStateTypedef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___s_d_ga0e6f2367262980fc7e531981bab32df4}{HAL\+\_\+\+SD\+\_\+\+Card\+State\+Typedef}}}
+
+
+
+SD Card State enumeration structure. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CARD\_READY@{SD\_CARD\_READY}!SD@{SD}}\index{SD@{SD}!SD\_CARD\_READY@{SD\_CARD\_READY}}}\Hypertarget{group___s_d_gga0e6f2367262980fc7e531981bab32df4a7105d3ddde877b8d09471eb482fb5520}\label{group___s_d_gga0e6f2367262980fc7e531981bab32df4a7105d3ddde877b8d09471eb482fb5520} 
+SD\+\_\+\+CARD\+\_\+\+READY&Card state is ready ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CARD\_IDENTIFICATION@{SD\_CARD\_IDENTIFICATION}!SD@{SD}}\index{SD@{SD}!SD\_CARD\_IDENTIFICATION@{SD\_CARD\_IDENTIFICATION}}}\Hypertarget{group___s_d_gga0e6f2367262980fc7e531981bab32df4a18689e3260641d154376eba9a1e3da47}\label{group___s_d_gga0e6f2367262980fc7e531981bab32df4a18689e3260641d154376eba9a1e3da47} 
+SD\+\_\+\+CARD\+\_\+\+IDENTIFICATION&Card is in identification state ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CARD\_STANDBY@{SD\_CARD\_STANDBY}!SD@{SD}}\index{SD@{SD}!SD\_CARD\_STANDBY@{SD\_CARD\_STANDBY}}}\Hypertarget{group___s_d_gga0e6f2367262980fc7e531981bab32df4a6e24b45fe387177e2383bac672525f1a}\label{group___s_d_gga0e6f2367262980fc7e531981bab32df4a6e24b45fe387177e2383bac672525f1a} 
+SD\+\_\+\+CARD\+\_\+\+STANDBY&Card is in standby state ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CARD\_TRANSFER@{SD\_CARD\_TRANSFER}!SD@{SD}}\index{SD@{SD}!SD\_CARD\_TRANSFER@{SD\_CARD\_TRANSFER}}}\Hypertarget{group___s_d_gga0e6f2367262980fc7e531981bab32df4a090f585cfc114861ad07114914a3ad1d}\label{group___s_d_gga0e6f2367262980fc7e531981bab32df4a090f585cfc114861ad07114914a3ad1d} 
+SD\+\_\+\+CARD\+\_\+\+TRANSFER&Card is in transfer state ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CARD\_SENDING@{SD\_CARD\_SENDING}!SD@{SD}}\index{SD@{SD}!SD\_CARD\_SENDING@{SD\_CARD\_SENDING}}}\Hypertarget{group___s_d_gga0e6f2367262980fc7e531981bab32df4a23dec93b22009b39f7b7311f22a7c396}\label{group___s_d_gga0e6f2367262980fc7e531981bab32df4a23dec93b22009b39f7b7311f22a7c396} 
+SD\+\_\+\+CARD\+\_\+\+SENDING&Card is sending an operation ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CARD\_RECEIVING@{SD\_CARD\_RECEIVING}!SD@{SD}}\index{SD@{SD}!SD\_CARD\_RECEIVING@{SD\_CARD\_RECEIVING}}}\Hypertarget{group___s_d_gga0e6f2367262980fc7e531981bab32df4a467165b416761a4858546d616c8dac12}\label{group___s_d_gga0e6f2367262980fc7e531981bab32df4a467165b416761a4858546d616c8dac12} 
+SD\+\_\+\+CARD\+\_\+\+RECEIVING&Card is receiving operation information \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CARD\_PROGRAMMING@{SD\_CARD\_PROGRAMMING}!SD@{SD}}\index{SD@{SD}!SD\_CARD\_PROGRAMMING@{SD\_CARD\_PROGRAMMING}}}\Hypertarget{group___s_d_gga0e6f2367262980fc7e531981bab32df4aa72e3de9b7ac3217b05862ec2412c6cc}\label{group___s_d_gga0e6f2367262980fc7e531981bab32df4aa72e3de9b7ac3217b05862ec2412c6cc} 
+SD\+\_\+\+CARD\+\_\+\+PROGRAMMING&Card is in programming state ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CARD\_DISCONNECTED@{SD\_CARD\_DISCONNECTED}!SD@{SD}}\index{SD@{SD}!SD\_CARD\_DISCONNECTED@{SD\_CARD\_DISCONNECTED}}}\Hypertarget{group___s_d_gga0e6f2367262980fc7e531981bab32df4ac5dd213f085b94ecd3735f15d6a257ec}\label{group___s_d_gga0e6f2367262980fc7e531981bab32df4ac5dd213f085b94ecd3735f15d6a257ec} 
+SD\+\_\+\+CARD\+\_\+\+DISCONNECTED&Card is disconnected ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CARD\_ERROR@{SD\_CARD\_ERROR}!SD@{SD}}\index{SD@{SD}!SD\_CARD\_ERROR@{SD\_CARD\_ERROR}}}\Hypertarget{group___s_d_gga0e6f2367262980fc7e531981bab32df4aed9c89d9fc0101e995ae957f132af14c}\label{group___s_d_gga0e6f2367262980fc7e531981bab32df4aed9c89d9fc0101e995ae957f132af14c} 
+SD\+\_\+\+CARD\+\_\+\+ERROR&Card is in error state ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}\label{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a} 
+\index{SD@{SD}!HAL\_SD\_ErrorTypedef@{HAL\_SD\_ErrorTypedef}}
+\index{HAL\_SD\_ErrorTypedef@{HAL\_SD\_ErrorTypedef}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_ErrorTypedef}{HAL\_SD\_ErrorTypedef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}}}
+
+
+
+SD Error status enumeration Structure definition ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CMD\_CRC\_FAIL@{SD\_CMD\_CRC\_FAIL}!SD@{SD}}\index{SD@{SD}!SD\_CMD\_CRC\_FAIL@{SD\_CMD\_CRC\_FAIL}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa6dfaca7c6ace1889e0294f4ec3ec535c}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa6dfaca7c6ace1889e0294f4ec3ec535c} 
+SD\+\_\+\+CMD\+\_\+\+CRC\+\_\+\+FAIL&SD specific error defines ~\newline
+ Command response received (but CRC check failed) ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_DATA\_CRC\_FAIL@{SD\_DATA\_CRC\_FAIL}!SD@{SD}}\index{SD@{SD}!SD\_DATA\_CRC\_FAIL@{SD\_DATA\_CRC\_FAIL}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aad99fcef385ca3270d3bce97ed972ff1c}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aad99fcef385ca3270d3bce97ed972ff1c} 
+SD\+\_\+\+DATA\+\_\+\+CRC\+\_\+\+FAIL&Data block sent/received (CRC check failed) ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CMD\_RSP\_TIMEOUT@{SD\_CMD\_RSP\_TIMEOUT}!SD@{SD}}\index{SD@{SD}!SD\_CMD\_RSP\_TIMEOUT@{SD\_CMD\_RSP\_TIMEOUT}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae1c1b2d0962bd3f40490b15aed01c8ff}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae1c1b2d0962bd3f40490b15aed01c8ff} 
+SD\+\_\+\+CMD\+\_\+\+RSP\+\_\+\+TIMEOUT&Command response timeout ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_DATA\_TIMEOUT@{SD\_DATA\_TIMEOUT}!SD@{SD}}\index{SD@{SD}!SD\_DATA\_TIMEOUT@{SD\_DATA\_TIMEOUT}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aac5f321853ccd7c8aaa571afab467dddd}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aac5f321853ccd7c8aaa571afab467dddd} 
+SD\+\_\+\+DATA\+\_\+\+TIMEOUT&Data timeout ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_TX\_UNDERRUN@{SD\_TX\_UNDERRUN}!SD@{SD}}\index{SD@{SD}!SD\_TX\_UNDERRUN@{SD\_TX\_UNDERRUN}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa7b3c2c028697b45c7e4ab738dfb32732}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa7b3c2c028697b45c7e4ab738dfb32732} 
+SD\+\_\+\+TX\+\_\+\+UNDERRUN&Transmit FIFO underrun ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_RX\_OVERRUN@{SD\_RX\_OVERRUN}!SD@{SD}}\index{SD@{SD}!SD\_RX\_OVERRUN@{SD\_RX\_OVERRUN}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa8536106ed9ebb00c16d0f42d78f31e37}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa8536106ed9ebb00c16d0f42d78f31e37} 
+SD\+\_\+\+RX\+\_\+\+OVERRUN&Receive FIFO overrun ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_START\_BIT\_ERR@{SD\_START\_BIT\_ERR}!SD@{SD}}\index{SD@{SD}!SD\_START\_BIT\_ERR@{SD\_START\_BIT\_ERR}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aacc0291fc528b2bb330ca1487a8a3f3cd}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aacc0291fc528b2bb330ca1487a8a3f3cd} 
+SD\+\_\+\+START\+\_\+\+BIT\+\_\+\+ERR&Start bit not detected on all data signals in wide bus mode ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CMD\_OUT\_OF\_RANGE@{SD\_CMD\_OUT\_OF\_RANGE}!SD@{SD}}\index{SD@{SD}!SD\_CMD\_OUT\_OF\_RANGE@{SD\_CMD\_OUT\_OF\_RANGE}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa2435ce658dcb58fc0970c9750fecbf10}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa2435ce658dcb58fc0970c9750fecbf10} 
+SD\+\_\+\+CMD\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE&Command\textquotesingle{}s argument was out of range. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_ADDR\_MISALIGNED@{SD\_ADDR\_MISALIGNED}!SD@{SD}}\index{SD@{SD}!SD\_ADDR\_MISALIGNED@{SD\_ADDR\_MISALIGNED}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aac862cc999fa6648eeb631ea82a07a51e}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aac862cc999fa6648eeb631ea82a07a51e} 
+SD\+\_\+\+ADDR\+\_\+\+MISALIGNED&Misaligned address ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_BLOCK\_LEN\_ERR@{SD\_BLOCK\_LEN\_ERR}!SD@{SD}}\index{SD@{SD}!SD\_BLOCK\_LEN\_ERR@{SD\_BLOCK\_LEN\_ERR}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aadd08e6cdc391423ee7c1ba246faf42c3}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aadd08e6cdc391423ee7c1ba246faf42c3} 
+SD\+\_\+\+BLOCK\+\_\+\+LEN\+\_\+\+ERR&Transferred block length is not allowed for the card or the number of transferred bytes does not match the block length \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_ERASE\_SEQ\_ERR@{SD\_ERASE\_SEQ\_ERR}!SD@{SD}}\index{SD@{SD}!SD\_ERASE\_SEQ\_ERR@{SD\_ERASE\_SEQ\_ERR}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae83866c46e2c68646ce05ff3707b042e}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae83866c46e2c68646ce05ff3707b042e} 
+SD\+\_\+\+ERASE\+\_\+\+SEQ\+\_\+\+ERR&An error in the sequence of erase command occurs. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_BAD\_ERASE\_PARAM@{SD\_BAD\_ERASE\_PARAM}!SD@{SD}}\index{SD@{SD}!SD\_BAD\_ERASE\_PARAM@{SD\_BAD\_ERASE\_PARAM}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aac52c7addfcb59055f5701898c3484d06}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aac52c7addfcb59055f5701898c3484d06} 
+SD\+\_\+\+BAD\+\_\+\+ERASE\+\_\+\+PARAM&An invalid selection for erase groups ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_WRITE\_PROT\_VIOLATION@{SD\_WRITE\_PROT\_VIOLATION}!SD@{SD}}\index{SD@{SD}!SD\_WRITE\_PROT\_VIOLATION@{SD\_WRITE\_PROT\_VIOLATION}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa4e295d82b6481694f927367f35aa182d}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa4e295d82b6481694f927367f35aa182d} 
+SD\+\_\+\+WRITE\+\_\+\+PROT\+\_\+\+VIOLATION&Attempt to program a write protect block ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_LOCK\_UNLOCK\_FAILED@{SD\_LOCK\_UNLOCK\_FAILED}!SD@{SD}}\index{SD@{SD}!SD\_LOCK\_UNLOCK\_FAILED@{SD\_LOCK\_UNLOCK\_FAILED}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa093949ff310e17d6596e686804cd0e1e}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa093949ff310e17d6596e686804cd0e1e} 
+SD\+\_\+\+LOCK\+\_\+\+UNLOCK\+\_\+\+FAILED&Sequence or password error has been detected in unlock command or if there was an attempt to access a locked card \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_COM\_CRC\_FAILED@{SD\_COM\_CRC\_FAILED}!SD@{SD}}\index{SD@{SD}!SD\_COM\_CRC\_FAILED@{SD\_COM\_CRC\_FAILED}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa01a35bd6664353a1af3b9ac093acdf94}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa01a35bd6664353a1af3b9ac093acdf94} 
+SD\+\_\+\+COM\+\_\+\+CRC\+\_\+\+FAILED&CRC check of the previous command failed ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_ILLEGAL\_CMD@{SD\_ILLEGAL\_CMD}!SD@{SD}}\index{SD@{SD}!SD\_ILLEGAL\_CMD@{SD\_ILLEGAL\_CMD}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa7fefea39264d07dd179b12be8bf2e51c}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa7fefea39264d07dd179b12be8bf2e51c} 
+SD\+\_\+\+ILLEGAL\+\_\+\+CMD&Command is not legal for the card state ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CARD\_ECC\_FAILED@{SD\_CARD\_ECC\_FAILED}!SD@{SD}}\index{SD@{SD}!SD\_CARD\_ECC\_FAILED@{SD\_CARD\_ECC\_FAILED}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa283091b73f40d5c229c2c3f3d0f4cb74}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa283091b73f40d5c229c2c3f3d0f4cb74} 
+SD\+\_\+\+CARD\+\_\+\+ECC\+\_\+\+FAILED&Card internal ECC was applied but failed to correct the data \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CC\_ERROR@{SD\_CC\_ERROR}!SD@{SD}}\index{SD@{SD}!SD\_CC\_ERROR@{SD\_CC\_ERROR}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa2c6401e2495de3d9fd3b41c273fda150}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa2c6401e2495de3d9fd3b41c273fda150} 
+SD\+\_\+\+CC\+\_\+\+ERROR&Internal card controller error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_GENERAL\_UNKNOWN\_ERROR@{SD\_GENERAL\_UNKNOWN\_ERROR}!SD@{SD}}\index{SD@{SD}!SD\_GENERAL\_UNKNOWN\_ERROR@{SD\_GENERAL\_UNKNOWN\_ERROR}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa46c693b1502d9e2137ead7857cfe5f9b}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa46c693b1502d9e2137ead7857cfe5f9b} 
+SD\+\_\+\+GENERAL\+\_\+\+UNKNOWN\+\_\+\+ERROR&General or unknown error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_STREAM\_READ\_UNDERRUN@{SD\_STREAM\_READ\_UNDERRUN}!SD@{SD}}\index{SD@{SD}!SD\_STREAM\_READ\_UNDERRUN@{SD\_STREAM\_READ\_UNDERRUN}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aaadb3266a9761e9e3d82c1b2512ef6668}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aaadb3266a9761e9e3d82c1b2512ef6668} 
+SD\+\_\+\+STREAM\+\_\+\+READ\+\_\+\+UNDERRUN&The card could not sustain data transfer in stream read operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_STREAM\_WRITE\_OVERRUN@{SD\_STREAM\_WRITE\_OVERRUN}!SD@{SD}}\index{SD@{SD}!SD\_STREAM\_WRITE\_OVERRUN@{SD\_STREAM\_WRITE\_OVERRUN}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa3847c922ab4b7f94469768c63084af6b}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa3847c922ab4b7f94469768c63084af6b} 
+SD\+\_\+\+STREAM\+\_\+\+WRITE\+\_\+\+OVERRUN&The card could not sustain data programming in stream mode ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CID\_CSD\_OVERWRITE@{SD\_CID\_CSD\_OVERWRITE}!SD@{SD}}\index{SD@{SD}!SD\_CID\_CSD\_OVERWRITE@{SD\_CID\_CSD\_OVERWRITE}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aadc80e2b4a985f211d85fae68e15fd136}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aadc80e2b4a985f211d85fae68e15fd136} 
+SD\+\_\+\+CID\+\_\+\+CSD\+\_\+\+OVERWRITE&CID/\+CSD overwrite error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_WP\_ERASE\_SKIP@{SD\_WP\_ERASE\_SKIP}!SD@{SD}}\index{SD@{SD}!SD\_WP\_ERASE\_SKIP@{SD\_WP\_ERASE\_SKIP}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa07b0cc4f75330bdc7efb59f3b3492a3f}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa07b0cc4f75330bdc7efb59f3b3492a3f} 
+SD\+\_\+\+WP\+\_\+\+ERASE\+\_\+\+SKIP&Only partial address space was erased ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_CARD\_ECC\_DISABLED@{SD\_CARD\_ECC\_DISABLED}!SD@{SD}}\index{SD@{SD}!SD\_CARD\_ECC\_DISABLED@{SD\_CARD\_ECC\_DISABLED}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa4db59f403f83442543a1f1bef242efbd}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa4db59f403f83442543a1f1bef242efbd} 
+SD\+\_\+\+CARD\+\_\+\+ECC\+\_\+\+DISABLED&Command has been executed without using internal ECC ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_ERASE\_RESET@{SD\_ERASE\_RESET}!SD@{SD}}\index{SD@{SD}!SD\_ERASE\_RESET@{SD\_ERASE\_RESET}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa59f8949439bd7871cb2cf3238c6282c5}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa59f8949439bd7871cb2cf3238c6282c5} 
+SD\+\_\+\+ERASE\+\_\+\+RESET&Erase sequence was cleared before executing because an out of erase sequence command was received \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_AKE\_SEQ\_ERROR@{SD\_AKE\_SEQ\_ERROR}!SD@{SD}}\index{SD@{SD}!SD\_AKE\_SEQ\_ERROR@{SD\_AKE\_SEQ\_ERROR}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aafbcf7369094d1a0fa1932c552ab45382}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aafbcf7369094d1a0fa1932c552ab45382} 
+SD\+\_\+\+AKE\+\_\+\+SEQ\+\_\+\+ERROR&Error in sequence of authentication. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_INVALID\_VOLTRANGE@{SD\_INVALID\_VOLTRANGE}!SD@{SD}}\index{SD@{SD}!SD\_INVALID\_VOLTRANGE@{SD\_INVALID\_VOLTRANGE}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa97d498fc349b05a8945156a9f3ccdff5}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa97d498fc349b05a8945156a9f3ccdff5} 
+SD\+\_\+\+INVALID\+\_\+\+VOLTRANGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_ADDR\_OUT\_OF\_RANGE@{SD\_ADDR\_OUT\_OF\_RANGE}!SD@{SD}}\index{SD@{SD}!SD\_ADDR\_OUT\_OF\_RANGE@{SD\_ADDR\_OUT\_OF\_RANGE}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa82b0b9ba6052f6f2bd0bee7e79cf8ef3}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa82b0b9ba6052f6f2bd0bee7e79cf8ef3} 
+SD\+\_\+\+ADDR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_SWITCH\_ERROR@{SD\_SWITCH\_ERROR}!SD@{SD}}\index{SD@{SD}!SD\_SWITCH\_ERROR@{SD\_SWITCH\_ERROR}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa9566932cb0ad8fe80d5610da9d11fb55}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa9566932cb0ad8fe80d5610da9d11fb55} 
+SD\+\_\+\+SWITCH\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_SDIO\_DISABLED@{SD\_SDIO\_DISABLED}!SD@{SD}}\index{SD@{SD}!SD\_SDIO\_DISABLED@{SD\_SDIO\_DISABLED}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa9e97f8897dab543749255331f57ae1a7}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa9e97f8897dab543749255331f57ae1a7} 
+SD\+\_\+\+SDIO\+\_\+\+DISABLED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_SDIO\_FUNCTION\_BUSY@{SD\_SDIO\_FUNCTION\_BUSY}!SD@{SD}}\index{SD@{SD}!SD\_SDIO\_FUNCTION\_BUSY@{SD\_SDIO\_FUNCTION\_BUSY}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae4e66b4e0f2a5f5a49b3c785d9905e8b}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae4e66b4e0f2a5f5a49b3c785d9905e8b} 
+SD\+\_\+\+SDIO\+\_\+\+FUNCTION\+\_\+\+BUSY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_SDIO\_FUNCTION\_FAILED@{SD\_SDIO\_FUNCTION\_FAILED}!SD@{SD}}\index{SD@{SD}!SD\_SDIO\_FUNCTION\_FAILED@{SD\_SDIO\_FUNCTION\_FAILED}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aaab75aa11f151a11569079c41d019ef3c}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aaab75aa11f151a11569079c41d019ef3c} 
+SD\+\_\+\+SDIO\+\_\+\+FUNCTION\+\_\+\+FAILED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_SDIO\_UNKNOWN\_FUNCTION@{SD\_SDIO\_UNKNOWN\_FUNCTION}!SD@{SD}}\index{SD@{SD}!SD\_SDIO\_UNKNOWN\_FUNCTION@{SD\_SDIO\_UNKNOWN\_FUNCTION}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa544f7094c7417e8e3be527d83c65d024}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa544f7094c7417e8e3be527d83c65d024} 
+SD\+\_\+\+SDIO\+\_\+\+UNKNOWN\+\_\+\+FUNCTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_INTERNAL\_ERROR@{SD\_INTERNAL\_ERROR}!SD@{SD}}\index{SD@{SD}!SD\_INTERNAL\_ERROR@{SD\_INTERNAL\_ERROR}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa3edc8995af0f0ca919abd400d01d235d}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa3edc8995af0f0ca919abd400d01d235d} 
+SD\+\_\+\+INTERNAL\+\_\+\+ERROR&Standard error defines ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_NOT\_CONFIGURED@{SD\_NOT\_CONFIGURED}!SD@{SD}}\index{SD@{SD}!SD\_NOT\_CONFIGURED@{SD\_NOT\_CONFIGURED}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aad2334607a2604507143ebbd5fcc82876}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aad2334607a2604507143ebbd5fcc82876} 
+SD\+\_\+\+NOT\+\_\+\+CONFIGURED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_REQUEST\_PENDING@{SD\_REQUEST\_PENDING}!SD@{SD}}\index{SD@{SD}!SD\_REQUEST\_PENDING@{SD\_REQUEST\_PENDING}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa48c30b9e7fbd21a2e3dc134b9d0c8bff}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa48c30b9e7fbd21a2e3dc134b9d0c8bff} 
+SD\+\_\+\+REQUEST\+\_\+\+PENDING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_REQUEST\_NOT\_APPLICABLE@{SD\_REQUEST\_NOT\_APPLICABLE}!SD@{SD}}\index{SD@{SD}!SD\_REQUEST\_NOT\_APPLICABLE@{SD\_REQUEST\_NOT\_APPLICABLE}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aada6e80166445f5ee6b7e808a4e7aff23}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aada6e80166445f5ee6b7e808a4e7aff23} 
+SD\+\_\+\+REQUEST\+\_\+\+NOT\+\_\+\+APPLICABLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_INVALID\_PARAMETER@{SD\_INVALID\_PARAMETER}!SD@{SD}}\index{SD@{SD}!SD\_INVALID\_PARAMETER@{SD\_INVALID\_PARAMETER}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa1111de40fd22949b14d492954755a70c}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa1111de40fd22949b14d492954755a70c} 
+SD\+\_\+\+INVALID\+\_\+\+PARAMETER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_UNSUPPORTED\_FEATURE@{SD\_UNSUPPORTED\_FEATURE}!SD@{SD}}\index{SD@{SD}!SD\_UNSUPPORTED\_FEATURE@{SD\_UNSUPPORTED\_FEATURE}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa788dcef7dd77feb8a8ba97d84813a8fb}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa788dcef7dd77feb8a8ba97d84813a8fb} 
+SD\+\_\+\+UNSUPPORTED\+\_\+\+FEATURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_UNSUPPORTED\_HW@{SD\_UNSUPPORTED\_HW}!SD@{SD}}\index{SD@{SD}!SD\_UNSUPPORTED\_HW@{SD\_UNSUPPORTED\_HW}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa280d7d545d73078027a223ff35a2b696}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa280d7d545d73078027a223ff35a2b696} 
+SD\+\_\+\+UNSUPPORTED\+\_\+\+HW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_ERROR@{SD\_ERROR}!SD@{SD}}\index{SD@{SD}!SD\_ERROR@{SD\_ERROR}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa0002d0c8feceb0fb4cd7d9fc96066c3d}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa0002d0c8feceb0fb4cd7d9fc96066c3d} 
+SD\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_OK@{SD\_OK}!SD@{SD}}\index{SD@{SD}!SD\_OK@{SD\_OK}}}\Hypertarget{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae7d9e30a15fd1bc4b2cd8f10208e76a6}\label{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae7d9e30a15fd1bc4b2cd8f10208e76a6} 
+SD\+\_\+\+OK&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___s_d_ga82fe633c4b9fa45bede0890e9e23d4c1}\label{group___s_d_ga82fe633c4b9fa45bede0890e9e23d4c1} 
+\index{SD@{SD}!HAL\_SD\_OperationTypedef@{HAL\_SD\_OperationTypedef}}
+\index{HAL\_SD\_OperationTypedef@{HAL\_SD\_OperationTypedef}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_OperationTypedef}{HAL\_SD\_OperationTypedef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___s_d_ga82fe633c4b9fa45bede0890e9e23d4c1}{HAL\+\_\+\+SD\+\_\+\+Operation\+Typedef}}}
+
+
+
+SD Operation enumeration structure ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_READ\_SINGLE\_BLOCK@{SD\_READ\_SINGLE\_BLOCK}!SD@{SD}}\index{SD@{SD}!SD\_READ\_SINGLE\_BLOCK@{SD\_READ\_SINGLE\_BLOCK}}}\Hypertarget{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1a99c20a704cce28fee37b9b0f14b2ff15}\label{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1a99c20a704cce28fee37b9b0f14b2ff15} 
+SD\+\_\+\+READ\+\_\+\+SINGLE\+\_\+\+BLOCK&Read single block operation ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_READ\_MULTIPLE\_BLOCK@{SD\_READ\_MULTIPLE\_BLOCK}!SD@{SD}}\index{SD@{SD}!SD\_READ\_MULTIPLE\_BLOCK@{SD\_READ\_MULTIPLE\_BLOCK}}}\Hypertarget{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1aa58b1d9f75b639dc1b28163988bc8aa3}\label{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1aa58b1d9f75b639dc1b28163988bc8aa3} 
+SD\+\_\+\+READ\+\_\+\+MULTIPLE\+\_\+\+BLOCK&Read multiple blocks operation ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_WRITE\_SINGLE\_BLOCK@{SD\_WRITE\_SINGLE\_BLOCK}!SD@{SD}}\index{SD@{SD}!SD\_WRITE\_SINGLE\_BLOCK@{SD\_WRITE\_SINGLE\_BLOCK}}}\Hypertarget{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1adca664fbf5ff0b4d174ca21641e01004}\label{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1adca664fbf5ff0b4d174ca21641e01004} 
+SD\+\_\+\+WRITE\+\_\+\+SINGLE\+\_\+\+BLOCK&Write single block operation ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_WRITE\_MULTIPLE\_BLOCK@{SD\_WRITE\_MULTIPLE\_BLOCK}!SD@{SD}}\index{SD@{SD}!SD\_WRITE\_MULTIPLE\_BLOCK@{SD\_WRITE\_MULTIPLE\_BLOCK}}}\Hypertarget{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1a9cd6e9c88c3989531a71015147496895}\label{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1a9cd6e9c88c3989531a71015147496895} 
+SD\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+BLOCK&Write multiple blocks operation ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___s_d_gaeac2ceb9473e8e4ea9cd587642d9cbca}\label{group___s_d_gaeac2ceb9473e8e4ea9cd587642d9cbca} 
+\index{SD@{SD}!HAL\_SD\_TransferStateTypedef@{HAL\_SD\_TransferStateTypedef}}
+\index{HAL\_SD\_TransferStateTypedef@{HAL\_SD\_TransferStateTypedef}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_TransferStateTypedef}{HAL\_SD\_TransferStateTypedef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___s_d_gaeac2ceb9473e8e4ea9cd587642d9cbca}{HAL\+\_\+\+SD\+\_\+\+Transfer\+State\+Typedef}}}
+
+
+
+SD Transfer state enumeration structure. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_TRANSFER\_OK@{SD\_TRANSFER\_OK}!SD@{SD}}\index{SD@{SD}!SD\_TRANSFER\_OK@{SD\_TRANSFER\_OK}}}\Hypertarget{group___s_d_ggaeac2ceb9473e8e4ea9cd587642d9cbcaa52c1686845d340ee5d8c0bc0325f9af3}\label{group___s_d_ggaeac2ceb9473e8e4ea9cd587642d9cbcaa52c1686845d340ee5d8c0bc0325f9af3} 
+SD\+\_\+\+TRANSFER\+\_\+\+OK&Transfer success ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_TRANSFER\_BUSY@{SD\_TRANSFER\_BUSY}!SD@{SD}}\index{SD@{SD}!SD\_TRANSFER\_BUSY@{SD\_TRANSFER\_BUSY}}}\Hypertarget{group___s_d_ggaeac2ceb9473e8e4ea9cd587642d9cbcaaef1a870ef1c17e160d57d732328b042e}\label{group___s_d_ggaeac2ceb9473e8e4ea9cd587642d9cbcaaef1a870ef1c17e160d57d732328b042e} 
+SD\+\_\+\+TRANSFER\+\_\+\+BUSY&Transfer is occurring \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SD\_TRANSFER\_ERROR@{SD\_TRANSFER\_ERROR}!SD@{SD}}\index{SD@{SD}!SD\_TRANSFER\_ERROR@{SD\_TRANSFER\_ERROR}}}\Hypertarget{group___s_d_ggaeac2ceb9473e8e4ea9cd587642d9cbcaa1c06f1ea5cd5d5f2ecb715654384b047}\label{group___s_d_ggaeac2ceb9473e8e4ea9cd587642d9cbcaa1c06f1ea5cd5d5f2ecb715654384b047} 
+SD\+\_\+\+TRANSFER\+\_\+\+ERROR&Transfer failed ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group___s_d_ga91b0db763b2d9360f10cc959b1c8547e}\label{group___s_d_ga91b0db763b2d9360f10cc959b1c8547e} 
+\index{SD@{SD}!HAL\_SD\_CheckReadOperation@{HAL\_SD\_CheckReadOperation}}
+\index{HAL\_SD\_CheckReadOperation@{HAL\_SD\_CheckReadOperation}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_CheckReadOperation()}{HAL\_SD\_CheckReadOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Check\+Read\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga1e823fda07f8246994c13fe9397e38ae}\label{group___s_d_ga1e823fda07f8246994c13fe9397e38ae} 
+\index{SD@{SD}!HAL\_SD\_CheckWriteOperation@{HAL\_SD\_CheckWriteOperation}}
+\index{HAL\_SD\_CheckWriteOperation@{HAL\_SD\_CheckWriteOperation}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_CheckWriteOperation()}{HAL\_SD\_CheckWriteOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Check\+Write\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga6bba9fce639c7d476dbd443b8c9e3117}\label{group___s_d_ga6bba9fce639c7d476dbd443b8c9e3117} 
+\index{SD@{SD}!HAL\_SD\_DeInit@{HAL\_SD\_DeInit}}
+\index{HAL\_SD\_DeInit@{HAL\_SD\_DeInit}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_DeInit()}{HAL\_SD\_DeInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+SD\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga57b3c755c8430777cfe821c8a12e794e}\label{group___s_d_ga57b3c755c8430777cfe821c8a12e794e} 
+\index{SD@{SD}!HAL\_SD\_DMA\_RxCpltCallback@{HAL\_SD\_DMA\_RxCpltCallback}}
+\index{HAL\_SD\_DMA\_RxCpltCallback@{HAL\_SD\_DMA\_RxCpltCallback}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_DMA\_RxCpltCallback()}{HAL\_SD\_DMA\_RxCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SD\+\_\+\+DMA\+\_\+\+Rx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hdma }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga66cb9701bb00d0bb363ea06312ea4446}\label{group___s_d_ga66cb9701bb00d0bb363ea06312ea4446} 
+\index{SD@{SD}!HAL\_SD\_DMA\_RxErrorCallback@{HAL\_SD\_DMA\_RxErrorCallback}}
+\index{HAL\_SD\_DMA\_RxErrorCallback@{HAL\_SD\_DMA\_RxErrorCallback}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_DMA\_RxErrorCallback()}{HAL\_SD\_DMA\_RxErrorCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SD\+\_\+\+DMA\+\_\+\+Rx\+Error\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hdma }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga98f37b0096e2d3dec374321524015a1f}\label{group___s_d_ga98f37b0096e2d3dec374321524015a1f} 
+\index{SD@{SD}!HAL\_SD\_DMA\_TxCpltCallback@{HAL\_SD\_DMA\_TxCpltCallback}}
+\index{HAL\_SD\_DMA\_TxCpltCallback@{HAL\_SD\_DMA\_TxCpltCallback}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_DMA\_TxCpltCallback()}{HAL\_SD\_DMA\_TxCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SD\+\_\+\+DMA\+\_\+\+Tx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hdma }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga45c840786fabc5ef29d887b119b01442}\label{group___s_d_ga45c840786fabc5ef29d887b119b01442} 
+\index{SD@{SD}!HAL\_SD\_DMA\_TxErrorCallback@{HAL\_SD\_DMA\_TxErrorCallback}}
+\index{HAL\_SD\_DMA\_TxErrorCallback@{HAL\_SD\_DMA\_TxErrorCallback}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_DMA\_TxErrorCallback()}{HAL\_SD\_DMA\_TxErrorCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SD\+\_\+\+DMA\+\_\+\+Tx\+Error\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hdma }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga49d1d5c7f592addea7b36c7cf49faba4}\label{group___s_d_ga49d1d5c7f592addea7b36c7cf49faba4} 
+\index{SD@{SD}!HAL\_SD\_Erase@{HAL\_SD\_Erase}}
+\index{HAL\_SD\_Erase@{HAL\_SD\_Erase}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_Erase()}{HAL\_SD\_Erase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd,  }\item[{uint64\+\_\+t}]{startaddr,  }\item[{uint64\+\_\+t}]{endaddr }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga757649bfd6987928fc7f968a881767b4}\label{group___s_d_ga757649bfd6987928fc7f968a881767b4} 
+\index{SD@{SD}!HAL\_SD\_Get\_CardInfo@{HAL\_SD\_Get\_CardInfo}}
+\index{HAL\_SD\_Get\_CardInfo@{HAL\_SD\_Get\_CardInfo}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_Get\_CardInfo()}{HAL\_SD\_Get\_CardInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Get\+\_\+\+Card\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd,  }\item[{\mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef}{HAL\+\_\+\+SD\+\_\+\+Card\+Info\+Typedef}} \texorpdfstring{$\ast$}{*}}]{p\+Card\+Info }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_gaa21f427748a4d59b41b45fff21342e3f}\label{group___s_d_gaa21f427748a4d59b41b45fff21342e3f} 
+\index{SD@{SD}!HAL\_SD\_GetCardStatus@{HAL\_SD\_GetCardStatus}}
+\index{HAL\_SD\_GetCardStatus@{HAL\_SD\_GetCardStatus}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_GetCardStatus()}{HAL\_SD\_GetCardStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Get\+Card\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd,  }\item[{\mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef}{HAL\+\_\+\+SD\+\_\+\+Card\+Status\+Typedef}} \texorpdfstring{$\ast$}{*}}]{p\+Card\+Status }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga7e359042aa28a3ceab37d70885af3051}\label{group___s_d_ga7e359042aa28a3ceab37d70885af3051} 
+\index{SD@{SD}!HAL\_SD\_GetStatus@{HAL\_SD\_GetStatus}}
+\index{HAL\_SD\_GetStatus@{HAL\_SD\_GetStatus}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_GetStatus()}{HAL\_SD\_GetStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gaeac2ceb9473e8e4ea9cd587642d9cbca}{HAL\+\_\+\+SD\+\_\+\+Transfer\+State\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Get\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga5c1fb71046436127d873a16511b40777}\label{group___s_d_ga5c1fb71046436127d873a16511b40777} 
+\index{SD@{SD}!HAL\_SD\_HighSpeed@{HAL\_SD\_HighSpeed}}
+\index{HAL\_SD\_HighSpeed@{HAL\_SD\_HighSpeed}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_HighSpeed()}{HAL\_SD\_HighSpeed()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+High\+Speed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga55004d6b817f7e431bd97101ad2d0b62}\label{group___s_d_ga55004d6b817f7e431bd97101ad2d0b62} 
+\index{SD@{SD}!HAL\_SD\_Init@{HAL\_SD\_Init}}
+\index{HAL\_SD\_Init@{HAL\_SD\_Init}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_Init()}{HAL\_SD\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd,  }\item[{\mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef}{HAL\+\_\+\+SD\+\_\+\+Card\+Info\+Typedef}} \texorpdfstring{$\ast$}{*}}]{SDCard\+Info }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga78f4def85126ae50eba783a6b237ec0f}\label{group___s_d_ga78f4def85126ae50eba783a6b237ec0f} 
+\index{SD@{SD}!HAL\_SD\_IRQHandler@{HAL\_SD\_IRQHandler}}
+\index{HAL\_SD\_IRQHandler@{HAL\_SD\_IRQHandler}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_IRQHandler()}{HAL\_SD\_IRQHandler()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SD\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_gaad3ad0f8145fca4a29dbe8beef5db085}\label{group___s_d_gaad3ad0f8145fca4a29dbe8beef5db085} 
+\index{SD@{SD}!HAL\_SD\_MspDeInit@{HAL\_SD\_MspDeInit}}
+\index{HAL\_SD\_MspDeInit@{HAL\_SD\_MspDeInit}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_MspDeInit()}{HAL\_SD\_MspDeInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SD\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga11b692d44079cb65eb037202d627ae96}\label{group___s_d_ga11b692d44079cb65eb037202d627ae96} 
+\index{SD@{SD}!HAL\_SD\_MspInit@{HAL\_SD\_MspInit}}
+\index{HAL\_SD\_MspInit@{HAL\_SD\_MspInit}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_MspInit()}{HAL\_SD\_MspInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SD\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_gad0d930e6695258d4227f3cc85690b35e}\label{group___s_d_gad0d930e6695258d4227f3cc85690b35e} 
+\index{SD@{SD}!HAL\_SD\_ReadBlocks@{HAL\_SD\_ReadBlocks}}
+\index{HAL\_SD\_ReadBlocks@{HAL\_SD\_ReadBlocks}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_ReadBlocks()}{HAL\_SD\_ReadBlocks()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Read\+Blocks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Read\+Buffer,  }\item[{uint64\+\_\+t}]{Read\+Addr,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Block\+Size,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Number\+Of\+Blocks }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga445d2fb6f83f1680ca2295ebc8fb591e}\label{group___s_d_ga445d2fb6f83f1680ca2295ebc8fb591e} 
+\index{SD@{SD}!HAL\_SD\_ReadBlocks\_DMA@{HAL\_SD\_ReadBlocks\_DMA}}
+\index{HAL\_SD\_ReadBlocks\_DMA@{HAL\_SD\_ReadBlocks\_DMA}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_ReadBlocks\_DMA()}{HAL\_SD\_ReadBlocks\_DMA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Read\+Blocks\+\_\+\+DMA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Read\+Buffer,  }\item[{uint64\+\_\+t}]{Read\+Addr,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Block\+Size,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Number\+Of\+Blocks }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga0f6201bbcab5c9a4fbb059d3659a2d56}\label{group___s_d_ga0f6201bbcab5c9a4fbb059d3659a2d56} 
+\index{SD@{SD}!HAL\_SD\_SendSDStatus@{HAL\_SD\_SendSDStatus}}
+\index{HAL\_SD\_SendSDStatus@{HAL\_SD\_SendSDStatus}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_SendSDStatus()}{HAL\_SD\_SendSDStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Send\+SDStatus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+SDstatus }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga28d4283c9c7caafe6b0f65c15d805e16}\label{group___s_d_ga28d4283c9c7caafe6b0f65c15d805e16} 
+\index{SD@{SD}!HAL\_SD\_StopTransfer@{HAL\_SD\_StopTransfer}}
+\index{HAL\_SD\_StopTransfer@{HAL\_SD\_StopTransfer}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_StopTransfer()}{HAL\_SD\_StopTransfer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Stop\+Transfer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga55e5d39a7a3b67b4b236e014c429e4fd}\label{group___s_d_ga55e5d39a7a3b67b4b236e014c429e4fd} 
+\index{SD@{SD}!HAL\_SD\_WideBusOperation\_Config@{HAL\_SD\_WideBusOperation\_Config}}
+\index{HAL\_SD\_WideBusOperation\_Config@{HAL\_SD\_WideBusOperation\_Config}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_WideBusOperation\_Config()}{HAL\_SD\_WideBusOperation\_Config()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Wide\+Bus\+Operation\+\_\+\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Wide\+Mode }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga879dae58b5e4f8514be2d3fac5d99f2b}\label{group___s_d_ga879dae58b5e4f8514be2d3fac5d99f2b} 
+\index{SD@{SD}!HAL\_SD\_WriteBlocks@{HAL\_SD\_WriteBlocks}}
+\index{HAL\_SD\_WriteBlocks@{HAL\_SD\_WriteBlocks}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_WriteBlocks()}{HAL\_SD\_WriteBlocks()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Write\+Blocks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Write\+Buffer,  }\item[{uint64\+\_\+t}]{Write\+Addr,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Block\+Size,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Number\+Of\+Blocks }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga4e9138ffd8d54c138b21cc95e2b5955c}\label{group___s_d_ga4e9138ffd8d54c138b21cc95e2b5955c} 
+\index{SD@{SD}!HAL\_SD\_WriteBlocks\_DMA@{HAL\_SD\_WriteBlocks\_DMA}}
+\index{HAL\_SD\_WriteBlocks\_DMA@{HAL\_SD\_WriteBlocks\_DMA}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_WriteBlocks\_DMA()}{HAL\_SD\_WriteBlocks\_DMA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\+\_\+\+SD\+\_\+\+Error\+Typedef}} HAL\+\_\+\+SD\+\_\+\+Write\+Blocks\+\_\+\+DMA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Write\+Buffer,  }\item[{uint64\+\_\+t}]{Write\+Addr,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Block\+Size,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Number\+Of\+Blocks }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_ga4d1214c3d3e6c1e5dd587592e7618177}\label{group___s_d_ga4d1214c3d3e6c1e5dd587592e7618177} 
+\index{SD@{SD}!HAL\_SD\_XferCpltCallback@{HAL\_SD\_XferCpltCallback}}
+\index{HAL\_SD\_XferCpltCallback@{HAL\_SD\_XferCpltCallback}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_XferCpltCallback()}{HAL\_SD\_XferCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SD\+\_\+\+Xfer\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_d_gad7d953cc31fbb7e875aef443027b3e5c}\label{group___s_d_gad7d953cc31fbb7e875aef443027b3e5c} 
+\index{SD@{SD}!HAL\_SD\_XferErrorCallback@{HAL\_SD\_XferErrorCallback}}
+\index{HAL\_SD\_XferErrorCallback@{HAL\_SD\_XferErrorCallback}!SD@{SD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SD\_XferErrorCallback()}{HAL\_SD\_XferErrorCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SD\+\_\+\+Xfer\+Error\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsd }\end{DoxyParamCaption})}
+
+\input{group___s_d___exported___constants}
+\input{group___s_d___interrupt___clock}

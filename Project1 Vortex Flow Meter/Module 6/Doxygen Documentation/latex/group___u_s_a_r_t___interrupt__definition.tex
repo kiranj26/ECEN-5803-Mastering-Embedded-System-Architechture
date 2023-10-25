@@ -1,0 +1,84 @@
+\doxysubsubsubsection{USART\+\_\+\+Interrupt\+\_\+definition}
+\hypertarget{group___u_s_a_r_t___interrupt__definition}{}\label{group___u_s_a_r_t___interrupt__definition}\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___interrupt__definition_gae607c28a462c224c575b7541dc4f7067}{USART\+\_\+\+IT\+\_\+\+PE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000100)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___interrupt__definition_gab18d0fe889204a4c34f6d5817fb5147d}{USART\+\_\+\+IT\+\_\+\+TXE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000080)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___interrupt__definition_ga748e86162cc110513330079982821c39}{USART\+\_\+\+IT\+\_\+\+TC}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000040)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___interrupt__definition_gacdd49b93072655a21a63a35e6431f8ae}{USART\+\_\+\+IT\+\_\+\+RXNE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000020)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___interrupt__definition_ga5d85aab24b7b2dfddb61ba2a49fa6185}{USART\+\_\+\+IT\+\_\+\+IDLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000010)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___interrupt__definition_ga063628e16cdda199b07d380421afc4a5}{USART\+\_\+\+IT\+\_\+\+LBD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x20000040)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___interrupt__definition_gab49efbefaca2921e8cbe8f5146e99dbd}{USART\+\_\+\+IT\+\_\+\+CTS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000400)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___interrupt__definition_ga631e83efd4c4789128d80a9539faf78a}{USART\+\_\+\+IT\+\_\+\+ERR}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000001)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Elements values convention\+: 0x\+Y000\+XXXX
+\begin{DoxyItemize}
+\item XXXX \+: Interrupt mask in the XX register
+\item Y \+: Interrupt source register (2bits)
+\begin{DoxyItemize}
+\item 01\+: CR1 register
+\item 10\+: CR2 register
+\item 11\+: CR3 register 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___u_s_a_r_t___interrupt__definition_gab49efbefaca2921e8cbe8f5146e99dbd}\label{group___u_s_a_r_t___interrupt__definition_gab49efbefaca2921e8cbe8f5146e99dbd} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_CTS@{USART\_IT\_CTS}}
+\index{USART\_IT\_CTS@{USART\_IT\_CTS}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_IT\_CTS}{USART\_IT\_CTS}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+CTS~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000400)}
+
+\Hypertarget{group___u_s_a_r_t___interrupt__definition_ga631e83efd4c4789128d80a9539faf78a}\label{group___u_s_a_r_t___interrupt__definition_ga631e83efd4c4789128d80a9539faf78a} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_ERR@{USART\_IT\_ERR}}
+\index{USART\_IT\_ERR@{USART\_IT\_ERR}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_IT\_ERR}{USART\_IT\_ERR}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+ERR~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x30000001)}
+
+\Hypertarget{group___u_s_a_r_t___interrupt__definition_ga5d85aab24b7b2dfddb61ba2a49fa6185}\label{group___u_s_a_r_t___interrupt__definition_ga5d85aab24b7b2dfddb61ba2a49fa6185} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_IDLE@{USART\_IT\_IDLE}}
+\index{USART\_IT\_IDLE@{USART\_IT\_IDLE}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_IT\_IDLE}{USART\_IT\_IDLE}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+IDLE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000010)}
+
+\Hypertarget{group___u_s_a_r_t___interrupt__definition_ga063628e16cdda199b07d380421afc4a5}\label{group___u_s_a_r_t___interrupt__definition_ga063628e16cdda199b07d380421afc4a5} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_LBD@{USART\_IT\_LBD}}
+\index{USART\_IT\_LBD@{USART\_IT\_LBD}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_IT\_LBD}{USART\_IT\_LBD}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+LBD~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x20000040)}
+
+\Hypertarget{group___u_s_a_r_t___interrupt__definition_gae607c28a462c224c575b7541dc4f7067}\label{group___u_s_a_r_t___interrupt__definition_gae607c28a462c224c575b7541dc4f7067} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_PE@{USART\_IT\_PE}}
+\index{USART\_IT\_PE@{USART\_IT\_PE}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_IT\_PE}{USART\_IT\_PE}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+PE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000100)}
+
+\Hypertarget{group___u_s_a_r_t___interrupt__definition_gacdd49b93072655a21a63a35e6431f8ae}\label{group___u_s_a_r_t___interrupt__definition_gacdd49b93072655a21a63a35e6431f8ae} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_RXNE@{USART\_IT\_RXNE}}
+\index{USART\_IT\_RXNE@{USART\_IT\_RXNE}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_IT\_RXNE}{USART\_IT\_RXNE}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+RXNE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000020)}
+
+\Hypertarget{group___u_s_a_r_t___interrupt__definition_ga748e86162cc110513330079982821c39}\label{group___u_s_a_r_t___interrupt__definition_ga748e86162cc110513330079982821c39} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_TC@{USART\_IT\_TC}}
+\index{USART\_IT\_TC@{USART\_IT\_TC}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_IT\_TC}{USART\_IT\_TC}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+TC~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000040)}
+
+\Hypertarget{group___u_s_a_r_t___interrupt__definition_gab18d0fe889204a4c34f6d5817fb5147d}\label{group___u_s_a_r_t___interrupt__definition_gab18d0fe889204a4c34f6d5817fb5147d} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_TXE@{USART\_IT\_TXE}}
+\index{USART\_IT\_TXE@{USART\_IT\_TXE}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_IT\_TXE}{USART\_IT\_TXE}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+TXE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000080)}
+

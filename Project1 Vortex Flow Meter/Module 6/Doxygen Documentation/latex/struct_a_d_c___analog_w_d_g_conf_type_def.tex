@@ -1,0 +1,75 @@
+\doxysection{ADC\+\_\+\+Analog\+WDGConf\+Type\+Def Struct Reference}
+\hypertarget{struct_a_d_c___analog_w_d_g_conf_type_def}{}\label{struct_a_d_c___analog_w_d_g_conf_type_def}\index{ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}}
+
+
+ADC Configuration multi-\/mode structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal\+\_\+adc.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___analog_w_d_g_conf_type_def_ad4c60783321a30e8edffa323148e424d}{Watchdog\+Mode}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___analog_w_d_g_conf_type_def_a9bee62b3d364713a16a15cefcc217e65}{High\+Threshold}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___analog_w_d_g_conf_type_def_a77e1743ebd27333ac2c9de55a25cd4c8}{Low\+Threshold}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___analog_w_d_g_conf_type_def_abc86b5861e3eff802fe765e62054f348}{Channel}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___analog_w_d_g_conf_type_def_ab67703b11dbb0303fb5b56bd328ef06d}{ITMode}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_a_d_c___analog_w_d_g_conf_type_def_a025e81af21b93c5b8daf9f5241383302}{Watchdog\+Number}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ADC Configuration multi-\/mode structure definition ~\newline
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_a_d_c___analog_w_d_g_conf_type_def_abc86b5861e3eff802fe765e62054f348}\label{struct_a_d_c___analog_w_d_g_conf_type_def_abc86b5861e3eff802fe765e62054f348} 
+\index{ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}!Channel@{Channel}}
+\index{Channel@{Channel}!ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{Channel}{Channel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Analog\+WDGConf\+Type\+Def\+::\+Channel}
+
+Configures ADC channel for the analog watchdog. This parameter has an effect only if watchdog mode is configured on single channel This parameter can be a value of \doxylink{group___a_d_c__channels}{ADC\+\_\+channels} \Hypertarget{struct_a_d_c___analog_w_d_g_conf_type_def_a9bee62b3d364713a16a15cefcc217e65}\label{struct_a_d_c___analog_w_d_g_conf_type_def_a9bee62b3d364713a16a15cefcc217e65} 
+\index{ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}!HighThreshold@{HighThreshold}}
+\index{HighThreshold@{HighThreshold}!ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{HighThreshold}{HighThreshold}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Analog\+WDGConf\+Type\+Def\+::\+High\+Threshold}
+
+Configures the ADC analog watchdog High threshold value. This parameter must be a 12-\/bit value. \Hypertarget{struct_a_d_c___analog_w_d_g_conf_type_def_ab67703b11dbb0303fb5b56bd328ef06d}\label{struct_a_d_c___analog_w_d_g_conf_type_def_ab67703b11dbb0303fb5b56bd328ef06d} 
+\index{ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}!ITMode@{ITMode}}
+\index{ITMode@{ITMode}!ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{ITMode}{ITMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Analog\+WDGConf\+Type\+Def\+::\+ITMode}
+
+Specifies whether the analog watchdog is configured is interrupt mode or in polling mode. This parameter can be set to ENABLE or DISABLE \Hypertarget{struct_a_d_c___analog_w_d_g_conf_type_def_a77e1743ebd27333ac2c9de55a25cd4c8}\label{struct_a_d_c___analog_w_d_g_conf_type_def_a77e1743ebd27333ac2c9de55a25cd4c8} 
+\index{ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}!LowThreshold@{LowThreshold}}
+\index{LowThreshold@{LowThreshold}!ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{LowThreshold}{LowThreshold}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Analog\+WDGConf\+Type\+Def\+::\+Low\+Threshold}
+
+Configures the ADC analog watchdog High threshold value. This parameter must be a 12-\/bit value. \Hypertarget{struct_a_d_c___analog_w_d_g_conf_type_def_ad4c60783321a30e8edffa323148e424d}\label{struct_a_d_c___analog_w_d_g_conf_type_def_ad4c60783321a30e8edffa323148e424d} 
+\index{ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}!WatchdogMode@{WatchdogMode}}
+\index{WatchdogMode@{WatchdogMode}!ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{WatchdogMode}{WatchdogMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Analog\+WDGConf\+Type\+Def\+::\+Watchdog\+Mode}
+
+Configures the ADC analog watchdog mode. This parameter can be a value of \doxylink{group___a_d_c__analog__watchdog__selection}{ADC\+\_\+analog\+\_\+watchdog\+\_\+selection} \Hypertarget{struct_a_d_c___analog_w_d_g_conf_type_def_a025e81af21b93c5b8daf9f5241383302}\label{struct_a_d_c___analog_w_d_g_conf_type_def_a025e81af21b93c5b8daf9f5241383302} 
+\index{ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}!WatchdogNumber@{WatchdogNumber}}
+\index{WatchdogNumber@{WatchdogNumber}!ADC\_AnalogWDGConfTypeDef@{ADC\_AnalogWDGConfTypeDef}}
+\doxysubsubsection{\texorpdfstring{WatchdogNumber}{WatchdogNumber}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} ADC\+\_\+\+Analog\+WDGConf\+Type\+Def\+::\+Watchdog\+Number}
+
+Reserved for future use, can be set to 0 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/\mbox{\hyperlink{stm32f4xx__hal__adc_8h}{stm32f4xx\+\_\+hal\+\_\+adc.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+hal\+\_\+rcc\+\_\+ex.h File Reference}
+\hypertarget{stm32f4xx__hal__rcc__ex_8h}{}\label{stm32f4xx__hal__rcc__ex_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_rcc\_ex.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_rcc\_ex.h}}
+
+
+Header file of RCC HAL Extension module.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_c_c___p_l_l_i2_s_init_type_def}{RCC\+\_\+\+PLLI2\+SInit\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em PLLI2S Clock structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_c_c___periph_c_l_k_init_type_def}{RCC\+\_\+\+Periph\+CLKInit\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RCC extended clocks structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___periph___clock___selection_ga9434a99ec49907a6d2ce7ee7e29deb75}{RCC\+\_\+\+PERIPHCLK\+\_\+\+I2S}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___periph___clock___selection_gaede03aaafb5319bb39767bf50182406f}{RCC\+\_\+\+PERIPHCLK\+\_\+\+RTC}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___periph___clock___selection_gaae1eea378ffa99c1a4186f0065c257a8}{IS\+\_\+\+RCC\+\_\+\+PERIPHCLOCK}}(SELECTION)~((1 $<$= (SELECTION)) \&\& ((SELECTION) $<$= 0x00000003))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_c_c_ex_ga0c0f61a1e2f47cc81bc43d83ba3e0d95}{HAL\+\_\+\+RCCEx\+\_\+\+Periph\+CLKConfig}} (\mbox{\hyperlink{struct_r_c_c___periph_c_l_k_init_type_def}{RCC\+\_\+\+Periph\+CLKInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}Periph\+Clk\+Init)
+\begin{DoxyCompactList}\small\item\em Enables or disables the AHB1 peripheral clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c_ex_ga754fc5136c63ad52b7c459aafc8a3927}{HAL\+\_\+\+RCCEx\+\_\+\+Get\+Periph\+CLKConfig}} (\mbox{\hyperlink{struct_r_c_c___periph_c_l_k_init_type_def}{RCC\+\_\+\+Periph\+CLKInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}Periph\+Clk\+Init)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of RCC HAL Extension module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

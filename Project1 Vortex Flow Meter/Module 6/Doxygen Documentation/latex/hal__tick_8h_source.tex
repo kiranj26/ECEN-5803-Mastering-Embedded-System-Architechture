@@ -1,0 +1,33 @@
+\doxysection{hal\+\_\+tick.\+h}
+\hypertarget{hal__tick_8h_source}{}\label{hal__tick_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/hal\_tick.h@{mbed/TARGET\_NUCLEO\_F401RE/hal\_tick.h}}
+\mbox{\hyperlink{hal__tick_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifndef\ \_\_HAL\_TICK\_H}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ \_\_HAL\_TICK\_H}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00039\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx_8h}{stm32f4xx.h}}"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cmsis__nvic_8h}{cmsis\_nvic.h}}"{}}}
+\DoxyCodeLine{00044\ \ \ \ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ TIM\_MST\ \ \ \ \ \ TIM5}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ TIM\_MST\_IRQ\ \ TIM5\_IRQn}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ TIM\_MST\_RCC\ \ \_\_TIM5\_CLK\_ENABLE()}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ TIM\_MST\_RESET\_ON\ \ \ \_\_TIM5\_FORCE\_RESET()}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ TIM\_MST\_RESET\_OFF\ \ \_\_TIM5\_RELEASE\_RESET()}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ HAL\_TICK\_DELAY\ (1000)\ }\textcolor{comment}{//\ 1\ ms}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_HAL\_TICK\_H}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

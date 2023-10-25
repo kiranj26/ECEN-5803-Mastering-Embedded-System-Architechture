@@ -1,0 +1,86 @@
+\doxysection{can\+\_\+api.\+h}
+\hypertarget{can__api_8h_source}{}\label{can__api_8h_source}\index{mbed/can\_api.h@{mbed/can\_api.h}}
+\mbox{\hyperlink{can__api_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_CAN\_API\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_CAN\_API\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{device_8h}{device.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#if\ DEVICE\_CAN}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pin_names_8h}{PinNames.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_peripheral_names_8h}{PeripheralNames.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{can__helper_8h}{can\_helper.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ IRQ\_RX,}
+\DoxyCodeLine{00033\ \ \ \ \ IRQ\_TX,}
+\DoxyCodeLine{00034\ \ \ \ \ IRQ\_ERROR,}
+\DoxyCodeLine{00035\ \ \ \ \ IRQ\_OVERRUN,}
+\DoxyCodeLine{00036\ \ \ \ \ IRQ\_WAKEUP,}
+\DoxyCodeLine{00037\ \ \ \ \ IRQ\_PASSIVE,}
+\DoxyCodeLine{00038\ \ \ \ \ IRQ\_ARB,}
+\DoxyCodeLine{00039\ \ \ \ \ IRQ\_BUS,}
+\DoxyCodeLine{00040\ \ \ \ \ IRQ\_READY}
+\DoxyCodeLine{00041\ \}\ CanIrqType;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ MODE\_RESET,}
+\DoxyCodeLine{00046\ \ \ \ \ MODE\_NORMAL,}
+\DoxyCodeLine{00047\ \ \ \ \ MODE\_SILENT,}
+\DoxyCodeLine{00048\ \ \ \ \ MODE\_TEST\_GLOBAL,}
+\DoxyCodeLine{00049\ \ \ \ \ MODE\_TEST\_LOCAL,}
+\DoxyCodeLine{00050\ \ \ \ \ MODE\_TEST\_SILENT}
+\DoxyCodeLine{00051\ \}\ CanMode;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{typedef}\ void\ (*can\_irq\_handler)(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ id,\ CanIrqType\ type);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }can\_s\ can\_t;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ can\_init\ \ \ \ \ (can\_t\ *obj,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ rd,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ td);}
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ can\_free\ \ \ \ \ (can\_t\ *obj);}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ can\_frequency(can\_t\ *obj,\ \textcolor{keywordtype}{int}\ hz);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ can\_irq\_init\ (can\_t\ *obj,\ can\_irq\_handler\ handler,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ can\_irq\_free\ (can\_t\ *obj);}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ can\_irq\_set\ \ (can\_t\ *obj,\ CanIrqType\ irq,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ enable);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ can\_write\ \ \ \ (can\_t\ *obj,\ CAN\_Message,\ \textcolor{keywordtype}{int}\ cc);}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ can\_read\ \ \ \ \ (can\_t\ *obj,\ CAN\_Message\ *msg,\ \textcolor{keywordtype}{int}\ handle);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ can\_mode\ \ \ \ \ (can\_t\ *obj,\ CanMode\ mode);}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ can\_filter(can\_t\ *obj,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ mask,\ CANFormat\ format,\ int32\_t\ handle);}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ can\_reset\ \ \ \ (can\_t\ *obj);}
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ can\_rderror\ \ (can\_t\ *obj);}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ can\_tderror\ \ (can\_t\ *obj);}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ can\_monitor\ \ (can\_t\ *obj,\ \textcolor{keywordtype}{int}\ silent);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ \ \ \ }\textcolor{comment}{//\ MBED\_CAN\_API\_H}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

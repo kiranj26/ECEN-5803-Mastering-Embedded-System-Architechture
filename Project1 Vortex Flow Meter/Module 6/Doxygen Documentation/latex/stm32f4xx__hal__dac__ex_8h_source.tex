@@ -1,0 +1,111 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+dac\+\_\+ex.\+h}
+\hypertarget{stm32f4xx__hal__dac__ex_8h_source}{}\label{stm32f4xx__hal__dac__ex_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_dac\_ex.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_dac\_ex.h}}
+\mbox{\hyperlink{stm32f4xx__hal__dac__ex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_DAC\_EX\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_DAC\_EX\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#if\ defined(STM32F405xx)\ ||\ defined(STM32F415xx)\ ||\ defined(STM32F407xx)\ ||\ defined(STM32F417xx)\ ||\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)\ ||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__hal__def_8h}{stm32f4xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00060\ \ \ \ }
+\DoxyCodeLine{00065\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00066\ \ \ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ DAC\_WAVEGENERATION\_NONE\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ DAC\_WAVEGENERATION\_NOISE\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_WAVE1\_0)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ DAC\_WAVEGENERATION\_TRIANGLE\ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_WAVE1\_1)}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ IS\_DAC\_GENERATE\_WAVE(WAVE)\ (((WAVE)\ ==\ DAC\_WAVEGENERATION\_NONE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WAVE)\ ==\ DAC\_WAVEGENERATION\_NOISE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WAVE)\ ==\ DAC\_WAVEGENERATION\_TRIANGLE))}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUNMASK\_BIT0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUNMASK\_BITS1\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_0)\ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUNMASK\_BITS2\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_1)\ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUNMASK\_BITS3\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_1\ |\ DAC\_CR\_MAMP1\_0)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUNMASK\_BITS4\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_2)\ }}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUNMASK\_BITS5\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_2\ |\ DAC\_CR\_MAMP1\_0)\ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUNMASK\_BITS6\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_2\ |\ DAC\_CR\_MAMP1\_1)\ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUNMASK\_BITS7\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_2\ |\ DAC\_CR\_MAMP1\_1\ |\ DAC\_CR\_MAMP1\_0)\ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUNMASK\_BITS8\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_3)\ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUNMASK\_BITS9\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_3\ |\ DAC\_CR\_MAMP1\_0)\ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUNMASK\_BITS10\_0\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_3\ |\ DAC\_CR\_MAMP1\_1)\ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUNMASK\_BITS11\_0\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_3\ |\ DAC\_CR\_MAMP1\_1\ |\ DAC\_CR\_MAMP1\_0)\ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ DAC\_TRIANGLEAMPLITUDE\_1\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ DAC\_TRIANGLEAMPLITUDE\_3\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_0)\ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ DAC\_TRIANGLEAMPLITUDE\_7\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_1)\ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ DAC\_TRIANGLEAMPLITUDE\_15\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_1\ |\ DAC\_CR\_MAMP1\_0)\ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ DAC\_TRIANGLEAMPLITUDE\_31\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_2)\ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ DAC\_TRIANGLEAMPLITUDE\_63\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_2\ |\ DAC\_CR\_MAMP1\_0)\ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ DAC\_TRIANGLEAMPLITUDE\_127\ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_2\ |\ DAC\_CR\_MAMP1\_1)\ }}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ DAC\_TRIANGLEAMPLITUDE\_255\ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_2\ |\ DAC\_CR\_MAMP1\_1\ |\ DAC\_CR\_MAMP1\_0)\ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ DAC\_TRIANGLEAMPLITUDE\_511\ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_3)\ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ DAC\_TRIANGLEAMPLITUDE\_1023\ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_3\ |\ DAC\_CR\_MAMP1\_0)\ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ DAC\_TRIANGLEAMPLITUDE\_2047\ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_3\ |\ DAC\_CR\_MAMP1\_1)\ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ DAC\_TRIANGLEAMPLITUDE\_4095\ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_MAMP1\_3\ |\ DAC\_CR\_MAMP1\_1\ |\ DAC\_CR\_MAMP1\_0)\ }}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ IS\_DAC\_LFSR\_UNMASK\_TRIANGLE\_AMPLITUDE(VALUE)\ (((VALUE)\ ==\ DAC\_LFSRUNMASK\_BIT0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUNMASK\_BITS1\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUNMASK\_BITS2\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUNMASK\_BITS3\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUNMASK\_BITS4\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUNMASK\_BITS5\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUNMASK\_BITS6\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUNMASK\_BITS7\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUNMASK\_BITS8\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUNMASK\_BITS9\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUNMASK\_BITS10\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUNMASK\_BITS11\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TRIANGLEAMPLITUDE\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TRIANGLEAMPLITUDE\_3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TRIANGLEAMPLITUDE\_7)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TRIANGLEAMPLITUDE\_15)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TRIANGLEAMPLITUDE\_31)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TRIANGLEAMPLITUDE\_63)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TRIANGLEAMPLITUDE\_127)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TRIANGLEAMPLITUDE\_255)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TRIANGLEAMPLITUDE\_511)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TRIANGLEAMPLITUDE\_1023)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TRIANGLEAMPLITUDE\_2047)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TRIANGLEAMPLITUDE\_4095))}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ DAC\_WAVE\_NOISE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_WAVE1\_0)}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ DAC\_WAVE\_TRIANGLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)DAC\_CR\_WAVE1\_1)}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ IS\_DAC\_WAVE(WAVE)\ (((WAVE)\ ==\ DAC\_WAVE\_NOISE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WAVE)\ ==\ DAC\_WAVE\_TRIANGLE))}}
+\DoxyCodeLine{00149\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00150\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ \ }
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{comment}{/*\ Extension\ features\ functions\ ***********************************************/}}
+\DoxyCodeLine{00153\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ HAL\_DACEx\_DualGetValue(DAC\_HandleTypeDef*\ hdac);}
+\DoxyCodeLine{00154\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_DACEx\_TriangleWaveGenerate(DAC\_HandleTypeDef*\ hdac,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Channel,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Amplitude);}
+\DoxyCodeLine{00155\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_DACEx\_NoiseWaveGenerate(DAC\_HandleTypeDef*\ hdac,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Channel,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Amplitude);}
+\DoxyCodeLine{00156\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_DACEx\_DualSetValue(DAC\_HandleTypeDef*\ hdac,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Alignment,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Data1,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Data2);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keywordtype}{void}\ HAL\_DACEx\_ConvCpltCallbackCh2(DAC\_HandleTypeDef*\ hdac);}
+\DoxyCodeLine{00159\ \textcolor{keywordtype}{void}\ HAL\_DACEx\_ConvHalfCpltCallbackCh2(DAC\_HandleTypeDef*\ hdac);}
+\DoxyCodeLine{00160\ \textcolor{keywordtype}{void}\ HAL\_DACEx\_ErrorCallbackCh2(DAC\_HandleTypeDef*\ hdac);}
+\DoxyCodeLine{00161\ \textcolor{keywordtype}{void}\ HAL\_DACEx\_DMAUnderrunCallbackCh2(DAC\_HandleTypeDef*\ hdac);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{keywordtype}{void}\ DAC\_DMAConvCpltCh2(\mbox{\hyperlink{struct_____d_m_a___handle_type_def}{DMA\_HandleTypeDef}}\ *hdma);}
+\DoxyCodeLine{00164\ \textcolor{keywordtype}{void}\ DAC\_DMAErrorCh2(\mbox{\hyperlink{struct_____d_m_a___handle_type_def}{DMA\_HandleTypeDef}}\ *hdma);}
+\DoxyCodeLine{00165\ \textcolor{keywordtype}{void}\ DAC\_DMAHalfConvCpltCh2(\mbox{\hyperlink{struct_____d_m_a___handle_type_def}{DMA\_HandleTypeDef}}\ *hdma);\ }
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F405xx\ ||\ STM32F415xx\ ||\ STM32F407xx\ ||\ STM32F417xx\ ||\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx\ ||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00178\ \}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\_\_STM32F4xx\_HAL\_DAC\_EX\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

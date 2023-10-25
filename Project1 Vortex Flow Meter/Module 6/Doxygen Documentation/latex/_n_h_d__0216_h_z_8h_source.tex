@@ -1,0 +1,45 @@
+\doxysection{NHD\+\_\+0216\+HZ.\+h}
+\hypertarget{_n_h_d__0216_h_z_8h_source}{}\label{_n_h_d__0216_h_z_8h_source}\index{headers/NHD\_0216HZ.h@{headers/NHD\_0216HZ.h}}
+\mbox{\hyperlink{_n_h_d__0216_h_z_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ Header\ file\ for\ Newhaven\ NHD0216HZ\ LCD}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ NHD\_0216HZ\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ NHD\_0216HZ\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mbed_8h}{mbed.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//Define\ constants}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ ENABLE\ 0x08}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ DATA\_MODE\ 0x04}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ COMMAND\_MODE\ 0x00}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ LINE\_LENGTH\ 0x40}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ TOT\_LENGTH\ 0x80}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_n_h_d__0216_h_z}{NHD\_0216HZ}}\{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_n_h_d__0216_h_z}{NHD\_0216HZ}}(\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ \mbox{\hyperlink{pindef_8h_ade4259fa3cbb71732a4e73c18dcb9b0d}{SPI\_CS}},\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ \mbox{\hyperlink{pindef_8h_a7dbebab5f7dd57885adccf6711b13592}{SPI\_MOSI}},\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ \mbox{\hyperlink{pindef_8h_aefec442ab2dbec4785b387b3e88faa66}{SPI\_SCLK}});}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Function\ prototypes}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_n_h_d__0216_h_z_a7be6c5cfe8243e5014016223b43f29d8}{shift\_out}}(\textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_n_h_d__0216_h_z_a36399e386547ffafa61a4eb1cafeca14}{init\_lcd}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_n_h_d__0216_h_z_a0a6279f38a20506aa7dee5cb4da2d253}{write\_4bit}}(\textcolor{keywordtype}{int}\ data,\ \textcolor{keywordtype}{int}\ mode);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_n_h_d__0216_h_z_abbfc606969eead2a90e828f4e11e8f8b}{write\_cmd}}(\textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_n_h_d__0216_h_z_a2fe3583ce10fe203113c1ddb0e46a393}{write\_data}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_n_h_d__0216_h_z_a4ddf8f1df123e6fe36ac1d8a1383e060}{printf}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format,\ ...);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_n_h_d__0216_h_z_a0cd36d73cf925025e66bff1832c57b48}{set\_cursor}}(\textcolor{keywordtype}{int}\ column,\ \textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_n_h_d__0216_h_z_a9a5dffacea1d3e698922c50d0e70aceb}{clr\_lcd}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_digital_out}{DigitalOut}}\ \_SPI\_CS;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_digital_out}{DigitalOut}}\ \_SPI\_MOSI;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_digital_out}{DigitalOut}}\ \_SPI\_SCLK;}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ *******************************ARM\ University\ Program\ Copyright\ (c)\ ARM\ Ltd\ 2014*************************************}}
+
+\end{DoxyCode}

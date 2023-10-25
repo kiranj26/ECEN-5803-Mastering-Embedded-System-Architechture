@@ -1,0 +1,146 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+nor.\+h}
+\hypertarget{stm32f4xx__hal__nor_8h_source}{}\label{stm32f4xx__hal__nor_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_nor.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_nor.h}}
+\mbox{\hyperlink{stm32f4xx__hal__nor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_NOR\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_NOR\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#if\ defined(STM32F405xx)\ ||\ defined(STM32F415xx)\ ||\ defined(STM32F407xx)||\ defined(STM32F417xx)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \#include\ "{}\mbox{\hyperlink{stm32f4xx__ll__fsmc_8h}{stm32f4xx\_ll\_fsmc.h}}"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F405xx\ ||\ STM32F415xx\ ||\ STM32F407xx\ ||\ STM32F417xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \#include\ "{}\mbox{\hyperlink{stm32f4xx__ll__fmc_8h}{stm32f4xx\_ll\_fmc.h}}"{}}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx\ ||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#if\ defined(STM32F405xx)\ ||\ defined(STM32F415xx)\ ||\ defined(STM32F407xx)\ ||\ defined(STM32F417xx)\ ||\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)\ ||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{/*\ Exported\ typedef\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00069\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00070\ \{\ \ }
+\DoxyCodeLine{00071\ \ \ HAL\_NOR\_STATE\_RESET\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00,\ \ }
+\DoxyCodeLine{00072\ \ \ HAL\_NOR\_STATE\_READY\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x01,\ \ }
+\DoxyCodeLine{00073\ \ \ HAL\_NOR\_STATE\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x02,\ \ }
+\DoxyCodeLine{00074\ \ \ HAL\_NOR\_STATE\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x03,\ \ }
+\DoxyCodeLine{00075\ \ \ HAL\_NOR\_STATE\_PROTECTED\ \ \ \ \ \ \ \ \ =\ 0x04\ \ \ }
+\DoxyCodeLine{00076\ \}HAL\_NOR\_StateTypeDef;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \ \ NOR\_SUCCESS\ =\ 0,}
+\DoxyCodeLine{00084\ \ \ NOR\_ONGOING,}
+\DoxyCodeLine{00085\ \ \ NOR\_ERROR,}
+\DoxyCodeLine{00086\ \ \ NOR\_TIMEOUT}
+\DoxyCodeLine{00087\ \}NOR\_StatusTypedef;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00093\ \{}
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Manufacturer\_Code;\ \ }
+\DoxyCodeLine{00096\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Device\_Code1;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Device\_Code2;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Device\_Code3;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \}NOR\_IDTypeDef;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00110\ \{}
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ CFI\_1;}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ CFI\_2;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ CFI\_3;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ CFI\_4;}
+\DoxyCodeLine{00122\ \}NOR\_CFITypeDef;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ FMC\_NORSRAM\_TypeDef\ \ \ \ \ \ \ \ \ \ \ *Instance;\ \ \ \ }
+\DoxyCodeLine{00131\ \ \ FMC\_NORSRAM\_EXTENDED\_TypeDef\ \ *Extended;\ \ \ \ }
+\DoxyCodeLine{00133\ \ \ FMC\_NORSRAM\_InitTypeDef\ \ \ \ \ \ \ Init;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\_LockTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lock;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00137\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ HAL\_NOR\_StateTypeDef\ \ \ \ \ State;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00139\ \}NOR\_HandleTypeDef;\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00145\ \textcolor{comment}{/*\ NOR\ device\ IDs\ addresses\ */}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ MC\_ADDRESS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ DEVICE\_CODE1\_ADDR\ \ \ \ \ \ \ \ ((uint16\_t)0x0001)}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ DEVICE\_CODE2\_ADDR\ \ \ \ \ \ \ \ ((uint16\_t)0x000E)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ DEVICE\_CODE3\_ADDR\ \ \ \ \ \ \ \ ((uint16\_t)0x000F)}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{comment}{/*\ NOR\ CFI\ IDs\ addresses\ */}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ CFI1\_ADDRESS\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x61)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ CFI2\_ADDRESS\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x62)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ CFI3\_ADDRESS\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x63)}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ CFI4\_ADDRESS\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x64)}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{comment}{/*\ NOR\ operation\ wait\ timeout\ */}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ NOR\_TMEOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0xFFFF)}}
+\DoxyCodeLine{00159\ \ \ \ }
+\DoxyCodeLine{00160\ \textcolor{comment}{/*\ \#define\ NOR\_MEMORY\_16B\ */}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ NOR\_MEMORY\_8B}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{comment}{/*\ NOR\ memory\ device\ read/write\ start\ address\ */}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ NOR\_MEMORY\_ADRESS\ \ \ \ \ \ \ \ ((uint32\_t)0x60000000)}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00170\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ \_\_HAL\_NOR\_RESET\_HANDLE\_STATE(\_\_HANDLE\_\_)\ ((\_\_HANDLE\_\_)-\/>State\ =\ HAL\_NOR\_STATE\_RESET)}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#ifdef\ \ NOR\_MEMORY\_8B}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\ \#define\ \_\_NOR\_ADDR\_SHIFT(\_\_ADDRESS\_\_)\ (uint32\_t)(NOR\_MEMORY\_ADRESS\ +\ (2\ *\ (\_\_ADDRESS\_\_)))}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{/*\ NOR\_MEMORY\_16B\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\ \#define\ \_\_NOR\_ADDR\_SHIFT(\_\_ADDRESS\_\_)\ (uint32\_t)(NOR\_MEMORY\_ADRESS\ +\ (\_\_ADDRESS\_\_))}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ NOR\_MEMORY\_8B\ */}\textcolor{preprocessor}{\ }}
+\DoxyCodeLine{00188\ \ }
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ \_\_NOR\_WRITE(\_\_ADDRESS\_\_,\ \_\_DATA\_\_)\ \ (*(\_\_IO\ uint16\_t\ *)((uint32\_t)(\_\_ADDRESS\_\_))\ =\ (\_\_DATA\_\_))}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{comment}{/*\ Initialization/de-\/initialization\ functions\ \ ********************************/}}
+\DoxyCodeLine{00200\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_Init(NOR\_HandleTypeDef\ *hnor,\ FMC\_NORSRAM\_TimingTypeDef\ *Timing,\ FMC\_NORSRAM\_TimingTypeDef\ *ExtTiming);}
+\DoxyCodeLine{00201\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_DeInit(NOR\_HandleTypeDef\ *hnor);}
+\DoxyCodeLine{00202\ \textcolor{keywordtype}{void}\ HAL\_NOR\_MspInit(NOR\_HandleTypeDef\ *hnor);}
+\DoxyCodeLine{00203\ \textcolor{keywordtype}{void}\ HAL\_NOR\_MspDeInit(NOR\_HandleTypeDef\ *hnor);}
+\DoxyCodeLine{00204\ \textcolor{keywordtype}{void}\ HAL\_NOR\_MspWait(NOR\_HandleTypeDef\ *hnor,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{comment}{/*\ I/O\ operation\ functions\ \ ***************************************************/}}
+\DoxyCodeLine{00207\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_Read\_ID(NOR\_HandleTypeDef\ *hnor,\ NOR\_IDTypeDef\ *pNOR\_ID);}
+\DoxyCodeLine{00208\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_ReturnToReadMode(NOR\_HandleTypeDef\ *hnor);}
+\DoxyCodeLine{00209\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_Read(NOR\_HandleTypeDef\ *hnor,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *pAddress,\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *pData);}
+\DoxyCodeLine{00210\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_Program(NOR\_HandleTypeDef\ *hnor,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *pAddress,\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *pData);}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_ReadBuffer(NOR\_HandleTypeDef\ *hnor,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ uwAddress,\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *pData,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ uwBufferSize);}
+\DoxyCodeLine{00213\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_ProgramBuffer(NOR\_HandleTypeDef\ *hnor,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ uwAddress,\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *pData,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ uwBufferSize);}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_Erase\_Block(NOR\_HandleTypeDef\ *hnor,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BlockAddress,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Address);}
+\DoxyCodeLine{00216\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_Erase\_Chip(NOR\_HandleTypeDef\ *hnor,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Address);}
+\DoxyCodeLine{00217\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_Read\_CFI(NOR\_HandleTypeDef\ *hnor,\ NOR\_CFITypeDef\ *pNOR\_CFI);}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \textcolor{comment}{/*\ NOR\ Control\ functions\ \ *****************************************************/}}
+\DoxyCodeLine{00220\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_WriteOperation\_Enable(NOR\_HandleTypeDef\ *hnor);}
+\DoxyCodeLine{00221\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_NOR\_WriteOperation\_Disable(NOR\_HandleTypeDef\ *hnor);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \textcolor{comment}{/*\ NOR\ State\ functions\ ********************************************************/}}
+\DoxyCodeLine{00224\ HAL\_NOR\_StateTypeDef\ HAL\_NOR\_GetState(NOR\_HandleTypeDef\ *hnor);}
+\DoxyCodeLine{00225\ NOR\_StatusTypedef\ HAL\_NOR\_GetStatus(NOR\_HandleTypeDef\ *hnor,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Address,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F405xx\ ||\ STM32F415xx\ ||\ STM32F407xx\ ||\ STM32F417xx\ ||\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx\ ||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00237\ \}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_HAL\_NOR\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

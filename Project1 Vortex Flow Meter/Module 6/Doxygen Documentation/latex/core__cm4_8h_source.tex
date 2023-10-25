@@ -1,0 +1,1192 @@
+\doxysection{core\+\_\+cm4.\+h}
+\hypertarget{core__cm4_8h_source}{}\label{core__cm4_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/core\_cm4.h@{mbed/TARGET\_NUCLEO\_F401RE/core\_cm4.h}}
+\mbox{\hyperlink{core__cm4_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/**************************************************************************/}}
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Copyright\ (c)\ 2009\ -\/\ 2013\ ARM\ LIMITED}}
+\DoxyCodeLine{00011\ \textcolor{comment}{}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ \ \ All\ rights\ reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ \ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions\ are\ met:}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ -\/\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ -\/\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ \ \ \ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ \ \ -\/\ Neither\ the\ name\ of\ ARM\ nor\ the\ names\ of\ its\ contributors\ may\ be\ used}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ \ \ \ \ to\ endorse\ or\ promote\ products\ derived\ from\ this\ software\ without}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ \ \ \ \ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ \ \ *}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS\ "{}AS\ IS"{}}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ \ \ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ \ \ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS\ BE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ \ \ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ \ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#if\ defined\ (\ \_\_ICCARM\_\_\ )}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\ \#pragma\ system\_include\ \ }\textcolor{comment}{/*\ treat\ file\ as\ system\ include\ file\ for\ MISRA\ check\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ \_\_CORE\_CM4\_H\_GENERIC}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \_\_CORE\_CM4\_H\_GENERIC}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CMSIS\ definitions}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00070\ \textcolor{comment}{/*\ \ CMSIS\ CM4\ definitions\ */}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ \_\_CM4\_CMSIS\_VERSION\_MAIN\ \ (0x03)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ \_\_CM4\_CMSIS\_VERSION\_SUB\ \ \ (0x20)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ \_\_CM4\_CMSIS\_VERSION\ \ \ \ \ \ \ ((\_\_CM4\_CMSIS\_VERSION\_MAIN\ <<\ 16)\ |\ \(\backslash\)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_CM4\_CMSIS\_VERSION\_SUB\ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ \_\_CORTEX\_M\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x04)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#if\ \ \ defined\ (\ \_\_CC\_ARM\ )}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\ \ \#define\ \_\_ASM\ \ \ \ \ \ \ \ \ \ \ \ \_\_asm\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\ \ \#define\ \_\_INLINE\ \ \ \ \ \ \ \ \ \_\_inline\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\ \ \#define\ \_\_STATIC\_INLINE\ \ static\ \_\_inline}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#elif\ defined\ (\ \_\_ICCARM\_\_\ )}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\ \ \#define\ \_\_ASM\ \ \ \ \ \ \ \ \ \ \ \ \_\_asm\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\ \ \#define\ \_\_INLINE\ \ \ \ \ \ \ \ \ inline\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \#define\ \_\_STATIC\_INLINE\ \ static\ inline}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#elif\ defined\ (\ \_\_TMS470\_\_\ )}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \#define\ \_\_ASM\ \ \ \ \ \ \ \ \ \ \ \ \_\_asm\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \#define\ \_\_STATIC\_INLINE\ \ static\ inline}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#elif\ defined\ (\ \_\_GNUC\_\_\ )}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \#define\ \_\_ASM\ \ \ \ \ \ \ \ \ \ \ \ \_\_asm\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\ \ \#define\ \_\_INLINE\ \ \ \ \ \ \ \ \ inline\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ \#define\ \_\_STATIC\_INLINE\ \ static\ inline}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#elif\ defined\ (\ \_\_TASKING\_\_\ )}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \#define\ \_\_ASM\ \ \ \ \ \ \ \ \ \ \ \ \_\_asm\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \#define\ \_\_INLINE\ \ \ \ \ \ \ \ \ inline\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \#define\ \_\_STATIC\_INLINE\ \ static\ inline}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#if\ defined\ (\ \_\_CC\_ARM\ )}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \ \#if\ defined\ \_\_TARGET\_FPU\_VFP}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\_\_FPU\_PRESENT\ ==\ 1)}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\ \ \ \ \ \ \#warning\ "{}Compiler\ generates\ FPU\ instructions\ for\ a\ device\ without\ an\ FPU\ (check\ \_\_FPU\_PRESENT)"{}}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#elif\ defined\ (\ \_\_ICCARM\_\_\ )}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\ \ \#if\ defined\ \_\_ARMVFP\_\_}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\_\_FPU\_PRESENT\ ==\ 1)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ \ \ \#warning\ "{}Compiler\ generates\ FPU\ instructions\ for\ a\ device\ without\ an\ FPU\ (check\ \_\_FPU\_PRESENT)"{}}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#elif\ defined\ (\ \_\_TMS470\_\_\ )}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \#if\ defined\ \_\_TI\_VFP\_SUPPORT\_\_}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\_\_FPU\_PRESENT\ ==\ 1)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\ \ \ \ \ \ \#warning\ "{}Compiler\ generates\ FPU\ instructions\ for\ a\ device\ without\ an\ FPU\ (check\ \_\_FPU\_PRESENT)"{}}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#elif\ defined\ (\ \_\_GNUC\_\_\ )}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\ \ \#if\ defined\ (\_\_VFP\_FP\_\_)\ \&\&\ !defined(\_\_SOFTFP\_\_)}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\_\_FPU\_PRESENT\ ==\ 1)}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\ \ \ \ \ \ \#warning\ "{}Compiler\ generates\ FPU\ instructions\ for\ a\ device\ without\ an\ FPU\ (check\ \_\_FPU\_PRESENT)"{}}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#elif\ defined\ (\ \_\_TASKING\_\_\ )}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\ \ \#if\ defined\ \_\_FPU\_VFP\_\_}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\ \ \ \ \#if\ (\_\_FPU\_PRESENT\ ==\ 1)}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\ \ \ \ \ \ \#error\ "{}Compiler\ generates\ FPU\ instructions\ for\ a\ device\ without\ an\ FPU\ (check\ \_\_FPU\_PRESENT)"{}}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\ \ \ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\ \ \#else}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_FPU\_USED\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#include\ <stdint.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ standard\ types\ definitions\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{core__cm_instr_8h}{core\_cmInstr.h}}>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Core\ Instruction\ Access\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{core__cm_func_8h}{core\_cmFunc.h}}>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Core\ Function\ Access\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{core__cm4__simd_8h}{core\_cm4\_simd.h}}>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Compiler\ specific\ SIMD\ Intrinsics\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_CORE\_CM4\_H\_GENERIC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#ifndef\ \_\_CMSIS\_GENERIC}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#ifndef\ \_\_CORE\_CM4\_H\_DEPENDANT}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ \_\_CORE\_CM4\_H\_DEPENDANT}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \textcolor{comment}{/*\ check\ device\ defines\ and\ use\ defaults\ */}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#if\ defined\ \_\_CHECK\_DEVICE\_DEFINES}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\ \ \#ifndef\ \_\_CM4\_REV}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_CM4\_REV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\ \ \ \ \#warning\ "{}\_\_CM4\_REV\ not\ defined\ in\ device\ header\ file;\ using\ default!"{}}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\ \ \#ifndef\ \_\_FPU\_PRESENT}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_FPU\_PRESENT\ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\ \ \ \ \#warning\ "{}\_\_FPU\_PRESENT\ not\ defined\ in\ device\ header\ file;\ using\ default!"{}}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\ \ \#ifndef\ \_\_MPU\_PRESENT}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_MPU\_PRESENT\ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\ \ \ \ \#warning\ "{}\_\_MPU\_PRESENT\ not\ defined\ in\ device\ header\ file;\ using\ default!"{}}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\ \ \#ifndef\ \_\_NVIC\_PRIO\_BITS}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_NVIC\_PRIO\_BITS\ \ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\ \ \ \ \#warning\ "{}\_\_NVIC\_PRIO\_BITS\ not\ defined\ in\ device\ header\ file;\ using\ default!"{}}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\ \ \#ifndef\ \_\_Vendor\_SysTickConfig}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\ \ \ \ \#define\ \_\_Vendor\_SysTickConfig\ \ \ \ 0}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\ \ \ \ \#warning\ "{}\_\_Vendor\_SysTickConfig\ not\ defined\ in\ device\ header\ file;\ using\ default!"{}}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\ \ \#endif}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{comment}{/*\ IO\ definitions\ (access\ restrictions\ to\ peripheral\ registers)\ */}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\ \ \#define\ \ \ \_\_I\ \ \ \ \ volatile\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\ \ \#define\ \ \ \_\_I\ \ \ \ \ volatile\ const\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ \ \ \ \ \_\_O\ \ \ \ \ volatile\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ \ \ \ \ \_\_IO\ \ \ \ volatile\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00228\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00229\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Register\ Abstraction}}
+\DoxyCodeLine{00230\ \textcolor{comment}{\ \ Core\ Register\ contain:}}
+\DoxyCodeLine{00231\ \textcolor{comment}{\ \ -\/\ Core\ Register}}
+\DoxyCodeLine{00232\ \textcolor{comment}{\ \ -\/\ Core\ NVIC\ Register}}
+\DoxyCodeLine{00233\ \textcolor{comment}{\ \ -\/\ Core\ SCB\ Register}}
+\DoxyCodeLine{00234\ \textcolor{comment}{\ \ -\/\ Core\ SysTick\ Register}}
+\DoxyCodeLine{00235\ \textcolor{comment}{\ \ -\/\ Core\ Debug\ Register}}
+\DoxyCodeLine{00236\ \textcolor{comment}{\ \ -\/\ Core\ MPU\ Register}}
+\DoxyCodeLine{00237\ \textcolor{comment}{\ \ -\/\ Core\ FPU\ Register}}
+\DoxyCodeLine{00238\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00251\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union}}
+\DoxyCodeLine{00252\ \{}
+\DoxyCodeLine{00253\ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00254\ \ \ \{}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#if\ (\_\_CORTEX\_M\ !=\ 0x04)}}
+\DoxyCodeLine{00256\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \_reserved0:27;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00258\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gac58530d3cef56f5dc82028dea20a9a80}{\_reserved0}}:16;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00259\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gadcb98a5b9c93b0cb69cdb7af5638f32e}{GE}}:4;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00260\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gac681f266e20b3b3591b961e13633ae13}{\_reserved1}}:7;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00262\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gaee55ed11e5d98610efbab4db41458db1}{Q}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00263\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga2ab7bc12eeda75cea11a809b09d9c1f6}{V}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00264\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gac18c05c6c57faaf575df796f0138af0b}{C}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00265\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga20b39dff287813f37576596bffd69382}{Z}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00266\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga30ec71da5547222e90b09bf41a15a094}{N}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00267\ \ \ \}\ b;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00268\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ w;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00269\ \}\ \mbox{\hyperlink{union_a_p_s_r___type}{APSR\_Type}};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00274\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union}}
+\DoxyCodeLine{00275\ \{}
+\DoxyCodeLine{00276\ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00277\ \ \ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga14ea777ada0fad009d4651f0160d3481}{ISR}}:9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00279\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga33571b134d20994a53027f7343c1e61d}{\_reserved0}}:23;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00280\ \ \ \}\ b;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00281\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ w;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00282\ \}\ \mbox{\hyperlink{union_i_p_s_r___type}{IPSR\_Type}};}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00287\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union}}
+\DoxyCodeLine{00288\ \{}
+\DoxyCodeLine{00289\ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00290\ \ \ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga095ad4fd20712136d632680aaef0c21b}{ISR}}:9;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#if\ (\_\_CORTEX\_M\ !=\ 0x04)}}
+\DoxyCodeLine{00293\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \_reserved0:15;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga49410cfc8dbbf49e4e4ac83aaeb7ba0c}{\_reserved0}}:7;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00296\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga2d0ec4ccae337c1df5658f8cf4632e76}{GE}}:4;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00297\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga790056bb6f20ea16cecc784b0dd19ad6}{\_reserved1}}:4;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00299\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga0d75756e692c9fcfd296a2bc7fa3e40d}{T}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00300\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga1912e5aed27945097bd7ba5a35b964cc}{IT}}:2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00301\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga9869882e6408088e411ee9d0ce5f8876}{Q}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00302\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga56cf4dbe5d05f7c4aec72faf7072a08c}{V}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00303\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga580006b83e600b54e196791398a10e99}{C}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00304\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gac0b0b626d35b6c3465b2ad6bf5fd73a9}{Z}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00305\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gae8493233ea7fe2fe88035ec8af1fedc4}{N}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00306\ \ \ \}\ b;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00307\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ w;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00308\ \}\ \mbox{\hyperlink{unionx_p_s_r___type}{xPSR\_Type}};}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00313\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union}}
+\DoxyCodeLine{00314\ \{}
+\DoxyCodeLine{00315\ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00316\ \ \ \{}
+\DoxyCodeLine{00317\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga2d16582f16362595b1aa55def3bdba81}{nPRIV}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00318\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga1e8e4f5abfd6a28c6fb488063db1241e}{SPSEL}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00319\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gaa700b3605ffdd19951b23b171103c9fa}{FPCA}}:1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00320\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga3213d064596e3cf77c98d5dba03d2d2d}{\_reserved0}}:29;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00321\ \ \ \}\ b;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00322\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ w;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00323\ \}\ \mbox{\hyperlink{union_c_o_n_t_r_o_l___type}{CONTROL\_Type}};}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00336\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00337\ \{}
+\DoxyCodeLine{00338\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ISER[8];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED0[24];}
+\DoxyCodeLine{00340\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ICER[8];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RSERVED1[24];}
+\DoxyCodeLine{00342\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ISPR[8];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED2[24];}
+\DoxyCodeLine{00344\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ICPR[8];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED3[24];}
+\DoxyCodeLine{00346\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ IABR[8];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED4[56];}
+\DoxyCodeLine{00348\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ IP[240];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED5[644];}
+\DoxyCodeLine{00350\ \ \ \mbox{\hyperlink{core__cm4_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ STIR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00351\ \}\ \ \mbox{\hyperlink{struct_n_v_i_c___type}{NVIC\_Type}};}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \textcolor{comment}{/*\ Software\ Triggered\ Interrupt\ Register\ Definitions\ */}}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ NVIC\_STIR\_INTID\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ NVIC\_STIR\_INTID\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1FFUL\ <<\ NVIC\_STIR\_INTID\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00368\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00369\ \{}
+\DoxyCodeLine{00370\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CPUID;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00371\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ICSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00372\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ VTOR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00373\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ AIRCR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00374\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SCR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00375\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CCR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00376\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ SHP[12];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00377\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SHCSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00378\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CFSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00379\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ HFSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00380\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ DFSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00381\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ MMFAR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00382\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BFAR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00383\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ AFSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00384\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PFR[2];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00385\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ DFR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00386\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ADR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00387\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ MMFR[4];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00388\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ISAR[5];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED0[5];}
+\DoxyCodeLine{00390\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CPACR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00391\ \}\ \mbox{\hyperlink{struct_s_c_b___type}{SCB\_Type}};}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \textcolor{comment}{/*\ SCB\ CPUID\ Register\ Definitions\ */}}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#define\ SCB\_CPUID\_IMPLEMENTER\_Pos\ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#define\ SCB\_CPUID\_IMPLEMENTER\_Msk\ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ SCB\_CPUID\_IMPLEMENTER\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#define\ SCB\_CPUID\_VARIANT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 20\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#define\ SCB\_CPUID\_VARIANT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ SCB\_CPUID\_VARIANT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#define\ SCB\_CPUID\_ARCHITECTURE\_Pos\ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#define\ SCB\_CPUID\_ARCHITECTURE\_Msk\ \ \ \ \ \ \ \ \ (0xFUL\ <<\ SCB\_CPUID\_ARCHITECTURE\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#define\ SCB\_CPUID\_PARTNO\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ SCB\_CPUID\_PARTNO\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFFUL\ <<\ SCB\_CPUID\_PARTNO\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ SCB\_CPUID\_REVISION\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ SCB\_CPUID\_REVISION\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ SCB\_CPUID\_REVISION\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00409\ \textcolor{comment}{/*\ SCB\ Interrupt\ Control\ State\ Register\ Definitions\ */}}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_NMIPENDSET\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 31\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_NMIPENDSET\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_ICSR\_NMIPENDSET\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_PENDSVSET\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_PENDSVSET\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_ICSR\_PENDSVSET\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_PENDSVCLR\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 27\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_PENDSVCLR\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_ICSR\_PENDSVCLR\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_PENDSTSET\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 26\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_PENDSTSET\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_ICSR\_PENDSTSET\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_PENDSTCLR\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 25\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_PENDSTCLR\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_ICSR\_PENDSTCLR\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_ISRPREEMPT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 23\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00426\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_ISRPREEMPT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_ICSR\_ISRPREEMPT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_ISRPENDING\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_ISRPENDING\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_ICSR\_ISRPENDING\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_VECTPENDING\_Pos\ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00432\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_VECTPENDING\_Msk\ \ \ \ \ \ \ \ \ \ \ (0x1FFUL\ <<\ SCB\_ICSR\_VECTPENDING\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_RETTOBASE\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_RETTOBASE\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_ICSR\_RETTOBASE\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_VECTACTIVE\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#define\ SCB\_ICSR\_VECTACTIVE\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0x1FFUL\ <<\ SCB\_ICSR\_VECTACTIVE\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00440\ \textcolor{comment}{/*\ SCB\ Vector\ Table\ Offset\ Register\ Definitions\ */}}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\#define\ SCB\_VTOR\_TBLOFF\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#define\ SCB\_VTOR\_TBLOFF\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1FFFFFFUL\ <<\ SCB\_VTOR\_TBLOFF\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00444\ \textcolor{comment}{/*\ SCB\ Application\ Interrupt\ and\ Reset\ Control\ Register\ Definitions\ */}}
+\DoxyCodeLine{00445\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_VECTKEY\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_VECTKEY\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFFFUL\ <<\ SCB\_AIRCR\_VECTKEY\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_VECTKEYSTAT\_Pos\ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_VECTKEYSTAT\_Msk\ \ \ \ \ \ \ \ \ \ (0xFFFFUL\ <<\ SCB\_AIRCR\_VECTKEYSTAT\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_ENDIANESS\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_ENDIANESS\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_AIRCR\_ENDIANESS\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00454\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_PRIGROUP\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_PRIGROUP\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (7UL\ <<\ SCB\_AIRCR\_PRIGROUP\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_SYSRESETREQ\_Pos\ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_SYSRESETREQ\_Msk\ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_AIRCR\_SYSRESETREQ\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00460\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_VECTCLRACTIVE\_Pos\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_VECTCLRACTIVE\_Msk\ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_AIRCR\_VECTCLRACTIVE\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_VECTRESET\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ SCB\_AIRCR\_VECTRESET\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_AIRCR\_VECTRESET\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00466\ \textcolor{comment}{/*\ SCB\ System\ Control\ Register\ Definitions\ */}}
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\#define\ SCB\_SCR\_SEVONPEND\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\#define\ SCB\_SCR\_SEVONPEND\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SCR\_SEVONPEND\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#define\ SCB\_SCR\_SLEEPDEEP\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\#define\ SCB\_SCR\_SLEEPDEEP\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SCR\_SLEEPDEEP\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00473\ \textcolor{preprocessor}{\#define\ SCB\_SCR\_SLEEPONEXIT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#define\ SCB\_SCR\_SLEEPONEXIT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SCR\_SLEEPONEXIT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00476\ \textcolor{comment}{/*\ SCB\ Configuration\ Control\ Register\ Definitions\ */}}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\#define\ SCB\_CCR\_STKALIGN\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#define\ SCB\_CCR\_STKALIGN\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_CCR\_STKALIGN\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#define\ SCB\_CCR\_BFHFNMIGN\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\#define\ SCB\_CCR\_BFHFNMIGN\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_CCR\_BFHFNMIGN\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\#define\ SCB\_CCR\_DIV\_0\_TRP\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\#define\ SCB\_CCR\_DIV\_0\_TRP\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_CCR\_DIV\_0\_TRP\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#define\ SCB\_CCR\_UNALIGN\_TRP\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00487\ \textcolor{preprocessor}{\#define\ SCB\_CCR\_UNALIGN\_TRP\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_CCR\_UNALIGN\_TRP\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#define\ SCB\_CCR\_USERSETMPEND\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\#define\ SCB\_CCR\_USERSETMPEND\_Msk\ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_CCR\_USERSETMPEND\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#define\ SCB\_CCR\_NONBASETHRDENA\_Pos\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00493\ \textcolor{preprocessor}{\#define\ SCB\_CCR\_NONBASETHRDENA\_Msk\ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_CCR\_NONBASETHRDENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00495\ \textcolor{comment}{/*\ SCB\ System\ Handler\ Control\ and\ State\ Register\ Definitions\ */}}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_USGFAULTENA\_Pos\ \ \ \ \ \ \ \ \ \ 18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_USGFAULTENA\_Msk\ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_USGFAULTENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00499\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_BUSFAULTENA\_Pos\ \ \ \ \ \ \ \ \ \ 17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_BUSFAULTENA\_Msk\ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_BUSFAULTENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00502\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_MEMFAULTENA\_Pos\ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00503\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_MEMFAULTENA\_Msk\ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_MEMFAULTENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00505\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_SVCALLPENDED\_Pos\ \ \ \ \ \ \ \ \ 15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_SVCALLPENDED\_Msk\ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_SVCALLPENDED\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00508\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_BUSFAULTPENDED\_Pos\ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_BUSFAULTPENDED\_Msk\ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_BUSFAULTPENDED\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_MEMFAULTPENDED\_Pos\ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_MEMFAULTPENDED\_Msk\ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_MEMFAULTPENDED\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_USGFAULTPENDED\_Pos\ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00515\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_USGFAULTPENDED\_Msk\ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_USGFAULTPENDED\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_SYSTICKACT\_Pos\ \ \ \ \ \ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_SYSTICKACT\_Msk\ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_SYSTICKACT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00520\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_PENDSVACT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00521\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_PENDSVACT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_PENDSVACT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00523\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_MONITORACT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_MONITORACT\_Msk\ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_MONITORACT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00526\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_SVCALLACT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_SVCALLACT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_SVCALLACT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_USGFAULTACT\_Pos\ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_USGFAULTACT\_Msk\ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_USGFAULTACT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_BUSFAULTACT\_Pos\ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_BUSFAULTACT\_Msk\ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_BUSFAULTACT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_MEMFAULTACT\_Pos\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\#define\ SCB\_SHCSR\_MEMFAULTACT\_Msk\ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_SHCSR\_MEMFAULTACT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00538\ \textcolor{comment}{/*\ SCB\ Configurable\ Fault\ Status\ Registers\ Definitions\ */}}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\#define\ SCB\_CFSR\_USGFAULTSR\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\#define\ SCB\_CFSR\_USGFAULTSR\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0xFFFFUL\ <<\ SCB\_CFSR\_USGFAULTSR\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00542\ \textcolor{preprocessor}{\#define\ SCB\_CFSR\_BUSFAULTSR\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#define\ SCB\_CFSR\_BUSFAULTSR\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ SCB\_CFSR\_BUSFAULTSR\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00545\ \textcolor{preprocessor}{\#define\ SCB\_CFSR\_MEMFAULTSR\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00546\ \textcolor{preprocessor}{\#define\ SCB\_CFSR\_MEMFAULTSR\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ SCB\_CFSR\_MEMFAULTSR\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00548\ \textcolor{comment}{/*\ SCB\ Hard\ Fault\ Status\ Registers\ Definitions\ */}}
+\DoxyCodeLine{00549\ \textcolor{preprocessor}{\#define\ SCB\_HFSR\_DEBUGEVT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 31\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00550\ \textcolor{preprocessor}{\#define\ SCB\_HFSR\_DEBUGEVT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_HFSR\_DEBUGEVT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00552\ \textcolor{preprocessor}{\#define\ SCB\_HFSR\_FORCED\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 30\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00553\ \textcolor{preprocessor}{\#define\ SCB\_HFSR\_FORCED\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_HFSR\_FORCED\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00555\ \textcolor{preprocessor}{\#define\ SCB\_HFSR\_VECTTBL\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00556\ \textcolor{preprocessor}{\#define\ SCB\_HFSR\_VECTTBL\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_HFSR\_VECTTBL\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00558\ \textcolor{comment}{/*\ SCB\ Debug\ Fault\ Status\ Register\ Definitions\ */}}
+\DoxyCodeLine{00559\ \textcolor{preprocessor}{\#define\ SCB\_DFSR\_EXTERNAL\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00560\ \textcolor{preprocessor}{\#define\ SCB\_DFSR\_EXTERNAL\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_DFSR\_EXTERNAL\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00562\ \textcolor{preprocessor}{\#define\ SCB\_DFSR\_VCATCH\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00563\ \textcolor{preprocessor}{\#define\ SCB\_DFSR\_VCATCH\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_DFSR\_VCATCH\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00565\ \textcolor{preprocessor}{\#define\ SCB\_DFSR\_DWTTRAP\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00566\ \textcolor{preprocessor}{\#define\ SCB\_DFSR\_DWTTRAP\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_DFSR\_DWTTRAP\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00568\ \textcolor{preprocessor}{\#define\ SCB\_DFSR\_BKPT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00569\ \textcolor{preprocessor}{\#define\ SCB\_DFSR\_BKPT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_DFSR\_BKPT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00571\ \textcolor{preprocessor}{\#define\ SCB\_DFSR\_HALTED\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\#define\ SCB\_DFSR\_HALTED\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCB\_DFSR\_HALTED\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00585\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00586\ \{}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED0[1];}
+\DoxyCodeLine{00588\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ICTR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00589\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gaacadedade30422fed705e8dfc8e6cd8d}{ACTLR}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00590\ \}\ \mbox{\hyperlink{struct_s_cn_s_c_b___type}{SCnSCB\_Type}};}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00592\ \textcolor{comment}{/*\ Interrupt\ Controller\ Type\ Register\ Definitions\ */}}
+\DoxyCodeLine{00593\ \textcolor{preprocessor}{\#define\ SCnSCB\_ICTR\_INTLINESNUM\_Pos\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00594\ \textcolor{preprocessor}{\#define\ SCnSCB\_ICTR\_INTLINESNUM\_Msk\ \ \ \ \ \ \ \ (0xFUL\ <<\ SCnSCB\_ICTR\_INTLINESNUM\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{00596\ \textcolor{comment}{/*\ Auxiliary\ Control\ Register\ Definitions\ */}}
+\DoxyCodeLine{00597\ \textcolor{preprocessor}{\#define\ SCnSCB\_ACTLR\_DISOOFP\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00598\ \textcolor{preprocessor}{\#define\ SCnSCB\_ACTLR\_DISOOFP\_Msk\ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCnSCB\_ACTLR\_DISOOFP\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00600\ \textcolor{preprocessor}{\#define\ SCnSCB\_ACTLR\_DISFPCA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00601\ \textcolor{preprocessor}{\#define\ SCnSCB\_ACTLR\_DISFPCA\_Msk\ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCnSCB\_ACTLR\_DISFPCA\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00603\ \textcolor{preprocessor}{\#define\ SCnSCB\_ACTLR\_DISFOLD\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00604\ \textcolor{preprocessor}{\#define\ SCnSCB\_ACTLR\_DISFOLD\_Msk\ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SCnSCB\_ACTLR\_DISFOLD\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00606\ \textcolor{preprocessor}{\#define\ SCnSCB\_ACTLR\_DISDEFWBUF\_Pos\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00607\ \textcolor{preprocessor}{\#define\ SCnSCB\_ACTLR\_DISDEFWBUF\_Msk\ \ \ \ \ \ \ \ (1UL\ <<\ SCnSCB\_ACTLR\_DISDEFWBUF\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00609\ \textcolor{preprocessor}{\#define\ SCnSCB\_ACTLR\_DISMCYCINT\_Pos\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00610\ \textcolor{preprocessor}{\#define\ SCnSCB\_ACTLR\_DISMCYCINT\_Msk\ \ \ \ \ \ \ \ (1UL\ <<\ SCnSCB\_ACTLR\_DISMCYCINT\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00623\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00624\ \{}
+\DoxyCodeLine{00625\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CTRL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00626\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LOAD;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00627\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ VAL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00628\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CALIB;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00629\ \}\ \mbox{\hyperlink{struct_sys_tick___type}{SysTick\_Type}};}
+\DoxyCodeLine{00630\ }
+\DoxyCodeLine{00631\ \textcolor{comment}{/*\ SysTick\ Control\ /\ Status\ Register\ Definitions\ */}}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\#define\ SysTick\_CTRL\_COUNTFLAG\_Pos\ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00633\ \textcolor{preprocessor}{\#define\ SysTick\_CTRL\_COUNTFLAG\_Msk\ \ \ \ \ \ \ \ \ (1UL\ <<\ SysTick\_CTRL\_COUNTFLAG\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00635\ \textcolor{preprocessor}{\#define\ SysTick\_CTRL\_CLKSOURCE\_Pos\ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00636\ \textcolor{preprocessor}{\#define\ SysTick\_CTRL\_CLKSOURCE\_Msk\ \ \ \ \ \ \ \ \ (1UL\ <<\ SysTick\_CTRL\_CLKSOURCE\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00638\ \textcolor{preprocessor}{\#define\ SysTick\_CTRL\_TICKINT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00639\ \textcolor{preprocessor}{\#define\ SysTick\_CTRL\_TICKINT\_Msk\ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SysTick\_CTRL\_TICKINT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00641\ \textcolor{preprocessor}{\#define\ SysTick\_CTRL\_ENABLE\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00642\ \textcolor{preprocessor}{\#define\ SysTick\_CTRL\_ENABLE\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SysTick\_CTRL\_ENABLE\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00644\ \textcolor{comment}{/*\ SysTick\ Reload\ Register\ Definitions\ */}}
+\DoxyCodeLine{00645\ \textcolor{preprocessor}{\#define\ SysTick\_LOAD\_RELOAD\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00646\ \textcolor{preprocessor}{\#define\ SysTick\_LOAD\_RELOAD\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0xFFFFFFUL\ <<\ SysTick\_LOAD\_RELOAD\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00648\ \textcolor{comment}{/*\ SysTick\ Current\ Register\ Definitions\ */}}
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\#define\ SysTick\_VAL\_CURRENT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\#define\ SysTick\_VAL\_CURRENT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0xFFFFFFUL\ <<\ SysTick\_VAL\_CURRENT\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00652\ \textcolor{comment}{/*\ SysTick\ Calibration\ Register\ Definitions\ */}}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#define\ SysTick\_CALIB\_NOREF\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 31\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\#define\ SysTick\_CALIB\_NOREF\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SysTick\_CALIB\_NOREF\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\#define\ SysTick\_CALIB\_SKEW\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 30\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00657\ \textcolor{preprocessor}{\#define\ SysTick\_CALIB\_SKEW\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ SysTick\_CALIB\_SKEW\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00659\ \textcolor{preprocessor}{\#define\ SysTick\_CALIB\_TENMS\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00660\ \textcolor{preprocessor}{\#define\ SysTick\_CALIB\_TENMS\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0xFFFFFFUL\ <<\ SysTick\_VAL\_CURRENT\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00673\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00674\ \{}
+\DoxyCodeLine{00675\ \ \ \mbox{\hyperlink{core__cm4_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}\ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{00676\ \ \ \{}
+\DoxyCodeLine{00677\ \ \ \ \ \mbox{\hyperlink{core__cm4_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}\ \ uint8\_t\ \ \ \ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gad2b3b96d5006672e17ade9879ffd9b23}{u8}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00678\ \ \ \ \ \mbox{\hyperlink{core__cm4_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}\ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga28d82a30d652ffbc6e2d374e3d695c31}{u16}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00679\ \ \ \ \ \mbox{\hyperlink{core__cm4_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga41ba216e122636c892e676b0e6db67f0}{u32}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00680\ \ \ \}\ \ PORT\ [32];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED0[864];}
+\DoxyCodeLine{00682\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ TER;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED1[15];}
+\DoxyCodeLine{00684\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ TPR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED2[15];}
+\DoxyCodeLine{00686\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ TCR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED3[29];}
+\DoxyCodeLine{00688\ \ \ \mbox{\hyperlink{core__cm4_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ IWR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00689\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ IRR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00690\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ IMCR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED4[43];}
+\DoxyCodeLine{00692\ \ \ \mbox{\hyperlink{core__cm4_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LAR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00693\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED5[6];}
+\DoxyCodeLine{00695\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PID4;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00696\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PID5;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00697\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PID6;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00698\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PID7;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00699\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PID0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00700\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PID1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00701\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PID2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00702\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PID3;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00703\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CID0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00704\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CID1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00705\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CID2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00706\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CID3;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00707\ \}\ \mbox{\hyperlink{struct_i_t_m___type}{ITM\_Type}};}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ \textcolor{comment}{/*\ ITM\ Trace\ Privilege\ Register\ Definitions\ */}}
+\DoxyCodeLine{00710\ \textcolor{preprocessor}{\#define\ ITM\_TPR\_PRIVMASK\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00711\ \textcolor{preprocessor}{\#define\ ITM\_TPR\_PRIVMASK\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ ITM\_TPR\_PRIVMASK\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00713\ \textcolor{comment}{/*\ ITM\ Trace\ Control\ Register\ Definitions\ */}}
+\DoxyCodeLine{00714\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_BUSY\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 23\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00715\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_BUSY\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ ITM\_TCR\_BUSY\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00717\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_TraceBusID\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00718\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_TraceBusID\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x7FUL\ <<\ ITM\_TCR\_TraceBusID\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00720\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_GTSFREQ\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00721\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_GTSFREQ\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (3UL\ <<\ ITM\_TCR\_GTSFREQ\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00723\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_TSPrescale\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00724\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_TSPrescale\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (3UL\ <<\ ITM\_TCR\_TSPrescale\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00726\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_SWOENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00727\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_SWOENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ ITM\_TCR\_SWOENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00729\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_DWTENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00730\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_DWTENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ ITM\_TCR\_DWTENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00732\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_SYNCENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00733\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_SYNCENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ ITM\_TCR\_SYNCENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00735\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_TSENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00736\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_TSENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ ITM\_TCR\_TSENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00738\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_ITMENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00739\ \textcolor{preprocessor}{\#define\ ITM\_TCR\_ITMENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ ITM\_TCR\_ITMENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00741\ \textcolor{comment}{/*\ ITM\ Integration\ Write\ Register\ Definitions\ */}}
+\DoxyCodeLine{00742\ \textcolor{preprocessor}{\#define\ ITM\_IWR\_ATVALIDM\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00743\ \textcolor{preprocessor}{\#define\ ITM\_IWR\_ATVALIDM\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ ITM\_IWR\_ATVALIDM\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00745\ \textcolor{comment}{/*\ ITM\ Integration\ Read\ Register\ Definitions\ */}}
+\DoxyCodeLine{00746\ \textcolor{preprocessor}{\#define\ ITM\_IRR\_ATREADYM\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00747\ \textcolor{preprocessor}{\#define\ ITM\_IRR\_ATREADYM\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ ITM\_IRR\_ATREADYM\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00749\ \textcolor{comment}{/*\ ITM\ Integration\ Mode\ Control\ Register\ Definitions\ */}}
+\DoxyCodeLine{00750\ \textcolor{preprocessor}{\#define\ ITM\_IMCR\_INTEGRATION\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00751\ \textcolor{preprocessor}{\#define\ ITM\_IMCR\_INTEGRATION\_Msk\ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ ITM\_IMCR\_INTEGRATION\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00753\ \textcolor{comment}{/*\ ITM\ Lock\ Status\ Register\ Definitions\ */}}
+\DoxyCodeLine{00754\ \textcolor{preprocessor}{\#define\ ITM\_LSR\_ByteAcc\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00755\ \textcolor{preprocessor}{\#define\ ITM\_LSR\_ByteAcc\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ ITM\_LSR\_ByteAcc\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00757\ \textcolor{preprocessor}{\#define\ ITM\_LSR\_Access\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00758\ \textcolor{preprocessor}{\#define\ ITM\_LSR\_Access\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ ITM\_LSR\_Access\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00760\ \textcolor{preprocessor}{\#define\ ITM\_LSR\_Present\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00761\ \textcolor{preprocessor}{\#define\ ITM\_LSR\_Present\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ ITM\_LSR\_Present\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ end\ of\ group\ CMSIS\_ITM\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00764\ }
+\DoxyCodeLine{00765\ }
+\DoxyCodeLine{00774\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00775\ \{}
+\DoxyCodeLine{00776\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CTRL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00777\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CYCCNT;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00778\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CPICNT;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00779\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ EXCCNT;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00780\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SLEEPCNT;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00781\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LSUCNT;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00782\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FOLDCNT;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00783\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PCSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00784\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ COMP0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00785\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ MASK0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00786\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FUNCTION0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED0[1];}
+\DoxyCodeLine{00788\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ COMP1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00789\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ MASK1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00790\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FUNCTION1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED1[1];}
+\DoxyCodeLine{00792\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ COMP2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00793\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ MASK2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00794\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FUNCTION2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED2[1];}
+\DoxyCodeLine{00796\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ COMP3;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00797\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ MASK3;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00798\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FUNCTION3;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00799\ \}\ \mbox{\hyperlink{struct_d_w_t___type}{DWT\_Type}};}
+\DoxyCodeLine{00800\ }
+\DoxyCodeLine{00801\ \textcolor{comment}{/*\ DWT\ Control\ Register\ Definitions\ */}}
+\DoxyCodeLine{00802\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_NUMCOMP\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00803\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_NUMCOMP\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ DWT\_CTRL\_NUMCOMP\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00805\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_NOTRCPKT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 27\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00806\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_NOTRCPKT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_NOTRCPKT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00808\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_NOEXTTRIG\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 26\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00809\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_NOEXTTRIG\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_NOEXTTRIG\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00811\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_NOCYCCNT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 25\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00812\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_NOCYCCNT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_NOCYCCNT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00814\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_NOPRFCNT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00815\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_NOPRFCNT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_NOPRFCNT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00817\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_CYCEVTENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00818\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_CYCEVTENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_CYCEVTENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00820\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_FOLDEVTENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 21\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00821\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_FOLDEVTENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_FOLDEVTENA\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00823\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_LSUEVTENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 20\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00824\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_LSUEVTENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_LSUEVTENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00826\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_SLEEPEVTENA\_Pos\ \ \ \ \ \ \ \ \ \ \ 19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00827\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_SLEEPEVTENA\_Msk\ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_SLEEPEVTENA\_Pos)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00829\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_EXCEVTENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00830\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_EXCEVTENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_EXCEVTENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00832\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_CPIEVTENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00833\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_CPIEVTENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_CPIEVTENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00835\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_EXCTRCENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00836\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_EXCTRCENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_EXCTRCENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00838\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_PCSAMPLENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00839\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_PCSAMPLENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_PCSAMPLENA\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00841\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_SYNCTAP\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00842\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_SYNCTAP\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x3UL\ <<\ DWT\_CTRL\_SYNCTAP\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00844\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_CYCTAP\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00845\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_CYCTAP\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_CYCTAP\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00847\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_POSTINIT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00848\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_POSTINIT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ DWT\_CTRL\_POSTINIT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00850\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_POSTPRESET\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00851\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_POSTPRESET\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ DWT\_CTRL\_POSTPRESET\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00853\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_CYCCNTENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00854\ \textcolor{preprocessor}{\#define\ DWT\_CTRL\_CYCCNTENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_CTRL\_CYCCNTENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00856\ \textcolor{comment}{/*\ DWT\ CPI\ Count\ Register\ Definitions\ */}}
+\DoxyCodeLine{00857\ \textcolor{preprocessor}{\#define\ DWT\_CPICNT\_CPICNT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00858\ \textcolor{preprocessor}{\#define\ DWT\_CPICNT\_CPICNT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ DWT\_CPICNT\_CPICNT\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00860\ \textcolor{comment}{/*\ DWT\ Exception\ Overhead\ Count\ Register\ Definitions\ */}}
+\DoxyCodeLine{00861\ \textcolor{preprocessor}{\#define\ DWT\_EXCCNT\_EXCCNT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00862\ \textcolor{preprocessor}{\#define\ DWT\_EXCCNT\_EXCCNT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ DWT\_EXCCNT\_EXCCNT\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00864\ \textcolor{comment}{/*\ DWT\ Sleep\ Count\ Register\ Definitions\ */}}
+\DoxyCodeLine{00865\ \textcolor{preprocessor}{\#define\ DWT\_SLEEPCNT\_SLEEPCNT\_Pos\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00866\ \textcolor{preprocessor}{\#define\ DWT\_SLEEPCNT\_SLEEPCNT\_Msk\ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ DWT\_SLEEPCNT\_SLEEPCNT\_Pos)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00868\ \textcolor{comment}{/*\ DWT\ LSU\ Count\ Register\ Definitions\ */}}
+\DoxyCodeLine{00869\ \textcolor{preprocessor}{\#define\ DWT\_LSUCNT\_LSUCNT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00870\ \textcolor{preprocessor}{\#define\ DWT\_LSUCNT\_LSUCNT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ DWT\_LSUCNT\_LSUCNT\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00872\ \textcolor{comment}{/*\ DWT\ Folded-\/instruction\ Count\ Register\ Definitions\ */}}
+\DoxyCodeLine{00873\ \textcolor{preprocessor}{\#define\ DWT\_FOLDCNT\_FOLDCNT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00874\ \textcolor{preprocessor}{\#define\ DWT\_FOLDCNT\_FOLDCNT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ DWT\_FOLDCNT\_FOLDCNT\_Pos)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00876\ \textcolor{comment}{/*\ DWT\ Comparator\ Mask\ Register\ Definitions\ */}}
+\DoxyCodeLine{00877\ \textcolor{preprocessor}{\#define\ DWT\_MASK\_MASK\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00878\ \textcolor{preprocessor}{\#define\ DWT\_MASK\_MASK\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1FUL\ <<\ DWT\_MASK\_MASK\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00880\ \textcolor{comment}{/*\ DWT\ Comparator\ Function\ Register\ Definitions\ */}}
+\DoxyCodeLine{00881\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_MATCHED\_Pos\ \ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00882\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_MATCHED\_Msk\ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_FUNCTION\_MATCHED\_Pos)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00884\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_DATAVADDR1\_Pos\ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00885\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_DATAVADDR1\_Msk\ \ \ \ \ \ \ \ (0xFUL\ <<\ DWT\_FUNCTION\_DATAVADDR1\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{00887\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_DATAVADDR0\_Pos\ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00888\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_DATAVADDR0\_Msk\ \ \ \ \ \ \ \ (0xFUL\ <<\ DWT\_FUNCTION\_DATAVADDR0\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{00890\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_DATAVSIZE\_Pos\ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00891\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_DATAVSIZE\_Msk\ \ \ \ \ \ \ \ \ (0x3UL\ <<\ DWT\_FUNCTION\_DATAVSIZE\_Pos)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00893\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_LNK1ENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00894\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_LNK1ENA\_Msk\ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_FUNCTION\_LNK1ENA\_Pos)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00896\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_DATAVMATCH\_Pos\ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00897\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_DATAVMATCH\_Msk\ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_FUNCTION\_DATAVMATCH\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{00899\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_CYCMATCH\_Pos\ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00900\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_CYCMATCH\_Msk\ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_FUNCTION\_CYCMATCH\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00902\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_EMITRANGE\_Pos\ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00903\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_EMITRANGE\_Msk\ \ \ \ \ \ \ \ \ (0x1UL\ <<\ DWT\_FUNCTION\_EMITRANGE\_Pos)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00905\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_FUNCTION\_Pos\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00906\ \textcolor{preprocessor}{\#define\ DWT\_FUNCTION\_FUNCTION\_Msk\ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ DWT\_FUNCTION\_FUNCTION\_Pos)\ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ end\ of\ group\ CMSIS\_DWT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00909\ }
+\DoxyCodeLine{00910\ }
+\DoxyCodeLine{00919\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00920\ \{}
+\DoxyCodeLine{00921\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SSPSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00922\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CSPSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED0[2];}
+\DoxyCodeLine{00924\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ACPR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00925\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED1[55];}
+\DoxyCodeLine{00926\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SPPR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00927\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED2[131];}
+\DoxyCodeLine{00928\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FFSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00929\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FFCR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00930\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FSCR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00931\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED3[759];}
+\DoxyCodeLine{00932\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ TRIGGER;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00933\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FIFO0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00934\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ITATBCTR2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00935\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED4[1];}
+\DoxyCodeLine{00936\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ITATBCTR0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00937\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FIFO1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00938\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ITCTRL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00939\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED5[39];}
+\DoxyCodeLine{00940\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CLAIMSET;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00941\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CLAIMCLR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00942\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED7[8];}
+\DoxyCodeLine{00943\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ DEVID;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00944\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ DEVTYPE;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00945\ \}\ \mbox{\hyperlink{struct_t_p_i___type}{TPI\_Type}};}
+\DoxyCodeLine{00946\ }
+\DoxyCodeLine{00947\ \textcolor{comment}{/*\ TPI\ Asynchronous\ Clock\ Prescaler\ Register\ Definitions\ */}}
+\DoxyCodeLine{00948\ \textcolor{preprocessor}{\#define\ TPI\_ACPR\_PRESCALER\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00949\ \textcolor{preprocessor}{\#define\ TPI\_ACPR\_PRESCALER\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1FFFUL\ <<\ TPI\_ACPR\_PRESCALER\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00951\ \textcolor{comment}{/*\ TPI\ Selected\ Pin\ Protocol\ Register\ Definitions\ */}}
+\DoxyCodeLine{00952\ \textcolor{preprocessor}{\#define\ TPI\_SPPR\_TXMODE\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00953\ \textcolor{preprocessor}{\#define\ TPI\_SPPR\_TXMODE\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x3UL\ <<\ TPI\_SPPR\_TXMODE\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00955\ \textcolor{comment}{/*\ TPI\ Formatter\ and\ Flush\ Status\ Register\ Definitions\ */}}
+\DoxyCodeLine{00956\ \textcolor{preprocessor}{\#define\ TPI\_FFSR\_FtNonStop\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00957\ \textcolor{preprocessor}{\#define\ TPI\_FFSR\_FtNonStop\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_FFSR\_FtNonStop\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00959\ \textcolor{preprocessor}{\#define\ TPI\_FFSR\_TCPresent\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00960\ \textcolor{preprocessor}{\#define\ TPI\_FFSR\_TCPresent\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_FFSR\_TCPresent\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00962\ \textcolor{preprocessor}{\#define\ TPI\_FFSR\_FtStopped\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00963\ \textcolor{preprocessor}{\#define\ TPI\_FFSR\_FtStopped\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_FFSR\_FtStopped\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00965\ \textcolor{preprocessor}{\#define\ TPI\_FFSR\_FlInProg\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00966\ \textcolor{preprocessor}{\#define\ TPI\_FFSR\_FlInProg\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_FFSR\_FlInProg\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00968\ \textcolor{comment}{/*\ TPI\ Formatter\ and\ Flush\ Control\ Register\ Definitions\ */}}
+\DoxyCodeLine{00969\ \textcolor{preprocessor}{\#define\ TPI\_FFCR\_TrigIn\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00970\ \textcolor{preprocessor}{\#define\ TPI\_FFCR\_TrigIn\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_FFCR\_TrigIn\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00972\ \textcolor{preprocessor}{\#define\ TPI\_FFCR\_EnFCont\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00973\ \textcolor{preprocessor}{\#define\ TPI\_FFCR\_EnFCont\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_FFCR\_EnFCont\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00975\ \textcolor{comment}{/*\ TPI\ TRIGGER\ Register\ Definitions\ */}}
+\DoxyCodeLine{00976\ \textcolor{preprocessor}{\#define\ TPI\_TRIGGER\_TRIGGER\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00977\ \textcolor{preprocessor}{\#define\ TPI\_TRIGGER\_TRIGGER\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_TRIGGER\_TRIGGER\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00979\ \textcolor{comment}{/*\ TPI\ Integration\ ETM\ Data\ Register\ Definitions\ (FIFO0)\ */}}
+\DoxyCodeLine{00980\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ITM\_ATVALID\_Pos\ \ \ \ \ \ \ \ \ \ 29\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00981\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ITM\_ATVALID\_Msk\ \ \ \ \ \ \ \ \ \ (0x3UL\ <<\ TPI\_FIFO0\_ITM\_ATVALID\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00983\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ITM\_bytecount\_Pos\ \ \ \ \ \ \ \ 27\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00984\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ITM\_bytecount\_Msk\ \ \ \ \ \ \ \ (0x3UL\ <<\ TPI\_FIFO0\_ITM\_bytecount\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{00986\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ETM\_ATVALID\_Pos\ \ \ \ \ \ \ \ \ \ 26\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00987\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ETM\_ATVALID\_Msk\ \ \ \ \ \ \ \ \ \ (0x3UL\ <<\ TPI\_FIFO0\_ETM\_ATVALID\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00989\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ETM\_bytecount\_Pos\ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00990\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ETM\_bytecount\_Msk\ \ \ \ \ \ \ \ (0x3UL\ <<\ TPI\_FIFO0\_ETM\_bytecount\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{00992\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ETM2\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00993\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ETM2\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ TPI\_FIFO0\_ETM2\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00995\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ETM1\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00996\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ETM1\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ TPI\_FIFO0\_ETM1\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00998\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ETM0\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00999\ \textcolor{preprocessor}{\#define\ TPI\_FIFO0\_ETM0\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ TPI\_FIFO0\_ETM0\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01001\ \textcolor{comment}{/*\ TPI\ ITATBCTR2\ Register\ Definitions\ */}}
+\DoxyCodeLine{01002\ \textcolor{preprocessor}{\#define\ TPI\_ITATBCTR2\_ATREADY\_Pos\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01003\ \textcolor{preprocessor}{\#define\ TPI\_ITATBCTR2\_ATREADY\_Msk\ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_ITATBCTR2\_ATREADY\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01005\ \textcolor{comment}{/*\ TPI\ Integration\ ITM\ Data\ Register\ Definitions\ (FIFO1)\ */}}
+\DoxyCodeLine{01006\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ITM\_ATVALID\_Pos\ \ \ \ \ \ \ \ \ \ 29\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01007\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ITM\_ATVALID\_Msk\ \ \ \ \ \ \ \ \ \ (0x3UL\ <<\ TPI\_FIFO1\_ITM\_ATVALID\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01009\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ITM\_bytecount\_Pos\ \ \ \ \ \ \ \ 27\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01010\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ITM\_bytecount\_Msk\ \ \ \ \ \ \ \ (0x3UL\ <<\ TPI\_FIFO1\_ITM\_bytecount\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{01012\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ETM\_ATVALID\_Pos\ \ \ \ \ \ \ \ \ \ 26\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01013\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ETM\_ATVALID\_Msk\ \ \ \ \ \ \ \ \ \ (0x3UL\ <<\ TPI\_FIFO1\_ETM\_ATVALID\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01015\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ETM\_bytecount\_Pos\ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01016\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ETM\_bytecount\_Msk\ \ \ \ \ \ \ \ (0x3UL\ <<\ TPI\_FIFO1\_ETM\_bytecount\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{01018\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ITM2\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01019\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ITM2\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ TPI\_FIFO1\_ITM2\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01021\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ITM1\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01022\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ITM1\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ TPI\_FIFO1\_ITM1\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01024\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ITM0\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01025\ \textcolor{preprocessor}{\#define\ TPI\_FIFO1\_ITM0\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ TPI\_FIFO1\_ITM0\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01027\ \textcolor{comment}{/*\ TPI\ ITATBCTR0\ Register\ Definitions\ */}}
+\DoxyCodeLine{01028\ \textcolor{preprocessor}{\#define\ TPI\_ITATBCTR0\_ATREADY\_Pos\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01029\ \textcolor{preprocessor}{\#define\ TPI\_ITATBCTR0\_ATREADY\_Msk\ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_ITATBCTR0\_ATREADY\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01031\ \textcolor{comment}{/*\ TPI\ Integration\ Mode\ Control\ Register\ Definitions\ */}}
+\DoxyCodeLine{01032\ \textcolor{preprocessor}{\#define\ TPI\_ITCTRL\_Mode\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01033\ \textcolor{preprocessor}{\#define\ TPI\_ITCTRL\_Mode\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_ITCTRL\_Mode\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01035\ \textcolor{comment}{/*\ TPI\ DEVID\ Register\ Definitions\ */}}
+\DoxyCodeLine{01036\ \textcolor{preprocessor}{\#define\ TPI\_DEVID\_NRZVALID\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01037\ \textcolor{preprocessor}{\#define\ TPI\_DEVID\_NRZVALID\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_DEVID\_NRZVALID\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01039\ \textcolor{preprocessor}{\#define\ TPI\_DEVID\_MANCVALID\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01040\ \textcolor{preprocessor}{\#define\ TPI\_DEVID\_MANCVALID\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_DEVID\_MANCVALID\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01042\ \textcolor{preprocessor}{\#define\ TPI\_DEVID\_PTINVALID\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01043\ \textcolor{preprocessor}{\#define\ TPI\_DEVID\_PTINVALID\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_DEVID\_PTINVALID\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01045\ \textcolor{preprocessor}{\#define\ TPI\_DEVID\_MinBufSz\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01046\ \textcolor{preprocessor}{\#define\ TPI\_DEVID\_MinBufSz\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0x7UL\ <<\ TPI\_DEVID\_MinBufSz\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01048\ \textcolor{preprocessor}{\#define\ TPI\_DEVID\_AsynClkIn\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01049\ \textcolor{preprocessor}{\#define\ TPI\_DEVID\_AsynClkIn\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ TPI\_DEVID\_AsynClkIn\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01051\ \textcolor{preprocessor}{\#define\ TPI\_DEVID\_NrTraceInput\_Pos\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01052\ \textcolor{preprocessor}{\#define\ TPI\_DEVID\_NrTraceInput\_Msk\ \ \ \ \ \ \ \ \ (0x1FUL\ <<\ TPI\_DEVID\_NrTraceInput\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{01054\ \textcolor{comment}{/*\ TPI\ DEVTYPE\ Register\ Definitions\ */}}
+\DoxyCodeLine{01055\ \textcolor{preprocessor}{\#define\ TPI\_DEVTYPE\_SubType\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01056\ \textcolor{preprocessor}{\#define\ TPI\_DEVTYPE\_SubType\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ TPI\_DEVTYPE\_SubType\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01058\ \textcolor{preprocessor}{\#define\ TPI\_DEVTYPE\_MajorType\_Pos\ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01059\ \textcolor{preprocessor}{\#define\ TPI\_DEVTYPE\_MajorType\_Msk\ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ TPI\_DEVTYPE\_MajorType\_Pos)\ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ end\ of\ group\ CMSIS\_TPI\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01062\ }
+\DoxyCodeLine{01063\ }
+\DoxyCodeLine{01064\ \textcolor{preprocessor}{\#if\ (\_\_MPU\_PRESENT\ ==\ 1)}}
+\DoxyCodeLine{01073\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{01074\ \{}
+\DoxyCodeLine{01075\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ TYPE;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01076\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CTRL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01077\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RNR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01078\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RBAR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01079\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RASR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01080\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RBAR\_A1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01081\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RASR\_A1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01082\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RBAR\_A2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01083\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RASR\_A2;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01084\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RBAR\_A3;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01085\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RASR\_A3;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01086\ \}\ MPU\_Type;}
+\DoxyCodeLine{01087\ }
+\DoxyCodeLine{01088\ \textcolor{comment}{/*\ MPU\ Type\ Register\ */}}
+\DoxyCodeLine{01089\ \textcolor{preprocessor}{\#define\ MPU\_TYPE\_IREGION\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01090\ \textcolor{preprocessor}{\#define\ MPU\_TYPE\_IREGION\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ MPU\_TYPE\_IREGION\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01092\ \textcolor{preprocessor}{\#define\ MPU\_TYPE\_DREGION\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01093\ \textcolor{preprocessor}{\#define\ MPU\_TYPE\_DREGION\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ MPU\_TYPE\_DREGION\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01095\ \textcolor{preprocessor}{\#define\ MPU\_TYPE\_SEPARATE\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01096\ \textcolor{preprocessor}{\#define\ MPU\_TYPE\_SEPARATE\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ MPU\_TYPE\_SEPARATE\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01098\ \textcolor{comment}{/*\ MPU\ Control\ Register\ */}}
+\DoxyCodeLine{01099\ \textcolor{preprocessor}{\#define\ MPU\_CTRL\_PRIVDEFENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01100\ \textcolor{preprocessor}{\#define\ MPU\_CTRL\_PRIVDEFENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ MPU\_CTRL\_PRIVDEFENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01102\ \textcolor{preprocessor}{\#define\ MPU\_CTRL\_HFNMIENA\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01103\ \textcolor{preprocessor}{\#define\ MPU\_CTRL\_HFNMIENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ MPU\_CTRL\_HFNMIENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01105\ \textcolor{preprocessor}{\#define\ MPU\_CTRL\_ENABLE\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01106\ \textcolor{preprocessor}{\#define\ MPU\_CTRL\_ENABLE\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ MPU\_CTRL\_ENABLE\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01108\ \textcolor{comment}{/*\ MPU\ Region\ Number\ Register\ */}}
+\DoxyCodeLine{01109\ \textcolor{preprocessor}{\#define\ MPU\_RNR\_REGION\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01110\ \textcolor{preprocessor}{\#define\ MPU\_RNR\_REGION\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ MPU\_RNR\_REGION\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01112\ \textcolor{comment}{/*\ MPU\ Region\ Base\ Address\ Register\ */}}
+\DoxyCodeLine{01113\ \textcolor{preprocessor}{\#define\ MPU\_RBAR\_ADDR\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01114\ \textcolor{preprocessor}{\#define\ MPU\_RBAR\_ADDR\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x7FFFFFFUL\ <<\ MPU\_RBAR\_ADDR\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01116\ \textcolor{preprocessor}{\#define\ MPU\_RBAR\_VALID\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01117\ \textcolor{preprocessor}{\#define\ MPU\_RBAR\_VALID\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ MPU\_RBAR\_VALID\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01119\ \textcolor{preprocessor}{\#define\ MPU\_RBAR\_REGION\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01120\ \textcolor{preprocessor}{\#define\ MPU\_RBAR\_REGION\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ MPU\_RBAR\_REGION\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01122\ \textcolor{comment}{/*\ MPU\ Region\ Attribute\ and\ Size\ Register\ */}}
+\DoxyCodeLine{01123\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_ATTRS\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01124\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_ATTRS\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFFFUL\ <<\ MPU\_RASR\_ATTRS\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01126\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_XN\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01127\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_XN\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ MPU\_RASR\_XN\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01129\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_AP\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01130\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_AP\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x7UL\ <<\ MPU\_RASR\_AP\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01132\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_TEX\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01133\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_TEX\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x7UL\ <<\ MPU\_RASR\_TEX\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01135\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_S\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01136\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_S\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ MPU\_RASR\_S\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01138\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_C\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01139\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_C\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ MPU\_RASR\_C\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01141\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_B\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01142\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_B\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ MPU\_RASR\_B\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01144\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_SRD\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01145\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_SRD\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFUL\ <<\ MPU\_RASR\_SRD\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01147\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_SIZE\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01148\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_SIZE\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1FUL\ <<\ MPU\_RASR\_SIZE\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01150\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_ENABLE\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01151\ \textcolor{preprocessor}{\#define\ MPU\_RASR\_ENABLE\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ MPU\_RASR\_ENABLE\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01154\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01155\ }
+\DoxyCodeLine{01156\ }
+\DoxyCodeLine{01157\ \textcolor{preprocessor}{\#if\ (\_\_FPU\_PRESENT\ ==\ 1)}}
+\DoxyCodeLine{01166\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{01167\ \{}
+\DoxyCodeLine{01168\ \ \ \ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RESERVED0[1];}
+\DoxyCodeLine{01169\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FPCCR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01170\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FPCAR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01171\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ FPDSCR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01172\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ MVFR0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01173\ \ \ \mbox{\hyperlink{core__cm4_8h_af63697ed9952cc71e1225efe205f6cd3}{\_\_I}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ MVFR1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01174\ \}\ FPU\_Type;}
+\DoxyCodeLine{01175\ }
+\DoxyCodeLine{01176\ \textcolor{comment}{/*\ Floating-\/Point\ Context\ Control\ Register\ */}}
+\DoxyCodeLine{01177\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_ASPEN\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 31\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01178\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_ASPEN\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ FPU\_FPCCR\_ASPEN\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01180\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_LSPEN\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 30\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01181\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_LSPEN\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ FPU\_FPCCR\_LSPEN\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01183\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_MONRDY\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01184\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_MONRDY\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ FPU\_FPCCR\_MONRDY\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01186\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_BFRDY\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01187\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_BFRDY\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ FPU\_FPCCR\_BFRDY\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01189\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_MMRDY\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01190\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_MMRDY\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ FPU\_FPCCR\_MMRDY\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01192\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_HFRDY\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01193\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_HFRDY\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ FPU\_FPCCR\_HFRDY\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01195\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_THREAD\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01196\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_THREAD\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ FPU\_FPCCR\_THREAD\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01198\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_USER\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01199\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_USER\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ FPU\_FPCCR\_USER\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01201\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_LSPACT\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01202\ \textcolor{preprocessor}{\#define\ FPU\_FPCCR\_LSPACT\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ FPU\_FPCCR\_LSPACT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01204\ \textcolor{comment}{/*\ Floating-\/Point\ Context\ Address\ Register\ */}}
+\DoxyCodeLine{01205\ \textcolor{preprocessor}{\#define\ FPU\_FPCAR\_ADDRESS\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01206\ \textcolor{preprocessor}{\#define\ FPU\_FPCAR\_ADDRESS\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1FFFFFFFUL\ <<\ FPU\_FPCAR\_ADDRESS\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01208\ \textcolor{comment}{/*\ Floating-\/Point\ Default\ Status\ Control\ Register\ */}}
+\DoxyCodeLine{01209\ \textcolor{preprocessor}{\#define\ FPU\_FPDSCR\_AHP\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 26\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01210\ \textcolor{preprocessor}{\#define\ FPU\_FPDSCR\_AHP\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ FPU\_FPDSCR\_AHP\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01212\ \textcolor{preprocessor}{\#define\ FPU\_FPDSCR\_DN\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 25\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01213\ \textcolor{preprocessor}{\#define\ FPU\_FPDSCR\_DN\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ FPU\_FPDSCR\_DN\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01215\ \textcolor{preprocessor}{\#define\ FPU\_FPDSCR\_FZ\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01216\ \textcolor{preprocessor}{\#define\ FPU\_FPDSCR\_FZ\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1UL\ <<\ FPU\_FPDSCR\_FZ\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01218\ \textcolor{preprocessor}{\#define\ FPU\_FPDSCR\_RMode\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01219\ \textcolor{preprocessor}{\#define\ FPU\_FPDSCR\_RMode\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (3UL\ <<\ FPU\_FPDSCR\_RMode\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01221\ \textcolor{comment}{/*\ Media\ and\ FP\ Feature\ Register\ 0\ */}}
+\DoxyCodeLine{01222\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_FP\_rounding\_modes\_Pos\ \ \ \ 28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01223\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_FP\_rounding\_modes\_Msk\ \ \ \ (0xFUL\ <<\ FPU\_MVFR0\_FP\_rounding\_modes\_Pos)\ \ \ \ \ }}
+\DoxyCodeLine{01225\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_Short\_vectors\_Pos\ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01226\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_Short\_vectors\_Msk\ \ \ \ \ \ \ \ (0xFUL\ <<\ FPU\_MVFR0\_Short\_vectors\_Pos)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01228\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_Square\_root\_Pos\ \ \ \ \ \ \ \ \ \ 20\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01229\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_Square\_root\_Msk\ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ FPU\_MVFR0\_Square\_root\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01231\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_Divide\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01232\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_Divide\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ FPU\_MVFR0\_Divide\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01234\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_FP\_excep\_trapping\_Pos\ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01235\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_FP\_excep\_trapping\_Msk\ \ \ \ (0xFUL\ <<\ FPU\_MVFR0\_FP\_excep\_trapping\_Pos)\ \ \ \ \ }}
+\DoxyCodeLine{01237\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_Double\_precision\_Pos\ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01238\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_Double\_precision\_Msk\ \ \ \ \ (0xFUL\ <<\ FPU\_MVFR0\_Double\_precision\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{01240\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_Single\_precision\_Pos\ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01241\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_Single\_precision\_Msk\ \ \ \ \ (0xFUL\ <<\ FPU\_MVFR0\_Single\_precision\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{01243\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_A\_SIMD\_registers\_Pos\ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01244\ \textcolor{preprocessor}{\#define\ FPU\_MVFR0\_A\_SIMD\_registers\_Msk\ \ \ \ \ (0xFUL\ <<\ FPU\_MVFR0\_A\_SIMD\_registers\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{01246\ \textcolor{comment}{/*\ Media\ and\ FP\ Feature\ Register\ 1\ */}}
+\DoxyCodeLine{01247\ \textcolor{preprocessor}{\#define\ FPU\_MVFR1\_FP\_fused\_MAC\_Pos\ \ \ \ \ \ \ \ \ 28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01248\ \textcolor{preprocessor}{\#define\ FPU\_MVFR1\_FP\_fused\_MAC\_Msk\ \ \ \ \ \ \ \ \ (0xFUL\ <<\ FPU\_MVFR1\_FP\_fused\_MAC\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01250\ \textcolor{preprocessor}{\#define\ FPU\_MVFR1\_FP\_HPFP\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01251\ \textcolor{preprocessor}{\#define\ FPU\_MVFR1\_FP\_HPFP\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ FPU\_MVFR1\_FP\_HPFP\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01253\ \textcolor{preprocessor}{\#define\ FPU\_MVFR1\_D\_NaN\_mode\_Pos\ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01254\ \textcolor{preprocessor}{\#define\ FPU\_MVFR1\_D\_NaN\_mode\_Msk\ \ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ FPU\_MVFR1\_D\_NaN\_mode\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01256\ \textcolor{preprocessor}{\#define\ FPU\_MVFR1\_FtZ\_mode\_Pos\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01257\ \textcolor{preprocessor}{\#define\ FPU\_MVFR1\_FtZ\_mode\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ (0xFUL\ <<\ FPU\_MVFR1\_FtZ\_mode\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01260\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01261\ }
+\DoxyCodeLine{01262\ }
+\DoxyCodeLine{01271\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{01272\ \{}
+\DoxyCodeLine{01273\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ DHCSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01274\ \ \ \mbox{\hyperlink{core__cm4_8h_a7e25d9380f9ef903923964322e71f2f6}{\_\_O}}\ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ DCRSR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01275\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ DCRDR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01276\ \ \ \mbox{\hyperlink{core__cm4_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ DEMCR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01277\ \}\ \mbox{\hyperlink{struct_core_debug___type}{CoreDebug\_Type}};}
+\DoxyCodeLine{01278\ }
+\DoxyCodeLine{01279\ \textcolor{comment}{/*\ Debug\ Halting\ Control\ and\ Status\ Register\ */}}
+\DoxyCodeLine{01280\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_DBGKEY\_Pos\ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01281\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_DBGKEY\_Msk\ \ \ \ \ \ \ \ \ (0xFFFFUL\ <<\ CoreDebug\_DHCSR\_DBGKEY\_Pos)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{01283\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_S\_RESET\_ST\_Pos\ \ \ \ \ 25\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01284\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_S\_RESET\_ST\_Msk\ \ \ \ \ (1UL\ <<\ CoreDebug\_DHCSR\_S\_RESET\_ST\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01286\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_S\_RETIRE\_ST\_Pos\ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01287\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_S\_RETIRE\_ST\_Msk\ \ \ \ (1UL\ <<\ CoreDebug\_DHCSR\_S\_RETIRE\_ST\_Pos)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{01289\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_S\_LOCKUP\_Pos\ \ \ \ \ \ \ 19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01290\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_S\_LOCKUP\_Msk\ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DHCSR\_S\_LOCKUP\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01292\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_S\_SLEEP\_Pos\ \ \ \ \ \ \ \ 18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01293\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_S\_SLEEP\_Msk\ \ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DHCSR\_S\_SLEEP\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01295\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_S\_HALT\_Pos\ \ \ \ \ \ \ \ \ 17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01296\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_S\_HALT\_Msk\ \ \ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DHCSR\_S\_HALT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01298\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_S\_REGRDY\_Pos\ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01299\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_S\_REGRDY\_Msk\ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DHCSR\_S\_REGRDY\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01301\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_C\_SNAPSTALL\_Pos\ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01302\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_C\_SNAPSTALL\_Msk\ \ \ \ (1UL\ <<\ CoreDebug\_DHCSR\_C\_SNAPSTALL\_Pos)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{01304\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_C\_MASKINTS\_Pos\ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01305\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_C\_MASKINTS\_Msk\ \ \ \ \ (1UL\ <<\ CoreDebug\_DHCSR\_C\_MASKINTS\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01307\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_C\_STEP\_Pos\ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01308\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_C\_STEP\_Msk\ \ \ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DHCSR\_C\_STEP\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01310\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_C\_HALT\_Pos\ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01311\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_C\_HALT\_Msk\ \ \ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DHCSR\_C\_HALT\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01313\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_C\_DEBUGEN\_Pos\ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01314\ \textcolor{preprocessor}{\#define\ CoreDebug\_DHCSR\_C\_DEBUGEN\_Msk\ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DHCSR\_C\_DEBUGEN\_Pos)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01316\ \textcolor{comment}{/*\ Debug\ Core\ Register\ Selector\ Register\ */}}
+\DoxyCodeLine{01317\ \textcolor{preprocessor}{\#define\ CoreDebug\_DCRSR\_REGWnR\_Pos\ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01318\ \textcolor{preprocessor}{\#define\ CoreDebug\_DCRSR\_REGWnR\_Msk\ \ \ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DCRSR\_REGWnR\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01320\ \textcolor{preprocessor}{\#define\ CoreDebug\_DCRSR\_REGSEL\_Pos\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01321\ \textcolor{preprocessor}{\#define\ CoreDebug\_DCRSR\_REGSEL\_Msk\ \ \ \ \ \ \ \ \ (0x1FUL\ <<\ CoreDebug\_DCRSR\_REGSEL\_Pos)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01323\ \textcolor{comment}{/*\ Debug\ Exception\ and\ Monitor\ Control\ Register\ */}}
+\DoxyCodeLine{01324\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_TRCENA\_Pos\ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01325\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_TRCENA\_Msk\ \ \ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_TRCENA\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01327\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_MON\_REQ\_Pos\ \ \ \ \ \ \ \ 19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01328\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_MON\_REQ\_Msk\ \ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_MON\_REQ\_Pos)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01330\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_MON\_STEP\_Pos\ \ \ \ \ \ \ 18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01331\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_MON\_STEP\_Msk\ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_MON\_STEP\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01333\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_MON\_PEND\_Pos\ \ \ \ \ \ \ 17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01334\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_MON\_PEND\_Msk\ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_MON\_PEND\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01336\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_MON\_EN\_Pos\ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01337\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_MON\_EN\_Msk\ \ \ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_MON\_EN\_Pos)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01339\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_HARDERR\_Pos\ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01340\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_HARDERR\_Msk\ \ \ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_VC\_HARDERR\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01342\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_INTERR\_Pos\ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01343\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_INTERR\_Msk\ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_VC\_INTERR\_Pos)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01345\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_BUSERR\_Pos\ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01346\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_BUSERR\_Msk\ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_VC\_BUSERR\_Pos)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01348\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_STATERR\_Pos\ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01349\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_STATERR\_Msk\ \ \ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_VC\_STATERR\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01351\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_CHKERR\_Pos\ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01352\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_CHKERR\_Msk\ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_VC\_CHKERR\_Pos)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01354\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_NOCPERR\_Pos\ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01355\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_NOCPERR\_Msk\ \ \ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_VC\_NOCPERR\_Pos)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01357\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_MMERR\_Pos\ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01358\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_MMERR\_Msk\ \ \ \ \ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_VC\_MMERR\_Pos)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01360\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_CORERESET\_Pos\ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01361\ \textcolor{preprocessor}{\#define\ CoreDebug\_DEMCR\_VC\_CORERESET\_Msk\ \ \ (1UL\ <<\ CoreDebug\_DEMCR\_VC\_CORERESET\_Pos)\ \ \ \ \ \ }}
+\DoxyCodeLine{01372\ \textcolor{comment}{/*\ Memory\ mapping\ of\ Cortex-\/M4\ Hardware\ */}}
+\DoxyCodeLine{01373\ \textcolor{preprocessor}{\#define\ SCS\_BASE\ \ \ \ \ \ \ \ \ \ \ \ (0xE000E000UL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01374\ \textcolor{preprocessor}{\#define\ ITM\_BASE\ \ \ \ \ \ \ \ \ \ \ \ (0xE0000000UL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01375\ \textcolor{preprocessor}{\#define\ DWT\_BASE\ \ \ \ \ \ \ \ \ \ \ \ (0xE0001000UL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01376\ \textcolor{preprocessor}{\#define\ TPI\_BASE\ \ \ \ \ \ \ \ \ \ \ \ (0xE0040000UL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01377\ \textcolor{preprocessor}{\#define\ CoreDebug\_BASE\ \ \ \ \ \ (0xE000EDF0UL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01378\ \textcolor{preprocessor}{\#define\ SysTick\_BASE\ \ \ \ \ \ \ \ (SCS\_BASE\ +\ \ 0x0010UL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01379\ \textcolor{preprocessor}{\#define\ NVIC\_BASE\ \ \ \ \ \ \ \ \ \ \ (SCS\_BASE\ +\ \ 0x0100UL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01380\ \textcolor{preprocessor}{\#define\ SCB\_BASE\ \ \ \ \ \ \ \ \ \ \ \ (SCS\_BASE\ +\ \ 0x0D00UL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01382\ \textcolor{preprocessor}{\#define\ SCnSCB\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SCnSCB\_Type\ \ \ \ *)\ \ \ \ \ SCS\_BASE\ \ \ \ \ \ )\ \ \ }}
+\DoxyCodeLine{01383\ \textcolor{preprocessor}{\#define\ SCB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SCB\_Type\ \ \ \ \ \ \ *)\ \ \ \ \ SCB\_BASE\ \ \ \ \ \ )\ \ \ }}
+\DoxyCodeLine{01384\ \textcolor{preprocessor}{\#define\ SysTick\ \ \ \ \ \ \ \ \ \ \ \ \ ((SysTick\_Type\ \ \ *)\ \ \ \ \ SysTick\_BASE\ \ )\ \ \ }}
+\DoxyCodeLine{01385\ \textcolor{preprocessor}{\#define\ NVIC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((NVIC\_Type\ \ \ \ \ \ *)\ \ \ \ \ NVIC\_BASE\ \ \ \ \ )\ \ \ }}
+\DoxyCodeLine{01386\ \textcolor{preprocessor}{\#define\ ITM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((ITM\_Type\ \ \ \ \ \ \ *)\ \ \ \ \ ITM\_BASE\ \ \ \ \ \ )\ \ \ }}
+\DoxyCodeLine{01387\ \textcolor{preprocessor}{\#define\ DWT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DWT\_Type\ \ \ \ \ \ \ *)\ \ \ \ \ DWT\_BASE\ \ \ \ \ \ )\ \ \ }}
+\DoxyCodeLine{01388\ \textcolor{preprocessor}{\#define\ TPI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TPI\_Type\ \ \ \ \ \ \ *)\ \ \ \ \ TPI\_BASE\ \ \ \ \ \ )\ \ \ }}
+\DoxyCodeLine{01389\ \textcolor{preprocessor}{\#define\ CoreDebug\ \ \ \ \ \ \ \ \ \ \ ((CoreDebug\_Type\ *)\ \ \ \ \ CoreDebug\_BASE)\ \ \ }}
+\DoxyCodeLine{01391\ \textcolor{preprocessor}{\#if\ (\_\_MPU\_PRESENT\ ==\ 1)}}
+\DoxyCodeLine{01392\ \textcolor{preprocessor}{\ \ \#define\ MPU\_BASE\ \ \ \ \ \ \ \ \ \ (SCS\_BASE\ +\ \ 0x0D90UL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01393\ \textcolor{preprocessor}{\ \ \#define\ MPU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MPU\_Type\ \ \ \ \ \ \ *)\ \ \ \ \ MPU\_BASE\ \ \ \ \ \ )\ \ \ }}
+\DoxyCodeLine{01394\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01395\ }
+\DoxyCodeLine{01396\ \textcolor{preprocessor}{\#if\ (\_\_FPU\_PRESENT\ ==\ 1)}}
+\DoxyCodeLine{01397\ \textcolor{preprocessor}{\ \ \#define\ FPU\_BASE\ \ \ \ \ \ \ \ \ \ (SCS\_BASE\ +\ \ 0x0F30UL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01398\ \textcolor{preprocessor}{\ \ \#define\ FPU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FPU\_Type\ \ \ \ \ \ \ *)\ \ \ \ \ FPU\_BASE\ \ \ \ \ \ )\ \ \ }}
+\DoxyCodeLine{01399\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01400\ }
+\DoxyCodeLine{01405\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{01406\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Hardware\ Abstraction\ Layer}}
+\DoxyCodeLine{01407\ \textcolor{comment}{\ \ Core\ Function\ Interface\ contains:}}
+\DoxyCodeLine{01408\ \textcolor{comment}{\ \ -\/\ Core\ NVIC\ Functions}}
+\DoxyCodeLine{01409\ \textcolor{comment}{\ \ -\/\ Core\ SysTick\ Functions}}
+\DoxyCodeLine{01410\ \textcolor{comment}{\ \ -\/\ Core\ Debug\ Functions}}
+\DoxyCodeLine{01411\ \textcolor{comment}{\ \ -\/\ Core\ Register\ Access\ Functions}}
+\DoxyCodeLine{01412\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{01418\ \textcolor{comment}{/*\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ \ \ NVIC\ functions\ \ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ */}}
+\DoxyCodeLine{01435\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_ga77cfbb35a9d8027e392034321bed6904}{NVIC\_SetPriorityGrouping}}(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PriorityGroup)}
+\DoxyCodeLine{01436\ \{}
+\DoxyCodeLine{01437\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ reg\_value;}
+\DoxyCodeLine{01438\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PriorityGroupTmp\ =\ (PriorityGroup\ \&\ (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})0x07);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ only\ values\ 0..7\ are\ used\ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{01439\ }
+\DoxyCodeLine{01440\ \ \ reg\_value\ \ =\ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaaaf6477c2bde2f00f99e3c2fd1060b01}{SCB}}-\/>AIRCR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ read\ old\ register\ configuration\ \ \ \ */}}
+\DoxyCodeLine{01441\ \ \ reg\_value\ \&=\ \string~(\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga90c7cf0c490e7ae55f9503a7fda1dd22}{SCB\_AIRCR\_VECTKEY\_Msk}}\ |\ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga8be60fff03f48d0d345868060dc6dae7}{SCB\_AIRCR\_PRIGROUP\_Msk}});\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ clear\ bits\ to\ change\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{01442\ \ \ reg\_value\ \ =\ \ (reg\_value\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}
+\DoxyCodeLine{01443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})0x5FA\ <<\ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaaa27c0ba600bf82c3da08c748845b640}{SCB\_AIRCR\_VECTKEY\_Pos}})\ |}
+\DoxyCodeLine{01444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PriorityGroupTmp\ <<\ 8));\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Insert\ write\ key\ and\ priorty\ group\ */}}
+\DoxyCodeLine{01445\ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaaaf6477c2bde2f00f99e3c2fd1060b01}{SCB}}-\/>AIRCR\ =\ \ reg\_value;}
+\DoxyCodeLine{01446\ \}}
+\DoxyCodeLine{01447\ }
+\DoxyCodeLine{01448\ }
+\DoxyCodeLine{01455\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_ga394f7ce2ca826c0da26284d17ac6524d}{NVIC\_GetPriorityGrouping}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01456\ \{}
+\DoxyCodeLine{01457\ \ \ \textcolor{keywordflow}{return}\ ((\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaaaf6477c2bde2f00f99e3c2fd1060b01}{SCB}}-\/>AIRCR\ \&\ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga8be60fff03f48d0d345868060dc6dae7}{SCB\_AIRCR\_PRIGROUP\_Msk}})\ >>\ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaca155deccdeca0f2c76b8100d24196c8}{SCB\_AIRCR\_PRIGROUP\_Pos}});\ \ \ \textcolor{comment}{/*\ read\ priority\ grouping\ field\ */}}
+\DoxyCodeLine{01458\ \}}
+\DoxyCodeLine{01459\ }
+\DoxyCodeLine{01460\ }
+\DoxyCodeLine{01467\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_ga3349f2e3580d7ce22d6530b7294e5921}{NVIC\_EnableIRQ}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn)}
+\DoxyCodeLine{01468\ \{}
+\DoxyCodeLine{01469\ \textcolor{comment}{/*\ \ NVIC-\/>ISER[((uint32\_t)(IRQn)\ >>\ 5)]\ =\ (1\ <<\ ((uint32\_t)(IRQn)\ \&\ 0x1F));\ \ enable\ interrupt\ */}}
+\DoxyCodeLine{01470\ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}}-\/>ISER[(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})((int32\_t)IRQn)\ >>\ 5]\ =\ (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(1\ <<\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})((int32\_t)IRQn)\ \&\ (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})0x1F));\ \textcolor{comment}{/*\ enable\ interrupt\ */}}
+\DoxyCodeLine{01471\ \}}
+\DoxyCodeLine{01472\ }
+\DoxyCodeLine{01473\ }
+\DoxyCodeLine{01480\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_ga260fba04ac8346855c57f091d4ee1e71}{NVIC\_DisableIRQ}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn)}
+\DoxyCodeLine{01481\ \{}
+\DoxyCodeLine{01482\ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}}-\/>ICER[((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)\ >>\ 5)]\ =\ (1\ <<\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)\ \&\ 0x1F));\ \textcolor{comment}{/*\ disable\ interrupt\ */}}
+\DoxyCodeLine{01483\ \}}
+\DoxyCodeLine{01484\ }
+\DoxyCodeLine{01485\ }
+\DoxyCodeLine{01496\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_gafec8042db64c0f8ed432b6c8386a05d8}{NVIC\_GetPendingIRQ}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn)}
+\DoxyCodeLine{01497\ \{}
+\DoxyCodeLine{01498\ \ \ \textcolor{keywordflow}{return}((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})\ ((\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}}-\/>ISPR[(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)\ >>\ 5]\ \&\ (1\ <<\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)\ \&\ 0x1F)))?1:0));\ \textcolor{comment}{/*\ Return\ 1\ if\ pending\ else\ 0\ */}}
+\DoxyCodeLine{01499\ \}}
+\DoxyCodeLine{01500\ }
+\DoxyCodeLine{01501\ }
+\DoxyCodeLine{01508\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_ga3ecf446519da33e1690deffbf5be505f}{NVIC\_SetPendingIRQ}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn)}
+\DoxyCodeLine{01509\ \{}
+\DoxyCodeLine{01510\ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}}-\/>ISPR[((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)\ >>\ 5)]\ =\ (1\ <<\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)\ \&\ 0x1F));\ \textcolor{comment}{/*\ set\ interrupt\ pending\ */}}
+\DoxyCodeLine{01511\ \}}
+\DoxyCodeLine{01512\ }
+\DoxyCodeLine{01513\ }
+\DoxyCodeLine{01520\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_ga332e10ef9605dc6eb10b9e14511930f8}{NVIC\_ClearPendingIRQ}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn)}
+\DoxyCodeLine{01521\ \{}
+\DoxyCodeLine{01522\ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}}-\/>ICPR[((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)\ >>\ 5)]\ =\ (1\ <<\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)\ \&\ 0x1F));\ \textcolor{comment}{/*\ Clear\ pending\ interrupt\ */}}
+\DoxyCodeLine{01523\ \}}
+\DoxyCodeLine{01524\ }
+\DoxyCodeLine{01525\ }
+\DoxyCodeLine{01535\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_ga47a0f52794068d076c9147aa3cb8d8a6}{NVIC\_GetActive}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn)}
+\DoxyCodeLine{01536\ \{}
+\DoxyCodeLine{01537\ \ \ \textcolor{keywordflow}{return}((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})((\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}}-\/>IABR[(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)\ >>\ 5]\ \&\ (1\ <<\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)\ \&\ 0x1F)))?1:0));\ \textcolor{comment}{/*\ Return\ 1\ if\ active\ else\ 0\ */}}
+\DoxyCodeLine{01538\ \}}
+\DoxyCodeLine{01539\ }
+\DoxyCodeLine{01540\ }
+\DoxyCodeLine{01550\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_ga2305cbd44aaad792e3a4e538bdaf14f9}{NVIC\_SetPriority}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ priority)}
+\DoxyCodeLine{01551\ \{}
+\DoxyCodeLine{01552\ \ \ \textcolor{keywordflow}{if}(IRQn\ <\ 0)\ \{}
+\DoxyCodeLine{01553\ \ \ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaaaf6477c2bde2f00f99e3c2fd1060b01}{SCB}}-\/>SHP[((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)\ \&\ 0xF)-\/4]\ =\ ((priority\ <<\ (8\ -\/\ \mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}}))\ \&\ 0xff);\ \}\ \textcolor{comment}{/*\ set\ Priority\ for\ Cortex-\/M\ \ System\ Interrupts\ */}}
+\DoxyCodeLine{01554\ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{01555\ \ \ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}}-\/>IP[(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)]\ =\ ((priority\ <<\ (8\ -\/\ \mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}}))\ \&\ 0xff);\ \ \ \ \}\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ set\ Priority\ for\ device\ specific\ Interrupts\ \ */}}
+\DoxyCodeLine{01556\ \}}
+\DoxyCodeLine{01557\ }
+\DoxyCodeLine{01558\ }
+\DoxyCodeLine{01570\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_ga1cbaf8e6abd4aa4885828e7f24fcfeb4}{NVIC\_GetPriority}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn)}
+\DoxyCodeLine{01571\ \{}
+\DoxyCodeLine{01572\ }
+\DoxyCodeLine{01573\ \ \ \textcolor{keywordflow}{if}(IRQn\ <\ 0)\ \{}
+\DoxyCodeLine{01574\ \ \ \ \ \textcolor{keywordflow}{return}((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaaaf6477c2bde2f00f99e3c2fd1060b01}{SCB}}-\/>SHP[((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)\ \&\ 0xF)-\/4]\ >>\ (8\ -\/\ \mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}})));\ \ \}\ \textcolor{comment}{/*\ get\ priority\ for\ Cortex-\/M\ \ system\ interrupts\ */}}
+\DoxyCodeLine{01575\ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{01576\ \ \ \ \ \textcolor{keywordflow}{return}((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gac8e97e8ce56ae9f57da1363a937f8a17}{NVIC}}-\/>IP[(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})(IRQn)]\ \ \ \ \ \ \ \ \ \ \ >>\ (8\ -\/\ \mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}})));\ \ \}\ \textcolor{comment}{/*\ get\ priority\ for\ device\ specific\ interrupts\ \ */}}
+\DoxyCodeLine{01577\ \}}
+\DoxyCodeLine{01578\ }
+\DoxyCodeLine{01579\ }
+\DoxyCodeLine{01592\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_gadb94ac5d892b376e4f3555ae0418ebac}{NVIC\_EncodePriority}}\ (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PriorityGroup,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PreemptPriority,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SubPriority)}
+\DoxyCodeLine{01593\ \{}
+\DoxyCodeLine{01594\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PriorityGroupTmp\ =\ (PriorityGroup\ \&\ 0x07);\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ only\ values\ 0..7\ are\ used\ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{01595\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PreemptPriorityBits;}
+\DoxyCodeLine{01596\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SubPriorityBits;}
+\DoxyCodeLine{01597\ }
+\DoxyCodeLine{01598\ \ \ PreemptPriorityBits\ =\ ((7\ -\/\ PriorityGroupTmp)\ >\ \mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}})\ ?\ \mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}}\ :\ 7\ -\/\ PriorityGroupTmp;}
+\DoxyCodeLine{01599\ \ \ SubPriorityBits\ \ \ \ \ =\ ((PriorityGroupTmp\ +\ \mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}})\ <\ 7)\ ?\ 0\ :\ PriorityGroupTmp\ -\/\ 7\ +\ \mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}};}
+\DoxyCodeLine{01600\ }
+\DoxyCodeLine{01601\ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{01602\ \ \ \ \ \ \ \ \ \ \ \ ((PreemptPriority\ \&\ ((1\ <<\ (PreemptPriorityBits))\ -\/\ 1))\ <<\ SubPriorityBits)\ |}
+\DoxyCodeLine{01603\ \ \ \ \ \ \ \ \ \ \ \ ((SubPriority\ \ \ \ \ \&\ ((1\ <<\ (SubPriorityBits\ \ \ \ ))\ -\/\ 1)))}
+\DoxyCodeLine{01604\ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{01605\ \}}
+\DoxyCodeLine{01606\ }
+\DoxyCodeLine{01607\ }
+\DoxyCodeLine{01620\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_ga4f23ef94633f75d3c97670a53949003c}{NVIC\_DecodePriority}}\ (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Priority,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PriorityGroup,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}*\ pPreemptPriority,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}*\ pSubPriority)}
+\DoxyCodeLine{01621\ \{}
+\DoxyCodeLine{01622\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PriorityGroupTmp\ =\ (PriorityGroup\ \&\ 0x07);\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ only\ values\ 0..7\ are\ used\ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{01623\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PreemptPriorityBits;}
+\DoxyCodeLine{01624\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SubPriorityBits;}
+\DoxyCodeLine{01625\ }
+\DoxyCodeLine{01626\ \ \ PreemptPriorityBits\ =\ ((7\ -\/\ PriorityGroupTmp)\ >\ \mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}})\ ?\ \mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}}\ :\ 7\ -\/\ PriorityGroupTmp;}
+\DoxyCodeLine{01627\ \ \ SubPriorityBits\ \ \ \ \ =\ ((PriorityGroupTmp\ +\ \mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}})\ <\ 7)\ ?\ 0\ :\ PriorityGroupTmp\ -\/\ 7\ +\ \mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}};}
+\DoxyCodeLine{01628\ }
+\DoxyCodeLine{01629\ \ \ *pPreemptPriority\ =\ (Priority\ >>\ SubPriorityBits)\ \&\ ((1\ <<\ (PreemptPriorityBits))\ -\/\ 1);}
+\DoxyCodeLine{01630\ \ \ *pSubPriority\ \ \ \ \ =\ (Priority\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \&\ ((1\ <<\ (SubPriorityBits\ \ \ \ ))\ -\/\ 1);}
+\DoxyCodeLine{01631\ \}}
+\DoxyCodeLine{01632\ }
+\DoxyCodeLine{01633\ }
+\DoxyCodeLine{01638\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_ga1143dec48d60a3d6f238c4798a87759c}{NVIC\_SystemReset}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01639\ \{}
+\DoxyCodeLine{01640\ \ \ \_\_DSB();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Ensure\ all\ outstanding\ memory\ accesses\ included}}
+\DoxyCodeLine{01641\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffered\ write\ are\ completed\ before\ reset\ */}}
+\DoxyCodeLine{01642\ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaaaf6477c2bde2f00f99e3c2fd1060b01}{SCB}}-\/>AIRCR\ \ =\ ((0x5FA\ <<\ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaaa27c0ba600bf82c3da08c748845b640}{SCB\_AIRCR\_VECTKEY\_Pos}})\ \ \ \ \ \ |}
+\DoxyCodeLine{01643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaaaf6477c2bde2f00f99e3c2fd1060b01}{SCB}}-\/>AIRCR\ \&\ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga8be60fff03f48d0d345868060dc6dae7}{SCB\_AIRCR\_PRIGROUP\_Msk}})\ |}
+\DoxyCodeLine{01644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaae1181119559a5bd36e62afa373fa720}{SCB\_AIRCR\_SYSRESETREQ\_Msk}});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Keep\ priority\ group\ unchanged\ */}}
+\DoxyCodeLine{01645\ \ \ \_\_DSB();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Ensure\ completion\ of\ memory\ access\ */}}
+\DoxyCodeLine{01646\ \ \ \textcolor{keywordflow}{while}(1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ wait\ until\ reset\ */}}
+\DoxyCodeLine{01647\ \}}
+\DoxyCodeLine{01648\ }
+\DoxyCodeLine{01653\ \textcolor{comment}{/*\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ \ \ \ SysTick\ function\ \ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ */}}
+\DoxyCodeLine{01660\ \textcolor{preprocessor}{\#if\ (\_\_Vendor\_SysTickConfig\ ==\ 0)}}
+\DoxyCodeLine{01661\ }
+\DoxyCodeLine{01677\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_gae4e8f0238527c69f522029b93c8e5b78}{SysTick\_Config}}(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ticks)}
+\DoxyCodeLine{01678\ \{}
+\DoxyCodeLine{01679\ \ \ \textcolor{keywordflow}{if}\ ((ticks\ -\/\ 1)\ >\ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga265912a7962f0e1abd170336e579b1b1}{SysTick\_LOAD\_RELOAD\_Msk}})\ \ \textcolor{keywordflow}{return}\ (1);\ \ \ \ \ \ \textcolor{comment}{/*\ Reload\ value\ impossible\ */}}
+\DoxyCodeLine{01680\ }
+\DoxyCodeLine{01681\ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gacd96c53beeaff8f603fcda425eb295de}{SysTick}}-\/>LOAD\ \ =\ ticks\ -\/\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ set\ reload\ register\ */}}
+\DoxyCodeLine{01682\ \ \ \mbox{\hyperlink{group___c_m_s_i_s___core___n_v_i_c_functions_ga2305cbd44aaad792e3a4e538bdaf14f9}{NVIC\_SetPriority}}\ (\mbox{\hyperlink{group___peripheral__interrupt__number__definition_gga7e1129cd8a196f4284d41db3e82ad5c8a6dbff8f8543325f3474cbae2446776e7}{SysTick\_IRQn}},\ (1<<\mbox{\hyperlink{group___configuration__section__for___c_m_s_i_s_gae3fe3587d5100c787e02102ce3944460}{\_\_NVIC\_PRIO\_BITS}})\ -\/\ 1);\ \ \textcolor{comment}{/*\ set\ Priority\ for\ Systick\ Interrupt\ */}}
+\DoxyCodeLine{01683\ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gacd96c53beeaff8f603fcda425eb295de}{SysTick}}-\/>VAL\ \ \ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Load\ the\ SysTick\ Counter\ Value\ */}}
+\DoxyCodeLine{01684\ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gacd96c53beeaff8f603fcda425eb295de}{SysTick}}-\/>CTRL\ \ =\ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaa41d06039797423a46596bd313d57373}{SysTick\_CTRL\_CLKSOURCE\_Msk}}\ |}
+\DoxyCodeLine{01685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga95bb984266ca764024836a870238a027}{SysTick\_CTRL\_TICKINT\_Msk}}\ \ \ |}
+\DoxyCodeLine{01686\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga16c9fee0ed0235524bdeb38af328fd1f}{SysTick\_CTRL\_ENABLE\_Msk}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Enable\ SysTick\ IRQ\ and\ SysTick\ Timer\ */}}
+\DoxyCodeLine{01687\ \ \ \textcolor{keywordflow}{return}\ (0);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Function\ successful\ */}}
+\DoxyCodeLine{01688\ \}}
+\DoxyCodeLine{01689\ }
+\DoxyCodeLine{01690\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01691\ }
+\DoxyCodeLine{01696\ \textcolor{comment}{/*\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ Debug\ In/Output\ function\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ */}}
+\DoxyCodeLine{01703\ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ int32\_t\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga12e68e55a7badc271b948d6c7230b2a8}{ITM\_RxBuffer}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01704\ \textcolor{preprocessor}{\#define\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ITM\_RXBUFFER\_EMPTY\ \ \ \ 0x5AA55AA5\ }}
+\DoxyCodeLine{01717\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gac90a497bd64286b84552c2c553d3419e}{ITM\_SendChar}}\ (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ch)}
+\DoxyCodeLine{01718\ \{}
+\DoxyCodeLine{01719\ \ \ \textcolor{keywordflow}{if}\ ((\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabae7cdf882def602cb787bb039ff6a43}{ITM}}-\/>TCR\ \&\ \mbox{\hyperlink{group___c_m_s_i_s___n_v_i_c_ga7dd53e3bff24ac09d94e61cb595cb2d9}{ITM\_TCR\_ITMENA\_Msk}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ \ \ \ \ \ \textcolor{comment}{/*\ ITM\ enabled\ */}}
+\DoxyCodeLine{01720\ \ \ \ \ \ \ (\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabae7cdf882def602cb787bb039ff6a43}{ITM}}-\/>TER\ \&\ (1UL\ <<\ 0)\ \ \ \ \ \ \ \ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \ \ \ \ \textcolor{comment}{/*\ ITM\ Port\ \#0\ enabled\ */}}
+\DoxyCodeLine{01721\ \ \ \{}
+\DoxyCodeLine{01722\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabae7cdf882def602cb787bb039ff6a43}{ITM}}-\/>PORT[0].u32\ ==\ 0);}
+\DoxyCodeLine{01723\ \ \ \ \ \mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gabae7cdf882def602cb787bb039ff6a43}{ITM}}-\/>PORT[0].u8\ =\ (uint8\_t)\ ch;}
+\DoxyCodeLine{01724\ \ \ \}}
+\DoxyCodeLine{01725\ \ \ \textcolor{keywordflow}{return}\ (ch);}
+\DoxyCodeLine{01726\ \}}
+\DoxyCodeLine{01727\ }
+\DoxyCodeLine{01728\ }
+\DoxyCodeLine{01736\ \_\_STATIC\_INLINE\ int32\_t\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gac3ee2c30a1ac4ed34c8a866a17decd53}{ITM\_ReceiveChar}}\ (\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{01737\ \ \ int32\_t\ ch\ =\ -\/1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ no\ character\ available\ */}}
+\DoxyCodeLine{01738\ }
+\DoxyCodeLine{01739\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga12e68e55a7badc271b948d6c7230b2a8}{ITM\_RxBuffer}}\ !=\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gaa822cb398ee022b59e9e6c5d7bbb228a}{ITM\_RXBUFFER\_EMPTY}})\ \{}
+\DoxyCodeLine{01740\ \ \ \ \ ch\ =\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga12e68e55a7badc271b948d6c7230b2a8}{ITM\_RxBuffer}};}
+\DoxyCodeLine{01741\ \ \ \ \ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga12e68e55a7badc271b948d6c7230b2a8}{ITM\_RxBuffer}}\ =\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gaa822cb398ee022b59e9e6c5d7bbb228a}{ITM\_RXBUFFER\_EMPTY}};\ \ \ \ \ \ \ \textcolor{comment}{/*\ ready\ for\ next\ character\ */}}
+\DoxyCodeLine{01742\ \ \ \}}
+\DoxyCodeLine{01743\ }
+\DoxyCodeLine{01744\ \ \ \textcolor{keywordflow}{return}\ (ch);}
+\DoxyCodeLine{01745\ \}}
+\DoxyCodeLine{01746\ }
+\DoxyCodeLine{01747\ }
+\DoxyCodeLine{01755\ \_\_STATIC\_INLINE\ int32\_t\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gae61ce9ca5917735325cd93b0fb21dd29}{ITM\_CheckChar}}\ (\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{01756\ }
+\DoxyCodeLine{01757\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_ga12e68e55a7badc271b948d6c7230b2a8}{ITM\_RxBuffer}}\ ==\ \mbox{\hyperlink{group___c_m_s_i_s__core___debug_functions_gaa822cb398ee022b59e9e6c5d7bbb228a}{ITM\_RXBUFFER\_EMPTY}})\ \{}
+\DoxyCodeLine{01758\ \ \ \ \ \textcolor{keywordflow}{return}\ (0);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ no\ character\ available\ */}}
+\DoxyCodeLine{01759\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{01760\ \ \ \ \ \textcolor{keywordflow}{return}\ (1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ \ \ \ character\ available\ */}}
+\DoxyCodeLine{01761\ \ \ \}}
+\DoxyCodeLine{01762\ \}}
+\DoxyCodeLine{01763\ }
+\DoxyCodeLine{01766\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_CORE\_CM4\_H\_DEPENDANT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01767\ }
+\DoxyCodeLine{01768\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_CMSIS\_GENERIC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01769\ }
+\DoxyCodeLine{01770\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{01771\ \}}
+\DoxyCodeLine{01772\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

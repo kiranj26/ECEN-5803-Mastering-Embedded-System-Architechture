@@ -1,0 +1,383 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+hal\+\_\+rtc.h File Reference}
+\hypertarget{stm32f4xx__hal__rtc_8h}{}\label{stm32f4xx__hal__rtc_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_rtc.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_rtc.h}}
+
+
+Header file of RTC HAL module.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+rtc\+\_\+ex.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_t_c___init_type_def}{RTC\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RTC Configuration Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\+\_\+\+Time\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RTC Time structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\+\_\+\+Date\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RTC Date structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RTC Alarm structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Time Handle Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported___constants_gacc08d7d212e235f4b04bb88f5567fa54}{RTC\+\_\+\+TR\+\_\+\+RESERVED\+\_\+\+MASK}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x007\+F7\+F7F)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported___constants_ga16855eaae542f992c93170492822d058}{RTC\+\_\+\+DR\+\_\+\+RESERVED\+\_\+\+MASK}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00\+FFFF3F)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported___constants_ga0dbaf639bc171f2055c9055d538f13df}{RTC\+\_\+\+INIT\+\_\+\+MASK}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x\+FFFFFFFF)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported___constants_ga3a1033490aaf8304e1522d551bd1a7b9}{RTC\+\_\+\+RSF\+\_\+\+MASK}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x\+FFFFFF5F)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported___constants_ga0c7513e50528d7b5a52e88340a4e7b25}{RTC\+\_\+\+FLAGS\+\_\+\+MASK}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported___constants_gaca17c243759056a49a411f6324dd6123}{RTC\+\_\+\+TIMEOUT\+\_\+\+VALUE}}~1000
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___hour___formats_gab1a861fd858a55a6e815be4585c413d5}{RTC\+\_\+\+HOURFORMAT\+\_\+24}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___hour___formats_ga8da8ecb55e286c410dbf1297a81125ae}{RTC\+\_\+\+HOURFORMAT\+\_\+12}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___hour___formats_ga597042eec4479e028c32973bc69f4a26}{IS\+\_\+\+RTC\+\_\+\+HOUR\+\_\+\+FORMAT}}(FORMAT)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___output__selection___definitions_ga2c2347927c96e0db36e16d865a33a5e9}{RTC\+\_\+\+OUTPUT\+\_\+\+DISABLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___output__selection___definitions_gab5decd99536cc483960c47de13d2cdf1}{RTC\+\_\+\+OUTPUT\+\_\+\+ALARMA}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00200000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___output__selection___definitions_gad0ee3ae5e03aada25ee96ca797d94a9d}{RTC\+\_\+\+OUTPUT\+\_\+\+ALARMB}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00400000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___output__selection___definitions_gaa670c4221f0e1d6611bc477bfcb8b124}{RTC\+\_\+\+OUTPUT\+\_\+\+WAKEUP}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00600000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___output__selection___definitions_gabc8a868f360abe629c8d8de8b44b3b63}{IS\+\_\+\+RTC\+\_\+\+OUTPUT}}(OUTPUT)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___output___polarity___definitions_ga093c938e6067080b264878bc99a43dd5}{RTC\+\_\+\+OUTPUT\+\_\+\+POLARITY\+\_\+\+HIGH}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___output___polarity___definitions_ga97a5745b07442aa338c2a3b81c93048b}{RTC\+\_\+\+OUTPUT\+\_\+\+POLARITY\+\_\+\+LOW}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00100000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___output___polarity___definitions_ga1bc0fee899de25a9c1bcbb6c2b21b35d}{IS\+\_\+\+RTC\+\_\+\+OUTPUT\+\_\+\+POL}}(POL)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___output___type___a_l_a_r_m___o_u_t_gaa2505e0038154990024b533160bd46bd}{RTC\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+OPENDRAIN}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___output___type___a_l_a_r_m___o_u_t_ga3e0b4512d6531cb0bb428163d7bd927d}{RTC\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+PUSHPULL}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00040000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___output___type___a_l_a_r_m___o_u_t_ga69e263212d90ca91ccfc72e930f26cd8}{IS\+\_\+\+RTC\+\_\+\+OUTPUT\+\_\+\+TYPE}}(TYPE)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___asynchronous___predivider_gac20f6c94ede2d474df8ba4acb7328d93}{IS\+\_\+\+RTC\+\_\+\+ASYNCH\+\_\+\+PREDIV}}(PREDIV)~((PREDIV) $<$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x7F)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___synchronous___predivider_ga32fccaa6ec65f9fceb3e6e4f31ab11cf}{IS\+\_\+\+RTC\+\_\+\+SYNCH\+\_\+\+PREDIV}}(PREDIV)~((PREDIV) $<$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x7\+FFF)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___time___definitions_ga6bdfe3bed0a57dfafc2d1de785d48a62}{IS\+\_\+\+RTC\+\_\+\+HOUR12}}(HOUR)~(((HOUR) $>$ (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0) \&\& ((HOUR) $<$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})12))
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___time___definitions_ga4883613bec76074ac62608b89e3f48a8}{IS\+\_\+\+RTC\+\_\+\+HOUR24}}(HOUR)~((HOUR) $<$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})23)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___time___definitions_ga8475ceaf2d35d98be0b3401812aef445}{IS\+\_\+\+RTC\+\_\+\+MINUTES}}(MINUTES)~((MINUTES) $<$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})59)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___time___definitions_gadb5a39d98fc906a8ea035bd29308bc5c}{IS\+\_\+\+RTC\+\_\+\+SECONDS}}(SECONDS)~((SECONDS) $<$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})59)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___a_m___p_m___definitions_ga5be28b0dd8d5d12a6b055a70c46ce24a}{RTC\+\_\+\+HOURFORMAT12\+\_\+\+AM}}~((uint8\+\_\+t)0x00)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___a_m___p_m___definitions_gae8662cf2f3080b992d3b119f74f60162}{RTC\+\_\+\+HOURFORMAT12\+\_\+\+PM}}~((uint8\+\_\+t)0x40)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___a_m___p_m___definitions_gaac5777b612cdee4c43d4399f40b1bd3a}{IS\+\_\+\+RTC\+\_\+\+HOURFORMAT12}}(PM)~(((PM) == \mbox{\hyperlink{group___r_t_c___a_m___p_m___definitions_ga5be28b0dd8d5d12a6b055a70c46ce24a}{RTC\+\_\+\+HOURFORMAT12\+\_\+\+AM}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((PM) == \mbox{\hyperlink{group___r_t_c___a_m___p_m___definitions_gae8662cf2f3080b992d3b119f74f60162}{RTC\+\_\+\+HOURFORMAT12\+\_\+\+PM}}))
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___day_light_saving___definitions_ga7ccaea4cb9cb5fbd21b97dce1e2e887d}{RTC\+\_\+\+DAYLIGHTSAVING\+\_\+\+SUB1H}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00020000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___day_light_saving___definitions_gabd374c3ce0fb1b3ec96a3a71155151ae}{RTC\+\_\+\+DAYLIGHTSAVING\+\_\+\+ADD1H}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00010000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___day_light_saving___definitions_gafef31f6f6d924dededc4589d2dd16a5c}{RTC\+\_\+\+DAYLIGHTSAVING\+\_\+\+NONE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___day_light_saving___definitions_ga4922f8f31df54481bc002b16bc1effc3}{IS\+\_\+\+RTC\+\_\+\+DAYLIGHT\+\_\+\+SAVING}}(SAVE)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___store_operation___definitions_ga0c0fb2efa26fd29872759f6162fafefa}{RTC\+\_\+\+STOREOPERATION\+\_\+\+RESET}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___store_operation___definitions_ga984ee81edc6b876d035683d65a5c60d8}{RTC\+\_\+\+STOREOPERATION\+\_\+\+SET}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00040000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___store_operation___definitions_ga550da5c8a2382badcb391507fd6f07f4}{IS\+\_\+\+RTC\+\_\+\+STORE\+\_\+\+OPERATION}}(OPERATION)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___input__parameter__format__definitions_ga1adf0882a1368a3cef0edc34dcf8d34e}{FORMAT\+\_\+\+BIN}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x000000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___input__parameter__format__definitions_ga950fc88b539cc9a8cf66aab2ee860fe1}{FORMAT\+\_\+\+BCD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x000000001)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___input__parameter__format__definitions_ga05a1ca8558058d71322ccf1045b8fb1c}{IS\+\_\+\+RTC\+\_\+\+FORMAT}}(FORMAT)~(((FORMAT) == \mbox{\hyperlink{group___r_t_c___input__parameter__format__definitions_ga1adf0882a1368a3cef0edc34dcf8d34e}{FORMAT\+\_\+\+BIN}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((FORMAT) == \mbox{\hyperlink{group___r_t_c___input__parameter__format__definitions_ga950fc88b539cc9a8cf66aab2ee860fe1}{FORMAT\+\_\+\+BCD}}))
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___year___date___definitions_gae59c9cfe6f9532ab26d74c25bcbe814b}{IS\+\_\+\+RTC\+\_\+\+YEAR}}(YEAR)~((YEAR) $<$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})99)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_gabc94e7ef324c7d181c54302938138aab}{RTC\+\_\+\+MONTH\+\_\+\+JANUARY}}~((uint8\+\_\+t)0x01)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_gadcec3575c8a670a948a3929a2e9f1b6b}{RTC\+\_\+\+MONTH\+\_\+\+FEBRUARY}}~((uint8\+\_\+t)0x02)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_gaa0ebba4b64b5591cd434b076c922a164}{RTC\+\_\+\+MONTH\+\_\+\+MARCH}}~((uint8\+\_\+t)0x03)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_gac15a5a2164c0e536c579e7f16bd9f1b4}{RTC\+\_\+\+MONTH\+\_\+\+APRIL}}~((uint8\+\_\+t)0x04)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_ga44814b4fb8311b5842675769937129ec}{RTC\+\_\+\+MONTH\+\_\+\+MAY}}~((uint8\+\_\+t)0x05)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_gad3439b4b8c19720c01ef6c35d9bb99fa}{RTC\+\_\+\+MONTH\+\_\+\+JUNE}}~((uint8\+\_\+t)0x06)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_gae710e500c34c042a263fcb47edeec29f}{RTC\+\_\+\+MONTH\+\_\+\+JULY}}~((uint8\+\_\+t)0x07)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_ga4118ea385d30d3f75c2f879faf019f37}{RTC\+\_\+\+MONTH\+\_\+\+AUGUST}}~((uint8\+\_\+t)0x08)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_ga2a4d94eeb920cb994cd11e169d086d28}{RTC\+\_\+\+MONTH\+\_\+\+SEPTEMBER}}~((uint8\+\_\+t)0x09)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_gab4e8870c5a2fe6fc632d2050d490ef9f}{RTC\+\_\+\+MONTH\+\_\+\+OCTOBER}}~((uint8\+\_\+t)0x10)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_ga2f04d521214ea447155faff077725212}{RTC\+\_\+\+MONTH\+\_\+\+NOVEMBER}}~((uint8\+\_\+t)0x11)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_gaa2d8ee14bdc0c6b01be7c72b82ae64e5}{RTC\+\_\+\+MONTH\+\_\+\+DECEMBER}}~((uint8\+\_\+t)0x12)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_ga7fa60f17b2ae529c35b1fa3dd4d6853f}{IS\+\_\+\+RTC\+\_\+\+MONTH}}(MONTH)~(((MONTH) $>$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})1) \&\& ((MONTH) $<$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})12))
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___month___date___definitions_ga3b6e966e144cb0495563ef0283d16510}{IS\+\_\+\+RTC\+\_\+\+DATE}}(DATE)~(((DATE) $>$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})1) \&\& ((DATE) $<$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})31))
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___week_day___definitions_ga9d74c5e20a481db4f4da69f083b768bf}{RTC\+\_\+\+WEEKDAY\+\_\+\+MONDAY}}~((uint8\+\_\+t)0x01)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___week_day___definitions_gaf6b6e124a2e74317448abbfb1943e8cc}{RTC\+\_\+\+WEEKDAY\+\_\+\+TUESDAY}}~((uint8\+\_\+t)0x02)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___week_day___definitions_ga0e8a7c338ffda7c9dd47003762d7054c}{RTC\+\_\+\+WEEKDAY\+\_\+\+WEDNESDAY}}~((uint8\+\_\+t)0x03)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___week_day___definitions_gab166c84a54ace04f6849a8d0e1764107}{RTC\+\_\+\+WEEKDAY\+\_\+\+THURSDAY}}~((uint8\+\_\+t)0x04)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___week_day___definitions_ga3755707d628f4664c30d02fd2a2f0182}{RTC\+\_\+\+WEEKDAY\+\_\+\+FRIDAY}}~((uint8\+\_\+t)0x05)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___week_day___definitions_ga3acccb86a8429fea22f2ac46470b5e55}{RTC\+\_\+\+WEEKDAY\+\_\+\+SATURDAY}}~((uint8\+\_\+t)0x06)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___week_day___definitions_gadab2da4b8aa50c86d68781b379b75783}{RTC\+\_\+\+WEEKDAY\+\_\+\+SUNDAY}}~((uint8\+\_\+t)0x07)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___week_day___definitions_gaf17712ffb0834287f23c19235d53c7ec}{IS\+\_\+\+RTC\+\_\+\+WEEKDAY}}(WEEKDAY)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___definitions_ga8b6cb39fac113de7c5d2b05a93093243}{IS\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+DATE\+\_\+\+WEEKDAY\+\_\+\+DATE}}(DATE)~(((DATE) $>$(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}) 0) \&\& ((DATE) $<$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})31))
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___definitions_gabc968cd70cf33e06b8e2886c98099021}{IS\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+DATE\+\_\+\+WEEKDAY\+\_\+\+WEEKDAY}}(WEEKDAY)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm_date_week_day___definitions_ga038032416e6bcf81e842f60dcfe91e15}{RTC\+\_\+\+ALARMDATEWEEKDAYSEL\+\_\+\+DATE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm_date_week_day___definitions_ga3dfe8546eb760b9928900ac80a27e625}{RTC\+\_\+\+ALARMDATEWEEKDAYSEL\+\_\+\+WEEKDAY}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x40000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm_date_week_day___definitions_gac5d3e2182217ad6c5a75eba5c88cb335}{IS\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+DATE\+\_\+\+WEEKDAY\+\_\+\+SEL}}(SEL)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm_mask___definitions_ga051c19c4a3c3f12bcf672f35d03254ae}{RTC\+\_\+\+ALARMMASK\+\_\+\+NONE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm_mask___definitions_ga0bcc63ed1fe29a90fa8745cd3b98f73c}{RTC\+\_\+\+ALARMMASK\+\_\+\+DATEWEEKDAY}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8ed557e4451ffd3e869bb9ca393d47f9}{RTC\+\_\+\+ALRMAR\+\_\+\+MSK4}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm_mask___definitions_gaa8bfd0f98f4f53930a34a43af093af37}{RTC\+\_\+\+ALARMMASK\+\_\+\+HOURS}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga337fba397cab4beb204f4f6e6ddc4bf3}{RTC\+\_\+\+ALRMAR\+\_\+\+MSK3}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm_mask___definitions_gafe9215f55d86f2f959af686539c5aa0a}{RTC\+\_\+\+ALARMMASK\+\_\+\+MINUTES}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga478d62d55a42779c558e9ba16aec74cc}{RTC\+\_\+\+ALRMAR\+\_\+\+MSK2}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm_mask___definitions_gad404276351a285f7ede5a1ec53009353}{RTC\+\_\+\+ALARMMASK\+\_\+\+SECONDS}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8862250866a358ff3095852f45a160c1}{RTC\+\_\+\+ALRMAR\+\_\+\+MSK1}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm_mask___definitions_gae5a5dc7b33c51c572ebc9cb58723fdd3}{RTC\+\_\+\+ALARMMASK\+\_\+\+ALL}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x80808080)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm_mask___definitions_gac119b97b072bf9c12e008011ff202a19}{IS\+\_\+\+ALARM\+\_\+\+MASK}}(MASK)~(((MASK) \& 0x7\+F7\+F7\+F7F) == (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarms___definitions_ga916bcb75517157e284344f96ac275639}{RTC\+\_\+\+ALARM\+\_\+A}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8a8cdeac61f06e4737800b64a901d584}{RTC\+\_\+\+CR\+\_\+\+ALRAE}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarms___definitions_ga55b831e961f8f4b91ec17939eb78b440}{RTC\+\_\+\+ALARM\+\_\+B}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga17d0850002ed42742ff75a82dc4e8586}{RTC\+\_\+\+CR\+\_\+\+ALRBE}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarms___definitions_gadc485747888fdc6e36b163661a5b7a2c}{IS\+\_\+\+ALARM}}(ALARM)~(((ALARM) == \mbox{\hyperlink{group___r_t_c___alarms___definitions_ga916bcb75517157e284344f96ac275639}{RTC\+\_\+\+ALARM\+\_\+A}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((ALARM) == \mbox{\hyperlink{group___r_t_c___alarms___definitions_ga55b831e961f8f4b91ec17939eb78b440}{RTC\+\_\+\+ALARM\+\_\+B}}))
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___value_gae7cd07c18cdb2946a2b06f6606ede93c}{IS\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+SUB\+\_\+\+SECOND\+\_\+\+VALUE}}(VALUE)~((VALUE) $<$= (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00007\+FFF)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_gaf96ae2bcfc62e92473372c4510d517d5}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+ALL}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_ga382ddfaca27c4b547c69878a320aab43}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+1}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x01000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_gad627f4e6c83537e1d5b8c657f91d6bcf}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+2}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x02000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_gaeb5fb21c4ef0d54ca1515564563c0487}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+3}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x03000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_ga6f9b0a78f9723a20b1f94b5581e04194}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+4}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x04000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_gafc0252b2f8a935811dadd3d6b8ea3574}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+5}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x05000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_ga60fab8d647e6f8500926a0db2dff94d8}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+6}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x06000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_gac0f57cb99c0a40708e3dd44eafa7f8e6}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+7}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x07000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_ga0f7cdfed3ad8bbe33fc2c4c2b8d5d2ce}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+8}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x08000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_ga173d153f6543cd34062d8ca14fb04975}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+9}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x09000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_ga7cb4d4abdac134b508cbb6e9b5d21638}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+10}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0\+A000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_gaf67fcaa5c58e46e47d97be746c9dec24}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+11}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0\+B000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_ga37c03d1ef098287fa559af1a28bd8ba5}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+12}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0\+C000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_gada3b5b45dbdabf604340b0c09bdbdc2c}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14\+\_\+13}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0\+D000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_ga91e1225dc11de4ce4bd74eb18fc155f7}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+SS14}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0\+E000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_ga242adf20d2422fd1ae7715b8acd82623}{RTC\+\_\+\+ALARMSUBSECONDMASK\+\_\+\+None}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0\+F000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarm___sub___seconds___masks___definitions_gae6814af31d0cc72b784bc85f63ec4de7}{IS\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+SUB\+\_\+\+SECOND\+\_\+\+MASK}}(MASK)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___interrupts___definitions_ga2c4632667c515e366a79df6341d5f3d1}{RTC\+\_\+\+IT\+\_\+\+TS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00008000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___interrupts___definitions_gadc90686ace99992f4775c0198a1c6591}{RTC\+\_\+\+IT\+\_\+\+WUT}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00004000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___interrupts___definitions_gaeb47520af65e995ddad232f3a846aba8}{RTC\+\_\+\+IT\+\_\+\+ALRB}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00002000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___interrupts___definitions_ga0ba352559e4eb6a5430e1254851a0dfb}{RTC\+\_\+\+IT\+\_\+\+ALRA}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00001000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___interrupts___definitions_gada511402e0227932824cdc95711ebd55}{RTC\+\_\+\+IT\+\_\+\+TAMP}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000004) /\texorpdfstring{$\ast$}{*} Used only to Enable the Tamper Interrupt \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___interrupts___definitions_gaae1bc95e46b6951e45c4d857a6701a8a}{RTC\+\_\+\+IT\+\_\+\+TAMP1}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00020000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___interrupts___definitions_ga0d3023d6f144f75848c246a033a01485}{RTC\+\_\+\+IT\+\_\+\+TAMP2}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00040000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga01cba90a7ca51a928f72d28b6fe0d2ac}{RTC\+\_\+\+FLAG\+\_\+\+RECALPF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00010000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga5ca385acdd6a179336d4ce661dd02137}{RTC\+\_\+\+FLAG\+\_\+\+TAMP2F}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00004000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga3abf1af75c6ae88ddabe4b8a26634f99}{RTC\+\_\+\+FLAG\+\_\+\+TAMP1F}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00002000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga74656ea8ff41be61a3734dc27367e039}{RTC\+\_\+\+FLAG\+\_\+\+TSOVF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00001000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga9b9ac7de7718bfe0ff77e1fd1193744b}{RTC\+\_\+\+FLAG\+\_\+\+TSF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000800)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_gafcadab331b0193e82c7f6b037044f194}{RTC\+\_\+\+FLAG\+\_\+\+WUTF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000400)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_gabb7bd65e83b346f42e28091ef1e643f5}{RTC\+\_\+\+FLAG\+\_\+\+ALRBF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_gaf9e1a4b5eedd674d7b35ae334877ba12}{RTC\+\_\+\+FLAG\+\_\+\+ALRAF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga8d973d7f6b07e80743e05d6822ff2147}{RTC\+\_\+\+FLAG\+\_\+\+INITF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga78c4245996bef8d5f39226b6e37ed9c0}{RTC\+\_\+\+FLAG\+\_\+\+RSF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000020)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_gae6a2d26d4b10670f6506b14971f52fd2}{RTC\+\_\+\+FLAG\+\_\+\+INITS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga8fd11878d6285ab5d35966d598d5e6f9}{RTC\+\_\+\+FLAG\+\_\+\+SHPF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga24648116b32442d30da74c497e2e88ae}{RTC\+\_\+\+FLAG\+\_\+\+WUTWF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_gae9dd4b5b8059937c3422bc1e3eae3ced}{RTC\+\_\+\+FLAG\+\_\+\+ALRBWF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_gaf4913efa96d03ded991b1cdddd6b7823}{RTC\+\_\+\+FLAG\+\_\+\+ALRAWF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_gaf20c09cfca416d79777562ccf7c994a2}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba69cd05758f5129525749b65bee6f939f}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset RTC handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_gae150645fb78c1d175b9e0f88fc3f4ad4}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+WRITEPROTECTION\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Disable the write protection for RTC registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga9eaed4a4db3b3232c1ca5d8ffa6ff4d8}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+WRITEPROTECTION\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable the write protection for RTC registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga88aa460d4d8a7a65acf4b3dbcd0a2813}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARMA\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8a8cdeac61f06e4737800b64a901d584}{RTC\+\_\+\+CR\+\_\+\+ALRAE}}))
+\begin{DoxyCompactList}\small\item\em Enable the RTC ALARMA peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga8679ec8def03e05fa39474d83b156699}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARMA\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8a8cdeac61f06e4737800b64a901d584}{RTC\+\_\+\+CR\+\_\+\+ALRAE}}))
+\begin{DoxyCompactList}\small\item\em Disable the RTC ALARMA peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_gad643ef2342067f140114d49f28709e92}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARMB\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga17d0850002ed42742ff75a82dc4e8586}{RTC\+\_\+\+CR\+\_\+\+ALRBE}}))
+\begin{DoxyCompactList}\small\item\em Enable the RTC ALARMB peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga09c7dd312682d270a8b74bcac3450f8b}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARMB\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga17d0850002ed42742ff75a82dc4e8586}{RTC\+\_\+\+CR\+\_\+\+ALRBE}}))
+\begin{DoxyCompactList}\small\item\em Disable the RTC ALARMB peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_gab40f07ff2cdf6fc98ccfdd856ba934e4}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the RTC Alarm interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_gadc2d6dc4a75136bdd2b67c1b35d04b10}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the RTC Alarm interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_gaf47dbdee0d0f259d09362ca66367b29c}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+GET\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ISR)\& ((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)$>$$>$ 4)) \& 0x0000\+FFFF) != \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\begin{DoxyCompactList}\small\item\em Check whether the specified RTC Alarm interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga9f908cb1fd0f270c66f5deed82e019de}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ISR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) != \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\begin{DoxyCompactList}\small\item\em Get the selected RTC Alarm\textquotesingle{}s flag status. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga93d88df67428f617157346d7cbdb4069}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ISR) = (\texorpdfstring{$\sim$}{\string~}(((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gae0eb2f998cd3e7325974347cb2a3d25a}{RTC\+\_\+\+ISR\+\_\+\+INIT}})\& 0x0000\+FFFF)\texorpdfstring{$\vert$}{|}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ISR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gae0eb2f998cd3e7325974347cb2a3d25a}{RTC\+\_\+\+ISR\+\_\+\+INIT}}))
+\begin{DoxyCompactList}\small\item\em Clear the RTC Alarm\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00020000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_gaffa3448885f1dec216899aef7f49471f}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+TAMPER\+\_\+\+TIMESTAMP\+\_\+\+EVENT}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00200000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga1a1a58e244663850786c387bfa5474f2}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+WAKEUPTIMER\+\_\+\+EVENT}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00400000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga8b60c6bc1ce8241b0e2a0f39090d93b0}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$IMR \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the RTC Exti line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga39703b4953d078196b733d3a81be396d}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$IMR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the RTC Exti line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga2279c1a83635e0515c6760f34faf174f}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$PR = (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clear the RTC Exti flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___r_t_c_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b}{HAL\+\_\+\+RTCState\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba69cd05758f5129525749b65bee6f939f}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba466484cd22333d8c8758ae12890b862f}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba5e0a8c8e4731ac8f80e9a219413d6f9b}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba062e7947b5f5f0c2acb7be96207e3d58}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \newline
+\mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba21f381f99f437c340f79407e3d71bb31}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em HAL State structures definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_gaa6b53830aa3e2efaf210c0b1d3e5f4a4}{HAL\+\_\+\+RTC\+\_\+\+Init}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga24a8aac7bd6d9bac9f211d24ff6930ec}{HAL\+\_\+\+RTC\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+void \mbox{\hyperlink{group___r_t_c_gaee6eddaa309c8c9829f1ca794d8f99c5}{HAL\+\_\+\+RTC\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+void \mbox{\hyperlink{group___r_t_c_ga8767bc3a4d472d39a688090ab10ba6ce}{HAL\+\_\+\+RTC\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_gafe0fed98171a564decd2a6c9be9781d8}{HAL\+\_\+\+RTC\+\_\+\+Set\+Time}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\+\_\+\+Time\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Time, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_gae478ca2647e8d2f7dd1828ce43889a9e}{HAL\+\_\+\+RTC\+\_\+\+Get\+Time}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\+\_\+\+Time\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Time, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga6cf6c70227337a564ccef82f64d6268f}{HAL\+\_\+\+RTC\+\_\+\+Set\+Date}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\+\_\+\+Date\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Date, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga07ec2e43a305aa55e8c2442a349fc505}{HAL\+\_\+\+RTC\+\_\+\+Get\+Date}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\+\_\+\+Date\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Date, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_gafd78015b93b16dcb9e41a4655a7ea972}{HAL\+\_\+\+RTC\+\_\+\+Set\+Alarm}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Alarm, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_gab66a7fec05e9d9374de95d5f61e16c16}{HAL\+\_\+\+RTC\+\_\+\+Set\+Alarm\+\_\+\+IT}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Alarm, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga186d852f8aee8a4d0dfeec778be35482}{HAL\+\_\+\+RTC\+\_\+\+Deactivate\+Alarm}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Alarm)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga4786b652ffee2d59da2c65dd78646405}{HAL\+\_\+\+RTC\+\_\+\+Get\+Alarm}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Alarm, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Alarm, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+void \mbox{\hyperlink{group___r_t_c_gac185f2ce34fe566418d0978a48e0c199}{HAL\+\_\+\+RTC\+\_\+\+Alarm\+IRQHandler}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_gaedc27fe412f45d999d74a0b98dce4d09}{HAL\+\_\+\+RTC\+\_\+\+Poll\+For\+Alarm\+AEvent}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+void \mbox{\hyperlink{group___r_t_c_ga11aeff83fd498cddbed3bcddcf017e0a}{HAL\+\_\+\+RTC\+\_\+\+Alarm\+AEvent\+Callback}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga62efc08017f7dc4db0bc72f7c68085ad}{HAL\+\_\+\+RTC\+\_\+\+Wait\+For\+Synchro}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+\mbox{\hyperlink{group___r_t_c_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b}{HAL\+\_\+\+RTCState\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga527ac04240b47a22bf5ff469609eaa4d}{HAL\+\_\+\+RTC\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga50b2ead8d1755be360de2d624beaf9a0}{RTC\+\_\+\+Enter\+Init\+Mode}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_t_c_ga8c33f1358a98db0c7c829c38538bf7ba}{RTC\+\_\+\+Byte\+To\+Bcd2}} (uint8\+\_\+t Value)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_t_c_gaf1bcb309bb9e7ac4a1b4e95a11cfb26f}{RTC\+\_\+\+Bcd2\+To\+Byte}} (uint8\+\_\+t Value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of RTC HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

@@ -1,0 +1,69 @@
+\doxysection{I2\+CSlave.\+h}
+\hypertarget{_i2_c_slave_8h_source}{}\label{_i2_c_slave_8h_source}\index{mbed/I2CSlave.h@{mbed/I2CSlave.h}}
+\mbox{\hyperlink{_i2_c_slave_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_I2C\_SLAVE\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_I2C\_SLAVE\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{platform_8h}{platform.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#if\ DEVICE\_I2CSLAVE}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{i2c__api_8h}{i2c\_api.h}}"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacembed}{mbed}}\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }I2CSlave\ \{}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{enum}\ RxStatus\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ NoData\ \ \ \ \ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ ReadAddressed\ \ =\ 1,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ WriteGeneral\ \ \ =\ 2,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ WriteAddressed\ =\ 3}
+\DoxyCodeLine{00069\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ I2CSlave(\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ sda,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ scl);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ frequency(\textcolor{keywordtype}{int}\ hz);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ receive(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{int}\ read(\textcolor{keywordtype}{char}\ *data,\ \textcolor{keywordtype}{int}\ length);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{int}\ read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{int}\ write(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *data,\ \textcolor{keywordtype}{int}\ length);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{int}\ write(\textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ address(\textcolor{keywordtype}{int}\ address);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ stop(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00147\ \ \ \ \ i2c\_t\ \_i2c;}
+\DoxyCodeLine{00148\ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \}\ \textcolor{comment}{//\ namespace\ mbed}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

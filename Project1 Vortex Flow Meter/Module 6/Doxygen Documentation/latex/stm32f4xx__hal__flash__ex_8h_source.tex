@@ -1,0 +1,474 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}
+\hypertarget{stm32f4xx__hal__flash__ex_8h_source}{}\label{stm32f4xx__hal__flash__ex_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_flash\_ex.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_flash\_ex.h}}
+\mbox{\hyperlink{stm32f4xx__hal__flash__ex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_FLASH\_EX\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_FLASH\_EX\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__hal__def_8h}{stm32f4xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def_a5d08471046a663db76d2252848a7d66c}{TypeErase}};\ \ \ }
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def_a9590db921fb8d36daf38e097f68fc14f}{Banks}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def_a13bac8f9a1ba504a265b44345ecf4d2b}{Sector}};\ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def_aec98fec1676cd618e3743158c855a76a}{NbSectors}};\ \ \ }
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def_a3a2a0c2c4ed573bb84c768c6dbb92cc9}{VoltageRange}};}
+\DoxyCodeLine{00079\ \}\ \mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def}{FLASH\_EraseInitTypeDef}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def_a46bffc2a63ea02e15b9187856535d890}{OptionType}};\ \ \ }
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def_a2607ba046f7a3af46e7209b8f1e9e20d}{WRPState}};\ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def_aa3db423f4b3038a56b67ca2d48af79ff}{WRPSector}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def_a5fdf437b5f79d79945f5c0777f76d0eb}{Banks}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def_a1f613ba2b87cf9caa84dc1d493e96dae}{RDPLevel}};\ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def_a51a6af507ed8f57590f19b6ba6c9c33d}{BORLevel}};\ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ uint8\_t\ \ \mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def_ae6c9b55d49bc9627a2319ba680a924de}{USERConfig}};\ \ \ }
+\DoxyCodeLine{00106\ \}\ \mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def}{FLASH\_OBProgramInitTypeDef}};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)\ ||\ defined(STM32F439xx)\ ||\ defined(STM32F401xC)\ ||\ defined(STM32F401xE)}}
+\DoxyCodeLine{00112\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00113\ \{}
+\DoxyCodeLine{00114\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___adv_o_b_program_init_type_def_addc57691b6721cfa8b62092e72e9b775}{OptionType}};\ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___adv_o_b_program_init_type_def_ac673a803fde49ba1fdd2c04110a46be2}{PCROPState}};\ \ \ \ \ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#if\ defined\ (STM32F401xC)\ ||\ defined\ (STM32F401xE)}}
+\DoxyCodeLine{00121\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_f_l_a_s_h___adv_o_b_program_init_type_def_a4b5fc72d81e2edbf413df808a3c3d68c}{Sectors}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F401xC\ ||\ STM32F401xE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)\ ||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00125\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Banks;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ SectorsBank1;\ \ \ }
+\DoxyCodeLine{00131\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ SectorsBank2;\ \ \ }
+\DoxyCodeLine{00134\ \ \ uint8\_t\ BootConfig;\ \ \ \ \ \ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx\ ||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00138\ \}\ \mbox{\hyperlink{struct_f_l_a_s_h___adv_o_b_program_init_type_def}{FLASH\_AdvOBProgramInitTypeDef}};}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx\ ||\ STM32F439xx\ ||\ STM32F401xC\ ||\ STM32F401xE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ TYPEERASE\_SECTORS\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00)\ \ }}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ TYPEERASE\_MASSERASE\ \ \ \ \ \ \ ((uint32\_t)0x01)\ \ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ IS\_TYPEERASE(VALUE)(((VALUE)\ ==\ TYPEERASE\_SECTORS)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ TYPEERASE\_MASSERASE))\ \ }}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ VOLTAGE\_RANGE\_1\ \ \ \ \ \ \ \ ((uint32\_t)0x00)\ \ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ VOLTAGE\_RANGE\_2\ \ \ \ \ \ \ \ ((uint32\_t)0x01)\ \ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ VOLTAGE\_RANGE\_3\ \ \ \ \ \ \ \ ((uint32\_t)0x02)\ \ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ VOLTAGE\_RANGE\_4\ \ \ \ \ \ \ \ ((uint32\_t)0x03)\ \ }}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ IS\_VOLTAGERANGE(RANGE)(((RANGE)\ ==\ VOLTAGE\_RANGE\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RANGE)\ ==\ VOLTAGE\_RANGE\_2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RANGE)\ ==\ VOLTAGE\_RANGE\_3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RANGE)\ ==\ VOLTAGE\_RANGE\_4))\ \ }}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ WRPSTATE\_DISABLE\ \ \ \ \ \ \ ((uint32\_t)0x00)\ \ }}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ WRPSTATE\_ENABLE\ \ \ \ \ \ \ \ ((uint32\_t)0x01)\ \ }}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ IS\_WRPSTATE(VALUE)(((VALUE)\ ==\ WRPSTATE\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ WRPSTATE\_ENABLE))\ \ }}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ OPTIONBYTE\_WRP\ \ \ \ \ \ \ \ ((uint32\_t)0x01)\ \ }}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ OPTIONBYTE\_RDP\ \ \ \ \ \ \ \ ((uint32\_t)0x02)\ \ }}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ OPTIONBYTE\_USER\ \ \ \ \ \ \ ((uint32\_t)0x04)\ \ }}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ OPTIONBYTE\_BOR\ \ \ \ \ \ \ \ ((uint32\_t)0x08)\ \ }}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ IS\_OPTIONBYTE(VALUE)(((VALUE)\ <\ (OPTIONBYTE\_WRP|OPTIONBYTE\_RDP|OPTIONBYTE\_USER|OPTIONBYTE\_BOR)))}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ OB\_RDP\_LEVEL\_0\ \ \ ((uint8\_t)0xAA)}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ OB\_RDP\_LEVEL\_1\ \ \ ((uint8\_t)0x55)}}
+\DoxyCodeLine{00209\ \textcolor{comment}{/*\#define\ OB\_RDP\_LEVEL\_2\ \ \ ((uint8\_t)0xCC)*/}\ }
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ IS\_OB\_RDP\_LEVEL(LEVEL)\ (((LEVEL)\ ==\ OB\_RDP\_LEVEL\_0)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LEVEL)\ ==\ OB\_RDP\_LEVEL\_1))}\textcolor{comment}{/*||\(\backslash\)}}
+\DoxyCodeLine{00213\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LEVEL)\ ==\ OB\_RDP\_LEVEL\_2))*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ OB\_IWDG\_SW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x20)\ \ }}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ OB\_IWDG\_HW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ }}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ IS\_OB\_IWDG\_SOURCE(SOURCE)\ (((SOURCE)\ ==\ OB\_IWDG\_SW)\ ||\ ((SOURCE)\ ==\ OB\_IWDG\_HW))}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ OB\_STOP\_NO\_RST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x40)\ }}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ OB\_STOP\_RST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ }}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ IS\_OB\_STOP\_SOURCE(SOURCE)\ (((SOURCE)\ ==\ OB\_STOP\_NO\_RST)\ ||\ ((SOURCE)\ ==\ OB\_STOP\_RST))}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ OB\_STDBY\_NO\_RST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x80)\ }}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ OB\_STDBY\_RST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ }}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ IS\_OB\_STDBY\_SOURCE(SOURCE)\ (((SOURCE)\ ==\ OB\_STDBY\_NO\_RST)\ ||\ ((SOURCE)\ ==\ OB\_STDBY\_RST))}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ OB\_BOR\_LEVEL3\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ }}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ OB\_BOR\_LEVEL2\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x04)\ \ }}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ OB\_BOR\_LEVEL1\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x08)\ \ }}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ OB\_BOR\_OFF\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x0C)\ \ }}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ IS\_OB\_BOR\_LEVEL(LEVEL)\ (((LEVEL)\ ==\ OB\_BOR\_LEVEL1)\ ||\ ((LEVEL)\ ==\ OB\_BOR\_LEVEL2)\ ||\(\backslash\)}}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LEVEL)\ ==\ OB\_BOR\_LEVEL3)\ ||\ ((LEVEL)\ ==\ OB\_BOR\_OFF))}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)\ ||\ defined(STM32F439xx)\ ||\ defined(STM32F401xC)\ ||\ defined(STM32F401xE)}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ PCROPSTATE\_DISABLE\ \ \ \ \ \ \ ((uint32\_t)0x00)\ \ }}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ PCROPSTATE\_ENABLE\ \ \ \ \ \ \ \ ((uint32\_t)0x01)\ \ }}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#define\ IS\_PCROPSTATE(VALUE)(((VALUE)\ ==\ PCROPSTATE\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ PCROPSTATE\_ENABLE))\ \ }}
+\DoxyCodeLine{00271\ \ \ }
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx\ ||\ STM32F439xx\ ||\ STM32F401xC\ ||\ STM32F401xE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)\ ||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ OBEX\_PCROP\ \ \ \ \ \ \ \ ((uint32\_t)0x01)\ \ }}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ OBEX\_BOOTCONFIG\ \ \ ((uint32\_t)0x02)\ \ }}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ IS\_OBEX(VALUE)(((VALUE)\ ==\ OBEX\_PCROP)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ OBEX\_BOOTCONFIG))\ \ }}
+\DoxyCodeLine{00286\ \ \ }
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx\ ||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#if\ defined(STM32F401xC)\ ||\ defined(STM32F401xE)}}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#define\ OBEX\_PCROP\ \ \ \ \ \ \ \ ((uint32\_t)0x01)\ \ }}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ IS\_OBEX(VALUE)(((VALUE)\ ==\ OBEX\_PCROP))\ \ }}
+\DoxyCodeLine{00293\ \ \ }
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F401xC\ ||\ STM32F401xE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_0WS\ \ \ }}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_1WS\ \ \ }}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_2WS\ \ \ }}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_3WS\ \ \ }}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_4WS\ \ \ }}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_5WS\ \ \ }}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_6WS\ \ \ }}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_7WS\ \ \ }}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_8WS\ \ \ }}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_9WS\ \ \ }}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_10WS\ \ }}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_11WS\ \ }}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_12WS\ \ }}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_13WS\ \ }}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_14WS\ \ }}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_15WS\ \ }}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_LATENCY(LATENCY)\ (((LATENCY)\ ==\ FLASH\_LATENCY\_0)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_1)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_2)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_3)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_4)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_5)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_6)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_7)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_8)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_9)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_10)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_11)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_12)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_13)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_14)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_15))}}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#if\ defined(STM32F405xx)\ ||\ defined(STM32F415xx)\ ||\ defined(STM32F407xx)\ ||\ defined(STM32F417xx)\ ||\ defined(STM32F401xC)\ ||\ defined(STM32F401xE)}}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_0WS\ \ \ }}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_1WS\ \ \ }}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_2WS\ \ \ }}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_3WS\ \ \ }}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_4WS\ \ \ }}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_5WS\ \ \ }}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_6WS\ \ \ }}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\_7WS\ \ \ }}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_LATENCY(LATENCY)\ (((LATENCY)\ ==\ FLASH\_LATENCY\_0)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_1)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_2)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_3)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_4)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_5)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_6)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FLASH\_LATENCY\_7))}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F405xx\ ||\ STM32F415xx\ ||\ STM32F407xx\ ||\ STM32F417xx\ ||\ STM32F401xC\ ||\ STM32F401xE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ FLASH\_BANK\_1\ \ \ \ \ ((uint32\_t)1)\ }}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ FLASH\_BANK\_2\ \ \ \ \ ((uint32\_t)2)\ }}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#define\ FLASH\_BANK\_BOTH\ \ ((uint32\_t)FLASH\_BANK\_1\ |\ FLASH\_BANK\_2)\ }}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_BANK(BANK)\ (((BANK)\ ==\ FLASH\_BANK\_1)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ FLASH\_BANK\_2)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ FLASH\_BANK\_BOTH))}}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#if\ defined(STM32F405xx)\ ||\ defined(STM32F415xx)\ ||\ defined(STM32F407xx)\ ||\ defined(STM32F417xx)\ ||\ defined(STM32F401xC)\ ||\ defined(STM32F401xE)}}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\#define\ FLASH\_BANK\_1\ \ \ \ \ ((uint32\_t)1)\ }}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_BANK(BANK)\ (((BANK)\ ==\ FLASH\_BANK\_1))}}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F405xx\ ||\ STM32F415xx\ ||\ STM32F407xx\ ||\ STM32F417xx\ ||\ STM32F401xC\ ||\ STM32F401xE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ FLASH\_MER\_BIT\ \ \ \ \ (FLASH\_CR\_MER1\ |\ FLASH\_CR\_MER2)\ }}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#if\ defined(STM32F405xx)\ ||\ defined(STM32F415xx)\ ||\ defined(STM32F407xx)\ ||\ defined(STM32F417xx)\ ||\ defined(STM32F401xC)\ ||\ defined(STM32F401xE)}}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#define\ FLASH\_MER\_BIT\ \ \ \ \ (FLASH\_CR\_MER)\ }}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F405xx\ ||\ STM32F415xx\ ||\ STM32F407xx\ ||\ STM32F417xx\ ||\ STM32F401xC\ ||\ STM32F401xE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_0\ \ \ \ \ ((uint32\_t)0)\ \ }}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_1\ \ \ \ \ ((uint32\_t)1)\ \ }}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_2\ \ \ \ \ ((uint32\_t)2)\ \ }}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_3\ \ \ \ \ ((uint32\_t)3)\ \ }}
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_4\ \ \ \ \ ((uint32\_t)4)\ \ }}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_5\ \ \ \ \ ((uint32\_t)5)\ \ }}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_6\ \ \ \ \ ((uint32\_t)6)\ \ }}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_7\ \ \ \ \ ((uint32\_t)7)\ \ }}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_8\ \ \ \ \ ((uint32\_t)8)\ \ }}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_9\ \ \ \ \ ((uint32\_t)9)\ \ }}
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_10\ \ \ \ ((uint32\_t)10)\ }}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_11\ \ \ \ ((uint32\_t)11)\ }}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_12\ \ \ \ ((uint32\_t)12)\ }}
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_13\ \ \ \ ((uint32\_t)13)\ }}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_14\ \ \ \ ((uint32\_t)14)\ }}
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_15\ \ \ \ ((uint32\_t)15)\ }}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_16\ \ \ \ ((uint32\_t)16)\ }}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_17\ \ \ \ ((uint32\_t)17)\ }}
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_18\ \ \ \ ((uint32\_t)18)\ }}
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_19\ \ \ \ ((uint32\_t)19)\ }}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_20\ \ \ \ ((uint32\_t)20)\ }}
+\DoxyCodeLine{00426\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_21\ \ \ \ ((uint32\_t)21)\ }}
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_22\ \ \ \ ((uint32\_t)22)\ }}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_23\ \ \ \ ((uint32\_t)23)\ }}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_TOTAL\ \ 24}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_SECTOR(SECTOR)\ (\ ((SECTOR)\ ==\ FLASH\_SECTOR\_0)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_1)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_2)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_3)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_4)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_5)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_6)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_7)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_8)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_9)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_10)\ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_11)\ \ ||\(\backslash\)}}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_12)\ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_13)\ \ ||\(\backslash\)}}
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_14)\ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_15)\ \ ||\(\backslash\)}}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_16)\ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_17)\ \ ||\(\backslash\)}}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_18)\ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_19)\ \ ||\(\backslash\)}}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_20)\ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_21)\ \ ||\(\backslash\)}}
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_22)\ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_23))}}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_ADDRESS(ADDRESS)\ ((((ADDRESS)\ >=\ 0x08000000)\ \&\&\ ((ADDRESS)\ <\ 0x081FFFFF))\ ||\(\backslash\)}}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((ADDRESS)\ >=\ 0x1FFF7800)\ \&\&\ ((ADDRESS)\ <\ 0x1FFF7A0F)))\ \ }}
+\DoxyCodeLine{00447\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#if\ defined(STM32F405xx)\ ||\ defined(STM32F415xx)\ ||\ defined(STM32F407xx)\ ||\ defined(STM32F417xx)}}
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_0\ \ \ \ \ ((uint32\_t)0)\ \ }}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_1\ \ \ \ \ ((uint32\_t)1)\ \ }}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_2\ \ \ \ \ ((uint32\_t)2)\ \ }}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_3\ \ \ \ \ ((uint32\_t)3)\ \ }}
+\DoxyCodeLine{00454\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_4\ \ \ \ \ ((uint32\_t)4)\ \ }}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_5\ \ \ \ \ ((uint32\_t)5)\ \ }}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_6\ \ \ \ \ ((uint32\_t)6)\ \ }}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_7\ \ \ \ \ ((uint32\_t)7)\ \ }}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_8\ \ \ \ \ ((uint32\_t)8)\ \ }}
+\DoxyCodeLine{00459\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_9\ \ \ \ \ ((uint32\_t)9)\ \ }}
+\DoxyCodeLine{00460\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_10\ \ \ \ ((uint32\_t)10)\ }}
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_11\ \ \ \ ((uint32\_t)11)\ }}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_TOTAL\ \ 12}}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_SECTOR(SECTOR)\ (((SECTOR)\ ==\ FLASH\_SECTOR\_0)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_1)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_2)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_3)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_4)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_5)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_6)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_7)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00469\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_8)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_9)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_10)\ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_11))}}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00472\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_ADDRESS(ADDRESS)\ ((((ADDRESS)\ >=\ 0x08000000)\ \&\&\ ((ADDRESS)\ <\ 0x080FFFFF))\ ||\(\backslash\)}}
+\DoxyCodeLine{00473\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((ADDRESS)\ >=\ 0x1FFF7800)\ \&\&\ ((ADDRESS)\ <\ 0x1FFF7A0F)))}}
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F405xx\ ||\ STM32F415xx\ ||\ STM32F407xx\ ||\ STM32F417xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\#if\ defined(STM32F401xC)}}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_0\ \ \ \ \ ((uint32\_t)0)\ }}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_1\ \ \ \ \ ((uint32\_t)1)\ }}
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_2\ \ \ \ \ ((uint32\_t)2)\ }}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_3\ \ \ \ \ ((uint32\_t)3)\ }}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_4\ \ \ \ \ ((uint32\_t)4)\ }}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_5\ \ \ \ \ ((uint32\_t)5)\ }}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_TOTAL\ \ 6}}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_SECTOR(SECTOR)\ (((SECTOR)\ ==\ FLASH\_SECTOR\_0)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_1)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00487\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_2)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_3)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_4)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_5))}}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_ADDRESS(ADDRESS)\ ((((ADDRESS)\ >=\ 0x08000000)\ \&\&\ ((ADDRESS)\ <\ 0x0803FFFF))\ ||\(\backslash\)}}
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((ADDRESS)\ >=\ 0x1FFF7800)\ \&\&\ ((ADDRESS)\ <\ 0x1FFF7A0F)))}}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F401xC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#if\ defined(STM32F401xE)}}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_0\ \ \ \ \ ((uint32\_t)0)\ }}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_1\ \ \ \ \ ((uint32\_t)1)\ }}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_2\ \ \ \ \ ((uint32\_t)2)\ }}
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_3\ \ \ \ \ ((uint32\_t)3)\ }}
+\DoxyCodeLine{00499\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_4\ \ \ \ \ ((uint32\_t)4)\ }}
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_5\ \ \ \ \ ((uint32\_t)5)\ }}
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_6\ \ \ \ \ ((uint32\_t)6)\ }}
+\DoxyCodeLine{00502\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_7\ \ \ \ \ ((uint32\_t)7)\ }}
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\#define\ FLASH\_SECTOR\_TOTAL\ \ 8}}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_SECTOR(SECTOR)\ (((SECTOR)\ ==\ FLASH\_SECTOR\_0)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_1)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_2)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_3)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00508\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_4)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_5)\ \ \ ||\(\backslash\)}}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SECTOR)\ ==\ FLASH\_SECTOR\_6)\ \ \ ||\ ((SECTOR)\ ==\ FLASH\_SECTOR\_7))}}
+\DoxyCodeLine{00510\ }
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_ADDRESS(ADDRESS)\ ((((ADDRESS)\ >=\ 0x08000000)\ \&\&\ ((ADDRESS)\ <\ 0x0807FFFF))\ ||\(\backslash\)}}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((ADDRESS)\ >=\ 0x1FFF7800)\ \&\&\ ((ADDRESS)\ <\ 0x1FFF7A0F)))}}
+\DoxyCodeLine{00513\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F401xE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ \textcolor{preprocessor}{\#define\ IS\_NBSECTORS(NBSECTORS)\ (((NBSECTORS)\ !=\ 0)\ \&\&\ ((NBSECTORS)\ <=\ FLASH\_SECTOR\_TOTAL))}}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)||\ defined(STM32F439xx)\ }}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_0\ \ \ \ \ \ \ ((uint32\_t)0x00000001)\ }}
+\DoxyCodeLine{00526\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_1\ \ \ \ \ \ \ ((uint32\_t)0x00000002)\ }}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_2\ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ }}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_3\ \ \ \ \ \ \ ((uint32\_t)0x00000008)\ }}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_4\ \ \ \ \ \ \ ((uint32\_t)0x00000010)\ }}
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_5\ \ \ \ \ \ \ ((uint32\_t)0x00000020)\ }}
+\DoxyCodeLine{00531\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_6\ \ \ \ \ \ \ ((uint32\_t)0x00000040)\ }}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_7\ \ \ \ \ \ \ ((uint32\_t)0x00000080)\ }}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_8\ \ \ \ \ \ \ ((uint32\_t)0x00000100)\ }}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_9\ \ \ \ \ \ \ ((uint32\_t)0x00000200)\ }}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_10\ \ \ \ \ \ ((uint32\_t)0x00000400)\ }}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_11\ \ \ \ \ \ ((uint32\_t)0x00000800)\ }}
+\DoxyCodeLine{00537\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_12\ \ \ \ \ \ ((uint32\_t)0x00000001\ <<\ 12)\ }}
+\DoxyCodeLine{00538\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_13\ \ \ \ \ \ ((uint32\_t)0x00000002\ <<\ 12)\ }}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_14\ \ \ \ \ \ ((uint32\_t)0x00000004\ <<\ 12)\ }}
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_15\ \ \ \ \ \ ((uint32\_t)0x00000008\ <<\ 12)\ }}
+\DoxyCodeLine{00541\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_16\ \ \ \ \ \ ((uint32\_t)0x00000010\ <<\ 12)\ }}
+\DoxyCodeLine{00542\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_17\ \ \ \ \ \ ((uint32\_t)0x00000020\ <<\ 12)\ }}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_18\ \ \ \ \ \ ((uint32\_t)0x00000040\ <<\ 12)\ }}
+\DoxyCodeLine{00544\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_19\ \ \ \ \ \ ((uint32\_t)0x00000080\ <<\ 12)\ }}
+\DoxyCodeLine{00545\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_20\ \ \ \ \ \ ((uint32\_t)0x00000100\ <<\ 12)\ }}
+\DoxyCodeLine{00546\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_21\ \ \ \ \ \ ((uint32\_t)0x00000200\ <<\ 12)\ }}
+\DoxyCodeLine{00547\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_22\ \ \ \ \ \ ((uint32\_t)0x00000400\ <<\ 12)\ }}
+\DoxyCodeLine{00548\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_23\ \ \ \ \ \ ((uint32\_t)0x00000800\ <<\ 12)\ }}
+\DoxyCodeLine{00549\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_All\ \ \ \ \ ((uint32\_t)0x00000FFF\ <<\ 12)\ }}
+\DoxyCodeLine{00551\ \textcolor{preprocessor}{\#define\ IS\_OB\_WRP\_SECTOR(SECTOR)((((SECTOR)\ \&\ (uint32\_t)0xFF000000)\ ==\ 0x00000000)\ \&\&\ ((SECTOR)\ !=\ 0x00000000))}}
+\DoxyCodeLine{00552\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#if\ defined(STM32F405xx)\ ||\ defined(STM32F415xx)\ ||\ defined(STM32F407xx)\ ||\ defined(STM32F417xx)}}
+\DoxyCodeLine{00555\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_0\ \ \ \ \ \ \ ((uint32\_t)0x00000001)\ }}
+\DoxyCodeLine{00556\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_1\ \ \ \ \ \ \ ((uint32\_t)0x00000002)\ }}
+\DoxyCodeLine{00557\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_2\ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ }}
+\DoxyCodeLine{00558\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_3\ \ \ \ \ \ \ ((uint32\_t)0x00000008)\ }}
+\DoxyCodeLine{00559\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_4\ \ \ \ \ \ \ ((uint32\_t)0x00000010)\ }}
+\DoxyCodeLine{00560\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_5\ \ \ \ \ \ \ ((uint32\_t)0x00000020)\ }}
+\DoxyCodeLine{00561\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_6\ \ \ \ \ \ \ ((uint32\_t)0x00000040)\ }}
+\DoxyCodeLine{00562\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_7\ \ \ \ \ \ \ ((uint32\_t)0x00000080)\ }}
+\DoxyCodeLine{00563\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_8\ \ \ \ \ \ \ ((uint32\_t)0x00000100)\ }}
+\DoxyCodeLine{00564\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_9\ \ \ \ \ \ \ ((uint32\_t)0x00000200)\ }}
+\DoxyCodeLine{00565\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_10\ \ \ \ \ \ ((uint32\_t)0x00000400)\ }}
+\DoxyCodeLine{00566\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_11\ \ \ \ \ \ ((uint32\_t)0x00000800)\ }}
+\DoxyCodeLine{00567\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_All\ \ \ \ \ ((uint32\_t)0x00000FFF)\ }}
+\DoxyCodeLine{00569\ \textcolor{preprocessor}{\#define\ IS\_OB\_WRP\_SECTOR(SECTOR)((((SECTOR)\ \&\ (uint32\_t)0xFFFFF000)\ ==\ 0x00000000)\ \&\&\ ((SECTOR)\ !=\ 0x00000000))}}
+\DoxyCodeLine{00570\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F405xx\ ||\ STM32F415xx\ ||\ STM32F407xx\ ||\ STM32F417xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00571\ }
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\#if\ defined(STM32F401xC)}}
+\DoxyCodeLine{00573\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_0\ \ \ \ \ \ \ ((uint32\_t)0x00000001)\ }}
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_1\ \ \ \ \ \ \ ((uint32\_t)0x00000002)\ }}
+\DoxyCodeLine{00575\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_2\ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ }}
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_3\ \ \ \ \ \ \ ((uint32\_t)0x00000008)\ }}
+\DoxyCodeLine{00577\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_4\ \ \ \ \ \ \ ((uint32\_t)0x00000010)\ }}
+\DoxyCodeLine{00578\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_5\ \ \ \ \ \ \ ((uint32\_t)0x00000020)\ }}
+\DoxyCodeLine{00579\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_All\ \ \ \ \ ((uint32\_t)0x00000FFF)\ }}
+\DoxyCodeLine{00581\ \textcolor{preprocessor}{\#define\ IS\_OB\_WRP\_SECTOR(SECTOR)((((SECTOR)\ \&\ (uint32\_t)0xFFFFF000)\ ==\ 0x00000000)\ \&\&\ ((SECTOR)\ !=\ 0x00000000))}}
+\DoxyCodeLine{00582\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F401xC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00583\ }
+\DoxyCodeLine{00584\ \textcolor{preprocessor}{\#if\ defined(STM32F401xE)}}
+\DoxyCodeLine{00585\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_0\ \ \ \ \ \ \ ((uint32\_t)0x00000001)\ }}
+\DoxyCodeLine{00586\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_1\ \ \ \ \ \ \ ((uint32\_t)0x00000002)\ }}
+\DoxyCodeLine{00587\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_2\ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ }}
+\DoxyCodeLine{00588\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_3\ \ \ \ \ \ \ ((uint32\_t)0x00000008)\ }}
+\DoxyCodeLine{00589\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_4\ \ \ \ \ \ \ ((uint32\_t)0x00000010)\ }}
+\DoxyCodeLine{00590\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_5\ \ \ \ \ \ \ ((uint32\_t)0x00000020)\ }}
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_6\ \ \ \ \ \ \ ((uint32\_t)0x00000040)\ }}
+\DoxyCodeLine{00592\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_7\ \ \ \ \ \ \ ((uint32\_t)0x00000080)\ }}
+\DoxyCodeLine{00593\ \textcolor{preprocessor}{\#define\ OB\_WRP\_SECTOR\_All\ \ \ \ \ ((uint32\_t)0x00000FFF)\ }}
+\DoxyCodeLine{00595\ \textcolor{preprocessor}{\#define\ IS\_OB\_WRP\_SECTOR(SECTOR)((((SECTOR)\ \&\ (uint32\_t)0xFFFFF000)\ ==\ 0x00000000)\ \&\&\ ((SECTOR)\ !=\ 0x00000000))}}
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F401xE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00604\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)||\ defined(STM32F439xx)\ }}
+\DoxyCodeLine{00605\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_0\ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)\ }}
+\DoxyCodeLine{00606\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_1\ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)\ }}
+\DoxyCodeLine{00607\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_2\ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ }}
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_3\ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)\ }}
+\DoxyCodeLine{00609\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_4\ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)\ }}
+\DoxyCodeLine{00610\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_5\ \ \ \ \ \ \ \ ((uint32\_t)0x00000020)\ }}
+\DoxyCodeLine{00611\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_6\ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)\ }}
+\DoxyCodeLine{00612\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_7\ \ \ \ \ \ \ \ ((uint32\_t)0x00000080)\ }}
+\DoxyCodeLine{00613\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_8\ \ \ \ \ \ \ \ ((uint32\_t)0x00000100)\ }}
+\DoxyCodeLine{00614\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_9\ \ \ \ \ \ \ \ ((uint32\_t)0x00000200)\ }}
+\DoxyCodeLine{00615\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_10\ \ \ \ \ \ \ ((uint32\_t)0x00000400)\ }}
+\DoxyCodeLine{00616\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_11\ \ \ \ \ \ \ ((uint32\_t)0x00000800)\ }}
+\DoxyCodeLine{00617\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_12\ \ \ \ \ \ \ ((uint32\_t)0x00000001)\ }}
+\DoxyCodeLine{00618\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_13\ \ \ \ \ \ \ ((uint32\_t)0x00000002)\ }}
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_14\ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ }}
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_15\ \ \ \ \ \ \ ((uint32\_t)0x00000008)\ }}
+\DoxyCodeLine{00621\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_16\ \ \ \ \ \ \ ((uint32\_t)0x00000010)\ }}
+\DoxyCodeLine{00622\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_17\ \ \ \ \ \ \ ((uint32\_t)0x00000020)\ }}
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_18\ \ \ \ \ \ \ ((uint32\_t)0x00000040)\ }}
+\DoxyCodeLine{00624\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_19\ \ \ \ \ \ \ ((uint32\_t)0x00000080)\ }}
+\DoxyCodeLine{00625\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_20\ \ \ \ \ \ \ ((uint32\_t)0x00000100)\ }}
+\DoxyCodeLine{00626\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_21\ \ \ \ \ \ \ ((uint32\_t)0x00000200)\ }}
+\DoxyCodeLine{00627\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_22\ \ \ \ \ \ \ ((uint32\_t)0x00000400)\ }}
+\DoxyCodeLine{00628\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_23\ \ \ \ \ \ \ ((uint32\_t)0x00000800)\ }}
+\DoxyCodeLine{00629\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_All\ \ \ \ \ \ ((uint32\_t)0x00000FFF)\ }}
+\DoxyCodeLine{00631\ \textcolor{preprocessor}{\#define\ IS\_OB\_PCROP(SECTOR)((((SECTOR)\ \&\ (uint32\_t)0xFFFFF000)\ ==\ 0x00000000)\ \&\&\ ((SECTOR)\ !=\ 0x00000000))}}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00633\ }
+\DoxyCodeLine{00634\ \textcolor{preprocessor}{\#if\ defined(STM32F401xC)}}
+\DoxyCodeLine{00635\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_0\ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)\ }}
+\DoxyCodeLine{00636\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_1\ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)\ }}
+\DoxyCodeLine{00637\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_2\ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ }}
+\DoxyCodeLine{00638\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_3\ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)\ }}
+\DoxyCodeLine{00639\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_4\ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)\ }}
+\DoxyCodeLine{00640\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_5\ \ \ \ \ \ \ \ ((uint32\_t)0x00000020)\ }}
+\DoxyCodeLine{00641\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_All\ \ \ \ \ \ ((uint32\_t)0x00000FFF)\ }}
+\DoxyCodeLine{00643\ \textcolor{preprocessor}{\#define\ IS\_OB\_PCROP(SECTOR)((((SECTOR)\ \&\ (uint32\_t)0xFFFFF000)\ ==\ 0x00000000)\ \&\&\ ((SECTOR)\ !=\ 0x00000000))}}
+\DoxyCodeLine{00644\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F401xC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00645\ }
+\DoxyCodeLine{00646\ \textcolor{preprocessor}{\#if\ defined(STM32F401xE)}}
+\DoxyCodeLine{00647\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_0\ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)\ }}
+\DoxyCodeLine{00648\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_1\ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)\ }}
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_2\ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ }}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_3\ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)\ }}
+\DoxyCodeLine{00651\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_4\ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)\ }}
+\DoxyCodeLine{00652\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_5\ \ \ \ \ \ \ \ ((uint32\_t)0x00000020)\ }}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_6\ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)\ }}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_7\ \ \ \ \ \ \ \ ((uint32\_t)0x00000080)\ }}
+\DoxyCodeLine{00655\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SECTOR\_All\ \ \ \ \ \ ((uint32\_t)0x00000FFF)\ }}
+\DoxyCodeLine{00657\ \textcolor{preprocessor}{\#define\ IS\_OB\_PCROP(SECTOR)((((SECTOR)\ \&\ (uint32\_t)0xFFFFF000)\ ==\ 0x00000000)\ \&\&\ ((SECTOR)\ !=\ 0x00000000))}}
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F401xE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00659\ }
+\DoxyCodeLine{00667\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)||\ defined(STM32F439xx)\ }}
+\DoxyCodeLine{00668\ \textcolor{preprocessor}{\#define\ OB\_DUAL\_BOOT\_ENABLE\ \ \ ((uint8\_t)0x10)\ }}
+\DoxyCodeLine{00669\ \textcolor{preprocessor}{\#define\ OB\_DUAL\_BOOT\_DISABLE\ \ ((uint8\_t)0x00)\ }}
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\#define\ IS\_OB\_BOOT(BOOT)\ (((BOOT)\ ==\ OB\_DUAL\_BOOT\_ENABLE)\ ||\ ((BOOT)\ ==\ OB\_DUAL\_BOOT\_DISABLE))}}
+\DoxyCodeLine{00671\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00679\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)\ ||\ defined(STM32F439xx)\ ||\ defined(STM32F401xC)\ ||\ defined(STM32F401xE)}}
+\DoxyCodeLine{00680\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_DESELECTED\ \ \ \ \ ((uint8\_t)0x00)\ }}
+\DoxyCodeLine{00681\ \textcolor{preprocessor}{\#define\ OB\_PCROP\_SELECTED\ \ \ \ \ \ \ ((uint8\_t)0x80)\ }}
+\DoxyCodeLine{00682\ \textcolor{preprocessor}{\#define\ IS\_OB\_PCROP\_SELECT(PCROP)\ (((PCROP)\ ==\ OB\_PCROP\_SELECTED)\ ||\ ((PCROP)\ ==\ OB\_PCROP\_DESELECTED))}}
+\DoxyCodeLine{00683\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx\ ||\ STM32F439xx\ ||\ STM32F401xC\ ||\ STM32F401xE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00691\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)||\ defined(STM32F439xx)\ \ }}
+\DoxyCodeLine{00692\ \textcolor{preprocessor}{\#define\ OPTCR1\_BYTE2\_ADDRESS\ \ \ \ \ \ \ \ \ ((uint32\_t)0x40023C1A)}}
+\DoxyCodeLine{00693\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00699\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00700\ }
+\DoxyCodeLine{00701\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00702\ }
+\DoxyCodeLine{00703\ \textcolor{comment}{/*\ Extension\ Program\ operation\ functions\ \ *************************************/}}
+\DoxyCodeLine{00704\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___f_l_a_s_h_ex_ga3e998fdfd05d4073fb9af251ad649531}{HAL\_FLASHEx\_Erase}}(\mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def}{FLASH\_EraseInitTypeDef}}\ *pEraseInit,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *SectorError);}
+\DoxyCodeLine{00705\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___f_l_a_s_h_ex_gaf58c6764859e4febc21abe462dfb2615}{HAL\_FLASHEx\_Erase\_IT}}(\mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def}{FLASH\_EraseInitTypeDef}}\ *pEraseInit);}
+\DoxyCodeLine{00706\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___f_l_a_s_h_ex_ga001dd4a8defa9eb24a17c4df5953a41d}{HAL\_FLASHEx\_OBProgram}}(\mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def}{FLASH\_OBProgramInitTypeDef}}\ *pOBInit);}
+\DoxyCodeLine{00707\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___f_l_a_s_h_ex_ga6d45d5442b8147533b1100ec40fe75d7}{HAL\_FLASHEx\_OBGetConfig}}(\mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def}{FLASH\_OBProgramInitTypeDef}}\ *pOBInit);}
+\DoxyCodeLine{00708\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)\ ||\ defined(STM32F439xx)\ ||\ defined(STM32F401xC)\ ||\ defined(STM32F401xE)\ }}
+\DoxyCodeLine{00709\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___f_l_a_s_h_ex_gaf5556c723d5dc6ab06ebd6faf54c6c03}{HAL\_FLASHEx\_AdvOBProgram}}\ (\mbox{\hyperlink{struct_f_l_a_s_h___adv_o_b_program_init_type_def}{FLASH\_AdvOBProgramInitTypeDef}}\ *pAdvOBInit);}
+\DoxyCodeLine{00710\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___f_l_a_s_h_ex_ga5f79b74133fef058a72eae9c9eea4d36}{HAL\_FLASHEx\_AdvOBGetConfig}}(\mbox{\hyperlink{struct_f_l_a_s_h___adv_o_b_program_init_type_def}{FLASH\_AdvOBProgramInitTypeDef}}\ *pAdvOBInit);}
+\DoxyCodeLine{00711\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___f_l_a_s_h_ex_ga78992850d1e2e36ec7f01c1063320499}{HAL\_FLASHEx\_OB\_SelectPCROP}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00712\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___f_l_a_s_h_ex_gab642acc010e4d32e293d7c6faa70b0a3}{HAL\_FLASHEx\_OB\_DeSelectPCROP}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00713\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx\ ||\ STM32F439xx\ ||\ STM32F401xC\ ||\ STM32F401xE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00714\ }
+\DoxyCodeLine{00715\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00716\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \ \ HAL\_FLASHEx\_OB\_GetBank2WRP(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00717\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00718\ }
+\DoxyCodeLine{00719\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___f_l_a_s_h_ex_ga98c9d95cedcc4bfd39cdee82d07c0792}{FLASH\_Erase\_Sector}}(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Sector,\ uint8\_t\ VoltageRange);}
+\DoxyCodeLine{00720\ }
+\DoxyCodeLine{00729\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00730\ \}}
+\DoxyCodeLine{00731\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00732\ }
+\DoxyCodeLine{00733\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_HAL\_FLASH\_EX\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00734\ }
+\DoxyCodeLine{00735\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

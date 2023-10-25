@@ -1,0 +1,175 @@
+\doxysubsection{CRC}
+\hypertarget{group___c_r_c}{}\label{group___c_r_c}\index{CRC@{CRC}}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em CRC handle Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___c_r_c_gab6ec5d74fdff177143f4b22652a18114}{\+\_\+\+\_\+\+HAL\+\_\+\+CRC\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea313bbe8353f8a8b48fbd129261266a97}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset CRC handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_r_c_ga0007a05fb01806007181e12eedc14d28}{\+\_\+\+\_\+\+HAL\+\_\+\+CRC\+\_\+\+DR\+\_\+\+RESET}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7d57481fb891a0964b40f721354c56d7}{CRC\+\_\+\+CR\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Resets CRC Data Register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___c_r_c_ga1021d6f27a072d45f6f3b233eefd8bbe}{HAL\+\_\+\+CRC\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea313bbe8353f8a8b48fbd129261266a97}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbeaa47f50129543b87fac3a83df1a634474}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea9d03b0c1d233e87e35b9c5c8353a4b70}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea5d803dcd1d578edb76b57e3d34adc5a8}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \newline
+\mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbeadb51c35f7716430bb0c893069466a1b2}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em CRC HAL State Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___c_r_c_ga23e7df2eaecf59615e13b2cad8b7185f}{HAL\+\_\+\+CRC\+\_\+\+Init}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___c_r_c_gac600b9a1785f2372ca40ed5449c23739}{HAL\+\_\+\+CRC\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc)
+\item 
+void \mbox{\hyperlink{group___c_r_c_ga5167ffd293de5d86f5873910416b36d0}{HAL\+\_\+\+CRC\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc)
+\item 
+void \mbox{\hyperlink{group___c_r_c_gac19b8df939b3490e690bdf1e1e04ead3}{HAL\+\_\+\+CRC\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___c_r_c_ga124a77d595e4982ad6e9a64c22f28b7b}{HAL\+\_\+\+CRC\+\_\+\+Accumulate}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} p\+Buffer\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Buffer\+Length)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___c_r_c_ga298593a6fb0bbd109cdbed3851806371}{HAL\+\_\+\+CRC\+\_\+\+Calculate}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} p\+Buffer\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Buffer\+Length)
+\item 
+\mbox{\hyperlink{group___c_r_c_ga1021d6f27a072d45f6f3b233eefd8bbe}{HAL\+\_\+\+CRC\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___c_r_c_ga4fb3d3460bd83853c28215bc5e14babe}{HAL\+\_\+\+CRC\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hcrc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{group___c_r_c_ga0007a05fb01806007181e12eedc14d28}\label{group___c_r_c_ga0007a05fb01806007181e12eedc14d28} 
+\index{CRC@{CRC}!\_\_HAL\_CRC\_DR\_RESET@{\_\_HAL\_CRC\_DR\_RESET}}
+\index{\_\_HAL\_CRC\_DR\_RESET@{\_\_HAL\_CRC\_DR\_RESET}!CRC@{CRC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_CRC\_DR\_RESET}{\_\_HAL\_CRC\_DR\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+CRC\+\_\+\+DR\+\_\+\+RESET(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7d57481fb891a0964b40f721354c56d7}{CRC\+\_\+\+CR\+\_\+\+RESET}})}
+
+
+
+Resets CRC Data Register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & CRC handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_r_c_gab6ec5d74fdff177143f4b22652a18114}\label{group___c_r_c_gab6ec5d74fdff177143f4b22652a18114} 
+\index{CRC@{CRC}!\_\_HAL\_CRC\_RESET\_HANDLE\_STATE@{\_\_HAL\_CRC\_RESET\_HANDLE\_STATE}}
+\index{\_\_HAL\_CRC\_RESET\_HANDLE\_STATE@{\_\_HAL\_CRC\_RESET\_HANDLE\_STATE}!CRC@{CRC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_CRC\_RESET\_HANDLE\_STATE}{\_\_HAL\_CRC\_RESET\_HANDLE\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+CRC\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea313bbe8353f8a8b48fbd129261266a97}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+RESET}})}
+
+
+
+Reset CRC handle state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & CRC handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+\doxysubsubsection{Enumeration Type Documentation}
+\Hypertarget{group___c_r_c_ga1021d6f27a072d45f6f3b233eefd8bbe}\label{group___c_r_c_ga1021d6f27a072d45f6f3b233eefd8bbe} 
+\index{CRC@{CRC}!HAL\_CRC\_StateTypeDef@{HAL\_CRC\_StateTypeDef}}
+\index{HAL\_CRC\_StateTypeDef@{HAL\_CRC\_StateTypeDef}!CRC@{CRC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_CRC\_StateTypeDef}{HAL\_CRC\_StateTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___c_r_c_ga1021d6f27a072d45f6f3b233eefd8bbe}{HAL\+\_\+\+CRC\+\_\+\+State\+Type\+Def}}}
+
+
+
+CRC HAL State Structure definition ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_CRC\_STATE\_RESET@{HAL\_CRC\_STATE\_RESET}!CRC@{CRC}}\index{CRC@{CRC}!HAL\_CRC\_STATE\_RESET@{HAL\_CRC\_STATE\_RESET}}}\Hypertarget{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea313bbe8353f8a8b48fbd129261266a97}\label{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea313bbe8353f8a8b48fbd129261266a97} 
+HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+RESET&CRC not yet initialized or disabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_CRC\_STATE\_READY@{HAL\_CRC\_STATE\_READY}!CRC@{CRC}}\index{CRC@{CRC}!HAL\_CRC\_STATE\_READY@{HAL\_CRC\_STATE\_READY}}}\Hypertarget{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbeaa47f50129543b87fac3a83df1a634474}\label{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbeaa47f50129543b87fac3a83df1a634474} 
+HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+READY&CRC initialized and ready for use ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_CRC\_STATE\_BUSY@{HAL\_CRC\_STATE\_BUSY}!CRC@{CRC}}\index{CRC@{CRC}!HAL\_CRC\_STATE\_BUSY@{HAL\_CRC\_STATE\_BUSY}}}\Hypertarget{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea9d03b0c1d233e87e35b9c5c8353a4b70}\label{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea9d03b0c1d233e87e35b9c5c8353a4b70} 
+HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+BUSY&CRC internal process is ongoing ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_CRC\_STATE\_TIMEOUT@{HAL\_CRC\_STATE\_TIMEOUT}!CRC@{CRC}}\index{CRC@{CRC}!HAL\_CRC\_STATE\_TIMEOUT@{HAL\_CRC\_STATE\_TIMEOUT}}}\Hypertarget{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea5d803dcd1d578edb76b57e3d34adc5a8}\label{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbea5d803dcd1d578edb76b57e3d34adc5a8} 
+HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+TIMEOUT&CRC timeout state ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_CRC\_STATE\_ERROR@{HAL\_CRC\_STATE\_ERROR}!CRC@{CRC}}\index{CRC@{CRC}!HAL\_CRC\_STATE\_ERROR@{HAL\_CRC\_STATE\_ERROR}}}\Hypertarget{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbeadb51c35f7716430bb0c893069466a1b2}\label{group___c_r_c_gga1021d6f27a072d45f6f3b233eefd8bbeadb51c35f7716430bb0c893069466a1b2} 
+HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+ERROR&CRC error state ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group___c_r_c_ga124a77d595e4982ad6e9a64c22f28b7b}\label{group___c_r_c_ga124a77d595e4982ad6e9a64c22f28b7b} 
+\index{CRC@{CRC}!HAL\_CRC\_Accumulate@{HAL\_CRC\_Accumulate}}
+\index{HAL\_CRC\_Accumulate@{HAL\_CRC\_Accumulate}!CRC@{CRC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_CRC\_Accumulate()}{HAL\_CRC\_Accumulate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} HAL\+\_\+\+CRC\+\_\+\+Accumulate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hcrc,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{p\+Buffer\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Buffer\+Length }\end{DoxyParamCaption})}
+
+\Hypertarget{group___c_r_c_ga298593a6fb0bbd109cdbed3851806371}\label{group___c_r_c_ga298593a6fb0bbd109cdbed3851806371} 
+\index{CRC@{CRC}!HAL\_CRC\_Calculate@{HAL\_CRC\_Calculate}}
+\index{HAL\_CRC\_Calculate@{HAL\_CRC\_Calculate}!CRC@{CRC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_CRC\_Calculate()}{HAL\_CRC\_Calculate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} HAL\+\_\+\+CRC\+\_\+\+Calculate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hcrc,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{p\+Buffer\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Buffer\+Length }\end{DoxyParamCaption})}
+
+\Hypertarget{group___c_r_c_gac600b9a1785f2372ca40ed5449c23739}\label{group___c_r_c_gac600b9a1785f2372ca40ed5449c23739} 
+\index{CRC@{CRC}!HAL\_CRC\_DeInit@{HAL\_CRC\_DeInit}}
+\index{HAL\_CRC\_DeInit@{HAL\_CRC\_DeInit}!CRC@{CRC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_CRC\_DeInit()}{HAL\_CRC\_DeInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+CRC\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hcrc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___c_r_c_ga4fb3d3460bd83853c28215bc5e14babe}\label{group___c_r_c_ga4fb3d3460bd83853c28215bc5e14babe} 
+\index{CRC@{CRC}!HAL\_CRC\_GetState@{HAL\_CRC\_GetState}}
+\index{HAL\_CRC\_GetState@{HAL\_CRC\_GetState}!CRC@{CRC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_CRC\_GetState()}{HAL\_CRC\_GetState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___c_r_c_ga1021d6f27a072d45f6f3b233eefd8bbe}{HAL\+\_\+\+CRC\+\_\+\+State\+Type\+Def}} HAL\+\_\+\+CRC\+\_\+\+Get\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hcrc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___c_r_c_ga23e7df2eaecf59615e13b2cad8b7185f}\label{group___c_r_c_ga23e7df2eaecf59615e13b2cad8b7185f} 
+\index{CRC@{CRC}!HAL\_CRC\_Init@{HAL\_CRC\_Init}}
+\index{HAL\_CRC\_Init@{HAL\_CRC\_Init}!CRC@{CRC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_CRC\_Init()}{HAL\_CRC\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+CRC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hcrc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___c_r_c_gac19b8df939b3490e690bdf1e1e04ead3}\label{group___c_r_c_gac19b8df939b3490e690bdf1e1e04ead3} 
+\index{CRC@{CRC}!HAL\_CRC\_MspDeInit@{HAL\_CRC\_MspDeInit}}
+\index{HAL\_CRC\_MspDeInit@{HAL\_CRC\_MspDeInit}!CRC@{CRC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_CRC\_MspDeInit()}{HAL\_CRC\_MspDeInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+CRC\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hcrc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___c_r_c_ga5167ffd293de5d86f5873910416b36d0}\label{group___c_r_c_ga5167ffd293de5d86f5873910416b36d0} 
+\index{CRC@{CRC}!HAL\_CRC\_MspInit@{HAL\_CRC\_MspInit}}
+\index{HAL\_CRC\_MspInit@{HAL\_CRC\_MspInit}!CRC@{CRC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_CRC\_MspInit()}{HAL\_CRC\_MspInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+CRC\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hcrc }\end{DoxyParamCaption})}
+

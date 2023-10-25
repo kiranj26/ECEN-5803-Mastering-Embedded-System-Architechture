@@ -1,0 +1,102 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx.h File Reference}
+\hypertarget{stm32f4xx_8h}{}\label{stm32f4xx_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx.h}}
+
+
+CMSIS STM32\+F4xx Device Peripheral Access Layer Header File. ~\newline
+  
+
+
+{\ttfamily \#include "{}stm32f401xe.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga4b150144bb57e6f25e7e2b03cb42b86c}{STM32\+F401xE}}
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga13fde7eed89250511adafbc8bbedcc62}{USE\+\_\+\+HAL\+\_\+\+DRIVER}}
+\begin{DoxyCompactList}\small\item\em Comment the line below if you will not use the peripherals drivers. In this case, these drivers will not be included and the application code will be based on direct access to peripherals registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga802582d9b7b4dea8c8c53f6ce296dad2}{\+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+MAIN}}~(0x02)
+\begin{DoxyCompactList}\small\item\em CMSIS Device version number V2.\+1.\+0\+RC2. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_gaa840ca8cc59044a45c604b95c546666b}{\+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+SUB1}}~(0x01)
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga5697f6bbcd478565105f00c06dc97a96}{\+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+SUB2}}~(0x00)
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga99153b788b5b5ef1d65a748495e5c4ca}{\+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+RC}}~(0x02)
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_gab71225daca4a310275d65a487422b1f7}{\+\_\+\+\_\+\+STM32\+F4xx\+\_\+\+CMSIS\+\_\+\+DEVICE\+\_\+\+VERSION}}
+\item 
+\#define \mbox{\hyperlink{group___exported__types_gaffaf7c3f537d7a3370b1bbdda67a2bf6}{IS\+\_\+\+FUNCTIONAL\+\_\+\+STATE}}(STATE)~(((STATE) == \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((STATE) == \mbox{\hyperlink{_n_h_d__0216_h_z_8h_a514ad415fb6125ba296793df7d1a468a}{ENABLE}}))
+\item 
+\#define \mbox{\hyperlink{group___exported__macro_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}(REG,  BIT)~((REG) \texorpdfstring{$\vert$}{|}= (BIT))
+\item 
+\#define \mbox{\hyperlink{group___exported__macro_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\+\_\+\+BIT}}(REG,  BIT)~((REG) \&= \texorpdfstring{$\sim$}{\string~}(BIT))
+\item 
+\#define \mbox{\hyperlink{group___exported__macro_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\+\_\+\+BIT}}(REG,  BIT)~((REG) \& (BIT))
+\item 
+\#define \mbox{\hyperlink{group___exported__macro_ga1378fbdda39f40b85420df55f41460ef}{CLEAR\+\_\+\+REG}}(REG)~((REG) = (0x0))
+\item 
+\#define \mbox{\hyperlink{group___exported__macro_ga32f78bffcaf6d13023dcd7f05e0c4d57}{WRITE\+\_\+\+REG}}(REG,  VAL)~((REG) = (VAL))
+\item 
+\#define \mbox{\hyperlink{group___exported__macro_gae7f188a4d26c9e713a48414783421071}{READ\+\_\+\+REG}}(REG)~((REG))
+\item 
+\#define \mbox{\hyperlink{group___exported__macro_ga6553c99f510c3bab8cc0a91602053247}{MODIFY\+\_\+\+REG}}(REG,  CLEARMASK,  SETMASK)~\mbox{\hyperlink{group___exported__macro_ga32f78bffcaf6d13023dcd7f05e0c4d57}{WRITE\+\_\+\+REG}}((REG), (((\mbox{\hyperlink{group___exported__macro_gae7f188a4d26c9e713a48414783421071}{READ\+\_\+\+REG}}(REG)) \& (\texorpdfstring{$\sim$}{\string~}(CLEARMASK))) \texorpdfstring{$\vert$}{|} (SETMASK)))
+\item 
+\#define \mbox{\hyperlink{group___exported__macro_ga47a8870d71d55cefb3df47cd8c815ec8}{POSITION\+\_\+\+VAL}}(VAL)~(\+\_\+\+\_\+\+CLZ(\+\_\+\+\_\+\+RBIT(VAL)))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \{ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}} = 0
+, \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} = !\+RESET
+ \}
+\item 
+enum \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} \{ \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}} = 0
+, \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf}{ENABLE}} = !\+DISABLE
+ \}
+\item 
+enum \mbox{\hyperlink{group___exported__types_ga8333b96c67f83cba354b3407fcbb6ee8}{Error\+Status}} \{ \mbox{\hyperlink{group___exported__types_gga8333b96c67f83cba354b3407fcbb6ee8a2fd6f336d08340583bd620a7f5694c90}{ERROR}} = 0
+, \mbox{\hyperlink{group___exported__types_gga8333b96c67f83cba354b3407fcbb6ee8ac7f69f7c9e5aea9b8f54cf02870e2bf8}{SUCCESS}} = !\+ERROR
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+CMSIS STM32\+F4xx Device Peripheral Access Layer Header File. ~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V2.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 \begin{DoxyVerb}     The file is the unique include file that the application programmer
+     is using in the C source code, usually in main.c. This file contains:
+      - Configuration section that allows to select:
+         - The STM32F4xx device used in the target application
+         - To use or not the peripheral’s drivers in application code(i.e. 
+           code will be based on direct access to peripheral’s registers 
+           rather than drivers API), this option is controlled by 
+           "#define USE_HAL_DRIVER"
+\end{DoxyVerb}
+
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

@@ -1,0 +1,46 @@
+\doxysection{pwm.\+h File Reference}
+\hypertarget{pwm_8h}{}\label{pwm_8h}\index{pwm.h@{pwm.h}}
+
+
+PWM function declarations for STM32\+F401xE.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pwm_8h_aadefd0128799a1da7df8fdc6e363a216}{pulse\+\_\+420\+\_\+output}} (void)
+\begin{DoxyCompactList}\small\item\em Output a PWM signal based on the flow rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pwm_8h_a49ad4c92945d5e9dcc52801dce0d81fa}{pulse\+\_\+output}} (void)
+\begin{DoxyCompactList}\small\item\em Output a PWM signal based on the measured frequency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+PWM function declarations for STM32\+F401xE. 
+
+\begin{DoxyAuthor}{Author}
+Kiran Jojare, Viraj Patel 
+\end{DoxyAuthor}
+This header provides declarations for the PWM signal generation functions. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pwm_8h_aadefd0128799a1da7df8fdc6e363a216}\label{pwm_8h_aadefd0128799a1da7df8fdc6e363a216} 
+\index{pwm.h@{pwm.h}!pulse\_420\_output@{pulse\_420\_output}}
+\index{pulse\_420\_output@{pulse\_420\_output}!pwm.h@{pwm.h}}
+\doxysubsubsection{\texorpdfstring{pulse\_420\_output()}{pulse\_420\_output()}}
+{\footnotesize\ttfamily void pulse\+\_\+420\+\_\+output (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Output a PWM signal based on the flow rate. 
+
+Generates a PWM signal with a frequency inversely proportional to the flow rate (in gallons per second). The duty cycle is set to 50\%. \Hypertarget{pwm_8h_a49ad4c92945d5e9dcc52801dce0d81fa}\label{pwm_8h_a49ad4c92945d5e9dcc52801dce0d81fa} 
+\index{pwm.h@{pwm.h}!pulse\_output@{pulse\_output}}
+\index{pulse\_output@{pulse\_output}!pwm.h@{pwm.h}}
+\doxysubsubsection{\texorpdfstring{pulse\_output()}{pulse\_output()}}
+{\footnotesize\ttfamily void pulse\+\_\+output (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Output a PWM signal based on the measured frequency. 
+
+Generates a PWM signal with a frequency inversely proportional to the frequency from the flow sensing system. The duty cycle is set to 50\%. 

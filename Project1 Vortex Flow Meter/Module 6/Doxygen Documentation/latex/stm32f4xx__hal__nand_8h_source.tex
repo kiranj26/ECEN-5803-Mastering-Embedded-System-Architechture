@@ -1,0 +1,145 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+nand.\+h}
+\hypertarget{stm32f4xx__hal__nand_8h_source}{}\label{stm32f4xx__hal__nand_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_nand.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_nand.h}}
+\mbox{\hyperlink{stm32f4xx__hal__nand_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_NAND\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_NAND\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#if\ defined(STM32F405xx)\ ||\ defined(STM32F415xx)\ ||\ defined(STM32F407xx)||\ defined(STM32F417xx)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \#include\ "{}\mbox{\hyperlink{stm32f4xx__ll__fsmc_8h}{stm32f4xx\_ll\_fsmc.h}}"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F405xx\ ||\ STM32F415xx\ ||\ STM32F407xx\ ||\ STM32F417xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \#include\ "{}\mbox{\hyperlink{stm32f4xx__ll__fmc_8h}{stm32f4xx\_ll\_fmc.h}}"{}}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx\ ||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#if\ defined(STM32F405xx)\ ||\ defined(STM32F415xx)\ ||\ defined(STM32F407xx)\ ||\ defined(STM32F417xx)\ ||\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)\ ||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{/*\ Exported\ typedef\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00066\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \ \ HAL\_NAND\_STATE\_RESET\ \ \ \ \ =\ 0x00,\ \ }
+\DoxyCodeLine{00074\ \ \ HAL\_NAND\_STATE\_READY\ \ \ \ \ =\ 0x01,\ \ }
+\DoxyCodeLine{00075\ \ \ HAL\_NAND\_STATE\_BUSY\ \ \ \ \ \ =\ 0x02,\ \ }
+\DoxyCodeLine{00076\ \ \ HAL\_NAND\_STATE\_ERROR\ \ \ \ \ =\ 0x03\ \ \ }
+\DoxyCodeLine{00077\ \}HAL\_NAND\_StateTypeDef;}
+\DoxyCodeLine{00078\ \ \ \ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00083\ \{}
+\DoxyCodeLine{00084\ \ \ \textcolor{comment}{/*<!\ NAND\ memory\ electronic\ signature\ maker\ and\ device\ IDs\ */}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ uint8\_t\ Maker\_Id;\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ uint8\_t\ Device\_Id;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ uint8\_t\ Third\_Id;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ uint8\_t\ Fourth\_Id;}
+\DoxyCodeLine{00093\ \}NAND\_IDTypeDef;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Page;\ \ \ }
+\DoxyCodeLine{00102\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Zone;\ \ \ }
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Block;\ \ }
+\DoxyCodeLine{00106\ \}NAND\_AddressTypedef;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00112\ \{}
+\DoxyCodeLine{00113\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PageSize;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SpareAreaSize;\ \ }
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BlockSize;\ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BlockNbr;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ZoneSize;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \}NAND\_InfoTypeDef;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ FMC\_NAND\_TypeDef\ \ \ \ \ \ \ \ \ \ \ \ \ *Instance;\ \ }
+\DoxyCodeLine{00131\ \ \ FMC\_NAND\_InitTypeDef\ \ \ \ \ \ \ \ \ Init;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\_LockTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ Lock;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ HAL\_NAND\_StateTypeDef\ \ \ State;\ \ \ \ \ \ }
+\DoxyCodeLine{00137\ \ \ NAND\_InfoTypeDef\ \ \ \ \ \ \ \ \ \ \ \ \ Info;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00138\ \}NAND\_HandleTypeDef;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ NAND\_DEVICE1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x70000000)\ }}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ NAND\_DEVICE2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x80000000)\ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ NAND\_WRITE\_TIMEOUT\ \ \ \ \ \ \ \ \ ((uint32\_t)0x01000000)}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ CMD\_AREA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)(1<<16))\ \ }\textcolor{comment}{/*\ A16\ =\ CLE\ high\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ ADDR\_AREA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)(1<<17))\ \ }\textcolor{comment}{/*\ A17\ =\ ALE\ high\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ NAND\_CMD\_AREA\_A\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ NAND\_CMD\_AREA\_B\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ NAND\_CMD\_AREA\_C\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x50)}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{comment}{/*\ NAND\ memory\ status\ */}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ NAND\_VALID\_ADDRESS\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000100)}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ NAND\_INVALID\_ADDRESS\ \ \ \ \ \ \ ((uint32\_t)0x00000200)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ NAND\_TIMEOUT\_ERROR\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000400)}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ NAND\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ NAND\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ NAND\_READY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00168\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ \_\_HAL\_NAND\_RESET\_HANDLE\_STATE(\_\_HANDLE\_\_)\ ((\_\_HANDLE\_\_)-\/>State\ =\ HAL\_NAND\_STATE\_RESET)}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ ARRAY\_ADDRESS(\_\_ADDRESS\_\_\ ,\ \_\_HANDLE\_\_)\ ((\_\_ADDRESS\_\_)-\/>Page\ +\ (((\_\_ADDRESS\_\_)-\/>Block\ +\ (((\_\_ADDRESS\_\_)-\/>Zone)\ *\ ((\_\_HANDLE\_\_)-\/>Info.BlockSize)))*\ ((\_\_HANDLE\_\_)-\/>Info.ZoneSize)))}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ ADDR\_1st\_CYCLE(\_\_ADDRESS\_\_)\ \ \ \ \ \ \ (uint8\_t)((\_\_ADDRESS\_\_)\&\ 0xFF)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ 1st\ addressing\ cycle\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ ADDR\_2nd\_CYCLE(\_\_ADDRESS\_\_)\ \ \ \ \ \ \ (uint8\_t)(((\_\_ADDRESS\_\_)\&\ 0xFF00)\ >>\ 8)\ \ \ \ \ \ }\textcolor{comment}{/*\ 2nd\ addressing\ cycle\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ ADDR\_3rd\_CYCLE(\_\_ADDRESS\_\_)\ \ \ \ \ \ \ (uint8\_t)(((\_\_ADDRESS\_\_)\&\ 0xFF0000)\ >>\ 16)\ \ \ }\textcolor{comment}{/*\ 3rd\ addressing\ cycle\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ ADDR\_4th\_CYCLE(\_\_ADDRESS\_\_)\ \ \ \ \ \ \ (uint8\_t)(((\_\_ADDRESS\_\_)\&\ 0xFF000000)\ >>\ 24)\ }\textcolor{comment}{/*\ 4th\ addressing\ cycle\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{comment}{/*\ Initialization/de-\/initialization\ functions\ \ ********************************/}}
+\DoxyCodeLine{00197\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ HAL\_NAND\_Init(NAND\_HandleTypeDef\ *hnand,\ FMC\_NAND\_PCC\_TimingTypeDef\ *ComSpace\_Timing,\ FMC\_NAND\_PCC\_TimingTypeDef\ *AttSpace\_Timing);}
+\DoxyCodeLine{00198\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ HAL\_NAND\_DeInit(NAND\_HandleTypeDef\ *hnand);}
+\DoxyCodeLine{00199\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ HAL\_NAND\_MspInit(NAND\_HandleTypeDef\ *hnand);}
+\DoxyCodeLine{00200\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ HAL\_NAND\_MspDeInit(NAND\_HandleTypeDef\ *hnand);}
+\DoxyCodeLine{00201\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_NAND\_IRQHandler(NAND\_HandleTypeDef\ *hnand);}
+\DoxyCodeLine{00202\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ HAL\_NAND\_ITCallback(NAND\_HandleTypeDef\ *hnand);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{comment}{/*\ IO\ operation\ functions\ \ ****************************************************/}}
+\DoxyCodeLine{00205\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ HAL\_NAND\_Read\_ID(NAND\_HandleTypeDef\ *hnand,\ NAND\_IDTypeDef\ *pNAND\_ID);}
+\DoxyCodeLine{00206\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ HAL\_NAND\_Reset(NAND\_HandleTypeDef\ *hnand);}
+\DoxyCodeLine{00207\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ HAL\_NAND\_Read\_Page(NAND\_HandleTypeDef\ *hnand,\ NAND\_AddressTypedef\ *pAddress,\ uint8\_t\ *pBuffer,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ NumPageToRead);}
+\DoxyCodeLine{00208\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ HAL\_NAND\_Write\_Page(NAND\_HandleTypeDef\ *hnand,\ NAND\_AddressTypedef\ *pAddress,\ uint8\_t\ *pBuffer,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ NumPageToWrite);}
+\DoxyCodeLine{00209\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ HAL\_NAND\_Read\_SpareArea(NAND\_HandleTypeDef\ *hnand,\ NAND\_AddressTypedef\ *pAddress,\ uint8\_t\ *pBuffer,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ NumSpareAreaToRead);}
+\DoxyCodeLine{00210\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ HAL\_NAND\_Write\_SpareArea(NAND\_HandleTypeDef\ *hnand,\ NAND\_AddressTypedef\ *pAddress,\ uint8\_t\ *pBuffer,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ NumSpareAreaTowrite);}
+\DoxyCodeLine{00211\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ HAL\_NAND\_Erase\_Block(NAND\_HandleTypeDef\ *hnand,\ NAND\_AddressTypedef\ *pAddress);}
+\DoxyCodeLine{00212\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ HAL\_NAND\_Read\_Status(NAND\_HandleTypeDef\ *hnand);}
+\DoxyCodeLine{00213\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ HAL\_NAND\_Address\_Inc(NAND\_HandleTypeDef\ *hnand,\ NAND\_AddressTypedef\ *pAddress);}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \textcolor{comment}{/*\ NAND\ Control\ functions\ \ ****************************************************/}}
+\DoxyCodeLine{00216\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ HAL\_NAND\_ECC\_Enable(NAND\_HandleTypeDef\ *hnand);}
+\DoxyCodeLine{00217\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ HAL\_NAND\_ECC\_Disable(NAND\_HandleTypeDef\ *hnand);}
+\DoxyCodeLine{00218\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ HAL\_NAND\_GetECC(NAND\_HandleTypeDef\ *hnand,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *ECCval,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \textcolor{comment}{/*\ NAND\ State\ functions\ *******************************************************/}}
+\DoxyCodeLine{00221\ HAL\_NAND\_StateTypeDef\ HAL\_NAND\_GetState(NAND\_HandleTypeDef\ *hnand);}
+\DoxyCodeLine{00222\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ HAL\_NAND\_Read\_Status(NAND\_HandleTypeDef\ *hnand);}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F405xx\ ||\ STM32F415xx\ ||\ STM32F407xx\ ||\ STM32F417xx\ ||\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx\ ||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00234\ \}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_HAL\_NAND\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

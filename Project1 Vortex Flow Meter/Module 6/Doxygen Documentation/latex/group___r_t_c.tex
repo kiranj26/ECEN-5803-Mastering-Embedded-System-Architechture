@@ -1,0 +1,660 @@
+\doxysubsection{RTC}
+\hypertarget{group___r_t_c}{}\label{group___r_t_c}\index{RTC@{RTC}}
+\doxysubsubsubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___r_t_c___exported___constants}{RTC\+\_\+\+Exported\+\_\+\+Constants}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_t_c___init_type_def}{RTC\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RTC Configuration Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\+\_\+\+Time\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RTC Time structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\+\_\+\+Date\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RTC Date structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RTC Alarm structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Time Handle Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_gaf20c09cfca416d79777562ccf7c994a2}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba69cd05758f5129525749b65bee6f939f}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset RTC handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_gae150645fb78c1d175b9e0f88fc3f4ad4}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+WRITEPROTECTION\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Disable the write protection for RTC registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga9eaed4a4db3b3232c1ca5d8ffa6ff4d8}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+WRITEPROTECTION\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable the write protection for RTC registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga88aa460d4d8a7a65acf4b3dbcd0a2813}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARMA\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8a8cdeac61f06e4737800b64a901d584}{RTC\+\_\+\+CR\+\_\+\+ALRAE}}))
+\begin{DoxyCompactList}\small\item\em Enable the RTC ALARMA peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga8679ec8def03e05fa39474d83b156699}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARMA\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8a8cdeac61f06e4737800b64a901d584}{RTC\+\_\+\+CR\+\_\+\+ALRAE}}))
+\begin{DoxyCompactList}\small\item\em Disable the RTC ALARMA peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_gad643ef2342067f140114d49f28709e92}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARMB\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga17d0850002ed42742ff75a82dc4e8586}{RTC\+\_\+\+CR\+\_\+\+ALRBE}}))
+\begin{DoxyCompactList}\small\item\em Enable the RTC ALARMB peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga09c7dd312682d270a8b74bcac3450f8b}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARMB\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga17d0850002ed42742ff75a82dc4e8586}{RTC\+\_\+\+CR\+\_\+\+ALRBE}}))
+\begin{DoxyCompactList}\small\item\em Disable the RTC ALARMB peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_gab40f07ff2cdf6fc98ccfdd856ba934e4}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the RTC Alarm interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_gadc2d6dc4a75136bdd2b67c1b35d04b10}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the RTC Alarm interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_gaf47dbdee0d0f259d09362ca66367b29c}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+GET\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ISR)\& ((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)$>$$>$ 4)) \& 0x0000\+FFFF) != \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\begin{DoxyCompactList}\small\item\em Check whether the specified RTC Alarm interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga9f908cb1fd0f270c66f5deed82e019de}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ISR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) != \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\begin{DoxyCompactList}\small\item\em Get the selected RTC Alarm\textquotesingle{}s flag status. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga93d88df67428f617157346d7cbdb4069}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ISR) = (\texorpdfstring{$\sim$}{\string~}(((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gae0eb2f998cd3e7325974347cb2a3d25a}{RTC\+\_\+\+ISR\+\_\+\+INIT}})\& 0x0000\+FFFF)\texorpdfstring{$\vert$}{|}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ISR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gae0eb2f998cd3e7325974347cb2a3d25a}{RTC\+\_\+\+ISR\+\_\+\+INIT}}))
+\begin{DoxyCompactList}\small\item\em Clear the RTC Alarm\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00020000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_gaffa3448885f1dec216899aef7f49471f}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+TAMPER\+\_\+\+TIMESTAMP\+\_\+\+EVENT}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00200000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga1a1a58e244663850786c387bfa5474f2}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+WAKEUPTIMER\+\_\+\+EVENT}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00400000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga8b60c6bc1ce8241b0e2a0f39090d93b0}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$IMR \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the RTC Exti line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga39703b4953d078196b733d3a81be396d}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$IMR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the RTC Exti line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ga2279c1a83635e0515c6760f34faf174f}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$PR = (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clear the RTC Exti flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___r_t_c_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b}{HAL\+\_\+\+RTCState\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba69cd05758f5129525749b65bee6f939f}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba466484cd22333d8c8758ae12890b862f}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba5e0a8c8e4731ac8f80e9a219413d6f9b}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba062e7947b5f5f0c2acb7be96207e3d58}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \newline
+\mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba21f381f99f437c340f79407e3d71bb31}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em HAL State structures definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_gaa6b53830aa3e2efaf210c0b1d3e5f4a4}{HAL\+\_\+\+RTC\+\_\+\+Init}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga24a8aac7bd6d9bac9f211d24ff6930ec}{HAL\+\_\+\+RTC\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+void \mbox{\hyperlink{group___r_t_c_gaee6eddaa309c8c9829f1ca794d8f99c5}{HAL\+\_\+\+RTC\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+void \mbox{\hyperlink{group___r_t_c_ga8767bc3a4d472d39a688090ab10ba6ce}{HAL\+\_\+\+RTC\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_gafe0fed98171a564decd2a6c9be9781d8}{HAL\+\_\+\+RTC\+\_\+\+Set\+Time}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\+\_\+\+Time\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Time, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_gae478ca2647e8d2f7dd1828ce43889a9e}{HAL\+\_\+\+RTC\+\_\+\+Get\+Time}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\+\_\+\+Time\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Time, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga6cf6c70227337a564ccef82f64d6268f}{HAL\+\_\+\+RTC\+\_\+\+Set\+Date}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\+\_\+\+Date\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Date, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga07ec2e43a305aa55e8c2442a349fc505}{HAL\+\_\+\+RTC\+\_\+\+Get\+Date}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\+\_\+\+Date\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Date, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_gafd78015b93b16dcb9e41a4655a7ea972}{HAL\+\_\+\+RTC\+\_\+\+Set\+Alarm}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Alarm, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_gab66a7fec05e9d9374de95d5f61e16c16}{HAL\+\_\+\+RTC\+\_\+\+Set\+Alarm\+\_\+\+IT}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Alarm, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga186d852f8aee8a4d0dfeec778be35482}{HAL\+\_\+\+RTC\+\_\+\+Deactivate\+Alarm}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Alarm)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga4786b652ffee2d59da2c65dd78646405}{HAL\+\_\+\+RTC\+\_\+\+Get\+Alarm}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Alarm, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Alarm, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Format)
+\item 
+void \mbox{\hyperlink{group___r_t_c_gac185f2ce34fe566418d0978a48e0c199}{HAL\+\_\+\+RTC\+\_\+\+Alarm\+IRQHandler}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_gaedc27fe412f45d999d74a0b98dce4d09}{HAL\+\_\+\+RTC\+\_\+\+Poll\+For\+Alarm\+AEvent}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+void \mbox{\hyperlink{group___r_t_c_ga11aeff83fd498cddbed3bcddcf017e0a}{HAL\+\_\+\+RTC\+\_\+\+Alarm\+AEvent\+Callback}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga62efc08017f7dc4db0bc72f7c68085ad}{HAL\+\_\+\+RTC\+\_\+\+Wait\+For\+Synchro}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+\mbox{\hyperlink{group___r_t_c_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b}{HAL\+\_\+\+RTCState\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga527ac04240b47a22bf5ff469609eaa4d}{HAL\+\_\+\+RTC\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_t_c_ga50b2ead8d1755be360de2d624beaf9a0}{RTC\+\_\+\+Enter\+Init\+Mode}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrtc)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_t_c_ga8c33f1358a98db0c7c829c38538bf7ba}{RTC\+\_\+\+Byte\+To\+Bcd2}} (uint8\+\_\+t Value)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_t_c_gaf1bcb309bb9e7ac4a1b4e95a11cfb26f}{RTC\+\_\+\+Bcd2\+To\+Byte}} (uint8\+\_\+t Value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{group___r_t_c_ga93d88df67428f617157346d7cbdb4069}\label{group___r_t_c_ga93d88df67428f617157346d7cbdb4069} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_ALARM\_CLEAR\_FLAG@{\_\_HAL\_RTC\_ALARM\_CLEAR\_FLAG}}
+\index{\_\_HAL\_RTC\_ALARM\_CLEAR\_FLAG@{\_\_HAL\_RTC\_ALARM\_CLEAR\_FLAG}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_ALARM\_CLEAR\_FLAG}{\_\_HAL\_RTC\_ALARM\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ISR) = (\texorpdfstring{$\sim$}{\string~}(((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gae0eb2f998cd3e7325974347cb2a3d25a}{RTC\+\_\+\+ISR\+\_\+\+INIT}})\& 0x0000\+FFFF)\texorpdfstring{$\vert$}{|}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ISR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gae0eb2f998cd3e7325974347cb2a3d25a}{RTC\+\_\+\+ISR\+\_\+\+INIT}}))}
+
+
+
+Clear the RTC Alarm\textquotesingle{}s pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the RTC handle. \\
+\hline
+{\em \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+} & specifies the RTC Alarm Flag sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+FLAG\+\_\+\+ALRAF \item RTC\+\_\+\+FLAG\+\_\+\+ALRBF \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_gadc2d6dc4a75136bdd2b67c1b35d04b10}\label{group___r_t_c_gadc2d6dc4a75136bdd2b67c1b35d04b10} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_ALARM\_DISABLE\_IT@{\_\_HAL\_RTC\_ALARM\_DISABLE\_IT}}
+\index{\_\_HAL\_RTC\_ALARM\_DISABLE\_IT@{\_\_HAL\_RTC\_ALARM\_DISABLE\_IT}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_ALARM\_DISABLE\_IT}{\_\_HAL\_RTC\_ALARM\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Disable the RTC Alarm interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the RTC handle. \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & specifies the RTC Alarm interrupt sources to be enabled or disabled. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+ALRA\+: Alarm A interrupt \item RTC\+\_\+\+IT\+\_\+\+ALRB\+: Alarm B interrupt ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_gab40f07ff2cdf6fc98ccfdd856ba934e4}\label{group___r_t_c_gab40f07ff2cdf6fc98ccfdd856ba934e4} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_ALARM\_ENABLE\_IT@{\_\_HAL\_RTC\_ALARM\_ENABLE\_IT}}
+\index{\_\_HAL\_RTC\_ALARM\_ENABLE\_IT@{\_\_HAL\_RTC\_ALARM\_ENABLE\_IT}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_ALARM\_ENABLE\_IT}{\_\_HAL\_RTC\_ALARM\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Enable the RTC Alarm interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the RTC handle. \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & specifies the RTC Alarm interrupt sources to be enabled or disabled. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+ALRA\+: Alarm A interrupt \item RTC\+\_\+\+IT\+\_\+\+ALRB\+: Alarm B interrupt ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_ga9f908cb1fd0f270c66f5deed82e019de}\label{group___r_t_c_ga9f908cb1fd0f270c66f5deed82e019de} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_ALARM\_GET\_FLAG@{\_\_HAL\_RTC\_ALARM\_GET\_FLAG}}
+\index{\_\_HAL\_RTC\_ALARM\_GET\_FLAG@{\_\_HAL\_RTC\_ALARM\_GET\_FLAG}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_ALARM\_GET\_FLAG}{\_\_HAL\_RTC\_ALARM\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ISR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) != \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+
+
+Get the selected RTC Alarm\textquotesingle{}s flag status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the RTC handle. \\
+\hline
+{\em \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+} & specifies the RTC Alarm Flag sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+FLAG\+\_\+\+ALRAF \item RTC\+\_\+\+FLAG\+\_\+\+ALRBF \item RTC\+\_\+\+FLAG\+\_\+\+ALRAWF ~\newline
+ \item RTC\+\_\+\+FLAG\+\_\+\+ALRBWF ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_gaf47dbdee0d0f259d09362ca66367b29c}\label{group___r_t_c_gaf47dbdee0d0f259d09362ca66367b29c} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_ALARM\_GET\_IT@{\_\_HAL\_RTC\_ALARM\_GET\_IT}}
+\index{\_\_HAL\_RTC\_ALARM\_GET\_IT@{\_\_HAL\_RTC\_ALARM\_GET\_IT}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_ALARM\_GET\_IT}{\_\_HAL\_RTC\_ALARM\_GET\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+GET\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$ISR)\& ((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)$>$$>$ 4)) \& 0x0000\+FFFF) != \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+
+
+Check whether the specified RTC Alarm interrupt has occurred or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the RTC handle. \\
+\hline
+{\em \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+} & specifies the RTC Alarm interrupt sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+ALRA\+: Alarm A interrupt \item RTC\+\_\+\+IT\+\_\+\+ALRB\+: Alarm B interrupt ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_ga8679ec8def03e05fa39474d83b156699}\label{group___r_t_c_ga8679ec8def03e05fa39474d83b156699} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_ALARMA\_DISABLE@{\_\_HAL\_RTC\_ALARMA\_DISABLE}}
+\index{\_\_HAL\_RTC\_ALARMA\_DISABLE@{\_\_HAL\_RTC\_ALARMA\_DISABLE}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_ALARMA\_DISABLE}{\_\_HAL\_RTC\_ALARMA\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARMA\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8a8cdeac61f06e4737800b64a901d584}{RTC\+\_\+\+CR\+\_\+\+ALRAE}}))}
+
+
+
+Disable the RTC ALARMA peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the RTC handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_ga88aa460d4d8a7a65acf4b3dbcd0a2813}\label{group___r_t_c_ga88aa460d4d8a7a65acf4b3dbcd0a2813} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_ALARMA\_ENABLE@{\_\_HAL\_RTC\_ALARMA\_ENABLE}}
+\index{\_\_HAL\_RTC\_ALARMA\_ENABLE@{\_\_HAL\_RTC\_ALARMA\_ENABLE}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_ALARMA\_ENABLE}{\_\_HAL\_RTC\_ALARMA\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARMA\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8a8cdeac61f06e4737800b64a901d584}{RTC\+\_\+\+CR\+\_\+\+ALRAE}}))}
+
+
+
+Enable the RTC ALARMA peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the RTC handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_ga09c7dd312682d270a8b74bcac3450f8b}\label{group___r_t_c_ga09c7dd312682d270a8b74bcac3450f8b} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_ALARMB\_DISABLE@{\_\_HAL\_RTC\_ALARMB\_DISABLE}}
+\index{\_\_HAL\_RTC\_ALARMB\_DISABLE@{\_\_HAL\_RTC\_ALARMB\_DISABLE}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_ALARMB\_DISABLE}{\_\_HAL\_RTC\_ALARMB\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARMB\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \&= \texorpdfstring{$\sim$}{\string~}(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga17d0850002ed42742ff75a82dc4e8586}{RTC\+\_\+\+CR\+\_\+\+ALRBE}}))}
+
+
+
+Disable the RTC ALARMB peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the RTC handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_gad643ef2342067f140114d49f28709e92}\label{group___r_t_c_gad643ef2342067f140114d49f28709e92} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_ALARMB\_ENABLE@{\_\_HAL\_RTC\_ALARMB\_ENABLE}}
+\index{\_\_HAL\_RTC\_ALARMB\_ENABLE@{\_\_HAL\_RTC\_ALARMB\_ENABLE}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_ALARMB\_ENABLE}{\_\_HAL\_RTC\_ALARMB\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARMB\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}= (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga17d0850002ed42742ff75a82dc4e8586}{RTC\+\_\+\+CR\+\_\+\+ALRBE}}))}
+
+
+
+Enable the RTC ALARMB peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the RTC handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_ga2279c1a83635e0515c6760f34faf174f}\label{group___r_t_c_ga2279c1a83635e0515c6760f34faf174f} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_CLEAR\_FLAG@{\_\_HAL\_RTC\_CLEAR\_FLAG}}
+\index{\_\_HAL\_RTC\_CLEAR\_FLAG@{\_\_HAL\_RTC\_CLEAR\_FLAG}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_CLEAR\_FLAG}{\_\_HAL\_RTC\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$PR = (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))}
+
+
+
+Clear the RTC Exti flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+} & specifies the RTC Exti sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT ~\newline
+ \item RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+TAMPER\+\_\+\+TIMESTAMP\+\_\+\+EVENT \item RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+WAKEUPTIMER\+\_\+\+EVENT ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_ga39703b4953d078196b733d3a81be396d}\label{group___r_t_c_ga39703b4953d078196b733d3a81be396d} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_DISABLE\_IT@{\_\_HAL\_RTC\_DISABLE\_IT}}
+\index{\_\_HAL\_RTC\_DISABLE\_IT@{\_\_HAL\_RTC\_DISABLE\_IT}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_DISABLE\_IT}{\_\_HAL\_RTC\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$IMR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+))}
+
+
+
+Disable the RTC Exti line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+} & specifies the RTC Exti sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT ~\newline
+ \item RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+TAMPER\+\_\+\+TIMESTAMP\+\_\+\+EVENT \item RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+WAKEUPTIMER\+\_\+\+EVENT ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_ga8b60c6bc1ce8241b0e2a0f39090d93b0}\label{group___r_t_c_ga8b60c6bc1ce8241b0e2a0f39090d93b0} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_ENABLE\_IT@{\_\_HAL\_RTC\_ENABLE\_IT}}
+\index{\_\_HAL\_RTC\_ENABLE\_IT@{\_\_HAL\_RTC\_ENABLE\_IT}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_ENABLE\_IT}{\_\_HAL\_RTC\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___peripheral__declaration_ga9189e770cd9b63dadd36683eb9843cac}{EXTI}}-\/$>$IMR \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+))}
+
+
+
+Enable the RTC Exti line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+EXTILINE\+\_\+\+\_\+} & specifies the RTC Exti sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT ~\newline
+ \item RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+TAMPER\+\_\+\+TIMESTAMP\+\_\+\+EVENT \item RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+WAKEUPTIMER\+\_\+\+EVENT ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_gaf20c09cfca416d79777562ccf7c994a2}\label{group___r_t_c_gaf20c09cfca416d79777562ccf7c994a2} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_RESET\_HANDLE\_STATE@{\_\_HAL\_RTC\_RESET\_HANDLE\_STATE}}
+\index{\_\_HAL\_RTC\_RESET\_HANDLE\_STATE@{\_\_HAL\_RTC\_RESET\_HANDLE\_STATE}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_RESET\_HANDLE\_STATE}{\_\_HAL\_RTC\_RESET\_HANDLE\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba69cd05758f5129525749b65bee6f939f}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+RESET}})}
+
+
+
+Reset RTC handle state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the RTC handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_gae150645fb78c1d175b9e0f88fc3f4ad4}\label{group___r_t_c_gae150645fb78c1d175b9e0f88fc3f4ad4} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_WRITEPROTECTION\_DISABLE@{\_\_HAL\_RTC\_WRITEPROTECTION\_DISABLE}}
+\index{\_\_HAL\_RTC\_WRITEPROTECTION\_DISABLE@{\_\_HAL\_RTC\_WRITEPROTECTION\_DISABLE}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_WRITEPROTECTION\_DISABLE}{\_\_HAL\_RTC\_WRITEPROTECTION\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+WRITEPROTECTION\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Instance-\/>WPR\ =\ 0xCA;\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Instance-\/>WPR\ =\ 0x53;\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Disable the write protection for RTC registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the RTC handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_ga9eaed4a4db3b3232c1ca5d8ffa6ff4d8}\label{group___r_t_c_ga9eaed4a4db3b3232c1ca5d8ffa6ff4d8} 
+\index{RTC@{RTC}!\_\_HAL\_RTC\_WRITEPROTECTION\_ENABLE@{\_\_HAL\_RTC\_WRITEPROTECTION\_ENABLE}}
+\index{\_\_HAL\_RTC\_WRITEPROTECTION\_ENABLE@{\_\_HAL\_RTC\_WRITEPROTECTION\_ENABLE}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_RTC\_WRITEPROTECTION\_ENABLE}{\_\_HAL\_RTC\_WRITEPROTECTION\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+WRITEPROTECTION\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Instance-\/>WPR\ =\ 0xFF;\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Enable the write protection for RTC registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the RTC handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___r_t_c_gaeffe9b89372b06df1c0eff2f4346682b}\label{group___r_t_c_gaeffe9b89372b06df1c0eff2f4346682b} 
+\index{RTC@{RTC}!RTC\_EXTI\_LINE\_ALARM\_EVENT@{RTC\_EXTI\_LINE\_ALARM\_EVENT}}
+\index{RTC\_EXTI\_LINE\_ALARM\_EVENT@{RTC\_EXTI\_LINE\_ALARM\_EVENT}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{RTC\_EXTI\_LINE\_ALARM\_EVENT}{RTC\_EXTI\_LINE\_ALARM\_EVENT}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00020000)}
+
+External interrupt line 17 Connected to the RTC Alarm event \Hypertarget{group___r_t_c_gaffa3448885f1dec216899aef7f49471f}\label{group___r_t_c_gaffa3448885f1dec216899aef7f49471f} 
+\index{RTC@{RTC}!RTC\_EXTI\_LINE\_TAMPER\_TIMESTAMP\_EVENT@{RTC\_EXTI\_LINE\_TAMPER\_TIMESTAMP\_EVENT}}
+\index{RTC\_EXTI\_LINE\_TAMPER\_TIMESTAMP\_EVENT@{RTC\_EXTI\_LINE\_TAMPER\_TIMESTAMP\_EVENT}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{RTC\_EXTI\_LINE\_TAMPER\_TIMESTAMP\_EVENT}{RTC\_EXTI\_LINE\_TAMPER\_TIMESTAMP\_EVENT}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+TAMPER\+\_\+\+TIMESTAMP\+\_\+\+EVENT~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00200000)}
+
+External interrupt line 21 Connected to the RTC Tamper and Time Stamp events \Hypertarget{group___r_t_c_ga1a1a58e244663850786c387bfa5474f2}\label{group___r_t_c_ga1a1a58e244663850786c387bfa5474f2} 
+\index{RTC@{RTC}!RTC\_EXTI\_LINE\_WAKEUPTIMER\_EVENT@{RTC\_EXTI\_LINE\_WAKEUPTIMER\_EVENT}}
+\index{RTC\_EXTI\_LINE\_WAKEUPTIMER\_EVENT@{RTC\_EXTI\_LINE\_WAKEUPTIMER\_EVENT}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{RTC\_EXTI\_LINE\_WAKEUPTIMER\_EVENT}{RTC\_EXTI\_LINE\_WAKEUPTIMER\_EVENT}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+WAKEUPTIMER\+\_\+\+EVENT~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00400000)}
+
+External interrupt line 22 Connected to the RTC Wakeup event 
+
+\doxysubsubsection{Enumeration Type Documentation}
+\Hypertarget{group___r_t_c_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b}\label{group___r_t_c_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b} 
+\index{RTC@{RTC}!HAL\_RTCStateTypeDef@{HAL\_RTCStateTypeDef}}
+\index{HAL\_RTCStateTypeDef@{HAL\_RTCStateTypeDef}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTCStateTypeDef}{HAL\_RTCStateTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___r_t_c_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b}{HAL\+\_\+\+RTCState\+Type\+Def}}}
+
+
+
+HAL State structures definition ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_RTC\_STATE\_RESET@{HAL\_RTC\_STATE\_RESET}!RTC@{RTC}}\index{RTC@{RTC}!HAL\_RTC\_STATE\_RESET@{HAL\_RTC\_STATE\_RESET}}}\Hypertarget{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba69cd05758f5129525749b65bee6f939f}\label{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba69cd05758f5129525749b65bee6f939f} 
+HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+RESET&RTC not yet initialized or disabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_RTC\_STATE\_READY@{HAL\_RTC\_STATE\_READY}!RTC@{RTC}}\index{RTC@{RTC}!HAL\_RTC\_STATE\_READY@{HAL\_RTC\_STATE\_READY}}}\Hypertarget{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba466484cd22333d8c8758ae12890b862f}\label{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba466484cd22333d8c8758ae12890b862f} 
+HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+READY&RTC initialized and ready for use ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_RTC\_STATE\_BUSY@{HAL\_RTC\_STATE\_BUSY}!RTC@{RTC}}\index{RTC@{RTC}!HAL\_RTC\_STATE\_BUSY@{HAL\_RTC\_STATE\_BUSY}}}\Hypertarget{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba5e0a8c8e4731ac8f80e9a219413d6f9b}\label{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba5e0a8c8e4731ac8f80e9a219413d6f9b} 
+HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+BUSY&RTC process is ongoing ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_RTC\_STATE\_TIMEOUT@{HAL\_RTC\_STATE\_TIMEOUT}!RTC@{RTC}}\index{RTC@{RTC}!HAL\_RTC\_STATE\_TIMEOUT@{HAL\_RTC\_STATE\_TIMEOUT}}}\Hypertarget{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba062e7947b5f5f0c2acb7be96207e3d58}\label{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba062e7947b5f5f0c2acb7be96207e3d58} 
+HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+TIMEOUT&RTC timeout state ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_RTC\_STATE\_ERROR@{HAL\_RTC\_STATE\_ERROR}!RTC@{RTC}}\index{RTC@{RTC}!HAL\_RTC\_STATE\_ERROR@{HAL\_RTC\_STATE\_ERROR}}}\Hypertarget{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba21f381f99f437c340f79407e3d71bb31}\label{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba21f381f99f437c340f79407e3d71bb31} 
+HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+ERROR&RTC error state ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group___r_t_c_ga11aeff83fd498cddbed3bcddcf017e0a}\label{group___r_t_c_ga11aeff83fd498cddbed3bcddcf017e0a} 
+\index{RTC@{RTC}!HAL\_RTC\_AlarmAEventCallback@{HAL\_RTC\_AlarmAEventCallback}}
+\index{HAL\_RTC\_AlarmAEventCallback@{HAL\_RTC\_AlarmAEventCallback}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_AlarmAEventCallback()}{HAL\_RTC\_AlarmAEventCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+RTC\+\_\+\+Alarm\+AEvent\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_gac185f2ce34fe566418d0978a48e0c199}\label{group___r_t_c_gac185f2ce34fe566418d0978a48e0c199} 
+\index{RTC@{RTC}!HAL\_RTC\_AlarmIRQHandler@{HAL\_RTC\_AlarmIRQHandler}}
+\index{HAL\_RTC\_AlarmIRQHandler@{HAL\_RTC\_AlarmIRQHandler}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_AlarmIRQHandler()}{HAL\_RTC\_AlarmIRQHandler()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+RTC\+\_\+\+Alarm\+IRQHandler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_ga186d852f8aee8a4d0dfeec778be35482}\label{group___r_t_c_ga186d852f8aee8a4d0dfeec778be35482} 
+\index{RTC@{RTC}!HAL\_RTC\_DeactivateAlarm@{HAL\_RTC\_DeactivateAlarm}}
+\index{HAL\_RTC\_DeactivateAlarm@{HAL\_RTC\_DeactivateAlarm}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_DeactivateAlarm()}{HAL\_RTC\_DeactivateAlarm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+Deactivate\+Alarm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Alarm }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_ga24a8aac7bd6d9bac9f211d24ff6930ec}\label{group___r_t_c_ga24a8aac7bd6d9bac9f211d24ff6930ec} 
+\index{RTC@{RTC}!HAL\_RTC\_DeInit@{HAL\_RTC\_DeInit}}
+\index{HAL\_RTC\_DeInit@{HAL\_RTC\_DeInit}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_DeInit()}{HAL\_RTC\_DeInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_ga4786b652ffee2d59da2c65dd78646405}\label{group___r_t_c_ga4786b652ffee2d59da2c65dd78646405} 
+\index{RTC@{RTC}!HAL\_RTC\_GetAlarm@{HAL\_RTC\_GetAlarm}}
+\index{HAL\_RTC\_GetAlarm@{HAL\_RTC\_GetAlarm}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_GetAlarm()}{HAL\_RTC\_GetAlarm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+Get\+Alarm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc,  }\item[{\mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{s\+Alarm,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Alarm,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Format }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_ga07ec2e43a305aa55e8c2442a349fc505}\label{group___r_t_c_ga07ec2e43a305aa55e8c2442a349fc505} 
+\index{RTC@{RTC}!HAL\_RTC\_GetDate@{HAL\_RTC\_GetDate}}
+\index{HAL\_RTC\_GetDate@{HAL\_RTC\_GetDate}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_GetDate()}{HAL\_RTC\_GetDate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+Get\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc,  }\item[{\mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\+\_\+\+Date\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{s\+Date,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Format }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_ga527ac04240b47a22bf5ff469609eaa4d}\label{group___r_t_c_ga527ac04240b47a22bf5ff469609eaa4d} 
+\index{RTC@{RTC}!HAL\_RTC\_GetState@{HAL\_RTC\_GetState}}
+\index{HAL\_RTC\_GetState@{HAL\_RTC\_GetState}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_GetState()}{HAL\_RTC\_GetState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___r_t_c_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b}{HAL\+\_\+\+RTCState\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+Get\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_gae478ca2647e8d2f7dd1828ce43889a9e}\label{group___r_t_c_gae478ca2647e8d2f7dd1828ce43889a9e} 
+\index{RTC@{RTC}!HAL\_RTC\_GetTime@{HAL\_RTC\_GetTime}}
+\index{HAL\_RTC\_GetTime@{HAL\_RTC\_GetTime}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_GetTime()}{HAL\_RTC\_GetTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+Get\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc,  }\item[{\mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\+\_\+\+Time\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{s\+Time,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Format }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_gaa6b53830aa3e2efaf210c0b1d3e5f4a4}\label{group___r_t_c_gaa6b53830aa3e2efaf210c0b1d3e5f4a4} 
+\index{RTC@{RTC}!HAL\_RTC\_Init@{HAL\_RTC\_Init}}
+\index{HAL\_RTC\_Init@{HAL\_RTC\_Init}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_Init()}{HAL\_RTC\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_ga8767bc3a4d472d39a688090ab10ba6ce}\label{group___r_t_c_ga8767bc3a4d472d39a688090ab10ba6ce} 
+\index{RTC@{RTC}!HAL\_RTC\_MspDeInit@{HAL\_RTC\_MspDeInit}}
+\index{HAL\_RTC\_MspDeInit@{HAL\_RTC\_MspDeInit}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_MspDeInit()}{HAL\_RTC\_MspDeInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+RTC\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_gaee6eddaa309c8c9829f1ca794d8f99c5}\label{group___r_t_c_gaee6eddaa309c8c9829f1ca794d8f99c5} 
+\index{RTC@{RTC}!HAL\_RTC\_MspInit@{HAL\_RTC\_MspInit}}
+\index{HAL\_RTC\_MspInit@{HAL\_RTC\_MspInit}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_MspInit()}{HAL\_RTC\_MspInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+RTC\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_gaedc27fe412f45d999d74a0b98dce4d09}\label{group___r_t_c_gaedc27fe412f45d999d74a0b98dce4d09} 
+\index{RTC@{RTC}!HAL\_RTC\_PollForAlarmAEvent@{HAL\_RTC\_PollForAlarmAEvent}}
+\index{HAL\_RTC\_PollForAlarmAEvent@{HAL\_RTC\_PollForAlarmAEvent}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_PollForAlarmAEvent()}{HAL\_RTC\_PollForAlarmAEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+Poll\+For\+Alarm\+AEvent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_gafd78015b93b16dcb9e41a4655a7ea972}\label{group___r_t_c_gafd78015b93b16dcb9e41a4655a7ea972} 
+\index{RTC@{RTC}!HAL\_RTC\_SetAlarm@{HAL\_RTC\_SetAlarm}}
+\index{HAL\_RTC\_SetAlarm@{HAL\_RTC\_SetAlarm}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_SetAlarm()}{HAL\_RTC\_SetAlarm()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+Set\+Alarm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc,  }\item[{\mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{s\+Alarm,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Format }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_gab66a7fec05e9d9374de95d5f61e16c16}\label{group___r_t_c_gab66a7fec05e9d9374de95d5f61e16c16} 
+\index{RTC@{RTC}!HAL\_RTC\_SetAlarm\_IT@{HAL\_RTC\_SetAlarm\_IT}}
+\index{HAL\_RTC\_SetAlarm\_IT@{HAL\_RTC\_SetAlarm\_IT}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_SetAlarm\_IT()}{HAL\_RTC\_SetAlarm\_IT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+Set\+Alarm\+\_\+\+IT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc,  }\item[{\mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{s\+Alarm,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Format }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_ga6cf6c70227337a564ccef82f64d6268f}\label{group___r_t_c_ga6cf6c70227337a564ccef82f64d6268f} 
+\index{RTC@{RTC}!HAL\_RTC\_SetDate@{HAL\_RTC\_SetDate}}
+\index{HAL\_RTC\_SetDate@{HAL\_RTC\_SetDate}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_SetDate()}{HAL\_RTC\_SetDate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+Set\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc,  }\item[{\mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\+\_\+\+Date\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{s\+Date,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Format }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_gafe0fed98171a564decd2a6c9be9781d8}\label{group___r_t_c_gafe0fed98171a564decd2a6c9be9781d8} 
+\index{RTC@{RTC}!HAL\_RTC\_SetTime@{HAL\_RTC\_SetTime}}
+\index{HAL\_RTC\_SetTime@{HAL\_RTC\_SetTime}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_SetTime()}{HAL\_RTC\_SetTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+Set\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc,  }\item[{\mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\+\_\+\+Time\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{s\+Time,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Format }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_ga62efc08017f7dc4db0bc72f7c68085ad}\label{group___r_t_c_ga62efc08017f7dc4db0bc72f7c68085ad} 
+\index{RTC@{RTC}!HAL\_RTC\_WaitForSynchro@{HAL\_RTC\_WaitForSynchro}}
+\index{HAL\_RTC\_WaitForSynchro@{HAL\_RTC\_WaitForSynchro}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RTC\_WaitForSynchro()}{HAL\_RTC\_WaitForSynchro()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RTC\+\_\+\+Wait\+For\+Synchro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_gaf1bcb309bb9e7ac4a1b4e95a11cfb26f}\label{group___r_t_c_gaf1bcb309bb9e7ac4a1b4e95a11cfb26f} 
+\index{RTC@{RTC}!RTC\_Bcd2ToByte@{RTC\_Bcd2ToByte}}
+\index{RTC\_Bcd2ToByte@{RTC\_Bcd2ToByte}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{RTC\_Bcd2ToByte()}{RTC\_Bcd2ToByte()}}
+{\footnotesize\ttfamily uint8\+\_\+t RTC\+\_\+\+Bcd2\+To\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Value }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_ga8c33f1358a98db0c7c829c38538bf7ba}\label{group___r_t_c_ga8c33f1358a98db0c7c829c38538bf7ba} 
+\index{RTC@{RTC}!RTC\_ByteToBcd2@{RTC\_ByteToBcd2}}
+\index{RTC\_ByteToBcd2@{RTC\_ByteToBcd2}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{RTC\_ByteToBcd2()}{RTC\_ByteToBcd2()}}
+{\footnotesize\ttfamily uint8\+\_\+t RTC\+\_\+\+Byte\+To\+Bcd2 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Value }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_t_c_ga50b2ead8d1755be360de2d624beaf9a0}\label{group___r_t_c_ga50b2ead8d1755be360de2d624beaf9a0} 
+\index{RTC@{RTC}!RTC\_EnterInitMode@{RTC\_EnterInitMode}}
+\index{RTC\_EnterInitMode@{RTC\_EnterInitMode}!RTC@{RTC}}
+\doxysubsubsubsection{\texorpdfstring{RTC\_EnterInitMode()}{RTC\_EnterInitMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} RTC\+\_\+\+Enter\+Init\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hrtc }\end{DoxyParamCaption})}
+
+\input{group___r_t_c___exported___constants}

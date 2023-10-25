@@ -1,0 +1,143 @@
+\doxysection{shared.\+h}
+\hypertarget{shared_8h_source}{}\label{shared_8h_source}\index{src/shared.h@{src/shared.h}}
+\mbox{\hyperlink{shared_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \#include\ "{}\mbox{\hyperlink{mbed_8h}{mbed.h}}"{}}\ \ }
+\DoxyCodeLine{00032\ \ }
+\DoxyCodeLine{00033\ \textcolor{comment}{\ /*****************************************************************************}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*\ \#defines\ available\ to\ all\ modules\ included\ here}}
+\DoxyCodeLine{00035\ \textcolor{comment}{******************************************************************************/}\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ OFF\ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ used\ for\ readability\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ ON\ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ used\ for\ readability\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ NO\ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ used\ for\ readability\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ YES\ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ used\ for\ readability\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ TEN\ 10}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ TIMER0\ TMR0}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ SEC\ 10000\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ 10000\ timer0\ interrupts\ per\ second\ (100\ usec.)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ T100MS\ 0.1*SEC}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ T2S\ \ \ \ 2*SEC}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ LED\_FLASH\_PERIOD\ .5\ \ \ }\textcolor{comment}{/*\ in\ seconds\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00049\ \ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ CLOCK\_FREQUENCY\_MHZ\ 8}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ CODE\_VERSION\ "{}2.0\ 2016/09/29"{}\ \ \ }\textcolor{comment}{/*\ \ \ YYYY/MM/DD\ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ COPYRIGHT\ "{}Copyright\ (c)\ University\ of\ Colorado"{}\ }}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \textcolor{keyword}{enum}\ \textcolor{keywordtype}{boolean}\ \{\ \mbox{\hyperlink{shared_8h_a7c6368b321bd9acd0149b030bb8275edaa1e095cc966dbecf6a0d8aad75348d1a}{FALSE}},\ \mbox{\hyperlink{shared_8h_a7c6368b321bd9acd0149b030bb8275edaa82764c3079aea4e60c80e45befbb839}{TRUE}}\ \};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{shared_8h_ad8667bac763ba2aa5d7c29541fecf0a6}{dmode}}\ \{\mbox{\hyperlink{shared_8h_ad8667bac763ba2aa5d7c29541fecf0a6a4e8e36e4a6c3348cb98fd3223fb07b28}{QUIET}},\ \mbox{\hyperlink{shared_8h_ad8667bac763ba2aa5d7c29541fecf0a6a50d1448013c6f17125caee18aa418af7}{NORMAL}},\ \mbox{\hyperlink{shared_8h_ad8667bac763ba2aa5d7c29541fecf0a6a0593585da9181e972974c1274d8f2b4f}{DEBUG}},\ \mbox{\hyperlink{shared_8h_ad8667bac763ba2aa5d7c29541fecf0a6a52f49aba124a600ad9581caabe6a099a}{VERSION}},\ \mbox{\hyperlink{shared_8h_ad8667bac763ba2aa5d7c29541fecf0a6a18a89dd021090f031ec88bd515d60c32}{REGISTERS}},\ \mbox{\hyperlink{shared_8h_ad8667bac763ba2aa5d7c29541fecf0a6aa0f690187a3a023c04b409b4f653a4a1}{MEMORY}},\ \mbox{\hyperlink{shared_8h_ad8667bac763ba2aa5d7c29541fecf0a6a3bfeb3e4822bcc96abf42601a42bbcd3}{STACK}}\};}
+\DoxyCodeLine{00056\ \ }
+\DoxyCodeLine{00057\ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{shared_8h_a789d352559efaa396a258805d44f4289}{bit}};}
+\DoxyCodeLine{00059\ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}};}
+\DoxyCodeLine{00060\ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}};}
+\DoxyCodeLine{00061\ \ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ }}
+\DoxyCodeLine{00063\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00065\ \ }
+\DoxyCodeLine{00066\ \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{00067\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ Global\ Variable\ declarations\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00068\ \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{00069\ \ }
+\DoxyCodeLine{00070\ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{shared_8h_a3a055bd8f39421ff541e8f42bf186ca1}{Error\_status}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Variable\ for\ debugging\ use}}
+\DoxyCodeLine{00071\ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \ \mbox{\hyperlink{shared_8h_aa86621c08308c22f33cbb7e5ef6cac1d}{display\_timer}};\ \ \textcolor{comment}{//\ \(\backslash\)var\ 1\ second\ software\ timer\ for\ display\ \ \ }}
+\DoxyCodeLine{00072\ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \ \mbox{\hyperlink{shared_8h_a549da6ca918b08c442877aac53c2c8cd}{display\_flag}};\ \ \ \textcolor{comment}{//\ flag\ between\ timer\ interrupt\ and\ monitor.c,\ }}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ like\ a\ binary\ semaphore}}
+\DoxyCodeLine{00074\ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_aba040ff99a99da731e063bc76dce09d4}{tx\_in\_progress}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ *\mbox{\hyperlink{shared_8h_ab12a4058a0d03f4d5015439873548f1e}{rx\_in\_ptr}};\ \textcolor{comment}{/*\ pointer\ to\ the\ receive\ in\ data\ */}}
+\DoxyCodeLine{00076\ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ *\mbox{\hyperlink{shared_8h_a2ae6b659fbdaaf56342c00b70e127172}{rx\_out\_ptr}};\ \textcolor{comment}{/*\ pointer\ to\ the\ receive\ out\ data*/}}
+\DoxyCodeLine{00077\ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ *\mbox{\hyperlink{shared_8h_a0dbf3f8face8858f570fa6680d031143}{tx\_in\_ptr}};\ \textcolor{comment}{/*\ pointer\ to\ the\ transmit\ in\ data*/}}
+\DoxyCodeLine{00078\ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ *\mbox{\hyperlink{shared_8h_ab46aab0583a236f29d17100dda0435fa}{tx\_out\_ptr}};\ \textcolor{comment}{/*pointer\ to\ the\ transmit\ out\ */}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ RX\_BUF\_SIZE\ 10\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ size\ of\ receive\ buffer\ in\ bytes\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ TX\_BUF\_SIZE\ 40\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ size\ of\ transmit\ buffer\ in\ bytes\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00083\ \textcolor{comment}{*\ Some\ variable\ definitions\ are\ done\ in\ the\ module\ main.c\ and\ are\ externed\ in\ }}
+\DoxyCodeLine{00084\ \textcolor{comment}{*\ all\ other\ modules.\ \ The\ following\ section\ is\ visible\ to\ main.c\ only.}}
+\DoxyCodeLine{00085\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#ifdef\ MAIN}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{shared_8h_ad8667bac763ba2aa5d7c29541fecf0a6}{dmode}}\ \mbox{\hyperlink{shared_8h_a0f999d5d275d3149a605333813bb889d}{display\_mode}}\ =\ \mbox{\hyperlink{shared_8h_ad8667bac763ba2aa5d7c29541fecf0a6a4e8e36e4a6c3348cb98fd3223fb07b28}{QUIET}};}
+\DoxyCodeLine{00089\ \ }
+\DoxyCodeLine{00090\ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_a585c7efb04241bafa73026dd85db75c0}{serial\_flag}}\ =\ 0;}
+\DoxyCodeLine{00091\ \ }
+\DoxyCodeLine{00092\ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_aba040ff99a99da731e063bc76dce09d4}{tx\_in\_progress}};\ }
+\DoxyCodeLine{00093\ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ *\mbox{\hyperlink{shared_8h_ab12a4058a0d03f4d5015439873548f1e}{rx\_in\_ptr}};\ \textcolor{comment}{/*\ pointer\ to\ the\ receive\ in\ data\ */}}
+\DoxyCodeLine{00094\ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ *\mbox{\hyperlink{shared_8h_a2ae6b659fbdaaf56342c00b70e127172}{rx\_out\_ptr}};\ \textcolor{comment}{/*\ pointer\ to\ the\ receive\ out\ data*/}}
+\DoxyCodeLine{00095\ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ *\mbox{\hyperlink{shared_8h_a0dbf3f8face8858f570fa6680d031143}{tx\_in\_ptr}};\ \textcolor{comment}{/*\ pointer\ to\ the\ transmit\ in\ data*/}}
+\DoxyCodeLine{00096\ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ *\mbox{\hyperlink{shared_8h_ab46aab0583a236f29d17100dda0435fa}{tx\_out\_ptr}};\ \textcolor{comment}{/*pointer\ to\ the\ transmit\ out\ */}\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \ \mbox{\hyperlink{shared_8h_aa969d20975922ea763530e4e9d4b851b}{rx\_buf}}[\mbox{\hyperlink{shared_8h_a690f985c933da2ce6fe62b6c61dfa662}{RX\_BUF\_SIZE}}];\ \ \ \ \ \ \textcolor{comment}{/*\ define\ the\ storage\ */}}
+\DoxyCodeLine{00099\ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \ \mbox{\hyperlink{shared_8h_a6f8967a4f807ca352a590c2e59181c02}{tx\_buf}}[\mbox{\hyperlink{shared_8h_a5d3fb1970e1e98050006978a14b3d95e}{TX\_BUF\_SIZE}}];\ \ \ \ \ \ \textcolor{comment}{/*\ define\ the\ storage\ */}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ MSG\_BUF\_SIZE\ 10}}
+\DoxyCodeLine{00102\ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_aba8f2c25e1b131518be3427ec7ff9898}{msg\_buf}}[\mbox{\hyperlink{shared_8h_a8b8af8bedcac87c0d3c68634448b94a7}{MSG\_BUF\_SIZE}}];\ \textcolor{comment}{//\ define\ the\ storage\ for\ UART\ received\ messages}}
+\DoxyCodeLine{00103\ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_ab429473c00b4c6b483dec76f22256f25}{msg\_buf\_idx}}\ =\ 0;\ \ \ \ \textcolor{comment}{//\ index\ into\ the\ received\ message\ buffer\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00106\ \textcolor{comment}{*\ Some\ variable\ definitions\ are\ done\ in\ the\ module\ main.c\ and\ are\ externed\ in\ }}
+\DoxyCodeLine{00107\ \textcolor{comment}{*\ all\ other\ modules.\ \ The\ following\ section\ is\ visible\ to\ all\ modules\ EXCEPT\ }}
+\DoxyCodeLine{00108\ \textcolor{comment}{*\ main.c.}}
+\DoxyCodeLine{00109\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{/**********************/}\ \ \ }
+\DoxyCodeLine{00113\ \textcolor{comment}{/*\ \ \ Declarations\ \ \ \ \ */}}
+\DoxyCodeLine{00114\ \textcolor{comment}{/**********************/}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \ \ \ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_a3591e2fcec5782f674080d76012caf1c}{swtimer0}};}
+\DoxyCodeLine{00117\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \ \ \ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_a5e9cb685cd7b4f985e2b0c6bc39472d8}{swtimer1}};}
+\DoxyCodeLine{00118\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \ \ \ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_a3407372d2e60426487dee32524a7ebfb}{swtimer2}};}
+\DoxyCodeLine{00119\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \ \ \ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_acaad6ff331841ea97337be5c006cb463}{swtimer3}};\ }
+\DoxyCodeLine{00120\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \ \ \ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_a1fb728447906b6c9b9ee3f854ed5d998}{swtimer4}};\ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \ \ \ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_a59ae86f9818b5ddff6828e037a2d6447}{swtimer5}};\ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \ \ \ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_a7c62df53730e4de2996944b82146ab4b}{swtimer6}};\ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \ \ \ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_a2c9a6a73d8930dea78d823660d65be44}{swtimer7}};\ \ \ \ }
+\DoxyCodeLine{00124\ \ \ }
+\DoxyCodeLine{00125\ \ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_a585c7efb04241bafa73026dd85db75c0}{serial\_flag}};}
+\DoxyCodeLine{00126\ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{shared_8h_ad8667bac763ba2aa5d7c29541fecf0a6}{dmode}}\ \mbox{\hyperlink{shared_8h_a0f999d5d275d3149a605333813bb889d}{display\_mode}};}
+\DoxyCodeLine{00128\ \ \ }
+\DoxyCodeLine{00129\ \ \ }
+\DoxyCodeLine{00130\ \ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \ \mbox{\hyperlink{shared_8h_aa969d20975922ea763530e4e9d4b851b}{rx\_buf}}[];\ \ \ \ \ \ \textcolor{comment}{/*\ declare\ the\ storage\ */}}
+\DoxyCodeLine{00131\ \ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \ \mbox{\hyperlink{shared_8h_a6f8967a4f807ca352a590c2e59181c02}{tx\_buf}}[];\ \ \ \ \ \ \textcolor{comment}{/*\ declare\ the\ storage\ */}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ MSG\_BUF\_SIZE\ 10\ \ \ \ }}
+\DoxyCodeLine{00134\ \ \ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_aba8f2c25e1b131518be3427ec7ff9898}{msg\_buf}}[\mbox{\hyperlink{shared_8h_a8b8af8bedcac87c0d3c68634448b94a7}{MSG\_BUF\_SIZE}}];\ \textcolor{comment}{//\ declare\ the\ storage\ for\ UART\ received\ messages}}
+\DoxyCodeLine{00135\ \ \ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_ab429473c00b4c6b483dec76f22256f25}{msg\_buf\_idx}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ index\ into\ the\ received\ message\ buffer}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00140\ \textcolor{comment}{*\ All\ function\ prototypes\ are\ externed\ in\ all\ the\ modules.}}
+\DoxyCodeLine{00141\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00142\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_a59a4a0c8721f73a8c9d9db5a4cdc6e88}{monitor}}(\textcolor{keywordtype}{void});\ \ \textcolor{comment}{/*\ located\ in\ module\ monitor.c\ */}}
+\DoxyCodeLine{00143\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_a2143aff1e880c3dc51e02ba9120825ea}{timer0}}(\textcolor{keywordtype}{void});\ \ \ \textcolor{comment}{/*\ located\ in\ module\ timer0.c\ */}}
+\DoxyCodeLine{00144\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_a44becc30285e88213a624428b2b46cdf}{serial}}(\textcolor{keywordtype}{void});\ \ \ \textcolor{comment}{/*\ located\ in\ module\ UART\_poll.c\ */}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_adc2d50697b8eeb68bbeb103cbf3057da}{UART\_put}}(\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ UART\_poll.c\ */}}
+\DoxyCodeLine{00147\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_a33768775b7fa0439bc8b61c984cc6045}{UART\_get}}(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ UART\_poll.c\ */}}
+\DoxyCodeLine{00148\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}}\ \mbox{\hyperlink{shared_8h_a1b2774203b8f10ef7aebd8fdd032ee8a}{UART\_input}}(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ UART\_poll.c\ */}}
+\DoxyCodeLine{00149\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_a4037414d6697571ef8f41e908e6aa539}{UART\_direct\_msg\_put}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ UART\_poll.c\ */}}
+\DoxyCodeLine{00151\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_aff5c8c647b366f30a42c0c7193c82328}{UART\_msg\_put}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *);\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ UART\_poll.c\ */}}
+\DoxyCodeLine{00153\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_a70399dcd5e9548471204bea07c81f329}{UART\_direct\_hex\_put}}(\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}});\ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ UART\_poll.c\ */}}
+\DoxyCodeLine{00154\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_a966020ff4b098d721feb23345a38fd93}{UART\_direct\_put}}(\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}});\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ UART\_poll.c\ */}}
+\DoxyCodeLine{00155\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_a3c206b2fe3b1fdb07178914b32846bbd}{UART\_hex\_put}}(\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}});\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ UART\_poll.c\ */}}
+\DoxyCodeLine{00156\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_a5f6c0e92045d249165734ff23a2c8915}{UART\_low\_nibble\_put}}(\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}});\ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ UART\_poll.c\ */}}
+\DoxyCodeLine{00157\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_a90a9cc9e3a4ad03acd737d0dd5725f67}{UART\_high\_nibble\_put}}(\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\_t}});\ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ UART\_poll.c\ */}}
+\DoxyCodeLine{00158\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_a29be7c30b6929c50ebb985b228fc1be2}{chk\_UART\_msg}}(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ monitor.c\ */}}
+\DoxyCodeLine{00159\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_a826db354ae1d910792a0330f8d4eb91a}{UART\_msg\_process}}(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ monitors.c\ */}}
+\DoxyCodeLine{00160\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_ad6e5f59640709c2b2e22f5df6b1b5a65}{status\_report}}(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ monitor.c\ */}\ \ }
+\DoxyCodeLine{00161\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shared_8h_acd5157b5f415f4ca9be9b2a23943440c}{set\_display\_mode}}(\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ located\ in\ module\ monitor.c\ */}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00164\ \}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00166\ }
+
+\end{DoxyCode}

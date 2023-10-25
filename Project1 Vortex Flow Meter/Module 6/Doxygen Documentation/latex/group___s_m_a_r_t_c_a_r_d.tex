@@ -1,0 +1,551 @@
+\doxysubsection{SMARTCARD}
+\hypertarget{group___s_m_a_r_t_c_a_r_d}{}\label{group___s_m_a_r_t_c_a_r_d}\index{SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d___exported___constants}{SMARTCARD\+\_\+\+Exported\+\_\+\+Constants}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def}{SMARTCARD\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SMARTCARD Init Structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SMARTCARD handle Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga080b197f190ae36b8db1745a4db94bf4}{\+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea3bb178c89408959b462cf8bc607034cb}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset SMARTCARD handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga942e652bb57d4f12e7273f4e97035ff4}{\+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+FLUSH\+\_\+\+DRREGISTER}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DR)
+\begin{DoxyCompactList}\small\item\em Flushs the Smartcard DR register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga38f995afc135ddbaafc0c68e12c31f11}{\+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Checks whether the specified Smartcard flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gab40a9ea5252be0340f074b1cab9c2264}{\+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the specified Smartcard pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga2d4be8e0259fd370f82c53579c96ede5}{SMARTCARD\+\_\+\+IT\+\_\+\+MASK}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0000\+FFFF)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified Smart\+Card interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gac28ac71a5048913946c0b2cb43869606}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gafb2e783e25efa42568e587d88a32dbc4}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga8bae0fc7f068414790697698adafc4f2}{\+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+IT\+\_\+\+\_\+)~(((((\+\_\+\+\_\+\+IT\+\_\+\+\_\+) $>$$>$ 28) == 1)? (\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1\+: (\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR3) \& (((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\+\_\+\+\_\+\+IT\+\_\+\+\_\+)) \& \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga2d4be8e0259fd370f82c53579c96ede5}{SMARTCARD\+\_\+\+IT\+\_\+\+MASK}}))
+\begin{DoxyCompactList}\small\item\em Checks whether the specified Smart\+Card interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga41d6f263ca49881a482e053cdb452278}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 \texorpdfstring{$\vert$}{|}=  \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2bb650676aaae4a5203f372d497d5947}{USART\+\_\+\+CR1\+\_\+\+UE}})
+\begin{DoxyCompactList}\small\item\em Macros to enable or disable the Smart\+Card interface. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga93fe2e3f814dd564f485ab67b7f757c9}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 \&=  \texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2bb650676aaae4a5203f372d497d5947}{USART\+\_\+\+CR1\+\_\+\+UE}})
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga5266d13bd56e0c5eada58c461ea5c22d}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+DMA\+\_\+\+REQUEST\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR3 \texorpdfstring{$\vert$}{|}=  (\+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macros to enable or disable the Smart\+Card DMA request. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga2ede2a184afa4076809092b357c96853}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+DMA\+\_\+\+REQUEST\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR3 \&=  \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gafbb1fab320969bc5f2f726523765efd9}{\+\_\+\+\_\+\+DIV}}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~(((\+\_\+\+PCLK\+\_\+)\texorpdfstring{$\ast$}{*}25)/(4\texorpdfstring{$\ast$}{*}(\+\_\+\+BAUD\+\_\+)))
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gab53df89950c58100a4f14842b43877f0}{\+\_\+\+\_\+\+DIVMANT}}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~(\mbox{\hyperlink{group___i_r_d_a_gafbb1fab320969bc5f2f726523765efd9}{\+\_\+\+\_\+\+DIV}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+))/100)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga093009531672e6074b05430492830c24}{\+\_\+\+\_\+\+DIVFRAQ}}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~(((\mbox{\hyperlink{group___i_r_d_a_gafbb1fab320969bc5f2f726523765efd9}{\+\_\+\+\_\+\+DIV}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) -\/ (\mbox{\hyperlink{group___i_r_d_a_gab53df89950c58100a4f14842b43877f0}{\+\_\+\+\_\+\+DIVMANT}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) \texorpdfstring{$\ast$}{*} 100)) \texorpdfstring{$\ast$}{*} 16 + 50) / 100)
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gafe466e58e1f1d8c87e0677e604709cc8}{\+\_\+\+\_\+\+SMARTCARD\+\_\+\+BRR}}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~((\mbox{\hyperlink{group___i_r_d_a_gab53df89950c58100a4f14842b43877f0}{\+\_\+\+\_\+\+DIVMANT}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) $<$$<$ 4)\texorpdfstring{$\vert$}{|}(\mbox{\hyperlink{group___i_r_d_a_ga093009531672e6074b05430492830c24}{\+\_\+\+\_\+\+DIVFRAQ}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) \& 0x0F))
+\item 
+\#define \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga8af8fc5fa79cca4a3bf1bce5d051e371}{IS\+\_\+\+SMARTCARD\+\_\+\+BAUDRATE}}(BAUDRATE)~((BAUDRATE) $<$ 10500001)
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga79d6a3b95636861dcfd70913746e087e}{HAL\+\_\+\+SMARTCARD\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea3bb178c89408959b462cf8bc607034cb}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea574c38a9650163fcf757974c7a6c4a44}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea2cb929aaef6e779ed7cd6b3909ddd9dc}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eae782bca07469b811467a60454fd3789d}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX}} = 0x12
+, \newline
+\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eaebf962d48014d5c46f262a1e7c6fe5a3}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+RX}} = 0x22
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eadce24f292ca00c111d393cbc11a823bf}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX\+\_\+\+RX}} = 0x32
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eac871d68a9fe445e9cdcef0d3eb374a1c}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eabd76a0e440c55bb7d040626f2134afee}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em HAL State structures definition. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gae3ce190c726f8059f7280e4e7b091651}{HAL\+\_\+\+SMARTCARD\+\_\+\+Error\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a319651c709199001748835687ca790d4}{HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+NONE}} = 0x00
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a50cbf86dd5395fd9a328f153a86adba9}{HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+PE}} = 0x01
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a8aca04ab3abf42b68d93c9ffa2827e07}{HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+NE}} = 0x02
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651ad181472c6486cbc8c8f126144817a06c}{HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+FE}} = 0x04
+, \newline
+\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651ad292f9248d5ee9036ba769c4e36adfae}{HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+ORE}} = 0x08
+, \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651add9e313d077e62b0c93150876e965e03}{HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+DMA}} = 0x10
+ \}
+\begin{DoxyCompactList}\small\item\em HAL SMARTCARD Error Code structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga95235c14cb192c26cf72bf44ddaaf551}{HAL\+\_\+\+SMARTCARD\+\_\+\+Init}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga1701fcf5d66117782a06569af1e40077}{HAL\+\_\+\+SMARTCARD\+\_\+\+Re\+Init}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga4b54b33c61b5284adbb7c98760425c2e}{HAL\+\_\+\+SMARTCARD\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+void \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga13e9aae9f5dd3b332fc8e431596793dc}{HAL\+\_\+\+SMARTCARD\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+void \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gaf8e8fa8ca8058656fdd091880424565a}{HAL\+\_\+\+SMARTCARD\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga4dd0a7c6916ca2423c50f432a38a7328}{HAL\+\_\+\+SMARTCARD\+\_\+\+Transmit}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga82240fa2bcafd64a28ffbb1b01893e84}{HAL\+\_\+\+SMARTCARD\+\_\+\+Receive}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gab671c1bdba9ed83fb08142c4c38caee8}{HAL\+\_\+\+SMARTCARD\+\_\+\+Transmit\+\_\+\+IT}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga52b04b11f8793a859f2105fd748d75cd}{HAL\+\_\+\+SMARTCARD\+\_\+\+Receive\+\_\+\+IT}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gab39a7dd50e44fd5c6cfc6af60bf8a4f5}{HAL\+\_\+\+SMARTCARD\+\_\+\+Transmit\+\_\+\+DMA}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gaa8506576688d14e1f10f99d8c3f104fa}{HAL\+\_\+\+SMARTCARD\+\_\+\+Receive\+\_\+\+DMA}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+void \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga5c09daa91f4d5f44c9b4c927a1c50b3e}{HAL\+\_\+\+SMARTCARD\+\_\+\+IRQHandler}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+void \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gafb56eef6e839e909823cc16bf96c845b}{HAL\+\_\+\+SMARTCARD\+\_\+\+Tx\+Cplt\+Callback}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+void \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga955fe3e5402e8a2797af8b605701dde4}{HAL\+\_\+\+SMARTCARD\+\_\+\+Rx\+Cplt\+Callback}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+void \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga6a5255ea10c1c5c0d3b037ce61d5dc91}{HAL\+\_\+\+SMARTCARD\+\_\+\+Error\+Callback}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+\mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga79d6a3b95636861dcfd70913746e087e}{HAL\+\_\+\+SMARTCARD\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga0edb69af10195dfde9b0451943990ad0}{HAL\+\_\+\+SMARTCARD\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gaf42409d25813eeca7cca2df14a6f7b7a}{HAL\+\_\+\+SMARTCARD\+\_\+\+Get\+Error}} (\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hsc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gafbb1fab320969bc5f2f726523765efd9}\label{group___s_m_a_r_t_c_a_r_d_gafbb1fab320969bc5f2f726523765efd9} 
+\index{SMARTCARD@{SMARTCARD}!\_\_DIV@{\_\_DIV}}
+\index{\_\_DIV@{\_\_DIV}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_DIV}{\_\_DIV}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+DIV(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+PCLK\+\_\+,  }\item[{}]{\+\_\+\+BAUD\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+PCLK\+\_\+)\texorpdfstring{$\ast$}{*}25)/(4\texorpdfstring{$\ast$}{*}(\+\_\+\+BAUD\+\_\+)))}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga093009531672e6074b05430492830c24}\label{group___s_m_a_r_t_c_a_r_d_ga093009531672e6074b05430492830c24} 
+\index{SMARTCARD@{SMARTCARD}!\_\_DIVFRAQ@{\_\_DIVFRAQ}}
+\index{\_\_DIVFRAQ@{\_\_DIVFRAQ}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_DIVFRAQ}{\_\_DIVFRAQ}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+DIVFRAQ(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+PCLK\+\_\+,  }\item[{}]{\+\_\+\+BAUD\+\_\+ }\end{DoxyParamCaption})~(((\mbox{\hyperlink{group___i_r_d_a_gafbb1fab320969bc5f2f726523765efd9}{\+\_\+\+\_\+\+DIV}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) -\/ (\mbox{\hyperlink{group___i_r_d_a_gab53df89950c58100a4f14842b43877f0}{\+\_\+\+\_\+\+DIVMANT}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) \texorpdfstring{$\ast$}{*} 100)) \texorpdfstring{$\ast$}{*} 16 + 50) / 100)}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gab53df89950c58100a4f14842b43877f0}\label{group___s_m_a_r_t_c_a_r_d_gab53df89950c58100a4f14842b43877f0} 
+\index{SMARTCARD@{SMARTCARD}!\_\_DIVMANT@{\_\_DIVMANT}}
+\index{\_\_DIVMANT@{\_\_DIVMANT}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_DIVMANT}{\_\_DIVMANT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+DIVMANT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+PCLK\+\_\+,  }\item[{}]{\+\_\+\+BAUD\+\_\+ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___i_r_d_a_gafbb1fab320969bc5f2f726523765efd9}{\+\_\+\+\_\+\+DIV}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+))/100)}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gab40a9ea5252be0340f074b1cab9c2264}\label{group___s_m_a_r_t_c_a_r_d_gab40a9ea5252be0340f074b1cab9c2264} 
+\index{SMARTCARD@{SMARTCARD}!\_\_HAL\_SMARTCARD\_CLEAR\_FLAG@{\_\_HAL\_SMARTCARD\_CLEAR\_FLAG}}
+\index{\_\_HAL\_SMARTCARD\_CLEAR\_FLAG@{\_\_HAL\_SMARTCARD\_CLEAR\_FLAG}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_SMARTCARD\_CLEAR\_FLAG}{\_\_HAL\_SMARTCARD\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))}
+
+
+
+Clears the specified Smartcard pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SMARTCARD Handle. \\
+\hline
+{\em \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+} & specifies the flag to check. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item SMARTCARD\+\_\+\+FLAG\+\_\+\+TC\+: Transmission Complete flag. \item SMARTCARD\+\_\+\+FLAG\+\_\+\+RXNE\+: Receive data register not empty flag.\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+PE (Parity error), FE (Framing error), NE (Noise error) and ORE (Over\+Run error) flags are cleared by software sequence\+: a read operation to USART\+\_\+\+SR register followed by a read operation to USART\+\_\+\+DR register. 
+
+RXNE flag can be also cleared by a read to the USART\+\_\+\+DR register. 
+
+TC flag can be also cleared by software sequence\+: a read operation to USART\+\_\+\+SR register followed by a write operation to USART\+\_\+\+DR register. 
+
+TXE flag is cleared only by a write to the USART\+\_\+\+DR register. 
+\end{DoxyNote}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga942e652bb57d4f12e7273f4e97035ff4}\label{group___s_m_a_r_t_c_a_r_d_ga942e652bb57d4f12e7273f4e97035ff4} 
+\index{SMARTCARD@{SMARTCARD}!\_\_HAL\_SMARTCARD\_FLUSH\_DRREGISTER@{\_\_HAL\_SMARTCARD\_FLUSH\_DRREGISTER}}
+\index{\_\_HAL\_SMARTCARD\_FLUSH\_DRREGISTER@{\_\_HAL\_SMARTCARD\_FLUSH\_DRREGISTER}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_SMARTCARD\_FLUSH\_DRREGISTER}{\_\_HAL\_SMARTCARD\_FLUSH\_DRREGISTER}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+FLUSH\+\_\+\+DRREGISTER(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DR)}
+
+
+
+Flushs the Smartcard DR register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SMARTCARD Handle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga38f995afc135ddbaafc0c68e12c31f11}\label{group___s_m_a_r_t_c_a_r_d_ga38f995afc135ddbaafc0c68e12c31f11} 
+\index{SMARTCARD@{SMARTCARD}!\_\_HAL\_SMARTCARD\_GET\_FLAG@{\_\_HAL\_SMARTCARD\_GET\_FLAG}}
+\index{\_\_HAL\_SMARTCARD\_GET\_FLAG@{\_\_HAL\_SMARTCARD\_GET\_FLAG}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_SMARTCARD\_GET\_FLAG}{\_\_HAL\_SMARTCARD\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))}
+
+
+
+Checks whether the specified Smartcard flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SMARTCARD Handle. \\
+\hline
+{\em \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item SMARTCARD\+\_\+\+FLAG\+\_\+\+TXE\+: Transmit data register empty flag \item SMARTCARD\+\_\+\+FLAG\+\_\+\+TC\+: Transmission Complete flag \item SMARTCARD\+\_\+\+FLAG\+\_\+\+RXNE\+: Receive data register not empty flag \item SMARTCARD\+\_\+\+FLAG\+\_\+\+IDLE\+: Idle Line detection flag \item SMARTCARD\+\_\+\+FLAG\+\_\+\+ORE\+: Over\+Run Error flag \item SMARTCARD\+\_\+\+FLAG\+\_\+\+NE\+: Noise Error flag \item SMARTCARD\+\_\+\+FLAG\+\_\+\+FE\+: Framing Error flag \item SMARTCARD\+\_\+\+FLAG\+\_\+\+PE\+: Parity Error flag \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of {\bfseries{FLAG}} (TRUE or FALSE). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga8bae0fc7f068414790697698adafc4f2}\label{group___s_m_a_r_t_c_a_r_d_ga8bae0fc7f068414790697698adafc4f2} 
+\index{SMARTCARD@{SMARTCARD}!\_\_HAL\_SMARTCARD\_GET\_IT\_SOURCE@{\_\_HAL\_SMARTCARD\_GET\_IT\_SOURCE}}
+\index{\_\_HAL\_SMARTCARD\_GET\_IT\_SOURCE@{\_\_HAL\_SMARTCARD\_GET\_IT\_SOURCE}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_SMARTCARD\_GET\_IT\_SOURCE}{\_\_HAL\_SMARTCARD\_GET\_IT\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+IT\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((((\+\_\+\+\_\+\+IT\+\_\+\+\_\+) $>$$>$ 28) == 1)? (\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1\+: (\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR3) \& (((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\+\_\+\+\_\+\+IT\+\_\+\+\_\+)) \& \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga2d4be8e0259fd370f82c53579c96ede5}{SMARTCARD\+\_\+\+IT\+\_\+\+MASK}}))}
+
+
+
+Checks whether the specified Smart\+Card interrupt has occurred or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the Smart\+Card Handle. \\
+\hline
+{\em \+\_\+\+\_\+\+IT\+\_\+\+\_\+} & specifies the SMARTCARD interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item SMARTCARD\+\_\+\+IT\+\_\+\+TXE\+: Transmit Data Register empty interrupt \item SMARTCARD\+\_\+\+IT\+\_\+\+TC\+: Transmission complete interrupt \item SMARTCARD\+\_\+\+IT\+\_\+\+RXNE\+: Receive Data register not empty interrupt \item SMARTCARD\+\_\+\+IT\+\_\+\+IDLE\+: Idle line detection interrupt \item SMARTCARD\+\_\+\+IT\+\_\+\+ERR\+: Error interrupt \item SMARTCARD\+\_\+\+IT\+\_\+\+PE\+: Parity Error interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of {\bfseries{IT}} (TRUE or FALSE). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga080b197f190ae36b8db1745a4db94bf4}\label{group___s_m_a_r_t_c_a_r_d_ga080b197f190ae36b8db1745a4db94bf4} 
+\index{SMARTCARD@{SMARTCARD}!\_\_HAL\_SMARTCARD\_RESET\_HANDLE\_STATE@{\_\_HAL\_SMARTCARD\_RESET\_HANDLE\_STATE}}
+\index{\_\_HAL\_SMARTCARD\_RESET\_HANDLE\_STATE@{\_\_HAL\_SMARTCARD\_RESET\_HANDLE\_STATE}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_SMARTCARD\_RESET\_HANDLE\_STATE}{\_\_HAL\_SMARTCARD\_RESET\_HANDLE\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SMARTCARD\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea3bb178c89408959b462cf8bc607034cb}{HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+RESET}})}
+
+
+
+Reset SMARTCARD handle state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SMARTCARD Handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gafe466e58e1f1d8c87e0677e604709cc8}\label{group___s_m_a_r_t_c_a_r_d_gafe466e58e1f1d8c87e0677e604709cc8} 
+\index{SMARTCARD@{SMARTCARD}!\_\_SMARTCARD\_BRR@{\_\_SMARTCARD\_BRR}}
+\index{\_\_SMARTCARD\_BRR@{\_\_SMARTCARD\_BRR}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_SMARTCARD\_BRR}{\_\_SMARTCARD\_BRR}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SMARTCARD\+\_\+\+BRR(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+PCLK\+\_\+,  }\item[{}]{\+\_\+\+BAUD\+\_\+ }\end{DoxyParamCaption})~((\mbox{\hyperlink{group___i_r_d_a_gab53df89950c58100a4f14842b43877f0}{\+\_\+\+\_\+\+DIVMANT}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) $<$$<$ 4)\texorpdfstring{$\vert$}{|}(\mbox{\hyperlink{group___i_r_d_a_ga093009531672e6074b05430492830c24}{\+\_\+\+\_\+\+DIVFRAQ}}((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) \& 0x0F))}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga93fe2e3f814dd564f485ab67b7f757c9}\label{group___s_m_a_r_t_c_a_r_d_ga93fe2e3f814dd564f485ab67b7f757c9} 
+\index{SMARTCARD@{SMARTCARD}!\_\_SMARTCARD\_DISABLE@{\_\_SMARTCARD\_DISABLE}}
+\index{\_\_SMARTCARD\_DISABLE@{\_\_SMARTCARD\_DISABLE}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_SMARTCARD\_DISABLE}{\_\_SMARTCARD\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SMARTCARD\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 \&=  \texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2bb650676aaae4a5203f372d497d5947}{USART\+\_\+\+CR1\+\_\+\+UE}})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gafb2e783e25efa42568e587d88a32dbc4}\label{group___s_m_a_r_t_c_a_r_d_gafb2e783e25efa42568e587d88a32dbc4} 
+\index{SMARTCARD@{SMARTCARD}!\_\_SMARTCARD\_DISABLE\_IT@{\_\_SMARTCARD\_DISABLE\_IT}}
+\index{\_\_SMARTCARD\_DISABLE\_IT@{\_\_SMARTCARD\_DISABLE\_IT}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_SMARTCARD\_DISABLE\_IT}{\_\_SMARTCARD\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SMARTCARD\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_INTERRUPT\_\_)\ >>\ 28)\ ==\ 1)?\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR1\ \&=\ \string~((\_\_INTERRUPT\_\_)\ \&\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga2d4be8e0259fd370f82c53579c96ede5}{SMARTCARD\_IT\_MASK}})):\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR3\ \&=\ \string~\ ((\_\_INTERRUPT\_\_)\ \&\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga2d4be8e0259fd370f82c53579c96ede5}{SMARTCARD\_IT\_MASK}})))}
+
+\end{DoxyCode}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga2ede2a184afa4076809092b357c96853}\label{group___s_m_a_r_t_c_a_r_d_ga2ede2a184afa4076809092b357c96853} 
+\index{SMARTCARD@{SMARTCARD}!\_\_SMARTCARD\_DMA\_REQUEST\_DISABLE@{\_\_SMARTCARD\_DMA\_REQUEST\_DISABLE}}
+\index{\_\_SMARTCARD\_DMA\_REQUEST\_DISABLE@{\_\_SMARTCARD\_DMA\_REQUEST\_DISABLE}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_SMARTCARD\_DMA\_REQUEST\_DISABLE}{\_\_SMARTCARD\_DMA\_REQUEST\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SMARTCARD\+\_\+\+DMA\+\_\+\+REQUEST\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR3 \&=  \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+))}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga5266d13bd56e0c5eada58c461ea5c22d}\label{group___s_m_a_r_t_c_a_r_d_ga5266d13bd56e0c5eada58c461ea5c22d} 
+\index{SMARTCARD@{SMARTCARD}!\_\_SMARTCARD\_DMA\_REQUEST\_ENABLE@{\_\_SMARTCARD\_DMA\_REQUEST\_ENABLE}}
+\index{\_\_SMARTCARD\_DMA\_REQUEST\_ENABLE@{\_\_SMARTCARD\_DMA\_REQUEST\_ENABLE}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_SMARTCARD\_DMA\_REQUEST\_ENABLE}{\_\_SMARTCARD\_DMA\_REQUEST\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SMARTCARD\+\_\+\+DMA\+\_\+\+REQUEST\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR3 \texorpdfstring{$\vert$}{|}=  (\+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+))}
+
+
+
+Macros to enable or disable the Smart\+Card DMA request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the Smart\+Card Handle. \\
+\hline
+{\em \+\_\+\+\_\+\+REQUEST\+\_\+\+\_\+} & specifies the Smart\+Card DMA request. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item SMARTCARD\+\_\+\+DMAREQ\+\_\+\+TX\+: Smart\+Card DMA transmit request \item SMARTCARD\+\_\+\+DMAREQ\+\_\+\+RX\+: Smart\+Card DMA receive request \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga41d6f263ca49881a482e053cdb452278}\label{group___s_m_a_r_t_c_a_r_d_ga41d6f263ca49881a482e053cdb452278} 
+\index{SMARTCARD@{SMARTCARD}!\_\_SMARTCARD\_ENABLE@{\_\_SMARTCARD\_ENABLE}}
+\index{\_\_SMARTCARD\_ENABLE@{\_\_SMARTCARD\_ENABLE}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_SMARTCARD\_ENABLE}{\_\_SMARTCARD\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SMARTCARD\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 \texorpdfstring{$\vert$}{|}=  \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2bb650676aaae4a5203f372d497d5947}{USART\+\_\+\+CR1\+\_\+\+UE}})}
+
+
+
+Macros to enable or disable the Smart\+Card interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the Smart\+Card Handle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gac28ac71a5048913946c0b2cb43869606}\label{group___s_m_a_r_t_c_a_r_d_gac28ac71a5048913946c0b2cb43869606} 
+\index{SMARTCARD@{SMARTCARD}!\_\_SMARTCARD\_ENABLE\_IT@{\_\_SMARTCARD\_ENABLE\_IT}}
+\index{\_\_SMARTCARD\_ENABLE\_IT@{\_\_SMARTCARD\_ENABLE\_IT}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{\_\_SMARTCARD\_ENABLE\_IT}{\_\_SMARTCARD\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+SMARTCARD\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_INTERRUPT\_\_)\ >>\ 28)\ ==\ 1)?\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR1\ |=\ ((\_\_INTERRUPT\_\_)\ \&\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga2d4be8e0259fd370f82c53579c96ede5}{SMARTCARD\_IT\_MASK}})):\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR3\ |=\ ((\_\_INTERRUPT\_\_)\ \&\ \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga2d4be8e0259fd370f82c53579c96ede5}{SMARTCARD\_IT\_MASK}})))}
+
+\end{DoxyCode}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga8af8fc5fa79cca4a3bf1bce5d051e371}\label{group___s_m_a_r_t_c_a_r_d_ga8af8fc5fa79cca4a3bf1bce5d051e371} 
+\index{SMARTCARD@{SMARTCARD}!IS\_SMARTCARD\_BAUDRATE@{IS\_SMARTCARD\_BAUDRATE}}
+\index{IS\_SMARTCARD\_BAUDRATE@{IS\_SMARTCARD\_BAUDRATE}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{IS\_SMARTCARD\_BAUDRATE}{IS\_SMARTCARD\_BAUDRATE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+SMARTCARD\+\_\+\+BAUDRATE(\begin{DoxyParamCaption}\item[{}]{BAUDRATE }\end{DoxyParamCaption})~((BAUDRATE) $<$ 10500001)}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga2d4be8e0259fd370f82c53579c96ede5}\label{group___s_m_a_r_t_c_a_r_d_ga2d4be8e0259fd370f82c53579c96ede5} 
+\index{SMARTCARD@{SMARTCARD}!SMARTCARD\_IT\_MASK@{SMARTCARD\_IT\_MASK}}
+\index{SMARTCARD\_IT\_MASK@{SMARTCARD\_IT\_MASK}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{SMARTCARD\_IT\_MASK}{SMARTCARD\_IT\_MASK}}
+{\footnotesize\ttfamily \#define SMARTCARD\+\_\+\+IT\+\_\+\+MASK~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0000\+FFFF)}
+
+
+
+Enables or disables the specified Smart\+Card interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the SMARTCARD Handle. \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & specifies the SMARTCARD interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item SMARTCARD\+\_\+\+IT\+\_\+\+TXE\+: Transmit Data Register empty interrupt \item SMARTCARD\+\_\+\+IT\+\_\+\+TC\+: Transmission complete interrupt \item SMARTCARD\+\_\+\+IT\+\_\+\+RXNE\+: Receive Data register not empty interrupt \item SMARTCARD\+\_\+\+IT\+\_\+\+IDLE\+: Idle line detection interrupt \item SMARTCARD\+\_\+\+IT\+\_\+\+PE\+: Parity Error interrupt \item SMARTCARD\+\_\+\+IT\+\_\+\+ERR\+: Error interrupt(\+Frame error, noise error, overrun error) \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Enumeration Type Documentation}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gae3ce190c726f8059f7280e4e7b091651}\label{group___s_m_a_r_t_c_a_r_d_gae3ce190c726f8059f7280e4e7b091651} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_ErrorTypeDef@{HAL\_SMARTCARD\_ErrorTypeDef}}
+\index{HAL\_SMARTCARD\_ErrorTypeDef@{HAL\_SMARTCARD\_ErrorTypeDef}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_ErrorTypeDef}{HAL\_SMARTCARD\_ErrorTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_gae3ce190c726f8059f7280e4e7b091651}{HAL\+\_\+\+SMARTCARD\+\_\+\+Error\+Type\+Def}}}
+
+
+
+HAL SMARTCARD Error Code structure definition. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_ERROR\_NONE@{HAL\_SMARTCARD\_ERROR\_NONE}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_ERROR\_NONE@{HAL\_SMARTCARD\_ERROR\_NONE}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a319651c709199001748835687ca790d4}\label{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a319651c709199001748835687ca790d4} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+NONE&No error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_ERROR\_PE@{HAL\_SMARTCARD\_ERROR\_PE}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_ERROR\_PE@{HAL\_SMARTCARD\_ERROR\_PE}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a50cbf86dd5395fd9a328f153a86adba9}\label{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a50cbf86dd5395fd9a328f153a86adba9} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+PE&Parity error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_ERROR\_NE@{HAL\_SMARTCARD\_ERROR\_NE}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_ERROR\_NE@{HAL\_SMARTCARD\_ERROR\_NE}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a8aca04ab3abf42b68d93c9ffa2827e07}\label{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651a8aca04ab3abf42b68d93c9ffa2827e07} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+NE&Noise error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_ERROR\_FE@{HAL\_SMARTCARD\_ERROR\_FE}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_ERROR\_FE@{HAL\_SMARTCARD\_ERROR\_FE}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651ad181472c6486cbc8c8f126144817a06c}\label{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651ad181472c6486cbc8c8f126144817a06c} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+FE&frame error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_ERROR\_ORE@{HAL\_SMARTCARD\_ERROR\_ORE}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_ERROR\_ORE@{HAL\_SMARTCARD\_ERROR\_ORE}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651ad292f9248d5ee9036ba769c4e36adfae}\label{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651ad292f9248d5ee9036ba769c4e36adfae} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+ORE&Overrun error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_ERROR\_DMA@{HAL\_SMARTCARD\_ERROR\_DMA}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_ERROR\_DMA@{HAL\_SMARTCARD\_ERROR\_DMA}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651add9e313d077e62b0c93150876e965e03}\label{group___s_m_a_r_t_c_a_r_d_ggae3ce190c726f8059f7280e4e7b091651add9e313d077e62b0c93150876e965e03} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+ERROR\+\_\+\+DMA&DMA transfer error ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga79d6a3b95636861dcfd70913746e087e}\label{group___s_m_a_r_t_c_a_r_d_ga79d6a3b95636861dcfd70913746e087e} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_StateTypeDef@{HAL\_SMARTCARD\_StateTypeDef}}
+\index{HAL\_SMARTCARD\_StateTypeDef@{HAL\_SMARTCARD\_StateTypeDef}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_StateTypeDef}{HAL\_SMARTCARD\_StateTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga79d6a3b95636861dcfd70913746e087e}{HAL\+\_\+\+SMARTCARD\+\_\+\+State\+Type\+Def}}}
+
+
+
+HAL State structures definition. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_STATE\_RESET@{HAL\_SMARTCARD\_STATE\_RESET}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_STATE\_RESET@{HAL\_SMARTCARD\_STATE\_RESET}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea3bb178c89408959b462cf8bc607034cb}\label{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea3bb178c89408959b462cf8bc607034cb} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+RESET&Peripheral is not yet Initialized ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_STATE\_READY@{HAL\_SMARTCARD\_STATE\_READY}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_STATE\_READY@{HAL\_SMARTCARD\_STATE\_READY}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea574c38a9650163fcf757974c7a6c4a44}\label{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea574c38a9650163fcf757974c7a6c4a44} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+READY&Peripheral Initialized and ready for use ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_STATE\_BUSY@{HAL\_SMARTCARD\_STATE\_BUSY}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_STATE\_BUSY@{HAL\_SMARTCARD\_STATE\_BUSY}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea2cb929aaef6e779ed7cd6b3909ddd9dc}\label{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087ea2cb929aaef6e779ed7cd6b3909ddd9dc} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+BUSY&an internal process is ongoing ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_STATE\_BUSY\_TX@{HAL\_SMARTCARD\_STATE\_BUSY\_TX}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_STATE\_BUSY\_TX@{HAL\_SMARTCARD\_STATE\_BUSY\_TX}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eae782bca07469b811467a60454fd3789d}\label{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eae782bca07469b811467a60454fd3789d} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX&Data Transmission process is ongoing ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_STATE\_BUSY\_RX@{HAL\_SMARTCARD\_STATE\_BUSY\_RX}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_STATE\_BUSY\_RX@{HAL\_SMARTCARD\_STATE\_BUSY\_RX}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eaebf962d48014d5c46f262a1e7c6fe5a3}\label{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eaebf962d48014d5c46f262a1e7c6fe5a3} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+RX&Data Reception process is ongoing ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_STATE\_BUSY\_TX\_RX@{HAL\_SMARTCARD\_STATE\_BUSY\_TX\_RX}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_STATE\_BUSY\_TX\_RX@{HAL\_SMARTCARD\_STATE\_BUSY\_TX\_RX}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eadce24f292ca00c111d393cbc11a823bf}\label{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eadce24f292ca00c111d393cbc11a823bf} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX\+\_\+\+RX&Data Transmission and Reception process is ongoing \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_STATE\_TIMEOUT@{HAL\_SMARTCARD\_STATE\_TIMEOUT}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_STATE\_TIMEOUT@{HAL\_SMARTCARD\_STATE\_TIMEOUT}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eac871d68a9fe445e9cdcef0d3eb374a1c}\label{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eac871d68a9fe445e9cdcef0d3eb374a1c} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+TIMEOUT&Timeout state ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SMARTCARD\_STATE\_ERROR@{HAL\_SMARTCARD\_STATE\_ERROR}!SMARTCARD@{SMARTCARD}}\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_STATE\_ERROR@{HAL\_SMARTCARD\_STATE\_ERROR}}}\Hypertarget{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eabd76a0e440c55bb7d040626f2134afee}\label{group___s_m_a_r_t_c_a_r_d_gga79d6a3b95636861dcfd70913746e087eabd76a0e440c55bb7d040626f2134afee} 
+HAL\+\_\+\+SMARTCARD\+\_\+\+STATE\+\_\+\+ERROR&Error ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga4b54b33c61b5284adbb7c98760425c2e}\label{group___s_m_a_r_t_c_a_r_d_ga4b54b33c61b5284adbb7c98760425c2e} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_DeInit@{HAL\_SMARTCARD\_DeInit}}
+\index{HAL\_SMARTCARD\_DeInit@{HAL\_SMARTCARD\_DeInit}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_DeInit()}{HAL\_SMARTCARD\_DeInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+SMARTCARD\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga6a5255ea10c1c5c0d3b037ce61d5dc91}\label{group___s_m_a_r_t_c_a_r_d_ga6a5255ea10c1c5c0d3b037ce61d5dc91} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_ErrorCallback@{HAL\_SMARTCARD\_ErrorCallback}}
+\index{HAL\_SMARTCARD\_ErrorCallback@{HAL\_SMARTCARD\_ErrorCallback}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_ErrorCallback()}{HAL\_SMARTCARD\_ErrorCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SMARTCARD\+\_\+\+Error\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gaf42409d25813eeca7cca2df14a6f7b7a}\label{group___s_m_a_r_t_c_a_r_d_gaf42409d25813eeca7cca2df14a6f7b7a} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_GetError@{HAL\_SMARTCARD\_GetError}}
+\index{HAL\_SMARTCARD\_GetError@{HAL\_SMARTCARD\_GetError}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_GetError()}{HAL\_SMARTCARD\_GetError()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} HAL\+\_\+\+SMARTCARD\+\_\+\+Get\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga0edb69af10195dfde9b0451943990ad0}\label{group___s_m_a_r_t_c_a_r_d_ga0edb69af10195dfde9b0451943990ad0} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_GetState@{HAL\_SMARTCARD\_GetState}}
+\index{HAL\_SMARTCARD\_GetState@{HAL\_SMARTCARD\_GetState}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_GetState()}{HAL\_SMARTCARD\_GetState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___s_m_a_r_t_c_a_r_d_ga79d6a3b95636861dcfd70913746e087e}{HAL\+\_\+\+SMARTCARD\+\_\+\+State\+Type\+Def}} HAL\+\_\+\+SMARTCARD\+\_\+\+Get\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga95235c14cb192c26cf72bf44ddaaf551}\label{group___s_m_a_r_t_c_a_r_d_ga95235c14cb192c26cf72bf44ddaaf551} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_Init@{HAL\_SMARTCARD\_Init}}
+\index{HAL\_SMARTCARD\_Init@{HAL\_SMARTCARD\_Init}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_Init()}{HAL\_SMARTCARD\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+SMARTCARD\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga5c09daa91f4d5f44c9b4c927a1c50b3e}\label{group___s_m_a_r_t_c_a_r_d_ga5c09daa91f4d5f44c9b4c927a1c50b3e} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_IRQHandler@{HAL\_SMARTCARD\_IRQHandler}}
+\index{HAL\_SMARTCARD\_IRQHandler@{HAL\_SMARTCARD\_IRQHandler}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_IRQHandler()}{HAL\_SMARTCARD\_IRQHandler()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SMARTCARD\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gaf8e8fa8ca8058656fdd091880424565a}\label{group___s_m_a_r_t_c_a_r_d_gaf8e8fa8ca8058656fdd091880424565a} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_MspDeInit@{HAL\_SMARTCARD\_MspDeInit}}
+\index{HAL\_SMARTCARD\_MspDeInit@{HAL\_SMARTCARD\_MspDeInit}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_MspDeInit()}{HAL\_SMARTCARD\_MspDeInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SMARTCARD\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga13e9aae9f5dd3b332fc8e431596793dc}\label{group___s_m_a_r_t_c_a_r_d_ga13e9aae9f5dd3b332fc8e431596793dc} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_MspInit@{HAL\_SMARTCARD\_MspInit}}
+\index{HAL\_SMARTCARD\_MspInit@{HAL\_SMARTCARD\_MspInit}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_MspInit()}{HAL\_SMARTCARD\_MspInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SMARTCARD\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga82240fa2bcafd64a28ffbb1b01893e84}\label{group___s_m_a_r_t_c_a_r_d_ga82240fa2bcafd64a28ffbb1b01893e84} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_Receive@{HAL\_SMARTCARD\_Receive}}
+\index{HAL\_SMARTCARD\_Receive@{HAL\_SMARTCARD\_Receive}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_Receive()}{HAL\_SMARTCARD\_Receive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+SMARTCARD\+\_\+\+Receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{Size,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gaa8506576688d14e1f10f99d8c3f104fa}\label{group___s_m_a_r_t_c_a_r_d_gaa8506576688d14e1f10f99d8c3f104fa} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_Receive\_DMA@{HAL\_SMARTCARD\_Receive\_DMA}}
+\index{HAL\_SMARTCARD\_Receive\_DMA@{HAL\_SMARTCARD\_Receive\_DMA}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_Receive\_DMA()}{HAL\_SMARTCARD\_Receive\_DMA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+SMARTCARD\+\_\+\+Receive\+\_\+\+DMA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{Size }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga52b04b11f8793a859f2105fd748d75cd}\label{group___s_m_a_r_t_c_a_r_d_ga52b04b11f8793a859f2105fd748d75cd} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_Receive\_IT@{HAL\_SMARTCARD\_Receive\_IT}}
+\index{HAL\_SMARTCARD\_Receive\_IT@{HAL\_SMARTCARD\_Receive\_IT}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_Receive\_IT()}{HAL\_SMARTCARD\_Receive\_IT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+SMARTCARD\+\_\+\+Receive\+\_\+\+IT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{Size }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga1701fcf5d66117782a06569af1e40077}\label{group___s_m_a_r_t_c_a_r_d_ga1701fcf5d66117782a06569af1e40077} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_ReInit@{HAL\_SMARTCARD\_ReInit}}
+\index{HAL\_SMARTCARD\_ReInit@{HAL\_SMARTCARD\_ReInit}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_ReInit()}{HAL\_SMARTCARD\_ReInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+SMARTCARD\+\_\+\+Re\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga955fe3e5402e8a2797af8b605701dde4}\label{group___s_m_a_r_t_c_a_r_d_ga955fe3e5402e8a2797af8b605701dde4} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_RxCpltCallback@{HAL\_SMARTCARD\_RxCpltCallback}}
+\index{HAL\_SMARTCARD\_RxCpltCallback@{HAL\_SMARTCARD\_RxCpltCallback}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_RxCpltCallback()}{HAL\_SMARTCARD\_RxCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SMARTCARD\+\_\+\+Rx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_ga4dd0a7c6916ca2423c50f432a38a7328}\label{group___s_m_a_r_t_c_a_r_d_ga4dd0a7c6916ca2423c50f432a38a7328} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_Transmit@{HAL\_SMARTCARD\_Transmit}}
+\index{HAL\_SMARTCARD\_Transmit@{HAL\_SMARTCARD\_Transmit}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_Transmit()}{HAL\_SMARTCARD\_Transmit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+SMARTCARD\+\_\+\+Transmit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{Size,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gab39a7dd50e44fd5c6cfc6af60bf8a4f5}\label{group___s_m_a_r_t_c_a_r_d_gab39a7dd50e44fd5c6cfc6af60bf8a4f5} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_Transmit\_DMA@{HAL\_SMARTCARD\_Transmit\_DMA}}
+\index{HAL\_SMARTCARD\_Transmit\_DMA@{HAL\_SMARTCARD\_Transmit\_DMA}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_Transmit\_DMA()}{HAL\_SMARTCARD\_Transmit\_DMA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+SMARTCARD\+\_\+\+Transmit\+\_\+\+DMA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{Size }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gab671c1bdba9ed83fb08142c4c38caee8}\label{group___s_m_a_r_t_c_a_r_d_gab671c1bdba9ed83fb08142c4c38caee8} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_Transmit\_IT@{HAL\_SMARTCARD\_Transmit\_IT}}
+\index{HAL\_SMARTCARD\_Transmit\_IT@{HAL\_SMARTCARD\_Transmit\_IT}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_Transmit\_IT()}{HAL\_SMARTCARD\_Transmit\_IT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+SMARTCARD\+\_\+\+Transmit\+\_\+\+IT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{Size }\end{DoxyParamCaption})}
+
+\Hypertarget{group___s_m_a_r_t_c_a_r_d_gafb56eef6e839e909823cc16bf96c845b}\label{group___s_m_a_r_t_c_a_r_d_gafb56eef6e839e909823cc16bf96c845b} 
+\index{SMARTCARD@{SMARTCARD}!HAL\_SMARTCARD\_TxCpltCallback@{HAL\_SMARTCARD\_TxCpltCallback}}
+\index{HAL\_SMARTCARD\_TxCpltCallback@{HAL\_SMARTCARD\_TxCpltCallback}!SMARTCARD@{SMARTCARD}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_SMARTCARD\_TxCpltCallback()}{HAL\_SMARTCARD\_TxCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+SMARTCARD\+\_\+\+Tx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___handle_type_def}{SMARTCARD\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hsc }\end{DoxyParamCaption})}
+
+\input{group___s_m_a_r_t_c_a_r_d___exported___constants}

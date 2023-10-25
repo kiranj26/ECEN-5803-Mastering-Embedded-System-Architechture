@@ -1,0 +1,131 @@
+\doxysection{USART\+\_\+\+Handle\+Type\+Def Struct Reference}
+\hypertarget{struct_u_s_a_r_t___handle_type_def}{}\label{struct_u_s_a_r_t___handle_type_def}\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+
+
+USART handle Structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal\+\_\+usart.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_a50be9c5ef61c3a84abe9248f31155a4f}{Instance}}
+\item 
+\mbox{\hyperlink{struct_u_s_a_r_t___init_type_def}{USART\+\_\+\+Init\+Type\+Def}} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_a72490391df5de10c7f3b0ec6a3c60129}{Init}}
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_a51459f05cf9bdf952c13bb4ec7950bb3}{p\+Tx\+Buff\+Ptr}}
+\item 
+\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_abddf13750a57be7151ee7f07506881ab}{Tx\+Xfer\+Size}}
+\item 
+\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_a1fb7e78470ff4860c1e21d44e28b8ed4}{Tx\+Xfer\+Count}}
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_a872c034a3f3c6b3ada69eed7116753c6}{p\+Rx\+Buff\+Ptr}}
+\item 
+\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_ace302ac47640d94f05ec9d0f326f48b9}{Rx\+Xfer\+Size}}
+\item 
+\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_a8e7c3be2941a79db45b28a2ceb67bbb0}{Rx\+Xfer\+Count}}
+\item 
+\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_adf15bfbda4f94c71681ed72865169d87}{hdmatx}}
+\item 
+\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_ae1954304e362afb014a2fdd6185a6766}{hdmarx}}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\+\_\+\+Lock\+Type\+Def}} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_aa690e34ab215cecc79e776cb8ba8ce05}{Lock}}
+\item 
+\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{group___u_s_a_r_t_ga502e7abdfa6b24f0f6b40cf60c7383c5}{HAL\+\_\+\+USART\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_a0a6bb879f9ca2459494926c53cea3f75}{State}}
+\item 
+\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{group___u_s_a_r_t_ga7090b1731570d5766a5d739979ea0bf7}{HAL\+\_\+\+USART\+\_\+\+Error\+Type\+Def}} \mbox{\hyperlink{struct_u_s_a_r_t___handle_type_def_a4114198873af7e28458bfa2d42121e87}{Error\+Code}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+USART handle Structure definition ~\newline
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_a4114198873af7e28458bfa2d42121e87}\label{struct_u_s_a_r_t___handle_type_def_a4114198873af7e28458bfa2d42121e87} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!ErrorCode@{ErrorCode}}
+\index{ErrorCode@{ErrorCode}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{ErrorCode}{ErrorCode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{group___u_s_a_r_t_ga7090b1731570d5766a5d739979ea0bf7}{HAL\+\_\+\+USART\+\_\+\+Error\+Type\+Def}} USART\+\_\+\+Handle\+Type\+Def\+::\+Error\+Code}
+
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_ae1954304e362afb014a2fdd6185a6766}\label{struct_u_s_a_r_t___handle_type_def_ae1954304e362afb014a2fdd6185a6766} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!hdmarx@{hdmarx}}
+\index{hdmarx@{hdmarx}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{hdmarx}{hdmarx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}}\texorpdfstring{$\ast$}{*} USART\+\_\+\+Handle\+Type\+Def\+::hdmarx}
+
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_adf15bfbda4f94c71681ed72865169d87}\label{struct_u_s_a_r_t___handle_type_def_adf15bfbda4f94c71681ed72865169d87} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!hdmatx@{hdmatx}}
+\index{hdmatx@{hdmatx}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{hdmatx}{hdmatx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}}\texorpdfstring{$\ast$}{*} USART\+\_\+\+Handle\+Type\+Def\+::hdmatx}
+
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_a72490391df5de10c7f3b0ec6a3c60129}\label{struct_u_s_a_r_t___handle_type_def_a72490391df5de10c7f3b0ec6a3c60129} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!Init@{Init}}
+\index{Init@{Init}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Init}{Init}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_u_s_a_r_t___init_type_def}{USART\+\_\+\+Init\+Type\+Def}} USART\+\_\+\+Handle\+Type\+Def\+::\+Init}
+
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_a50be9c5ef61c3a84abe9248f31155a4f}\label{struct_u_s_a_r_t___handle_type_def_a50be9c5ef61c3a84abe9248f31155a4f} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!Instance@{Instance}}
+\index{Instance@{Instance}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}}\texorpdfstring{$\ast$}{*} USART\+\_\+\+Handle\+Type\+Def\+::\+Instance}
+
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_aa690e34ab215cecc79e776cb8ba8ce05}\label{struct_u_s_a_r_t___handle_type_def_aa690e34ab215cecc79e776cb8ba8ce05} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!Lock@{Lock}}
+\index{Lock@{Lock}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Lock}{Lock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\+\_\+\+Lock\+Type\+Def}} USART\+\_\+\+Handle\+Type\+Def\+::\+Lock}
+
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_a872c034a3f3c6b3ada69eed7116753c6}\label{struct_u_s_a_r_t___handle_type_def_a872c034a3f3c6b3ada69eed7116753c6} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!pRxBuffPtr@{pRxBuffPtr}}
+\index{pRxBuffPtr@{pRxBuffPtr}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{pRxBuffPtr}{pRxBuffPtr}}
+{\footnotesize\ttfamily uint8\+\_\+t\texorpdfstring{$\ast$}{*} USART\+\_\+\+Handle\+Type\+Def\+::p\+Rx\+Buff\+Ptr}
+
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_a51459f05cf9bdf952c13bb4ec7950bb3}\label{struct_u_s_a_r_t___handle_type_def_a51459f05cf9bdf952c13bb4ec7950bb3} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!pTxBuffPtr@{pTxBuffPtr}}
+\index{pTxBuffPtr@{pTxBuffPtr}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{pTxBuffPtr}{pTxBuffPtr}}
+{\footnotesize\ttfamily uint8\+\_\+t\texorpdfstring{$\ast$}{*} USART\+\_\+\+Handle\+Type\+Def\+::p\+Tx\+Buff\+Ptr}
+
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_a8e7c3be2941a79db45b28a2ceb67bbb0}\label{struct_u_s_a_r_t___handle_type_def_a8e7c3be2941a79db45b28a2ceb67bbb0} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!RxXferCount@{RxXferCount}}
+\index{RxXferCount@{RxXferCount}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{RxXferCount}{RxXferCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} USART\+\_\+\+Handle\+Type\+Def\+::\+Rx\+Xfer\+Count}
+
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_ace302ac47640d94f05ec9d0f326f48b9}\label{struct_u_s_a_r_t___handle_type_def_ace302ac47640d94f05ec9d0f326f48b9} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!RxXferSize@{RxXferSize}}
+\index{RxXferSize@{RxXferSize}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{RxXferSize}{RxXferSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} USART\+\_\+\+Handle\+Type\+Def\+::\+Rx\+Xfer\+Size}
+
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_a0a6bb879f9ca2459494926c53cea3f75}\label{struct_u_s_a_r_t___handle_type_def_a0a6bb879f9ca2459494926c53cea3f75} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!State@{State}}
+\index{State@{State}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{group___u_s_a_r_t_ga502e7abdfa6b24f0f6b40cf60c7383c5}{HAL\+\_\+\+USART\+\_\+\+State\+Type\+Def}} USART\+\_\+\+Handle\+Type\+Def\+::\+State}
+
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_a1fb7e78470ff4860c1e21d44e28b8ed4}\label{struct_u_s_a_r_t___handle_type_def_a1fb7e78470ff4860c1e21d44e28b8ed4} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!TxXferCount@{TxXferCount}}
+\index{TxXferCount@{TxXferCount}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{TxXferCount}{TxXferCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} USART\+\_\+\+Handle\+Type\+Def\+::\+Tx\+Xfer\+Count}
+
+\Hypertarget{struct_u_s_a_r_t___handle_type_def_abddf13750a57be7151ee7f07506881ab}\label{struct_u_s_a_r_t___handle_type_def_abddf13750a57be7151ee7f07506881ab} 
+\index{USART\_HandleTypeDef@{USART\_HandleTypeDef}!TxXferSize@{TxXferSize}}
+\index{TxXferSize@{TxXferSize}!USART\_HandleTypeDef@{USART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{TxXferSize}{TxXferSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} USART\+\_\+\+Handle\+Type\+Def\+::\+Tx\+Xfer\+Size}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/\mbox{\hyperlink{stm32f4xx__hal__usart_8h}{stm32f4xx\+\_\+hal\+\_\+usart.\+h}}\end{DoxyCompactItemize}

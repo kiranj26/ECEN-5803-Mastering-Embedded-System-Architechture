@@ -1,0 +1,485 @@
+\doxysection{stm32f4xx\+\_\+ll\+\_\+fmc.\+h}
+\hypertarget{stm32f4xx__ll__fmc_8h_source}{}\label{stm32f4xx__ll__fmc_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_ll\_fmc.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_ll\_fmc.h}}
+\mbox{\hyperlink{stm32f4xx__ll__fmc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_LL\_FMC\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_LL\_FMC\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#if\ defined(STM32F427xx)\ ||\ defined(STM32F437xx)\ ||\ defined(STM32F429xx)\ ||\ defined(STM32F439xx)}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__hal__def_8h}{stm32f4xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{/*\ Exported\ typedef\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_TypeDef\ \ \ \ \ \ \ \ \ \ \ \ FMC\_Bank1\_TypeDef}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_EXTENDED\_TypeDef\ \ \ FMC\_Bank1E\_TypeDef}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_TypeDef\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FMC\_Bank2\_3\_TypeDef}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ FMC\_PCCARD\_TypeDef\ \ \ \ \ \ \ \ \ \ \ \ \ FMC\_Bank4\_TypeDef}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_TypeDef\ \ \ \ \ \ \ \ \ \ \ \ \ \ FMC\_Bank5\_6\_TypeDef}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_DEVICE\ \ \ \ \ \ \ \ \ \ \ \ \ FMC\_Bank1}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_EXTENDED\_DEVICE\ \ \ \ FMC\_Bank1E}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_DEVICE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FMC\_Bank2\_3}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ FMC\_PCCARD\_DEVICE\ \ \ \ \ \ \ \ \ \ \ \ \ \ FMC\_Bank4}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_DEVICE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FMC\_Bank5\_6}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ NSBank;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ DataAddressMux;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ MemoryType;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ MemoryDataWidth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BurstAccessMode;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WaitSignalPolarity;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WrapMode;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WaitSignalActive;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WriteOperation;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WaitSignal;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ExtendedMode;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ AsynchronousWait;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WriteBurst;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ContinuousClock;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00130\ \}FMC\_NORSRAM\_InitTypeDef;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00136\ \{}
+\DoxyCodeLine{00137\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ AddressSetupTime;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ AddressHoldTime;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00147\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ DataSetupTime;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00153\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BusTurnAroundDuration;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00158\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CLKDivision;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00163\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ DataLatency;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00171\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ AccessMode;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00173\ \}FMC\_NORSRAM\_TimingTypeDef;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00178\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00179\ \{}
+\DoxyCodeLine{00180\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ NandBank;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00183\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Waitfeature;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00186\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ MemoryDataWidth;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ EccComputation;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00192\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ECCPageSize;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00195\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ TCLRSetupTime;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00199\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ TARSetupTime;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00202\ \}FMC\_NAND\_InitTypeDef;}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00207\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00208\ \{}
+\DoxyCodeLine{00209\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SetupTime;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00215\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WaitSetupTime;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00221\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ HoldSetupTime;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00228\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ HiZSetupTime;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00233\ \}FMC\_NAND\_PCC\_TimingTypeDef;}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00238\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00239\ \{}
+\DoxyCodeLine{00240\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Waitfeature;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00243\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ TCLRSetupTime;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00247\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ TARSetupTime;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00250\ \}FMC\_PCCARD\_InitTypeDef;}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00255\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00256\ \{}
+\DoxyCodeLine{00257\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SDBank;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00260\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ColumnBitsNumber;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00263\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RowBitsNumber;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00266\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ MemoryDataWidth;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00269\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ InternalBankNumber;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00272\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CASLatency;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00275\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WriteProtection;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00278\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SDClockPeriod;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00282\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ReadBurst;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00286\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ReadPipeDelay;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00288\ \}FMC\_SDRAM\_InitTypeDef;}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00293\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00294\ \{}
+\DoxyCodeLine{00295\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ LoadToActiveDelay;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00299\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ExitSelfRefreshDelay;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00303\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SelfRefreshTime;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00307\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RowCycleDelay;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00312\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WriteRecoveryTime;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00315\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RPDelay;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00319\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RCDDelay;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00322\ \}FMC\_SDRAM\_TimingTypeDef;}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00327\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00328\ \{}
+\DoxyCodeLine{00329\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CommandMode;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00332\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CommandTarget;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00335\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ AutoRefreshNumber;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00338\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ModeRegisterDefinition;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00339\ \}FMC\_SDRAM\_CommandTypeDef;}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_BANK1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_BANK2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_BANK3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_BANK4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000006)}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ IS\_FMC\_NORSRAM\_BANK(BANK)\ (((BANK)\ ==\ FMC\_NORSRAM\_BANK1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ FMC\_NORSRAM\_BANK2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ FMC\_NORSRAM\_BANK3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ FMC\_NORSRAM\_BANK4))}}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ FMC\_DATA\_ADDRESS\_MUX\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ FMC\_DATA\_ADDRESS\_MUX\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ IS\_FMC\_MUX(MUX)\ (((MUX)\ ==\ FMC\_DATA\_ADDRESS\_MUX\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MUX)\ ==\ FMC\_DATA\_ADDRESS\_MUX\_ENABLE))}}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#define\ FMC\_MEMORY\_TYPE\_SRAM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\#define\ FMC\_MEMORY\_TYPE\_PSRAM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#define\ FMC\_MEMORY\_TYPE\_NOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)}}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ IS\_FMC\_MEMORY(MEMORY)\ (((MEMORY)\ ==\ FMC\_MEMORY\_TYPE\_SRAM)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MEMORY)\ ==\ FMC\_MEMORY\_TYPE\_PSRAM)||\ \(\backslash\)}}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MEMORY)\ ==\ FMC\_MEMORY\_TYPE\_NOR))}}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_MEM\_BUS\_WIDTH\_8\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_MEM\_BUS\_WIDTH\_16\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)}}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_MEM\_BUS\_WIDTH\_32\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000020)}}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#define\ IS\_FMC\_NORSRAM\_MEMORY\_WIDTH(WIDTH)\ (((WIDTH)\ ==\ FMC\_NORSRAM\_MEM\_BUS\_WIDTH\_8)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WIDTH)\ ==\ FMC\_NORSRAM\_MEM\_BUS\_WIDTH\_16)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WIDTH)\ ==\ FMC\_NORSRAM\_MEM\_BUS\_WIDTH\_32))}}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_FLASH\_ACCESS\_ENABLE\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ FMC\_NORSRAM\_FLASH\_ACCESS\_DISABLE\ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#define\ FMC\_BURST\_ACCESS\_MODE\_DISABLE\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ }}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#define\ FMC\_BURST\_ACCESS\_MODE\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000100)}}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#define\ IS\_FMC\_BURSTMODE(STATE)\ (((STATE)\ ==\ FMC\_BURST\_ACCESS\_MODE\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STATE)\ ==\ FMC\_BURST\_ACCESS\_MODE\_ENABLE))}}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#define\ FMC\_WAIT\_SIGNAL\_POLARITY\_LOW\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#define\ FMC\_WAIT\_SIGNAL\_POLARITY\_HIGH\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000200)}}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\#define\ IS\_FMC\_WAIT\_POLARITY(POLARITY)\ (((POLARITY)\ ==\ FMC\_WAIT\_SIGNAL\_POLARITY\_LOW)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00432\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((POLARITY)\ ==\ FMC\_WAIT\_SIGNAL\_POLARITY\_HIGH))}}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\#define\ FMC\_WRAP\_MODE\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\#define\ FMC\_WRAP\_MODE\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000400)}}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\#define\ IS\_FMC\_WRAP\_MODE(MODE)\ (((MODE)\ ==\ FMC\_WRAP\_MODE\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ FMC\_WRAP\_MODE\_ENABLE))\ }}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#define\ FMC\_WAIT\_TIMING\_BEFORE\_WS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#define\ FMC\_WAIT\_TIMING\_DURING\_WS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000800)}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#define\ IS\_FMC\_WAIT\_SIGNAL\_ACTIVE(ACTIVE)\ (((ACTIVE)\ ==\ FMC\_WAIT\_TIMING\_BEFORE\_WS)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((ACTIVE)\ ==\ FMC\_WAIT\_TIMING\_DURING\_WS))\ }}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ FMC\_WRITE\_OPERATION\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#define\ FMC\_WRITE\_OPERATION\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00001000)}}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\#define\ IS\_FMC\_WRITE\_OPERATION(OPERATION)\ (((OPERATION)\ ==\ FMC\_WRITE\_OPERATION\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((OPERATION)\ ==\ FMC\_WRITE\_OPERATION\_ENABLE))}}
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\#define\ FMC\_WAIT\_SIGNAL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\#define\ FMC\_WAIT\_SIGNAL\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00002000)}}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\#define\ IS\_FMC\_WAITE\_SIGNAL(SIGNAL)\ (((SIGNAL)\ ==\ FMC\_WAIT\_SIGNAL\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIGNAL)\ ==\ FMC\_WAIT\_SIGNAL\_ENABLE))\ }}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\#define\ FMC\_EXTENDED\_MODE\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#define\ FMC\_EXTENDED\_MODE\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00004000)}}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#define\ IS\_FMC\_EXTENDED\_MODE(MODE)\ (((MODE)\ ==\ FMC\_EXTENDED\_MODE\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ FMC\_EXTENDED\_MODE\_ENABLE))}}
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#define\ FMC\_ASYNCHRONOUS\_WAIT\_DISABLE\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\#define\ FMC\_ASYNCHRONOUS\_WAIT\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00008000)}}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00503\ \textcolor{preprocessor}{\#define\ IS\_FMC\_ASYNWAIT(STATE)\ (((STATE)\ ==\ FMC\_ASYNCHRONOUS\_WAIT\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STATE)\ ==\ FMC\_ASYNCHRONOUS\_WAIT\_ENABLE))}}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#define\ FMC\_WRITE\_BURST\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00513\ \textcolor{preprocessor}{\#define\ FMC\_WRITE\_BURST\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00080000)}}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ \textcolor{preprocessor}{\#define\ IS\_FMC\_WRITE\_BURST(BURST)\ (((BURST)\ ==\ FMC\_WRITE\_BURST\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00516\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BURST)\ ==\ FMC\_WRITE\_BURST\_ENABLE))\ }}
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#define\ FMC\_CONTINUOUS\_CLOCK\_SYNC\_ONLY\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\#define\ FMC\_CONTINUOUS\_CLOCK\_SYNC\_ASYNC\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00100000)}}
+\DoxyCodeLine{00526\ }
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#define\ IS\_FMC\_CONTINOUS\_CLOCK(CCLOCK)\ (((CCLOCK)\ ==\ FMC\_CONTINUOUS\_CLOCK\_SYNC\_ONLY)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CCLOCK)\ ==\ FMC\_CONTINUOUS\_CLOCK\_SYNC\_ASYNC))\ }}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\#define\ IS\_FMC\_ADDRESS\_SETUP\_TIME(TIME)\ ((TIME)\ <=\ 15)}}
+\DoxyCodeLine{00544\ \textcolor{preprocessor}{\#define\ IS\_FMC\_ADDRESS\_HOLD\_TIME(TIME)\ (((TIME)\ >\ 0)\ \&\&\ ((TIME)\ <=\ 15))}}
+\DoxyCodeLine{00552\ \textcolor{preprocessor}{\#define\ IS\_FMC\_DATASETUP\_TIME(TIME)\ (((TIME)\ >\ 0)\ \&\&\ ((TIME)\ <=\ 255))}}
+\DoxyCodeLine{00560\ \textcolor{preprocessor}{\#define\ IS\_FMC\_TURNAROUND\_TIME(TIME)\ ((TIME)\ <=\ 15)}}
+\DoxyCodeLine{00568\ \textcolor{preprocessor}{\#define\ IS\_FMC\_CLK\_DIV(DIV)\ (((DIV)\ >\ 1)\ \&\&\ ((DIV)\ <=\ 16))}}
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#define\ IS\_FMC\_DATA\_LATENCY(LATENCY)\ (((LATENCY)\ >\ 1)\ \&\&\ ((LATENCY)\ <=\ 17))}}
+\DoxyCodeLine{00584\ \textcolor{preprocessor}{\#define\ FMC\_ACCESS\_MODE\_A\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00585\ \textcolor{preprocessor}{\#define\ FMC\_ACCESS\_MODE\_B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x10000000)\ }}
+\DoxyCodeLine{00586\ \textcolor{preprocessor}{\#define\ FMC\_ACCESS\_MODE\_C\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x20000000)}}
+\DoxyCodeLine{00587\ \textcolor{preprocessor}{\#define\ FMC\_ACCESS\_MODE\_D\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x30000000)}}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00589\ \textcolor{preprocessor}{\#define\ IS\_FMC\_ACCESS\_MODE(MODE)\ (((MODE)\ ==\ FMC\_ACCESS\_MODE\_A)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00590\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ FMC\_ACCESS\_MODE\_B)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ FMC\_ACCESS\_MODE\_C)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00592\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ FMC\_ACCESS\_MODE\_D))}}
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_BANK2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)}}
+\DoxyCodeLine{00609\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_BANK3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000100)}}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00611\ \textcolor{preprocessor}{\#define\ IS\_FMC\_NAND\_BANK(BANK)\ (((BANK)\ ==\ FMC\_NAND\_BANK2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00612\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ FMC\_NAND\_BANK3))\ \ }}
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_PCC\_WAIT\_FEATURE\_DISABLE\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00621\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_PCC\_WAIT\_FEATURE\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\#define\ IS\_FMC\_WAIT\_FEATURE(FEATURE)\ (((FEATURE)\ ==\ FMC\_NAND\_PCC\_WAIT\_FEATURE\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00624\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FEATURE)\ ==\ FMC\_NAND\_PCC\_WAIT\_FEATURE\_ENABLE))}}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\#define\ FMC\_PCR\_MEMORY\_TYPE\_PCCARD\ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00633\ \textcolor{preprocessor}{\#define\ FMC\_PCR\_MEMORY\_TYPE\_NAND\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)}}
+\DoxyCodeLine{00641\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_PCC\_MEM\_BUS\_WIDTH\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00642\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_PCC\_MEM\_BUS\_WIDTH\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)}}
+\DoxyCodeLine{00643\ }
+\DoxyCodeLine{00644\ \textcolor{preprocessor}{\#define\ IS\_FMC\_NAND\_MEMORY\_WIDTH(WIDTH)\ (((WIDTH)\ ==\ FMC\_NAND\_PCC\_MEM\_BUS\_WIDTH\_8)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00645\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WIDTH)\ ==\ FMC\_NAND\_PCC\_MEM\_BUS\_WIDTH\_16))}}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_ECC\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_ECC\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\#define\ IS\_FMC\_ECC\_STATE(STATE)\ (((STATE)\ ==\ FMC\_NAND\_ECC\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00657\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STATE)\ ==\ FMC\_NAND\_ECC\_ENABLE))}}
+\DoxyCodeLine{00665\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_ECC\_PAGE\_SIZE\_256BYTE\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00666\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_ECC\_PAGE\_SIZE\_512BYTE\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00020000)}}
+\DoxyCodeLine{00667\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_ECC\_PAGE\_SIZE\_1024BYTE\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00040000)}}
+\DoxyCodeLine{00668\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_ECC\_PAGE\_SIZE\_2048BYTE\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00060000)}}
+\DoxyCodeLine{00669\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_ECC\_PAGE\_SIZE\_4096BYTE\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00080000)}}
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\#define\ FMC\_NAND\_ECC\_PAGE\_SIZE\_8192BYTE\ \ \ \ \ \ \ \ \ ((uint32\_t)0x000A0000)}}
+\DoxyCodeLine{00671\ }
+\DoxyCodeLine{00672\ \textcolor{preprocessor}{\#define\ IS\_FMC\_ECCPAGE\_SIZE(SIZE)\ (((SIZE)\ ==\ FMC\_NAND\_ECC\_PAGE\_SIZE\_256BYTE)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00673\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ FMC\_NAND\_ECC\_PAGE\_SIZE\_512BYTE)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00674\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ FMC\_NAND\_ECC\_PAGE\_SIZE\_1024BYTE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00675\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ FMC\_NAND\_ECC\_PAGE\_SIZE\_2048BYTE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00676\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ FMC\_NAND\_ECC\_PAGE\_SIZE\_4096BYTE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00677\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ FMC\_NAND\_ECC\_PAGE\_SIZE\_8192BYTE))}}
+\DoxyCodeLine{00685\ \textcolor{preprocessor}{\#define\ IS\_FMC\_TCLR\_TIME(TIME)\ ((TIME)\ <=\ 255)}}
+\DoxyCodeLine{00693\ \textcolor{preprocessor}{\#define\ IS\_FMC\_TAR\_TIME(TIME)\ ((TIME)\ <=\ 255)}}
+\DoxyCodeLine{00701\ \textcolor{preprocessor}{\#define\ IS\_FMC\_SETUP\_TIME(TIME)\ ((TIME)\ <=\ 255)}}
+\DoxyCodeLine{00709\ \textcolor{preprocessor}{\#define\ IS\_FMC\_WAIT\_TIME(TIME)\ ((TIME)\ <=\ 255)}}
+\DoxyCodeLine{00717\ \textcolor{preprocessor}{\#define\ IS\_FMC\_HOLD\_TIME(TIME)\ ((TIME)\ <=\ 255)}}
+\DoxyCodeLine{00725\ \textcolor{preprocessor}{\#define\ IS\_FMC\_HIZ\_TIME(TIME)\ ((TIME)\ <=\ 255)}}
+\DoxyCodeLine{00741\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_BANK1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00742\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_BANK2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00743\ }
+\DoxyCodeLine{00744\ \textcolor{preprocessor}{\#define\ IS\_FMC\_SDRAM\_BANK(BANK)\ (((BANK)\ ==\ FMC\_SDRAM\_BANK1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00745\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ FMC\_SDRAM\_BANK2))}}
+\DoxyCodeLine{00753\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_COLUMN\_BITS\_NUM\_8\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00754\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_COLUMN\_BITS\_NUM\_9\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00755\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_COLUMN\_BITS\_NUM\_10\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00756\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_COLUMN\_BITS\_NUM\_11\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000003)}}
+\DoxyCodeLine{00757\ }
+\DoxyCodeLine{00758\ \textcolor{preprocessor}{\#define\ IS\_FMC\_COLUMNBITS\_NUMBER(COLUMN)\ (((COLUMN)\ ==\ FMC\_SDRAM\_COLUMN\_BITS\_NUM\_8)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00759\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((COLUMN)\ ==\ FMC\_SDRAM\_COLUMN\_BITS\_NUM\_9)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00760\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((COLUMN)\ ==\ FMC\_SDRAM\_COLUMN\_BITS\_NUM\_10)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00761\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((COLUMN)\ ==\ FMC\_SDRAM\_COLUMN\_BITS\_NUM\_11))}}
+\DoxyCodeLine{00769\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_ROW\_BITS\_NUM\_11\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00770\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_ROW\_BITS\_NUM\_12\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00771\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_ROW\_BITS\_NUM\_13\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)}}
+\DoxyCodeLine{00772\ }
+\DoxyCodeLine{00773\ \textcolor{preprocessor}{\#define\ IS\_FMC\_ROWBITS\_NUMBER(ROW)\ (((ROW)\ ==\ FMC\_SDRAM\_ROW\_BITS\_NUM\_11)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00774\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((ROW)\ ==\ FMC\_SDRAM\_ROW\_BITS\_NUM\_12)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00775\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((ROW)\ ==\ FMC\_SDRAM\_ROW\_BITS\_NUM\_13))}}
+\DoxyCodeLine{00783\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_MEM\_BUS\_WIDTH\_8\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00784\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_MEM\_BUS\_WIDTH\_16\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)}}
+\DoxyCodeLine{00785\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_MEM\_BUS\_WIDTH\_32\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000020)}}
+\DoxyCodeLine{00786\ }
+\DoxyCodeLine{00787\ \textcolor{preprocessor}{\#define\ IS\_FMC\_SDMEMORY\_WIDTH(WIDTH)\ (((WIDTH)\ ==\ FMC\_SDRAM\_MEM\_BUS\_WIDTH\_8)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00788\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WIDTH)\ ==\ FMC\_SDRAM\_MEM\_BUS\_WIDTH\_16)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00789\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WIDTH)\ ==\ FMC\_SDRAM\_MEM\_BUS\_WIDTH\_32))}}
+\DoxyCodeLine{00797\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_INTERN\_BANKS\_NUM\_2\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00798\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_INTERN\_BANKS\_NUM\_4\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00799\ }
+\DoxyCodeLine{00800\ \textcolor{preprocessor}{\#define\ IS\_FMC\_INTERNALBANK\_NUMBER(NUMBER)\ (((NUMBER)\ ==\ FMC\_SDRAM\_INTERN\_BANKS\_NUM\_2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00801\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((NUMBER)\ ==\ FMC\_SDRAM\_INTERN\_BANKS\_NUM\_4))}}
+\DoxyCodeLine{00809\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CAS\_LATENCY\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000080)}}
+\DoxyCodeLine{00810\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CAS\_LATENCY\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000100)}}
+\DoxyCodeLine{00811\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CAS\_LATENCY\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000180)}}
+\DoxyCodeLine{00812\ }
+\DoxyCodeLine{00813\ \textcolor{preprocessor}{\#define\ IS\_FMC\_CAS\_LATENCY(LATENCY)\ (((LATENCY)\ ==\ FMC\_SDRAM\_CAS\_LATENCY\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00814\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FMC\_SDRAM\_CAS\_LATENCY\_2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00815\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LATENCY)\ ==\ FMC\_SDRAM\_CAS\_LATENCY\_3))}}
+\DoxyCodeLine{00823\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_WRITE\_PROTECTION\_DISABLE\ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00824\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_WRITE\_PROTECTION\_ENABLE\ \ \ \ \ ((uint32\_t)0x00000200)}}
+\DoxyCodeLine{00825\ }
+\DoxyCodeLine{00826\ \textcolor{preprocessor}{\#define\ IS\_FMC\_WRITE\_PROTECTION(WRITE)\ (((WRITE)\ ==\ FMC\_SDRAM\_WRITE\_PROTECTION\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00827\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WRITE)\ ==\ FMC\_SDRAM\_WRITE\_PROTECTION\_ENABLE))}}
+\DoxyCodeLine{00835\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CLOCK\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00836\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CLOCK\_PERIOD\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000800)}}
+\DoxyCodeLine{00837\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CLOCK\_PERIOD\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000C00)}}
+\DoxyCodeLine{00838\ }
+\DoxyCodeLine{00839\ \textcolor{preprocessor}{\#define\ IS\_FMC\_SDCLOCK\_PERIOD(PERIOD)\ (((PERIOD)\ ==\ FMC\_SDRAM\_CLOCK\_DISABLE)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00840\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIOD)\ ==\ FMC\_SDRAM\_CLOCK\_PERIOD\_2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00841\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIOD)\ ==\ FMC\_SDRAM\_CLOCK\_PERIOD\_3))}}
+\DoxyCodeLine{00849\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_RBURST\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00850\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_RBURST\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00001000)}}
+\DoxyCodeLine{00851\ }
+\DoxyCodeLine{00852\ \textcolor{preprocessor}{\#define\ IS\_FMC\_READ\_BURST(RBURST)\ (((RBURST)\ ==\ FMC\_SDRAM\_RBURST\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00853\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RBURST)\ ==\ FMC\_SDRAM\_RBURST\_ENABLE))}}
+\DoxyCodeLine{00861\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_RPIPE\_DELAY\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00862\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_RPIPE\_DELAY\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00002000)}}
+\DoxyCodeLine{00863\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_RPIPE\_DELAY\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00004000)}}
+\DoxyCodeLine{00864\ }
+\DoxyCodeLine{00865\ \textcolor{preprocessor}{\#define\ IS\_FMC\_READPIPE\_DELAY(DELAY)\ (((DELAY)\ ==\ FMC\_SDRAM\_RPIPE\_DELAY\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00866\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DELAY)\ ==\ FMC\_SDRAM\_RPIPE\_DELAY\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00867\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DELAY)\ ==\ FMC\_SDRAM\_RPIPE\_DELAY\_2))}}
+\DoxyCodeLine{00875\ \textcolor{preprocessor}{\#define\ IS\_FMC\_LOADTOACTIVE\_DELAY(DELAY)\ (((DELAY)\ >\ 0)\ \&\&\ ((DELAY)\ <=\ 16))}}
+\DoxyCodeLine{00883\ \textcolor{preprocessor}{\#define\ IS\_FMC\_EXITSELFREFRESH\_DELAY(DELAY)\ (((DELAY)\ >\ 0)\ \&\&\ ((DELAY)\ <=\ 16))}}
+\DoxyCodeLine{00891\ \textcolor{preprocessor}{\#define\ IS\_FMC\_SELFREFRESH\_TIME(TIME)\ (((TIME)\ >\ 0)\ \&\&\ ((TIME)\ <=\ 16))}}
+\DoxyCodeLine{00899\ \textcolor{preprocessor}{\#define\ IS\_FMC\_ROWCYCLE\_DELAY(DELAY)\ (((DELAY)\ >\ 0)\ \&\&\ ((DELAY)\ <=\ 16))}}
+\DoxyCodeLine{00907\ \textcolor{preprocessor}{\#define\ IS\_FMC\_WRITE\_RECOVERY\_TIME(TIME)\ (((TIME)\ >\ 0)\ \&\&\ ((TIME)\ <=\ 16))}}
+\DoxyCodeLine{00915\ \textcolor{preprocessor}{\#define\ IS\_FMC\_RP\_DELAY(DELAY)\ (((DELAY)\ >\ 0)\ \&\&\ ((DELAY)\ <=\ 16))}}
+\DoxyCodeLine{00923\ \textcolor{preprocessor}{\#define\ IS\_FMC\_RCD\_DELAY(DELAY)\ (((DELAY)\ >\ 0)\ \&\&\ ((DELAY)\ <=\ 16))}}
+\DoxyCodeLine{00924\ }
+\DoxyCodeLine{00932\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CMD\_NORMAL\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00933\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CMD\_CLK\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00934\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CMD\_PALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00935\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CMD\_AUTOREFRESH\_MODE\ \ \ \ \ \ \ \ ((uint32\_t)0x00000003)}}
+\DoxyCodeLine{00936\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CMD\_LOAD\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00937\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CMD\_SELFREFRESH\_MODE\ \ \ \ \ \ \ \ ((uint32\_t)0x00000005)}}
+\DoxyCodeLine{00938\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CMD\_POWERDOWN\_MODE\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000006)}}
+\DoxyCodeLine{00939\ }
+\DoxyCodeLine{00940\ \textcolor{preprocessor}{\#define\ IS\_FMC\_COMMAND\_MODE(COMMAND)\ (((COMMAND)\ ==\ FMC\_SDRAM\_CMD\_NORMAL\_MODE)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00941\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((COMMAND)\ ==\ FMC\_SDRAM\_CMD\_CLK\_ENABLE)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00942\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((COMMAND)\ ==\ FMC\_SDRAM\_CMD\_PALL)\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00943\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((COMMAND)\ ==\ FMC\_SDRAM\_CMD\_AUTOREFRESH\_MODE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00944\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((COMMAND)\ ==\ FMC\_SDRAM\_CMD\_LOAD\_MODE)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00945\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((COMMAND)\ ==\ FMC\_SDRAM\_CMD\_SELFREFRESH\_MODE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00946\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((COMMAND)\ ==\ FMC\_SDRAM\_CMD\_POWERDOWN\_MODE))}}
+\DoxyCodeLine{00954\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CMD\_TARGET\_BANK2\ \ \ \ \ \ \ \ \ \ \ \ FMC\_SDCMR\_CTB2}}
+\DoxyCodeLine{00955\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CMD\_TARGET\_BANK1\ \ \ \ \ \ \ \ \ \ \ \ FMC\_SDCMR\_CTB1}}
+\DoxyCodeLine{00956\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_CMD\_TARGET\_BANK1\_2\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000018)}}
+\DoxyCodeLine{00957\ }
+\DoxyCodeLine{00958\ \textcolor{preprocessor}{\#define\ IS\_FMC\_COMMAND\_TARGET(TARGET)\ (((TARGET)\ ==\ FMC\_SDRAM\_CMD\_TARGET\_BANK1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00959\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TARGET)\ ==\ FMC\_SDRAM\_CMD\_TARGET\_BANK2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00960\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TARGET)\ ==\ FMC\_SDRAM\_CMD\_TARGET\_BANK1\_2))\ }}
+\DoxyCodeLine{00968\ \textcolor{preprocessor}{\#define\ IS\_FMC\_AUTOREFRESH\_NUMBER(NUMBER)\ (((NUMBER)\ >\ 0)\ \&\&\ ((NUMBER)\ <=\ 16))}}
+\DoxyCodeLine{00976\ \textcolor{preprocessor}{\#define\ IS\_FMC\_MODE\_REGISTER(CONTENT)\ ((CONTENT)\ <=\ 8191)}}
+\DoxyCodeLine{00984\ \textcolor{preprocessor}{\#define\ IS\_FMC\_REFRESH\_RATE(RATE)\ ((RATE)\ <=\ 8191)}}
+\DoxyCodeLine{00992\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_NORMAL\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00993\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_SELF\_REFRESH\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FMC\_SDSR\_MODES1\_0}}
+\DoxyCodeLine{00994\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_POWER\_DOWN\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FMC\_SDSR\_MODES1\_1}}
+\DoxyCodeLine{01002\ \textcolor{preprocessor}{\#define\ IS\_FMC\_NORSRAM\_DEVICE(INSTANCE)\ ((INSTANCE)\ ==\ FMC\_NORSRAM\_DEVICE)}}
+\DoxyCodeLine{01010\ \textcolor{preprocessor}{\#define\ IS\_FMC\_NORSRAM\_EXTENDED\_DEVICE(INSTANCE)\ ((INSTANCE)\ ==\ FMC\_NORSRAM\_EXTENDED\_DEVICE)}}
+\DoxyCodeLine{01018\ \textcolor{preprocessor}{\#define\ IS\_FMC\_NAND\_DEVICE(INSTANCE)\ ((INSTANCE)\ ==\ FMC\_NAND\_DEVICE)}}
+\DoxyCodeLine{01026\ \textcolor{preprocessor}{\#define\ IS\_FMC\_PCCARD\_DEVICE(INSTANCE)\ ((INSTANCE)\ ==\ FMC\_PCCARD\_DEVICE)}}
+\DoxyCodeLine{01034\ \textcolor{preprocessor}{\#define\ IS\_FMC\_SDRAM\_DEVICE(INSTANCE)\ ((INSTANCE)\ ==\ FMC\_SDRAM\_DEVICE)}}
+\DoxyCodeLine{01047\ \textcolor{preprocessor}{\#define\ FMC\_IT\_RISING\_EDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)}}
+\DoxyCodeLine{01048\ \textcolor{preprocessor}{\#define\ FMC\_IT\_LEVEL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)}}
+\DoxyCodeLine{01049\ \textcolor{preprocessor}{\#define\ FMC\_IT\_FALLING\_EDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000020)}}
+\DoxyCodeLine{01050\ \textcolor{preprocessor}{\#define\ FMC\_IT\_REFRESH\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00004000)}}
+\DoxyCodeLine{01051\ }
+\DoxyCodeLine{01052\ \textcolor{preprocessor}{\#define\ IS\_FMC\_IT(IT)\ ((((IT)\ \&\ (uint32\_t)0xFFFFBFC7)\ ==\ 0x00000000)\ \&\&\ ((IT)\ !=\ 0x00000000))}}
+\DoxyCodeLine{01053\ }
+\DoxyCodeLine{01054\ \textcolor{preprocessor}{\#define\ IS\_FMC\_GET\_IT(IT)\ (((IT)\ ==\ FMC\_IT\_RISING\_EDGE)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ FMC\_IT\_LEVEL)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ FMC\_IT\_FALLING\_EDGE)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01057\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ FMC\_IT\_REFRESH\_ERROR))\ }}
+\DoxyCodeLine{01066\ \textcolor{preprocessor}{\#define\ FMC\_FLAG\_RISING\_EDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{01067\ \textcolor{preprocessor}{\#define\ FMC\_FLAG\_LEVEL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{01068\ \textcolor{preprocessor}{\#define\ FMC\_FLAG\_FALLING\_EDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{01069\ \textcolor{preprocessor}{\#define\ FMC\_FLAG\_FEMPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{01070\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_FLAG\_REFRESH\_IT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FMC\_SDSR\_RE}}
+\DoxyCodeLine{01071\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_FLAG\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FMC\_SDSR\_BUSY}}
+\DoxyCodeLine{01072\ \textcolor{preprocessor}{\#define\ FMC\_SDRAM\_FLAG\_REFRESH\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ FMC\_SDRTR\_CRE}}
+\DoxyCodeLine{01073\ }
+\DoxyCodeLine{01074\ \textcolor{preprocessor}{\#define\ IS\_FMC\_GET\_FLAG(FLAG)\ (((FLAG)\ ==\ FMC\_FLAG\_RISING\_EDGE)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01075\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ FMC\_FLAG\_LEVEL)\ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01076\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ FMC\_FLAG\_FALLING\_EDGE)\ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01077\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ FMC\_FLAG\_FEMPT)\ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01078\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ FMC\_SDRAM\_FLAG\_REFRESH\_IT)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ FMC\_SDRAM\_FLAG\_BUSY))}}
+\DoxyCodeLine{01080\ }
+\DoxyCodeLine{01081\ \textcolor{preprocessor}{\#define\ IS\_FMC\_CLEAR\_FLAG(FLAG)\ ((((FLAG)\ \&\ (uint32\_t)0xFFFFFFF8)\ ==\ 0x00000000)\ \&\&\ ((FLAG)\ !=\ 0x00000000))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{01086\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{01087\ }
+\DoxyCodeLine{01099\ \textcolor{preprocessor}{\#define\ \_\_FMC\_NORSRAM\_ENABLE(\_\_INSTANCE\_\_,\ \_\_BANK\_\_)\ \ ((\_\_INSTANCE\_\_)-\/>BTCR[(\_\_BANK\_\_)]\ |=\ FMC\_BCR1\_MBKEN)}}
+\DoxyCodeLine{01100\ }
+\DoxyCodeLine{01107\ \textcolor{preprocessor}{\#define\ \_\_FMC\_NORSRAM\_DISABLE(\_\_INSTANCE\_\_,\ \_\_BANK\_\_)\ ((\_\_INSTANCE\_\_)-\/>BTCR[(\_\_BANK\_\_)]\ \&=\ \string~FMC\_BCR1\_MBKEN)\ \ }}
+\DoxyCodeLine{01108\ }
+\DoxyCodeLine{01124\ \textcolor{preprocessor}{\#define\ \_\_FMC\_NAND\_ENABLE(\_\_INSTANCE\_\_,\ \_\_BANK\_\_)\ \ (((\_\_BANK\_\_)\ ==\ FMC\_NAND\_BANK2)?\ ((\_\_INSTANCE\_\_)-\/>PCR2\ |=\ FMC\_PCR2\_PBKEN):\ \(\backslash\)}}
+\DoxyCodeLine{01125\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INSTANCE\_\_)-\/>PCR3\ |=\ FMC\_PCR3\_PBKEN))}}
+\DoxyCodeLine{01126\ }
+\DoxyCodeLine{01133\ \textcolor{preprocessor}{\#define\ \_\_FMC\_NAND\_DISABLE(\_\_INSTANCE\_\_,\ \_\_BANK\_\_)\ (((\_\_BANK\_\_)\ ==\ FMC\_NAND\_BANK2)?\ ((\_\_INSTANCE\_\_)-\/>PCR2\ \&=\ \string~FMC\_PCR2\_PBKEN):\ \(\backslash\)}}
+\DoxyCodeLine{01134\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INSTANCE\_\_)-\/>PCR3\ \&=\ \string~FMC\_PCR3\_PBKEN))}}
+\DoxyCodeLine{01149\ \textcolor{preprocessor}{\#define\ \_\_FMC\_PCCARD\_ENABLE(\_\_INSTANCE\_\_)\ \ ((\_\_INSTANCE\_\_)-\/>PCR4\ |=\ FMC\_PCR4\_PBKEN)}}
+\DoxyCodeLine{01150\ }
+\DoxyCodeLine{01156\ \textcolor{preprocessor}{\#define\ \_\_FMC\_PCCARD\_DISABLE(\_\_INSTANCE\_\_)\ ((\_\_INSTANCE\_\_)-\/>PCR4\ \&=\ \string~FMC\_PCR4\_PBKEN)}}
+\DoxyCodeLine{01177\ \textcolor{preprocessor}{\#define\ \_\_FMC\_NAND\_ENABLE\_IT(\_\_INSTANCE\_\_,\ \_\_BANK\_\_,\ \_\_INTERRUPT\_\_)\ \ (((\_\_BANK\_\_)\ ==\ FMC\_NAND\_BANK2)?\ ((\_\_INSTANCE\_\_)-\/>SR2\ |=\ (\_\_INTERRUPT\_\_)):\ \(\backslash\)}}
+\DoxyCodeLine{01178\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INSTANCE\_\_)-\/>SR3\ |=\ (\_\_INTERRUPT\_\_)))}}
+\DoxyCodeLine{01179\ }
+\DoxyCodeLine{01191\ \textcolor{preprocessor}{\#define\ \_\_FMC\_NAND\_DISABLE\_IT(\_\_INSTANCE\_\_,\ \_\_BANK\_\_,\ \_\_INTERRUPT\_\_)\ \ (((\_\_BANK\_\_)\ ==\ FMC\_NAND\_BANK2)?\ ((\_\_INSTANCE\_\_)-\/>SR2\ \&=\ \string~(\_\_INTERRUPT\_\_)):\ \(\backslash\)}}
+\DoxyCodeLine{01192\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INSTANCE\_\_)-\/>SR3\ \&=\ \string~(\_\_INTERRUPT\_\_)))\ }}
+\DoxyCodeLine{01193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01206\ \textcolor{preprocessor}{\#define\ \_\_FMC\_NAND\_GET\_FLAG(\_\_INSTANCE\_\_,\ \_\_BANK\_\_,\ \_\_FLAG\_\_)\ \ (((\_\_BANK\_\_)\ ==\ FMC\_NAND\_BANK2)?\ (((\_\_INSTANCE\_\_)-\/>SR2\ \&(\_\_FLAG\_\_))\ ==\ (\_\_FLAG\_\_)):\ \(\backslash\)}}
+\DoxyCodeLine{01207\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_INSTANCE\_\_)-\/>SR3\ \&(\_\_FLAG\_\_))\ ==\ (\_\_FLAG\_\_)))}}
+\DoxyCodeLine{01220\ \textcolor{preprocessor}{\#define\ \_\_FMC\_NAND\_CLEAR\_FLAG(\_\_INSTANCE\_\_,\ \_\_BANK\_\_,\ \_\_FLAG\_\_)\ \ (((\_\_BANK\_\_)\ ==\ FMC\_NAND\_BANK2)?\ ((\_\_INSTANCE\_\_)-\/>SR2\ \&=\ \string~(\_\_FLAG\_\_)):\ \(\backslash\)}}
+\DoxyCodeLine{01221\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INSTANCE\_\_)-\/>SR3\ \&=\ \string~(\_\_FLAG\_\_)))\ }}
+\DoxyCodeLine{01232\ \textcolor{preprocessor}{\#define\ \_\_FMC\_PCCARD\_ENABLE\_IT(\_\_INSTANCE\_\_,\ \_\_INTERRUPT\_\_)\ \ ((\_\_INSTANCE\_\_)-\/>SR4\ |=\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{01233\ }
+\DoxyCodeLine{01244\ \textcolor{preprocessor}{\#define\ \_\_FMC\_PCCARD\_DISABLE\_IT(\_\_INSTANCE\_\_,\ \_\_INTERRUPT\_\_)\ \ ((\_\_INSTANCE\_\_)-\/>SR4\ \&=\ \string~(\_\_INTERRUPT\_\_))\ }}
+\DoxyCodeLine{01245\ }
+\DoxyCodeLine{01257\ \textcolor{preprocessor}{\#define\ \_\_FMC\_PCCARD\_GET\_FLAG(\_\_INSTANCE\_\_,\ \_\_FLAG\_\_)\ \ (((\_\_INSTANCE\_\_)-\/>SR4\ \&(\_\_FLAG\_\_))\ ==\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{01258\ }
+\DoxyCodeLine{01270\ \textcolor{preprocessor}{\#define\ \_\_FMC\_PCCARD\_CLEAR\_FLAG(\_\_INSTANCE\_\_,\ \_\_FLAG\_\_)\ \ ((\_\_INSTANCE\_\_)-\/>SR4\ \&=\ \string~(\_\_FLAG\_\_))}}
+\DoxyCodeLine{01271\ \ }
+\DoxyCodeLine{01280\ \textcolor{preprocessor}{\#define\ \_\_FMC\_SDRAM\_ENABLE\_IT(\_\_INSTANCE\_\_,\ \_\_INTERRUPT\_\_)\ \ ((\_\_INSTANCE\_\_)-\/>SDRTR\ |=\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{01281\ }
+\DoxyCodeLine{01290\ \textcolor{preprocessor}{\#define\ \_\_FMC\_SDRAM\_DISABLE\_IT(\_\_INSTANCE\_\_,\ \_\_INTERRUPT\_\_)\ \ ((\_\_INSTANCE\_\_)-\/>SDRTR\ \&=\ \string~(\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{01291\ }
+\DoxyCodeLine{01302\ \textcolor{preprocessor}{\#define\ \_\_FMC\_SDRAM\_GET\_FLAG(\_\_INSTANCE\_\_,\ \_\_FLAG\_\_)\ \ (((\_\_INSTANCE\_\_)-\/>SDSR\ \&(\_\_FLAG\_\_))\ ==\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{01303\ }
+\DoxyCodeLine{01312\ \textcolor{preprocessor}{\#define\ \_\_FMC\_SDRAM\_CLEAR\_FLAG(\_\_INSTANCE\_\_,\ \_\_FLAG\_\_)\ \ ((\_\_INSTANCE\_\_)-\/>SDRTR\ |=\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{01317\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{01318\ }
+\DoxyCodeLine{01319\ \textcolor{comment}{/*\ FMC\_NORSRAM\ Controller\ functions\ *******************************************/}}
+\DoxyCodeLine{01320\ \textcolor{comment}{/*\ Initialization/de-\/initialization\ functions\ */}}
+\DoxyCodeLine{01321\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NORSRAM\_Init(FMC\_NORSRAM\_TypeDef\ *Device,\ FMC\_NORSRAM\_InitTypeDef\ *Init);}
+\DoxyCodeLine{01322\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NORSRAM\_Timing\_Init(FMC\_NORSRAM\_TypeDef\ *Device,\ FMC\_NORSRAM\_TimingTypeDef\ *Timing,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01323\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NORSRAM\_Extended\_Timing\_Init(FMC\_NORSRAM\_EXTENDED\_TypeDef\ *Device,\ FMC\_NORSRAM\_TimingTypeDef\ *Timing,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ExtendedMode);}
+\DoxyCodeLine{01324\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NORSRAM\_DeInit(FMC\_NORSRAM\_TypeDef\ *Device,\ FMC\_NORSRAM\_EXTENDED\_TypeDef\ *ExDevice,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01325\ }
+\DoxyCodeLine{01326\ \textcolor{comment}{/*\ FMC\_NORSRAM\ Control\ functions\ */}}
+\DoxyCodeLine{01327\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NORSRAM\_WriteOperation\_Enable(FMC\_NORSRAM\_TypeDef\ *Device,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01328\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NORSRAM\_WriteOperation\_Disable(FMC\_NORSRAM\_TypeDef\ *Device,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01329\ }
+\DoxyCodeLine{01330\ \textcolor{comment}{/*\ FMC\_NAND\ Controller\ functions\ **********************************************/}}
+\DoxyCodeLine{01331\ \textcolor{comment}{/*\ Initialization/de-\/initialization\ functions\ */}}
+\DoxyCodeLine{01332\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NAND\_Init(FMC\_NAND\_TypeDef\ *Device,\ FMC\_NAND\_InitTypeDef\ *Init);}
+\DoxyCodeLine{01333\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NAND\_CommonSpace\_Timing\_Init(FMC\_NAND\_TypeDef\ *Device,\ FMC\_NAND\_PCC\_TimingTypeDef\ *Timing,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01334\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NAND\_AttributeSpace\_Timing\_Init(FMC\_NAND\_TypeDef\ *Device,\ FMC\_NAND\_PCC\_TimingTypeDef\ *Timing,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01335\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NAND\_DeInit(FMC\_NAND\_TypeDef\ *Device,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01336\ }
+\DoxyCodeLine{01337\ \textcolor{comment}{/*\ FMC\_NAND\ Control\ functions\ */}}
+\DoxyCodeLine{01338\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NAND\_ECC\_Enable(FMC\_NAND\_TypeDef\ *Device,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01339\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NAND\_ECC\_Disable(FMC\_NAND\_TypeDef\ *Device,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01340\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_NAND\_GetECC(FMC\_NAND\_TypeDef\ *Device,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *ECCval,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{01341\ }
+\DoxyCodeLine{01342\ \textcolor{comment}{/*\ FMC\_PCCARD\ Controller\ functions\ ********************************************/}}
+\DoxyCodeLine{01343\ \textcolor{comment}{/*\ Initialization/de-\/initialization\ functions\ */}}
+\DoxyCodeLine{01344\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_PCCARD\_Init(FMC\_PCCARD\_TypeDef\ *Device,\ FMC\_PCCARD\_InitTypeDef\ *Init);}
+\DoxyCodeLine{01345\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_PCCARD\_CommonSpace\_Timing\_Init(FMC\_PCCARD\_TypeDef\ *Device,\ FMC\_NAND\_PCC\_TimingTypeDef\ *Timing);}
+\DoxyCodeLine{01346\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_PCCARD\_AttributeSpace\_Timing\_Init(FMC\_PCCARD\_TypeDef\ *Device,\ FMC\_NAND\_PCC\_TimingTypeDef\ *Timing);}
+\DoxyCodeLine{01347\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_PCCARD\_IOSpace\_Timing\_Init(FMC\_PCCARD\_TypeDef\ *Device,\ FMC\_NAND\_PCC\_TimingTypeDef\ *Timing);\ }
+\DoxyCodeLine{01348\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_PCCARD\_DeInit(FMC\_PCCARD\_TypeDef\ *Device);}
+\DoxyCodeLine{01349\ }
+\DoxyCodeLine{01350\ \textcolor{comment}{/*\ FMC\_SDRAM\ Controller\ functions\ *********************************************/}}
+\DoxyCodeLine{01351\ \textcolor{comment}{/*\ Initialization/de-\/initialization\ functions\ */}}
+\DoxyCodeLine{01352\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_SDRAM\_Init(FMC\_SDRAM\_TypeDef\ *Device,\ FMC\_SDRAM\_InitTypeDef\ *Init);}
+\DoxyCodeLine{01353\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_SDRAM\_Timing\_Init(FMC\_SDRAM\_TypeDef\ *Device,\ FMC\_SDRAM\_TimingTypeDef\ *Timing,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01354\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_SDRAM\_DeInit(FMC\_SDRAM\_TypeDef\ *Device,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01355\ }
+\DoxyCodeLine{01356\ \textcolor{comment}{/*\ FMC\_SDRAM\ Control\ functions\ */}}
+\DoxyCodeLine{01357\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_SDRAM\_WriteProtection\_Enable(FMC\_SDRAM\_TypeDef\ *Device,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01358\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_SDRAM\_WriteProtection\_Disable(FMC\_SDRAM\_TypeDef\ *Device,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01359\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_SDRAM\_SendCommand(FMC\_SDRAM\_TypeDef\ *Device,\ FMC\_SDRAM\_CommandTypeDef\ *Command,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{01360\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_SDRAM\_ProgramRefreshRate(FMC\_SDRAM\_TypeDef\ *Device,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RefreshRate);}
+\DoxyCodeLine{01361\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ FMC\_SDRAM\_SetAutoRefreshNumber(FMC\_SDRAM\_TypeDef\ *Device,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ AutoRefreshNumber);}
+\DoxyCodeLine{01362\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ FMC\_SDRAM\_GetModeStatus(FMC\_SDRAM\_TypeDef\ *Device,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Bank);}
+\DoxyCodeLine{01363\ }
+\DoxyCodeLine{01364\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F427xx\ ||\ STM32F437xx\ ||\ STM32F429xx\ ||\ STM32F439xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01373\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{01374\ \}}
+\DoxyCodeLine{01375\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01376\ }
+\DoxyCodeLine{01377\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_LL\_FMC\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01378\ }
+\DoxyCodeLine{01379\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

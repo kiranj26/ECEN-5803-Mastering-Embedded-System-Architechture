@@ -1,0 +1,66 @@
+\doxysection{Ticker.\+h}
+\hypertarget{_ticker_8h_source}{}\label{_ticker_8h_source}\index{mbed/Ticker.h@{mbed/Ticker.h}}
+\mbox{\hyperlink{_ticker_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_TICKER\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_TICKER\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_timer_event_8h}{TimerEvent.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_function_pointer_8h}{FunctionPointer.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacembed}{mbed}}\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmbed_1_1_ticker}{Ticker}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmbed_1_1_timer_event}{TimerEvent}}\ \{}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_ticker_a1fa23f99146b5bbe90791fad6fe47d36}{attach}}(\textcolor{keywordtype}{void}\ (*fptr)(\textcolor{keywordtype}{void}),\ \textcolor{keywordtype}{float}\ t)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_ticker_ada6018d46fe613429c6159b411a524c2}{attach\_us}}(fptr,\ t\ *\ 1000000.0f);}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_ticker_ab09230bc20507a3c2b57b98ca14a0aab}{attach}}(T*\ tptr,\ \textcolor{keywordtype}{void}\ (T::*mptr)(void),\ float\ t)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_ticker_ada6018d46fe613429c6159b411a524c2}{attach\_us}}(tptr,\ mptr,\ t\ *\ 1000000.0f);}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_ticker_ada6018d46fe613429c6159b411a524c2}{attach\_us}}(\textcolor{keywordtype}{void}\ (*fptr)(\textcolor{keywordtype}{void}),\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ t)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_ticker_a1258396e7210d369b75fc227ea1dce4d}{\_function}}.\mbox{\hyperlink{classmbed_1_1_function_pointer_aac93ab5b370e11baa42f30283b436c11}{attach}}(fptr);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_ticker_a6fd1d373f091d147fc3d4d2cb52b7178}{setup}}(t);}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_ticker_a39467eabe9e7958b512cdbfb1801db7c}{attach\_us}}(T*\ tptr,\ \textcolor{keywordtype}{void}\ (T::*mptr)(void),\ unsigned\ int\ t)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_ticker_a1258396e7210d369b75fc227ea1dce4d}{\_function}}.\mbox{\hyperlink{classmbed_1_1_function_pointer_aac93ab5b370e11baa42f30283b436c11}{attach}}(tptr,\ mptr);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_ticker_a6fd1d373f091d147fc3d4d2cb52b7178}{setup}}(t);}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_ticker_a07a1e3eae57ba0586ad5680f7efdb3db}{detach}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_ticker_a6fd1d373f091d147fc3d4d2cb52b7178}{setup}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ t);}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_ticker_a9e700f503716083f8549eec801f13710}{handler}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmbed_1_1_ticker_ad3c0eea07cfd5a1104f81d47a153f43b}{\_delay}};}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_function_pointer}{FunctionPointer}}\ \mbox{\hyperlink{classmbed_1_1_ticker_a1258396e7210d369b75fc227ea1dce4d}{\_function}};}
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \}\ \textcolor{comment}{//\ namespace\ mbed}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

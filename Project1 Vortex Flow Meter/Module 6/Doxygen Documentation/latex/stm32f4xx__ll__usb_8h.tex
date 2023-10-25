@@ -1,0 +1,308 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+ll\+\_\+usb.h File Reference}
+\hypertarget{stm32f4xx__ll__usb_8h}{}\label{stm32f4xx__ll__usb_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_ll\_usb.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_ll\_usb.h}}
+
+
+Header file of USB Core HAL module.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_u_s_b___o_t_g___cfg_type_def}{USB\+\_\+\+OTG\+\_\+\+Cfg\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em PCD Initialization Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_u_s_b___o_t_g___e_p_type_def}{USB\+\_\+\+OTG\+\_\+\+EPType\+Def}}
+\item 
+struct \mbox{\hyperlink{struct_u_s_b___o_t_g___h_c_type_def}{USB\+\_\+\+OTG\+\_\+\+HCType\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___mode___ga18c93a56fe6f9b220159830d5a8d11ee}{USB\+\_\+\+OTG\+\_\+\+MODE\+\_\+\+DEVICE}}~0
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___mode___gab89c82582474320b1e227d38a840ee57}{USB\+\_\+\+OTG\+\_\+\+MODE\+\_\+\+HOST}}~1
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___mode___ga5da5b7ec8cf2c0a80a61ae4a47825ecc}{USB\+\_\+\+OTG\+\_\+\+MODE\+\_\+\+DRD}}~2
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___speed___ga6132ca2ae3d54d1b77c32df4dca4e095}{USB\+\_\+\+OTG\+\_\+\+SPEED\+\_\+\+HIGH}}~0
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___speed___ga23669d51eb8a68973170f65ef84c5083}{USB\+\_\+\+OTG\+\_\+\+SPEED\+\_\+\+HIGH\+\_\+\+IN\+\_\+\+FULL}}~1
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___speed___ga613816861d1cb0926c0b6c9d67addc03}{USB\+\_\+\+OTG\+\_\+\+SPEED\+\_\+\+LOW}}~2
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___speed___ga5fbf0a3926a565968e4715c93c4916ad}{USB\+\_\+\+OTG\+\_\+\+SPEED\+\_\+\+FULL}}~3
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___p_h_y___ga94d4890d61ef20cf5d087ebf02f5ea5b}{USB\+\_\+\+OTG\+\_\+\+ULPI\+\_\+\+PHY}}~1
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___p_h_y___ga0cf7f55dad878b2c34ac72f8751231e8}{USB\+\_\+\+OTG\+\_\+\+EMBEDDED\+\_\+\+PHY}}~2
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___m_p_s___ga66b1a7f5ab207d4070e8ed1c65e8cc60}{USB\+\_\+\+OTG\+\_\+\+HS\+\_\+\+MAX\+\_\+\+PACKET\+\_\+\+SIZE}}~512
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___m_p_s___ga1fce52005db3b1efa5b8a1d3903d7eca}{USB\+\_\+\+OTG\+\_\+\+FS\+\_\+\+MAX\+\_\+\+PACKET\+\_\+\+SIZE}}~64
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___m_p_s___gaab7c592f3a53ad0a68048d085e26e612}{USB\+\_\+\+OTG\+\_\+\+MAX\+\_\+\+EP0\+\_\+\+SIZE}}~64
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___phy___frequency___gac6876c54f65f616b511ffb984894bebb}{DSTS\+\_\+\+ENUMSPD\+\_\+\+HS\+\_\+\+PHY\+\_\+30\+MHZ\+\_\+\+OR\+\_\+60\+MHZ}}~(0 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___phy___frequency___ga376fb77cf750dbee3a310ed1635ac12d}{DSTS\+\_\+\+ENUMSPD\+\_\+\+FS\+\_\+\+PHY\+\_\+30\+MHZ\+\_\+\+OR\+\_\+60\+MHZ}}~(1 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___phy___frequency___gac77ec1c11bab3b132e18f8d40031ccbd}{DSTS\+\_\+\+ENUMSPD\+\_\+\+LS\+\_\+\+PHY\+\_\+6\+MHZ}}~(2 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___core___phy___frequency___ga7b82623456d86a6d0b77af8976c9e7fa}{DSTS\+\_\+\+ENUMSPD\+\_\+\+FS\+\_\+\+PHY\+\_\+48\+MHZ}}~(3 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___c_o_r_e___frame___interval___ga3c18675af77ee5e40ac13fbab239431b}{DCFG\+\_\+\+FRAME\+\_\+\+INTERVAL\+\_\+80}}~0
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___c_o_r_e___frame___interval___ga9c583bc1d9ec1d9008d7787c83a84652}{DCFG\+\_\+\+FRAME\+\_\+\+INTERVAL\+\_\+85}}~1
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___c_o_r_e___frame___interval___ga72d5e6d99ac3dd6e6feb14b9aea6d7c6}{DCFG\+\_\+\+FRAME\+\_\+\+INTERVAL\+\_\+90}}~2
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___c_o_r_e___frame___interval___ga37c8a0a6e7bf69a47e810ec651235ebd}{DCFG\+\_\+\+FRAME\+\_\+\+INTERVAL\+\_\+95}}~3
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___e_p0___m_p_s___ga1a7ac658d58a0fc1ff930da8033165bc}{DEP0\+CTL\+\_\+\+MPS\+\_\+64}}~0
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___e_p0___m_p_s___ga822dfdf885198f9b0015a7fa1fd7f3ba}{DEP0\+CTL\+\_\+\+MPS\+\_\+32}}~1
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___e_p0___m_p_s___ga9a1a93ba9c4c4ff485108b96d17fac02}{DEP0\+CTL\+\_\+\+MPS\+\_\+16}}~2
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___e_p0___m_p_s___ga55849db2fe6e4970f748306339d6b0c8}{DEP0\+CTL\+\_\+\+MPS\+\_\+8}}~3
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___e_p___speed___ga3388c7d36d7fb8909d0e99a2cca046b1}{EP\+\_\+\+SPEED\+\_\+\+LOW}}~0
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___e_p___speed___ga7fddf387afc1f33dbb3dd231f3a37277}{EP\+\_\+\+SPEED\+\_\+\+FULL}}~1
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___e_p___speed___gaf3bb245f983b40bd8b94ca0653fae7f7}{EP\+\_\+\+SPEED\+\_\+\+HIGH}}~2
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___e_p___type___ga169c2f77ca2e1170f7a0b28e3922654b}{EP\+\_\+\+TYPE\+\_\+\+CTRL}}~0
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___e_p___type___gad976344c79c3fbc08a251574c1b07e14}{EP\+\_\+\+TYPE\+\_\+\+ISOC}}~1
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___e_p___type___ga07d9641305bdb74348ed3f7d063d2eb5}{EP\+\_\+\+TYPE\+\_\+\+BULK}}~2
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___e_p___type___ga7a25d4a1b1253459d9bc3ed76acb96dd}{EP\+\_\+\+TYPE\+\_\+\+INTR}}~3
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___e_p___type___gac2bdad72167f2f2ed08da1d3679345bb}{EP\+\_\+\+TYPE\+\_\+\+MSK}}~3
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___s_t_s___defines___ga65b45525b3699747c59429bf69fca1b1}{STS\+\_\+\+GOUT\+\_\+\+NAK}}~1
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___s_t_s___defines___ga1b5e7cc0d65f930da4bd479a18640950}{STS\+\_\+\+DATA\+\_\+\+UPDT}}~2
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___s_t_s___defines___gab2deafa8f302c01b4e1ae989438abf8b}{STS\+\_\+\+XFER\+\_\+\+COMP}}~3
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___s_t_s___defines___ga3c5fb40af6e0cedc5f1ebceafe605c4e}{STS\+\_\+\+SETUP\+\_\+\+COMP}}~4
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___s_t_s___defines___gaa3c71a654cb8e74078721df3aff885f5}{STS\+\_\+\+SETUP\+\_\+\+UPDT}}~6
+\item 
+\#define \mbox{\hyperlink{group___h_c_f_g___s_p_e_e_d___defines___gacaefc44fa0fd6aff356d7658dbddcb86}{HCFG\+\_\+30\+\_\+60\+\_\+\+MHZ}}~0
+\item 
+\#define \mbox{\hyperlink{group___h_c_f_g___s_p_e_e_d___defines___ga743c5b22acf6aaad4ac90a3be11d5036}{HCFG\+\_\+48\+\_\+\+MHZ}}~1
+\item 
+\#define \mbox{\hyperlink{group___h_c_f_g___s_p_e_e_d___defines___ga0035c9aa2a382d1726da3e85eda48989}{HCFG\+\_\+6\+\_\+\+MHZ}}~2
+\item 
+\#define \mbox{\hyperlink{group___h_p_r_t0___p_r_t_s_p_d___s_p_e_e_d___defines___ga3b46e73b53d15eff3a82ba35bd899d73}{HPRT0\+\_\+\+PRTSPD\+\_\+\+HIGH\+\_\+\+SPEED}}~0
+\item 
+\#define \mbox{\hyperlink{group___h_p_r_t0___p_r_t_s_p_d___s_p_e_e_d___defines___gaac43a7327e03e89bd979e571b308d443}{HPRT0\+\_\+\+PRTSPD\+\_\+\+FULL\+\_\+\+SPEED}}~1
+\item 
+\#define \mbox{\hyperlink{group___h_p_r_t0___p_r_t_s_p_d___s_p_e_e_d___defines___ga830151160e06f8cc0ed67262f97e14e0}{HPRT0\+\_\+\+PRTSPD\+\_\+\+LOW\+\_\+\+SPEED}}~2
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_ga17a768946f45cf5de12e0c5970c05bd0}{HCCHAR\+\_\+\+CTRL}}~0
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_gad1703e7958c3dc7f999fe2428c7b3cc7}{HCCHAR\+\_\+\+ISOC}}~1
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_ga3251e69e1cebced2df32d0b339256eee}{HCCHAR\+\_\+\+BULK}}~2
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_gac85fa6d504f2d09518373d269a6d7e51}{HCCHAR\+\_\+\+INTR}}~3
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_gae4145042f04c5e67b2c41d831fa25788}{HC\+\_\+\+PID\+\_\+\+DATA0}}~0
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_ga73d9cf9006cd0e1af5bee3dc08fea706}{HC\+\_\+\+PID\+\_\+\+DATA2}}~1
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_gac8afc5f0ddcbd1c77e174647fffe99ae}{HC\+\_\+\+PID\+\_\+\+DATA1}}~2
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_ga95a1baf6402263584334dedb09caca7c}{HC\+\_\+\+PID\+\_\+\+SETUP}}~3
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_gaf9c1c7327f3bf20a6d5318e1eea6a2e8}{GRXSTS\+\_\+\+PKTSTS\+\_\+\+IN}}~2
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_ga9e457ffe19883ab58dcb993671edeeb5}{GRXSTS\+\_\+\+PKTSTS\+\_\+\+IN\+\_\+\+XFER\+\_\+\+COMP}}~3
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_ga0e2cbcefc2536f6b13980897036149a6}{GRXSTS\+\_\+\+PKTSTS\+\_\+\+DATA\+\_\+\+TOGGLE\+\_\+\+ERR}}~5
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_gaa7df1c450fe97901fba31e6acc4cef9d}{GRXSTS\+\_\+\+PKTSTS\+\_\+\+CH\+\_\+\+HALTED}}~7
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_ga09ae7fea25cc54ef741338f86a72e3c6}{USBx\+\_\+\+PCGCCTL}}~\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})USBx + \mbox{\hyperlink{group___peripheral__registers__structures_gaa9766975aca084c257730879568bc7cf}{USB\+\_\+\+OTG\+\_\+\+PCGCCTL\+\_\+\+BASE}})
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_gaf46bef52536fb3571d9bddb95ac45a48}{USBx\+\_\+\+HPRT0}}~\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})USBx + \mbox{\hyperlink{group___peripheral__registers__structures_ga42f433cb79ca69f09972e690fda6737a}{USB\+\_\+\+OTG\+\_\+\+HOST\+\_\+\+PORT\+\_\+\+BASE}})
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_ga70c8e621aa758965f0120ba680fe84a9}{USBx\+\_\+\+DEVICE}}~((\mbox{\hyperlink{struct_u_s_b___o_t_g___device_type_def}{USB\+\_\+\+OTG\+\_\+\+Device\+Type\+Def}} \texorpdfstring{$\ast$}{*})((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} )USBx + \mbox{\hyperlink{group___peripheral__registers__structures_ga4d74a337597a77b1fca978202b519a18}{USB\+\_\+\+OTG\+\_\+\+DEVICE\+\_\+\+BASE}}))
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_gae74d7ab869b0e7400872e72792338c57}{USBx\+\_\+\+INEP}}(i)~((\mbox{\hyperlink{struct_u_s_b___o_t_g___i_n_endpoint_type_def}{USB\+\_\+\+OTG\+\_\+\+INEndpoint\+Type\+Def}} \texorpdfstring{$\ast$}{*})((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})USBx + \mbox{\hyperlink{group___peripheral__registers__structures_gad8f69041452615aeb3948600e3882246}{USB\+\_\+\+OTG\+\_\+\+IN\+\_\+\+ENDPOINT\+\_\+\+BASE}} + (i)\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{group___peripheral__registers__structures_ga6fdb7429ad88e2d69440d6ecc4f4199e}{USB\+\_\+\+OTG\+\_\+\+EP\+\_\+\+REG\+\_\+\+SIZE}}))
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_gaa17262d7689e83f6fc620c4cc95015fb}{USBx\+\_\+\+OUTEP}}(i)~((\mbox{\hyperlink{struct_u_s_b___o_t_g___o_u_t_endpoint_type_def}{USB\+\_\+\+OTG\+\_\+\+OUTEndpoint\+Type\+Def}} \texorpdfstring{$\ast$}{*})((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})USBx + \mbox{\hyperlink{group___peripheral__registers__structures_gaf0e972b8f028ecf44a652029efbd4642}{USB\+\_\+\+OTG\+\_\+\+OUT\+\_\+\+ENDPOINT\+\_\+\+BASE}} + (i)\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{group___peripheral__registers__structures_ga6fdb7429ad88e2d69440d6ecc4f4199e}{USB\+\_\+\+OTG\+\_\+\+EP\+\_\+\+REG\+\_\+\+SIZE}}))
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_gae61252165aedb3bc641be861d85d8f49}{USBx\+\_\+\+DFIFO}}(i)~\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*})((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})USBx + \mbox{\hyperlink{group___peripheral__registers__structures_gace340350802904868673f0e839c4fa04}{USB\+\_\+\+OTG\+\_\+\+FIFO\+\_\+\+BASE}} + (i) \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___peripheral__registers__structures_ga8781c4b2406c740d9fe540737a6a0188}{USB\+\_\+\+OTG\+\_\+\+FIFO\+\_\+\+SIZE}})
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_gad8ee08c387874909072a3db20d15dc21}{USBx\+\_\+\+HOST}}~((\mbox{\hyperlink{struct_u_s_b___o_t_g___host_type_def}{USB\+\_\+\+OTG\+\_\+\+Host\+Type\+Def}} \texorpdfstring{$\ast$}{*})((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} )USBx + \mbox{\hyperlink{group___peripheral__registers__structures_ga3bb2dd6c82eefd8587b6146ba36ae071}{USB\+\_\+\+OTG\+\_\+\+HOST\+\_\+\+BASE}}))
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_gaabde8c1753d544ba0caa940a3617b09c}{USBx\+\_\+\+HC}}(i)~((\mbox{\hyperlink{struct_u_s_b___o_t_g___host_channel_type_def}{USB\+\_\+\+OTG\+\_\+\+Host\+Channel\+Type\+Def}} \texorpdfstring{$\ast$}{*})((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})USBx + \mbox{\hyperlink{group___peripheral__registers__structures_ga942c8c5241b80fbcf638fea0fa18bebd}{USB\+\_\+\+OTG\+\_\+\+HOST\+\_\+\+CHANNEL\+\_\+\+BASE}} + (i)\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{group___peripheral__registers__structures_ga266cb1dbb50faf447f9c15d2ee93a522}{USB\+\_\+\+OTG\+\_\+\+HOST\+\_\+\+CHANNEL\+\_\+\+SIZE}}))
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_ga0b7156147256d0e701ad31c47d60bbac}{USB\+\_\+\+MASK\+\_\+\+INTERRUPT}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$GINTMSK \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_ga884257677bc6647b924d72a22531c53a}{USB\+\_\+\+UNMASK\+\_\+\+INTERRUPT}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$GINTMSK \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_ga6b578c3501a205feada41df31b27bf0a}{CLEAR\+\_\+\+IN\+\_\+\+EP\+\_\+\+INTR}}(\+\_\+\+\_\+\+EPNUM\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~(\mbox{\hyperlink{group___p_c_d___exported___constants_gae74d7ab869b0e7400872e72792338c57}{USBx\+\_\+\+INEP}}(\+\_\+\+\_\+\+EPNUM\+\_\+\+\_\+)-\/$>$DIEPINT = (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___p_c_d___exported___constants_ga40c04ad63c5211b97d5deeef8999dd48}{CLEAR\+\_\+\+OUT\+\_\+\+EP\+\_\+\+INTR}}(\+\_\+\+\_\+\+EPNUM\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~(\mbox{\hyperlink{group___p_c_d___exported___constants_gaa17262d7689e83f6fc620c4cc95015fb}{USBx\+\_\+\+OUTEP}}(\+\_\+\+\_\+\+EPNUM\+\_\+\+\_\+)-\/$>$DOEPINT = (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___u_s_b___core_gaee615ae9689e28e7618b73dbe76f5b95}{USB\+\_\+\+OTG\+\_\+\+Mode\+Type\+Def}} \{ \mbox{\hyperlink{group___u_s_b___core_ggaee615ae9689e28e7618b73dbe76f5b95abe8249bdbe7a4203d7a1993c61750831}{USB\+\_\+\+OTG\+\_\+\+DEVICE\+\_\+\+MODE}} = 0
+, \mbox{\hyperlink{group___u_s_b___core_ggaee615ae9689e28e7618b73dbe76f5b95ae3ce8f1b6b2b91c3008e3fe00de1d799}{USB\+\_\+\+OTG\+\_\+\+HOST\+\_\+\+MODE}} = 1
+, \mbox{\hyperlink{group___u_s_b___core_ggaee615ae9689e28e7618b73dbe76f5b95a5e000853dd643af91cdf9515df494e53}{USB\+\_\+\+OTG\+\_\+\+DRD\+\_\+\+MODE}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em USB Mode definition ~\newline
+ \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___u_s_b___core_ga04b2bca306495588fec3a5245daa5221}{USB\+\_\+\+OTG\+\_\+\+URBState\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221a3d62a44f8c2ff61d32e014eeb68ca1ad}{URB\+\_\+\+IDLE}} = 0
+, \mbox{\hyperlink{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221a89b831c73a03df3adb1db9f9ea6dd383}{URB\+\_\+\+DONE}}
+, \mbox{\hyperlink{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221afc9be95cae97851083c29fba7a76c429}{URB\+\_\+\+NOTREADY}}
+, \mbox{\hyperlink{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221a53a167498a0a71be87d46ed17a8b3a1f}{URB\+\_\+\+NYET}}
+, \newline
+\mbox{\hyperlink{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221ac64ce5e59f99b31274ebbec86d33afb2}{URB\+\_\+\+ERROR}}
+, \mbox{\hyperlink{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221af19023a3840fc87352f2c7108feb4f8e}{URB\+\_\+\+STALL}}
+ \}
+\begin{DoxyCompactList}\small\item\em URB States definition ~\newline
+ \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___u_s_b___core_ga8fa88c2e8e5fe41147028ba11af65294}{USB\+\_\+\+OTG\+\_\+\+HCState\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294af636bb8335a7bd4b2cd57dc41d105d9c}{HC\+\_\+\+IDLE}} = 0
+, \mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a323751d52ea7fde5b0399b480666b3eb}{HC\+\_\+\+XFRC}}
+, \mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294ad3806642bc9a2a49bf930f44a8a01918}{HC\+\_\+\+HALTED}}
+, \mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294aead6a914271aec37bb91e63949567391}{HC\+\_\+\+NAK}}
+, \newline
+\mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294ac7a2e369496480be172bc2b290d65c24}{HC\+\_\+\+NYET}}
+, \mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a007bef68e5e5170ea5055d553c64ec87}{HC\+\_\+\+STALL}}
+, \mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a13ced3cf247e734c6be97235e18cfa33}{HC\+\_\+\+XACTERR}}
+, \mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a557e1dbc3f7c65270c2bc42784299a13}{HC\+\_\+\+BBLERR}}
+, \newline
+\mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a3b001e51f8c3d77947867fb1a9b959be}{HC\+\_\+\+DATATGLERR}}
+ \}
+\begin{DoxyCompactList}\small\item\em Host channel States definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga0d75ee19ea8d81e77de09687a1ee2558}{USB\+\_\+\+Core\+Init}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{struct_u_s_b___o_t_g___cfg_type_def}{USB\+\_\+\+OTG\+\_\+\+Cfg\+Type\+Def}} Init)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_gaa5dd04c2774c51327e589f8485935461}{USB\+\_\+\+Dev\+Init}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{struct_u_s_b___o_t_g___cfg_type_def}{USB\+\_\+\+OTG\+\_\+\+Cfg\+Type\+Def}} Init)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_gaa8938bc57ec4994b1d2a04dceb12c67a}{USB\+\_\+\+Enable\+Global\+Int}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga81380ef9f6be2f72b70284d2108b4aed}{USB\+\_\+\+Disable\+Global\+Int}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga5a4aac40f7bf2ea2c35479486a8be46c}{USB\+\_\+\+Set\+Current\+Mode}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{group___u_s_b___core_gaee615ae9689e28e7618b73dbe76f5b95}{USB\+\_\+\+OTG\+\_\+\+Mode\+Type\+Def}} mode)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_gae525103b6b386062da0eb51ac245b8d5}{USB\+\_\+\+Set\+Dev\+Speed}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, uint8\+\_\+t speed)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_gaa6b12b26de0120d7d7bffb62695ba7ba}{USB\+\_\+\+Flush\+Rx\+Fifo}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_gad030b63ce62d1a46bf657885fdca5d1f}{USB\+\_\+\+Flush\+Tx\+Fifo}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} num)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga24b1563293283161367493068e2b3bf2}{USB\+\_\+\+Activate\+Endpoint}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{struct_u_s_b___o_t_g___e_p_type_def}{USB\+\_\+\+OTG\+\_\+\+EPType\+Def}} \texorpdfstring{$\ast$}{*}ep)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga3b35081e5f91ddfb281509d57b196fa2}{USB\+\_\+\+Deactivate\+Endpoint}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{struct_u_s_b___o_t_g___e_p_type_def}{USB\+\_\+\+OTG\+\_\+\+EPType\+Def}} \texorpdfstring{$\ast$}{*}ep)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga7dbd281b9b34afc6955975efe0accb7f}{USB\+\_\+\+Activate\+Dedicated\+Endpoint}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{struct_u_s_b___o_t_g___e_p_type_def}{USB\+\_\+\+OTG\+\_\+\+EPType\+Def}} \texorpdfstring{$\ast$}{*}ep)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga81c8d15427a13d6f160bb412cf8438fe}{USB\+\_\+\+Deactivate\+Dedicated\+Endpoint}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{struct_u_s_b___o_t_g___e_p_type_def}{USB\+\_\+\+OTG\+\_\+\+EPType\+Def}} \texorpdfstring{$\ast$}{*}ep)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga63374b45ebc7847f9dad9df9e7bb1bdf}{USB\+\_\+\+EPStart\+Xfer}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{struct_u_s_b___o_t_g___e_p_type_def}{USB\+\_\+\+OTG\+\_\+\+EPType\+Def}} \texorpdfstring{$\ast$}{*}ep, uint8\+\_\+t dma)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_gae86c80da4ce7318355d13ad43c4b7071}{USB\+\_\+\+EP0\+Start\+Xfer}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{struct_u_s_b___o_t_g___e_p_type_def}{USB\+\_\+\+OTG\+\_\+\+EPType\+Def}} \texorpdfstring{$\ast$}{*}ep, uint8\+\_\+t dma)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_gad132b5e9498d615298128b4da3561c06}{USB\+\_\+\+Write\+Packet}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, uint8\+\_\+t \texorpdfstring{$\ast$}{*}src, uint8\+\_\+t ch\+\_\+ep\+\_\+num, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} len, uint8\+\_\+t dma)
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___p_c_d___exported___constants_ga03286cfa06968b6115581e0ac773e11c}{USB\+\_\+\+Read\+Packet}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, uint8\+\_\+t \texorpdfstring{$\ast$}{*}dest, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} len)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga49d9acbeb71854203ee8fcc41e97083e}{USB\+\_\+\+EPSet\+Stall}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{struct_u_s_b___o_t_g___e_p_type_def}{USB\+\_\+\+OTG\+\_\+\+EPType\+Def}} \texorpdfstring{$\ast$}{*}ep)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga3d49678cb1dafba00799b3004101bd30}{USB\+\_\+\+EPClear\+Stall}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{struct_u_s_b___o_t_g___e_p_type_def}{USB\+\_\+\+OTG\+\_\+\+EPType\+Def}} \texorpdfstring{$\ast$}{*}ep)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_gad2b16aae6886a7e176da4a4509aed556}{USB\+\_\+\+Set\+Dev\+Address}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, uint8\+\_\+t address)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga67e64958db2e5056c7e2813a20f17b95}{USB\+\_\+\+Dev\+Connect}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga249941d59e0792165e65a25491d2b864}{USB\+\_\+\+Dev\+Disconnect}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga8b8105e4d0e5056de066d99cedf923e3}{USB\+\_\+\+Stop\+Device}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_gaf9e86962ba57eb7450190cc934da4af7}{USB\+\_\+\+Activate\+Setup}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_gac8d31352cfdb0efe0ec1f1de9cf5e141}{USB\+\_\+\+EP0\+\_\+\+Out\+Start}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, uint8\+\_\+t dma, uint8\+\_\+t \texorpdfstring{$\ast$}{*}psetup)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___p_c_d___exported___constants_ga9afe06cc2fc52b532b389d06eb89eac0}{USB\+\_\+\+Get\+Dev\+Speed}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga093dea89e7818ca37124e9497d82be4f}{USB\+\_\+\+Get\+Mode}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga11d36625a0724ef12a0021226ceeefd8}{USB\+\_\+\+Read\+Interrupts}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga4ec1c1ec6283d2bf920063f33c89b6fd}{USB\+\_\+\+Read\+Dev\+All\+Out\+Ep\+Interrupt}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___p_c_d___exported___constants_gae54c4aada2d1a86a568094d9a05bdaa5}{USB\+\_\+\+Read\+Dev\+Out\+EPInterrupt}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, uint8\+\_\+t epnum)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga916a477ae2350e7d705737f294ed8495}{USB\+\_\+\+Read\+Dev\+All\+In\+Ep\+Interrupt}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___p_c_d___exported___constants_gaeea704a250a88efda323dfd8afe1591a}{USB\+\_\+\+Read\+Dev\+In\+EPInterrupt}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, uint8\+\_\+t epnum)
+\item 
+void \mbox{\hyperlink{group___p_c_d___exported___constants_gadac7444a739b00efd021311e1d1c73da}{USB\+\_\+\+Clear\+Interrupts}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} interrupt)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga3d918fd95eeaea98ba8ef29e42f3c2d9}{USB\+\_\+\+Host\+Init}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{struct_u_s_b___o_t_g___cfg_type_def}{USB\+\_\+\+OTG\+\_\+\+Cfg\+Type\+Def}} cfg)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga42af3f9d47f538969ec42f626b617a32}{USB\+\_\+\+Init\+FSLSPClk\+Sel}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, uint8\+\_\+t freq)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga8326624408f50cc9595346008ef1be48}{USB\+\_\+\+Reset\+Port}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga6e73b669bcaa9fe5178f11fa7d9243bb}{USB\+\_\+\+Drive\+Vbus}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, uint8\+\_\+t state)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga8f1fcb7410ab3e45092877c3023a82f4}{USB\+\_\+\+Get\+Host\+Speed}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___p_c_d___exported___constants_gaaf16f56f6b80df65852ec352aed7f4c5}{USB\+\_\+\+Get\+Current\+Frame}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga26a31c650f55cf692149c1055e3b73c4}{USB\+\_\+\+HC\+\_\+\+Init}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, uint8\+\_\+t ch\+\_\+num, uint8\+\_\+t epnum, uint8\+\_\+t dev\+\_\+address, uint8\+\_\+t speed, uint8\+\_\+t ep\+\_\+type, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} mps)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga4aec01f7b2311a50cffb637796de533b}{USB\+\_\+\+HC\+\_\+\+Start\+Xfer}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, \mbox{\hyperlink{struct_u_s_b___o_t_g___h_c_type_def}{USB\+\_\+\+OTG\+\_\+\+HCType\+Def}} \texorpdfstring{$\ast$}{*}hc, uint8\+\_\+t dma)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___p_c_d___exported___constants_gab070d4bdfed058053291eb67473c208b}{USB\+\_\+\+HC\+\_\+\+Read\+Interrupt}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_gac97062903159ba84f1efb8572affa15f}{USB\+\_\+\+HC\+\_\+\+Halt}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, uint8\+\_\+t hc\+\_\+num)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_ga5507d076515561acd5c9b91b0afba309}{USB\+\_\+\+Do\+Ping}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx, uint8\+\_\+t ch\+\_\+num)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___p_c_d___exported___constants_gabde73cf618c1578fdabb068940418635}{USB\+\_\+\+Stop\+Host}} (\mbox{\hyperlink{struct_u_s_b___o_t_g___global_type_def}{USB\+\_\+\+OTG\+\_\+\+Global\+Type\+Def}} \texorpdfstring{$\ast$}{*}USBx)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of USB Core HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

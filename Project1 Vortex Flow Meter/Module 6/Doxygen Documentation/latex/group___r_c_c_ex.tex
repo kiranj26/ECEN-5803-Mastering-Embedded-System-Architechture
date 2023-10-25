@@ -1,0 +1,106 @@
+\doxysubsection{RCCEx}
+\hypertarget{group___r_c_c_ex}{}\label{group___r_c_c_ex}\index{RCCEx@{RCCEx}}
+\doxysubsubsubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___r_c_c_ex___exported___constants}{RCCEx\+\_\+\+Exported\+\_\+\+Constants}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_c_c___p_l_l_i2_s_init_type_def}{RCC\+\_\+\+PLLI2\+SInit\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em PLLI2S Clock structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_c_c___periph_c_l_k_init_type_def}{RCC\+\_\+\+Periph\+CLKInit\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RCC extended clocks structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_c_c_ex_ga0c0f61a1e2f47cc81bc43d83ba3e0d95}{HAL\+\_\+\+RCCEx\+\_\+\+Periph\+CLKConfig}} (\mbox{\hyperlink{struct_r_c_c___periph_c_l_k_init_type_def}{RCC\+\_\+\+Periph\+CLKInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}Periph\+Clk\+Init)
+\begin{DoxyCompactList}\small\item\em Enables or disables the AHB1 peripheral clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c_ex_ga754fc5136c63ad52b7c459aafc8a3927}{HAL\+\_\+\+RCCEx\+\_\+\+Get\+Periph\+CLKConfig}} (\mbox{\hyperlink{struct_r_c_c___periph_c_l_k_init_type_def}{RCC\+\_\+\+Periph\+CLKInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}Periph\+Clk\+Init)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group___r_c_c_ex_ga754fc5136c63ad52b7c459aafc8a3927}\label{group___r_c_c_ex_ga754fc5136c63ad52b7c459aafc8a3927} 
+\index{RCCEx@{RCCEx}!HAL\_RCCEx\_GetPeriphCLKConfig@{HAL\_RCCEx\_GetPeriphCLKConfig}}
+\index{HAL\_RCCEx\_GetPeriphCLKConfig@{HAL\_RCCEx\_GetPeriphCLKConfig}!RCCEx@{RCCEx}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RCCEx\_GetPeriphCLKConfig()}{HAL\_RCCEx\_GetPeriphCLKConfig()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+RCCEx\+\_\+\+Get\+Periph\+CLKConfig (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_c_c___periph_c_l_k_init_type_def}{RCC\+\_\+\+Periph\+CLKInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{Periph\+Clk\+Init }\end{DoxyParamCaption})}
+
+\Hypertarget{group___r_c_c_ex_ga0c0f61a1e2f47cc81bc43d83ba3e0d95}\label{group___r_c_c_ex_ga0c0f61a1e2f47cc81bc43d83ba3e0d95} 
+\index{RCCEx@{RCCEx}!HAL\_RCCEx\_PeriphCLKConfig@{HAL\_RCCEx\_PeriphCLKConfig}}
+\index{HAL\_RCCEx\_PeriphCLKConfig@{HAL\_RCCEx\_PeriphCLKConfig}!RCCEx@{RCCEx}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_RCCEx\_PeriphCLKConfig()}{HAL\_RCCEx\_PeriphCLKConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+RCCEx\+\_\+\+Periph\+CLKConfig (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_c_c___periph_c_l_k_init_type_def}{RCC\+\_\+\+Periph\+CLKInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{Periph\+Clk\+Init }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the AHB1 peripheral clock. 
+
+\begin{DoxyNote}{Note}
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it.
+\end{DoxyNote}
+Enable or disable the AHB2 peripheral clock. \begin{DoxyNote}{Note}
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it.
+\end{DoxyNote}
+Enables or disables the AHB3 peripheral clock. \begin{DoxyNote}{Note}
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it.
+\end{DoxyNote}
+Enable or disable the Low Speed APB (APB1) peripheral clock. \begin{DoxyNote}{Note}
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it.
+\end{DoxyNote}
+Enable or disable the High Speed APB (APB2) peripheral clock. \begin{DoxyNote}{Note}
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it.
+\end{DoxyNote}
+Force or release AHB1 peripheral reset.
+
+Force or release AHB2 peripheral reset.
+
+Force or release AHB3 peripheral reset
+
+Force or release APB1 peripheral reset.
+
+Force or release APB2 peripheral reset.
+
+Enable or disable the AHB1 peripheral clock during Low Power (Sleep) mode. \begin{DoxyNote}{Note}
+Peripheral clock gating in SLEEP mode can be used to further reduce power consumption. 
+
+After wakeup from SLEEP mode, the peripheral clock is enabled again. 
+
+By default, all peripheral clocks are enabled during SLEEP mode.
+\end{DoxyNote}
+Enable or disable the AHB2 peripheral clock during Low Power (Sleep) mode. \begin{DoxyNote}{Note}
+Peripheral clock gating in SLEEP mode can be used to further reduce power consumption. 
+
+After wakeup from SLEEP mode, the peripheral clock is enabled again. 
+
+By default, all peripheral clocks are enabled during SLEEP mode.
+\end{DoxyNote}
+Enable or disable the AHB3 peripheral clock during Low Power (Sleep) mode. \begin{DoxyNote}{Note}
+Peripheral clock gating in SLEEP mode can be used to further reduce power consumption. 
+
+After wakeup from SLEEP mode, the peripheral clock is enabled again. 
+
+By default, all peripheral clocks are enabled during SLEEP mode.
+\end{DoxyNote}
+Enable or disable the APB1 peripheral clock during Low Power (Sleep) mode. \begin{DoxyNote}{Note}
+Peripheral clock gating in SLEEP mode can be used to further reduce power consumption. 
+
+After wakeup from SLEEP mode, the peripheral clock is enabled again. 
+
+By default, all peripheral clocks are enabled during SLEEP mode.
+\end{DoxyNote}
+Enable or disable the APB2 peripheral clock during Low Power (Sleep) mode. \begin{DoxyNote}{Note}
+Peripheral clock gating in SLEEP mode can be used to further reduce power consumption. 
+
+After wakeup from SLEEP mode, the peripheral clock is enabled again. 
+
+By default, all peripheral clocks are enabled during SLEEP mode. 
+\end{DoxyNote}
+\input{group___r_c_c_ex___exported___constants}

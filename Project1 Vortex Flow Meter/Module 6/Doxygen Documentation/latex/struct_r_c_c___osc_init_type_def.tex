@@ -1,0 +1,89 @@
+\doxysection{RCC\+\_\+\+Osc\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_r_c_c___osc_init_type_def}{}\label{struct_r_c_c___osc_init_type_def}\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+
+
+RCC Internal/\+External Oscillator (HSE, HSI, LSE and LSI) configuration structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal\+\_\+rcc.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_af9e7bc89cab81c1705d94c74c7a81088}{Oscillator\+Type}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_a7e05d6eec98ed8cdaba00ca3d167ff72}{HSEState}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_a7c1294e9407e69e80fe034caf35fe7ea}{LSEState}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_a39b62cae65fe7a251000354e5bba8cb6}{HSIState}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_a9b2e48e452d0c334f2b9473216064560}{HSICalibration\+Value}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_a955de90db8882fde02c4fb59c7c000f0}{LSIState}}
+\item 
+\mbox{\hyperlink{struct_r_c_c___p_l_l_init_type_def}{RCC\+\_\+\+PLLInit\+Type\+Def}} \mbox{\hyperlink{struct_r_c_c___osc_init_type_def_af76de5ee86798f0c3a4c83c84dfa58be}{PLL}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RCC Internal/\+External Oscillator (HSE, HSI, LSE and LSI) configuration structure definition ~\newline
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_r_c_c___osc_init_type_def_a7e05d6eec98ed8cdaba00ca3d167ff72}\label{struct_r_c_c___osc_init_type_def_a7e05d6eec98ed8cdaba00ca3d167ff72} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!HSEState@{HSEState}}
+\index{HSEState@{HSEState}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{HSEState}{HSEState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RCC\+\_\+\+Osc\+Init\+Type\+Def\+::\+HSEState}
+
+The new state of the HSE. This parameter can be a value of \doxylink{group___r_c_c___h_s_e___config}{RCC\+\_\+\+HSE\+\_\+\+Config} ~\newline
+ \Hypertarget{struct_r_c_c___osc_init_type_def_a9b2e48e452d0c334f2b9473216064560}\label{struct_r_c_c___osc_init_type_def_a9b2e48e452d0c334f2b9473216064560} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!HSICalibrationValue@{HSICalibrationValue}}
+\index{HSICalibrationValue@{HSICalibrationValue}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{HSICalibrationValue}{HSICalibrationValue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RCC\+\_\+\+Osc\+Init\+Type\+Def\+::\+HSICalibration\+Value}
+
+The calibration trimming value. This parameter must be a number between Min\+\_\+\+Data = 0x00 and Max\+\_\+\+Data = 0x1F \Hypertarget{struct_r_c_c___osc_init_type_def_a39b62cae65fe7a251000354e5bba8cb6}\label{struct_r_c_c___osc_init_type_def_a39b62cae65fe7a251000354e5bba8cb6} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!HSIState@{HSIState}}
+\index{HSIState@{HSIState}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{HSIState}{HSIState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RCC\+\_\+\+Osc\+Init\+Type\+Def\+::\+HSIState}
+
+The new state of the HSI. This parameter can be a value of \doxylink{group___r_c_c___h_s_i___config}{RCC\+\_\+\+HSI\+\_\+\+Config} ~\newline
+ \Hypertarget{struct_r_c_c___osc_init_type_def_a7c1294e9407e69e80fe034caf35fe7ea}\label{struct_r_c_c___osc_init_type_def_a7c1294e9407e69e80fe034caf35fe7ea} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!LSEState@{LSEState}}
+\index{LSEState@{LSEState}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{LSEState}{LSEState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RCC\+\_\+\+Osc\+Init\+Type\+Def\+::\+LSEState}
+
+The new state of the LSE. This parameter can be a value of \doxylink{group___r_c_c___l_s_e___config}{RCC\+\_\+\+LSE\+\_\+\+Config} ~\newline
+ \Hypertarget{struct_r_c_c___osc_init_type_def_a955de90db8882fde02c4fb59c7c000f0}\label{struct_r_c_c___osc_init_type_def_a955de90db8882fde02c4fb59c7c000f0} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!LSIState@{LSIState}}
+\index{LSIState@{LSIState}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{LSIState}{LSIState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RCC\+\_\+\+Osc\+Init\+Type\+Def\+::\+LSIState}
+
+The new state of the LSI. This parameter can be a value of \doxylink{group___r_c_c___l_s_i___config}{RCC\+\_\+\+LSI\+\_\+\+Config} ~\newline
+ \Hypertarget{struct_r_c_c___osc_init_type_def_af9e7bc89cab81c1705d94c74c7a81088}\label{struct_r_c_c___osc_init_type_def_af9e7bc89cab81c1705d94c74c7a81088} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!OscillatorType@{OscillatorType}}
+\index{OscillatorType@{OscillatorType}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{OscillatorType}{OscillatorType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RCC\+\_\+\+Osc\+Init\+Type\+Def\+::\+Oscillator\+Type}
+
+The oscillators to be configured. This parameter can be a value of \doxylink{group___r_c_c___oscillator___type}{RCC\+\_\+\+Oscillator\+\_\+\+Type} ~\newline
+ \Hypertarget{struct_r_c_c___osc_init_type_def_af76de5ee86798f0c3a4c83c84dfa58be}\label{struct_r_c_c___osc_init_type_def_af76de5ee86798f0c3a4c83c84dfa58be} 
+\index{RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}!PLL@{PLL}}
+\index{PLL@{PLL}!RCC\_OscInitTypeDef@{RCC\_OscInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{PLL}{PLL}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_r_c_c___p_l_l_init_type_def}{RCC\+\_\+\+PLLInit\+Type\+Def}} RCC\+\_\+\+Osc\+Init\+Type\+Def\+::\+PLL}
+
+PLL structure parameters ~\newline
+ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/\mbox{\hyperlink{stm32f4xx__hal__rcc_8h}{stm32f4xx\+\_\+hal\+\_\+rcc.\+h}}\end{DoxyCompactItemize}

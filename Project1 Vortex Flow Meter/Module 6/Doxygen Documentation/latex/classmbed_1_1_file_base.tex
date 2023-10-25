@@ -1,0 +1,118 @@
+\doxysection{mbed\+::File\+Base Class Reference}
+\hypertarget{classmbed_1_1_file_base}{}\label{classmbed_1_1_file_base}\index{mbed::FileBase@{mbed::FileBase}}
+
+
+{\ttfamily \#include $<$File\+Base.\+h$>$}
+
+Inheritance diagram for mbed\+::File\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmbed_1_1_file_base}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_file_base_a8b19f5dfe489eaa641c32a5096c71af1}{File\+Base}} (const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} t)
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_file_base_ac8cc9e6d230ddfe9f9987338071998ec}{\texorpdfstring{$\sim$}{\string~}\+File\+Base}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_a22078733b15abf28045948d24555ceaf}{get\+Name}} (void)
+\item 
+\mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} \mbox{\hyperlink{classmbed_1_1_file_base_a59dd77df265c99a2fa0f7c209d0dba18}{get\+Path\+Type}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_a512479427a1a8e4c23bf353babeea9ce}{lookup}} (const char \texorpdfstring{$\ast$}{*}name, unsigned int len)
+\item 
+static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_ab2f9954a536d2c678b9630ffd68c68f2}{get}} (int n)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_acef47c84dc296ce35d5d2aa3695062af}{\+\_\+next}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_a9f22fa8bd5986c32dcf8e0a19f95e3b5}{\+\_\+name}}
+\item 
+\mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} \mbox{\hyperlink{classmbed_1_1_file_base_ae4a065275d45e77c512ec2d7c10f5d7b}{\+\_\+path\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classmbed_1_1_file_base_ae9af3d7b863ca499d4e4a779632094f5}{\+\_\+head}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmbed_1_1_file_base_a8b19f5dfe489eaa641c32a5096c71af1}\label{classmbed_1_1_file_base_a8b19f5dfe489eaa641c32a5096c71af1} 
+\index{mbed::FileBase@{mbed::FileBase}!FileBase@{FileBase}}
+\index{FileBase@{FileBase}!mbed::FileBase@{mbed::FileBase}}
+\doxysubsubsection{\texorpdfstring{FileBase()}{FileBase()}}
+{\footnotesize\ttfamily mbed\+::\+File\+Base\+::\+File\+Base (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{\mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}}}]{t }\end{DoxyParamCaption})}
+
+\Hypertarget{classmbed_1_1_file_base_ac8cc9e6d230ddfe9f9987338071998ec}\label{classmbed_1_1_file_base_ac8cc9e6d230ddfe9f9987338071998ec} 
+\index{mbed::FileBase@{mbed::FileBase}!````~FileBase@{\texorpdfstring{$\sim$}{\string~}FileBase}}
+\index{````~FileBase@{\texorpdfstring{$\sim$}{\string~}FileBase}!mbed::FileBase@{mbed::FileBase}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FileBase()}{\string~FileBase()}}
+{\footnotesize\ttfamily virtual mbed\+::\+File\+Base\+::\texorpdfstring{$\sim$}{\string~}\+File\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmbed_1_1_file_base_ab2f9954a536d2c678b9630ffd68c68f2}\label{classmbed_1_1_file_base_ab2f9954a536d2c678b9630ffd68c68f2} 
+\index{mbed::FileBase@{mbed::FileBase}!get@{get}}
+\index{get@{get}!mbed::FileBase@{mbed::FileBase}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} mbed\+::\+File\+Base\+::get (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmbed_1_1_file_base_a22078733b15abf28045948d24555ceaf}\label{classmbed_1_1_file_base_a22078733b15abf28045948d24555ceaf} 
+\index{mbed::FileBase@{mbed::FileBase}!getName@{getName}}
+\index{getName@{getName}!mbed::FileBase@{mbed::FileBase}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} mbed\+::\+File\+Base\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classmbed_1_1_file_base_a59dd77df265c99a2fa0f7c209d0dba18}\label{classmbed_1_1_file_base_a59dd77df265c99a2fa0f7c209d0dba18} 
+\index{mbed::FileBase@{mbed::FileBase}!getPathType@{getPathType}}
+\index{getPathType@{getPathType}!mbed::FileBase@{mbed::FileBase}}
+\doxysubsubsection{\texorpdfstring{getPathType()}{getPathType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} mbed\+::\+File\+Base\+::get\+Path\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classmbed_1_1_file_base_a512479427a1a8e4c23bf353babeea9ce}\label{classmbed_1_1_file_base_a512479427a1a8e4c23bf353babeea9ce} 
+\index{mbed::FileBase@{mbed::FileBase}!lookup@{lookup}}
+\index{lookup@{lookup}!mbed::FileBase@{mbed::FileBase}}
+\doxysubsubsection{\texorpdfstring{lookup()}{lookup()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}} \texorpdfstring{$\ast$}{*} mbed\+::\+File\+Base\+::lookup (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name,  }\item[{unsigned int}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmbed_1_1_file_base_ae9af3d7b863ca499d4e4a779632094f5}\label{classmbed_1_1_file_base_ae9af3d7b863ca499d4e4a779632094f5} 
+\index{mbed::FileBase@{mbed::FileBase}!\_head@{\_head}}
+\index{\_head@{\_head}!mbed::FileBase@{mbed::FileBase}}
+\doxysubsubsection{\texorpdfstring{\_head}{\_head}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}}\texorpdfstring{$\ast$}{*} mbed\+::\+File\+Base\+::\+\_\+head\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{classmbed_1_1_file_base_a9f22fa8bd5986c32dcf8e0a19f95e3b5}\label{classmbed_1_1_file_base_a9f22fa8bd5986c32dcf8e0a19f95e3b5} 
+\index{mbed::FileBase@{mbed::FileBase}!\_name@{\_name}}
+\index{\_name@{\_name}!mbed::FileBase@{mbed::FileBase}}
+\doxysubsubsection{\texorpdfstring{\_name}{\_name}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} mbed\+::\+File\+Base\+::\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classmbed_1_1_file_base_acef47c84dc296ce35d5d2aa3695062af}\label{classmbed_1_1_file_base_acef47c84dc296ce35d5d2aa3695062af} 
+\index{mbed::FileBase@{mbed::FileBase}!\_next@{\_next}}
+\index{\_next@{\_next}!mbed::FileBase@{mbed::FileBase}}
+\doxysubsubsection{\texorpdfstring{\_next}{\_next}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmbed_1_1_file_base}{File\+Base}}\texorpdfstring{$\ast$}{*} mbed\+::\+File\+Base\+::\+\_\+next\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classmbed_1_1_file_base_ae4a065275d45e77c512ec2d7c10f5d7b}\label{classmbed_1_1_file_base_ae4a065275d45e77c512ec2d7c10f5d7b} 
+\index{mbed::FileBase@{mbed::FileBase}!\_path\_type@{\_path\_type}}
+\index{\_path\_type@{\_path\_type}!mbed::FileBase@{mbed::FileBase}}
+\doxysubsubsection{\texorpdfstring{\_path\_type}{\_path\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacembed_a14f9fc5a056230139f48f580d5429528}{Path\+Type}} mbed\+::\+File\+Base\+::\+\_\+path\+\_\+type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\mbox{\hyperlink{_file_base_8h}{File\+Base.\+h}}\end{DoxyCompactItemize}

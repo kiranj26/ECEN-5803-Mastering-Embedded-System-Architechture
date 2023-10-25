@@ -1,0 +1,108 @@
+\doxysection{mbed/us\+\_\+ticker\+\_\+api.h File Reference}
+\hypertarget{us__ticker__api_8h}{}\label{us__ticker__api_8h}\index{mbed/us\_ticker\_api.h@{mbed/us\_ticker\_api.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structticker__event__s}{ticker\+\_\+event\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{us__ticker__api_8h_a7d6a730d0ce9f55e8cecb734d0455c7d}{ticker\+\_\+event\+\_\+handler}}) (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} id)
+\item 
+typedef struct \mbox{\hyperlink{structticker__event__s}{ticker\+\_\+event\+\_\+s}} \mbox{\hyperlink{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47}{ticker\+\_\+event\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{us__ticker__api_8h_a023920c1e5030a84aa39d0be1de0aa0b}{us\+\_\+ticker\+\_\+read}} (void)
+\item 
+void \mbox{\hyperlink{us__ticker__api_8h_aa8f429ca585b985f98b52b152f7cb574}{us\+\_\+ticker\+\_\+set\+\_\+handler}} (\mbox{\hyperlink{us__ticker__api_8h_a7d6a730d0ce9f55e8cecb734d0455c7d}{ticker\+\_\+event\+\_\+handler}} handler)
+\item 
+void \mbox{\hyperlink{us__ticker__api_8h_a829955267433ca8d04ac71f4e89c0404}{us\+\_\+ticker\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{us__ticker__api_8h_ac9c4169782e75770b9ce4bbedd2e6015}{us\+\_\+ticker\+\_\+set\+\_\+interrupt}} (unsigned int timestamp)
+\item 
+void \mbox{\hyperlink{us__ticker__api_8h_a75e46157b1bbfe4f5594e33b49ff2605}{us\+\_\+ticker\+\_\+disable\+\_\+interrupt}} (void)
+\item 
+void \mbox{\hyperlink{us__ticker__api_8h_a373846a3122f86d7decbea5fab0590a9}{us\+\_\+ticker\+\_\+clear\+\_\+interrupt}} (void)
+\item 
+void \mbox{\hyperlink{us__ticker__api_8h_a52d2b2c47d792442573e34403f9a10b1}{us\+\_\+ticker\+\_\+irq\+\_\+handler}} (void)
+\item 
+void \mbox{\hyperlink{us__ticker__api_8h_a8d781edab7255043a9c82f40ba907a92}{us\+\_\+ticker\+\_\+insert\+\_\+event}} (\mbox{\hyperlink{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47}{ticker\+\_\+event\+\_\+t}} \texorpdfstring{$\ast$}{*}obj, unsigned int timestamp, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} id)
+\item 
+void \mbox{\hyperlink{us__ticker__api_8h_a3d65ad35621dff366f06766eee1b09c8}{us\+\_\+ticker\+\_\+remove\+\_\+event}} (\mbox{\hyperlink{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47}{ticker\+\_\+event\+\_\+t}} \texorpdfstring{$\ast$}{*}obj)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{us__ticker__api_8h_a7d6a730d0ce9f55e8cecb734d0455c7d}\label{us__ticker__api_8h_a7d6a730d0ce9f55e8cecb734d0455c7d} 
+\index{us\_ticker\_api.h@{us\_ticker\_api.h}!ticker\_event\_handler@{ticker\_event\_handler}}
+\index{ticker\_event\_handler@{ticker\_event\_handler}!us\_ticker\_api.h@{us\_ticker\_api.h}}
+\doxysubsubsection{\texorpdfstring{ticker\_event\_handler}{ticker\_event\_handler}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} ticker\+\_\+event\+\_\+handler) (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} id)}
+
+\Hypertarget{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47}\label{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47} 
+\index{us\_ticker\_api.h@{us\_ticker\_api.h}!ticker\_event\_t@{ticker\_event\_t}}
+\index{ticker\_event\_t@{ticker\_event\_t}!us\_ticker\_api.h@{us\_ticker\_api.h}}
+\doxysubsubsection{\texorpdfstring{ticker\_event\_t}{ticker\_event\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structticker__event__s}{ticker\+\_\+event\+\_\+s}} \mbox{\hyperlink{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47}{ticker\+\_\+event\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{us__ticker__api_8h_a373846a3122f86d7decbea5fab0590a9}\label{us__ticker__api_8h_a373846a3122f86d7decbea5fab0590a9} 
+\index{us\_ticker\_api.h@{us\_ticker\_api.h}!us\_ticker\_clear\_interrupt@{us\_ticker\_clear\_interrupt}}
+\index{us\_ticker\_clear\_interrupt@{us\_ticker\_clear\_interrupt}!us\_ticker\_api.h@{us\_ticker\_api.h}}
+\doxysubsubsection{\texorpdfstring{us\_ticker\_clear\_interrupt()}{us\_ticker\_clear\_interrupt()}}
+{\footnotesize\ttfamily void us\+\_\+ticker\+\_\+clear\+\_\+interrupt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{us__ticker__api_8h_a75e46157b1bbfe4f5594e33b49ff2605}\label{us__ticker__api_8h_a75e46157b1bbfe4f5594e33b49ff2605} 
+\index{us\_ticker\_api.h@{us\_ticker\_api.h}!us\_ticker\_disable\_interrupt@{us\_ticker\_disable\_interrupt}}
+\index{us\_ticker\_disable\_interrupt@{us\_ticker\_disable\_interrupt}!us\_ticker\_api.h@{us\_ticker\_api.h}}
+\doxysubsubsection{\texorpdfstring{us\_ticker\_disable\_interrupt()}{us\_ticker\_disable\_interrupt()}}
+{\footnotesize\ttfamily void us\+\_\+ticker\+\_\+disable\+\_\+interrupt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{us__ticker__api_8h_a829955267433ca8d04ac71f4e89c0404}\label{us__ticker__api_8h_a829955267433ca8d04ac71f4e89c0404} 
+\index{us\_ticker\_api.h@{us\_ticker\_api.h}!us\_ticker\_init@{us\_ticker\_init}}
+\index{us\_ticker\_init@{us\_ticker\_init}!us\_ticker\_api.h@{us\_ticker\_api.h}}
+\doxysubsubsection{\texorpdfstring{us\_ticker\_init()}{us\_ticker\_init()}}
+{\footnotesize\ttfamily void us\+\_\+ticker\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{us__ticker__api_8h_a8d781edab7255043a9c82f40ba907a92}\label{us__ticker__api_8h_a8d781edab7255043a9c82f40ba907a92} 
+\index{us\_ticker\_api.h@{us\_ticker\_api.h}!us\_ticker\_insert\_event@{us\_ticker\_insert\_event}}
+\index{us\_ticker\_insert\_event@{us\_ticker\_insert\_event}!us\_ticker\_api.h@{us\_ticker\_api.h}}
+\doxysubsubsection{\texorpdfstring{us\_ticker\_insert\_event()}{us\_ticker\_insert\_event()}}
+{\footnotesize\ttfamily void us\+\_\+ticker\+\_\+insert\+\_\+event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47}{ticker\+\_\+event\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{obj,  }\item[{unsigned int}]{timestamp,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{us__ticker__api_8h_a52d2b2c47d792442573e34403f9a10b1}\label{us__ticker__api_8h_a52d2b2c47d792442573e34403f9a10b1} 
+\index{us\_ticker\_api.h@{us\_ticker\_api.h}!us\_ticker\_irq\_handler@{us\_ticker\_irq\_handler}}
+\index{us\_ticker\_irq\_handler@{us\_ticker\_irq\_handler}!us\_ticker\_api.h@{us\_ticker\_api.h}}
+\doxysubsubsection{\texorpdfstring{us\_ticker\_irq\_handler()}{us\_ticker\_irq\_handler()}}
+{\footnotesize\ttfamily void us\+\_\+ticker\+\_\+irq\+\_\+handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{us__ticker__api_8h_a023920c1e5030a84aa39d0be1de0aa0b}\label{us__ticker__api_8h_a023920c1e5030a84aa39d0be1de0aa0b} 
+\index{us\_ticker\_api.h@{us\_ticker\_api.h}!us\_ticker\_read@{us\_ticker\_read}}
+\index{us\_ticker\_read@{us\_ticker\_read}!us\_ticker\_api.h@{us\_ticker\_api.h}}
+\doxysubsubsection{\texorpdfstring{us\_ticker\_read()}{us\_ticker\_read()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} us\+\_\+ticker\+\_\+read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{us__ticker__api_8h_a3d65ad35621dff366f06766eee1b09c8}\label{us__ticker__api_8h_a3d65ad35621dff366f06766eee1b09c8} 
+\index{us\_ticker\_api.h@{us\_ticker\_api.h}!us\_ticker\_remove\_event@{us\_ticker\_remove\_event}}
+\index{us\_ticker\_remove\_event@{us\_ticker\_remove\_event}!us\_ticker\_api.h@{us\_ticker\_api.h}}
+\doxysubsubsection{\texorpdfstring{us\_ticker\_remove\_event()}{us\_ticker\_remove\_event()}}
+{\footnotesize\ttfamily void us\+\_\+ticker\+\_\+remove\+\_\+event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47}{ticker\+\_\+event\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{obj }\end{DoxyParamCaption})}
+
+\Hypertarget{us__ticker__api_8h_aa8f429ca585b985f98b52b152f7cb574}\label{us__ticker__api_8h_aa8f429ca585b985f98b52b152f7cb574} 
+\index{us\_ticker\_api.h@{us\_ticker\_api.h}!us\_ticker\_set\_handler@{us\_ticker\_set\_handler}}
+\index{us\_ticker\_set\_handler@{us\_ticker\_set\_handler}!us\_ticker\_api.h@{us\_ticker\_api.h}}
+\doxysubsubsection{\texorpdfstring{us\_ticker\_set\_handler()}{us\_ticker\_set\_handler()}}
+{\footnotesize\ttfamily void us\+\_\+ticker\+\_\+set\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{us__ticker__api_8h_a7d6a730d0ce9f55e8cecb734d0455c7d}{ticker\+\_\+event\+\_\+handler}}}]{handler }\end{DoxyParamCaption})}
+
+\Hypertarget{us__ticker__api_8h_ac9c4169782e75770b9ce4bbedd2e6015}\label{us__ticker__api_8h_ac9c4169782e75770b9ce4bbedd2e6015} 
+\index{us\_ticker\_api.h@{us\_ticker\_api.h}!us\_ticker\_set\_interrupt@{us\_ticker\_set\_interrupt}}
+\index{us\_ticker\_set\_interrupt@{us\_ticker\_set\_interrupt}!us\_ticker\_api.h@{us\_ticker\_api.h}}
+\doxysubsubsection{\texorpdfstring{us\_ticker\_set\_interrupt()}{us\_ticker\_set\_interrupt()}}
+{\footnotesize\ttfamily void us\+\_\+ticker\+\_\+set\+\_\+interrupt (\begin{DoxyParamCaption}\item[{unsigned int}]{timestamp }\end{DoxyParamCaption})}
+

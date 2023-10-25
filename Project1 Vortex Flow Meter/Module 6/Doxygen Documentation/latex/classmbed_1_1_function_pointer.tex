@@ -1,0 +1,105 @@
+\doxysection{mbed\+::Function\+Pointer Class Reference}
+\hypertarget{classmbed_1_1_function_pointer}{}\label{classmbed_1_1_function_pointer}\index{mbed::FunctionPointer@{mbed::FunctionPointer}}
+
+
+{\ttfamily \#include $<$Function\+Pointer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_function_pointer_abf3c87c05438a407458f0a6dd46b050f}{Function\+Pointer}} (void(\texorpdfstring{$\ast$}{*}function)(void)=0)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classmbed_1_1_function_pointer_ab73294508b61c6480a0d12c46dddd8a8}{Function\+Pointer}} (T \texorpdfstring{$\ast$}{*}object, void(T\+::\texorpdfstring{$\ast$}{*}member)(void))
+\item 
+void \mbox{\hyperlink{classmbed_1_1_function_pointer_aac93ab5b370e11baa42f30283b436c11}{attach}} (void(\texorpdfstring{$\ast$}{*}function)(void)=0)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classmbed_1_1_function_pointer_a3fd4d6e476c53cbe574683eff7696dc9}{attach}} (T \texorpdfstring{$\ast$}{*}object, void(T\+::\texorpdfstring{$\ast$}{*}member)(void))
+\item 
+void \mbox{\hyperlink{classmbed_1_1_function_pointer_adb57c6df09538d8399b20da386757a7a}{call}} ()
+\item 
+\mbox{\hyperlink{namespacembed_a96208545c028c5a1f3013f51f7554b88}{pvoidf\+\_\+t}} \mbox{\hyperlink{classmbed_1_1_function_pointer_a0ce24a5c3236a43773066227417f8d0e}{get\+\_\+function}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for storing and calling a pointer to a static or member void function 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmbed_1_1_function_pointer_abf3c87c05438a407458f0a6dd46b050f}\label{classmbed_1_1_function_pointer_abf3c87c05438a407458f0a6dd46b050f} 
+\index{mbed::FunctionPointer@{mbed::FunctionPointer}!FunctionPointer@{FunctionPointer}}
+\index{FunctionPointer@{FunctionPointer}!mbed::FunctionPointer@{mbed::FunctionPointer}}
+\doxysubsubsection{\texorpdfstring{FunctionPointer()}{FunctionPointer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily mbed\+::\+Function\+Pointer\+::\+Function\+Pointer (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(void)}]{function = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Create a \doxylink{classmbed_1_1_function_pointer}{Function\+Pointer}, attaching a static function
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & The void static function to attach (default is none) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmbed_1_1_function_pointer_ab73294508b61c6480a0d12c46dddd8a8}\label{classmbed_1_1_function_pointer_ab73294508b61c6480a0d12c46dddd8a8} 
+\index{mbed::FunctionPointer@{mbed::FunctionPointer}!FunctionPointer@{FunctionPointer}}
+\index{FunctionPointer@{FunctionPointer}!mbed::FunctionPointer@{mbed::FunctionPointer}}
+\doxysubsubsection{\texorpdfstring{FunctionPointer()}{FunctionPointer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+mbed\+::\+Function\+Pointer\+::\+Function\+Pointer (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{object,  }\item[{void(T\+::\texorpdfstring{$\ast$}{*})(void)}]{member }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create a \doxylink{classmbed_1_1_function_pointer}{Function\+Pointer}, attaching a member function
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & The object pointer to invoke the member function on (i.\+e. the this pointer) \\
+\hline
+{\em function} & The address of the void member function to attach \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmbed_1_1_function_pointer_a3fd4d6e476c53cbe574683eff7696dc9}\label{classmbed_1_1_function_pointer_a3fd4d6e476c53cbe574683eff7696dc9} 
+\index{mbed::FunctionPointer@{mbed::FunctionPointer}!attach@{attach}}
+\index{attach@{attach}!mbed::FunctionPointer@{mbed::FunctionPointer}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void mbed\+::\+Function\+Pointer\+::attach (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{object,  }\item[{void(T\+::\texorpdfstring{$\ast$}{*})(void)}]{member }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Attach a member function
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & The object pointer to invoke the member function on (i.\+e. the this pointer) \\
+\hline
+{\em function} & The address of the void member function to attach \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmbed_1_1_function_pointer_aac93ab5b370e11baa42f30283b436c11}\label{classmbed_1_1_function_pointer_aac93ab5b370e11baa42f30283b436c11} 
+\index{mbed::FunctionPointer@{mbed::FunctionPointer}!attach@{attach}}
+\index{attach@{attach}!mbed::FunctionPointer@{mbed::FunctionPointer}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void mbed\+::\+Function\+Pointer\+::attach (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(void)}]{function = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Attach a static function
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & The void static function to attach (default is none) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmbed_1_1_function_pointer_adb57c6df09538d8399b20da386757a7a}\label{classmbed_1_1_function_pointer_adb57c6df09538d8399b20da386757a7a} 
+\index{mbed::FunctionPointer@{mbed::FunctionPointer}!call@{call}}
+\index{call@{call}!mbed::FunctionPointer@{mbed::FunctionPointer}}
+\doxysubsubsection{\texorpdfstring{call()}{call()}}
+{\footnotesize\ttfamily void mbed\+::\+Function\+Pointer\+::call (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Call the attached static or member function \Hypertarget{classmbed_1_1_function_pointer_a0ce24a5c3236a43773066227417f8d0e}\label{classmbed_1_1_function_pointer_a0ce24a5c3236a43773066227417f8d0e} 
+\index{mbed::FunctionPointer@{mbed::FunctionPointer}!get\_function@{get\_function}}
+\index{get\_function@{get\_function}!mbed::FunctionPointer@{mbed::FunctionPointer}}
+\doxysubsubsection{\texorpdfstring{get\_function()}{get\_function()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacembed_a96208545c028c5a1f3013f51f7554b88}{pvoidf\+\_\+t}} mbed\+::\+Function\+Pointer\+::get\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\mbox{\hyperlink{_function_pointer_8h}{Function\+Pointer.\+h}}\end{DoxyCompactItemize}

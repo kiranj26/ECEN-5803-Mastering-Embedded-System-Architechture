@@ -1,0 +1,564 @@
+\doxysubsection{I2S}
+\hypertarget{group___i2_s}{}\label{group___i2_s}\index{I2S@{I2S}}
+\doxysubsubsubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___i2_s___exported___constants}{I2\+S\+\_\+\+Exported\+\_\+\+Constants}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_i2_s___init_type_def}{I2\+S\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em I2S Init structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em I2S handle Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___i2_s_ga6c4a9d76f38d834137575776a5b7f60f}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a2b69279eb021ef38d711edcdc5c95054}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset I2S handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s_ga4b5ca1e0e5bf616c99d38b8f0c5bdded}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$I2\+SCFGR \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga30d76c7552c91bbd5cbac70d9c56ebb3}{SPI\+\_\+\+I2\+SCFGR\+\_\+\+I2\+SE}})
+\begin{DoxyCompactList}\small\item\em Enable or disable the specified SPI peripheral (in I2S mode). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s_gac4f398db7f68fb8354bff61a9a6372b9}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$I2\+SCFGR \&= \texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga30d76c7552c91bbd5cbac70d9c56ebb3}{SPI\+\_\+\+I2\+SCFGR\+\_\+\+I2\+SE}})
+\item 
+\#define \mbox{\hyperlink{group___i2_s_gad6f90125be5ad17065e5378c7580708a}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR2 \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable or disable the specified I2S interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s_gaa78db4341e43a5fb30c815b22137a9e7}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR2 \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group___i2_s_ga722512f6ff5e3bc5c6ef34ae2ab93f4e}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR2 \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) ? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\begin{DoxyCompactList}\small\item\em Checks if the specified I2S interrupt source is enabled or disabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s_gab4dcaccc00ab76a11c23a49e973df009}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Checks whether the specified I2S flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s_gabe5bab581b9d997faeb0132672376444}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+CLEAR\+\_\+\+OVRFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clears the I2S OVR pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s_gafc275594559c5c1e26c23f3246260937}{\+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+CLEAR\+\_\+\+UDRFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR)
+\begin{DoxyCompactList}\small\item\em Clears the I2S UDR pending flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___i2_s_ga2588a0c71baf7cd6d2c1b9b11120bef0}{HAL\+\_\+\+I2\+S\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a2b69279eb021ef38d711edcdc5c95054}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0afb3efb92ef3bcfce6f4d34570b31a602}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a0d9faadcd5b6010c6071905345a282e7}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0ab8386636ae24469508b8312e7bfbc4b3}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX}} = 0x12
+, \newline
+\mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a641d635762b2ebb2e8e16917efc13162}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+RX}} = 0x22
+, \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a4135585ed147654154c0b7be15f3807e}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX\+\_\+\+RX}} = 0x32
+, \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a95d3eabfe7ff5d52af473e7fc96f9536}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a011e8568b5b81c7074f2cbfa38b8a2d8}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em HAL State structures definition. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___i2_s_ga4edd8d1e0ae70e8eaf7235b74f159c1c}{HAL\+\_\+\+I2\+S\+\_\+\+Error\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1cae1841841d09bac859ee229c88c5a7c66}{HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+NONE}} = 0x00
+, \mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1cab2d5b6e490f69ea8d54249a13b72d9fc}{HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+UDR}} = 0x01
+, \mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1caf2aca8edd9e7b144cc0551fad11a651d}{HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+OVR}} = 0x02
+, \mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca9d350f371086ae93b82921308ab53a23}{HAL\+\_\+\+I2\+SEX\+\_\+\+ERROR\+\_\+\+UDR}} = 0x04
+, \newline
+\mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca7524a96d7131a2fd4b33455d0f4051e3}{HAL\+\_\+\+I2\+SEX\+\_\+\+ERROR\+\_\+\+OVR}} = 0x08
+, \mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca53cb4e77eadd45cfae55b024703c4361}{HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+FRE}} = 0x10
+, \mbox{\hyperlink{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca511a7f86226ae6ae893f8e716fcf6eb8}{HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+DMA}} = 0x20
+ \}
+\begin{DoxyCompactList}\small\item\em HAL I2S Error Code structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga605f23b9dc1f0979f4b59702fb8d058d}{HAL\+\_\+\+I2\+S\+\_\+\+Init}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga9119fe0f644a9f011415afaf8661232a}{HAL\+\_\+\+I2\+S\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga5033142a7bf0de4513782bbee1823a97}{HAL\+\_\+\+I2\+S\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga7ef92677a8ff770f754d4dfc2aceb39b}{HAL\+\_\+\+I2\+S\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_gad53c7444525547c934ee322ca1197dfb}{HAL\+\_\+\+I2\+S\+\_\+\+Transmit}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga41a95495dff412204cd4c5b631c061ea}{HAL\+\_\+\+I2\+S\+\_\+\+Receive}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga476c3a3540e53c0905e80bfb5d309db2}{HAL\+\_\+\+I2\+S\+\_\+\+Transmit\+\_\+\+IT}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga0018752e02b7221625aca82b532b5864}{HAL\+\_\+\+I2\+S\+\_\+\+Receive\+\_\+\+IT}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+void \mbox{\hyperlink{group___i2_s_gad5fe9157152a3c5baac47b877d534f4e}{HAL\+\_\+\+I2\+S\+\_\+\+IRQHandler}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga97fa0c086e3980597e1e3962b2dfc322}{HAL\+\_\+\+I2\+S\+\_\+\+Transmit\+\_\+\+DMA}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_gaadf898fd8ef5c8349c3a61c2e3e7720e}{HAL\+\_\+\+I2\+S\+\_\+\+Receive\+\_\+\+DMA}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Size)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga374ecf3a61ff460938af93e9b788f09b}{HAL\+\_\+\+I2\+S\+\_\+\+DMAPause}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_gaa86501283bd6988e4106af51cda75945}{HAL\+\_\+\+I2\+S\+\_\+\+DMAResume}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_gae8d79cd1625530f161cd6651ef5135a3}{HAL\+\_\+\+I2\+S\+\_\+\+DMAStop}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{group___i2_s_ga2588a0c71baf7cd6d2c1b9b11120bef0}{HAL\+\_\+\+I2\+S\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga575e5ecf94a8a288b8a07e034dcb18c8}{HAL\+\_\+\+I2\+S\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+\mbox{\hyperlink{group___i2_s_ga4edd8d1e0ae70e8eaf7235b74f159c1c}{HAL\+\_\+\+I2\+S\+\_\+\+Error\+Type\+Def}} \mbox{\hyperlink{group___i2_s_ga1b0d52620b1b93914d9ef7cad845fc68}{HAL\+\_\+\+I2\+S\+\_\+\+Get\+Error}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga5bef3c73683b81e822368c9029e495bc}{HAL\+\_\+\+I2\+S\+\_\+\+Tx\+Half\+Cplt\+Callback}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga1ef4021384eddbd41ca60454a2483bf3}{HAL\+\_\+\+I2\+S\+\_\+\+Tx\+Cplt\+Callback}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga6c4cd3b18c42c6de0c3f4fe7068a5b12}{HAL\+\_\+\+I2\+S\+\_\+\+Rx\+Half\+Cplt\+Callback}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga18c33b2d429b06674ec30e5b2b81862c}{HAL\+\_\+\+I2\+S\+\_\+\+Rx\+Cplt\+Callback}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga8ca0ebeda8edc26d4201fe8657be294e}{HAL\+\_\+\+I2\+S\+\_\+\+Error\+Callback}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga716b431b25e7fd7c359dcc0ed9ffb6e2}{I2\+S\+\_\+\+DMATx\+Cplt}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+void \mbox{\hyperlink{group___i2_s_gaf2d811c698cf13db91942c5b7e0c4a85}{I2\+S\+\_\+\+DMATx\+Half\+Cplt}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga8d2bf0ca3ff0f11da49d3e8616c75d36}{I2\+S\+\_\+\+DMARx\+Cplt}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+void \mbox{\hyperlink{group___i2_s_ga21556bd3ebfc035450de4628b5b029d8}{I2\+S\+\_\+\+DMARx\+Half\+Cplt}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+void \mbox{\hyperlink{group___i2_s_gaba9556ceca0ad8bffa4946c2bb2598ae}{I2\+S\+\_\+\+DMAError}} (\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hdma)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i2_s_gab49e7928ef4021ca00931059b0cc3545}{I2\+S\+\_\+\+Wait\+Flag\+State\+Until\+Timeout}} (\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2s, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Flag, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Status, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Timeout)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\Hypertarget{group___i2_s_gabe5bab581b9d997faeb0132672376444}\label{group___i2_s_gabe5bab581b9d997faeb0132672376444} 
+\index{I2S@{I2S}!\_\_HAL\_I2S\_CLEAR\_OVRFLAG@{\_\_HAL\_I2S\_CLEAR\_OVRFLAG}}
+\index{\_\_HAL\_I2S\_CLEAR\_OVRFLAG@{\_\_HAL\_I2S\_CLEAR\_OVRFLAG}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_I2S\_CLEAR\_OVRFLAG}{\_\_HAL\_I2S\_CLEAR\_OVRFLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+CLEAR\+\_\+\+OVRFLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\{(\_\_HANDLE\_\_)-\/>Instance-\/>DR;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Instance-\/>SR;\}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Clears the I2S OVR pending flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the I2S Handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_s_gafc275594559c5c1e26c23f3246260937}\label{group___i2_s_gafc275594559c5c1e26c23f3246260937} 
+\index{I2S@{I2S}!\_\_HAL\_I2S\_CLEAR\_UDRFLAG@{\_\_HAL\_I2S\_CLEAR\_UDRFLAG}}
+\index{\_\_HAL\_I2S\_CLEAR\_UDRFLAG@{\_\_HAL\_I2S\_CLEAR\_UDRFLAG}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_I2S\_CLEAR\_UDRFLAG}{\_\_HAL\_I2S\_CLEAR\_UDRFLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+CLEAR\+\_\+\+UDRFLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR)}
+
+
+
+Clears the I2S UDR pending flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the I2S Handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_s_gac4f398db7f68fb8354bff61a9a6372b9}\label{group___i2_s_gac4f398db7f68fb8354bff61a9a6372b9} 
+\index{I2S@{I2S}!\_\_HAL\_I2S\_DISABLE@{\_\_HAL\_I2S\_DISABLE}}
+\index{\_\_HAL\_I2S\_DISABLE@{\_\_HAL\_I2S\_DISABLE}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_I2S\_DISABLE}{\_\_HAL\_I2S\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$I2\+SCFGR \&= \texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga30d76c7552c91bbd5cbac70d9c56ebb3}{SPI\+\_\+\+I2\+SCFGR\+\_\+\+I2\+SE}})}
+
+\Hypertarget{group___i2_s_gaa78db4341e43a5fb30c815b22137a9e7}\label{group___i2_s_gaa78db4341e43a5fb30c815b22137a9e7} 
+\index{I2S@{I2S}!\_\_HAL\_I2S\_DISABLE\_IT@{\_\_HAL\_I2S\_DISABLE\_IT}}
+\index{\_\_HAL\_I2S\_DISABLE\_IT@{\_\_HAL\_I2S\_DISABLE\_IT}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_I2S\_DISABLE\_IT}{\_\_HAL\_I2S\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR2 \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+\Hypertarget{group___i2_s_ga4b5ca1e0e5bf616c99d38b8f0c5bdded}\label{group___i2_s_ga4b5ca1e0e5bf616c99d38b8f0c5bdded} 
+\index{I2S@{I2S}!\_\_HAL\_I2S\_ENABLE@{\_\_HAL\_I2S\_ENABLE}}
+\index{\_\_HAL\_I2S\_ENABLE@{\_\_HAL\_I2S\_ENABLE}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_I2S\_ENABLE}{\_\_HAL\_I2S\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$I2\+SCFGR \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga30d76c7552c91bbd5cbac70d9c56ebb3}{SPI\+\_\+\+I2\+SCFGR\+\_\+\+I2\+SE}})}
+
+
+
+Enable or disable the specified SPI peripheral (in I2S mode). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the I2S Handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_s_gad6f90125be5ad17065e5378c7580708a}\label{group___i2_s_gad6f90125be5ad17065e5378c7580708a} 
+\index{I2S@{I2S}!\_\_HAL\_I2S\_ENABLE\_IT@{\_\_HAL\_I2S\_ENABLE\_IT}}
+\index{\_\_HAL\_I2S\_ENABLE\_IT@{\_\_HAL\_I2S\_ENABLE\_IT}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_I2S\_ENABLE\_IT}{\_\_HAL\_I2S\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR2 \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Enable or disable the specified I2S interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the I2S Handle. \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & specifies the interrupt source to enable or disable. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item I2\+S\+\_\+\+IT\+\_\+\+TXE\+: Tx buffer empty interrupt enable \item I2\+S\+\_\+\+IT\+\_\+\+RXNE\+: RX buffer not empty interrupt enable \item I2\+S\+\_\+\+IT\+\_\+\+ERR\+: Error interrupt enable \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_s_gab4dcaccc00ab76a11c23a49e973df009}\label{group___i2_s_gab4dcaccc00ab76a11c23a49e973df009} 
+\index{I2S@{I2S}!\_\_HAL\_I2S\_GET\_FLAG@{\_\_HAL\_I2S\_GET\_FLAG}}
+\index{\_\_HAL\_I2S\_GET\_FLAG@{\_\_HAL\_I2S\_GET\_FLAG}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_I2S\_GET\_FLAG}{\_\_HAL\_I2S\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))}
+
+
+
+Checks whether the specified I2S flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the I2S Handle. \\
+\hline
+{\em \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item I2\+S\+\_\+\+FLAG\+\_\+\+RXNE\+: Receive buffer not empty flag \item I2\+S\+\_\+\+FLAG\+\_\+\+TXE\+: Transmit buffer empty flag \item I2\+S\+\_\+\+FLAG\+\_\+\+UDR\+: Underrun flag \item I2\+S\+\_\+\+FLAG\+\_\+\+OVR\+: Overrun flag \item I2\+S\+\_\+\+FLAG\+\_\+\+FRE\+: Frame error flag \item I2\+S\+\_\+\+FLAG\+\_\+\+CHSIDE\+: Channel Side flag \item I2\+S\+\_\+\+FLAG\+\_\+\+BSY\+: Busy flag \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of {\bfseries{FLAG}} (TRUE or FALSE). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_s_ga722512f6ff5e3bc5c6ef34ae2ab93f4e}\label{group___i2_s_ga722512f6ff5e3bc5c6ef34ae2ab93f4e} 
+\index{I2S@{I2S}!\_\_HAL\_I2S\_GET\_IT\_SOURCE@{\_\_HAL\_I2S\_GET\_IT\_SOURCE}}
+\index{\_\_HAL\_I2S\_GET\_IT\_SOURCE@{\_\_HAL\_I2S\_GET\_IT\_SOURCE}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_I2S\_GET\_IT\_SOURCE}{\_\_HAL\_I2S\_GET\_IT\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR2 \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) ? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+
+
+Checks if the specified I2S interrupt source is enabled or disabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the I2S Handle. This parameter can be I2S where x\+: 1, 2, or 3 to select the I2S peripheral. \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & specifies the I2S interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item I2\+S\+\_\+\+IT\+\_\+\+TXE\+: Tx buffer empty interrupt enable \item I2\+S\+\_\+\+IT\+\_\+\+RXNE\+: RX buffer not empty interrupt enable \item I2\+S\+\_\+\+IT\+\_\+\+ERR\+: Error interrupt enable \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of {\bfseries{IT}} (TRUE or FALSE). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_s_ga6c4a9d76f38d834137575776a5b7f60f}\label{group___i2_s_ga6c4a9d76f38d834137575776a5b7f60f} 
+\index{I2S@{I2S}!\_\_HAL\_I2S\_RESET\_HANDLE\_STATE@{\_\_HAL\_I2S\_RESET\_HANDLE\_STATE}}
+\index{\_\_HAL\_I2S\_RESET\_HANDLE\_STATE@{\_\_HAL\_I2S\_RESET\_HANDLE\_STATE}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{\_\_HAL\_I2S\_RESET\_HANDLE\_STATE}{\_\_HAL\_I2S\_RESET\_HANDLE\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+I2\+S\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a2b69279eb021ef38d711edcdc5c95054}{HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+RESET}})}
+
+
+
+Reset I2S handle state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & specifies the I2S Handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+\doxysubsubsection{Enumeration Type Documentation}
+\Hypertarget{group___i2_s_ga4edd8d1e0ae70e8eaf7235b74f159c1c}\label{group___i2_s_ga4edd8d1e0ae70e8eaf7235b74f159c1c} 
+\index{I2S@{I2S}!HAL\_I2S\_ErrorTypeDef@{HAL\_I2S\_ErrorTypeDef}}
+\index{HAL\_I2S\_ErrorTypeDef@{HAL\_I2S\_ErrorTypeDef}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_ErrorTypeDef}{HAL\_I2S\_ErrorTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___i2_s_ga4edd8d1e0ae70e8eaf7235b74f159c1c}{HAL\+\_\+\+I2\+S\+\_\+\+Error\+Type\+Def}}}
+
+
+
+HAL I2S Error Code structure definition ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_ERROR\_NONE@{HAL\_I2S\_ERROR\_NONE}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_ERROR\_NONE@{HAL\_I2S\_ERROR\_NONE}}}\Hypertarget{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1cae1841841d09bac859ee229c88c5a7c66}\label{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1cae1841841d09bac859ee229c88c5a7c66} 
+HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+NONE&No error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_ERROR\_UDR@{HAL\_I2S\_ERROR\_UDR}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_ERROR\_UDR@{HAL\_I2S\_ERROR\_UDR}}}\Hypertarget{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1cab2d5b6e490f69ea8d54249a13b72d9fc}\label{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1cab2d5b6e490f69ea8d54249a13b72d9fc} 
+HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+UDR&I2S Underrun error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_ERROR\_OVR@{HAL\_I2S\_ERROR\_OVR}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_ERROR\_OVR@{HAL\_I2S\_ERROR\_OVR}}}\Hypertarget{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1caf2aca8edd9e7b144cc0551fad11a651d}\label{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1caf2aca8edd9e7b144cc0551fad11a651d} 
+HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+OVR&I2S Overrun error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2SEX\_ERROR\_UDR@{HAL\_I2SEX\_ERROR\_UDR}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2SEX\_ERROR\_UDR@{HAL\_I2SEX\_ERROR\_UDR}}}\Hypertarget{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca9d350f371086ae93b82921308ab53a23}\label{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca9d350f371086ae93b82921308ab53a23} 
+HAL\+\_\+\+I2\+SEX\+\_\+\+ERROR\+\_\+\+UDR&I2S extended Underrun error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2SEX\_ERROR\_OVR@{HAL\_I2SEX\_ERROR\_OVR}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2SEX\_ERROR\_OVR@{HAL\_I2SEX\_ERROR\_OVR}}}\Hypertarget{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca7524a96d7131a2fd4b33455d0f4051e3}\label{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca7524a96d7131a2fd4b33455d0f4051e3} 
+HAL\+\_\+\+I2\+SEX\+\_\+\+ERROR\+\_\+\+OVR&I2S extended Overrun error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_ERROR\_FRE@{HAL\_I2S\_ERROR\_FRE}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_ERROR\_FRE@{HAL\_I2S\_ERROR\_FRE}}}\Hypertarget{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca53cb4e77eadd45cfae55b024703c4361}\label{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca53cb4e77eadd45cfae55b024703c4361} 
+HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+FRE&I2S Frame format error ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_ERROR\_DMA@{HAL\_I2S\_ERROR\_DMA}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_ERROR\_DMA@{HAL\_I2S\_ERROR\_DMA}}}\Hypertarget{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca511a7f86226ae6ae893f8e716fcf6eb8}\label{group___i2_s_gga4edd8d1e0ae70e8eaf7235b74f159c1ca511a7f86226ae6ae893f8e716fcf6eb8} 
+HAL\+\_\+\+I2\+S\+\_\+\+ERROR\+\_\+\+DMA&DMA transfer error ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___i2_s_ga2588a0c71baf7cd6d2c1b9b11120bef0}\label{group___i2_s_ga2588a0c71baf7cd6d2c1b9b11120bef0} 
+\index{I2S@{I2S}!HAL\_I2S\_StateTypeDef@{HAL\_I2S\_StateTypeDef}}
+\index{HAL\_I2S\_StateTypeDef@{HAL\_I2S\_StateTypeDef}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_StateTypeDef}{HAL\_I2S\_StateTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___i2_s_ga2588a0c71baf7cd6d2c1b9b11120bef0}{HAL\+\_\+\+I2\+S\+\_\+\+State\+Type\+Def}}}
+
+
+
+HAL State structures definition. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_STATE\_RESET@{HAL\_I2S\_STATE\_RESET}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_STATE\_RESET@{HAL\_I2S\_STATE\_RESET}}}\Hypertarget{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a2b69279eb021ef38d711edcdc5c95054}\label{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a2b69279eb021ef38d711edcdc5c95054} 
+HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+RESET&I2S not yet initialized or disabled ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_STATE\_READY@{HAL\_I2S\_STATE\_READY}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_STATE\_READY@{HAL\_I2S\_STATE\_READY}}}\Hypertarget{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0afb3efb92ef3bcfce6f4d34570b31a602}\label{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0afb3efb92ef3bcfce6f4d34570b31a602} 
+HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+READY&I2S initialized and ready for use ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_STATE\_BUSY@{HAL\_I2S\_STATE\_BUSY}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_STATE\_BUSY@{HAL\_I2S\_STATE\_BUSY}}}\Hypertarget{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a0d9faadcd5b6010c6071905345a282e7}\label{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a0d9faadcd5b6010c6071905345a282e7} 
+HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+BUSY&I2S internal process is ongoing ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_STATE\_BUSY\_TX@{HAL\_I2S\_STATE\_BUSY\_TX}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_STATE\_BUSY\_TX@{HAL\_I2S\_STATE\_BUSY\_TX}}}\Hypertarget{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0ab8386636ae24469508b8312e7bfbc4b3}\label{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0ab8386636ae24469508b8312e7bfbc4b3} 
+HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX&Data Transmission process is ongoing ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_STATE\_BUSY\_RX@{HAL\_I2S\_STATE\_BUSY\_RX}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_STATE\_BUSY\_RX@{HAL\_I2S\_STATE\_BUSY\_RX}}}\Hypertarget{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a641d635762b2ebb2e8e16917efc13162}\label{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a641d635762b2ebb2e8e16917efc13162} 
+HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+RX&Data Reception process is ongoing ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_STATE\_BUSY\_TX\_RX@{HAL\_I2S\_STATE\_BUSY\_TX\_RX}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_STATE\_BUSY\_TX\_RX@{HAL\_I2S\_STATE\_BUSY\_TX\_RX}}}\Hypertarget{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a4135585ed147654154c0b7be15f3807e}\label{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a4135585ed147654154c0b7be15f3807e} 
+HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX\+\_\+\+RX&Data Transmission and Reception process is ongoing \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_STATE\_TIMEOUT@{HAL\_I2S\_STATE\_TIMEOUT}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_STATE\_TIMEOUT@{HAL\_I2S\_STATE\_TIMEOUT}}}\Hypertarget{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a95d3eabfe7ff5d52af473e7fc96f9536}\label{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a95d3eabfe7ff5d52af473e7fc96f9536} 
+HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+TIMEOUT&I2S timeout state ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_I2S\_STATE\_ERROR@{HAL\_I2S\_STATE\_ERROR}!I2S@{I2S}}\index{I2S@{I2S}!HAL\_I2S\_STATE\_ERROR@{HAL\_I2S\_STATE\_ERROR}}}\Hypertarget{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a011e8568b5b81c7074f2cbfa38b8a2d8}\label{group___i2_s_gga2588a0c71baf7cd6d2c1b9b11120bef0a011e8568b5b81c7074f2cbfa38b8a2d8} 
+HAL\+\_\+\+I2\+S\+\_\+\+STATE\+\_\+\+ERROR&I2S error state ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group___i2_s_ga9119fe0f644a9f011415afaf8661232a}\label{group___i2_s_ga9119fe0f644a9f011415afaf8661232a} 
+\index{I2S@{I2S}!HAL\_I2S\_DeInit@{HAL\_I2S\_DeInit}}
+\index{HAL\_I2S\_DeInit@{HAL\_I2S\_DeInit}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_DeInit()}{HAL\_I2S\_DeInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga374ecf3a61ff460938af93e9b788f09b}\label{group___i2_s_ga374ecf3a61ff460938af93e9b788f09b} 
+\index{I2S@{I2S}!HAL\_I2S\_DMAPause@{HAL\_I2S\_DMAPause}}
+\index{HAL\_I2S\_DMAPause@{HAL\_I2S\_DMAPause}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_DMAPause()}{HAL\_I2S\_DMAPause()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+DMAPause (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_gaa86501283bd6988e4106af51cda75945}\label{group___i2_s_gaa86501283bd6988e4106af51cda75945} 
+\index{I2S@{I2S}!HAL\_I2S\_DMAResume@{HAL\_I2S\_DMAResume}}
+\index{HAL\_I2S\_DMAResume@{HAL\_I2S\_DMAResume}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_DMAResume()}{HAL\_I2S\_DMAResume()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+DMAResume (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_gae8d79cd1625530f161cd6651ef5135a3}\label{group___i2_s_gae8d79cd1625530f161cd6651ef5135a3} 
+\index{I2S@{I2S}!HAL\_I2S\_DMAStop@{HAL\_I2S\_DMAStop}}
+\index{HAL\_I2S\_DMAStop@{HAL\_I2S\_DMAStop}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_DMAStop()}{HAL\_I2S\_DMAStop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+DMAStop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga8ca0ebeda8edc26d4201fe8657be294e}\label{group___i2_s_ga8ca0ebeda8edc26d4201fe8657be294e} 
+\index{I2S@{I2S}!HAL\_I2S\_ErrorCallback@{HAL\_I2S\_ErrorCallback}}
+\index{HAL\_I2S\_ErrorCallback@{HAL\_I2S\_ErrorCallback}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_ErrorCallback()}{HAL\_I2S\_ErrorCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+I2\+S\+\_\+\+Error\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga1b0d52620b1b93914d9ef7cad845fc68}\label{group___i2_s_ga1b0d52620b1b93914d9ef7cad845fc68} 
+\index{I2S@{I2S}!HAL\_I2S\_GetError@{HAL\_I2S\_GetError}}
+\index{HAL\_I2S\_GetError@{HAL\_I2S\_GetError}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_GetError()}{HAL\_I2S\_GetError()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___i2_s_ga4edd8d1e0ae70e8eaf7235b74f159c1c}{HAL\+\_\+\+I2\+S\+\_\+\+Error\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+Get\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga575e5ecf94a8a288b8a07e034dcb18c8}\label{group___i2_s_ga575e5ecf94a8a288b8a07e034dcb18c8} 
+\index{I2S@{I2S}!HAL\_I2S\_GetState@{HAL\_I2S\_GetState}}
+\index{HAL\_I2S\_GetState@{HAL\_I2S\_GetState}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_GetState()}{HAL\_I2S\_GetState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___i2_s_ga2588a0c71baf7cd6d2c1b9b11120bef0}{HAL\+\_\+\+I2\+S\+\_\+\+State\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+Get\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga605f23b9dc1f0979f4b59702fb8d058d}\label{group___i2_s_ga605f23b9dc1f0979f4b59702fb8d058d} 
+\index{I2S@{I2S}!HAL\_I2S\_Init@{HAL\_I2S\_Init}}
+\index{HAL\_I2S\_Init@{HAL\_I2S\_Init}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_Init()}{HAL\_I2S\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_gad5fe9157152a3c5baac47b877d534f4e}\label{group___i2_s_gad5fe9157152a3c5baac47b877d534f4e} 
+\index{I2S@{I2S}!HAL\_I2S\_IRQHandler@{HAL\_I2S\_IRQHandler}}
+\index{HAL\_I2S\_IRQHandler@{HAL\_I2S\_IRQHandler}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_IRQHandler()}{HAL\_I2S\_IRQHandler()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+I2\+S\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga7ef92677a8ff770f754d4dfc2aceb39b}\label{group___i2_s_ga7ef92677a8ff770f754d4dfc2aceb39b} 
+\index{I2S@{I2S}!HAL\_I2S\_MspDeInit@{HAL\_I2S\_MspDeInit}}
+\index{HAL\_I2S\_MspDeInit@{HAL\_I2S\_MspDeInit}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_MspDeInit()}{HAL\_I2S\_MspDeInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+I2\+S\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga5033142a7bf0de4513782bbee1823a97}\label{group___i2_s_ga5033142a7bf0de4513782bbee1823a97} 
+\index{I2S@{I2S}!HAL\_I2S\_MspInit@{HAL\_I2S\_MspInit}}
+\index{HAL\_I2S\_MspInit@{HAL\_I2S\_MspInit}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_MspInit()}{HAL\_I2S\_MspInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+I2\+S\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga41a95495dff412204cd4c5b631c061ea}\label{group___i2_s_ga41a95495dff412204cd4c5b631c061ea} 
+\index{I2S@{I2S}!HAL\_I2S\_Receive@{HAL\_I2S\_Receive}}
+\index{HAL\_I2S\_Receive@{HAL\_I2S\_Receive}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_Receive()}{HAL\_I2S\_Receive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+Receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{Size,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_gaadf898fd8ef5c8349c3a61c2e3e7720e}\label{group___i2_s_gaadf898fd8ef5c8349c3a61c2e3e7720e} 
+\index{I2S@{I2S}!HAL\_I2S\_Receive\_DMA@{HAL\_I2S\_Receive\_DMA}}
+\index{HAL\_I2S\_Receive\_DMA@{HAL\_I2S\_Receive\_DMA}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_Receive\_DMA()}{HAL\_I2S\_Receive\_DMA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+Receive\+\_\+\+DMA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{Size }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga0018752e02b7221625aca82b532b5864}\label{group___i2_s_ga0018752e02b7221625aca82b532b5864} 
+\index{I2S@{I2S}!HAL\_I2S\_Receive\_IT@{HAL\_I2S\_Receive\_IT}}
+\index{HAL\_I2S\_Receive\_IT@{HAL\_I2S\_Receive\_IT}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_Receive\_IT()}{HAL\_I2S\_Receive\_IT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+Receive\+\_\+\+IT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{Size }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga18c33b2d429b06674ec30e5b2b81862c}\label{group___i2_s_ga18c33b2d429b06674ec30e5b2b81862c} 
+\index{I2S@{I2S}!HAL\_I2S\_RxCpltCallback@{HAL\_I2S\_RxCpltCallback}}
+\index{HAL\_I2S\_RxCpltCallback@{HAL\_I2S\_RxCpltCallback}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_RxCpltCallback()}{HAL\_I2S\_RxCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+I2\+S\+\_\+\+Rx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga6c4cd3b18c42c6de0c3f4fe7068a5b12}\label{group___i2_s_ga6c4cd3b18c42c6de0c3f4fe7068a5b12} 
+\index{I2S@{I2S}!HAL\_I2S\_RxHalfCpltCallback@{HAL\_I2S\_RxHalfCpltCallback}}
+\index{HAL\_I2S\_RxHalfCpltCallback@{HAL\_I2S\_RxHalfCpltCallback}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_RxHalfCpltCallback()}{HAL\_I2S\_RxHalfCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+I2\+S\+\_\+\+Rx\+Half\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_gad53c7444525547c934ee322ca1197dfb}\label{group___i2_s_gad53c7444525547c934ee322ca1197dfb} 
+\index{I2S@{I2S}!HAL\_I2S\_Transmit@{HAL\_I2S\_Transmit}}
+\index{HAL\_I2S\_Transmit@{HAL\_I2S\_Transmit}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_Transmit()}{HAL\_I2S\_Transmit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+Transmit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{Size,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga97fa0c086e3980597e1e3962b2dfc322}\label{group___i2_s_ga97fa0c086e3980597e1e3962b2dfc322} 
+\index{I2S@{I2S}!HAL\_I2S\_Transmit\_DMA@{HAL\_I2S\_Transmit\_DMA}}
+\index{HAL\_I2S\_Transmit\_DMA@{HAL\_I2S\_Transmit\_DMA}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_Transmit\_DMA()}{HAL\_I2S\_Transmit\_DMA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+Transmit\+\_\+\+DMA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{Size }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga476c3a3540e53c0905e80bfb5d309db2}\label{group___i2_s_ga476c3a3540e53c0905e80bfb5d309db2} 
+\index{I2S@{I2S}!HAL\_I2S\_Transmit\_IT@{HAL\_I2S\_Transmit\_IT}}
+\index{HAL\_I2S\_Transmit\_IT@{HAL\_I2S\_Transmit\_IT}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_Transmit\_IT()}{HAL\_I2S\_Transmit\_IT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+I2\+S\+\_\+\+Transmit\+\_\+\+IT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{Size }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga1ef4021384eddbd41ca60454a2483bf3}\label{group___i2_s_ga1ef4021384eddbd41ca60454a2483bf3} 
+\index{I2S@{I2S}!HAL\_I2S\_TxCpltCallback@{HAL\_I2S\_TxCpltCallback}}
+\index{HAL\_I2S\_TxCpltCallback@{HAL\_I2S\_TxCpltCallback}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_TxCpltCallback()}{HAL\_I2S\_TxCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+I2\+S\+\_\+\+Tx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga5bef3c73683b81e822368c9029e495bc}\label{group___i2_s_ga5bef3c73683b81e822368c9029e495bc} 
+\index{I2S@{I2S}!HAL\_I2S\_TxHalfCpltCallback@{HAL\_I2S\_TxHalfCpltCallback}}
+\index{HAL\_I2S\_TxHalfCpltCallback@{HAL\_I2S\_TxHalfCpltCallback}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{HAL\_I2S\_TxHalfCpltCallback()}{HAL\_I2S\_TxHalfCpltCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+I2\+S\+\_\+\+Tx\+Half\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_gaba9556ceca0ad8bffa4946c2bb2598ae}\label{group___i2_s_gaba9556ceca0ad8bffa4946c2bb2598ae} 
+\index{I2S@{I2S}!I2S\_DMAError@{I2S\_DMAError}}
+\index{I2S\_DMAError@{I2S\_DMAError}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{I2S\_DMAError()}{I2S\_DMAError()}}
+{\footnotesize\ttfamily void I2\+S\+\_\+\+DMAError (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hdma }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga8d2bf0ca3ff0f11da49d3e8616c75d36}\label{group___i2_s_ga8d2bf0ca3ff0f11da49d3e8616c75d36} 
+\index{I2S@{I2S}!I2S\_DMARxCplt@{I2S\_DMARxCplt}}
+\index{I2S\_DMARxCplt@{I2S\_DMARxCplt}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{I2S\_DMARxCplt()}{I2S\_DMARxCplt()}}
+{\footnotesize\ttfamily void I2\+S\+\_\+\+DMARx\+Cplt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hdma }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga21556bd3ebfc035450de4628b5b029d8}\label{group___i2_s_ga21556bd3ebfc035450de4628b5b029d8} 
+\index{I2S@{I2S}!I2S\_DMARxHalfCplt@{I2S\_DMARxHalfCplt}}
+\index{I2S\_DMARxHalfCplt@{I2S\_DMARxHalfCplt}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{I2S\_DMARxHalfCplt()}{I2S\_DMARxHalfCplt()}}
+{\footnotesize\ttfamily void I2\+S\+\_\+\+DMARx\+Half\+Cplt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hdma }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_ga716b431b25e7fd7c359dcc0ed9ffb6e2}\label{group___i2_s_ga716b431b25e7fd7c359dcc0ed9ffb6e2} 
+\index{I2S@{I2S}!I2S\_DMATxCplt@{I2S\_DMATxCplt}}
+\index{I2S\_DMATxCplt@{I2S\_DMATxCplt}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{I2S\_DMATxCplt()}{I2S\_DMATxCplt()}}
+{\footnotesize\ttfamily void I2\+S\+\_\+\+DMATx\+Cplt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hdma }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_gaf2d811c698cf13db91942c5b7e0c4a85}\label{group___i2_s_gaf2d811c698cf13db91942c5b7e0c4a85} 
+\index{I2S@{I2S}!I2S\_DMATxHalfCplt@{I2S\_DMATxHalfCplt}}
+\index{I2S\_DMATxHalfCplt@{I2S\_DMATxHalfCplt}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{I2S\_DMATxHalfCplt()}{I2S\_DMATxHalfCplt()}}
+{\footnotesize\ttfamily void I2\+S\+\_\+\+DMATx\+Half\+Cplt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___d_m_a_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hdma }\end{DoxyParamCaption})}
+
+\Hypertarget{group___i2_s_gab49e7928ef4021ca00931059b0cc3545}\label{group___i2_s_gab49e7928ef4021ca00931059b0cc3545} 
+\index{I2S@{I2S}!I2S\_WaitFlagStateUntilTimeout@{I2S\_WaitFlagStateUntilTimeout}}
+\index{I2S\_WaitFlagStateUntilTimeout@{I2S\_WaitFlagStateUntilTimeout}!I2S@{I2S}}
+\doxysubsubsubsection{\texorpdfstring{I2S\_WaitFlagStateUntilTimeout()}{I2S\_WaitFlagStateUntilTimeout()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} I2\+S\+\_\+\+Wait\+Flag\+State\+Until\+Timeout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i2_s___handle_type_def}{I2\+S\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hi2s,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Flag,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Status,  }\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{Timeout }\end{DoxyParamCaption})}
+
+\input{group___i2_s___exported___constants}

@@ -1,0 +1,335 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+sd.\+h}
+\hypertarget{stm32f4xx__hal__sd_8h_source}{}\label{stm32f4xx__hal__sd_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_sd.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_sd.h}}
+\mbox{\hyperlink{stm32f4xx__hal__sd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_SD\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_SD\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__ll__sdmmc_8h}{stm32f4xx\_ll\_sdmmc.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ SD\_InitTypeDef\ \ \ \ \ \ SDIO\_InitTypeDef\ }}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ SD\_TypeDef\ \ \ \ \ \ \ \ \ \ SDIO\_TypeDef}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{group___s_d_gaba823a712a2920fb20f03f74651d0beb}{SD\_TypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{struct_s_d___handle_type_def_a003549fb14db752f0490e39c7528b925}{Instance}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{group___s_d_ga0e053bc407d4d1001b3f3125f17340f7}{SD\_InitTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d___handle_type_def_a223bccc982b744c5ed71e74029b58c86}{Init}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\_LockTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d___handle_type_def_ada8cb33be7815784981b855be9449f49}{Lock}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d___handle_type_def_a2dc72e79ec9ae2cf9b43d0896d0701c0}{CardType}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d___handle_type_def_a369a41316ca59e766ef4ff03f6509902}{RCA}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CSD[4];\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CID[4];\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d___handle_type_def_a59674453b3d49ccb019cf93cd84fdc37}{SdTransferCplt}};\ \ \ }
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d___handle_type_def_a016f66ad3532a8d285dee2c6f2e593be}{SdTransferErr}};\ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d___handle_type_def_a15651ce5647ed28f4f8aafaa380d6add}{DmaTransferCplt}};\ \ }
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_d___handle_type_def_aa900551127ff3adf86871729eb995b70}{SdOperation}};\ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{struct_____d_m_a___handle_type_def}{DMA\_HandleTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{struct_s_d___handle_type_def_afeab54df7faf709d9f3a60ade191faaf}{hdmarx}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{struct_____d_m_a___handle_type_def}{DMA\_HandleTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{struct_s_d___handle_type_def_a1660055db8b2fcce69c0f7d61311b116}{hdmatx}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \}\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00098\ \{}
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a8c1a898e7d80c1c8e52961debab9d52f}{CSDStruct}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a683f2e5cf92af16c0eaf830ffb717eee}{SysSpecVersion}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_ad13e591726192f7ceb5de2c75d688887}{Reserved1}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_ae464762a4e2122bbcc0e61f92a615ce6}{TAAC}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a21525646ee936cd1b8e25aaa8998dfdf}{NSAC}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_abd1344120f904235c3d8966b890231e9}{MaxBusClkFrec}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a81579087dc44d802be846ec2133ac4fd}{CardComdClasses}};\ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_aff1ac0070a7b667cd7b7adf9d6dcdade}{RdBlockLen}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_acff2f7c96559df6450ea3dc874a60f28}{PartBlockRead}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_ac122ed606c7440ef705f0165598ccef2}{WrBlockMisalign}};\ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_abbcdbea7704744607e53367929f18c13}{RdBlockMisalign}};\ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a26e3f130095c50aa43c2120fd0aa181c}{DSRImpl}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a0b8d4b39af11b76e0148d49fa1876d01}{Reserved2}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a9fd66ce2a085aa42095a9a13e132cc46}{DeviceSize}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_abd799850708cb4b7090f4616eaf6085e}{MaxRdCurrentVDDMin}};\ \ \ }
+\DoxyCodeLine{00114\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a1d05135745870b8950093c335695b4c4}{MaxRdCurrentVDDMax}};\ \ \ }
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_adfdf7d734258bae40a15914d053b1118}{MaxWrCurrentVDDMin}};\ \ \ }
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a696da1c5807edd5d8c176813cd9af61c}{MaxWrCurrentVDDMax}};\ \ \ }
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a452250a3e487705e50638efff9884ef6}{DeviceSizeMul}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a0871dfcfd57c4673643c1d0db18fac48}{EraseGrSize}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a3775eff7e01f15a25ff014e74fbbd421}{EraseGrMul}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a51c38d925e765642e27b8f31229f7907}{WrProtectGrSize}};\ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a1d3fb43ca7964dc4337b15fe0dc0ec77}{WrProtectGrEnable}};\ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a2786e4ee5db65ea01c231e5d370c90f0}{ManDeflECC}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a6f835a09c6d6bc038bb43f2c3d1716f2}{WrSpeedFact}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a46a1735f7177f7be2c7967d42cdb4e05}{MaxWrBlockLen}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a3e864bcf1ce4ecbbdeeabf81f06a2fb0}{WriteBlockPaPartial}};\ \ }
+\DoxyCodeLine{00126\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a15a0c48bf2354bd485707dbf03f9818c}{Reserved3}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a517ac60c6d65f2f03831c256a634d980}{ContentProtectAppli}};\ \ }
+\DoxyCodeLine{00128\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a9de5f02a3af44a3fb47e37df38301986}{FileFormatGrouop}};\ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a161119c1986e717143810a838fd7cf9a}{CopyFlag}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a9d1c96bd0f4493570edfa73b56a0a368}{PermWrProtect}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00131\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a3c7e6d684f385eac2dc7924823c2d670}{TempWrProtect}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a8c29e0b3d2b58aa338ee65dc07bc13ca}{FileFormat}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_ad821de085abfcf24d600fb80c40463e4}{ECC}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00134\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a54f9fcac2fb20141c299c47558922c4f}{CSD\_CRC}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef_a6e219fc67f19cd0c96b0f7be47d87d8a}{Reserved4}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00137\ \}\mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef}{HAL\_SD\_CSDTypedef}};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef_a887f72d3cf1239b9e5dc6da94ec4d90d}{ManufacturerID}};\ \ }
+\DoxyCodeLine{00145\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef_a5753804235215c50b2d09a199e3e65d2}{OEM\_AppliID}};\ \ \ \ \ }
+\DoxyCodeLine{00146\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef_aeeea5cec05642f8cd183114947930591}{ProdName1}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00147\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef_a32b62f6f3a51d58f4c7fe5311da32ac3}{ProdName2}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00148\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef_a501b14fc5c10bcdf39fb00145929dc6b}{ProdRev}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00149\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef_af462943d5381343a6152629852eb2198}{ProdSN}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00150\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef_a4bcecde0b7db7900e93e88aa681166c6}{Reserved1}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef_afee146a103bd6db997527e08cf003107}{ManufactDate}};\ \ \ \ }
+\DoxyCodeLine{00152\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef_a22439f36b2db91f7556742af39798d56}{CID\_CRC}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00153\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef_acd22e0d9e5ac30f6f2c168ed33b7dc2d}{Reserved2}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00155\ \}\mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef}{HAL\_SD\_CIDTypedef}};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00160\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00161\ \{}
+\DoxyCodeLine{00162\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef_ae1677bd0aa27fd67effcf74ea5a6fbee}{DAT\_BUS\_WIDTH}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00163\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef_aa402c81fef83bf8bca0782b20ca2afd1}{SECURED\_MODE}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00164\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef_a9876ad9a163fe66be29c9f73c0e0f735}{SD\_CARD\_TYPE}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00165\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef_a58c6b3539e2332ff9f34ebbe3f9caccb}{SIZE\_OF\_PROTECTED\_AREA}};\ \ }
+\DoxyCodeLine{00166\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef_a0b39b82977514849d0f61edbab1d69ae}{SPEED\_CLASS}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00167\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef_a2dcd49e95a68785dd69a9c7bf7fd3831}{PERFORMANCE\_MOVE}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00168\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef_af774b0582b2b3715a54d155c79931f73}{AU\_SIZE}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00169\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef_a865e9319cea16fc665dd71e2177710db}{ERASE\_SIZE}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00170\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef_ad8a435ee018f66009982f6a3abacc221}{ERASE\_TIMEOUT}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00171\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint8\_t\ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef_a347e2ba1c18e65919b7dcde53864df44}{ERASE\_OFFSET}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00173\ \}\mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef}{HAL\_SD\_CardStatusTypedef}};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00178\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00179\ \{}
+\DoxyCodeLine{00180\ \ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_s_d_typedef}{HAL\_SD\_CSDTypedef}}\ \ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef_ac619e07f0e9c2b19c28227f6235e4e54}{SD\_csd}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00181\ \ \ \mbox{\hyperlink{struct_h_a_l___s_d___c_i_d_typedef}{HAL\_SD\_CIDTypedef}}\ \ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef_a4a0ecee2f3d4d0fa24554da71537bcfb}{SD\_cid}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00182\ \ \ uint64\_t\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef_a325c1a707bbd821f9035babc15caee78}{CardCapacity}};\ \ \ }
+\DoxyCodeLine{00183\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef_a071d0c7bcc0e9f111f8bebb11ac91b87}{CardBlockSize}};\ \ }
+\DoxyCodeLine{00184\ \ \ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef_af946519ff1325fe381f06ee76b2b9a00}{RCA}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00185\ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef_a4f446218eb2d5f48ea90e688c14e0fed}{CardType}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00187\ \}\mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef}{HAL\_SD\_CardInfoTypedef}};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00192\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00193\ \{}
+\DoxyCodeLine{00197\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa6dfaca7c6ace1889e0294f4ec3ec535c}{SD\_CMD\_CRC\_FAIL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (1),\ \ \ }
+\DoxyCodeLine{00198\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aad99fcef385ca3270d3bce97ed972ff1c}{SD\_DATA\_CRC\_FAIL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (2),\ \ \ }
+\DoxyCodeLine{00199\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae1c1b2d0962bd3f40490b15aed01c8ff}{SD\_CMD\_RSP\_TIMEOUT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (3),\ \ \ }
+\DoxyCodeLine{00200\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aac5f321853ccd7c8aaa571afab467dddd}{SD\_DATA\_TIMEOUT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (4),\ \ \ }
+\DoxyCodeLine{00201\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa7b3c2c028697b45c7e4ab738dfb32732}{SD\_TX\_UNDERRUN}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (5),\ \ \ }
+\DoxyCodeLine{00202\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa8536106ed9ebb00c16d0f42d78f31e37}{SD\_RX\_OVERRUN}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (6),\ \ \ }
+\DoxyCodeLine{00203\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aacc0291fc528b2bb330ca1487a8a3f3cd}{SD\_START\_BIT\_ERR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (7),\ \ \ }
+\DoxyCodeLine{00204\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa2435ce658dcb58fc0970c9750fecbf10}{SD\_CMD\_OUT\_OF\_RANGE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (8),\ \ \ }
+\DoxyCodeLine{00205\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aac862cc999fa6648eeb631ea82a07a51e}{SD\_ADDR\_MISALIGNED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (9),\ \ \ }
+\DoxyCodeLine{00206\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aadd08e6cdc391423ee7c1ba246faf42c3}{SD\_BLOCK\_LEN\_ERR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (10),\ \ }
+\DoxyCodeLine{00207\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae83866c46e2c68646ce05ff3707b042e}{SD\_ERASE\_SEQ\_ERR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (11),\ \ }
+\DoxyCodeLine{00208\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aac52c7addfcb59055f5701898c3484d06}{SD\_BAD\_ERASE\_PARAM}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (12),\ \ }
+\DoxyCodeLine{00209\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa4e295d82b6481694f927367f35aa182d}{SD\_WRITE\_PROT\_VIOLATION}}\ \ \ \ \ \ \ \ \ \ \ \ =\ (13),\ \ }
+\DoxyCodeLine{00210\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa093949ff310e17d6596e686804cd0e1e}{SD\_LOCK\_UNLOCK\_FAILED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (14),\ \ }
+\DoxyCodeLine{00211\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa01a35bd6664353a1af3b9ac093acdf94}{SD\_COM\_CRC\_FAILED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (15),\ \ }
+\DoxyCodeLine{00212\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa7fefea39264d07dd179b12be8bf2e51c}{SD\_ILLEGAL\_CMD}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (16),\ \ }
+\DoxyCodeLine{00213\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa283091b73f40d5c229c2c3f3d0f4cb74}{SD\_CARD\_ECC\_FAILED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (17),\ \ }
+\DoxyCodeLine{00214\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa2c6401e2495de3d9fd3b41c273fda150}{SD\_CC\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (18),\ \ }
+\DoxyCodeLine{00215\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa46c693b1502d9e2137ead7857cfe5f9b}{SD\_GENERAL\_UNKNOWN\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ =\ (19),\ \ }
+\DoxyCodeLine{00216\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aaadb3266a9761e9e3d82c1b2512ef6668}{SD\_STREAM\_READ\_UNDERRUN}}\ \ \ \ \ \ \ \ \ \ \ \ =\ (20),\ \ }
+\DoxyCodeLine{00217\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa3847c922ab4b7f94469768c63084af6b}{SD\_STREAM\_WRITE\_OVERRUN}}\ \ \ \ \ \ \ \ \ \ \ \ =\ (21),\ \ }
+\DoxyCodeLine{00218\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aadc80e2b4a985f211d85fae68e15fd136}{SD\_CID\_CSD\_OVERWRITE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (22),\ \ }
+\DoxyCodeLine{00219\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa07b0cc4f75330bdc7efb59f3b3492a3f}{SD\_WP\_ERASE\_SKIP}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (23),\ \ }
+\DoxyCodeLine{00220\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa4db59f403f83442543a1f1bef242efbd}{SD\_CARD\_ECC\_DISABLED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (24),\ \ }
+\DoxyCodeLine{00221\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa59f8949439bd7871cb2cf3238c6282c5}{SD\_ERASE\_RESET}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (25),\ \ }
+\DoxyCodeLine{00222\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aafbcf7369094d1a0fa1932c552ab45382}{SD\_AKE\_SEQ\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (26),\ \ }
+\DoxyCodeLine{00223\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa97d498fc349b05a8945156a9f3ccdff5}{SD\_INVALID\_VOLTRANGE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (27),}
+\DoxyCodeLine{00224\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa82b0b9ba6052f6f2bd0bee7e79cf8ef3}{SD\_ADDR\_OUT\_OF\_RANGE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (28),}
+\DoxyCodeLine{00225\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa9566932cb0ad8fe80d5610da9d11fb55}{SD\_SWITCH\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (29),}
+\DoxyCodeLine{00226\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa9e97f8897dab543749255331f57ae1a7}{SD\_SDIO\_DISABLED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (30),}
+\DoxyCodeLine{00227\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae4e66b4e0f2a5f5a49b3c785d9905e8b}{SD\_SDIO\_FUNCTION\_BUSY}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (31),}
+\DoxyCodeLine{00228\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aaab75aa11f151a11569079c41d019ef3c}{SD\_SDIO\_FUNCTION\_FAILED}}\ \ \ \ \ \ \ \ \ \ \ \ =\ (32),}
+\DoxyCodeLine{00229\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa544f7094c7417e8e3be527d83c65d024}{SD\_SDIO\_UNKNOWN\_FUNCTION}}\ \ \ \ \ \ \ \ \ \ \ =\ (33),}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00234\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa3edc8995af0f0ca919abd400d01d235d}{SD\_INTERNAL\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (34),}
+\DoxyCodeLine{00235\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aad2334607a2604507143ebbd5fcc82876}{SD\_NOT\_CONFIGURED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (35),}
+\DoxyCodeLine{00236\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa48c30b9e7fbd21a2e3dc134b9d0c8bff}{SD\_REQUEST\_PENDING}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (36),}
+\DoxyCodeLine{00237\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aada6e80166445f5ee6b7e808a4e7aff23}{SD\_REQUEST\_NOT\_APPLICABLE}}\ \ \ \ \ \ \ \ \ \ =\ (37),}
+\DoxyCodeLine{00238\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa1111de40fd22949b14d492954755a70c}{SD\_INVALID\_PARAMETER}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (38),}
+\DoxyCodeLine{00239\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa788dcef7dd77feb8a8ba97d84813a8fb}{SD\_UNSUPPORTED\_FEATURE}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ (39),}
+\DoxyCodeLine{00240\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa280d7d545d73078027a223ff35a2b696}{SD\_UNSUPPORTED\_HW}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (40),}
+\DoxyCodeLine{00241\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aa0002d0c8feceb0fb4cd7d9fc96066c3d}{SD\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (41),}
+\DoxyCodeLine{00242\ \ \ \mbox{\hyperlink{group___s_d_ggab1f89a16220798bf3f8dbbd4ec5a749aae7d9e30a15fd1bc4b2cd8f10208e76a6}{SD\_OK}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ (0)\ }
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \}\mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}};}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00249\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00250\ \{}
+\DoxyCodeLine{00251\ \ \ \mbox{\hyperlink{group___s_d_ggaeac2ceb9473e8e4ea9cd587642d9cbcaa52c1686845d340ee5d8c0bc0325f9af3}{SD\_TRANSFER\_OK}}\ \ \ \ =\ 0,\ \ }
+\DoxyCodeLine{00252\ \ \ \mbox{\hyperlink{group___s_d_ggaeac2ceb9473e8e4ea9cd587642d9cbcaaef1a870ef1c17e160d57d732328b042e}{SD\_TRANSFER\_BUSY}}\ \ =\ 1,\ \ }
+\DoxyCodeLine{00253\ \ \ \mbox{\hyperlink{group___s_d_ggaeac2ceb9473e8e4ea9cd587642d9cbcaa1c06f1ea5cd5d5f2ecb715654384b047}{SD\_TRANSFER\_ERROR}}\ =\ 2\ \ \ }
+\DoxyCodeLine{00255\ \}\mbox{\hyperlink{group___s_d_gaeac2ceb9473e8e4ea9cd587642d9cbca}{HAL\_SD\_TransferStateTypedef}};}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00260\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00261\ \{}
+\DoxyCodeLine{00262\ \ \ \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4a7105d3ddde877b8d09471eb482fb5520}{SD\_CARD\_READY}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})0x00000001),\ \ }
+\DoxyCodeLine{00263\ \ \ \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4a18689e3260641d154376eba9a1e3da47}{SD\_CARD\_IDENTIFICATION}}\ \ \ \ \ \ \ \ \ =\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})0x00000002),\ \ }
+\DoxyCodeLine{00264\ \ \ \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4a6e24b45fe387177e2383bac672525f1a}{SD\_CARD\_STANDBY}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})0x00000003),\ \ }
+\DoxyCodeLine{00265\ \ \ \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4a090f585cfc114861ad07114914a3ad1d}{SD\_CARD\_TRANSFER}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})0x00000004),\ \ }
+\DoxyCodeLine{00266\ \ \ \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4a23dec93b22009b39f7b7311f22a7c396}{SD\_CARD\_SENDING}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})0x00000005),\ \ }
+\DoxyCodeLine{00267\ \ \ \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4a467165b416761a4858546d616c8dac12}{SD\_CARD\_RECEIVING}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})0x00000006),\ \ }
+\DoxyCodeLine{00268\ \ \ \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4aa72e3de9b7ac3217b05862ec2412c6cc}{SD\_CARD\_PROGRAMMING}}\ \ \ \ \ \ \ \ \ \ \ \ =\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})0x00000007),\ \ }
+\DoxyCodeLine{00269\ \ \ \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4ac5dd213f085b94ecd3735f15d6a257ec}{SD\_CARD\_DISCONNECTED}}\ \ \ \ \ \ \ \ \ \ \ =\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})0x00000008),\ \ }
+\DoxyCodeLine{00270\ \ \ \mbox{\hyperlink{group___s_d_gga0e6f2367262980fc7e531981bab32df4aed9c89d9fc0101e995ae957f132af14c}{SD\_CARD\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ ((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}})0x000000FF)\ \ \ }
+\DoxyCodeLine{00272\ \}\mbox{\hyperlink{group___s_d_ga0e6f2367262980fc7e531981bab32df4}{HAL\_SD\_CardStateTypedef}};}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00277\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00278\ \{}
+\DoxyCodeLine{00279\ \ \ \mbox{\hyperlink{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1a99c20a704cce28fee37b9b0f14b2ff15}{SD\_READ\_SINGLE\_BLOCK}}\ \ \ \ =\ 0,\ \ }
+\DoxyCodeLine{00280\ \ \ \mbox{\hyperlink{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1aa58b1d9f75b639dc1b28163988bc8aa3}{SD\_READ\_MULTIPLE\_BLOCK}}\ \ =\ 1,\ \ }
+\DoxyCodeLine{00281\ \ \ \mbox{\hyperlink{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1adca664fbf5ff0b4d174ca21641e01004}{SD\_WRITE\_SINGLE\_BLOCK}}\ \ \ =\ 2,\ \ }
+\DoxyCodeLine{00282\ \ \ \mbox{\hyperlink{group___s_d_gga82fe633c4b9fa45bede0890e9e23d4c1a9cd6e9c88c3989531a71015147496895}{SD\_WRITE\_MULTIPLE\_BLOCK}}\ =\ 3\ \ \ }
+\DoxyCodeLine{00284\ \}\mbox{\hyperlink{group___s_d_ga82fe633c4b9fa45bede0890e9e23d4c1}{HAL\_SD\_OperationTypedef}};}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ SD\_CMD\_GO\_IDLE\_STATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0)\ \ \ }}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SEND\_OP\_COND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)1)\ \ \ }}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ SD\_CMD\_ALL\_SEND\_CID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)2)\ \ \ }}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SET\_REL\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)3)\ \ \ }}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SET\_DSR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)4)\ \ \ }}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SDIO\_SEN\_OP\_COND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)5)\ \ \ }}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ SD\_CMD\_HS\_SWITCH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)6)\ \ \ }}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SEL\_DESEL\_CARD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)7)\ \ \ }}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ SD\_CMD\_HS\_SEND\_EXT\_CSD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)8)\ \ \ }}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SEND\_CSD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)9)\ \ \ }}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SEND\_CID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)10)\ \ }}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ SD\_CMD\_READ\_DAT\_UNTIL\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)11)\ \ }}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ SD\_CMD\_STOP\_TRANSMISSION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)12)\ \ }}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SEND\_STATUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)13)\ \ }}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#define\ SD\_CMD\_HS\_BUSTEST\_READ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)14)\ }}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#define\ SD\_CMD\_GO\_INACTIVE\_STATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)15)\ \ }}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SET\_BLOCKLEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)16)\ \ }}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#define\ SD\_CMD\_READ\_SINGLE\_BLOCK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)17)\ \ }}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ SD\_CMD\_READ\_MULT\_BLOCK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)18)\ \ }}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#define\ SD\_CMD\_HS\_BUSTEST\_WRITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)19)\ \ }}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ SD\_CMD\_WRITE\_DAT\_UNTIL\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)20)\ \ }}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SET\_BLOCK\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)23)\ \ }}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#define\ SD\_CMD\_WRITE\_SINGLE\_BLOCK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)24)\ \ }}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#define\ SD\_CMD\_WRITE\_MULT\_BLOCK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)25)\ \ }}
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\#define\ SD\_CMD\_PROG\_CID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)26)\ \ }}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\#define\ SD\_CMD\_PROG\_CSD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)27)\ \ }}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SET\_WRITE\_PROT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)28)\ \ }}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#define\ SD\_CMD\_CLR\_WRITE\_PROT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)29)\ \ }}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SEND\_WRITE\_PROT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)30)\ \ }}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_ERASE\_GRP\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)32)\ \ }}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_ERASE\_GRP\_END\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)33)\ \ }}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ SD\_CMD\_ERASE\_GRP\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)35)\ \ }}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ SD\_CMD\_ERASE\_GRP\_END\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)36)\ \ }}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ SD\_CMD\_ERASE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)38)\ \ }}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#define\ SD\_CMD\_FAST\_IO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)39)\ \ }}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#define\ SD\_CMD\_GO\_IRQ\_STATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)40)\ \ }}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#define\ SD\_CMD\_LOCK\_UNLOCK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)42)\ \ }}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ SD\_CMD\_APP\_CMD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)55)\ \ }}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ SD\_CMD\_GEN\_CMD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)56)\ \ }}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ SD\_CMD\_NO\_CMD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)64)\ }}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ SD\_CMD\_APP\_SD\_SET\_BUSWIDTH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)6)\ \ \ }}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_STAUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)13)\ \ }}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_SEND\_NUM\_WRITE\_BLOCKS\ \ \ \ \ \ \ \ ((uint8\_t)22)\ \ }}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_OP\_COND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)41)\ \ }}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_SET\_CLR\_CARD\_DETECT\ \ \ \ \ \ \ \ \ \ ((uint8\_t)42)\ \ }}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_SEND\_SCR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)51)\ \ }}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SDIO\_RW\_DIRECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)52)\ \ }}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SDIO\_RW\_EXTENDED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)53)\ \ }}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_GET\_MKB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)43)\ \ }}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_GET\_MID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)44)\ \ }}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_SET\_CER\_RN1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)45)\ \ }}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_GET\_CER\_RN2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)46)\ \ }}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_SET\_CER\_RES2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)47)\ \ }}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_GET\_CER\_RES1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)48)\ \ }}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_SECURE\_READ\_MULTIPLE\_BLOCK\ \ \ ((uint8\_t)18)\ \ }}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_SECURE\_WRITE\_MULTIPLE\_BLOCK\ \ ((uint8\_t)25)\ \ }}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_SECURE\_ERASE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)38)\ \ }}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_CHANGE\_SECURE\_AREA\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)49)\ \ }}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#define\ SD\_CMD\_SD\_APP\_SECURE\_WRITE\_MKB\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)48)\ \ }}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#define\ STD\_CAPACITY\_SD\_CARD\_V1\_1\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ STD\_CAPACITY\_SD\_CARD\_V2\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ HIGH\_CAPACITY\_SD\_CARD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ MULTIMEDIA\_CARD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000003)}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#define\ SECURE\_DIGITAL\_IO\_CARD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\#define\ HIGH\_SPEED\_MULTIMEDIA\_CARD\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000005)}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#define\ SECURE\_DIGITAL\_IO\_COMBO\_CARD\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000006)}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ HIGH\_CAPACITY\_MMC\_CARD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000007)}}
+\DoxyCodeLine{00395\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SD\_SDIO\_ENABLE()\ \_\_SDIO\_ENABLE()}}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SD\_SDIO\_DISABLE()\ \_\_SDIO\_DISABLE()}}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SD\_SDIO\_DMA\_ENABLE()\ \_\_SDIO\_DMA\_ENABLE()}}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SD\_SDIO\_DMA\_DISABLE()\ \ \_\_SDIO\_DMA\_DISABLE()}}
+\DoxyCodeLine{00425\ \ }
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SD\_SDIO\_ENABLE\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \_\_SDIO\_ENABLE\_IT((\_\_HANDLE\_\_)-\/>Instance,\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SD\_SDIO\_DISABLE\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \_\_SDIO\_DISABLE\_IT((\_\_HANDLE\_\_)-\/>Instance,\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SD\_SDIO\_GET\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \_\_SDIO\_GET\_FLAG((\_\_HANDLE\_\_)-\/>Instance,\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{00526\ }
+\DoxyCodeLine{00547\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SD\_SDIO\_CLEAR\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \_\_SDIO\_CLEAR\_FLAG((\_\_HANDLE\_\_)-\/>Instance,\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00581\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SD\_SDIO\_GET\_IT\ \ (\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \_\_SDIO\_GET\_IT\ \ ((\_\_HANDLE\_\_)-\/>Instance,\ \_\_INTERRUPT\_\_)}}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00603\ \textcolor{preprocessor}{\#define\ \_\_HAL\_SD\_SDIO\_CLEAR\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \_\_SDIO\_CLEAR\_IT((\_\_HANDLE\_\_)-\/>Instance,\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00608\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00610\ \textcolor{comment}{/*\ Initialization/de-\/initialization\ functions\ \ **********************************/}}
+\DoxyCodeLine{00611\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_ga55004d6b817f7e431bd97101ad2d0b62}{HAL\_SD\_Init}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd,\ \mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef}{HAL\_SD\_CardInfoTypedef}}\ *SDCardInfo);}
+\DoxyCodeLine{00612\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \ \mbox{\hyperlink{group___s_d_ga6bba9fce639c7d476dbd443b8c9e3117}{HAL\_SD\_DeInit}}\ (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd);}
+\DoxyCodeLine{00613\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_d_ga11b692d44079cb65eb037202d627ae96}{HAL\_SD\_MspInit}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd);}
+\DoxyCodeLine{00614\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_d_gaad3ad0f8145fca4a29dbe8beef5db085}{HAL\_SD\_MspDeInit}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd);}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00616\ \textcolor{comment}{/*\ I/O\ operation\ functions\ \ *****************************************************/}}
+\DoxyCodeLine{00617\ \textcolor{comment}{/*\ Blocking\ mode:\ Polling\ */}}
+\DoxyCodeLine{00618\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_gad0d930e6695258d4227f3cc85690b35e}{HAL\_SD\_ReadBlocks}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *pReadBuffer,\ uint64\_t\ ReadAddr,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BlockSize,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ NumberOfBlocks);}
+\DoxyCodeLine{00619\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_ga879dae58b5e4f8514be2d3fac5d99f2b}{HAL\_SD\_WriteBlocks}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *pWriteBuffer,\ uint64\_t\ WriteAddr,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BlockSize,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ NumberOfBlocks);}
+\DoxyCodeLine{00620\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_ga49d1d5c7f592addea7b36c7cf49faba4}{HAL\_SD\_Erase}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd,\ uint64\_t\ startaddr,\ uint64\_t\ endaddr);}
+\DoxyCodeLine{00621\ }
+\DoxyCodeLine{00622\ \textcolor{comment}{/*\ Non-\/Blocking\ mode:\ Interrupt\ */}}
+\DoxyCodeLine{00623\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_d_ga78f4def85126ae50eba783a6b237ec0f}{HAL\_SD\_IRQHandler}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd);}
+\DoxyCodeLine{00624\ }
+\DoxyCodeLine{00625\ \textcolor{comment}{/*\ Callback\ in\ non\ blocking\ modes\ (DMA)\ */}}
+\DoxyCodeLine{00626\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_d_ga57b3c755c8430777cfe821c8a12e794e}{HAL\_SD\_DMA\_RxCpltCallback}}(\mbox{\hyperlink{struct_____d_m_a___handle_type_def}{DMA\_HandleTypeDef}}\ *hdma);}
+\DoxyCodeLine{00627\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_d_ga66cb9701bb00d0bb363ea06312ea4446}{HAL\_SD\_DMA\_RxErrorCallback}}(\mbox{\hyperlink{struct_____d_m_a___handle_type_def}{DMA\_HandleTypeDef}}\ *hdma);}
+\DoxyCodeLine{00628\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_d_ga98f37b0096e2d3dec374321524015a1f}{HAL\_SD\_DMA\_TxCpltCallback}}(\mbox{\hyperlink{struct_____d_m_a___handle_type_def}{DMA\_HandleTypeDef}}\ *hdma);}
+\DoxyCodeLine{00629\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_d_ga45c840786fabc5ef29d887b119b01442}{HAL\_SD\_DMA\_TxErrorCallback}}(\mbox{\hyperlink{struct_____d_m_a___handle_type_def}{DMA\_HandleTypeDef}}\ *hdma);}
+\DoxyCodeLine{00630\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_d_ga4d1214c3d3e6c1e5dd587592e7618177}{HAL\_SD\_XferCpltCallback}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd);}
+\DoxyCodeLine{00631\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_d_gad7d953cc31fbb7e875aef443027b3e5c}{HAL\_SD\_XferErrorCallback}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd);}
+\DoxyCodeLine{00632\ }
+\DoxyCodeLine{00633\ \textcolor{comment}{/*\ Non-\/Blocking\ mode:\ DMA\ */}}
+\DoxyCodeLine{00634\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_ga445d2fb6f83f1680ca2295ebc8fb591e}{HAL\_SD\_ReadBlocks\_DMA}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *pReadBuffer,\ uint64\_t\ ReadAddr,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BlockSize,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ NumberOfBlocks);}
+\DoxyCodeLine{00635\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_ga4e9138ffd8d54c138b21cc95e2b5955c}{HAL\_SD\_WriteBlocks\_DMA}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *pWriteBuffer,\ uint64\_t\ WriteAddr,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BlockSize,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ NumberOfBlocks);}
+\DoxyCodeLine{00636\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_ga1e823fda07f8246994c13fe9397e38ae}{HAL\_SD\_CheckWriteOperation}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00637\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_ga91b0db763b2d9360f10cc959b1c8547e}{HAL\_SD\_CheckReadOperation}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00639\ \textcolor{comment}{/*\ Peripheral\ Control\ functions\ \ ************************************************/}}
+\DoxyCodeLine{00640\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_ga757649bfd6987928fc7f968a881767b4}{HAL\_SD\_Get\_CardInfo}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd,\ \mbox{\hyperlink{struct_h_a_l___s_d___card_info_typedef}{HAL\_SD\_CardInfoTypedef}}\ *pCardInfo);}
+\DoxyCodeLine{00641\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_ga55e5d39a7a3b67b4b236e014c429e4fd}{HAL\_SD\_WideBusOperation\_Config}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WideMode);}
+\DoxyCodeLine{00642\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_ga28d4283c9c7caafe6b0f65c15d805e16}{HAL\_SD\_StopTransfer}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd);}
+\DoxyCodeLine{00643\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_ga5c1fb71046436127d873a16511b40777}{HAL\_SD\_HighSpeed}}\ (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd);}
+\DoxyCodeLine{00644\ }
+\DoxyCodeLine{00645\ \textcolor{comment}{/*\ Peripheral\ State\ functions\ \ **************************************************/}}
+\DoxyCodeLine{00646\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_ga0f6201bbcab5c9a4fbb059d3659a2d56}{HAL\_SD\_SendSDStatus}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *pSDstatus);}
+\DoxyCodeLine{00647\ \mbox{\hyperlink{group___s_d_gab1f89a16220798bf3f8dbbd4ec5a749a}{HAL\_SD\_ErrorTypedef}}\ \mbox{\hyperlink{group___s_d_gaa21f427748a4d59b41b45fff21342e3f}{HAL\_SD\_GetCardStatus}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd,\ \mbox{\hyperlink{struct_h_a_l___s_d___card_status_typedef}{HAL\_SD\_CardStatusTypedef}}\ *pCardStatus);}
+\DoxyCodeLine{00648\ \mbox{\hyperlink{group___s_d_gaeac2ceb9473e8e4ea9cd587642d9cbca}{HAL\_SD\_TransferStateTypedef}}\ \mbox{\hyperlink{group___s_d_ga7e359042aa28a3ceab37d70885af3051}{HAL\_SD\_GetStatus}}(\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\_HandleTypeDef}}\ *hsd);}
+\DoxyCodeLine{00649\ }
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00659\ \}}
+\DoxyCodeLine{00660\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00662\ }
+\DoxyCodeLine{00663\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_HAL\_SD\_H\ */}\textcolor{preprocessor}{\ }}
+\DoxyCodeLine{00664\ }
+\DoxyCodeLine{00665\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

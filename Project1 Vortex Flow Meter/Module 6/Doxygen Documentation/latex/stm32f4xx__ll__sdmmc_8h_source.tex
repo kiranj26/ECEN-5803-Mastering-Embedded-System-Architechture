@@ -1,0 +1,432 @@
+\doxysection{stm32f4xx\+\_\+ll\+\_\+sdmmc.\+h}
+\hypertarget{stm32f4xx__ll__sdmmc_8h_source}{}\label{stm32f4xx__ll__sdmmc_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_ll\_sdmmc.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_ll\_sdmmc.h}}
+\mbox{\hyperlink{stm32f4xx__ll__sdmmc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_LL\_SDMMC\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_LL\_SDMMC\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__hal__def_8h}{stm32f4xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___init_type_def_a9ef62f2e92065da3919e2622a68e7bb2}{ClockEdge}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___init_type_def_a6e0bf400b91fde924aa3213683161713}{ClockBypass}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___init_type_def_a8da300c100438bff2f040b65d6611935}{ClockPowerSave}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___init_type_def_a510dda7683dc0409c8c4746226cebb8f}{BusWide}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___init_type_def_a51d5b31ee5be2ebc295125c0e55801ef}{HardwareFlowControl}};\ \ }
+\DoxyCodeLine{00081\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___init_type_def_a749340110817470696d75a000fb0ce86}{ClockDiv}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \}\mbox{\hyperlink{struct_s_d_i_o___init_type_def}{SDIO\_InitTypeDef}};}
+\DoxyCodeLine{00085\ \ \ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def_a8ddc742b34bae150f605bc5d082df382}{Argument}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def_a095702a7e7e0dc5376cfccc6578364fe}{CmdIndex}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def_a79643639430692f8099283392b0698d4}{Response}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def_a1db71820b232b3db309c5ec054b975b9}{WaitForInterrupt}};\ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def_a9845d4645f964bf43e5974feb04b56bf}{CPSM}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \}\mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def}{SDIO\_CmdInitTypeDef}};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00117\ \{}
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def_a4b2d6dc3c3e8602de9fc84e4a051cfe4}{DataTimeOut}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def_a178e926ead3b76289cfc8fc59693a34b}{DataLength}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def_abd9576c087a91e2c13b2dc5dac0dece5}{DataBlockSize}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def_a5066914e8c67115c7a7c5d9a18213b23}{TransferDir}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def_ad55c68fdb10127be790987ccbb050f0b}{TransferMode}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def_a70e119984fac61dba037e842aeffba4f}{DPSM}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \}\mbox{\hyperlink{struct_s_d_i_o___data_init_type_def}{SDIO\_DataInitTypeDef}};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ SDIO\_CLOCK\_EDGE\_RISING\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ SDIO\_CLOCK\_EDGE\_FALLING\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00002000)}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_CLOCK\_EDGE(EDGE)\ (((EDGE)\ ==\ SDIO\_CLOCK\_EDGE\_RISING)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((EDGE)\ ==\ SDIO\_CLOCK\_EDGE\_FALLING))}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ SDIO\_CLOCK\_BYPASS\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ SDIO\_CLOCK\_BYPASS\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000400)\ \ \ \ }}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_CLOCK\_BYPASS(BYPASS)\ (((BYPASS)\ ==\ SDIO\_CLOCK\_BYPASS\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BYPASS)\ ==\ SDIO\_CLOCK\_BYPASS\_ENABLE))}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ SDIO\_CLOCK\_POWER\_SAVE\_DISABLE\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ SDIO\_CLOCK\_POWER\_SAVE\_ENABLE\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000200)\ }}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_CLOCK\_POWER\_SAVE(SAVE)\ (((SAVE)\ ==\ SDIO\_CLOCK\_POWER\_SAVE\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SAVE)\ ==\ SDIO\_CLOCK\_POWER\_SAVE\_ENABLE))}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ SDIO\_BUS\_WIDE\_1B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ SDIO\_BUS\_WIDE\_4B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000800)}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ SDIO\_BUS\_WIDE\_8B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00001000)}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_BUS\_WIDE(WIDE)\ (((WIDE)\ ==\ SDIO\_BUS\_WIDE\_1B)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WIDE)\ ==\ SDIO\_BUS\_WIDE\_4B)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WIDE)\ ==\ SDIO\_BUS\_WIDE\_8B))}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ SDIO\_HARDWARE\_FLOW\_CONTROL\_DISABLE\ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ SDIO\_HARDWARE\_FLOW\_CONTROL\_ENABLE\ \ \ \ \ ((uint32\_t)0x00004000)}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_HARDWARE\_FLOW\_CONTROL(CONTROL)\ (((CONTROL)\ ==\ SDIO\_HARDWARE\_FLOW\_CONTROL\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CONTROL)\ ==\ SDIO\_HARDWARE\_FLOW\_CONTROL\_ENABLE))}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_CLKDIV(DIV)\ \ \ ((DIV)\ <=\ 0xFF)}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_CMD\_INDEX(INDEX)\ \ \ \ \ \ \ \ \ \ \ \ ((INDEX)\ <\ 0x40)}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ SDIO\_RESPONSE\_NO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ SDIO\_RESPONSE\_SHORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ SDIO\_RESPONSE\_LONG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x000000C0)}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_RESPONSE(RESPONSE)\ (((RESPONSE)\ ==\ SDIO\_RESPONSE\_NO)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RESPONSE)\ ==\ SDIO\_RESPONSE\_SHORT)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RESPONSE)\ ==\ SDIO\_RESPONSE\_LONG))}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ SDIO\_WAIT\_NO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ SDIO\_WAIT\_IT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000100)\ }}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ SDIO\_WAIT\_PEND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000200)\ }}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_WAIT(WAIT)\ (((WAIT)\ ==\ SDIO\_WAIT\_NO)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WAIT)\ ==\ SDIO\_WAIT\_IT)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WAIT)\ ==\ SDIO\_WAIT\_PEND))}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ SDIO\_CPSM\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#define\ SDIO\_CPSM\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000400)}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_CPSM(CPSM)\ (((CPSM)\ ==\ SDIO\_CPSM\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CPSM)\ ==\ SDIO\_CPSM\_ENABLE))}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#define\ SDIO\_RESP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#define\ SDIO\_RESP2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#define\ SDIO\_RESP3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)}}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#define\ SDIO\_RESP4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000000C)}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_RESP(RESP)\ (((RESP)\ ==\ SDIO\_RESP1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RESP)\ ==\ SDIO\_RESP2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RESP)\ ==\ SDIO\_RESP3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RESP)\ ==\ SDIO\_RESP4))}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_DATA\_LENGTH(LENGTH)\ ((LENGTH)\ <=\ 0x01FFFFFF)}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_1B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_2B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)}}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_4B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000020)}}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_8B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000030)}}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_16B\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_32B\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000050)}}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_64B\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000060)}}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_128B\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000070)}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_256B\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000080)}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_512B\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000090)}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_1024B\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x000000A0)}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_2048B\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x000000B0)}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_4096B\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x000000C0)}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_8192B\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x000000D0)}}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ SDIO\_DATABLOCK\_SIZE\_16384B\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x000000E0)}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_BLOCK\_SIZE(SIZE)\ (((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_1B)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_2B)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_4B)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_8B)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_16B)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_32B)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_64B)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_128B)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_256B)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_512B)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_1024B)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_2048B)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_4096B)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_8192B)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ SDIO\_DATABLOCK\_SIZE\_16384B))\ }}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#define\ SDIO\_TRANSFER\_DIR\_TO\_CARD\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#define\ SDIO\_TRANSFER\_DIR\_TO\_SDIO\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_TRANSFER\_DIR(DIR)\ (((DIR)\ ==\ SDIO\_TRANSFER\_DIR\_TO\_CARD)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DIR)\ ==\ SDIO\_TRANSFER\_DIR\_TO\_SDIO))}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ SDIO\_TRANSFER\_MODE\_BLOCK\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ SDIO\_TRANSFER\_MODE\_STREAM\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_TRANSFER\_MODE(MODE)\ (((MODE)\ ==\ SDIO\_TRANSFER\_MODE\_BLOCK)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ SDIO\_TRANSFER\_MODE\_STREAM))}}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ SDIO\_DPSM\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ SDIO\_DPSM\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_DPSM(DPSM)\ (((DPSM)\ ==\ SDIO\_DPSM\_DISABLE)\ ||\(\backslash\)}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DPSM)\ ==\ SDIO\_DPSM\_ENABLE))}}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ SDIO\_READ\_WAIT\_MODE\_CLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ SDIO\_READ\_WAIT\_MODE\_DATA2\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_READWAIT\_MODE(MODE)\ (((MODE)\ ==\ SDIO\_READ\_WAIT\_MODE\_CLK)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ SDIO\_READ\_WAIT\_MODE\_DATA2))}}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_CCRCFAIL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_DCRCFAIL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_CTIMEOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_DTIMEOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)}}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_TXUNDERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)}}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_RXOVERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000020)}}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_CMDREND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_CMDSENT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000080)}}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_DATAEND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000100)}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_STBITERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000200)}}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_DBCKEND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000400)}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_CMDACT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000800)}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_TXACT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00001000)}}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_RXACT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00002000)}}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_TXFIFOHE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00004000)}}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_RXFIFOHF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00008000)}}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_TXFIFOF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00010000)}}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_RXFIFOF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00020000)}}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_TXFIFOE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00040000)}}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_RXFIFOE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00080000)}}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_TXDAVL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00100000)}}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_RXDAVL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00200000)}}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_SDIOIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00400000)}}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#define\ SDIO\_IT\_CEATAEND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00800000)}}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_IT(IT)\ ((((IT)\ \&\ (uint32\_t)0xFF000000)\ ==\ 0x00)\ \&\&\ ((IT)\ !=\ (uint32\_t)0x00))}}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_CCRCFAIL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_DCRCFAIL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_CTIMEOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_DTIMEOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)}}
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_TXUNDERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)}}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_RXOVERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000020)}}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_CMDREND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_CMDSENT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000080)}}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_DATAEND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000100)}}
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_STBITERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000200)}}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_DBCKEND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000400)}}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_CMDACT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000800)}}
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_TXACT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00001000)}}
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_RXACT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00002000)}}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_TXFIFOHE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00004000)}}
+\DoxyCodeLine{00426\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_RXFIFOHF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00008000)}}
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_TXFIFOF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00010000)}}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_RXFIFOF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00020000)}}
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_TXFIFOE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00040000)}}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_RXFIFOE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00080000)}}
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_TXDAVL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00100000)}}
+\DoxyCodeLine{00432\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_RXDAVL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00200000)}}
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_SDIOIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00400000)}}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\#define\ SDIO\_FLAG\_CEATAEND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00800000)}}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_FLAG(FLAG)\ (((FLAG)\ \ ==\ SDIO\_FLAG\_CCRCFAIL)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_DCRCFAIL)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_CTIMEOUT)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_DTIMEOUT)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_TXUNDERR)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_RXOVERR)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_CMDREND)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_CMDSENT)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_DATAEND)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00445\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_STBITERR)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_DBCKEND)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00447\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_CMDACT)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_TXACT)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_RXACT)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_TXFIFOHE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_RXFIFOHF)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_TXFIFOF)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_RXFIFOF)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00454\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_TXFIFOE)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_RXFIFOE)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_TXDAVL)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_RXDAVL)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_SDIOIT)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00459\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ \ ==\ SDIO\_FLAG\_CEATAEND))}}
+\DoxyCodeLine{00460\ }
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_CLEAR\_FLAG(FLAG)\ ((((FLAG)\ \&\ (uint32\_t)0xFF3FF800)\ ==\ 0x00)\ \&\&\ ((FLAG)\ !=\ (uint32\_t)0x00))}}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_GET\_IT(IT)\ (((IT)\ \ ==\ SDIO\_IT\_CCRCFAIL)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_DCRCFAIL)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_CTIMEOUT)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_DTIMEOUT)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_TXUNDERR)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_RXOVERR)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00469\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_CMDREND)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_CMDSENT)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_DATAEND)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00472\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_STBITERR)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00473\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_DBCKEND)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_CMDACT)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00475\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_TXACT)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_RXACT)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_TXFIFOHE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_RXFIFOHF)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_TXFIFOF)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_RXFIFOF)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_TXFIFOE)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_RXFIFOE)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_TXDAVL)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_RXDAVL)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_SDIOIT)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ \ ==\ SDIO\_IT\_CEATAEND))}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_CLEAR\_IT(IT)\ ((((IT)\ \&\ (uint32\_t)0xFF3FF800)\ ==\ 0x00)\ \&\&\ ((IT)\ !=\ (uint32\_t)0x00))}}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\#define\ IS\_SDIO\_ALL\_INSTANCE(INSTANCE)\ ((INSTANCE)\ ==\ SDIO)}}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00504\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00505\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ SDIO\ registers\ bit\ address\ in\ the\ alias\ region\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#define\ SDIO\_OFFSET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (SDIO\_BASE\ -\/\ PERIPH\_BASE)}}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \textcolor{comment}{/*\ -\/-\/-\/\ CLKCR\ Register\ -\/-\/-\/*/}}
+\DoxyCodeLine{00509\ \textcolor{comment}{/*\ Alias\ word\ address\ of\ CLKEN\ bit\ */}}
+\DoxyCodeLine{00510\ \textcolor{preprocessor}{\#define\ CLKCR\_OFFSET\ \ \ \ \ \ \ \ \ \ \ \ \ \ (SDIO\_OFFSET\ +\ 0x04)}}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\#define\ CLKEN\_BitNumber\ \ \ \ \ \ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#define\ CLKCR\_CLKEN\_BB\ \ \ \ \ \ \ \ \ \ \ \ (PERIPH\_BB\_BASE\ +\ (CLKCR\_OFFSET\ *\ 32)\ +\ (CLKEN\_BitNumber\ *\ 4))}}
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00514\ \textcolor{comment}{/*\ -\/-\/-\/\ CMD\ Register\ -\/-\/-\/*/}}
+\DoxyCodeLine{00515\ \textcolor{comment}{/*\ Alias\ word\ address\ of\ SDIOSUSPEND\ bit\ */}}
+\DoxyCodeLine{00516\ \textcolor{preprocessor}{\#define\ CMD\_OFFSET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (SDIO\_OFFSET\ +\ 0x0C)}}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#define\ SDIOSUSPEND\_BitNumber\ \ \ \ \ 0x0B}}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\#define\ CMD\_SDIOSUSPEND\_BB\ \ \ \ \ \ \ \ (PERIPH\_BB\_BASE\ +\ (CMD\_OFFSET\ *\ 32)\ +\ (SDIOSUSPEND\_BitNumber\ *\ 4))}}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \textcolor{comment}{/*\ Alias\ word\ address\ of\ ENCMDCOMPL\ bit\ */}}
+\DoxyCodeLine{00521\ \textcolor{preprocessor}{\#define\ ENCMDCOMPL\_BitNumber\ \ \ \ \ \ 0x0C}}
+\DoxyCodeLine{00522\ \textcolor{preprocessor}{\#define\ CMD\_ENCMDCOMPL\_BB\ \ \ \ \ \ \ \ \ (PERIPH\_BB\_BASE\ +\ (CMD\_OFFSET\ *\ 32)\ +\ (ENCMDCOMPL\_BitNumber\ *\ 4))}}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00524\ \textcolor{comment}{/*\ Alias\ word\ address\ of\ NIEN\ bit\ */}}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\#define\ NIEN\_BitNumber\ \ \ \ \ \ \ \ \ \ \ \ 0x0D}}
+\DoxyCodeLine{00526\ \textcolor{preprocessor}{\#define\ CMD\_NIEN\_BB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PERIPH\_BB\_BASE\ +\ (CMD\_OFFSET\ *\ 32)\ +\ (NIEN\_BitNumber\ *\ 4))}}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00528\ \textcolor{comment}{/*\ Alias\ word\ address\ of\ ATACMD\ bit\ */}}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#define\ ATACMD\_BitNumber\ \ \ \ \ \ \ \ \ \ 0x0E}}
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ CMD\_ATACMD\_BB\ \ \ \ \ \ \ \ \ \ \ \ \ (PERIPH\_BB\_BASE\ +\ (CMD\_OFFSET\ *\ 32)\ +\ (ATACMD\_BitNumber\ *\ 4))}}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ \textcolor{comment}{/*\ -\/-\/-\/\ DCTRL\ Register\ -\/-\/-\/*/}}
+\DoxyCodeLine{00533\ \textcolor{comment}{/*\ Alias\ word\ address\ of\ DMAEN\ bit\ */}}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ DCTRL\_OFFSET\ \ \ \ \ \ \ \ \ \ \ \ \ \ (SDIO\_OFFSET\ +\ 0x2C)}}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\#define\ DMAEN\_BitNumber\ \ \ \ \ \ \ \ \ \ \ 0x03}}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\#define\ DCTRL\_DMAEN\_BB\ \ \ \ \ \ \ \ \ \ \ \ (PERIPH\_BB\_BASE\ +\ (DCTRL\_OFFSET\ *\ 32)\ +\ (DMAEN\_BitNumber\ *\ 4))}}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ \textcolor{comment}{/*\ Alias\ word\ address\ of\ RWSTART\ bit\ */}}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\#define\ RWSTART\_BitNumber\ \ \ \ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\#define\ DCTRL\_RWSTART\_BB\ \ \ \ \ \ \ \ \ \ (PERIPH\_BB\_BASE\ +\ (DCTRL\_OFFSET\ *\ 32)\ +\ (RWSTART\_BitNumber\ *\ 4))}}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \textcolor{comment}{/*\ Alias\ word\ address\ of\ RWSTOP\ bit\ */}}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#define\ RWSTOP\_BitNumber\ \ \ \ \ \ \ \ \ \ 0x09}}
+\DoxyCodeLine{00544\ \textcolor{preprocessor}{\#define\ DCTRL\_RWSTOP\_BB\ \ \ \ \ \ \ \ \ \ \ (PERIPH\_BB\_BASE\ +\ (DCTRL\_OFFSET\ *\ 32)\ +\ (RWSTOP\_BitNumber\ *\ 4))}}
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00546\ \textcolor{comment}{/*\ Alias\ word\ address\ of\ RWMOD\ bit\ */}}
+\DoxyCodeLine{00547\ \textcolor{preprocessor}{\#define\ RWMOD\_BitNumber\ \ \ \ \ \ \ \ \ \ \ 0x0A}}
+\DoxyCodeLine{00548\ \textcolor{preprocessor}{\#define\ DCTRL\_RWMOD\_BB\ \ \ \ \ \ \ \ \ \ \ \ (PERIPH\_BB\_BASE\ +\ (DCTRL\_OFFSET\ *\ 32)\ +\ (RWMOD\_BitNumber\ *\ 4))}}
+\DoxyCodeLine{00549\ }
+\DoxyCodeLine{00550\ \textcolor{comment}{/*\ Alias\ word\ address\ of\ SDIOEN\ bit\ */}}
+\DoxyCodeLine{00551\ \textcolor{preprocessor}{\#define\ SDIOEN\_BitNumber\ \ \ \ \ \ \ \ \ \ 0x0B}}
+\DoxyCodeLine{00552\ \textcolor{preprocessor}{\#define\ DCTRL\_SDIOEN\_BB\ \ \ \ \ \ \ \ \ \ \ (PERIPH\_BB\_BASE\ +\ (DCTRL\_OFFSET\ *\ 32)\ +\ (SDIOEN\_BitNumber\ *\ 4))}}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00554\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ SDIO\ registers\ bit\ mask\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00555\ \textcolor{comment}{/*\ -\/-\/-\/\ CLKCR\ Register\ -\/-\/-\/*/}}
+\DoxyCodeLine{00556\ \textcolor{comment}{/*\ CLKCR\ register\ clear\ mask\ */}}
+\DoxyCodeLine{00557\ \textcolor{preprocessor}{\#define\ CLKCR\_CLEAR\_MASK\ \ \ \ \ \ \ \ \ ((uint32\_t)0xFFFF8100)\ }}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00559\ \textcolor{comment}{/*\ -\/-\/-\/\ PWRCTRL\ Register\ -\/-\/-\/*/}}
+\DoxyCodeLine{00560\ \textcolor{comment}{/*\ SDIO\ PWRCTRL\ Mask\ */}}
+\DoxyCodeLine{00561\ \textcolor{preprocessor}{\#define\ PWR\_PWRCTRL\_MASK\ \ \ \ \ \ \ \ \ ((uint32\_t)0xFFFFFFFC)}}
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00563\ \textcolor{comment}{/*\ -\/-\/-\/\ DCTRL\ Register\ -\/-\/-\/*/}}
+\DoxyCodeLine{00564\ \textcolor{comment}{/*\ SDIO\ DCTRL\ Clear\ Mask\ */}}
+\DoxyCodeLine{00565\ \textcolor{preprocessor}{\#define\ DCTRL\_CLEAR\_MASK\ \ \ \ \ \ \ \ \ ((uint32\_t)0xFFFFFF08)}}
+\DoxyCodeLine{00566\ }
+\DoxyCodeLine{00567\ \textcolor{comment}{/*\ -\/-\/-\/\ CMD\ Register\ -\/-\/-\/*/}}
+\DoxyCodeLine{00568\ \textcolor{comment}{/*\ CMD\ Register\ clear\ mask\ */}}
+\DoxyCodeLine{00569\ \textcolor{preprocessor}{\#define\ CMD\_CLEAR\_MASK\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0xFFFFF800)}}
+\DoxyCodeLine{00570\ }
+\DoxyCodeLine{00571\ \textcolor{comment}{/*\ SDIO\ RESP\ Registers\ Address\ */}}
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\#define\ SDIO\_RESP\_ADDR\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)(SDIO\_BASE\ +\ 0x14))}}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00574\ \textcolor{comment}{/*\ SD\ FLASH\ SDIO\ Interface\ */}}
+\DoxyCodeLine{00575\ \textcolor{preprocessor}{\#define\ SDIO\_FIFO\_ADDRESS\ ((uint32\_t)0x40012C80)}}
+\DoxyCodeLine{00576\ }
+\DoxyCodeLine{00577\ \textcolor{comment}{/*\ SDIO\ Intialization\ Frequency\ (400KHz\ max)\ */}}
+\DoxyCodeLine{00578\ \textcolor{preprocessor}{\#define\ SDIO\_INIT\_CLK\_DIV\ ((uint8\_t)0x76)}}
+\DoxyCodeLine{00579\ }
+\DoxyCodeLine{00580\ \textcolor{comment}{/*\ SDIO\ Data\ Transfer\ Frequency\ (25MHz\ max)\ */}}
+\DoxyCodeLine{00581\ \textcolor{preprocessor}{\#define\ SDIO\_TRANSFER\_CLK\_DIV\ ((uint8\_t)0x0)}}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00593\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_ENABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)CLKCR\_CLKEN\_BB\ =\ ENABLE)}}
+\DoxyCodeLine{00594\ }
+\DoxyCodeLine{00600\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_DISABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)CLKCR\_CLKEN\_BB\ =\ DISABLE)}}
+\DoxyCodeLine{00601\ }
+\DoxyCodeLine{00607\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_DMA\_ENABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)DCTRL\_DMAEN\_BB\ =\ ENABLE)}}
+\DoxyCodeLine{00608\ }
+\DoxyCodeLine{00614\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_DMA\_DISABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)DCTRL\_DMAEN\_BB\ =\ DISABLE)}}
+\DoxyCodeLine{00615\ \ }
+\DoxyCodeLine{00648\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_ENABLE\_IT(\_\_INSTANCE\_\_,\ \_\_INTERRUPT\_\_)\ \ ((\_\_INSTANCE\_\_)-\/>MASK\ |=\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00649\ }
+\DoxyCodeLine{00682\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_DISABLE\_IT(\_\_INSTANCE\_\_,\ \_\_INTERRUPT\_\_)\ \ ((\_\_INSTANCE\_\_)-\/>MASK\ \&=\ \string~(\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00683\ }
+\DoxyCodeLine{00715\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_GET\_FLAG(\_\_INSTANCE\_\_,\ \_\_FLAG\_\_)\ \ \ (((\_\_INSTANCE\_\_)-\/>STA\ \&(\_\_FLAG\_\_))\ !=\ RESET)}}
+\DoxyCodeLine{00716\ }
+\DoxyCodeLine{00717\ }
+\DoxyCodeLine{00738\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_CLEAR\_FLAG(\_\_INSTANCE\_\_,\ \_\_FLAG\_\_)\ \ \ ((\_\_INSTANCE\_\_)-\/>ICR\ =\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{00739\ }
+\DoxyCodeLine{00772\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_GET\_IT\ \ (\_\_INSTANCE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ (((\_\_INSTANCE\_\_)-\/>STA\ \&(\_\_INTERRUPT\_\_))\ ==\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00773\ }
+\DoxyCodeLine{00794\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_CLEAR\_IT(\_\_INSTANCE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ ((\_\_INSTANCE\_\_)-\/>ICR\ =\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00795\ }
+\DoxyCodeLine{00801\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_START\_READWAIT\_ENABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ DCTRL\_RWSTART\_BB\ =\ ENABLE)}}
+\DoxyCodeLine{00802\ }
+\DoxyCodeLine{00808\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_START\_READWAIT\_DISABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ DCTRL\_RWSTART\_BB\ =\ DISABLE)}}
+\DoxyCodeLine{00809\ }
+\DoxyCodeLine{00815\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_STOP\_READWAIT\_ENABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ DCTRL\_RWSTOP\_BB\ =\ ENABLE)}}
+\DoxyCodeLine{00816\ }
+\DoxyCodeLine{00822\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_STOP\_READWAIT\_DISABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ DCTRL\_RWSTOP\_BB\ =\ DISABLE)}}
+\DoxyCodeLine{00823\ }
+\DoxyCodeLine{00829\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_OPERATION\_ENABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ DCTRL\_SDIOEN\_BB\ =\ ENABLE)}}
+\DoxyCodeLine{00830\ }
+\DoxyCodeLine{00836\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_OPERATION\_DISABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ DCTRL\_SDIOEN\_BB\ =\ DISABLE)}}
+\DoxyCodeLine{00837\ }
+\DoxyCodeLine{00843\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_SUSPEND\_CMD\_ENABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ CMD\_SDIOSUSPEND\_BB\ =\ ENABLE)}}
+\DoxyCodeLine{00844\ }
+\DoxyCodeLine{00850\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_SUSPEND\_CMD\_DISABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ CMD\_SDIOSUSPEND\_BB\ =\ DISABLE)}}
+\DoxyCodeLine{00851\ \ \ \ \ }
+\DoxyCodeLine{00857\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_CEATA\_CMD\_COMPLETION\_ENABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ CMD\_ENCMDCOMPL\_BB\ =\ ENABLE)}}
+\DoxyCodeLine{00858\ }
+\DoxyCodeLine{00864\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_CEATA\_CMD\_COMPLETION\_DISABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ CMD\_ENCMDCOMPL\_BB\ =\ DISABLE)}}
+\DoxyCodeLine{00865\ }
+\DoxyCodeLine{00871\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_CEATA\_ENABLE\_IT()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ CMD\_NIEN\_BB\ =\ (uint32\_t)0)}}
+\DoxyCodeLine{00872\ }
+\DoxyCodeLine{00878\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_CEATA\_DISABLE\_IT()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ CMD\_NIEN\_BB\ =\ (uint32\_t)1)}}
+\DoxyCodeLine{00879\ }
+\DoxyCodeLine{00885\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_CEATA\_SENDCMD\_ENABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ CMD\_ATACMD\_BB\ =\ ENABLE)}}
+\DoxyCodeLine{00886\ }
+\DoxyCodeLine{00892\ \textcolor{preprocessor}{\#define\ \_\_SDIO\_CEATA\_SENDCMD\_DISABLE()\ \ \ (*(\_\_IO\ uint32\_t\ *)\ CMD\_ATACMD\_BB\ =\ DISABLE)}}
+\DoxyCodeLine{00893\ \ \ }
+\DoxyCodeLine{00898\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00899\ }
+\DoxyCodeLine{00900\ \textcolor{comment}{/*\ Initialization/de-\/initialization\ functions\ \ **********************************/}}
+\DoxyCodeLine{00901\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_d_m_m_c_ga19c1f35bc992e008b4a4bd812561b757}{SDIO\_Init}}(\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\_TypeDef}}\ *SDIOx,\ \mbox{\hyperlink{struct_s_d_i_o___init_type_def}{SDIO\_InitTypeDef}}\ Init);}
+\DoxyCodeLine{00902\ }
+\DoxyCodeLine{00903\ \textcolor{comment}{/*\ I/O\ operation\ functions\ \ *****************************************************/}}
+\DoxyCodeLine{00904\ \textcolor{comment}{/*\ Blocking\ mode:\ Polling\ */}}
+\DoxyCodeLine{00905\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___s_d_m_m_c_ga47b3aea3560c00fccb5b6967eb8fdf9f}{SDIO\_ReadFIFO}}(\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\_TypeDef}}\ *SDIOx);}
+\DoxyCodeLine{00906\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_d_m_m_c_ga86ea7c549d5034f14b4ba4b52f707a57}{SDIO\_WriteFIFO}}(\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\_TypeDef}}\ *SDIOx,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *pWriteData);}
+\DoxyCodeLine{00907\ }
+\DoxyCodeLine{00908\ \textcolor{comment}{/*\ Peripheral\ Control\ functions\ \ ************************************************/}}
+\DoxyCodeLine{00909\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_d_m_m_c_ga6245d444d06f38176437446f7b4ad047}{SDIO\_PowerState\_ON}}(\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\_TypeDef}}\ *SDIOx);}
+\DoxyCodeLine{00910\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_d_m_m_c_ga162f9bf71abaaa3d0be637c9718f0beb}{SDIO\_PowerState\_OFF}}(\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\_TypeDef}}\ *SDIOx);}
+\DoxyCodeLine{00911\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___s_d_m_m_c_ga2079f67b0c5b7bc5f745828f6e83ee29}{SDIO\_GetPowerState}}(\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\_TypeDef}}\ *SDIOx);}
+\DoxyCodeLine{00912\ }
+\DoxyCodeLine{00913\ \textcolor{comment}{/*\ Command\ path\ state\ machine\ (CPSM)\ management\ functions\ */}}
+\DoxyCodeLine{00914\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_d_m_m_c_ga5b0b3b1cf9fe9c2201b7fc6f69c62377}{SDIO\_SendCommand}}(\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\_TypeDef}}\ *SDIOx,\ \mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def}{SDIO\_CmdInitTypeDef}}\ *SDIO\_CmdInitStruct);}
+\DoxyCodeLine{00915\ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___s_d_m_m_c_ga6cd11d4e0eb89568585ddc3224f27f40}{SDIO\_GetCommandResponse}}(\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\_TypeDef}}\ *SDIOx);}
+\DoxyCodeLine{00916\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___s_d_m_m_c_ga5c1e859511840e8cca6a9a768bce220b}{SDIO\_GetResponse}}(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SDIO\_RESP);}
+\DoxyCodeLine{00917\ }
+\DoxyCodeLine{00918\ \textcolor{comment}{/*\ Data\ path\ state\ machine\ (DPSM)\ management\ functions\ */}}
+\DoxyCodeLine{00919\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_d_m_m_c_ga4be023f80f0a1700e0a5886d24bf3293}{SDIO\_DataConfig}}(\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\_TypeDef}}\ *SDIOx,\ \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def}{SDIO\_DataInitTypeDef}}*\ SDIO\_DataInitStruct);}
+\DoxyCodeLine{00920\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___s_d_m_m_c_gad9ecd1a1192eeda227481ce0d06da031}{SDIO\_GetDataCounter}}(\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\_TypeDef}}\ *SDIOx);}
+\DoxyCodeLine{00921\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___s_d_m_m_c_gad13ed8c07a08d91f90eb0ec5bece72a4}{SDIO\_GetFIFOCount}}(\mbox{\hyperlink{struct_s_d_i_o___type_def}{SDIO\_TypeDef}}\ *SDIOx);}
+\DoxyCodeLine{00922\ }
+\DoxyCodeLine{00923\ \textcolor{comment}{/*\ SDIO\ IO\ Cards\ mode\ management\ functions\ */}}
+\DoxyCodeLine{00924\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___s_d_m_m_c_ga2bc047e7958ae43455a40ce629665b63}{SDIO\_SetSDIOReadWaitMode}}(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SDIO\_ReadWaitMode);}
+\DoxyCodeLine{00925\ }
+\DoxyCodeLine{00926\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00927\ \}}
+\DoxyCodeLine{00928\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00929\ }
+\DoxyCodeLine{00930\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_LL\_SDMMC\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00931\ }
+\DoxyCodeLine{00940\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

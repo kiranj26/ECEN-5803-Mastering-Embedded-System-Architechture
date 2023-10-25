@@ -1,0 +1,101 @@
+\doxysection{Serial\+Base.\+h}
+\hypertarget{_serial_base_8h_source}{}\label{_serial_base_8h_source}\index{mbed/SerialBase.h@{mbed/SerialBase.h}}
+\mbox{\hyperlink{_serial_base_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_SERIALBASE\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_SERIALBASE\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{platform_8h}{platform.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#if\ DEVICE\_SERIAL}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_stream_8h}{Stream.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_function_pointer_8h}{FunctionPointer.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serial__api_8h}{serial\_api.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacembed}{mbed}}\ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }SerialBase\ \{}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ baud(\textcolor{keywordtype}{int}\ baudrate);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{enum}\ Parity\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ None\ =\ 0,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ Odd,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ Even,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Forced1,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ Forced0}
+\DoxyCodeLine{00047\ \ \ \ \ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{enum}\ IrqType\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ RxIrq\ =\ 0,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ TxIrq}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{enum}\ Flow\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ Disabled\ =\ 0,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ RTS,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ CTS,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ RTSCTS}
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ format(\textcolor{keywordtype}{int}\ bits=8,\ Parity\ parity=SerialBase::None,\ \textcolor{keywordtype}{int}\ stop\_bits=1);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ readable();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ writeable();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ attach(\textcolor{keywordtype}{void}\ (*fptr)(\textcolor{keywordtype}{void}),\ IrqType\ type=RxIrq);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ attach(T*\ tptr,\ \textcolor{keywordtype}{void}\ (T::*mptr)(void),\ IrqType\ type=RxIrq)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((mptr\ !=\ NULL)\ \&\&\ (tptr\ !=\ NULL))\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \_irq[type].attach(tptr,\ mptr);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ serial\_irq\_set(\&\_serial,\ (SerialIrq)type,\ 1);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ send\_break();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#if\ DEVICE\_SERIAL\_FC}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_flow\_control(Flow\ type,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ flow1=\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a3dbd1016ea99d087d747530418b89a01}{NC}},\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ flow2=\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a3dbd1016ea99d087d747530418b89a01}{NC}});}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \_irq\_handler(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \textcolor{keywordtype}{id},\ SerialIrq\ irq\_type);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00123\ \ \ \ \ SerialBase(\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ tx,\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ rx);}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~SerialBase()\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ \_base\_getc();}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{int}\ \_base\_putc(\textcolor{keywordtype}{int}\ c);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ serial\_t\ \ \ \ \ \ \ \ \_serial;}
+\DoxyCodeLine{00131\ \ \ \ \ FunctionPointer\ \_irq[2];}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \_baud;}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \}\ \textcolor{comment}{//\ namespace\ mbed}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

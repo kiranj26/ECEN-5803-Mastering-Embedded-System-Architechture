@@ -1,0 +1,215 @@
+\doxysection{mbed\+::Ticker Class Reference}
+\hypertarget{classmbed_1_1_ticker}{}\label{classmbed_1_1_ticker}\index{mbed::Ticker@{mbed::Ticker}}
+
+
+{\ttfamily \#include $<$Ticker.\+h$>$}
+
+Inheritance diagram for mbed\+::Ticker\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmbed_1_1_ticker}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmbed_1_1_ticker_a1fa23f99146b5bbe90791fad6fe47d36}{attach}} (void(\texorpdfstring{$\ast$}{*}fptr)(void), float t)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classmbed_1_1_ticker_ab09230bc20507a3c2b57b98ca14a0aab}{attach}} (T \texorpdfstring{$\ast$}{*}tptr, void(T\+::\texorpdfstring{$\ast$}{*}mptr)(void), float t)
+\item 
+void \mbox{\hyperlink{classmbed_1_1_ticker_ada6018d46fe613429c6159b411a524c2}{attach\+\_\+us}} (void(\texorpdfstring{$\ast$}{*}fptr)(void), unsigned int t)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classmbed_1_1_ticker_a39467eabe9e7958b512cdbfb1801db7c}{attach\+\_\+us}} (T \texorpdfstring{$\ast$}{*}tptr, void(T\+::\texorpdfstring{$\ast$}{*}mptr)(void), unsigned int t)
+\item 
+void \mbox{\hyperlink{classmbed_1_1_ticker_a07a1e3eae57ba0586ad5680f7efdb3db}{detach}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_timer_event}{mbed\+::\+Timer\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_timer_event_abeda500413955133108bad0668e2d77b}{Timer\+Event}} ()
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_timer_event_a6a2a3c2acee5b36ce21e40d84a4f9b71}{\texorpdfstring{$\sim$}{\string~}\+Timer\+Event}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmbed_1_1_ticker_a6fd1d373f091d147fc3d4d2cb52b7178}{setup}} (unsigned int t)
+\item 
+virtual void \mbox{\hyperlink{classmbed_1_1_ticker_a9e700f503716083f8549eec801f13710}{handler}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_timer_event}{mbed\+::\+Timer\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmbed_1_1_timer_event_aa9123e5e1aff20d0112e1de3f3d621b5}{insert}} (unsigned int timestamp)
+\item 
+void \mbox{\hyperlink{classmbed_1_1_timer_event_ac8dddb3d9affcc3267e910fb305d956f}{remove}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classmbed_1_1_ticker_ad3c0eea07cfd5a1104f81d47a153f43b}{\+\_\+delay}}
+\item 
+\mbox{\hyperlink{classmbed_1_1_function_pointer}{Function\+Pointer}} \mbox{\hyperlink{classmbed_1_1_ticker_a1258396e7210d369b75fc227ea1dce4d}{\+\_\+function}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classmbed_1_1_timer_event}{mbed\+::\+Timer\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47}{ticker\+\_\+event\+\_\+t}} \mbox{\hyperlink{classmbed_1_1_timer_event_a80ea97a2c88250aa898f4adda12a9228}{event}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classmbed_1_1_timer_event}{mbed\+::\+Timer\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classmbed_1_1_timer_event_a5c57cce06f037a5682fdee29b8dd384e}{irq}} (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classmbed_1_1_ticker}{Ticker} is used to call a function at a recurring interval
+
+You can use as many seperate \doxylink{classmbed_1_1_ticker}{Ticker} objects as you require.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Toggle\ the\ blinking\ led\ after\ 5\ seconds}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mbed_8h}{mbed.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Ticker\ timer;}
+\DoxyCodeLine{DigitalOut\ led1(\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adac6477842247cab1a8c02c65f431b44}{LED1}});}
+\DoxyCodeLine{DigitalOut\ led2(\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a8379bbaa96d151e6adac488b2a147b7a}{LED2}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_abb58aa24ad972172526008b95457d86c}{flip}}\ =\ 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ attime()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{main_8cpp_abb58aa24ad972172526008b95457d86c}{flip}}\ =\ !\mbox{\hyperlink{main_8cpp_abb58aa24ad972172526008b95457d86c}{flip}};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ timer.attach(\&attime,\ 5);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(1)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{main_8cpp_abb58aa24ad972172526008b95457d86c}{flip}}\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ led1\ =\ !led1;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ led2\ =\ !led2;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ wait(0.2);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmbed_1_1_ticker_ab09230bc20507a3c2b57b98ca14a0aab}\label{classmbed_1_1_ticker_ab09230bc20507a3c2b57b98ca14a0aab} 
+\index{mbed::Ticker@{mbed::Ticker}!attach@{attach}}
+\index{attach@{attach}!mbed::Ticker@{mbed::Ticker}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void mbed\+::\+Ticker\+::attach (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{tptr,  }\item[{void(T\+::\texorpdfstring{$\ast$}{*})(void)}]{mptr,  }\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Attach a member function to be called by the \doxylink{classmbed_1_1_ticker}{Ticker}, specifiying the interval in seconds
+
+
+\begin{DoxyParams}{Parameters}
+{\em tptr} & pointer to the object to call the member function on \\
+\hline
+{\em mptr} & pointer to the member function to be called \\
+\hline
+{\em t} & the time between calls in seconds \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmbed_1_1_ticker_a1fa23f99146b5bbe90791fad6fe47d36}\label{classmbed_1_1_ticker_a1fa23f99146b5bbe90791fad6fe47d36} 
+\index{mbed::Ticker@{mbed::Ticker}!attach@{attach}}
+\index{attach@{attach}!mbed::Ticker@{mbed::Ticker}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void mbed\+::\+Ticker\+::attach (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(void)}]{fptr,  }\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Attach a function to be called by the \doxylink{classmbed_1_1_ticker}{Ticker}, specifiying the interval in seconds
+
+
+\begin{DoxyParams}{Parameters}
+{\em fptr} & pointer to the function to be called \\
+\hline
+{\em t} & the time between calls in seconds \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmbed_1_1_ticker_a39467eabe9e7958b512cdbfb1801db7c}\label{classmbed_1_1_ticker_a39467eabe9e7958b512cdbfb1801db7c} 
+\index{mbed::Ticker@{mbed::Ticker}!attach\_us@{attach\_us}}
+\index{attach\_us@{attach\_us}!mbed::Ticker@{mbed::Ticker}}
+\doxysubsubsection{\texorpdfstring{attach\_us()}{attach\_us()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void mbed\+::\+Ticker\+::attach\+\_\+us (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{tptr,  }\item[{void(T\+::\texorpdfstring{$\ast$}{*})(void)}]{mptr,  }\item[{unsigned int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Attach a member function to be called by the \doxylink{classmbed_1_1_ticker}{Ticker}, specifiying the interval in micro-\/seconds
+
+
+\begin{DoxyParams}{Parameters}
+{\em tptr} & pointer to the object to call the member function on \\
+\hline
+{\em mptr} & pointer to the member function to be called \\
+\hline
+{\em t} & the time between calls in micro-\/seconds \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmbed_1_1_ticker_ada6018d46fe613429c6159b411a524c2}\label{classmbed_1_1_ticker_ada6018d46fe613429c6159b411a524c2} 
+\index{mbed::Ticker@{mbed::Ticker}!attach\_us@{attach\_us}}
+\index{attach\_us@{attach\_us}!mbed::Ticker@{mbed::Ticker}}
+\doxysubsubsection{\texorpdfstring{attach\_us()}{attach\_us()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void mbed\+::\+Ticker\+::attach\+\_\+us (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(void)}]{fptr,  }\item[{unsigned int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Attach a function to be called by the \doxylink{classmbed_1_1_ticker}{Ticker}, specifiying the interval in micro-\/seconds
+
+
+\begin{DoxyParams}{Parameters}
+{\em fptr} & pointer to the function to be called \\
+\hline
+{\em t} & the time between calls in micro-\/seconds \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmbed_1_1_ticker_a07a1e3eae57ba0586ad5680f7efdb3db}\label{classmbed_1_1_ticker_a07a1e3eae57ba0586ad5680f7efdb3db} 
+\index{mbed::Ticker@{mbed::Ticker}!detach@{detach}}
+\index{detach@{detach}!mbed::Ticker@{mbed::Ticker}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily void mbed\+::\+Ticker\+::detach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Detach the function \Hypertarget{classmbed_1_1_ticker_a9e700f503716083f8549eec801f13710}\label{classmbed_1_1_ticker_a9e700f503716083f8549eec801f13710} 
+\index{mbed::Ticker@{mbed::Ticker}!handler@{handler}}
+\index{handler@{handler}!mbed::Ticker@{mbed::Ticker}}
+\doxysubsubsection{\texorpdfstring{handler()}{handler()}}
+{\footnotesize\ttfamily virtual void mbed\+::\+Ticker\+::handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classmbed_1_1_timer_event_ae3e8dbec184090a2d8f9378773bcbc85}{mbed\+::\+Timer\+Event}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classmbed_1_1_timeout_a2324f9b01f39fa36f4b799541a46112b}{mbed\+::\+Timeout}}.
+
+\Hypertarget{classmbed_1_1_ticker_a6fd1d373f091d147fc3d4d2cb52b7178}\label{classmbed_1_1_ticker_a6fd1d373f091d147fc3d4d2cb52b7178} 
+\index{mbed::Ticker@{mbed::Ticker}!setup@{setup}}
+\index{setup@{setup}!mbed::Ticker@{mbed::Ticker}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void mbed\+::\+Ticker\+::setup (\begin{DoxyParamCaption}\item[{unsigned int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmbed_1_1_ticker_ad3c0eea07cfd5a1104f81d47a153f43b}\label{classmbed_1_1_ticker_ad3c0eea07cfd5a1104f81d47a153f43b} 
+\index{mbed::Ticker@{mbed::Ticker}!\_delay@{\_delay}}
+\index{\_delay@{\_delay}!mbed::Ticker@{mbed::Ticker}}
+\doxysubsubsection{\texorpdfstring{\_delay}{\_delay}}
+{\footnotesize\ttfamily unsigned int mbed\+::\+Ticker\+::\+\_\+delay\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classmbed_1_1_ticker_a1258396e7210d369b75fc227ea1dce4d}\label{classmbed_1_1_ticker_a1258396e7210d369b75fc227ea1dce4d} 
+\index{mbed::Ticker@{mbed::Ticker}!\_function@{\_function}}
+\index{\_function@{\_function}!mbed::Ticker@{mbed::Ticker}}
+\doxysubsubsection{\texorpdfstring{\_function}{\_function}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmbed_1_1_function_pointer}{Function\+Pointer}} mbed\+::\+Ticker\+::\+\_\+function\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\mbox{\hyperlink{_ticker_8h}{Ticker.\+h}}\end{DoxyCompactItemize}

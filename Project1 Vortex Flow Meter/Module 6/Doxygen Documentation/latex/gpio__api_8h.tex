@@ -1,0 +1,97 @@
+\doxysection{mbed/gpio\+\_\+api.h File Reference}
+\hypertarget{gpio__api_8h}{}\label{gpio__api_8h}\index{mbed/gpio\_api.h@{mbed/gpio\_api.h}}
+{\ttfamily \#include "{}device.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{gpio__api_8h_ae7303f79f43bab40cf7fdb0e7f596d5b}{gpio\+\_\+set}} (\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin)
+\item 
+void \mbox{\hyperlink{gpio__api_8h_a80305b9e955f6ce5e555096932e76d8c}{gpio\+\_\+init}} (\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}obj, \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin)
+\item 
+void \mbox{\hyperlink{gpio__api_8h_a980b8f8055986ffc177267488a4bd19d}{gpio\+\_\+mode}} (\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}obj, \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{Pin\+Mode}} mode)
+\item 
+void \mbox{\hyperlink{gpio__api_8h_a5a6594d03628bb652d45bdd5bf266348}{gpio\+\_\+dir}} (\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}obj, \mbox{\hyperlink{_pin_names_8h_a8ff912d511000d542e6ad34966166f38}{Pin\+Direction}} direction)
+\item 
+void \mbox{\hyperlink{gpio__api_8h_aedd478762e37aeafcf9ade8e255718b0}{gpio\+\_\+write}} (\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}obj, int value)
+\item 
+int \mbox{\hyperlink{gpio__api_8h_abb97298a1eb6f6c11b6290abe7a1823b}{gpio\+\_\+read}} (\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}obj)
+\item 
+void \mbox{\hyperlink{gpio__api_8h_a673e8a1c56bae84724ba155f3c99e959}{gpio\+\_\+init\+\_\+in}} (\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}gpio, \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin)
+\item 
+void \mbox{\hyperlink{gpio__api_8h_ad5c80e0949e35a2b2180387bae5bec27}{gpio\+\_\+init\+\_\+in\+\_\+ex}} (\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}gpio, \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin, \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{Pin\+Mode}} mode)
+\item 
+void \mbox{\hyperlink{gpio__api_8h_a5f5c43c977d7e2b7d242b7827036e32d}{gpio\+\_\+init\+\_\+out}} (\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}gpio, \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin)
+\item 
+void \mbox{\hyperlink{gpio__api_8h_af00a2b6d3827ce1ed52950d8a8bc5c72}{gpio\+\_\+init\+\_\+out\+\_\+ex}} (\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}gpio, \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin, int value)
+\item 
+void \mbox{\hyperlink{gpio__api_8h_ada71c18e8fe139d522d63f2a7f9f2f3e}{gpio\+\_\+init\+\_\+inout}} (\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}gpio, \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin, \mbox{\hyperlink{_pin_names_8h_a8ff912d511000d542e6ad34966166f38}{Pin\+Direction}} direction, \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{Pin\+Mode}} mode, int value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gpio__api_8h_a5a6594d03628bb652d45bdd5bf266348}\label{gpio__api_8h_a5a6594d03628bb652d45bdd5bf266348} 
+\index{gpio\_api.h@{gpio\_api.h}!gpio\_dir@{gpio\_dir}}
+\index{gpio\_dir@{gpio\_dir}!gpio\_api.h@{gpio\_api.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_dir()}{gpio\_dir()}}
+{\footnotesize\ttfamily void gpio\+\_\+dir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{obj,  }\item[{\mbox{\hyperlink{_pin_names_8h_a8ff912d511000d542e6ad34966166f38}{Pin\+Direction}}}]{direction }\end{DoxyParamCaption})}
+
+\Hypertarget{gpio__api_8h_a80305b9e955f6ce5e555096932e76d8c}\label{gpio__api_8h_a80305b9e955f6ce5e555096932e76d8c} 
+\index{gpio\_api.h@{gpio\_api.h}!gpio\_init@{gpio\_init}}
+\index{gpio\_init@{gpio\_init}!gpio\_api.h@{gpio\_api.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_init()}{gpio\_init()}}
+{\footnotesize\ttfamily void gpio\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{obj,  }\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin }\end{DoxyParamCaption})}
+
+\Hypertarget{gpio__api_8h_a673e8a1c56bae84724ba155f3c99e959}\label{gpio__api_8h_a673e8a1c56bae84724ba155f3c99e959} 
+\index{gpio\_api.h@{gpio\_api.h}!gpio\_init\_in@{gpio\_init\_in}}
+\index{gpio\_init\_in@{gpio\_init\_in}!gpio\_api.h@{gpio\_api.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_init\_in()}{gpio\_init\_in()}}
+{\footnotesize\ttfamily void gpio\+\_\+init\+\_\+in (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{gpio,  }\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin }\end{DoxyParamCaption})}
+
+\Hypertarget{gpio__api_8h_ad5c80e0949e35a2b2180387bae5bec27}\label{gpio__api_8h_ad5c80e0949e35a2b2180387bae5bec27} 
+\index{gpio\_api.h@{gpio\_api.h}!gpio\_init\_in\_ex@{gpio\_init\_in\_ex}}
+\index{gpio\_init\_in\_ex@{gpio\_init\_in\_ex}!gpio\_api.h@{gpio\_api.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_init\_in\_ex()}{gpio\_init\_in\_ex()}}
+{\footnotesize\ttfamily void gpio\+\_\+init\+\_\+in\+\_\+ex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{gpio,  }\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin,  }\item[{\mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{Pin\+Mode}}}]{mode }\end{DoxyParamCaption})}
+
+\Hypertarget{gpio__api_8h_ada71c18e8fe139d522d63f2a7f9f2f3e}\label{gpio__api_8h_ada71c18e8fe139d522d63f2a7f9f2f3e} 
+\index{gpio\_api.h@{gpio\_api.h}!gpio\_init\_inout@{gpio\_init\_inout}}
+\index{gpio\_init\_inout@{gpio\_init\_inout}!gpio\_api.h@{gpio\_api.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_init\_inout()}{gpio\_init\_inout()}}
+{\footnotesize\ttfamily void gpio\+\_\+init\+\_\+inout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{gpio,  }\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin,  }\item[{\mbox{\hyperlink{_pin_names_8h_a8ff912d511000d542e6ad34966166f38}{Pin\+Direction}}}]{direction,  }\item[{\mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{Pin\+Mode}}}]{mode,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{gpio__api_8h_a5f5c43c977d7e2b7d242b7827036e32d}\label{gpio__api_8h_a5f5c43c977d7e2b7d242b7827036e32d} 
+\index{gpio\_api.h@{gpio\_api.h}!gpio\_init\_out@{gpio\_init\_out}}
+\index{gpio\_init\_out@{gpio\_init\_out}!gpio\_api.h@{gpio\_api.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_init\_out()}{gpio\_init\_out()}}
+{\footnotesize\ttfamily void gpio\+\_\+init\+\_\+out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{gpio,  }\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin }\end{DoxyParamCaption})}
+
+\Hypertarget{gpio__api_8h_af00a2b6d3827ce1ed52950d8a8bc5c72}\label{gpio__api_8h_af00a2b6d3827ce1ed52950d8a8bc5c72} 
+\index{gpio\_api.h@{gpio\_api.h}!gpio\_init\_out\_ex@{gpio\_init\_out\_ex}}
+\index{gpio\_init\_out\_ex@{gpio\_init\_out\_ex}!gpio\_api.h@{gpio\_api.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_init\_out\_ex()}{gpio\_init\_out\_ex()}}
+{\footnotesize\ttfamily void gpio\+\_\+init\+\_\+out\+\_\+ex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{gpio,  }\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{gpio__api_8h_a980b8f8055986ffc177267488a4bd19d}\label{gpio__api_8h_a980b8f8055986ffc177267488a4bd19d} 
+\index{gpio\_api.h@{gpio\_api.h}!gpio\_mode@{gpio\_mode}}
+\index{gpio\_mode@{gpio\_mode}!gpio\_api.h@{gpio\_api.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_mode()}{gpio\_mode()}}
+{\footnotesize\ttfamily void gpio\+\_\+mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{obj,  }\item[{\mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{Pin\+Mode}}}]{mode }\end{DoxyParamCaption})}
+
+\Hypertarget{gpio__api_8h_abb97298a1eb6f6c11b6290abe7a1823b}\label{gpio__api_8h_abb97298a1eb6f6c11b6290abe7a1823b} 
+\index{gpio\_api.h@{gpio\_api.h}!gpio\_read@{gpio\_read}}
+\index{gpio\_read@{gpio\_read}!gpio\_api.h@{gpio\_api.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_read()}{gpio\_read()}}
+{\footnotesize\ttfamily int gpio\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{obj }\end{DoxyParamCaption})}
+
+\Hypertarget{gpio__api_8h_ae7303f79f43bab40cf7fdb0e7f596d5b}\label{gpio__api_8h_ae7303f79f43bab40cf7fdb0e7f596d5b} 
+\index{gpio\_api.h@{gpio\_api.h}!gpio\_set@{gpio\_set}}
+\index{gpio\_set@{gpio\_set}!gpio\_api.h@{gpio\_api.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_set()}{gpio\_set()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} gpio\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin }\end{DoxyParamCaption})}
+
+\Hypertarget{gpio__api_8h_aedd478762e37aeafcf9ade8e255718b0}\label{gpio__api_8h_aedd478762e37aeafcf9ade8e255718b0} 
+\index{gpio\_api.h@{gpio\_api.h}!gpio\_write@{gpio\_write}}
+\index{gpio\_write@{gpio\_write}!gpio\_api.h@{gpio\_api.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_write()}{gpio\_write()}}
+{\footnotesize\ttfamily void gpio\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{obj,  }\item[{int}]{value }\end{DoxyParamCaption})}
+

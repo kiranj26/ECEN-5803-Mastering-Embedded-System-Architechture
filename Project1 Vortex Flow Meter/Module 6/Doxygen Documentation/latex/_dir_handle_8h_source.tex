@@ -1,0 +1,71 @@
+\doxysection{Dir\+Handle.\+h}
+\hypertarget{_dir_handle_8h_source}{}\label{_dir_handle_8h_source}\index{mbed/DirHandle.h@{mbed/DirHandle.h}}
+\mbox{\hyperlink{_dir_handle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_DIRHANDLE\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_DIRHANDLE\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#if\ defined(\_\_ARMCC\_VERSION)\ ||\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#\ \ \ define\ NAME\_MAX\ 255}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ mode\_t;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#\ \ \ include\ <sys/syslimits.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_handle_8h}{FileHandle.h}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdirent}{dirent}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structdirent_a493ff210982a02728c1b177139bfdb47}{d\_name}}[NAME\_MAX+1];}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacembed}{mbed}}\ \{}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmbed_1_1_dir_handle}{DirHandle}}\ \{}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmbed_1_1_dir_handle_a4c26b9d7fc438b1f7d9b01ced8629f6e}{closedir}}()=0;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdirent}{dirent}}\ *\mbox{\hyperlink{classmbed_1_1_dir_handle_ad1c5380dc2ea56c4741014a0fdb05811}{readdir}}()=0;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_dir_handle_af21ed332757da752a1286e1a0189957a}{rewinddir}}()=0;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ off\_t\ \mbox{\hyperlink{classmbed_1_1_dir_handle_a6b509a9d24905b38e3883e998de13ae1}{telldir}}()\ \{\ \textcolor{keywordflow}{return}\ -\/1;\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_dir_handle_a5f4511c471648633570515cc9ff9e9e5}{seekdir}}(off\_t\ location)\ \{\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmbed_1_1_dir_handle_ad299bc250f18149694f8c077df61bf11}{\string~DirHandle}}()\ \{\}}
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \}\ \textcolor{comment}{//\ namespace\ mbed}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classmbed_1_1_dir_handle}{mbed::DirHandle}}\ \mbox{\hyperlink{_dir_handle_8h_a7d5f081155cbd798e6c01a4f37a62698}{DIR}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_dir_handle}{DIR}}\ *\mbox{\hyperlink{_dir_handle_8h_aab3004462f9600cbca87f31807214b23}{opendir}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdirent}{dirent}}\ *\mbox{\hyperlink{_dir_handle_8h_a7e8226cf83a9afb3578268c806fb797a}{readdir}}(\mbox{\hyperlink{classmbed_1_1_dir_handle}{DIR}}\ *);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_dir_handle_8h_a008fe2cb2468b06197c2f9bc406300a4}{closedir}}(\mbox{\hyperlink{classmbed_1_1_dir_handle}{DIR}}*);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_dir_handle_8h_a3fb58a6b4088367ccb71909e80ebbb1d}{rewinddir}}(\mbox{\hyperlink{classmbed_1_1_dir_handle}{DIR}}*);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{_dir_handle_8h_a02343c3edead3efa2926e37d340b9cbe}{telldir}}(\mbox{\hyperlink{classmbed_1_1_dir_handle}{DIR}}*);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_dir_handle_8h_a32bca3b3ef688933b676d4511e78cb5d}{seekdir}}(\mbox{\hyperlink{classmbed_1_1_dir_handle}{DIR}}*,\ \textcolor{keywordtype}{long});}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_dir_handle_8h_a62a2a28943c326ccd2abd27293002b98}{mkdir}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name,\ mode\_t\ n);}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ MBED\_DIRHANDLE\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

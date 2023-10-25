@@ -1,0 +1,124 @@
+\doxysection{src/\+Monitor.cpp File Reference}
+\hypertarget{_monitor_8cpp}{}\label{_monitor_8cpp}\index{src/Monitor.cpp@{src/Monitor.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}shared.\+h"{}}\newline
+{\ttfamily \#include "{}memory.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_monitor_8cpp_acd5157b5f415f4ca9be9b2a23943440c}{set\+\_\+display\+\_\+mode}} (void)
+\begin{DoxyCompactList}\small\item\em Displays a selection menu over UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_monitor_8cpp_a29be7c30b6929c50ebb985b228fc1be2}{chk\+\_\+\+UART\+\_\+msg}} (void)
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyItemize}
+\item fills a message buffer until return is encountered, then calls message processing 
+\end{DoxyItemize}\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_monitor_8cpp_a826db354ae1d910792a0330f8d4eb91a}{UART\+\_\+msg\+\_\+process}} (void)
+\item 
+\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{_monitor_8cpp_addd830ea9946a624fae48c1aa78d2430}{is\+\_\+hex}} (\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{_monitor_8cpp_a59a4a0c8721f73a8c9d9db5a4cdc6e88}{monitor}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{_monitor_8cpp_afc1d28cfbce795d6ea954ebe725241f5}{temperature}}
+\begin{DoxyCompactList}\small\item\em Temperature in Celsius. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_monitor_8cpp_a8c01ee33c4f18e77d6d860d1017ca532}{flow}}
+\begin{DoxyCompactList}\small\item\em Calculated flow value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_monitor_8cpp_a9d3c19e881c80a6596884ecb8da4a0f4}{Frequency}}
+\begin{DoxyCompactList}\small\item\em External reference to frequency calculated from ADC readings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\DoxyHorRuler{0}
+
+
+\DoxyHorRuler{0}
+ -- ECEN 5003 Mastering Embedded System Architecture -- -- Project 1 Module 4 -- -- Microcontroller Firmware -- -- \doxylink{_monitor_8cpp}{Monitor.\+cpp} -- \hypertarget{_monitor_8cpp_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{–                                                                           –}{–                                                                           –}}\label{_monitor_8cpp_autotoc_md6}
+-- \hypertarget{_monitor_8cpp_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{–  Designed for\+:  University of Colorado at Boulder}{–  Designed for:  University of Colorado at Boulder}}\label{_monitor_8cpp_autotoc_md7}
+-- ~\newline
+ -- Designed by\+: Tim Scherr \hypertarget{_monitor_8cpp_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{–  Revised by\+:  Student\textquotesingle{}s name}{–  Revised by:  Student's name}}\label{_monitor_8cpp_autotoc_md8}
+-- Version\+: 2.\+0 -- Date of current revision\+: 2022-\/06-\/20 ~\newline
+ -- Target Microcontroller\+: ST STM32\+F401\+RE -- Tools used\+: ARM mbed compiler -- ARM mbed SDK \hypertarget{_monitor_8cpp_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{–              ST Nucleo STM32\+F401\+RE Board}{–              ST Nucleo STM32F401RE Board}}\label{_monitor_8cpp_autotoc_md9}
+-- \hypertarget{_monitor_8cpp_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{Functional Description\+: See below}{Functional Description: See below}}\label{_monitor_8cpp_autotoc_md10}
+\hypertarget{_monitor_8cpp_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{–      Copyright (c) 2015, 2022 Tim Scherr All rights reserved.}{–      Copyright (c) 2015, 2022 Tim Scherr All rights reserved.}}\label{_monitor_8cpp_autotoc_md11}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_monitor_8cpp_a29be7c30b6929c50ebb985b228fc1be2}\label{_monitor_8cpp_a29be7c30b6929c50ebb985b228fc1be2} 
+\index{Monitor.cpp@{Monitor.cpp}!chk\_UART\_msg@{chk\_UART\_msg}}
+\index{chk\_UART\_msg@{chk\_UART\_msg}!Monitor.cpp@{Monitor.cpp}}
+\doxysubsubsection{\texorpdfstring{chk\_UART\_msg()}{chk\_UART\_msg()}}
+{\footnotesize\ttfamily void chk\+\_\+\+UART\+\_\+msg (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+
+\begin{DoxyItemize}
+\item fills a message buffer until return is encountered, then calls message processing 
+\end{DoxyItemize}
+
+\Hypertarget{_monitor_8cpp_addd830ea9946a624fae48c1aa78d2430}\label{_monitor_8cpp_addd830ea9946a624fae48c1aa78d2430} 
+\index{Monitor.cpp@{Monitor.cpp}!is\_hex@{is\_hex}}
+\index{is\_hex@{is\_hex}!Monitor.cpp@{Monitor.cpp}}
+\doxysubsubsection{\texorpdfstring{is\_hex()}{is\_hex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} is\+\_\+hex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+\Hypertarget{_monitor_8cpp_a59a4a0c8721f73a8c9d9db5a4cdc6e88}\label{_monitor_8cpp_a59a4a0c8721f73a8c9d9db5a4cdc6e88} 
+\index{Monitor.cpp@{Monitor.cpp}!monitor@{monitor}}
+\index{monitor@{monitor}!Monitor.cpp@{Monitor.cpp}}
+\doxysubsubsection{\texorpdfstring{monitor()}{monitor()}}
+{\footnotesize\ttfamily void monitor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_monitor_8cpp_acd5157b5f415f4ca9be9b2a23943440c}\label{_monitor_8cpp_acd5157b5f415f4ca9be9b2a23943440c} 
+\index{Monitor.cpp@{Monitor.cpp}!set\_display\_mode@{set\_display\_mode}}
+\index{set\_display\_mode@{set\_display\_mode}!Monitor.cpp@{Monitor.cpp}}
+\doxysubsubsection{\texorpdfstring{set\_display\_mode()}{set\_display\_mode()}}
+{\footnotesize\ttfamily void set\+\_\+display\+\_\+mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Displays a selection menu over UART. 
+
+This function sends a series of messages over UART to display a menu allowing the user to choose between different modes. Each mode is highlighted with a different color. \Hypertarget{_monitor_8cpp_a826db354ae1d910792a0330f8d4eb91a}\label{_monitor_8cpp_a826db354ae1d910792a0330f8d4eb91a} 
+\index{Monitor.cpp@{Monitor.cpp}!UART\_msg\_process@{UART\_msg\_process}}
+\index{UART\_msg\_process@{UART\_msg\_process}!Monitor.cpp@{Monitor.cpp}}
+\doxysubsubsection{\texorpdfstring{UART\_msg\_process()}{UART\_msg\_process()}}
+{\footnotesize\ttfamily void UART\+\_\+msg\+\_\+process (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+UART Input Message Processing 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_monitor_8cpp_a8c01ee33c4f18e77d6d860d1017ca532}\label{_monitor_8cpp_a8c01ee33c4f18e77d6d860d1017ca532} 
+\index{Monitor.cpp@{Monitor.cpp}!flow@{flow}}
+\index{flow@{flow}!Monitor.cpp@{Monitor.cpp}}
+\doxysubsubsection{\texorpdfstring{flow}{flow}}
+{\footnotesize\ttfamily float flow}
+
+
+
+Calculated flow value. 
+
+\Hypertarget{_monitor_8cpp_a9d3c19e881c80a6596884ecb8da4a0f4}\label{_monitor_8cpp_a9d3c19e881c80a6596884ecb8da4a0f4} 
+\index{Monitor.cpp@{Monitor.cpp}!Frequency@{Frequency}}
+\index{Frequency@{Frequency}!Monitor.cpp@{Monitor.cpp}}
+\doxysubsubsection{\texorpdfstring{Frequency}{Frequency}}
+{\footnotesize\ttfamily float Frequency}
+
+
+
+External reference to frequency calculated from ADC readings. 
+
+Global variable to store the calculated frequency.
+
+External reference to frequency calculated from ADC readings. \Hypertarget{_monitor_8cpp_afc1d28cfbce795d6ea954ebe725241f5}\label{_monitor_8cpp_afc1d28cfbce795d6ea954ebe725241f5} 
+\index{Monitor.cpp@{Monitor.cpp}!temperature@{temperature}}
+\index{temperature@{temperature}!Monitor.cpp@{Monitor.cpp}}
+\doxysubsubsection{\texorpdfstring{temperature}{temperature}}
+{\footnotesize\ttfamily float temperature\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Temperature in Celsius. 
+

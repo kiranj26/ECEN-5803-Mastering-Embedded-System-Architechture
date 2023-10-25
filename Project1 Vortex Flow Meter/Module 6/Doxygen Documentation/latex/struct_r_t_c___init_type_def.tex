@@ -1,0 +1,78 @@
+\doxysection{RTC\+\_\+\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_r_t_c___init_type_def}{}\label{struct_r_t_c___init_type_def}\index{RTC\_InitTypeDef@{RTC\_InitTypeDef}}
+
+
+RTC Configuration Structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal\+\_\+rtc.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_t_c___init_type_def_aa7dff3583cd79a5a3f9868a56ffd31ee}{Hour\+Format}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_t_c___init_type_def_a8666a1fe64fe25f9b951219561a07a95}{Asynch\+Prediv}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_t_c___init_type_def_ac27c42530b6ba86654ec476cd0d020fb}{Synch\+Prediv}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_t_c___init_type_def_acd1593d55123feca6c3cae142134c294}{Out\+Put}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_t_c___init_type_def_a14365da1f80863621341cf4a6a8d4e67}{Out\+Put\+Polarity}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_t_c___init_type_def_a2c4a2bd3cfae39882e657e653e45185a}{Out\+Put\+Type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RTC Configuration Structure definition ~\newline
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_r_t_c___init_type_def_a8666a1fe64fe25f9b951219561a07a95}\label{struct_r_t_c___init_type_def_a8666a1fe64fe25f9b951219561a07a95} 
+\index{RTC\_InitTypeDef@{RTC\_InitTypeDef}!AsynchPrediv@{AsynchPrediv}}
+\index{AsynchPrediv@{AsynchPrediv}!RTC\_InitTypeDef@{RTC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{AsynchPrediv}{AsynchPrediv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RTC\+\_\+\+Init\+Type\+Def\+::\+Asynch\+Prediv}
+
+Specifies the RTC Asynchronous Predivider value. This parameter must be a number between Min\+\_\+\+Data = 0x00 and Max\+\_\+\+Data = 0x7F \Hypertarget{struct_r_t_c___init_type_def_aa7dff3583cd79a5a3f9868a56ffd31ee}\label{struct_r_t_c___init_type_def_aa7dff3583cd79a5a3f9868a56ffd31ee} 
+\index{RTC\_InitTypeDef@{RTC\_InitTypeDef}!HourFormat@{HourFormat}}
+\index{HourFormat@{HourFormat}!RTC\_InitTypeDef@{RTC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{HourFormat}{HourFormat}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RTC\+\_\+\+Init\+Type\+Def\+::\+Hour\+Format}
+
+Specifies the RTC Hour Format. This parameter can be a value of \doxylink{group___r_t_c___hour___formats}{RTC\+\_\+\+Hour\+\_\+\+Formats} \Hypertarget{struct_r_t_c___init_type_def_acd1593d55123feca6c3cae142134c294}\label{struct_r_t_c___init_type_def_acd1593d55123feca6c3cae142134c294} 
+\index{RTC\_InitTypeDef@{RTC\_InitTypeDef}!OutPut@{OutPut}}
+\index{OutPut@{OutPut}!RTC\_InitTypeDef@{RTC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{OutPut}{OutPut}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RTC\+\_\+\+Init\+Type\+Def\+::\+Out\+Put}
+
+Specifies which signal will be routed to the RTC output. ~\newline
+ This parameter can be a value of \doxylink{group___r_t_c___output__selection___definitions}{RTC\+\_\+\+Output\+\_\+selection\+\_\+\+Definitions} \Hypertarget{struct_r_t_c___init_type_def_a14365da1f80863621341cf4a6a8d4e67}\label{struct_r_t_c___init_type_def_a14365da1f80863621341cf4a6a8d4e67} 
+\index{RTC\_InitTypeDef@{RTC\_InitTypeDef}!OutPutPolarity@{OutPutPolarity}}
+\index{OutPutPolarity@{OutPutPolarity}!RTC\_InitTypeDef@{RTC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{OutPutPolarity}{OutPutPolarity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RTC\+\_\+\+Init\+Type\+Def\+::\+Out\+Put\+Polarity}
+
+Specifies the polarity of the output signal. ~\newline
+ This parameter can be a value of \doxylink{group___r_t_c___output___polarity___definitions}{RTC\+\_\+\+Output\+\_\+\+Polarity\+\_\+\+Definitions} \Hypertarget{struct_r_t_c___init_type_def_a2c4a2bd3cfae39882e657e653e45185a}\label{struct_r_t_c___init_type_def_a2c4a2bd3cfae39882e657e653e45185a} 
+\index{RTC\_InitTypeDef@{RTC\_InitTypeDef}!OutPutType@{OutPutType}}
+\index{OutPutType@{OutPutType}!RTC\_InitTypeDef@{RTC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{OutPutType}{OutPutType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RTC\+\_\+\+Init\+Type\+Def\+::\+Out\+Put\+Type}
+
+Specifies the RTC Output Pin mode. ~\newline
+ This parameter can be a value of \doxylink{group___r_t_c___output___type___a_l_a_r_m___o_u_t}{RTC\+\_\+\+Output\+\_\+\+Type\+\_\+\+ALARM\+\_\+\+OUT} \Hypertarget{struct_r_t_c___init_type_def_ac27c42530b6ba86654ec476cd0d020fb}\label{struct_r_t_c___init_type_def_ac27c42530b6ba86654ec476cd0d020fb} 
+\index{RTC\_InitTypeDef@{RTC\_InitTypeDef}!SynchPrediv@{SynchPrediv}}
+\index{SynchPrediv@{SynchPrediv}!RTC\_InitTypeDef@{RTC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{SynchPrediv}{SynchPrediv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RTC\+\_\+\+Init\+Type\+Def\+::\+Synch\+Prediv}
+
+Specifies the RTC Synchronous Predivider value. This parameter must be a number between Min\+\_\+\+Data = 0x00 and Max\+\_\+\+Data = 0x7\+FFF 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/\mbox{\hyperlink{stm32f4xx__hal__rtc_8h}{stm32f4xx\+\_\+hal\+\_\+rtc.\+h}}\end{DoxyCompactItemize}

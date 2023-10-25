@@ -1,0 +1,85 @@
+\doxysubsubsubsection{RTCEx\+\_\+\+Wakeup\+\_\+\+Timer\+\_\+\+Definitions}
+\hypertarget{group___r_t_c_ex___wakeup___timer___definitions}{}\label{group___r_t_c_ex___wakeup___timer___definitions}\index{RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_ga3864a5d628a34118dfcc86e9b8958e51}{RTC\+\_\+\+WAKEUPCLOCK\+\_\+\+RTCCLK\+\_\+\+DIV16}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_gaaa4ec1d6b96e88b070899d0dd5d8869f}{RTC\+\_\+\+WAKEUPCLOCK\+\_\+\+RTCCLK\+\_\+\+DIV8}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_gade098ac6e923b02c06de003f61aafd2c}{RTC\+\_\+\+WAKEUPCLOCK\+\_\+\+RTCCLK\+\_\+\+DIV4}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_gab1013526c00cfab26015267f17b6553f}{RTC\+\_\+\+WAKEUPCLOCK\+\_\+\+RTCCLK\+\_\+\+DIV2}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000003)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_ga2d75cf962faf3257ada7f102fccfcb62}{RTC\+\_\+\+WAKEUPCLOCK\+\_\+\+CK\+\_\+\+SPRE\+\_\+16\+BITS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_gab4ff75ad48550530f95698f269a617dd}{RTC\+\_\+\+WAKEUPCLOCK\+\_\+\+CK\+\_\+\+SPRE\+\_\+17\+BITS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000006)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_gab8e7db6943d4d03c850ef9dc20389bb3}{IS\+\_\+\+WAKEUP\+\_\+\+CLOCK}}(CLOCK)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_ga862e77efddc4db29ce0779501b21c029}{IS\+\_\+\+WAKEUP\+\_\+\+COUNTER}}(COUNTER)~((COUNTER) $<$= 0x\+FFFF)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___r_t_c_ex___wakeup___timer___definitions_gab8e7db6943d4d03c850ef9dc20389bb3}\label{group___r_t_c_ex___wakeup___timer___definitions_gab8e7db6943d4d03c850ef9dc20389bb3} 
+\index{RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}!IS\_WAKEUP\_CLOCK@{IS\_WAKEUP\_CLOCK}}
+\index{IS\_WAKEUP\_CLOCK@{IS\_WAKEUP\_CLOCK}!RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_WAKEUP\_CLOCK}{IS\_WAKEUP\_CLOCK}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+WAKEUP\+\_\+\+CLOCK(\begin{DoxyParamCaption}\item[{}]{CLOCK }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((CLOCK)\ ==\ \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_ga3864a5d628a34118dfcc86e9b8958e51}{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV16}})\ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CLOCK)\ ==\ \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_gaaa4ec1d6b96e88b070899d0dd5d8869f}{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV8}})\ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CLOCK)\ ==\ \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_gade098ac6e923b02c06de003f61aafd2c}{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV4}})\ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CLOCK)\ ==\ \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_gab1013526c00cfab26015267f17b6553f}{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV2}})\ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CLOCK)\ ==\ \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_ga2d75cf962faf3257ada7f102fccfcb62}{RTC\_WAKEUPCLOCK\_CK\_SPRE\_16BITS}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CLOCK)\ ==\ \mbox{\hyperlink{group___r_t_c_ex___wakeup___timer___definitions_gab4ff75ad48550530f95698f269a617dd}{RTC\_WAKEUPCLOCK\_CK\_SPRE\_17BITS}}))}
+
+\end{DoxyCode}
+\Hypertarget{group___r_t_c_ex___wakeup___timer___definitions_ga862e77efddc4db29ce0779501b21c029}\label{group___r_t_c_ex___wakeup___timer___definitions_ga862e77efddc4db29ce0779501b21c029} 
+\index{RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}!IS\_WAKEUP\_COUNTER@{IS\_WAKEUP\_COUNTER}}
+\index{IS\_WAKEUP\_COUNTER@{IS\_WAKEUP\_COUNTER}!RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_WAKEUP\_COUNTER}{IS\_WAKEUP\_COUNTER}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+WAKEUP\+\_\+\+COUNTER(\begin{DoxyParamCaption}\item[{}]{COUNTER }\end{DoxyParamCaption})~((COUNTER) $<$= 0x\+FFFF)}
+
+\Hypertarget{group___r_t_c_ex___wakeup___timer___definitions_ga2d75cf962faf3257ada7f102fccfcb62}\label{group___r_t_c_ex___wakeup___timer___definitions_ga2d75cf962faf3257ada7f102fccfcb62} 
+\index{RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}!RTC\_WAKEUPCLOCK\_CK\_SPRE\_16BITS@{RTC\_WAKEUPCLOCK\_CK\_SPRE\_16BITS}}
+\index{RTC\_WAKEUPCLOCK\_CK\_SPRE\_16BITS@{RTC\_WAKEUPCLOCK\_CK\_SPRE\_16BITS}!RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{RTC\_WAKEUPCLOCK\_CK\_SPRE\_16BITS}{RTC\_WAKEUPCLOCK\_CK\_SPRE\_16BITS}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+WAKEUPCLOCK\+\_\+\+CK\+\_\+\+SPRE\+\_\+16\+BITS~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000004)}
+
+\Hypertarget{group___r_t_c_ex___wakeup___timer___definitions_gab4ff75ad48550530f95698f269a617dd}\label{group___r_t_c_ex___wakeup___timer___definitions_gab4ff75ad48550530f95698f269a617dd} 
+\index{RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}!RTC\_WAKEUPCLOCK\_CK\_SPRE\_17BITS@{RTC\_WAKEUPCLOCK\_CK\_SPRE\_17BITS}}
+\index{RTC\_WAKEUPCLOCK\_CK\_SPRE\_17BITS@{RTC\_WAKEUPCLOCK\_CK\_SPRE\_17BITS}!RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{RTC\_WAKEUPCLOCK\_CK\_SPRE\_17BITS}{RTC\_WAKEUPCLOCK\_CK\_SPRE\_17BITS}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+WAKEUPCLOCK\+\_\+\+CK\+\_\+\+SPRE\+\_\+17\+BITS~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000006)}
+
+\Hypertarget{group___r_t_c_ex___wakeup___timer___definitions_ga3864a5d628a34118dfcc86e9b8958e51}\label{group___r_t_c_ex___wakeup___timer___definitions_ga3864a5d628a34118dfcc86e9b8958e51} 
+\index{RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}!RTC\_WAKEUPCLOCK\_RTCCLK\_DIV16@{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV16}}
+\index{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV16@{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV16}!RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV16}{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV16}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+WAKEUPCLOCK\+\_\+\+RTCCLK\+\_\+\+DIV16~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)}
+
+\Hypertarget{group___r_t_c_ex___wakeup___timer___definitions_gab1013526c00cfab26015267f17b6553f}\label{group___r_t_c_ex___wakeup___timer___definitions_gab1013526c00cfab26015267f17b6553f} 
+\index{RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}!RTC\_WAKEUPCLOCK\_RTCCLK\_DIV2@{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV2}}
+\index{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV2@{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV2}!RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV2}{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV2}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+WAKEUPCLOCK\+\_\+\+RTCCLK\+\_\+\+DIV2~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000003)}
+
+\Hypertarget{group___r_t_c_ex___wakeup___timer___definitions_gade098ac6e923b02c06de003f61aafd2c}\label{group___r_t_c_ex___wakeup___timer___definitions_gade098ac6e923b02c06de003f61aafd2c} 
+\index{RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}!RTC\_WAKEUPCLOCK\_RTCCLK\_DIV4@{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV4}}
+\index{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV4@{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV4}!RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV4}{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV4}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+WAKEUPCLOCK\+\_\+\+RTCCLK\+\_\+\+DIV4~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000002)}
+
+\Hypertarget{group___r_t_c_ex___wakeup___timer___definitions_gaaa4ec1d6b96e88b070899d0dd5d8869f}\label{group___r_t_c_ex___wakeup___timer___definitions_gaaa4ec1d6b96e88b070899d0dd5d8869f} 
+\index{RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}!RTC\_WAKEUPCLOCK\_RTCCLK\_DIV8@{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV8}}
+\index{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV8@{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV8}!RTCEx\_Wakeup\_Timer\_Definitions@{RTCEx\_Wakeup\_Timer\_Definitions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV8}{RTC\_WAKEUPCLOCK\_RTCCLK\_DIV8}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+WAKEUPCLOCK\+\_\+\+RTCCLK\+\_\+\+DIV8~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)}
+

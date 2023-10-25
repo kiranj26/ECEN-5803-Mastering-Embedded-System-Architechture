@@ -1,0 +1,55 @@
+\doxysection{us\+\_\+ticker\+\_\+api.\+h}
+\hypertarget{us__ticker__api_8h_source}{}\label{us__ticker__api_8h_source}\index{mbed/us\_ticker\_api.h@{mbed/us\_ticker\_api.h}}
+\mbox{\hyperlink{us__ticker__api_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_US\_TICKER\_API\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_US\_TICKER\_API\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{us__ticker__api_8h_a023920c1e5030a84aa39d0be1de0aa0b}{us\_ticker\_read}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{us__ticker__api_8h_a7d6a730d0ce9f55e8cecb734d0455c7d}{ticker\_event\_handler}})(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ id);}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{us__ticker__api_8h_aa8f429ca585b985f98b52b152f7cb574}{us\_ticker\_set\_handler}}(\mbox{\hyperlink{us__ticker__api_8h_a7d6a730d0ce9f55e8cecb734d0455c7d}{ticker\_event\_handler}}\ handler);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structticker__event__s}{ticker\_event\_s}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{structticker__event__s_a7746dfa984a635f25cd637e3eedbead4}{timestamp}};}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{structticker__event__s_a17bde252b2de1ebc3694314d68bdcde7}{id}};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structticker__event__s}{ticker\_event\_s}}\ *\mbox{\hyperlink{structticker__event__s_afed6e4ab974206abb5ea661ca2ef19f9}{next}};}
+\DoxyCodeLine{00034\ \}\ \mbox{\hyperlink{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47}{ticker\_event\_t}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{us__ticker__api_8h_a829955267433ca8d04ac71f4e89c0404}{us\_ticker\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{us__ticker__api_8h_ac9c4169782e75770b9ce4bbedd2e6015}{us\_ticker\_set\_interrupt}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structticker__event__s_a7746dfa984a635f25cd637e3eedbead4}{timestamp}});}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{us__ticker__api_8h_a75e46157b1bbfe4f5594e33b49ff2605}{us\_ticker\_disable\_interrupt}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{us__ticker__api_8h_a373846a3122f86d7decbea5fab0590a9}{us\_ticker\_clear\_interrupt}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{us__ticker__api_8h_a52d2b2c47d792442573e34403f9a10b1}{us\_ticker\_irq\_handler}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{us__ticker__api_8h_a8d781edab7255043a9c82f40ba907a92}{us\_ticker\_insert\_event}}(\mbox{\hyperlink{structticker__event__s}{ticker\_event\_t}}\ *obj,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structticker__event__s_a7746dfa984a635f25cd637e3eedbead4}{timestamp}},\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{us__ticker__api_8h_a3d65ad35621dff366f06766eee1b09c8}{us\_ticker\_remove\_event}}(\mbox{\hyperlink{structticker__event__s}{ticker\_event\_t}}\ *obj);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

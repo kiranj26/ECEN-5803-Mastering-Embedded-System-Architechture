@@ -1,0 +1,59 @@
+\doxysubsubsubsection{GPIO\+\_\+pull\+\_\+define}
+\hypertarget{group___g_p_i_o__pull__define}{}\label{group___g_p_i_o__pull__define}\index{GPIO\_pull\_define@{GPIO\_pull\_define}}
+
+
+GPIO Pull-\/\+Up or Pull-\/\+Down Activation.  
+
+
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__pull__define_ga5c2862579882c1cc64e36d38fbd07a4c}{GPIO\+\_\+\+NOPULL}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__pull__define_gae689bc8f5c42d6df7bd54a8dd372e072}{GPIO\+\_\+\+PULLUP}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__pull__define_ga75d958d0410c36da7f27d1f4f5c36c14}{GPIO\+\_\+\+PULLDOWN}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o__pull__define_ga1cb9706d23fb79584aae41e5e503f3cd}{IS\+\_\+\+GPIO\+\_\+\+PULL}}(PULL)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+GPIO Pull-\/\+Up or Pull-\/\+Down Activation. 
+
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___g_p_i_o__pull__define_ga5c2862579882c1cc64e36d38fbd07a4c}\label{group___g_p_i_o__pull__define_ga5c2862579882c1cc64e36d38fbd07a4c} 
+\index{GPIO\_pull\_define@{GPIO\_pull\_define}!GPIO\_NOPULL@{GPIO\_NOPULL}}
+\index{GPIO\_NOPULL@{GPIO\_NOPULL}!GPIO\_pull\_define@{GPIO\_pull\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_NOPULL}{GPIO\_NOPULL}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+NOPULL~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)}
+
+No Pull-\/up or Pull-\/down activation ~\newline
+ \Hypertarget{group___g_p_i_o__pull__define_ga75d958d0410c36da7f27d1f4f5c36c14}\label{group___g_p_i_o__pull__define_ga75d958d0410c36da7f27d1f4f5c36c14} 
+\index{GPIO\_pull\_define@{GPIO\_pull\_define}!GPIO\_PULLDOWN@{GPIO\_PULLDOWN}}
+\index{GPIO\_PULLDOWN@{GPIO\_PULLDOWN}!GPIO\_pull\_define@{GPIO\_pull\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_PULLDOWN}{GPIO\_PULLDOWN}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+PULLDOWN~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000002)}
+
+Pull-\/down activation ~\newline
+ \Hypertarget{group___g_p_i_o__pull__define_gae689bc8f5c42d6df7bd54a8dd372e072}\label{group___g_p_i_o__pull__define_gae689bc8f5c42d6df7bd54a8dd372e072} 
+\index{GPIO\_pull\_define@{GPIO\_pull\_define}!GPIO\_PULLUP@{GPIO\_PULLUP}}
+\index{GPIO\_PULLUP@{GPIO\_PULLUP}!GPIO\_pull\_define@{GPIO\_pull\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{GPIO\_PULLUP}{GPIO\_PULLUP}}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+PULLUP~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000001)}
+
+Pull-\/up activation ~\newline
+ \Hypertarget{group___g_p_i_o__pull__define_ga1cb9706d23fb79584aae41e5e503f3cd}\label{group___g_p_i_o__pull__define_ga1cb9706d23fb79584aae41e5e503f3cd} 
+\index{GPIO\_pull\_define@{GPIO\_pull\_define}!IS\_GPIO\_PULL@{IS\_GPIO\_PULL}}
+\index{IS\_GPIO\_PULL@{IS\_GPIO\_PULL}!GPIO\_pull\_define@{GPIO\_pull\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_GPIO\_PULL}{IS\_GPIO\_PULL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+GPIO\+\_\+\+PULL(\begin{DoxyParamCaption}\item[{}]{PULL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((PULL)\ ==\ \mbox{\hyperlink{group___g_p_i_o__pull__define_ga5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}})\ ||\ ((PULL)\ ==\ \mbox{\hyperlink{group___g_p_i_o__pull__define_gae689bc8f5c42d6df7bd54a8dd372e072}{GPIO\_PULLUP}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PULL)\ ==\ \mbox{\hyperlink{group___g_p_i_o__pull__define_ga75d958d0410c36da7f27d1f4f5c36c14}{GPIO\_PULLDOWN}}))}
+
+\end{DoxyCode}

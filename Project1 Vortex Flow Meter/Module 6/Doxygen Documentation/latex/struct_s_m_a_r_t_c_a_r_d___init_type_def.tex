@@ -1,0 +1,120 @@
+\doxysection{SMARTCARD\+\_\+\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_s_m_a_r_t_c_a_r_d___init_type_def}{}\label{struct_s_m_a_r_t_c_a_r_d___init_type_def}\index{SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}}
+
+
+SMARTCARD Init Structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal\+\_\+smartcard.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_ab7fd32cfbfc629344b4e4d5844e798cd}{Baud\+Rate}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_a16a8ba82fbc742510824bb0d8e85fbbc}{Word\+Length}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_ac0eb966bac71de17ace31fa5214c23f9}{Stop\+Bits}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_aaefc9fdd7fd84b066ded393a3830743f}{Parity}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_acf1faf22e7003550470b97b9f77425f9}{Mode}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_abb3ca75bd370b08fcdf0d47c00741b0a}{CLKPolarity}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_aea57d654156ac6b3eff7dae2bc4d6c5d}{CLKPhase}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_a484c956dcdfc4e604758698b3541c128}{CLKLast\+Bit}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_a7ff96c14ecfbe219a2773a1a2cf897a4}{Prescaler}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_a5bfb799c3c7ee1faed6b1eda12c79f1a}{Guard\+Time}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_m_a_r_t_c_a_r_d___init_type_def_a3be795a888d187da69f8dcdfab38da74}{NACKState}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SMARTCARD Init Structure definition. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_s_m_a_r_t_c_a_r_d___init_type_def_ab7fd32cfbfc629344b4e4d5844e798cd}\label{struct_s_m_a_r_t_c_a_r_d___init_type_def_ab7fd32cfbfc629344b4e4d5844e798cd} 
+\index{SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}!BaudRate@{BaudRate}}
+\index{BaudRate@{BaudRate}!SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{BaudRate}{BaudRate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SMARTCARD\+\_\+\+Init\+Type\+Def\+::\+Baud\+Rate}
+
+This member configures the Smart\+Card communication baud rate. The baud rate is computed using the following formula\+:
+\begin{DoxyItemize}
+\item Integer\+Divider = ((PCLKx) / (8 \texorpdfstring{$\ast$}{*} (hirda-\/\texorpdfstring{$>$}{>}Init.\+Baud\+Rate)))
+\item Fractional\+Divider = ((Integer\+Divider -\/ ((uint32\+\_\+t) Integer\+Divider)) \texorpdfstring{$\ast$}{*} 8) + 0.\+5 
+\end{DoxyItemize}\Hypertarget{struct_s_m_a_r_t_c_a_r_d___init_type_def_a484c956dcdfc4e604758698b3541c128}\label{struct_s_m_a_r_t_c_a_r_d___init_type_def_a484c956dcdfc4e604758698b3541c128} 
+\index{SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}!CLKLastBit@{CLKLastBit}}
+\index{CLKLastBit@{CLKLastBit}!SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CLKLastBit}{CLKLastBit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SMARTCARD\+\_\+\+Init\+Type\+Def\+::\+CLKLast\+Bit}
+
+Specifies whether the clock pulse corresponding to the last transmitted data bit (MSB) has to be output on the SCLK pin in synchronous mode. This parameter can be a value of \doxylink{group___s_m_a_r_t_c_a_r_d___last___bit}{SMARTCARD\+\_\+\+Last\+\_\+\+Bit} \Hypertarget{struct_s_m_a_r_t_c_a_r_d___init_type_def_aea57d654156ac6b3eff7dae2bc4d6c5d}\label{struct_s_m_a_r_t_c_a_r_d___init_type_def_aea57d654156ac6b3eff7dae2bc4d6c5d} 
+\index{SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}!CLKPhase@{CLKPhase}}
+\index{CLKPhase@{CLKPhase}!SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CLKPhase}{CLKPhase}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SMARTCARD\+\_\+\+Init\+Type\+Def\+::\+CLKPhase}
+
+Specifies the clock transition on which the bit capture is made. This parameter can be a value of \doxylink{group___s_m_a_r_t_c_a_r_d___clock___phase}{SMARTCARD\+\_\+\+Clock\+\_\+\+Phase} \Hypertarget{struct_s_m_a_r_t_c_a_r_d___init_type_def_abb3ca75bd370b08fcdf0d47c00741b0a}\label{struct_s_m_a_r_t_c_a_r_d___init_type_def_abb3ca75bd370b08fcdf0d47c00741b0a} 
+\index{SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}!CLKPolarity@{CLKPolarity}}
+\index{CLKPolarity@{CLKPolarity}!SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CLKPolarity}{CLKPolarity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SMARTCARD\+\_\+\+Init\+Type\+Def\+::\+CLKPolarity}
+
+Specifies the steady state of the serial clock. This parameter can be a value of \doxylink{group___s_m_a_r_t_c_a_r_d___clock___polarity}{SMARTCARD\+\_\+\+Clock\+\_\+\+Polarity} \Hypertarget{struct_s_m_a_r_t_c_a_r_d___init_type_def_a5bfb799c3c7ee1faed6b1eda12c79f1a}\label{struct_s_m_a_r_t_c_a_r_d___init_type_def_a5bfb799c3c7ee1faed6b1eda12c79f1a} 
+\index{SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}!GuardTime@{GuardTime}}
+\index{GuardTime@{GuardTime}!SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{GuardTime}{GuardTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SMARTCARD\+\_\+\+Init\+Type\+Def\+::\+Guard\+Time}
+
+Specifies the Smart\+Card Guard Time. This parameter must be a number between Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 255 \Hypertarget{struct_s_m_a_r_t_c_a_r_d___init_type_def_acf1faf22e7003550470b97b9f77425f9}\label{struct_s_m_a_r_t_c_a_r_d___init_type_def_acf1faf22e7003550470b97b9f77425f9} 
+\index{SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}!Mode@{Mode}}
+\index{Mode@{Mode}!SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SMARTCARD\+\_\+\+Init\+Type\+Def\+::\+Mode}
+
+Specifies wether the Receive or Transmit mode is enabled or disabled. This parameter can be a value of \doxylink{group___s_m_a_r_t_c_a_r_d___mode}{SMARTCARD\+\_\+\+Mode} \Hypertarget{struct_s_m_a_r_t_c_a_r_d___init_type_def_a3be795a888d187da69f8dcdfab38da74}\label{struct_s_m_a_r_t_c_a_r_d___init_type_def_a3be795a888d187da69f8dcdfab38da74} 
+\index{SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}!NACKState@{NACKState}}
+\index{NACKState@{NACKState}!SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{NACKState}{NACKState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SMARTCARD\+\_\+\+Init\+Type\+Def\+::\+NACKState}
+
+Specifies the Smart\+Card NACK Transmission state. This parameter can be a value of \doxylink{group___smart_card___n_a_c_k___state}{Smart\+Card\+\_\+\+NACK\+\_\+\+State} \Hypertarget{struct_s_m_a_r_t_c_a_r_d___init_type_def_aaefc9fdd7fd84b066ded393a3830743f}\label{struct_s_m_a_r_t_c_a_r_d___init_type_def_aaefc9fdd7fd84b066ded393a3830743f} 
+\index{SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}!Parity@{Parity}}
+\index{Parity@{Parity}!SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Parity}{Parity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SMARTCARD\+\_\+\+Init\+Type\+Def\+::\+Parity}
+
+Specifies the parity mode. This parameter can be a value of \doxylink{group___s_m_a_r_t_c_a_r_d___parity}{SMARTCARD\+\_\+\+Parity} \begin{DoxyNote}{Note}
+When parity is enabled, the computed parity is inserted at the MSB position of the transmitted data (9th bit when the word length is set to 9 data bits; 8th bit when the word length is set to 8 data bits). 
+\end{DoxyNote}
+\Hypertarget{struct_s_m_a_r_t_c_a_r_d___init_type_def_a7ff96c14ecfbe219a2773a1a2cf897a4}\label{struct_s_m_a_r_t_c_a_r_d___init_type_def_a7ff96c14ecfbe219a2773a1a2cf897a4} 
+\index{SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}!Prescaler@{Prescaler}}
+\index{Prescaler@{Prescaler}!SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Prescaler}{Prescaler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SMARTCARD\+\_\+\+Init\+Type\+Def\+::\+Prescaler}
+
+Specifies the Smart\+Card Prescaler. This parameter must be a number between Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 255 \Hypertarget{struct_s_m_a_r_t_c_a_r_d___init_type_def_ac0eb966bac71de17ace31fa5214c23f9}\label{struct_s_m_a_r_t_c_a_r_d___init_type_def_ac0eb966bac71de17ace31fa5214c23f9} 
+\index{SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}!StopBits@{StopBits}}
+\index{StopBits@{StopBits}!SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{StopBits}{StopBits}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SMARTCARD\+\_\+\+Init\+Type\+Def\+::\+Stop\+Bits}
+
+Specifies the number of stop bits transmitted. This parameter can be a value of \doxylink{group___s_m_a_r_t_c_a_r_d___stop___bits}{SMARTCARD\+\_\+\+Stop\+\_\+\+Bits} \Hypertarget{struct_s_m_a_r_t_c_a_r_d___init_type_def_a16a8ba82fbc742510824bb0d8e85fbbc}\label{struct_s_m_a_r_t_c_a_r_d___init_type_def_a16a8ba82fbc742510824bb0d8e85fbbc} 
+\index{SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}!WordLength@{WordLength}}
+\index{WordLength@{WordLength}!SMARTCARD\_InitTypeDef@{SMARTCARD\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{WordLength}{WordLength}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SMARTCARD\+\_\+\+Init\+Type\+Def\+::\+Word\+Length}
+
+Specifies the number of data bits transmitted or received in a frame. This parameter can be a value of \doxylink{group___s_m_a_r_t_c_a_r_d___word___length}{SMARTCARD\+\_\+\+Word\+\_\+\+Length} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/\mbox{\hyperlink{stm32f4xx__hal__smartcard_8h}{stm32f4xx\+\_\+hal\+\_\+smartcard.\+h}}\end{DoxyCompactItemize}

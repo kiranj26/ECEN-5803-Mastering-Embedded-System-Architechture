@@ -1,0 +1,84 @@
+\doxysection{RTC\+\_\+\+Time\+Type\+Def Struct Reference}
+\hypertarget{struct_r_t_c___time_type_def}{}\label{struct_r_t_c___time_type_def}\index{RTC\_TimeTypeDef@{RTC\_TimeTypeDef}}
+
+
+RTC Time structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+hal\+\_\+rtc.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_r_t_c___time_type_def_afb56ed968b4967d127517ebb4ed40d8b}{Hours}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_r_t_c___time_type_def_a362931e6bba28836c36423197e429f29}{Minutes}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_r_t_c___time_type_def_a297ae76c2b7de4f939d996d93240c6b2}{Seconds}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_t_c___time_type_def_ae24e60a3b9549fd02b00ad6762ae5b77}{Sub\+Seconds}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_r_t_c___time_type_def_a701c21c52472e8caf9e23653ec2fd604}{Time\+Format}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_t_c___time_type_def_ac873d19a4d99d3f447f96ecae2bf3c5d}{Day\+Light\+Saving}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_r_t_c___time_type_def_a7628b757d7c7a4ab30b6bbc45a028b7d}{Store\+Operation}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RTC Time structure definition ~\newline
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_r_t_c___time_type_def_ac873d19a4d99d3f447f96ecae2bf3c5d}\label{struct_r_t_c___time_type_def_ac873d19a4d99d3f447f96ecae2bf3c5d} 
+\index{RTC\_TimeTypeDef@{RTC\_TimeTypeDef}!DayLightSaving@{DayLightSaving}}
+\index{DayLightSaving@{DayLightSaving}!RTC\_TimeTypeDef@{RTC\_TimeTypeDef}}
+\doxysubsubsection{\texorpdfstring{DayLightSaving}{DayLightSaving}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RTC\+\_\+\+Time\+Type\+Def\+::\+Day\+Light\+Saving}
+
+Specifies Day\+Light Save Operation. This parameter can be a value of \doxylink{group___r_t_c___day_light_saving___definitions}{RTC\+\_\+\+Day\+Light\+Saving\+\_\+\+Definitions} \Hypertarget{struct_r_t_c___time_type_def_afb56ed968b4967d127517ebb4ed40d8b}\label{struct_r_t_c___time_type_def_afb56ed968b4967d127517ebb4ed40d8b} 
+\index{RTC\_TimeTypeDef@{RTC\_TimeTypeDef}!Hours@{Hours}}
+\index{Hours@{Hours}!RTC\_TimeTypeDef@{RTC\_TimeTypeDef}}
+\doxysubsubsection{\texorpdfstring{Hours}{Hours}}
+{\footnotesize\ttfamily uint8\+\_\+t RTC\+\_\+\+Time\+Type\+Def\+::\+Hours}
+
+Specifies the RTC Time Hour. This parameter must be a number between Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 12 if the RTC\+\_\+\+Hour\+Format\+\_\+12 is selected. This parameter must be a number between Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 23 if the RTC\+\_\+\+Hour\+Format\+\_\+24 is selected ~\newline
+ \Hypertarget{struct_r_t_c___time_type_def_a362931e6bba28836c36423197e429f29}\label{struct_r_t_c___time_type_def_a362931e6bba28836c36423197e429f29} 
+\index{RTC\_TimeTypeDef@{RTC\_TimeTypeDef}!Minutes@{Minutes}}
+\index{Minutes@{Minutes}!RTC\_TimeTypeDef@{RTC\_TimeTypeDef}}
+\doxysubsubsection{\texorpdfstring{Minutes}{Minutes}}
+{\footnotesize\ttfamily uint8\+\_\+t RTC\+\_\+\+Time\+Type\+Def\+::\+Minutes}
+
+Specifies the RTC Time Minutes. This parameter must be a number between Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 59 \Hypertarget{struct_r_t_c___time_type_def_a297ae76c2b7de4f939d996d93240c6b2}\label{struct_r_t_c___time_type_def_a297ae76c2b7de4f939d996d93240c6b2} 
+\index{RTC\_TimeTypeDef@{RTC\_TimeTypeDef}!Seconds@{Seconds}}
+\index{Seconds@{Seconds}!RTC\_TimeTypeDef@{RTC\_TimeTypeDef}}
+\doxysubsubsection{\texorpdfstring{Seconds}{Seconds}}
+{\footnotesize\ttfamily uint8\+\_\+t RTC\+\_\+\+Time\+Type\+Def\+::\+Seconds}
+
+Specifies the RTC Time Seconds. This parameter must be a number between Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 59 \Hypertarget{struct_r_t_c___time_type_def_a7628b757d7c7a4ab30b6bbc45a028b7d}\label{struct_r_t_c___time_type_def_a7628b757d7c7a4ab30b6bbc45a028b7d} 
+\index{RTC\_TimeTypeDef@{RTC\_TimeTypeDef}!StoreOperation@{StoreOperation}}
+\index{StoreOperation@{StoreOperation}!RTC\_TimeTypeDef@{RTC\_TimeTypeDef}}
+\doxysubsubsection{\texorpdfstring{StoreOperation}{StoreOperation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RTC\+\_\+\+Time\+Type\+Def\+::\+Store\+Operation}
+
+Specifies RTC\+\_\+\+Store\+Operation value to be written in the BCK bit in CR register to store the operation. This parameter can be a value of \doxylink{group___r_t_c___store_operation___definitions}{RTC\+\_\+\+Store\+Operation\+\_\+\+Definitions} \Hypertarget{struct_r_t_c___time_type_def_ae24e60a3b9549fd02b00ad6762ae5b77}\label{struct_r_t_c___time_type_def_ae24e60a3b9549fd02b00ad6762ae5b77} 
+\index{RTC\_TimeTypeDef@{RTC\_TimeTypeDef}!SubSeconds@{SubSeconds}}
+\index{SubSeconds@{SubSeconds}!RTC\_TimeTypeDef@{RTC\_TimeTypeDef}}
+\doxysubsubsection{\texorpdfstring{SubSeconds}{SubSeconds}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} RTC\+\_\+\+Time\+Type\+Def\+::\+Sub\+Seconds}
+
+Specifies the RTC Time Sub\+Seconds. This parameter must be a number between Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 59 \Hypertarget{struct_r_t_c___time_type_def_a701c21c52472e8caf9e23653ec2fd604}\label{struct_r_t_c___time_type_def_a701c21c52472e8caf9e23653ec2fd604} 
+\index{RTC\_TimeTypeDef@{RTC\_TimeTypeDef}!TimeFormat@{TimeFormat}}
+\index{TimeFormat@{TimeFormat}!RTC\_TimeTypeDef@{RTC\_TimeTypeDef}}
+\doxysubsubsection{\texorpdfstring{TimeFormat}{TimeFormat}}
+{\footnotesize\ttfamily uint8\+\_\+t RTC\+\_\+\+Time\+Type\+Def\+::\+Time\+Format}
+
+Specifies the RTC AM/\+PM Time. This parameter can be a value of \doxylink{group___r_t_c___a_m___p_m___definitions}{RTC\+\_\+\+AM\+\_\+\+PM\+\_\+\+Definitions} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/\mbox{\hyperlink{stm32f4xx__hal__rtc_8h}{stm32f4xx\+\_\+hal\+\_\+rtc.\+h}}\end{DoxyCompactItemize}

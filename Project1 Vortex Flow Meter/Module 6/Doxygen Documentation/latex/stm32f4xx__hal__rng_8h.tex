@@ -1,0 +1,110 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+hal\+\_\+rng.h File Reference}
+\hypertarget{stm32f4xx__hal__rng_8h}{}\label{stm32f4xx__hal__rng_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_rng.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_rng.h}}
+
+
+Header file of RNG HAL module.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_n_g___handle_type_def}{RNG\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RNG Handle Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_n_g___interrupt__definition_ga8dabf5f116a92e59d18a224d14882927}{RNG\+\_\+\+IT\+\_\+\+CEI}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x20)
+\item 
+\#define \mbox{\hyperlink{group___r_n_g___interrupt__definition_ga2343cb323912a036fa46b081bbe751bc}{RNG\+\_\+\+IT\+\_\+\+SEI}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x40)
+\item 
+\#define \mbox{\hyperlink{group___r_n_g___interrupt__definition_gaa110e0edaec1c15ed3a9620b001f8d91}{IS\+\_\+\+RNG\+\_\+\+IT}}(IT)
+\item 
+\#define \mbox{\hyperlink{group___r_n_g___flag__definition_ga25845be03c05930bde3c03975eb6c44f}{RNG\+\_\+\+FLAG\+\_\+\+DRDY}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0001)
+\item 
+\#define \mbox{\hyperlink{group___r_n_g___flag__definition_ga4d4d7142b6c50bf0f421a1b668b3ff42}{RNG\+\_\+\+FLAG\+\_\+\+CECS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0002)
+\item 
+\#define \mbox{\hyperlink{group___r_n_g___flag__definition_ga0a3a6b3d5e584f04546cbcfe0b4fdac3}{RNG\+\_\+\+FLAG\+\_\+\+SECS}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0004)
+\item 
+\#define \mbox{\hyperlink{group___r_n_g___flag__definition_ga96edbf26cc1c4b05064f47b02ee460bf}{IS\+\_\+\+RNG\+\_\+\+FLAG}}(FLAG)
+\item 
+\#define \mbox{\hyperlink{group___r_n_g_ga5af98831d5e8f86ceba4dc6834b6683c}{\+\_\+\+\_\+\+HAL\+\_\+\+RNG\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___r_n_g_gga4df5a662b522fdd2a0628b98e3218164ac6ae3d9b920346eb9dbf70734cf6b24d}{HAL\+\_\+\+RNG\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset RNG handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_n_g_ga94417ed0a672802a1fe6b563fa6db67a}{\+\_\+\+\_\+\+HAL\+\_\+\+RNG\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}=  RNG\+\_\+\+CR\+\_\+\+RNGEN)
+\begin{DoxyCompactList}\small\item\em Enables the RNG peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_n_g_ga9f481a8bf336ef8f5896dc1b65816ec0}{\+\_\+\+\_\+\+HAL\+\_\+\+RNG\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \&= \texorpdfstring{$\sim$}{\string~}RNG\+\_\+\+CR\+\_\+\+RNGEN)
+\begin{DoxyCompactList}\small\item\em Disables the RNG peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_n_g_ga7d3a78fbebb37ac4bbad41bbafc45231}{\+\_\+\+\_\+\+HAL\+\_\+\+RNG\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Gets the selected RNG\textquotesingle{}s flag status. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_n_g_ga7ce64050d8d8b43a032ae7122f49d589}{\+\_\+\+\_\+\+HAL\+\_\+\+RNG\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR) \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the RNG\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_n_g_gae57547b6ac50cab512a710ca2197ceef}{\+\_\+\+\_\+\+HAL\+\_\+\+RNG\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}=  RNG\+\_\+\+CR\+\_\+\+IE)
+\begin{DoxyCompactList}\small\item\em Enables the RNG interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_n_g_ga0931b99dc51e49f8750769a4640b180d}{\+\_\+\+\_\+\+HAL\+\_\+\+RNG\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \&= \texorpdfstring{$\sim$}{\string~}RNG\+\_\+\+CR\+\_\+\+IE)
+\begin{DoxyCompactList}\small\item\em Disables the RNG interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_n_g_ga8eb2f8e5e41d49baea4e228f02476587}{\+\_\+\+\_\+\+HAL\+\_\+\+RNG\+\_\+\+GET\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Checks whether the specified RNG interrupt has occurred or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___r_n_g_ga4df5a662b522fdd2a0628b98e3218164}{HAL\+\_\+\+RNG\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___r_n_g_gga4df5a662b522fdd2a0628b98e3218164ac6ae3d9b920346eb9dbf70734cf6b24d}{HAL\+\_\+\+RNG\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___r_n_g_gga4df5a662b522fdd2a0628b98e3218164aa3b092b8667b3c44bae319cefc1be8ec}{HAL\+\_\+\+RNG\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___r_n_g_gga4df5a662b522fdd2a0628b98e3218164af91167eb8a28f0322bdc6a6efbf7ecf1}{HAL\+\_\+\+RNG\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___r_n_g_gga4df5a662b522fdd2a0628b98e3218164ae4af344563d5d2a88572c892c9be654f}{HAL\+\_\+\+RNG\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \newline
+\mbox{\hyperlink{group___r_n_g_gga4df5a662b522fdd2a0628b98e3218164ad5f27831d44979023e9dc8012f15e838}{HAL\+\_\+\+RNG\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em RNG HAL State Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_n_g_gabb8a1155a3240d63c2407454d31c8df8}{HAL\+\_\+\+RNG\+\_\+\+Init}} (\mbox{\hyperlink{struct_r_n_g___handle_type_def}{RNG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrng)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___r_n_g_ga83742c9e725e9d2c07db6ee95c3b3ff6}{HAL\+\_\+\+RNG\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_r_n_g___handle_type_def}{RNG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrng)
+\item 
+void \mbox{\hyperlink{group___r_n_g_gafe887fca6ab3b254e871a1a2d88a30d7}{HAL\+\_\+\+RNG\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_r_n_g___handle_type_def}{RNG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrng)
+\item 
+void \mbox{\hyperlink{group___r_n_g_gaee48b1f58486bd2c1535a5b2486f9a6c}{HAL\+\_\+\+RNG\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_r_n_g___handle_type_def}{RNG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrng)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___r_n_g_gae589fa0838911facb5f44a3454ed2617}{HAL\+\_\+\+RNG\+\_\+\+Get\+Random\+Number}} (\mbox{\hyperlink{struct_r_n_g___handle_type_def}{RNG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrng)
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{group___r_n_g_gaf581e06eaa5281bc954e038207be1cdb}{HAL\+\_\+\+RNG\+\_\+\+Get\+Random\+Number\+\_\+\+IT}} (\mbox{\hyperlink{struct_r_n_g___handle_type_def}{RNG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrng)
+\item 
+void \mbox{\hyperlink{group___r_n_g_ga678b4fe183d5639b658b2e4e38b881b0}{HAL\+\_\+\+RNG\+\_\+\+IRQHandler}} (\mbox{\hyperlink{struct_r_n_g___handle_type_def}{RNG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrng)
+\item 
+void \mbox{\hyperlink{group___r_n_g_gaae52f6c36cfa915c7781397d610d8253}{HAL\+\_\+\+RNG\+\_\+\+Ready\+Callback}} (\mbox{\hyperlink{struct_r_n_g___handle_type_def}{RNG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrng)
+\item 
+void \mbox{\hyperlink{group___r_n_g_ga6bbfc492695015cbf5f3ce470d2ec63f}{HAL\+\_\+\+RNG\+\_\+\+Error\+Callback}} (\mbox{\hyperlink{struct_r_n_g___handle_type_def}{RNG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrng)
+\item 
+\mbox{\hyperlink{group___r_n_g_ga4df5a662b522fdd2a0628b98e3218164}{HAL\+\_\+\+RNG\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___r_n_g_ga15f07098d0e6b39b6840b796c69685b6}{HAL\+\_\+\+RNG\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_r_n_g___handle_type_def}{RNG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hrng)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of RNG HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

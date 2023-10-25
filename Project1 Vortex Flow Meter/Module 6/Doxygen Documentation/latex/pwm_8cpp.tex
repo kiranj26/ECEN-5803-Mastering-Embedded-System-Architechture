@@ -1,0 +1,104 @@
+\doxysection{pwm.\+cpp File Reference}
+\hypertarget{pwm_8cpp}{}\label{pwm_8cpp}\index{pwm.cpp@{pwm.cpp}}
+
+
+PWM output configurations and related functions for STM32\+F401xE.  
+
+
+{\ttfamily \#include "{}pwm.\+h"{}}\newline
+{\ttfamily \#include "{}mbed.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Pwm\+Out \mbox{\hyperlink{pwm_8cpp_a293bcf00f6611480501445058d66e5b1}{pulse\+\_\+420}} (\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ad39865ac0088f540b44b1283d805aece}{PC\+\_\+8}})
+\begin{DoxyCompactList}\small\item\em PWM output pin for 4-\/20mA signaling. \end{DoxyCompactList}\item 
+Pwm\+Out \mbox{\hyperlink{pwm_8cpp_aee1534b28c4546db61116b1c5941ba8a}{pulse\+\_\+out}} (\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a1c1d754d4d5c505db86b14df3aab28d8}{PC\+\_\+9}})
+\begin{DoxyCompactList}\small\item\em Standard PWM output pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pwm_8cpp_aadefd0128799a1da7df8fdc6e363a216}{pulse\+\_\+420\+\_\+output}} (void)
+\begin{DoxyCompactList}\small\item\em Output a PWM signal based on the flow rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pwm_8cpp_a49ad4c92945d5e9dcc52801dce0d81fa}{pulse\+\_\+output}} (void)
+\begin{DoxyCompactList}\small\item\em Output a PWM signal based on the measured frequency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{pwm_8cpp_a8c01ee33c4f18e77d6d860d1017ca532}{flow}}
+\begin{DoxyCompactList}\small\item\em Calculated flow value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{pwm_8cpp_a9d3c19e881c80a6596884ecb8da4a0f4}{Frequency}}
+\begin{DoxyCompactList}\small\item\em Externally defined flow and frequency values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+PWM output configurations and related functions for STM32\+F401xE. 
+
+\begin{DoxyAuthor}{Author}
+Kiran Jojare, Viraj Patel 
+\end{DoxyAuthor}
+This file provides functionality to generate PWM signals based on the flow and frequency calculations from the flow sensing system. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pwm_8cpp_a293bcf00f6611480501445058d66e5b1}\label{pwm_8cpp_a293bcf00f6611480501445058d66e5b1} 
+\index{pwm.cpp@{pwm.cpp}!pulse\_420@{pulse\_420}}
+\index{pulse\_420@{pulse\_420}!pwm.cpp@{pwm.cpp}}
+\doxysubsubsection{\texorpdfstring{pulse\_420()}{pulse\_420()}}
+{\footnotesize\ttfamily Pwm\+Out pulse\+\_\+420 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1ad39865ac0088f540b44b1283d805aece}{PC\+\_\+8}}}]{ }\end{DoxyParamCaption})}
+
+
+
+PWM output pin for 4-\/20mA signaling. 
+
+\Hypertarget{pwm_8cpp_aadefd0128799a1da7df8fdc6e363a216}\label{pwm_8cpp_aadefd0128799a1da7df8fdc6e363a216} 
+\index{pwm.cpp@{pwm.cpp}!pulse\_420\_output@{pulse\_420\_output}}
+\index{pulse\_420\_output@{pulse\_420\_output}!pwm.cpp@{pwm.cpp}}
+\doxysubsubsection{\texorpdfstring{pulse\_420\_output()}{pulse\_420\_output()}}
+{\footnotesize\ttfamily void pulse\+\_\+420\+\_\+output (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Output a PWM signal based on the flow rate. 
+
+Generates a PWM signal with a frequency inversely proportional to the flow rate (in gallons per second). The duty cycle is set to 50\%. \Hypertarget{pwm_8cpp_aee1534b28c4546db61116b1c5941ba8a}\label{pwm_8cpp_aee1534b28c4546db61116b1c5941ba8a} 
+\index{pwm.cpp@{pwm.cpp}!pulse\_out@{pulse\_out}}
+\index{pulse\_out@{pulse\_out}!pwm.cpp@{pwm.cpp}}
+\doxysubsubsection{\texorpdfstring{pulse\_out()}{pulse\_out()}}
+{\footnotesize\ttfamily Pwm\+Out pulse\+\_\+out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a1c1d754d4d5c505db86b14df3aab28d8}{PC\+\_\+9}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Standard PWM output pin. 
+
+\Hypertarget{pwm_8cpp_a49ad4c92945d5e9dcc52801dce0d81fa}\label{pwm_8cpp_a49ad4c92945d5e9dcc52801dce0d81fa} 
+\index{pwm.cpp@{pwm.cpp}!pulse\_output@{pulse\_output}}
+\index{pulse\_output@{pulse\_output}!pwm.cpp@{pwm.cpp}}
+\doxysubsubsection{\texorpdfstring{pulse\_output()}{pulse\_output()}}
+{\footnotesize\ttfamily void pulse\+\_\+output (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Output a PWM signal based on the measured frequency. 
+
+Generates a PWM signal with a frequency inversely proportional to the frequency from the flow sensing system. The duty cycle is set to 50\%. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{pwm_8cpp_a8c01ee33c4f18e77d6d860d1017ca532}\label{pwm_8cpp_a8c01ee33c4f18e77d6d860d1017ca532} 
+\index{pwm.cpp@{pwm.cpp}!flow@{flow}}
+\index{flow@{flow}!pwm.cpp@{pwm.cpp}}
+\doxysubsubsection{\texorpdfstring{flow}{flow}}
+{\footnotesize\ttfamily float flow\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Calculated flow value. 
+
+\Hypertarget{pwm_8cpp_a9d3c19e881c80a6596884ecb8da4a0f4}\label{pwm_8cpp_a9d3c19e881c80a6596884ecb8da4a0f4} 
+\index{pwm.cpp@{pwm.cpp}!Frequency@{Frequency}}
+\index{Frequency@{Frequency}!pwm.cpp@{pwm.cpp}}
+\doxysubsubsection{\texorpdfstring{Frequency}{Frequency}}
+{\footnotesize\ttfamily float Frequency}
+
+
+
+Externally defined flow and frequency values. 
+
+Global variable to store the calculated frequency.
+
+External reference to frequency calculated from ADC readings. 

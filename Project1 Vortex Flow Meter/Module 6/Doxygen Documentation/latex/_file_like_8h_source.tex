@@ -1,0 +1,50 @@
+\doxysection{File\+Like.\+h}
+\hypertarget{_file_like_8h_source}{}\label{_file_like_8h_source}\index{mbed/FileLike.h@{mbed/FileLike.h}}
+\mbox{\hyperlink{_file_like_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_FILELIKE\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_FILELIKE\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_base_8h}{FileBase.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_handle_8h}{FileHandle.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacembed}{mbed}}\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{/*\ Class\ FileLike}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ \ A\ file-\/like\ object\ is\ one\ that\ can\ be\ opened\ with\ fopen\ by}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ \ fopen("{}/name"{},\ mode).\ It\ is\ intersection\ of\ the\ classes\ Base\ and}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ \ FileHandle.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmbed_1_1_file_like}{FileLike}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmbed_1_1_file_handle}{FileHandle}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classmbed_1_1_file_base}{FileBase}}\ \{}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{/*\ Constructor\ FileLike}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ \ \ *\ Variables}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ \ \ \ *\ \ name\ -\/\ The\ name\ to\ use\ to\ open\ the\ file.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_file_like_a45088db3d27b7f4461bf3017dfa959b5}{FileLike}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classmbed_1_1_file_like_adf84a707afcad2c9d4a26bc0babd7e9c}{\string~FileLike}}();}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \}\ \textcolor{comment}{//\ namespace\ mbed}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

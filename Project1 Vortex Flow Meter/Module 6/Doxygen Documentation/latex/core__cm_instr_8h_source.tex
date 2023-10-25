@@ -1,0 +1,372 @@
+\doxysection{core\+\_\+cm\+Instr.\+h}
+\hypertarget{core__cm_instr_8h_source}{}\label{core__cm_instr_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/core\_cmInstr.h@{mbed/TARGET\_NUCLEO\_F401RE/core\_cmInstr.h}}
+\mbox{\hyperlink{core__cm_instr_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/**************************************************************************/}}
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Copyright\ (c)\ 2009\ -\/\ 2013\ ARM\ LIMITED}}
+\DoxyCodeLine{00011\ \textcolor{comment}{}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ \ \ All\ rights\ reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ \ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions\ are\ met:}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ -\/\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ -\/\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ \ \ \ documentation\ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ \ \ -\/\ Neither\ the\ name\ of\ ARM\ nor\ the\ names\ of\ its\ contributors\ may\ be\ used}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ \ \ \ \ to\ endorse\ or\ promote\ products\ derived\ from\ this\ software\ without}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ \ \ \ \ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ \ \ *}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS\ "{}AS\ IS"{}}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ \ \ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ \ \ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS\ BE}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ \ \ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ \ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ \ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ \ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ \ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifndef\ \_\_CORE\_CMINSTR\_H}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ \_\_CORE\_CMINSTR\_H}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{/*\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ \ Core\ Instruction\ Access\ \ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ */}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#if\ \ \ defined\ (\ \_\_CC\_ARM\ )\ }\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/RealView\ Compiler\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00049\ \textcolor{comment}{/*\ ARM\ armcc\ specific\ functions\ */}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#if\ (\_\_ARMCC\_VERSION\ <\ 400677)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \#error\ "{}Please\ use\ ARM\ Compiler\ Toolchain\ V4.0.677\ or\ later!"{}}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ \_\_NOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_nop}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ \_\_WFI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_wfi}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ \_\_WFE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_wfe}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ \_\_SEV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_sev}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ \_\_ISB()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_isb(0xF)}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_\_DSB()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_dsb(0xF)}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ \_\_DMB()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_dmb(0xF)}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ \_\_REV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_rev}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#ifndef\ \_\_NO\_EMBEDDED\_ASM}}
+\DoxyCodeLine{00129\ \_\_attribute\_\_((section(\textcolor{stringliteral}{"{}.rev16\_text"{}})))\ \_\_STATIC\_INLINE\ \_\_ASM\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \_\_REV16(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ value)}
+\DoxyCodeLine{00130\ \{}
+\DoxyCodeLine{00131\ \ \ rev16\ r0,\ r0}
+\DoxyCodeLine{00132\ \ \ bx\ lr}
+\DoxyCodeLine{00133\ \}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#ifndef\ \_\_NO\_EMBEDDED\_ASM}}
+\DoxyCodeLine{00144\ \_\_attribute\_\_((section(\textcolor{stringliteral}{"{}.revsh\_text"{}})))\ \_\_STATIC\_INLINE\ \_\_ASM\ int32\_t\ \_\_REVSH(int32\_t\ value)}
+\DoxyCodeLine{00145\ \{}
+\DoxyCodeLine{00146\ \ \ revsh\ r0,\ r0}
+\DoxyCodeLine{00147\ \ \ bx\ lr}
+\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ \_\_ROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_ror}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ \_\_BKPT(value)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_breakpoint(value)}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#if\ \ \ \ \ \ \ (\_\_CORTEX\_M\ >=\ 0x03)}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ \_\_RBIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_rbit}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ \_\_LDREXB(ptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t\ )\ \_\_ldrex(ptr))}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ \_\_LDREXH(ptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)\ \_\_ldrex(ptr))}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ \_\_LDREXW(ptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t\ )\ \_\_ldrex(ptr))}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ \_\_STREXB(value,\ ptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_strex(value,\ ptr)}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ \_\_STREXH(value,\ ptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_strex(value,\ ptr)}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#define\ \_\_STREXW(value,\ ptr)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_strex(value,\ ptr)}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#define\ \_\_CLREX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_clrex}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#define\ \_\_SSAT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_ssat}}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#define\ \_\_USAT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_usat}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#define\ \_\_CLZ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_clz}}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ (\_\_CORTEX\_M\ >=\ 0x03)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#elif\ defined\ (\ \_\_ICCARM\_\_\ )\ }\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ ICC\ Compiler\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00296\ \textcolor{comment}{/*\ IAR\ iccarm\ specific\ functions\ */}}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#include\ <cmsis\_iar.h>}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#elif\ defined\ (\ \_\_TMS470\_\_\ )\ }\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ TI\ CCS\ Compiler\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00302\ \textcolor{comment}{/*\ TI\ CCS\ specific\ functions\ */}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#include\ <cmsis\_ccs.h>}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#elif\ defined\ (\ \_\_GNUC\_\_\ )\ }\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ GNU\ Compiler\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00308\ \textcolor{comment}{/*\ GNU\ gcc\ specific\ functions\ */}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \textcolor{comment}{/*\ Define\ macros\ for\ porting\ to\ both\ thumb1\ and\ thumb2.}}
+\DoxyCodeLine{00311\ \textcolor{comment}{\ *\ For\ thumb1,\ use\ low\ register\ (r0-\/r7),\ specified\ by\ constrant\ "{}l"{}}}
+\DoxyCodeLine{00312\ \textcolor{comment}{\ *\ Otherwise,\ use\ general\ registers,\ specified\ by\ constrant\ "{}r"{}\ */}}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#if\ defined\ (\_\_thumb\_\_)\ \&\&\ !defined\ (\_\_thumb2\_\_)}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#define\ \_\_CMSIS\_GCC\_OUT\_REG(r)\ "{}=l"{}\ (r)}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ \_\_CMSIS\_GCC\_USE\_REG(r)\ "{}l"{}\ (r)}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ \_\_CMSIS\_GCC\_OUT\_REG(r)\ "{}=r"{}\ (r)}}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ \_\_CMSIS\_GCC\_USE\_REG(r)\ "{}r"{}\ (r)}}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00325\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \_\_NOP(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00326\ \{}
+\DoxyCodeLine{00327\ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}nop"{}});}
+\DoxyCodeLine{00328\ \}}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00336\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \_\_WFI(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00337\ \{}
+\DoxyCodeLine{00338\ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}wfi"{}});}
+\DoxyCodeLine{00339\ \}}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00347\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \_\_WFE(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00348\ \{}
+\DoxyCodeLine{00349\ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}wfe"{}});}
+\DoxyCodeLine{00350\ \}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00357\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \_\_SEV(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00358\ \{}
+\DoxyCodeLine{00359\ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}sev"{}});}
+\DoxyCodeLine{00360\ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00369\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \_\_ISB(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00370\ \{}
+\DoxyCodeLine{00371\ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}isb"{}});}
+\DoxyCodeLine{00372\ \}}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00380\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \_\_DSB(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00381\ \{}
+\DoxyCodeLine{00382\ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}dsb"{}});}
+\DoxyCodeLine{00383\ \}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00391\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \_\_DMB(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00392\ \{}
+\DoxyCodeLine{00393\ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}dmb"{}});}
+\DoxyCodeLine{00394\ \}}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00404\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \_\_REV(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ value)}
+\DoxyCodeLine{00405\ \{}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#if\ (\_\_GNUC\_\_\ >\ 4)\ ||\ (\_\_GNUC\_\_\ ==\ 4\ \&\&\ \_\_GNUC\_MINOR\_\_\ >=\ 5)}}
+\DoxyCodeLine{00407\ \ \ \textcolor{keywordflow}{return}\ \_\_builtin\_bswap32(value);}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00409\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ result;}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}rev\ \%0,\ \%1"{}}\ :\ \_\_CMSIS\_GCC\_OUT\_REG\ (result)\ :\ \_\_CMSIS\_GCC\_USE\_REG\ (value)\ );}
+\DoxyCodeLine{00412\ \ \ \textcolor{keywordflow}{return}(result);}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00414\ \}}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00424\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \_\_REV16(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ value)}
+\DoxyCodeLine{00425\ \{}
+\DoxyCodeLine{00426\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ result;}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00428\ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}rev16\ \%0,\ \%1"{}}\ :\ \_\_CMSIS\_GCC\_OUT\_REG\ (result)\ :\ \_\_CMSIS\_GCC\_USE\_REG\ (value)\ );}
+\DoxyCodeLine{00429\ \ \ \textcolor{keywordflow}{return}(result);}
+\DoxyCodeLine{00430\ \}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00440\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ int32\_t\ \_\_REVSH(int32\_t\ value)}
+\DoxyCodeLine{00441\ \{}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#if\ (\_\_GNUC\_\_\ >\ 4)\ ||\ (\_\_GNUC\_\_\ ==\ 4\ \&\&\ \_\_GNUC\_MINOR\_\_\ >=\ 8)}}
+\DoxyCodeLine{00443\ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{short})\_\_builtin\_bswap16(value);}
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00445\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ result;}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}revsh\ \%0,\ \%1"{}}\ :\ \_\_CMSIS\_GCC\_OUT\_REG\ (result)\ :\ \_\_CMSIS\_GCC\_USE\_REG\ (value)\ );}
+\DoxyCodeLine{00448\ \ \ \textcolor{keywordflow}{return}(result);}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00450\ \}}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00461\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \_\_ROR(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ op1,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ op2)}
+\DoxyCodeLine{00462\ \{}
+\DoxyCodeLine{00463\ \ \ \textcolor{keywordflow}{return}\ (op1\ >>\ op2)\ |\ (op1\ <<\ (32\ -\/\ op2));\ }
+\DoxyCodeLine{00464\ \}}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00475\ \textcolor{preprocessor}{\#define\ \_\_BKPT(value)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_ASM\ volatile\ ("{}bkpt\ "{}\#value)}}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#if\ \ \ \ \ \ \ (\_\_CORTEX\_M\ >=\ 0x03)}}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00487\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \_\_RBIT(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ value)}
+\DoxyCodeLine{00488\ \{}
+\DoxyCodeLine{00489\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ result;}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}rbit\ \%0,\ \%1"{}}\ :\ \textcolor{stringliteral}{"{}=r"{}}\ (result)\ :\ \textcolor{stringliteral}{"{}r"{}}\ (value)\ );}
+\DoxyCodeLine{00492\ \ \ \ \textcolor{keywordflow}{return}(result);}
+\DoxyCodeLine{00493\ \}}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00503\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ uint8\_t\ \_\_LDREXB(\textcolor{keyword}{volatile}\ uint8\_t\ *addr)}
+\DoxyCodeLine{00504\ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ result;}
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\#if\ (\_\_GNUC\_\_\ >\ 4)\ ||\ (\_\_GNUC\_\_\ ==\ 4\ \&\&\ \_\_GNUC\_MINOR\_\_\ >=\ 8)}}
+\DoxyCodeLine{00508\ \ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}ldrexb\ \%0,\ \%1"{}}\ :\ \textcolor{stringliteral}{"{}=r"{}}\ (result)\ :\ \textcolor{stringliteral}{"{}Q"{}}\ (*addr)\ );}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00510\ \ \ \ \ \textcolor{comment}{/*\ Prior\ to\ GCC\ 4.8,\ "{}Q"{}\ will\ be\ expanded\ to\ [rx,\ \#0]\ which\ is\ not}}
+\DoxyCodeLine{00511\ \textcolor{comment}{\ \ \ \ \ \ \ accepted\ by\ assembler.\ So\ has\ to\ use\ following\ less\ efficient\ pattern.}}
+\DoxyCodeLine{00512\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00513\ \ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}ldrexb\ \%0,\ [\%1]"{}}\ :\ \textcolor{stringliteral}{"{}=r"{}}\ (result)\ :\ \textcolor{stringliteral}{"{}r"{}}\ (addr)\ :\ \textcolor{stringliteral}{"{}memory"{}}\ );}
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00515\ \ \ \ \textcolor{keywordflow}{return}(result);}
+\DoxyCodeLine{00516\ \}}
+\DoxyCodeLine{00517\ }
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00526\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \_\_LDREXH(\textcolor{keyword}{volatile}\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *addr)}
+\DoxyCodeLine{00527\ \{}
+\DoxyCodeLine{00528\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ result;}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#if\ (\_\_GNUC\_\_\ >\ 4)\ ||\ (\_\_GNUC\_\_\ ==\ 4\ \&\&\ \_\_GNUC\_MINOR\_\_\ >=\ 8)}}
+\DoxyCodeLine{00531\ \ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}ldrexh\ \%0,\ \%1"{}}\ :\ \textcolor{stringliteral}{"{}=r"{}}\ (result)\ :\ \textcolor{stringliteral}{"{}Q"{}}\ (*addr)\ );}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00533\ \ \ \ \ \textcolor{comment}{/*\ Prior\ to\ GCC\ 4.8,\ "{}Q"{}\ will\ be\ expanded\ to\ [rx,\ \#0]\ which\ is\ not}}
+\DoxyCodeLine{00534\ \textcolor{comment}{\ \ \ \ \ \ \ accepted\ by\ assembler.\ So\ has\ to\ use\ following\ less\ efficient\ pattern.}}
+\DoxyCodeLine{00535\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00536\ \ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}ldrexh\ \%0,\ [\%1]"{}}\ :\ \textcolor{stringliteral}{"{}=r"{}}\ (result)\ :\ \textcolor{stringliteral}{"{}r"{}}\ (addr)\ :\ \textcolor{stringliteral}{"{}memory"{}}\ );}
+\DoxyCodeLine{00537\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00538\ \ \ \ \textcolor{keywordflow}{return}(result);}
+\DoxyCodeLine{00539\ \}}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00549\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \_\_LDREXW(\textcolor{keyword}{volatile}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *addr)}
+\DoxyCodeLine{00550\ \{}
+\DoxyCodeLine{00551\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ result;}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00553\ \ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}ldrex\ \%0,\ \%1"{}}\ :\ \textcolor{stringliteral}{"{}=r"{}}\ (result)\ :\ \textcolor{stringliteral}{"{}Q"{}}\ (*addr)\ );}
+\DoxyCodeLine{00554\ \ \ \ \textcolor{keywordflow}{return}(result);}
+\DoxyCodeLine{00555\ \}}
+\DoxyCodeLine{00556\ }
+\DoxyCodeLine{00557\ }
+\DoxyCodeLine{00567\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \_\_STREXB(uint8\_t\ value,\ \textcolor{keyword}{volatile}\ uint8\_t\ *addr)}
+\DoxyCodeLine{00568\ \{}
+\DoxyCodeLine{00569\ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ result;}
+\DoxyCodeLine{00570\ }
+\DoxyCodeLine{00571\ \ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}strexb\ \%0,\ \%2,\ \%1"{}}\ :\ \textcolor{stringliteral}{"{}=\&r"{}}\ (result),\ \textcolor{stringliteral}{"{}=Q"{}}\ (*addr)\ :\ \textcolor{stringliteral}{"{}r"{}}\ (value)\ );}
+\DoxyCodeLine{00572\ \ \ \ \textcolor{keywordflow}{return}(result);}
+\DoxyCodeLine{00573\ \}}
+\DoxyCodeLine{00574\ }
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00585\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \_\_STREXH(\mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ value,\ \textcolor{keyword}{volatile}\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *addr)}
+\DoxyCodeLine{00586\ \{}
+\DoxyCodeLine{00587\ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ result;}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00589\ \ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}strexh\ \%0,\ \%2,\ \%1"{}}\ :\ \textcolor{stringliteral}{"{}=\&r"{}}\ (result),\ \textcolor{stringliteral}{"{}=Q"{}}\ (*addr)\ :\ \textcolor{stringliteral}{"{}r"{}}\ (value)\ );}
+\DoxyCodeLine{00590\ \ \ \ \textcolor{keywordflow}{return}(result);}
+\DoxyCodeLine{00591\ \}}
+\DoxyCodeLine{00592\ }
+\DoxyCodeLine{00593\ }
+\DoxyCodeLine{00603\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \_\_STREXW(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ value,\ \textcolor{keyword}{volatile}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *addr)}
+\DoxyCodeLine{00604\ \{}
+\DoxyCodeLine{00605\ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ result;}
+\DoxyCodeLine{00606\ }
+\DoxyCodeLine{00607\ \ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}strex\ \%0,\ \%2,\ \%1"{}}\ :\ \textcolor{stringliteral}{"{}=\&r"{}}\ (result),\ \textcolor{stringliteral}{"{}=Q"{}}\ (*addr)\ :\ \textcolor{stringliteral}{"{}r"{}}\ (value)\ );}
+\DoxyCodeLine{00608\ \ \ \ \textcolor{keywordflow}{return}(result);}
+\DoxyCodeLine{00609\ \}}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00611\ }
+\DoxyCodeLine{00617\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \_\_CLREX(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00618\ \{}
+\DoxyCodeLine{00619\ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}clrex"{}}\ :::\ \textcolor{stringliteral}{"{}memory"{}});}
+\DoxyCodeLine{00620\ \}}
+\DoxyCodeLine{00621\ }
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00631\ \textcolor{preprocessor}{\#define\ \_\_SSAT(ARG1,ARG2)\ \(\backslash\)}}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{(\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00633\ \textcolor{preprocessor}{\ \ uint32\_t\ \_\_RES,\ \_\_ARG1\ =\ (ARG1);\ \(\backslash\)}}
+\DoxyCodeLine{00634\ \textcolor{preprocessor}{\ \ \_\_ASM\ ("{}ssat\ \%0,\ \%1,\ \%2"{}\ :\ "{}=r"{}\ (\_\_RES)\ :\ \ "{}I"{}\ (ARG2),\ "{}r"{}\ (\_\_ARG1)\ );\ \(\backslash\)}}
+\DoxyCodeLine{00635\ \textcolor{preprocessor}{\ \ \_\_RES;\ \(\backslash\)}}
+\DoxyCodeLine{00636\ \textcolor{preprocessor}{\ \})}}
+\DoxyCodeLine{00637\ }
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00647\ \textcolor{preprocessor}{\#define\ \_\_USAT(ARG1,ARG2)\ \(\backslash\)}}
+\DoxyCodeLine{00648\ \textcolor{preprocessor}{(\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\ \ uint32\_t\ \_\_RES,\ \_\_ARG1\ =\ (ARG1);\ \(\backslash\)}}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\ \ \_\_ASM\ ("{}usat\ \%0,\ \%1,\ \%2"{}\ :\ "{}=r"{}\ (\_\_RES)\ :\ \ "{}I"{}\ (ARG2),\ "{}r"{}\ (\_\_ARG1)\ );\ \(\backslash\)}}
+\DoxyCodeLine{00651\ \textcolor{preprocessor}{\ \ \_\_RES;\ \(\backslash\)}}
+\DoxyCodeLine{00652\ \textcolor{preprocessor}{\ \})}}
+\DoxyCodeLine{00653\ }
+\DoxyCodeLine{00654\ }
+\DoxyCodeLine{00662\ \_\_attribute\_\_(\ (\ always\_inline\ )\ )\ \_\_STATIC\_INLINE\ uint8\_t\ \_\_CLZ(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ value)}
+\DoxyCodeLine{00663\ \{}
+\DoxyCodeLine{00664\ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ result;}
+\DoxyCodeLine{00665\ }
+\DoxyCodeLine{00666\ \ \ \_\_ASM\ \textcolor{keyword}{volatile}\ (\textcolor{stringliteral}{"{}clz\ \%0,\ \%1"{}}\ :\ \textcolor{stringliteral}{"{}=r"{}}\ (result)\ :\ \textcolor{stringliteral}{"{}r"{}}\ (value)\ );}
+\DoxyCodeLine{00667\ \ \ \textcolor{keywordflow}{return}(result);}
+\DoxyCodeLine{00668\ \}}
+\DoxyCodeLine{00669\ }
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ (\_\_CORTEX\_M\ >=\ 0x03)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00671\ }
+\DoxyCodeLine{00672\ }
+\DoxyCodeLine{00673\ }
+\DoxyCodeLine{00674\ }
+\DoxyCodeLine{00675\ \textcolor{preprocessor}{\#elif\ defined\ (\ \_\_TASKING\_\_\ )\ }\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ TASKING\ Compiler\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00676\ \textcolor{comment}{/*\ TASKING\ carm\ specific\ functions\ */}}
+\DoxyCodeLine{00677\ }
+\DoxyCodeLine{00678\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00679\ \textcolor{comment}{\ *\ The\ CMSIS\ functions\ have\ been\ implemented\ as\ intrinsics\ in\ the\ compiler.}}
+\DoxyCodeLine{00680\ \textcolor{comment}{\ *\ Please\ use\ "{}carm\ -\/?i"{}\ to\ get\ an\ up\ to\ date\ list\ of\ all\ intrinsics,}}
+\DoxyCodeLine{00681\ \textcolor{comment}{\ *\ Including\ the\ CMSIS\ ones.}}
+\DoxyCodeLine{00682\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00683\ }
+\DoxyCodeLine{00684\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00685\ \ \textcolor{comment}{/*\ end\ of\ group\ CMSIS\_Core\_InstructionInterface\ */}}
+\DoxyCodeLine{00687\ }
+\DoxyCodeLine{00688\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_CORE\_CMINSTR\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

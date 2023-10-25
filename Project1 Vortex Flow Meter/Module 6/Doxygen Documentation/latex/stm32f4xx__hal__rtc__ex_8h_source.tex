@@ -1,0 +1,293 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+rtc\+\_\+ex.\+h}
+\hypertarget{stm32f4xx__hal__rtc__ex_8h_source}{}\label{stm32f4xx__hal__rtc__ex_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_rtc\_ex.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_rtc\_ex.h}}
+\mbox{\hyperlink{stm32f4xx__hal__rtc__ex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_RTC\_EX\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_RTC\_EX\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__hal__def_8h}{stm32f4xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___tamper_type_def_a72b82da6f13071bcc8cb68276daf3c5e}{Tamper}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___tamper_type_def_a676c56a1ad581d88cf71b5b54d5f7075}{PinSelection}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___tamper_type_def_a0266f7aca365a9cf468cc2571d9f9395}{Trigger}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___tamper_type_def_a41c032d76e9694654be4a80a572680c6}{Filter}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___tamper_type_def_a1822a9001e16621e16cd87b065b92e2a}{SamplingFrequency}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___tamper_type_def_ad447306575b3590e268fe3398f9bb517}{PrechargeDuration}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___tamper_type_def_a6e849894076222b74c7fa8430b6e176c}{TamperPullUp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___tamper_type_def_ae2685d2368c30ca2eeb3bd05c5094b2a}{TimeStampOnTamperDetection}};\ \ }
+\DoxyCodeLine{00087\ \}\mbox{\hyperlink{struct_r_t_c___tamper_type_def}{RTC\_TamperTypeDef}};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000003)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000005)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000006)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000007)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000009)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000000A)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000000B)}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000000C)}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000000D)}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000000E)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000000F)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000011)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000012)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ RTC\_BKP\_DR19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000013)}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ IS\_RTC\_BKP(BKP)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((BKP)\ ==\ RTC\_BKP\_DR0)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR1)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR2)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR3)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR4)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR5)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR6)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR7)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR8)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR9)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR10)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR11)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR12)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR13)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR14)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR15)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR16)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR17)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR18)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BKP)\ ==\ RTC\_BKP\_DR19))}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ RTC\_TIMESTAMPEDGE\_RISING\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ RTC\_TIMESTAMPEDGE\_FALLING\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ IS\_TIMESTAMP\_EDGE(EDGE)\ (((EDGE)\ ==\ RTC\_TIMESTAMPEDGE\_RISING)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((EDGE)\ ==\ RTC\_TIMESTAMPEDGE\_FALLING))}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ RTC\_TAMPER\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RTC\_TAFCR\_TAMP1E}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ RTC\_TAMPER\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RTC\_TAFCR\_TAMP2E}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ IS\_TAMPER(TAMPER)\ ((((TAMPER)\ \&\ (uint32\_t)0xFFFFFFF6)\ ==\ 0x00)\ \&\&\ ((TAMPER)\ !=\ (uint32\_t)RESET))}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERPIN\_PC13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERPIN\_PI8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00010000)}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ IS\_RTC\_TAMPER\_PIN(PIN)\ (((PIN)\ ==\ RTC\_TAMPERPIN\_PC13)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ RTC\_TAMPERPIN\_PI8))}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ RTC\_TIMESTAMPPIN\_PC13\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ RTC\_TIMESTAMPPIN\_PI8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00020000)}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ IS\_RTC\_TIMESTAMP\_PIN(PIN)\ (((PIN)\ ==\ RTC\_TIMESTAMPPIN\_PC13)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ RTC\_TIMESTAMPPIN\_PI8))}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERTRIGGER\_RISINGEDGE\ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERTRIGGER\_FALLINGEDGE\ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERTRIGGER\_LOWLEVEL\ \ \ \ \ \ \ \ \ RTC\_TAMPERTRIGGER\_RISINGEDGE}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERTRIGGER\_HIGHLEVEL\ \ \ \ \ \ \ \ RTC\_TAMPERTRIGGER\_FALLINGEDGE}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ IS\_TAMPER\_TRIGGER(TRIGGER)\ (((TRIGGER)\ ==\ RTC\_TAMPERTRIGGER\_RISINGEDGE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ RTC\_TAMPERTRIGGER\_FALLINGEDGE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ RTC\_TAMPERTRIGGER\_LOWLEVEL)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ RTC\_TAMPERTRIGGER\_HIGHLEVEL))\ }}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERFILTER\_DISABLE\ \ \ ((uint32\_t)0x00000000)\ \ }}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERFILTER\_2SAMPLE\ \ \ ((uint32\_t)0x00000800)\ \ }}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERFILTER\_4SAMPLE\ \ \ ((uint32\_t)0x00001000)\ \ }}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERFILTER\_8SAMPLE\ \ \ ((uint32\_t)0x00001800)\ \ }}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ IS\_TAMPER\_FILTER(FILTER)\ \ (((FILTER)\ ==\ RTC\_TAMPERFILTER\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FILTER)\ ==\ RTC\_TAMPERFILTER\_2SAMPLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FILTER)\ ==\ RTC\_TAMPERFILTER\_4SAMPLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FILTER)\ ==\ RTC\_TAMPERFILTER\_8SAMPLE))}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV32768\ \ ((uint32\_t)0x00000000)\ \ }}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV16384\ \ ((uint32\_t)0x00000100)\ \ }}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV8192\ \ \ ((uint32\_t)0x00000200)\ \ }}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV4096\ \ \ ((uint32\_t)0x00000300)\ \ }}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV2048\ \ \ ((uint32\_t)0x00000400)\ \ }}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV1024\ \ \ ((uint32\_t)0x00000500)\ \ }}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV512\ \ \ \ ((uint32\_t)0x00000600)\ \ }}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV256\ \ \ \ ((uint32\_t)0x00000700)\ \ }}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ IS\_TAMPER\_SAMPLING\_FREQ(FREQ)\ (((FREQ)\ ==\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV32768)||\ \(\backslash\)}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FREQ)\ ==\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV16384)||\ \(\backslash\)}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FREQ)\ ==\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV8192)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FREQ)\ ==\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV4096)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FREQ)\ ==\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV2048)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FREQ)\ ==\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV1024)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FREQ)\ ==\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV512)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FREQ)\ ==\ RTC\_TAMPERSAMPLINGFREQ\_RTCCLK\_DIV256))}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERPRECHARGEDURATION\_1RTCCLK\ ((uint32\_t)0x00000000)\ \ }}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERPRECHARGEDURATION\_2RTCCLK\ ((uint32\_t)0x00002000)\ \ }}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERPRECHARGEDURATION\_4RTCCLK\ ((uint32\_t)0x00004000)\ \ }}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ RTC\_TAMPERPRECHARGEDURATION\_8RTCCLK\ ((uint32\_t)0x00006000)\ \ }}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#define\ IS\_TAMPER\_PRECHARGE\_DURATION(DURATION)\ (((DURATION)\ ==\ RTC\_TAMPERPRECHARGEDURATION\_1RTCCLK)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DURATION)\ ==\ RTC\_TAMPERPRECHARGEDURATION\_2RTCCLK)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DURATION)\ ==\ RTC\_TAMPERPRECHARGEDURATION\_4RTCCLK)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DURATION)\ ==\ RTC\_TAMPERPRECHARGEDURATION\_8RTCCLK))}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ RTC\_TIMESTAMPONTAMPERDETECTION\_ENABLE\ \ ((uint32\_t)RTC\_TAFCR\_TAMPTS)\ \ }}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ RTC\_TIMESTAMPONTAMPERDETECTION\_DISABLE\ ((uint32\_t)0x00000000)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ IS\_TAMPER\_TIMESTAMPONTAMPER\_DETECTION(DETECTION)\ (((DETECTION)\ ==\ RTC\_TIMESTAMPONTAMPERDETECTION\_ENABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DETECTION)\ ==\ RTC\_TIMESTAMPONTAMPERDETECTION\_DISABLE))}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ RTC\_TAMPER\_PULLUP\_ENABLE\ \ ((uint32\_t)0x00000000)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ RTC\_TAMPER\_PULLUP\_DISABLE\ ((uint32\_t)RTC\_TAFCR\_TAMPPUDIS)\ \ \ }}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ IS\_TAMPER\_PULLUP\_STATE(STATE)\ (((STATE)\ ==\ RTC\_TAMPER\_PULLUP\_ENABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STATE)\ ==\ RTC\_TAMPER\_PULLUP\_DISABLE))}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ RTC\_WAKEUPCLOCK\_RTCCLK\_DIV16\ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ RTC\_WAKEUPCLOCK\_RTCCLK\_DIV8\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ RTC\_WAKEUPCLOCK\_RTCCLK\_DIV4\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ RTC\_WAKEUPCLOCK\_RTCCLK\_DIV2\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000003)}}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ RTC\_WAKEUPCLOCK\_CK\_SPRE\_16BITS\ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ RTC\_WAKEUPCLOCK\_CK\_SPRE\_17BITS\ \ \ \ \ \ ((uint32\_t)0x00000006)}}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#define\ IS\_WAKEUP\_CLOCK(CLOCK)\ (((CLOCK)\ ==\ RTC\_WAKEUPCLOCK\_RTCCLK\_DIV16)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CLOCK)\ ==\ RTC\_WAKEUPCLOCK\_RTCCLK\_DIV8)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CLOCK)\ ==\ RTC\_WAKEUPCLOCK\_RTCCLK\_DIV4)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CLOCK)\ ==\ RTC\_WAKEUPCLOCK\_RTCCLK\_DIV2)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CLOCK)\ ==\ RTC\_WAKEUPCLOCK\_CK\_SPRE\_16BITS)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CLOCK)\ ==\ RTC\_WAKEUPCLOCK\_CK\_SPRE\_17BITS))}}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#define\ IS\_WAKEUP\_COUNTER(COUNTER)\ \ ((COUNTER)\ <=\ 0xFFFF)}}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\#define\ RTC\_CALIBSIGN\_POSITIVE\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ }}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\#define\ RTC\_CALIBSIGN\_NEGATIVE\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000080)}}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#define\ IS\_RTC\_CALIB\_SIGN(SIGN)\ (((SIGN)\ ==\ RTC\_CALIBSIGN\_POSITIVE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIGN)\ ==\ RTC\_CALIBSIGN\_NEGATIVE))}}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ IS\_RTC\_CALIB\_VALUE(VALUE)\ ((VALUE)\ <\ 0x20)}}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#define\ RTC\_SMOOTHCALIB\_PERIOD\_32SEC\ \ \ ((uint32\_t)0x00000000)\ \ }}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ RTC\_SMOOTHCALIB\_PERIOD\_16SEC\ \ \ ((uint32\_t)0x00002000)\ \ }}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ RTC\_SMOOTHCALIB\_PERIOD\_8SEC\ \ \ \ ((uint32\_t)0x00004000)\ \ }}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ IS\_RTC\_SMOOTH\_CALIB\_PERIOD(PERIOD)\ (((PERIOD)\ ==\ RTC\_SMOOTHCALIB\_PERIOD\_32SEC)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIOD)\ ==\ RTC\_SMOOTHCALIB\_PERIOD\_16SEC)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIOD)\ ==\ RTC\_SMOOTHCALIB\_PERIOD\_8SEC))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ RTC\_SMOOTHCALIB\_PLUSPULSES\_SET\ \ \ \ ((uint32\_t)0x00008000)\ \ }}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ RTC\_SMOOTHCALIB\_PLUSPULSES\_RESET\ \ ((uint32\_t)0x00000000)\ \ }}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#define\ IS\_RTC\_SMOOTH\_CALIB\_PLUS(PLUS)\ (((PLUS)\ ==\ RTC\_SMOOTHCALIB\_PLUSPULSES\_SET)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PLUS)\ ==\ RTC\_SMOOTHCALIB\_PLUSPULSES\_RESET))}}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ \ IS\_RTC\_SMOOTH\_CALIB\_MINUS(VALUE)\ ((VALUE)\ <=\ 0x000001FF)}}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#define\ RTC\_SHIFTADD1S\_RESET\ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ RTC\_SHIFTADD1S\_SET\ \ \ \ \ \ \ \ ((uint32\_t)0x80000000)}}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ IS\_RTC\_SHIFT\_ADD1S(SEL)\ (((SEL)\ ==\ RTC\_SHIFTADD1S\_RESET)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SEL)\ ==\ RTC\_SHIFTADD1S\_SET))}}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#define\ IS\_RTC\_SHIFT\_SUBFS(FS)\ ((FS)\ <=\ 0x00007FFF)}}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#define\ RTC\_CALIBOUTPUT\_512HZ\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ }}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ RTC\_CALIBOUTPUT\_1HZ\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00080000)}}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ IS\_RTC\_CALIB\_OUTPUT(OUTPUT)\ \ (((OUTPUT)\ ==\ RTC\_CALIBOUTPUT\_512HZ)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((OUTPUT)\ ==\ RTC\_CALIBOUTPUT\_1HZ))}}
+\DoxyCodeLine{00414\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_WAKEUPTIMER\_ENABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ |=\ (RTC\_CR\_WUTE))}}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_TIMESTAMP\_ENABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ |=\ (RTC\_CR\_TSE))}}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_WAKEUPTIMER\_DISABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ \&=\ \string~(RTC\_CR\_WUTE))}}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_TIMESTAMP\_DISABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ \&=\ \string~(RTC\_CR\_TSE))}}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_COARSE\_CALIB\_ENABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ |=\ (RTC\_CR\_DCE))}}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_COARSE\_CALIB\_DISABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ \&=\ \string~(RTC\_CR\_DCE))}}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_CALIBRATION\_OUTPUT\_ENABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ |=\ (RTC\_CR\_COE))}}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_CALIBRATION\_OUTPUT\_DISABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ \&=\ \string~(RTC\_CR\_COE))}}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_CLOCKREF\_DETECTION\_ENABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ |=\ (RTC\_CR\_REFCKON))}}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_CLOCKREF\_DETECTION\_DISABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ \&=\ \string~(RTC\_CR\_REFCKON))}}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_TIMESTAMP\_ENABLE\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ |=\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_WAKEUPTIMER\_ENABLE\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ |=\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_TIMESTAMP\_DISABLE\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ \&=\ \string~(\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_WAKEUPTIMER\_DISABLE\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ \&=\ \string~(\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_TAMPER\_GET\_IT(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ \&\ ((\_\_FLAG\_\_)>>\ 4))\ !=\ RESET)?\ SET\ :\ RESET)}}
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00544\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_WAKEUPTIMER\_GET\_IT(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ \ \ (((((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ \&\ ((\_\_FLAG\_\_)>>\ 4))\ !=\ RESET)?\ SET\ :\ RESET)}}
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_TIMESTAMP\_GET\_IT(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ (((((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ \&\ ((\_\_FLAG\_\_)>>\ 4))\ !=\ RESET)?\ SET\ :\ RESET)}}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00565\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_TIMESTAMP\_GET\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ \ \ (((((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ \&\ (\_\_FLAG\_\_))\ !=\ RESET)?\ SET\ :\ RESET)}}
+\DoxyCodeLine{00566\ }
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_WAKEUPTIMER\_GET\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ (((((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ \&\ (\_\_FLAG\_\_))\ !=\ RESET)?\ SET\ :\ RESET)}}
+\DoxyCodeLine{00577\ }
+\DoxyCodeLine{00586\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_TAMPER\_GET\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ \&\ (\_\_FLAG\_\_))\ !=\ RESET)?\ SET\ :\ RESET)}}
+\DoxyCodeLine{00587\ }
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_SHIFT\_GET\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ \&\ (\_\_FLAG\_\_))\ !=\ RESET)?\ SET\ :\ RESET)}}
+\DoxyCodeLine{00597\ }
+\DoxyCodeLine{00606\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_TIMESTAMP\_CLEAR\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ =\ (\string~(((\_\_FLAG\_\_)\ |\ RTC\_ISR\_INIT)\&\ 0x0000FFFF)|((\_\_HANDLE\_\_)-\/>Instance-\/>ISR\ \&\ RTC\_ISR\_INIT))}}
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00616\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_TAMPER\_CLEAR\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ =\ (\string~(((\_\_FLAG\_\_)\ |\ RTC\_ISR\_INIT)\&\ 0x0000FFFF)|((\_\_HANDLE\_\_)-\/>Instance-\/>ISR\ \&\ RTC\_ISR\_INIT))}}
+\DoxyCodeLine{00617\ }
+\DoxyCodeLine{00626\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_WAKEUPTIMER\_CLEAR\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ =\ (\string~(((\_\_FLAG\_\_)\ |\ RTC\_ISR\_INIT)\&\ 0x0000FFFF)|((\_\_HANDLE\_\_)-\/>Instance-\/>ISR\ \&\ RTC\_ISR\_INIT))\ }}
+\DoxyCodeLine{00627\ }
+\DoxyCodeLine{00628\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00629\ }
+\DoxyCodeLine{00630\ \textcolor{comment}{/*\ RTC\ TimeStamp\ and\ Tamper\ functions\ *****************************************/}}
+\DoxyCodeLine{00631\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga750db6ed8e6afde87530736826554019}{HAL\_RTCEx\_SetTimeStamp}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ TimeStampEdge,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RTC\_TimeStampPin);}
+\DoxyCodeLine{00632\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga96faf756e9e07d06ff1d7b696c21a6a4}{HAL\_RTCEx\_SetTimeStamp\_IT}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ TimeStampEdge,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ RTC\_TimeStampPin);}
+\DoxyCodeLine{00633\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga1d7152fccc39480de86c555c94e222a0}{HAL\_RTCEx\_DeactivateTimeStamp}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00634\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga68d83277bafa5fcebd10f1bd83ef059e}{HAL\_RTCEx\_GetTimeStamp}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\_TimeTypeDef}}\ *sTimeStamp,\ \mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\_DateTypeDef}}\ *sTimeStampDate,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Format);}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00636\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga4b819431e03c521285cf3e275d930707}{HAL\_RTCEx\_SetTamper}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{struct_r_t_c___tamper_type_def}{RTC\_TamperTypeDef}}*\ sTamper);}
+\DoxyCodeLine{00637\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga4984cf38a5bbdf1f607cc94cfdf3797f}{HAL\_RTCEx\_SetTamper\_IT}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{struct_r_t_c___tamper_type_def}{RTC\_TamperTypeDef}}*\ sTamper);}
+\DoxyCodeLine{00638\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_gaf0c1b98177dbd9d20c460d6130dbad7e}{HAL\_RTCEx\_DeactivateTamper}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Tamper);}
+\DoxyCodeLine{00639\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ex_ga710f2cd8bab31242d496b020c182fef3}{HAL\_RTCEx\_TamperTimeStampIRQHandler}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00640\ }
+\DoxyCodeLine{00641\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ex_gad849caf1e7b4774af56388a13636ba73}{HAL\_RTCEx\_Tamper1EventCallback}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00642\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ex_ga14086326964355aaf3793ad3157ea7c3}{HAL\_RTCEx\_Tamper2EventCallback}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00643\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ex_gac9ef67f1f1698e9560a5ecd5e8c9a330}{HAL\_RTCEx\_TimeStampEventCallback}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00644\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_gaff8adc3d27b9c84c69b64ffa6ad43457}{HAL\_RTCEx\_PollForTimeStampEvent}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00645\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_gadea47894c36fc74044106654c081070b}{HAL\_RTCEx\_PollForTamper1Event}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00646\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga974cfcdcbc9a6fc70effcf1c701ba535}{HAL\_RTCEx\_PollForTamper2Event}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00647\ }
+\DoxyCodeLine{00648\ \textcolor{comment}{/*\ RTC\ Wake-\/up\ functions\ ******************************************************/}}
+\DoxyCodeLine{00649\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_gab22373ae0d2eeb1322569c44c42ee9db}{HAL\_RTCEx\_SetWakeUpTimer}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WakeUpCounter,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WakeUpClock);}
+\DoxyCodeLine{00650\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga92f7781781a2fd96991ca932377418da}{HAL\_RTCEx\_SetWakeUpTimer\_IT}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WakeUpCounter,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ WakeUpClock);}
+\DoxyCodeLine{00651\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ex_ga48a0ebb678effede4fca4436e20b18f0}{HAL\_RTCEx\_DeactivateWakeUpTimer}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00652\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ex_gae2aa87c6544a982c4e7657d649e7a797}{HAL\_RTCEx\_GetWakeUpTimer}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00653\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ex_ga5e391424483012fe09827739dc53885f}{HAL\_RTCEx\_WakeUpTimerIRQHandler}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00654\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ex_gac9ed5d6224b5c86f2845a9c1af7d94de}{HAL\_RTCEx\_WakeUpTimerEventCallback}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00655\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga13cdc56c03d2d606ef8c635dcc25f555}{HAL\_RTCEx\_PollForWakeUpTimerEvent}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00656\ }
+\DoxyCodeLine{00657\ \textcolor{comment}{/*\ Extension\ Control\ functions\ ************************************************/}}
+\DoxyCodeLine{00658\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ex_gafb908a2f254ccff959c31ac70e957de4}{HAL\_RTCEx\_BKUPWrite}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BackupRegister,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Data);}
+\DoxyCodeLine{00659\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ex_ga37ba612da141a2b443bf64210f981513}{HAL\_RTCEx\_BKUPRead}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ BackupRegister);}
+\DoxyCodeLine{00660\ }
+\DoxyCodeLine{00661\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga0f77700814ccfaa7a10969012ad92968}{HAL\_RTCEx\_SetCoarseCalib}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CalibSign,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Value);}
+\DoxyCodeLine{00662\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga7803f69ddb68e220dd2b263e523bcdce}{HAL\_RTCEx\_DeactivateCoarseCalib}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00663\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga394b6624dbda05ef3e375d83884ba00b}{HAL\_RTCEx\_SetSmoothCalib}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SmoothCalibPeriod,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SmoothCalibPlusPulses,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SmouthCalibMinusPulsesValue);}
+\DoxyCodeLine{00664\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga07344e3d0f7e9f569ec02d4a75d158dc}{HAL\_RTCEx\_SetSynchroShift}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ShiftAdd1S,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ ShiftSubFS);}
+\DoxyCodeLine{00665\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_gafee5f33f43d10ae0b64aa073412de17e}{HAL\_RTCEx\_SetCalibrationOutPut}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CalibOutput);}
+\DoxyCodeLine{00666\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga4cba173360f2993cafdd2c77fc51b7a9}{HAL\_RTCEx\_DeactivateCalibrationOutPut}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00667\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_gad3759b90bbf48597b2797411c72632dc}{HAL\_RTCEx\_SetRefClock}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00668\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga86ca6b8e7b4ea0fede8e1aceef36fdbe}{HAL\_RTCEx\_DeactivateRefClock}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00669\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_ga77d4058fefb7d89481ca1af3b87a8a32}{HAL\_RTCEx\_EnableBypassShadow}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00670\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_gaabaf6726dca239445ea362554e0f8ce2}{HAL\_RTCEx\_DisableBypassShadow}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00671\ }
+\DoxyCodeLine{00672\ \textcolor{comment}{/*\ Extension\ RTC\ features\ functions\ *******************************************/}}
+\DoxyCodeLine{00673\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ex_ga9da295aecbc4566dabc161437d1b95f2}{HAL\_RTCEx\_AlarmBEventCallback}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);\ }
+\DoxyCodeLine{00674\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ex_gaec42cd894d63744c4914ec6a65510cae}{HAL\_RTCEx\_PollForAlarmBEvent}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00675\ }
+\DoxyCodeLine{00676\ }
+\DoxyCodeLine{00685\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00686\ \}}
+\DoxyCodeLine{00687\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00688\ }
+\DoxyCodeLine{00689\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_HAL\_RTC\_EX\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00690\ }
+\DoxyCodeLine{00691\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

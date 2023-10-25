@@ -1,0 +1,117 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+hal\+\_\+wwdg.h File Reference}
+\hypertarget{stm32f4xx__hal__wwdg_8h}{}\label{stm32f4xx__hal__wwdg_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_wwdg.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_wwdg.h}}
+
+
+Header file of WWDG HAL module.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_w_w_d_g___init_type_def}{WWDG\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em WWDG Init structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_w_w_d_g___handle_type_def}{WWDG\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em WWDG handle Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g___bit_address___alias_region_gad6422afd041f823ff1ea65e442355783}{CFR\+\_\+\+BASE}}~(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})(\mbox{\hyperlink{group___peripheral__registers__structures_ga9a5bf4728ab93dea5b569f5b972cbe62}{WWDG\+\_\+\+BASE}} + 0x04)
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g___interrupt__definition_gaf2659a7ce6e4edd7c6d1b537dbc33362}{WWDG\+\_\+\+IT\+\_\+\+EWI}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga931941dc5d795502371ac5dd8fbac1e9}{WWDG\+\_\+\+CFR\+\_\+\+EWI}})
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g___interrupt__definition_ga305d660b860e33872cca6e7864b209c0}{IS\+\_\+\+WWDG\+\_\+\+IT}}(IT)~((IT) == \mbox{\hyperlink{group___w_w_d_g___interrupt__definition_gaf2659a7ce6e4edd7c6d1b537dbc33362}{WWDG\+\_\+\+IT\+\_\+\+EWI}})
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g___flag__definition_gaac081893a320f1216262be063b587edb}{WWDG\+\_\+\+FLAG\+\_\+\+EWIF}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0001)
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g___flag__definition_ga00fbf872e093d9c08d4e7efa5c0fba93}{IS\+\_\+\+WWDG\+\_\+\+FLAG}}(FLAG)~((FLAG) == \mbox{\hyperlink{group___w_w_d_g___flag__definition_gaac081893a320f1216262be063b587edb}{WWDG\+\_\+\+FLAG\+\_\+\+EWIF}}))
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g___prescaler_gac611617ca4116f9bfb55c5280abeb281}{WWDG\+\_\+\+PRESCALER\+\_\+1}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g___prescaler_ga411e50531af74cfe88b5f58119e546fa}{WWDG\+\_\+\+PRESCALER\+\_\+2}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g___prescaler_ga38093104d0ad7e9ef5e036f6d0dc3ca8}{WWDG\+\_\+\+PRESCALER\+\_\+4}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g___prescaler_ga766a9eff85955164df09186081f3cb40}{WWDG\+\_\+\+PRESCALER\+\_\+8}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x00000180)
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g___prescaler_ga39070de0722a70f99a6fcfe8720b2dfd}{IS\+\_\+\+WWDG\+\_\+\+PRESCALER}}(PRESCALER)
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g___window_ga79b14a134a3907e7b4fb4cd3f57a4e21}{IS\+\_\+\+WWDG\+\_\+\+WINDOW}}(WINDOW)~((WINDOW) $<$= 0x7F)
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g___counter_ga4728877128cd60494692d8f14389112e}{IS\+\_\+\+WWDG\+\_\+\+COUNTER}}(COUNTER)~(((COUNTER) $>$= 0x40) \&\& ((COUNTER) $<$= 0x7F))
+\item 
+\#define \mbox{\hyperlink{group___w_w_d_g_gadb7c147b55b6386d487d717b20cd1070}{\+\_\+\+\_\+\+HAL\+\_\+\+WWDG\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___w_w_d_g_gga0dbbade5e745711745e5f9cc10991301ab372108da0acc98eafe256ac1789c6a5}{HAL\+\_\+\+WWDG\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset WWDG handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___w_w_d_g_gaad04976da12e2c801c72668b8e100d80}{\+\_\+\+\_\+\+HAL\+\_\+\+WWDG\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR \texorpdfstring{$\vert$}{|}=  \mbox{\hyperlink{group___peripheral___registers___bits___definition_gab647e9997b8b8e67de72af1aaea3f52f}{WWDG\+\_\+\+CR\+\_\+\+WDGA}})
+\begin{DoxyCompactList}\small\item\em Enables the WWDG peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___w_w_d_g_ga60a99447a00a7d95c18637c38147063a}{\+\_\+\+\_\+\+HAL\+\_\+\+WWDG\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Gets the selected WWDG\textquotesingle{}s flag status. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___w_w_d_g_gae9c3b916e244deffc6a673d97df63671}{\+\_\+\+\_\+\+HAL\+\_\+\+WWDG\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR) \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the WWDG\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___w_w_d_g_gab29dd54283dfafa9ae09d0b54fde06b4}{\+\_\+\+\_\+\+HAL\+\_\+\+WWDG\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~(\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group___w_w_d_g___bit_address___alias_region_gad6422afd041f823ff1ea65e442355783}{CFR\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enables the WWDG early wakeup interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___w_w_d_g_ga0dbbade5e745711745e5f9cc10991301}{HAL\+\_\+\+WWDG\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___w_w_d_g_gga0dbbade5e745711745e5f9cc10991301ab372108da0acc98eafe256ac1789c6a5}{HAL\+\_\+\+WWDG\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___w_w_d_g_gga0dbbade5e745711745e5f9cc10991301a4dc3b206181127388e44b6b7838e39fb}{HAL\+\_\+\+WWDG\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___w_w_d_g_gga0dbbade5e745711745e5f9cc10991301ad0b871d6d748df57f9c354ecf04d9821}{HAL\+\_\+\+WWDG\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___w_w_d_g_gga0dbbade5e745711745e5f9cc10991301ac35fbcc9e083869cd3410dfff314e985}{HAL\+\_\+\+WWDG\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \newline
+\mbox{\hyperlink{group___w_w_d_g_gga0dbbade5e745711745e5f9cc10991301a41c392c0097e126977c5b980c4f2e227}{HAL\+\_\+\+WWDG\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em WWDG HAL State Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___w_w_d_g_ga72706a378ad2f79cba4324c1b328715a}{HAL\+\_\+\+WWDG\+\_\+\+Init}} (\mbox{\hyperlink{struct_w_w_d_g___handle_type_def}{WWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hwwdg)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___w_w_d_g_gaa2a353f5e9d3d00f6cbf251770cb3259}{HAL\+\_\+\+WWDG\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_w_w_d_g___handle_type_def}{WWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hwwdg)
+\item 
+void \mbox{\hyperlink{group___w_w_d_g_ga9871643c1868c37613b89d1acf010cd6}{HAL\+\_\+\+WWDG\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_w_w_d_g___handle_type_def}{WWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hwwdg)
+\item 
+void \mbox{\hyperlink{group___w_w_d_g_gaf7a0f80dfa5dc7832a3240a8004f113d}{HAL\+\_\+\+WWDG\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_w_w_d_g___handle_type_def}{WWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hwwdg)
+\item 
+void \mbox{\hyperlink{group___w_w_d_g_gac59114721456ab7cefb8bd3dffdc2c8c}{HAL\+\_\+\+WWDG\+\_\+\+Wakeup\+Callback}} (\mbox{\hyperlink{struct_w_w_d_g___handle_type_def}{WWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hwwdg)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___w_w_d_g_ga6d56ddea267609ae162392f725c22ffc}{HAL\+\_\+\+WWDG\+\_\+\+Start}} (\mbox{\hyperlink{struct_w_w_d_g___handle_type_def}{WWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hwwdg)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___w_w_d_g_ga67ae975315e3bf0ff2252b2cd32686ef}{HAL\+\_\+\+WWDG\+\_\+\+Start\+\_\+\+IT}} (\mbox{\hyperlink{struct_w_w_d_g___handle_type_def}{WWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hwwdg)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___w_w_d_g_ga33c30c69b966b353572a2d36a702efc3}{HAL\+\_\+\+WWDG\+\_\+\+Refresh}} (\mbox{\hyperlink{struct_w_w_d_g___handle_type_def}{WWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hwwdg, \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} Counter)
+\item 
+void \mbox{\hyperlink{group___w_w_d_g_ga6521c5a0ff3184f951561302fb540fde}{HAL\+\_\+\+WWDG\+\_\+\+IRQHandler}} (\mbox{\hyperlink{struct_w_w_d_g___handle_type_def}{WWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hwwdg)
+\item 
+\mbox{\hyperlink{group___w_w_d_g_ga0dbbade5e745711745e5f9cc10991301}{HAL\+\_\+\+WWDG\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___w_w_d_g_ga893774ecf63a6f78ef41f414db80ee46}{HAL\+\_\+\+WWDG\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_w_w_d_g___handle_type_def}{WWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hwwdg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of WWDG HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

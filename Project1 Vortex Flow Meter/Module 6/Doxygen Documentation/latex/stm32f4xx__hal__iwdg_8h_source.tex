@@ -1,0 +1,109 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+iwdg.\+h}
+\hypertarget{stm32f4xx__hal__iwdg_8h_source}{}\label{stm32f4xx__hal__iwdg_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_iwdg.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_iwdg.h}}
+\mbox{\hyperlink{stm32f4xx__hal__iwdg_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_IWDG\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_IWDG\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__hal__def_8h}{stm32f4xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{group___i_w_d_g_gga61699dc6f24a3edecddd16018560d0e5afc0696c27fdaa4f7dbe7f08a9b5d6030}{HAL\_IWDG\_STATE\_RESET}}\ \ \ \ \ =\ 0x00,\ \ }
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{group___i_w_d_g_gga61699dc6f24a3edecddd16018560d0e5a8aad8fa61ebdbad5411e17f7fdd35803}{HAL\_IWDG\_STATE\_READY}}\ \ \ \ \ =\ 0x01,\ \ }
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{group___i_w_d_g_gga61699dc6f24a3edecddd16018560d0e5a4ba9c9db0e319b41d19d5ad7e5b51c77}{HAL\_IWDG\_STATE\_BUSY}}\ \ \ \ \ \ =\ 0x02,\ \ }
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{group___i_w_d_g_gga61699dc6f24a3edecddd16018560d0e5a415081e774deff4c59801adf358e2683}{HAL\_IWDG\_STATE\_TIMEOUT}}\ \ \ =\ 0x03,\ \ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{group___i_w_d_g_gga61699dc6f24a3edecddd16018560d0e5a79340b932fb1f3b536fd37ebdf7b6fb6}{HAL\_IWDG\_STATE\_ERROR}}\ \ \ \ \ =\ 0x04\ \ \ }
+\DoxyCodeLine{00070\ \}\mbox{\hyperlink{group___i_w_d_g_ga61699dc6f24a3edecddd16018560d0e5}{HAL\_IWDG\_StateTypeDef}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_i_w_d_g___init_type_def_adb8ce67e656492f5ac26473bb70c5daa}{Prescaler}};\ \ }
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_i_w_d_g___init_type_def_af5a275e4c73292039258a0287fb7901d}{Reload}};\ \ \ \ \ }
+\DoxyCodeLine{00083\ \}\mbox{\hyperlink{struct_i_w_d_g___init_type_def}{IWDG\_InitTypeDef}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00089\ \{}
+\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{struct_i_w_d_g___type_def}{IWDG\_TypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{struct_i_w_d_g___handle_type_def_ad3fd4c46ef1e9b842328ca4e3290708e}{Instance}};\ \ }
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{struct_i_w_d_g___init_type_def}{IWDG\_InitTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_i_w_d_g___handle_type_def_ae308075a425af205912feb4059c6f213}{Init}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\_LockTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_i_w_d_g___handle_type_def_a89ec8a98b121ce7167707d4af23a822d}{Lock}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{group___i_w_d_g_ga61699dc6f24a3edecddd16018560d0e5}{HAL\_IWDG\_StateTypeDef}}\ \ \ \mbox{\hyperlink{struct_i_w_d_g___handle_type_def_ad0e66d3745ab620bd7f6138880a8f299}{State}};\ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \}\mbox{\hyperlink{struct_i_w_d_g___handle_type_def}{IWDG\_HandleTypeDef}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00108\ \textcolor{comment}{/*\ -\/-\/-\/\ KR\ Register\ -\/-\/-\/*/}}
+\DoxyCodeLine{00109\ \textcolor{comment}{/*\ KR\ register\ bit\ mask\ */}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ KR\_KEY\_RELOAD\ \ \ ((uint32\_t)0xAAAA)\ \ }}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ KR\_KEY\_ENABLE\ \ \ ((uint32\_t)0xCCCC)\ \ }}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ KR\_KEY\_EWA\ \ \ \ \ \ ((uint32\_t)0x5555)\ \ }}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ KR\_KEY\_DWA\ \ \ \ \ \ ((uint32\_t)0x0000)\ \ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ IWDG\_FLAG\_PVU\ \ \ ((uint32\_t)0x0001)\ \ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ IWDG\_FLAG\_RVU\ \ \ ((uint32\_t)0x0002)\ \ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ IS\_IWDG\_FLAG(FLAG)\ (((FLAG)\ ==\ IWDG\_FLAG\_PVU)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ IWDG\_FLAG\_RVU))}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ IWDG\_PRESCALER\_4\ \ \ \ \ ((uint8\_t)0x00)\ \ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ IWDG\_PRESCALER\_8\ \ \ \ \ ((uint8\_t)0x01)\ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ IWDG\_PRESCALER\_16\ \ \ \ ((uint8\_t)0x02)\ \ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ IWDG\_PRESCALER\_32\ \ \ \ ((uint8\_t)0x03)\ \ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ IWDG\_PRESCALER\_64\ \ \ \ ((uint8\_t)0x04)\ \ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ IWDG\_PRESCALER\_128\ \ \ ((uint8\_t)0x05)\ \ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ IWDG\_PRESCALER\_256\ \ \ ((uint8\_t)0x06)\ \ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ IS\_IWDG\_PRESCALER(PRESCALER)\ (((PRESCALER)\ ==\ IWDG\_PRESCALER\_4)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ IWDG\_PRESCALER\_8)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ IWDG\_PRESCALER\_16)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ IWDG\_PRESCALER\_32)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ IWDG\_PRESCALER\_64)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ IWDG\_PRESCALER\_128)||\ \(\backslash\)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ IWDG\_PRESCALER\_256))}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ IS\_IWDG\_RELOAD(RELOAD)\ ((RELOAD)\ <=\ 0xFFF)}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00168\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ \_\_HAL\_IWDG\_RESET\_HANDLE\_STATE(\_\_HANDLE\_\_)\ ((\_\_HANDLE\_\_)-\/>State\ =\ HAL\_IWDG\_STATE\_RESET)}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ \_\_HAL\_IWDG\_START(\_\_HANDLE\_\_)\ ((\_\_HANDLE\_\_)-\/>Instance-\/>KR\ |=\ \ KR\_KEY\_ENABLE)}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ \_\_HAL\_IWDG\_RELOAD\_COUNTER(\_\_HANDLE\_\_)\ (((\_\_HANDLE\_\_)-\/>Instance-\/>KR)\ |=\ KR\_KEY\_RELOAD)}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ \_\_HAL\_IWDG\_ENABLE\_WRITE\_ACCESS(\_\_HANDLE\_\_)\ (((\_\_HANDLE\_\_)-\/>Instance-\/>KR)\ |=\ KR\_KEY\_EWA)}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ \_\_HAL\_IWDG\_DISABLE\_WRITE\_ACCESS(\_\_HANDLE\_\_)\ (((\_\_HANDLE\_\_)-\/>Instance-\/>KR)\ |=\ KR\_KEY\_DWA)}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ \_\_HAL\_IWDG\_GET\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ (((\_\_HANDLE\_\_)-\/>Instance-\/>SR\ \&\ (\_\_FLAG\_\_))\ ==\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ \_\_HAL\_IWDG\_CLEAR\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ ((\_\_HANDLE\_\_)-\/>Instance-\/>SR\ \&=\ \string~(\_\_FLAG\_\_))}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \textcolor{comment}{/*\ Initialization/de-\/initialization\ functions\ \ ********************************/}}
+\DoxyCodeLine{00231\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___i_w_d_g_ga2e1669e60f2dc298fecaed919e7ae810}{HAL\_IWDG\_Init}}(\mbox{\hyperlink{struct_i_w_d_g___handle_type_def}{IWDG\_HandleTypeDef}}\ *hiwdg);}
+\DoxyCodeLine{00232\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___i_w_d_g_gaf26b08d1a805d1dd515cafd0278c240c}{HAL\_IWDG\_MspInit}}(\mbox{\hyperlink{struct_i_w_d_g___handle_type_def}{IWDG\_HandleTypeDef}}\ *hiwdg);}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{comment}{/*\ I/O\ operation\ functions\ ****************************************************/}}
+\DoxyCodeLine{00235\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___i_w_d_g_gaaa540681b7a6a4f7cc6b0b5497e6de46}{HAL\_IWDG\_Start}}(\mbox{\hyperlink{struct_i_w_d_g___handle_type_def}{IWDG\_HandleTypeDef}}\ *hiwdg);}
+\DoxyCodeLine{00236\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___i_w_d_g_ga7e86236aea6d2f3638397fdf90333e4a}{HAL\_IWDG\_Refresh}}(\mbox{\hyperlink{struct_i_w_d_g___handle_type_def}{IWDG\_HandleTypeDef}}\ *hiwdg);}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \textcolor{comment}{/*\ Peripheral\ State\ functions\ \ ************************************************/}}
+\DoxyCodeLine{00239\ \mbox{\hyperlink{group___i_w_d_g_ga61699dc6f24a3edecddd16018560d0e5}{HAL\_IWDG\_StateTypeDef}}\ \mbox{\hyperlink{group___i_w_d_g_ga4b2f32b043612fdd1b68f806115d8de4}{HAL\_IWDG\_GetState}}(\mbox{\hyperlink{struct_i_w_d_g___handle_type_def}{IWDG\_HandleTypeDef}}\ *hiwdg);}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00250\ \}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_HAL\_IWDG\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

@@ -1,0 +1,138 @@
+\doxysection{mbed\+::Digital\+Out Class Reference}
+\hypertarget{classmbed_1_1_digital_out}{}\label{classmbed_1_1_digital_out}\index{mbed::DigitalOut@{mbed::DigitalOut}}
+
+
+{\ttfamily \#include $<$Digital\+Out.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_digital_out_aad0eaa96c3fad0b2e31c167d616fe3c2}{Digital\+Out}} (\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin)
+\item 
+\mbox{\hyperlink{classmbed_1_1_digital_out_a6068274615ee97f1ff3a3ceb701faa26}{Digital\+Out}} (\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}} pin, int value)
+\item 
+void \mbox{\hyperlink{classmbed_1_1_digital_out_a780c53a27d6ef36e8f57dc796d4c117c}{write}} (int value)
+\item 
+int \mbox{\hyperlink{classmbed_1_1_digital_out_aee5b6dba79cb58aa87a18b3dc38621bd}{read}} ()
+\item 
+\mbox{\hyperlink{classmbed_1_1_digital_out}{Digital\+Out}} \& \mbox{\hyperlink{classmbed_1_1_digital_out_a4654b98ddcf62451a78ec9d3b0b625bd}{operator=}} (int value)
+\item 
+\mbox{\hyperlink{classmbed_1_1_digital_out}{Digital\+Out}} \& \mbox{\hyperlink{classmbed_1_1_digital_out_a646c9563505fc40da759637df8c20e7d}{operator=}} (\mbox{\hyperlink{classmbed_1_1_digital_out}{Digital\+Out}} \&rhs)
+\item 
+\mbox{\hyperlink{classmbed_1_1_digital_out_afa966c7a9c8a66c499839c7be55d2d9b}{operator int}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} \mbox{\hyperlink{classmbed_1_1_digital_out_a3f5716320aba4d372a74107f95a97c81}{gpio}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A digital output, used for setting the state of a pin
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Toggle\ a\ LED}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mbed_8h}{mbed.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classmbed_1_1_digital_out_aad0eaa96c3fad0b2e31c167d616fe3c2}{DigitalOut}}\ led(\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1adac6477842247cab1a8c02c65f431b44}{LED1}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(1)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ led\ =\ !led;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ wait(0.2);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmbed_1_1_digital_out_aad0eaa96c3fad0b2e31c167d616fe3c2}\label{classmbed_1_1_digital_out_aad0eaa96c3fad0b2e31c167d616fe3c2} 
+\index{mbed::DigitalOut@{mbed::DigitalOut}!DigitalOut@{DigitalOut}}
+\index{DigitalOut@{DigitalOut}!mbed::DigitalOut@{mbed::DigitalOut}}
+\doxysubsubsection{\texorpdfstring{DigitalOut()}{DigitalOut()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily mbed\+::\+Digital\+Out\+::\+Digital\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create a \doxylink{classmbed_1_1_digital_out}{Digital\+Out} connected to the specified pin
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{classmbed_1_1_digital_out}{Digital\+Out} pin to connect to \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmbed_1_1_digital_out_a6068274615ee97f1ff3a3ceb701faa26}\label{classmbed_1_1_digital_out_a6068274615ee97f1ff3a3ceb701faa26} 
+\index{mbed::DigitalOut@{mbed::DigitalOut}!DigitalOut@{DigitalOut}}
+\index{DigitalOut@{DigitalOut}!mbed::DigitalOut@{mbed::DigitalOut}}
+\doxysubsubsection{\texorpdfstring{DigitalOut()}{DigitalOut()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily mbed\+::\+Digital\+Out\+::\+Digital\+Out (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{Pin\+Name}}}]{pin,  }\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create a \doxylink{classmbed_1_1_digital_out}{Digital\+Out} connected to the specified pin
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \doxylink{classmbed_1_1_digital_out}{Digital\+Out} pin to connect to \\
+\hline
+{\em value} & the initial pin value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmbed_1_1_digital_out_afa966c7a9c8a66c499839c7be55d2d9b}\label{classmbed_1_1_digital_out_afa966c7a9c8a66c499839c7be55d2d9b} 
+\index{mbed::DigitalOut@{mbed::DigitalOut}!operator int@{operator int}}
+\index{operator int@{operator int}!mbed::DigitalOut@{mbed::DigitalOut}}
+\doxysubsubsection{\texorpdfstring{operator int()}{operator int()}}
+{\footnotesize\ttfamily mbed\+::\+Digital\+Out\+::operator int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A shorthand for \doxylink{classmbed_1_1_digital_out_aee5b6dba79cb58aa87a18b3dc38621bd}{read()} \Hypertarget{classmbed_1_1_digital_out_a646c9563505fc40da759637df8c20e7d}\label{classmbed_1_1_digital_out_a646c9563505fc40da759637df8c20e7d} 
+\index{mbed::DigitalOut@{mbed::DigitalOut}!operator=@{operator=}}
+\index{operator=@{operator=}!mbed::DigitalOut@{mbed::DigitalOut}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmbed_1_1_digital_out}{Digital\+Out}} \& mbed\+::\+Digital\+Out\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmbed_1_1_digital_out}{Digital\+Out}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classmbed_1_1_digital_out_a4654b98ddcf62451a78ec9d3b0b625bd}\label{classmbed_1_1_digital_out_a4654b98ddcf62451a78ec9d3b0b625bd} 
+\index{mbed::DigitalOut@{mbed::DigitalOut}!operator=@{operator=}}
+\index{operator=@{operator=}!mbed::DigitalOut@{mbed::DigitalOut}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmbed_1_1_digital_out}{Digital\+Out}} \& mbed\+::\+Digital\+Out\+::operator= (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A shorthand for \doxylink{classmbed_1_1_digital_out_a780c53a27d6ef36e8f57dc796d4c117c}{write()} \Hypertarget{classmbed_1_1_digital_out_aee5b6dba79cb58aa87a18b3dc38621bd}\label{classmbed_1_1_digital_out_aee5b6dba79cb58aa87a18b3dc38621bd} 
+\index{mbed::DigitalOut@{mbed::DigitalOut}!read@{read}}
+\index{read@{read}!mbed::DigitalOut@{mbed::DigitalOut}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int mbed\+::\+Digital\+Out\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the output setting, represented as 0 or 1 (int)
+
+\begin{DoxyReturn}{Returns}
+an integer representing the output setting of the pin, 0 for logical 0, 1 for logical 1 
+\end{DoxyReturn}
+\Hypertarget{classmbed_1_1_digital_out_a780c53a27d6ef36e8f57dc796d4c117c}\label{classmbed_1_1_digital_out_a780c53a27d6ef36e8f57dc796d4c117c} 
+\index{mbed::DigitalOut@{mbed::DigitalOut}!write@{write}}
+\index{write@{write}!mbed::DigitalOut@{mbed::DigitalOut}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void mbed\+::\+Digital\+Out\+::write (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the output, specified as 0 or 1 (int)
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & An integer specifying the pin output value, 0 for logical 0, 1 (or any other non-\/zero value) for logical 1 \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmbed_1_1_digital_out_a3f5716320aba4d372a74107f95a97c81}\label{classmbed_1_1_digital_out_a3f5716320aba4d372a74107f95a97c81} 
+\index{mbed::DigitalOut@{mbed::DigitalOut}!gpio@{gpio}}
+\index{gpio@{gpio}!mbed::DigitalOut@{mbed::DigitalOut}}
+\doxysubsubsection{\texorpdfstring{gpio}{gpio}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgpio__t}{gpio\+\_\+t}} mbed\+::\+Digital\+Out\+::gpio\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\mbox{\hyperlink{_digital_out_8h}{Digital\+Out.\+h}}\end{DoxyCompactItemize}

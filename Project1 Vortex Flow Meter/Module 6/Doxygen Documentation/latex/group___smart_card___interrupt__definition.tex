@@ -1,0 +1,67 @@
+\doxysubsubsubsection{Smart\+Card\+\_\+\+Interrupt\+\_\+definition}
+\hypertarget{group___smart_card___interrupt__definition}{}\label{group___smart_card___interrupt__definition}\index{SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___smart_card___interrupt__definition_gac56e07a71ab82a23930ad58e9a8dc806}{SMARTCARD\+\_\+\+IT\+\_\+\+PE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000100)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___interrupt__definition_ga758561a96d28254dc3504cb5325dad1f}{SMARTCARD\+\_\+\+IT\+\_\+\+TXE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000080)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___interrupt__definition_ga808ee7d7c209374af004e8bf1d2ca492}{SMARTCARD\+\_\+\+IT\+\_\+\+TC}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000040)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___interrupt__definition_ga75b6c6e283a114afa1130f6f1bc98da6}{SMARTCARD\+\_\+\+IT\+\_\+\+RXNE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000020)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___interrupt__definition_ga0b1a5f7e611a976c71168a5b9e3a1f0e}{SMARTCARD\+\_\+\+IT\+\_\+\+IDLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000010)
+\item 
+\#define \mbox{\hyperlink{group___smart_card___interrupt__definition_ga751761f820948ee230b30a244ca85725}{SMARTCARD\+\_\+\+IT\+\_\+\+ERR}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x20000001)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Elements values convention\+: 0x\+Y000\+XXXX
+\begin{DoxyItemize}
+\item XXXX \+: Interrupt mask in the XX register
+\item Y \+: Interrupt source register (2bits)
+\begin{DoxyItemize}
+\item 01\+: CR1 register
+\item 10\+: CR3 register 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___smart_card___interrupt__definition_ga751761f820948ee230b30a244ca85725}\label{group___smart_card___interrupt__definition_ga751761f820948ee230b30a244ca85725} 
+\index{SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}!SMARTCARD\_IT\_ERR@{SMARTCARD\_IT\_ERR}}
+\index{SMARTCARD\_IT\_ERR@{SMARTCARD\_IT\_ERR}!SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{SMARTCARD\_IT\_ERR}{SMARTCARD\_IT\_ERR}}
+{\footnotesize\ttfamily \#define SMARTCARD\+\_\+\+IT\+\_\+\+ERR~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x20000001)}
+
+\Hypertarget{group___smart_card___interrupt__definition_ga0b1a5f7e611a976c71168a5b9e3a1f0e}\label{group___smart_card___interrupt__definition_ga0b1a5f7e611a976c71168a5b9e3a1f0e} 
+\index{SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}!SMARTCARD\_IT\_IDLE@{SMARTCARD\_IT\_IDLE}}
+\index{SMARTCARD\_IT\_IDLE@{SMARTCARD\_IT\_IDLE}!SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{SMARTCARD\_IT\_IDLE}{SMARTCARD\_IT\_IDLE}}
+{\footnotesize\ttfamily \#define SMARTCARD\+\_\+\+IT\+\_\+\+IDLE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000010)}
+
+\Hypertarget{group___smart_card___interrupt__definition_gac56e07a71ab82a23930ad58e9a8dc806}\label{group___smart_card___interrupt__definition_gac56e07a71ab82a23930ad58e9a8dc806} 
+\index{SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}!SMARTCARD\_IT\_PE@{SMARTCARD\_IT\_PE}}
+\index{SMARTCARD\_IT\_PE@{SMARTCARD\_IT\_PE}!SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{SMARTCARD\_IT\_PE}{SMARTCARD\_IT\_PE}}
+{\footnotesize\ttfamily \#define SMARTCARD\+\_\+\+IT\+\_\+\+PE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000100)}
+
+\Hypertarget{group___smart_card___interrupt__definition_ga75b6c6e283a114afa1130f6f1bc98da6}\label{group___smart_card___interrupt__definition_ga75b6c6e283a114afa1130f6f1bc98da6} 
+\index{SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}!SMARTCARD\_IT\_RXNE@{SMARTCARD\_IT\_RXNE}}
+\index{SMARTCARD\_IT\_RXNE@{SMARTCARD\_IT\_RXNE}!SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{SMARTCARD\_IT\_RXNE}{SMARTCARD\_IT\_RXNE}}
+{\footnotesize\ttfamily \#define SMARTCARD\+\_\+\+IT\+\_\+\+RXNE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000020)}
+
+\Hypertarget{group___smart_card___interrupt__definition_ga808ee7d7c209374af004e8bf1d2ca492}\label{group___smart_card___interrupt__definition_ga808ee7d7c209374af004e8bf1d2ca492} 
+\index{SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}!SMARTCARD\_IT\_TC@{SMARTCARD\_IT\_TC}}
+\index{SMARTCARD\_IT\_TC@{SMARTCARD\_IT\_TC}!SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{SMARTCARD\_IT\_TC}{SMARTCARD\_IT\_TC}}
+{\footnotesize\ttfamily \#define SMARTCARD\+\_\+\+IT\+\_\+\+TC~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000040)}
+
+\Hypertarget{group___smart_card___interrupt__definition_ga758561a96d28254dc3504cb5325dad1f}\label{group___smart_card___interrupt__definition_ga758561a96d28254dc3504cb5325dad1f} 
+\index{SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}!SMARTCARD\_IT\_TXE@{SMARTCARD\_IT\_TXE}}
+\index{SMARTCARD\_IT\_TXE@{SMARTCARD\_IT\_TXE}!SmartCard\_Interrupt\_definition@{SmartCard\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{SMARTCARD\_IT\_TXE}{SMARTCARD\_IT\_TXE}}
+{\footnotesize\ttfamily \#define SMARTCARD\+\_\+\+IT\+\_\+\+TXE~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x10000080)}
+

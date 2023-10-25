@@ -1,0 +1,48 @@
+\doxysection{port\+\_\+api.\+h}
+\hypertarget{port__api_8h_source}{}\label{port__api_8h_source}\index{mbed/port\_api.h@{mbed/port\_api.h}}
+\mbox{\hyperlink{port__api_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_PORTMAP\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_PORTMAP\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{device_8h}{device.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#if\ DEVICE\_PORTIN\ ||\ DEVICE\_PORTOUT}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structport__s}{port\_s}}\ port\_t;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ port\_pin(\mbox{\hyperlink{_port_names_8h_a59d6d8d6337e04ac7ad3dc96eb920416}{PortName}}\ \mbox{\hyperlink{structport__s_a8db52e51a52d636c3537c837e37f505d}{port}},\ \textcolor{keywordtype}{int}\ pin\_n);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ port\_init\ (port\_t\ *obj,\ \mbox{\hyperlink{_port_names_8h_a59d6d8d6337e04ac7ad3dc96eb920416}{PortName}}\ \mbox{\hyperlink{structport__s_a8db52e51a52d636c3537c837e37f505d}{port}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structport__s_a1cfd93e0c8deae9f8cff5c734f02db16}{mask}},\ \mbox{\hyperlink{_pin_names_8h_a8ff912d511000d542e6ad34966166f38}{PinDirection}}\ dir);}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ port\_mode\ (port\_t\ *obj,\ \mbox{\hyperlink{_pin_names_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{PinMode}}\ mode);}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ port\_dir\ \ (port\_t\ *obj,\ \mbox{\hyperlink{_pin_names_8h_a8ff912d511000d542e6ad34966166f38}{PinDirection}}\ dir);}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ port\_write(port\_t\ *obj,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ \ port\_read\ (port\_t\ *obj);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00038\ \}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

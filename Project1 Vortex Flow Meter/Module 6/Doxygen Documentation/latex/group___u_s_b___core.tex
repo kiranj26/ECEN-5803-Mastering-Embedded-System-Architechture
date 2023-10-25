@@ -1,0 +1,169 @@
+\doxysubsection{USB\+\_\+\+Core}
+\hypertarget{group___u_s_b___core}{}\label{group___u_s_b___core}\index{USB\_Core@{USB\_Core}}
+\doxysubsubsubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___p_c_d___exported___constants}{PCD\+\_\+\+Exported\+\_\+\+Constants}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_u_s_b___o_t_g___cfg_type_def}{USB\+\_\+\+OTG\+\_\+\+Cfg\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em PCD Initialization Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_u_s_b___o_t_g___e_p_type_def}{USB\+\_\+\+OTG\+\_\+\+EPType\+Def}}
+\item 
+struct \mbox{\hyperlink{struct_u_s_b___o_t_g___h_c_type_def}{USB\+\_\+\+OTG\+\_\+\+HCType\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___u_s_b___core_gaee615ae9689e28e7618b73dbe76f5b95}{USB\+\_\+\+OTG\+\_\+\+Mode\+Type\+Def}} \{ \mbox{\hyperlink{group___u_s_b___core_ggaee615ae9689e28e7618b73dbe76f5b95abe8249bdbe7a4203d7a1993c61750831}{USB\+\_\+\+OTG\+\_\+\+DEVICE\+\_\+\+MODE}} = 0
+, \mbox{\hyperlink{group___u_s_b___core_ggaee615ae9689e28e7618b73dbe76f5b95ae3ce8f1b6b2b91c3008e3fe00de1d799}{USB\+\_\+\+OTG\+\_\+\+HOST\+\_\+\+MODE}} = 1
+, \mbox{\hyperlink{group___u_s_b___core_ggaee615ae9689e28e7618b73dbe76f5b95a5e000853dd643af91cdf9515df494e53}{USB\+\_\+\+OTG\+\_\+\+DRD\+\_\+\+MODE}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em USB Mode definition ~\newline
+ \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___u_s_b___core_ga04b2bca306495588fec3a5245daa5221}{USB\+\_\+\+OTG\+\_\+\+URBState\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221a3d62a44f8c2ff61d32e014eeb68ca1ad}{URB\+\_\+\+IDLE}} = 0
+, \mbox{\hyperlink{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221a89b831c73a03df3adb1db9f9ea6dd383}{URB\+\_\+\+DONE}}
+, \mbox{\hyperlink{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221afc9be95cae97851083c29fba7a76c429}{URB\+\_\+\+NOTREADY}}
+, \mbox{\hyperlink{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221a53a167498a0a71be87d46ed17a8b3a1f}{URB\+\_\+\+NYET}}
+, \newline
+\mbox{\hyperlink{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221ac64ce5e59f99b31274ebbec86d33afb2}{URB\+\_\+\+ERROR}}
+, \mbox{\hyperlink{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221af19023a3840fc87352f2c7108feb4f8e}{URB\+\_\+\+STALL}}
+ \}
+\begin{DoxyCompactList}\small\item\em URB States definition ~\newline
+ \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___u_s_b___core_ga8fa88c2e8e5fe41147028ba11af65294}{USB\+\_\+\+OTG\+\_\+\+HCState\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294af636bb8335a7bd4b2cd57dc41d105d9c}{HC\+\_\+\+IDLE}} = 0
+, \mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a323751d52ea7fde5b0399b480666b3eb}{HC\+\_\+\+XFRC}}
+, \mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294ad3806642bc9a2a49bf930f44a8a01918}{HC\+\_\+\+HALTED}}
+, \mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294aead6a914271aec37bb91e63949567391}{HC\+\_\+\+NAK}}
+, \newline
+\mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294ac7a2e369496480be172bc2b290d65c24}{HC\+\_\+\+NYET}}
+, \mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a007bef68e5e5170ea5055d553c64ec87}{HC\+\_\+\+STALL}}
+, \mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a13ced3cf247e734c6be97235e18cfa33}{HC\+\_\+\+XACTERR}}
+, \mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a557e1dbc3f7c65270c2bc42784299a13}{HC\+\_\+\+BBLERR}}
+, \newline
+\mbox{\hyperlink{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a3b001e51f8c3d77947867fb1a9b959be}{HC\+\_\+\+DATATGLERR}}
+ \}
+\begin{DoxyCompactList}\small\item\em Host channel States definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+\doxysubsubsection{Enumeration Type Documentation}
+\Hypertarget{group___u_s_b___core_ga8fa88c2e8e5fe41147028ba11af65294}\label{group___u_s_b___core_ga8fa88c2e8e5fe41147028ba11af65294} 
+\index{USB\_Core@{USB\_Core}!USB\_OTG\_HCStateTypeDef@{USB\_OTG\_HCStateTypeDef}}
+\index{USB\_OTG\_HCStateTypeDef@{USB\_OTG\_HCStateTypeDef}!USB\_Core@{USB\_Core}}
+\doxysubsubsubsection{\texorpdfstring{USB\_OTG\_HCStateTypeDef}{USB\_OTG\_HCStateTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___u_s_b___core_ga8fa88c2e8e5fe41147028ba11af65294}{USB\+\_\+\+OTG\+\_\+\+HCState\+Type\+Def}}}
+
+
+
+Host channel States definition ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HC\_IDLE@{HC\_IDLE}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!HC\_IDLE@{HC\_IDLE}}}\Hypertarget{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294af636bb8335a7bd4b2cd57dc41d105d9c}\label{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294af636bb8335a7bd4b2cd57dc41d105d9c} 
+HC\+\_\+\+IDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HC\_XFRC@{HC\_XFRC}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!HC\_XFRC@{HC\_XFRC}}}\Hypertarget{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a323751d52ea7fde5b0399b480666b3eb}\label{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a323751d52ea7fde5b0399b480666b3eb} 
+HC\+\_\+\+XFRC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HC\_HALTED@{HC\_HALTED}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!HC\_HALTED@{HC\_HALTED}}}\Hypertarget{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294ad3806642bc9a2a49bf930f44a8a01918}\label{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294ad3806642bc9a2a49bf930f44a8a01918} 
+HC\+\_\+\+HALTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HC\_NAK@{HC\_NAK}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!HC\_NAK@{HC\_NAK}}}\Hypertarget{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294aead6a914271aec37bb91e63949567391}\label{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294aead6a914271aec37bb91e63949567391} 
+HC\+\_\+\+NAK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HC\_NYET@{HC\_NYET}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!HC\_NYET@{HC\_NYET}}}\Hypertarget{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294ac7a2e369496480be172bc2b290d65c24}\label{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294ac7a2e369496480be172bc2b290d65c24} 
+HC\+\_\+\+NYET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HC\_STALL@{HC\_STALL}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!HC\_STALL@{HC\_STALL}}}\Hypertarget{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a007bef68e5e5170ea5055d553c64ec87}\label{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a007bef68e5e5170ea5055d553c64ec87} 
+HC\+\_\+\+STALL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HC\_XACTERR@{HC\_XACTERR}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!HC\_XACTERR@{HC\_XACTERR}}}\Hypertarget{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a13ced3cf247e734c6be97235e18cfa33}\label{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a13ced3cf247e734c6be97235e18cfa33} 
+HC\+\_\+\+XACTERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HC\_BBLERR@{HC\_BBLERR}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!HC\_BBLERR@{HC\_BBLERR}}}\Hypertarget{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a557e1dbc3f7c65270c2bc42784299a13}\label{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a557e1dbc3f7c65270c2bc42784299a13} 
+HC\+\_\+\+BBLERR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HC\_DATATGLERR@{HC\_DATATGLERR}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!HC\_DATATGLERR@{HC\_DATATGLERR}}}\Hypertarget{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a3b001e51f8c3d77947867fb1a9b959be}\label{group___u_s_b___core_gga8fa88c2e8e5fe41147028ba11af65294a3b001e51f8c3d77947867fb1a9b959be} 
+HC\+\_\+\+DATATGLERR&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___u_s_b___core_gaee615ae9689e28e7618b73dbe76f5b95}\label{group___u_s_b___core_gaee615ae9689e28e7618b73dbe76f5b95} 
+\index{USB\_Core@{USB\_Core}!USB\_OTG\_ModeTypeDef@{USB\_OTG\_ModeTypeDef}}
+\index{USB\_OTG\_ModeTypeDef@{USB\_OTG\_ModeTypeDef}!USB\_Core@{USB\_Core}}
+\doxysubsubsubsection{\texorpdfstring{USB\_OTG\_ModeTypeDef}{USB\_OTG\_ModeTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___u_s_b___core_gaee615ae9689e28e7618b73dbe76f5b95}{USB\+\_\+\+OTG\+\_\+\+Mode\+Type\+Def}}}
+
+
+
+USB Mode definition ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USB\_OTG\_DEVICE\_MODE@{USB\_OTG\_DEVICE\_MODE}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!USB\_OTG\_DEVICE\_MODE@{USB\_OTG\_DEVICE\_MODE}}}\Hypertarget{group___u_s_b___core_ggaee615ae9689e28e7618b73dbe76f5b95abe8249bdbe7a4203d7a1993c61750831}\label{group___u_s_b___core_ggaee615ae9689e28e7618b73dbe76f5b95abe8249bdbe7a4203d7a1993c61750831} 
+USB\+\_\+\+OTG\+\_\+\+DEVICE\+\_\+\+MODE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USB\_OTG\_HOST\_MODE@{USB\_OTG\_HOST\_MODE}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!USB\_OTG\_HOST\_MODE@{USB\_OTG\_HOST\_MODE}}}\Hypertarget{group___u_s_b___core_ggaee615ae9689e28e7618b73dbe76f5b95ae3ce8f1b6b2b91c3008e3fe00de1d799}\label{group___u_s_b___core_ggaee615ae9689e28e7618b73dbe76f5b95ae3ce8f1b6b2b91c3008e3fe00de1d799} 
+USB\+\_\+\+OTG\+\_\+\+HOST\+\_\+\+MODE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USB\_OTG\_DRD\_MODE@{USB\_OTG\_DRD\_MODE}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!USB\_OTG\_DRD\_MODE@{USB\_OTG\_DRD\_MODE}}}\Hypertarget{group___u_s_b___core_ggaee615ae9689e28e7618b73dbe76f5b95a5e000853dd643af91cdf9515df494e53}\label{group___u_s_b___core_ggaee615ae9689e28e7618b73dbe76f5b95a5e000853dd643af91cdf9515df494e53} 
+USB\+\_\+\+OTG\+\_\+\+DRD\+\_\+\+MODE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___u_s_b___core_ga04b2bca306495588fec3a5245daa5221}\label{group___u_s_b___core_ga04b2bca306495588fec3a5245daa5221} 
+\index{USB\_Core@{USB\_Core}!USB\_OTG\_URBStateTypeDef@{USB\_OTG\_URBStateTypeDef}}
+\index{USB\_OTG\_URBStateTypeDef@{USB\_OTG\_URBStateTypeDef}!USB\_Core@{USB\_Core}}
+\doxysubsubsubsection{\texorpdfstring{USB\_OTG\_URBStateTypeDef}{USB\_OTG\_URBStateTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___u_s_b___core_ga04b2bca306495588fec3a5245daa5221}{USB\+\_\+\+OTG\+\_\+\+URBState\+Type\+Def}}}
+
+
+
+URB States definition ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URB\_IDLE@{URB\_IDLE}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!URB\_IDLE@{URB\_IDLE}}}\Hypertarget{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221a3d62a44f8c2ff61d32e014eeb68ca1ad}\label{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221a3d62a44f8c2ff61d32e014eeb68ca1ad} 
+URB\+\_\+\+IDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URB\_DONE@{URB\_DONE}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!URB\_DONE@{URB\_DONE}}}\Hypertarget{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221a89b831c73a03df3adb1db9f9ea6dd383}\label{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221a89b831c73a03df3adb1db9f9ea6dd383} 
+URB\+\_\+\+DONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URB\_NOTREADY@{URB\_NOTREADY}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!URB\_NOTREADY@{URB\_NOTREADY}}}\Hypertarget{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221afc9be95cae97851083c29fba7a76c429}\label{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221afc9be95cae97851083c29fba7a76c429} 
+URB\+\_\+\+NOTREADY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URB\_NYET@{URB\_NYET}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!URB\_NYET@{URB\_NYET}}}\Hypertarget{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221a53a167498a0a71be87d46ed17a8b3a1f}\label{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221a53a167498a0a71be87d46ed17a8b3a1f} 
+URB\+\_\+\+NYET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URB\_ERROR@{URB\_ERROR}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!URB\_ERROR@{URB\_ERROR}}}\Hypertarget{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221ac64ce5e59f99b31274ebbec86d33afb2}\label{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221ac64ce5e59f99b31274ebbec86d33afb2} 
+URB\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URB\_STALL@{URB\_STALL}!USB\_Core@{USB\_Core}}\index{USB\_Core@{USB\_Core}!URB\_STALL@{URB\_STALL}}}\Hypertarget{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221af19023a3840fc87352f2c7108feb4f8e}\label{group___u_s_b___core_gga04b2bca306495588fec3a5245daa5221af19023a3840fc87352f2c7108feb4f8e} 
+URB\+\_\+\+STALL&\\
+\hline
+
+\end{DoxyEnumFields}

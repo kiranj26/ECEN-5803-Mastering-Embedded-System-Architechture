@@ -1,0 +1,185 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+hal\+\_\+def.h File Reference}
+\hypertarget{stm32f4xx__hal__def_8h}{}\label{stm32f4xx__hal__def_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_def.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_def.h}}
+
+
+This file contains HAL common defines, enumeration, macros and structures definitions.  
+
+
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{stm32f4xx__hal__def_8h_aad28bc64749c50dcedd6bf819fdc6974}{HAL\+\_\+\+MAX\+\_\+\+DELAY}}~0x\+FFFFFFFF
+\item 
+\#define \mbox{\hyperlink{stm32f4xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\+\_\+\+IS\+\_\+\+BIT\+\_\+\+SET}}(REG,  BIT)~(((REG) \& (BIT)) != \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\item 
+\#define \mbox{\hyperlink{stm32f4xx__hal__def_8h_a82637a84fbdca0e2a25496089b549924}{HAL\+\_\+\+IS\+\_\+\+BIT\+\_\+\+CLR}}(REG,  BIT)~(((REG) \& (BIT)) == \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\item 
+\#define \mbox{\hyperlink{stm32f4xx__hal__def_8h_af5b3b3d0eff8c4cb59d4d3909c247311}{\+\_\+\+\_\+\+HAL\+\_\+\+LINKDMA}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+PPP\+\_\+\+DMA\+\_\+\+FIELD\+\_\+\+\_\+,  \+\_\+\+\_\+\+DMA\+\_\+\+HANDLE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{stm32f4xx__hal__def_8h_ad3d96e1b9022ba76b69eeda91027b36c}{\+\_\+\+\_\+\+HAL\+\_\+\+LOCK}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{stm32f4xx__hal__def_8h_a7c2c23627aed2bb71d8c1ad071cda004}{\+\_\+\+\_\+\+HAL\+\_\+\+UNLOCK}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \{ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\+\_\+\+OK}} = 0x00
+, \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa5a04e395e501e4e400172c610478c4a4}{HAL\+\_\+\+ERROR}} = 0x01
+, \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa8532fa3641ae7c14cb1b0554e2d9cbc7}{HAL\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa00c89549bc881c35e8e4cd9e718337e5}{HAL\+\_\+\+TIMEOUT}} = 0x03
+ \}
+\begin{DoxyCompactList}\small\item\em HAL Status structures definition ~\newline
+ \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\+\_\+\+Lock\+Type\+Def}} \{ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284ba9bd487430440139444e6e7ff226005c0}{HAL\+\_\+\+UNLOCKED}} = 0x00
+, \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284ba656ad5f6dad97210cf3ccf107c033e4d}{HAL\+\_\+\+LOCKED}} = 0x01
+ \}
+\begin{DoxyCompactList}\small\item\em HAL Lock structures definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains HAL common defines, enumeration, macros and structures definitions. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{stm32f4xx__hal__def_8h_af5b3b3d0eff8c4cb59d4d3909c247311}\label{stm32f4xx__hal__def_8h_af5b3b3d0eff8c4cb59d4d3909c247311} 
+\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!\_\_HAL\_LINKDMA@{\_\_HAL\_LINKDMA}}
+\index{\_\_HAL\_LINKDMA@{\_\_HAL\_LINKDMA}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_LINKDMA}{\_\_HAL\_LINKDMA}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+LINKDMA(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+PPP\+\_\+\+DMA\+\_\+\+FIELD\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+DMA\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>\_\_PPP\_DMA\_FIELD\_\_\ =\ \&(\_\_DMA\_HANDLE\_\_);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_DMA\_HANDLE\_\_).Parent\ =\ (\_\_HANDLE\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\Hypertarget{stm32f4xx__hal__def_8h_ad3d96e1b9022ba76b69eeda91027b36c}\label{stm32f4xx__hal__def_8h_ad3d96e1b9022ba76b69eeda91027b36c} 
+\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!\_\_HAL\_LOCK@{\_\_HAL\_LOCK}}
+\index{\_\_HAL\_LOCK@{\_\_HAL\_LOCK}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_LOCK}{\_\_HAL\_LOCK}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+LOCK(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if((\_\_HANDLE\_\_)-\/>Lock\ ==\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284ba656ad5f6dad97210cf3ccf107c033e4d}{HAL\_LOCKED}})\ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa8532fa3641ae7c14cb1b0554e2d9cbc7}{HAL\_BUSY}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Lock\ =\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284ba656ad5f6dad97210cf3ccf107c033e4d}{HAL\_LOCKED}};\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+\Hypertarget{stm32f4xx__hal__def_8h_a7c2c23627aed2bb71d8c1ad071cda004}\label{stm32f4xx__hal__def_8h_a7c2c23627aed2bb71d8c1ad071cda004} 
+\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!\_\_HAL\_UNLOCK@{\_\_HAL\_UNLOCK}}
+\index{\_\_HAL\_UNLOCK@{\_\_HAL\_UNLOCK}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_UNLOCK}{\_\_HAL\_UNLOCK}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+UNLOCK(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Lock\ =\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284ba9bd487430440139444e6e7ff226005c0}{HAL\_UNLOCKED}};\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+\Hypertarget{stm32f4xx__hal__def_8h_a82637a84fbdca0e2a25496089b549924}\label{stm32f4xx__hal__def_8h_a82637a84fbdca0e2a25496089b549924} 
+\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!HAL\_IS\_BIT\_CLR@{HAL\_IS\_BIT\_CLR}}
+\index{HAL\_IS\_BIT\_CLR@{HAL\_IS\_BIT\_CLR}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_IS\_BIT\_CLR}{HAL\_IS\_BIT\_CLR}}
+{\footnotesize\ttfamily \#define HAL\+\_\+\+IS\+\_\+\+BIT\+\_\+\+CLR(\begin{DoxyParamCaption}\item[{}]{REG,  }\item[{}]{BIT }\end{DoxyParamCaption})~(((REG) \& (BIT)) == \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+\Hypertarget{stm32f4xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}\label{stm32f4xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3} 
+\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!HAL\_IS\_BIT\_SET@{HAL\_IS\_BIT\_SET}}
+\index{HAL\_IS\_BIT\_SET@{HAL\_IS\_BIT\_SET}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_IS\_BIT\_SET}{HAL\_IS\_BIT\_SET}}
+{\footnotesize\ttfamily \#define HAL\+\_\+\+IS\+\_\+\+BIT\+\_\+\+SET(\begin{DoxyParamCaption}\item[{}]{REG,  }\item[{}]{BIT }\end{DoxyParamCaption})~(((REG) \& (BIT)) != \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+\Hypertarget{stm32f4xx__hal__def_8h_aad28bc64749c50dcedd6bf819fdc6974}\label{stm32f4xx__hal__def_8h_aad28bc64749c50dcedd6bf819fdc6974} 
+\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!HAL\_MAX\_DELAY@{HAL\_MAX\_DELAY}}
+\index{HAL\_MAX\_DELAY@{HAL\_MAX\_DELAY}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_MAX\_DELAY}{HAL\_MAX\_DELAY}}
+{\footnotesize\ttfamily \#define HAL\+\_\+\+MAX\+\_\+\+DELAY~0x\+FFFFFFFF}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}\label{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b} 
+\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!HAL\_LockTypeDef@{HAL\_LockTypeDef}}
+\index{HAL\_LockTypeDef@{HAL\_LockTypeDef}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_LockTypeDef}{HAL\_LockTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\+\_\+\+Lock\+Type\+Def}}}
+
+
+
+HAL Lock structures definition ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_UNLOCKED@{HAL\_UNLOCKED}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!HAL\_UNLOCKED@{HAL\_UNLOCKED}}}\Hypertarget{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284ba9bd487430440139444e6e7ff226005c0}\label{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284ba9bd487430440139444e6e7ff226005c0} 
+HAL\+\_\+\+UNLOCKED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_LOCKED@{HAL\_LOCKED}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!HAL\_LOCKED@{HAL\_LOCKED}}}\Hypertarget{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284ba656ad5f6dad97210cf3ccf107c033e4d}\label{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284ba656ad5f6dad97210cf3ccf107c033e4d} 
+HAL\+\_\+\+LOCKED&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}\label{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f} 
+\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!HAL\_StatusTypeDef@{HAL\_StatusTypeDef}}
+\index{HAL\_StatusTypeDef@{HAL\_StatusTypeDef}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_StatusTypeDef}{HAL\_StatusTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}}}
+
+
+
+HAL Status structures definition ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_OK@{HAL\_OK}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!HAL\_OK@{HAL\_OK}}}\Hypertarget{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}\label{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632} 
+HAL\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ERROR@{HAL\_ERROR}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!HAL\_ERROR@{HAL\_ERROR}}}\Hypertarget{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa5a04e395e501e4e400172c610478c4a4}\label{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa5a04e395e501e4e400172c610478c4a4} 
+HAL\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_BUSY@{HAL\_BUSY}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!HAL\_BUSY@{HAL\_BUSY}}}\Hypertarget{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa8532fa3641ae7c14cb1b0554e2d9cbc7}\label{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa8532fa3641ae7c14cb1b0554e2d9cbc7} 
+HAL\+\_\+\+BUSY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_TIMEOUT@{HAL\_TIMEOUT}!stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}}\index{stm32f4xx\_hal\_def.h@{stm32f4xx\_hal\_def.h}!HAL\_TIMEOUT@{HAL\_TIMEOUT}}}\Hypertarget{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa00c89549bc881c35e8e4cd9e718337e5}\label{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa00c89549bc881c35e8e4cd9e718337e5} 
+HAL\+\_\+\+TIMEOUT&\\
+\hline
+
+\end{DoxyEnumFields}

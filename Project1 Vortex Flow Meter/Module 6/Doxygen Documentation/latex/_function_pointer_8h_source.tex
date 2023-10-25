@@ -1,0 +1,78 @@
+\doxysection{Function\+Pointer.\+h}
+\hypertarget{_function_pointer_8h_source}{}\label{_function_pointer_8h_source}\index{mbed/FunctionPointer.h@{mbed/FunctionPointer.h}}
+\mbox{\hyperlink{_function_pointer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_FUNCTIONPOINTER\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_FUNCTIONPOINTER\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacembed}{mbed}}\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{namespacembed_a96208545c028c5a1f3013f51f7554b88}{pvoidf\_t}})(void);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmbed_1_1_function_pointer}{FunctionPointer}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_function_pointer_abf3c87c05438a407458f0a6dd46b050f}{FunctionPointer}}(\textcolor{keywordtype}{void}\ (*function)(\textcolor{keywordtype}{void})\ =\ 0);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_function_pointer_ab73294508b61c6480a0d12c46dddd8a8}{FunctionPointer}}(T\ *\textcolor{keywordtype}{object},\ \textcolor{keywordtype}{void}\ (T::*member)(void))\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_function_pointer_aac93ab5b370e11baa42f30283b436c11}{attach}}(\textcolor{keywordtype}{object},\ member);}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_function_pointer_aac93ab5b370e11baa42f30283b436c11}{attach}}(\textcolor{keywordtype}{void}\ (*function)(\textcolor{keywordtype}{void})\ =\ 0);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_function_pointer_a3fd4d6e476c53cbe574683eff7696dc9}{attach}}(T\ *\textcolor{keywordtype}{object},\ \textcolor{keywordtype}{void}\ (T::*member)(void))\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \_object\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(object);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ memcpy(\_member,\ (\textcolor{keywordtype}{char}*)\&member,\ \textcolor{keyword}{sizeof}(member));}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \_membercaller\ =\ \&FunctionPointer::membercaller<T>;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \_function\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_function_pointer_adb57c6df09538d8399b20da386757a7a}{call}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{namespacembed_a96208545c028c5a1f3013f51f7554b88}{pvoidf\_t}}\ \mbox{\hyperlink{classmbed_1_1_function_pointer_a0ce24a5c3236a43773066227417f8d0e}{get\_function}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{namespacembed_a96208545c028c5a1f3013f51f7554b88}{pvoidf\_t}})\_function;}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#ifdef\ MBED\_OPERATORS}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ operator\ ()(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ membercaller(\textcolor{keywordtype}{void}\ *\textcolor{keywordtype}{object},\ \textcolor{keywordtype}{char}\ *member)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ T*\ o\ =\ \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(object);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ void\ (T::*m)(void);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ memcpy((\textcolor{keywordtype}{char}*)\&m,\ member,\ \textcolor{keyword}{sizeof}(m));}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ (o-\/>*m)();}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ void\ (*\_function)(void);\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ static\ function\ pointer\ -\/\ 0\ if\ none\ attached}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ *\_object;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ object\ this\ pointer\ -\/\ 0\ if\ none\ attached}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{char}\ \_member[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ raw\ member\ function\ pointer\ storage\ -\/\ converted\ back\ by\ registered\ \_membercaller}}
+\DoxyCodeLine{00089\ \ \ \ \ void\ (*\_membercaller)(\textcolor{keywordtype}{void}*,\ \textcolor{keywordtype}{char}*);\ \textcolor{comment}{//\ registered\ membercaller\ function\ to\ convert\ back\ and\ call\ \_member\ on\ \_object}}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \}\ \textcolor{comment}{//\ namespace\ mbed}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

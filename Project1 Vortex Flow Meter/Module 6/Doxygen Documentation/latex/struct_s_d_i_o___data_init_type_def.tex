@@ -1,0 +1,78 @@
+\doxysection{SDIO\+\_\+\+Data\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_s_d_i_o___data_init_type_def}{}\label{struct_s_d_i_o___data_init_type_def}\index{SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}}
+
+
+SDIO Data Control structure.  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+ll\+\_\+sdmmc.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def_a4b2d6dc3c3e8602de9fc84e4a051cfe4}{Data\+Time\+Out}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def_a178e926ead3b76289cfc8fc59693a34b}{Data\+Length}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def_abd9576c087a91e2c13b2dc5dac0dece5}{Data\+Block\+Size}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def_a5066914e8c67115c7a7c5d9a18213b23}{Transfer\+Dir}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def_ad55c68fdb10127be790987ccbb050f0b}{Transfer\+Mode}}
+\item 
+\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def_a70e119984fac61dba037e842aeffba4f}{DPSM}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SDIO Data Control structure. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_s_d_i_o___data_init_type_def_abd9576c087a91e2c13b2dc5dac0dece5}\label{struct_s_d_i_o___data_init_type_def_abd9576c087a91e2c13b2dc5dac0dece5} 
+\index{SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}!DataBlockSize@{DataBlockSize}}
+\index{DataBlockSize@{DataBlockSize}!SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DataBlockSize}{DataBlockSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SDIO\+\_\+\+Data\+Init\+Type\+Def\+::\+Data\+Block\+Size}
+
+Specifies the data block size for block transfer. This parameter can be a value of \doxylink{group___s_d_i_o___data___block___size}{SDIO\+\_\+\+Data\+\_\+\+Block\+\_\+\+Size} ~\newline
+ \Hypertarget{struct_s_d_i_o___data_init_type_def_a178e926ead3b76289cfc8fc59693a34b}\label{struct_s_d_i_o___data_init_type_def_a178e926ead3b76289cfc8fc59693a34b} 
+\index{SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}!DataLength@{DataLength}}
+\index{DataLength@{DataLength}!SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DataLength}{DataLength}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SDIO\+\_\+\+Data\+Init\+Type\+Def\+::\+Data\+Length}
+
+Specifies the number of data bytes to be transferred. ~\newline
+ \Hypertarget{struct_s_d_i_o___data_init_type_def_a4b2d6dc3c3e8602de9fc84e4a051cfe4}\label{struct_s_d_i_o___data_init_type_def_a4b2d6dc3c3e8602de9fc84e4a051cfe4} 
+\index{SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}!DataTimeOut@{DataTimeOut}}
+\index{DataTimeOut@{DataTimeOut}!SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DataTimeOut}{DataTimeOut}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SDIO\+\_\+\+Data\+Init\+Type\+Def\+::\+Data\+Time\+Out}
+
+Specifies the data timeout period in card bus clock periods. ~\newline
+ \Hypertarget{struct_s_d_i_o___data_init_type_def_a70e119984fac61dba037e842aeffba4f}\label{struct_s_d_i_o___data_init_type_def_a70e119984fac61dba037e842aeffba4f} 
+\index{SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}!DPSM@{DPSM}}
+\index{DPSM@{DPSM}!SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DPSM}{DPSM}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SDIO\+\_\+\+Data\+Init\+Type\+Def\+::\+DPSM}
+
+Specifies whether SDIO Data path state machine (DPSM) is enabled or disabled. This parameter can be a value of \doxylink{group___s_d_i_o___d_p_s_m___state}{SDIO\+\_\+\+DPSM\+\_\+\+State} ~\newline
+ \Hypertarget{struct_s_d_i_o___data_init_type_def_a5066914e8c67115c7a7c5d9a18213b23}\label{struct_s_d_i_o___data_init_type_def_a5066914e8c67115c7a7c5d9a18213b23} 
+\index{SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}!TransferDir@{TransferDir}}
+\index{TransferDir@{TransferDir}!SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{TransferDir}{TransferDir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SDIO\+\_\+\+Data\+Init\+Type\+Def\+::\+Transfer\+Dir}
+
+Specifies the data transfer direction, whether the transfer is a read or write. This parameter can be a value of \doxylink{group___s_d_i_o___transfer___direction}{SDIO\+\_\+\+Transfer\+\_\+\+Direction} \Hypertarget{struct_s_d_i_o___data_init_type_def_ad55c68fdb10127be790987ccbb050f0b}\label{struct_s_d_i_o___data_init_type_def_ad55c68fdb10127be790987ccbb050f0b} 
+\index{SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}!TransferMode@{TransferMode}}
+\index{TransferMode@{TransferMode}!SDIO\_DataInitTypeDef@{SDIO\_DataInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{TransferMode}{TransferMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} SDIO\+\_\+\+Data\+Init\+Type\+Def\+::\+Transfer\+Mode}
+
+Specifies whether data transfer is in stream or block mode. This parameter can be a value of \doxylink{group___s_d_i_o___transfer___type}{SDIO\+\_\+\+Transfer\+\_\+\+Type} ~\newline
+ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/\mbox{\hyperlink{stm32f4xx__ll__sdmmc_8h}{stm32f4xx\+\_\+ll\+\_\+sdmmc.\+h}}\end{DoxyCompactItemize}

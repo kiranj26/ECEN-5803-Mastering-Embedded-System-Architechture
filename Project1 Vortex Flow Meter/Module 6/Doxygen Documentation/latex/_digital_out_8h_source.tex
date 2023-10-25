@@ -1,0 +1,71 @@
+\doxysection{Digital\+Out.\+h}
+\hypertarget{_digital_out_8h_source}{}\label{_digital_out_8h_source}\index{mbed/DigitalOut.h@{mbed/DigitalOut.h}}
+\mbox{\hyperlink{_digital_out_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2006-\/2013\ ARM\ Limited}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ MBED\_DIGITALOUT\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MBED\_DIGITALOUT\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{platform_8h}{platform.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gpio__api_8h}{gpio\_api.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacembed}{mbed}}\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmbed_1_1_digital_out}{DigitalOut}}\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_digital_out_aad0eaa96c3fad0b2e31c167d616fe3c2}{DigitalOut}}(\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ pin)\ :\ \mbox{\hyperlink{classmbed_1_1_digital_out_a3f5716320aba4d372a74107f95a97c81}{gpio}}()\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gpio__api_8h_a5f5c43c977d7e2b7d242b7827036e32d}{gpio\_init\_out}}(\&\mbox{\hyperlink{classmbed_1_1_digital_out_a3f5716320aba4d372a74107f95a97c81}{gpio}},\ pin);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_digital_out_a6068274615ee97f1ff3a3ceb701faa26}{DigitalOut}}(\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ pin,\ \textcolor{keywordtype}{int}\ value)\ :\ \mbox{\hyperlink{classmbed_1_1_digital_out_a3f5716320aba4d372a74107f95a97c81}{gpio}}()\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gpio__api_8h_af00a2b6d3827ce1ed52950d8a8bc5c72}{gpio\_init\_out\_ex}}(\&\mbox{\hyperlink{classmbed_1_1_digital_out_a3f5716320aba4d372a74107f95a97c81}{gpio}},\ pin,\ value);}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmbed_1_1_digital_out_a780c53a27d6ef36e8f57dc796d4c117c}{write}}(\textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{gpio__api_8h_aedd478762e37aeafcf9ade8e255718b0}{gpio\_write}}(\&\mbox{\hyperlink{classmbed_1_1_digital_out_a3f5716320aba4d372a74107f95a97c81}{gpio}},\ value);}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classmbed_1_1_digital_out_aee5b6dba79cb58aa87a18b3dc38621bd}{read}}()\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{gpio__api_8h_abb97298a1eb6f6c11b6290abe7a1823b}{gpio\_read}}(\&\mbox{\hyperlink{classmbed_1_1_digital_out_a3f5716320aba4d372a74107f95a97c81}{gpio}});}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#ifdef\ MBED\_OPERATORS}}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_digital_out}{DigitalOut}}\&\ \mbox{\hyperlink{classmbed_1_1_digital_out_a4654b98ddcf62451a78ec9d3b0b625bd}{operator=\ }}(\textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_digital_out_a780c53a27d6ef36e8f57dc796d4c117c}{write}}(value);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_digital_out}{DigitalOut}}\&\ \mbox{\hyperlink{classmbed_1_1_digital_out_a4654b98ddcf62451a78ec9d3b0b625bd}{operator=\ }}(\mbox{\hyperlink{classmbed_1_1_digital_out}{DigitalOut}}\&\ rhs)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classmbed_1_1_digital_out_a780c53a27d6ef36e8f57dc796d4c117c}{write}}(rhs.\mbox{\hyperlink{classmbed_1_1_digital_out_aee5b6dba79cb58aa87a18b3dc38621bd}{read}}());}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{operator}\ int()\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classmbed_1_1_digital_out_aee5b6dba79cb58aa87a18b3dc38621bd}{read}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{structgpio__t}{gpio\_t}}\ \mbox{\hyperlink{classmbed_1_1_digital_out_a3f5716320aba4d372a74107f95a97c81}{gpio}};}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \}\ \textcolor{comment}{//\ namespace\ mbed}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

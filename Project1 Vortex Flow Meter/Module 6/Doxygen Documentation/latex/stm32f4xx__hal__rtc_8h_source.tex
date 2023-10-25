@@ -1,0 +1,338 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+rtc.\+h}
+\hypertarget{stm32f4xx__hal__rtc_8h_source}{}\label{stm32f4xx__hal__rtc_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_rtc.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_rtc.h}}
+\mbox{\hyperlink{stm32f4xx__hal__rtc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_RTC\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_RTC\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__hal__def_8h}{stm32f4xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba69cd05758f5129525749b65bee6f939f}{HAL\_RTC\_STATE\_RESET}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00,\ \ }
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba466484cd22333d8c8758ae12890b862f}{HAL\_RTC\_STATE\_READY}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x01,\ \ }
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba5e0a8c8e4731ac8f80e9a219413d6f9b}{HAL\_RTC\_STATE\_BUSY}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x02,\ \ }
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba062e7947b5f5f0c2acb7be96207e3d58}{HAL\_RTC\_STATE\_TIMEOUT}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x03,\ \ }
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{group___r_t_c_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba21f381f99f437c340f79407e3d71bb31}{HAL\_RTC\_STATE\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x04\ \ \ }
+\DoxyCodeLine{00069\ \}\mbox{\hyperlink{group___r_t_c_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b}{HAL\_RTCStateTypeDef}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___init_type_def_aa7dff3583cd79a5a3f9868a56ffd31ee}{HourFormat}};\ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___init_type_def_a8666a1fe64fe25f9b951219561a07a95}{AsynchPrediv}};\ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___init_type_def_ac27c42530b6ba86654ec476cd0d020fb}{SynchPrediv}};\ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___init_type_def_acd1593d55123feca6c3cae142134c294}{OutPut}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___init_type_def_a14365da1f80863621341cf4a6a8d4e67}{OutPutPolarity}};\ \ }
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___init_type_def_a2c4a2bd3cfae39882e657e653e45185a}{OutPutType}};\ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \}\mbox{\hyperlink{struct_r_t_c___init_type_def}{RTC\_InitTypeDef}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ uint8\_t\ \mbox{\hyperlink{struct_r_t_c___time_type_def_afb56ed968b4967d127517ebb4ed40d8b}{Hours}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ uint8\_t\ \mbox{\hyperlink{struct_r_t_c___time_type_def_a362931e6bba28836c36423197e429f29}{Minutes}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ uint8\_t\ \mbox{\hyperlink{struct_r_t_c___time_type_def_a297ae76c2b7de4f939d996d93240c6b2}{Seconds}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___time_type_def_ae24e60a3b9549fd02b00ad6762ae5b77}{SubSeconds}};\ \ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ uint8\_t\ \mbox{\hyperlink{struct_r_t_c___time_type_def_a701c21c52472e8caf9e23653ec2fd604}{TimeFormat}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___time_type_def_ac873d19a4d99d3f447f96ecae2bf3c5d}{DayLightSaving}};\ \ }
+\DoxyCodeLine{00119\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___time_type_def_a7628b757d7c7a4ab30b6bbc45a028b7d}{StoreOperation}};\ \ }
+\DoxyCodeLine{00122\ \}\mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\_TimeTypeDef}};\ }
+\DoxyCodeLine{00123\ \ \ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ uint8\_t\ \mbox{\hyperlink{struct_r_t_c___date_type_def_aff0238fae9aa5fe6dc30ca2833878e45}{WeekDay}};\ \ }
+\DoxyCodeLine{00132\ \ \ uint8\_t\ \mbox{\hyperlink{struct_r_t_c___date_type_def_a3df66a922683acd4db5defe402c664a0}{Month}};\ \ \ \ }
+\DoxyCodeLine{00135\ \ \ uint8\_t\ \mbox{\hyperlink{struct_r_t_c___date_type_def_a5c81723966bbed4ce8fbe68d1b590c8a}{Date}};\ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ uint8\_t\ \mbox{\hyperlink{struct_r_t_c___date_type_def_a1e7d226d1da13713b7d6bbd18c00bd9b}{Year}};\ \ \ \ \ }
+\DoxyCodeLine{00141\ \}\mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\_DateTypeDef}};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00147\ \{}
+\DoxyCodeLine{00148\ \ \ \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\_TimeTypeDef}}\ \mbox{\hyperlink{struct_r_t_c___alarm_type_def_a1e50b47e1b3cb1cf09dee1b9e61028c6}{AlarmTime}};\ \ \ \ \ }
+\DoxyCodeLine{00150\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___alarm_type_def_a6d5665858df4c99e589beebe7f2d120b}{AlarmMask}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00153\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___alarm_type_def_aa7f311cd270c215530acf93b454db223}{AlarmSubSecondMask}};\ \ \ }
+\DoxyCodeLine{00156\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___alarm_type_def_a366ce4c7ad04d5a29550d30d93361324}{AlarmDateWeekDaySel}};\ \ }
+\DoxyCodeLine{00159\ \ \ uint8\_t\ \mbox{\hyperlink{struct_r_t_c___alarm_type_def_a0c437cb24f8b12e753e522bf0c48a4d7}{AlarmDateWeekDay}};\ \ \ \ \ \ }
+\DoxyCodeLine{00163\ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{struct_r_t_c___alarm_type_def_a2f11f60569f34b15c09096928f30ab24}{Alarm}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00165\ \}\mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\_AlarmTypeDef}};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00170\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00171\ \{}
+\DoxyCodeLine{00172\ \ \ \mbox{\hyperlink{struct_r_t_c___type_def}{RTC\_TypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{struct_r_t_c___handle_type_def_a6a7bc50c975a169d24ba0a174f260abc}{Instance}};\ \ }
+\DoxyCodeLine{00174\ \ \ \mbox{\hyperlink{struct_r_t_c___init_type_def}{RTC\_InitTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_r_t_c___handle_type_def_ad8d1ab770e21b2ff3da405115c5933a7}{Init}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00176\ \ \ \mbox{\hyperlink{stm32f4xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\_LockTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_r_t_c___handle_type_def_ae72730d37db2c70485236bb9ff400592}{Lock}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00178\ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{group___r_t_c_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b}{HAL\_RTCStateTypeDef}}\ \ \ \ \mbox{\hyperlink{struct_r_t_c___handle_type_def_ae6f4d8c6cf47f2bd0823d5b570e44774}{State}};\ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \}\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00187\ \textcolor{comment}{/*\ Masks\ Definition\ */}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ RTC\_TR\_RESERVED\_MASK\ \ \ \ ((uint32\_t)0x007F7F7F)}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ RTC\_DR\_RESERVED\_MASK\ \ \ \ ((uint32\_t)0x00FFFF3F)\ }}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ RTC\_INIT\_MASK\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0xFFFFFFFF)\ \ }}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ RTC\_RSF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0xFFFFFF5F)}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ RTC\_FLAGS\_MASK\ \ \ \ \ \ \ \ \ \ ((uint32\_t)(RTC\_FLAG\_TSOVF\ |\ RTC\_FLAG\_TSF\ |\ RTC\_FLAG\_WUTF\ |\ \(\backslash\)}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RTC\_FLAG\_ALRBF\ |\ RTC\_FLAG\_ALRAF\ |\ RTC\_FLAG\_INITF\ |\ \(\backslash\)}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RTC\_FLAG\_RSF\ |\ RTC\_FLAG\_INITS\ |\ RTC\_FLAG\_WUTWF\ |\ \(\backslash\)}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RTC\_FLAG\_ALRBWF\ |\ RTC\_FLAG\_ALRAWF\ |\ RTC\_FLAG\_TAMP1F\ |\ \(\backslash\)}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RTC\_FLAG\_RECALPF\ |\ RTC\_FLAG\_SHPF))}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ RTC\_TIMEOUT\_VALUE\ \ \ \ \ \ \ 1000}}
+\DoxyCodeLine{00199\ \ }
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ RTC\_HOURFORMAT\_24\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ RTC\_HOURFORMAT\_12\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ IS\_RTC\_HOUR\_FORMAT(FORMAT)\ \ \ \ \ (((FORMAT)\ ==\ RTC\_HOURFORMAT\_12)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FORMAT)\ ==\ RTC\_HOURFORMAT\_24))}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ RTC\_OUTPUT\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ RTC\_OUTPUT\_ALARMA\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00200000)}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ RTC\_OUTPUT\_ALARMB\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00400000)}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ RTC\_OUTPUT\_WAKEUP\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00600000)}}
+\DoxyCodeLine{00219\ \ }
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ IS\_RTC\_OUTPUT(OUTPUT)\ (((OUTPUT)\ ==\ RTC\_OUTPUT\_DISABLE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((OUTPUT)\ ==\ RTC\_OUTPUT\_ALARMA)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((OUTPUT)\ ==\ RTC\_OUTPUT\_ALARMB)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((OUTPUT)\ ==\ RTC\_OUTPUT\_WAKEUP))}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ RTC\_OUTPUT\_POLARITY\_HIGH\ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ RTC\_OUTPUT\_POLARITY\_LOW\ \ \ \ \ \ \ \ ((uint32\_t)0x00100000)}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ IS\_RTC\_OUTPUT\_POL(POL)\ (((POL)\ ==\ RTC\_OUTPUT\_POLARITY\_HIGH)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((POL)\ ==\ RTC\_OUTPUT\_POLARITY\_LOW))}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ RTC\_OUTPUT\_TYPE\_OPENDRAIN\ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ RTC\_OUTPUT\_TYPE\_PUSHPULL\ \ \ \ \ \ \ ((uint32\_t)0x00040000)}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ IS\_RTC\_OUTPUT\_TYPE(TYPE)\ (((TYPE)\ ==\ RTC\_OUTPUT\_TYPE\_OPENDRAIN)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TYPE)\ ==\ RTC\_OUTPUT\_TYPE\_PUSHPULL))}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ IS\_RTC\_ASYNCH\_PREDIV(PREDIV)\ \ \ ((PREDIV)\ <=\ (uint32\_t)0x7F)\ }}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ IS\_RTC\_SYNCH\_PREDIV(PREDIV)\ \ \ \ ((PREDIV)\ <=\ (uint32\_t)0x7FFF)}}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#define\ IS\_RTC\_HOUR12(HOUR)\ \ \ \ \ \ \ \ \ \ \ \ (((HOUR)\ >\ (uint32\_t)0)\ \&\&\ ((HOUR)\ <=\ (uint32\_t)12))}}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\#define\ IS\_RTC\_HOUR24(HOUR)\ \ \ \ \ \ \ \ \ \ \ \ ((HOUR)\ <=\ (uint32\_t)23)}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#define\ IS\_RTC\_MINUTES(MINUTES)\ \ \ \ \ \ \ \ ((MINUTES)\ <=\ (uint32\_t)59)}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#define\ IS\_RTC\_SECONDS(SECONDS)\ \ \ \ \ \ \ \ ((SECONDS)\ <=\ (uint32\_t)59)}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ RTC\_HOURFORMAT12\_AM\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ RTC\_HOURFORMAT12\_PM\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x40)}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ IS\_RTC\_HOURFORMAT12(PM)\ \ (((PM)\ ==\ RTC\_HOURFORMAT12\_AM)\ ||\ ((PM)\ ==\ RTC\_HOURFORMAT12\_PM))}}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ RTC\_DAYLIGHTSAVING\_SUB1H\ \ \ \ \ \ \ ((uint32\_t)0x00020000)}}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ RTC\_DAYLIGHTSAVING\_ADD1H\ \ \ \ \ \ \ ((uint32\_t)0x00010000)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ RTC\_DAYLIGHTSAVING\_NONE\ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ IS\_RTC\_DAYLIGHT\_SAVING(SAVE)\ (((SAVE)\ ==\ RTC\_DAYLIGHTSAVING\_SUB1H)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SAVE)\ ==\ RTC\_DAYLIGHTSAVING\_ADD1H)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SAVE)\ ==\ RTC\_DAYLIGHTSAVING\_NONE))}}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ RTC\_STOREOPERATION\_RESET\ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ RTC\_STOREOPERATION\_SET\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00040000)}}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#define\ IS\_RTC\_STORE\_OPERATION(OPERATION)\ (((OPERATION)\ ==\ RTC\_STOREOPERATION\_RESET)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((OPERATION)\ ==\ RTC\_STOREOPERATION\_SET))}}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ FORMAT\_BIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x000000000)}}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#define\ FORMAT\_BCD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x000000001)}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#define\ IS\_RTC\_FORMAT(FORMAT)\ (((FORMAT)\ ==\ FORMAT\_BIN)\ ||\ ((FORMAT)\ ==\ FORMAT\_BCD))}}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#define\ IS\_RTC\_YEAR(YEAR)\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((YEAR)\ <=\ (uint32\_t)99)}}
+\DoxyCodeLine{00341\ \textcolor{comment}{/*\ Coded\ in\ BCD\ format\ */}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ RTC\_MONTH\_JANUARY\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)}}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ RTC\_MONTH\_FEBRUARY\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)}}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ RTC\_MONTH\_MARCH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)}}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ RTC\_MONTH\_APRIL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x04)}}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ RTC\_MONTH\_MAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x05)}}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ RTC\_MONTH\_JUNE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x06)}}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ RTC\_MONTH\_JULY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x07)}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ RTC\_MONTH\_AUGUST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x08)}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#define\ RTC\_MONTH\_SEPTEMBER\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x09)}}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ RTC\_MONTH\_OCTOBER\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x10)}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ RTC\_MONTH\_NOVEMBER\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x11)}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ RTC\_MONTH\_DECEMBER\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x12)}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ IS\_RTC\_MONTH(MONTH)\ \ \ \ \ \ \ \ \ \ \ \ (((MONTH)\ >=\ (uint32\_t)1)\ \&\&\ ((MONTH)\ <=\ (uint32\_t)12))}}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ IS\_RTC\_DATE(DATE)\ \ \ \ \ \ \ \ \ \ \ \ \ \ (((DATE)\ >=\ (uint32\_t)1)\ \&\&\ ((DATE)\ <=\ (uint32\_t)31))}}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#define\ RTC\_WEEKDAY\_MONDAY\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)}}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ RTC\_WEEKDAY\_TUESDAY\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)}}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ RTC\_WEEKDAY\_WEDNESDAY\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)}}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ RTC\_WEEKDAY\_THURSDAY\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x04)}}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ RTC\_WEEKDAY\_FRIDAY\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x05)}}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ RTC\_WEEKDAY\_SATURDAY\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x06)}}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ RTC\_WEEKDAY\_SUNDAY\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x07)}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ IS\_RTC\_WEEKDAY(WEEKDAY)\ (((WEEKDAY)\ ==\ RTC\_WEEKDAY\_MONDAY)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WEEKDAY)\ ==\ RTC\_WEEKDAY\_TUESDAY)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WEEKDAY)\ ==\ RTC\_WEEKDAY\_WEDNESDAY)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WEEKDAY)\ ==\ RTC\_WEEKDAY\_THURSDAY)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WEEKDAY)\ ==\ RTC\_WEEKDAY\_FRIDAY)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WEEKDAY)\ ==\ RTC\_WEEKDAY\_SATURDAY)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WEEKDAY)\ ==\ RTC\_WEEKDAY\_SUNDAY))}}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ IS\_RTC\_ALARM\_DATE\_WEEKDAY\_DATE(DATE)\ (((DATE)\ >(uint32\_t)\ 0)\ \&\&\ ((DATE)\ <=\ (uint32\_t)31))}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#define\ IS\_RTC\_ALARM\_DATE\_WEEKDAY\_WEEKDAY(WEEKDAY)\ (((WEEKDAY)\ ==\ RTC\_WEEKDAY\_MONDAY)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WEEKDAY)\ ==\ RTC\_WEEKDAY\_TUESDAY)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WEEKDAY)\ ==\ RTC\_WEEKDAY\_WEDNESDAY)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WEEKDAY)\ ==\ RTC\_WEEKDAY\_THURSDAY)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WEEKDAY)\ ==\ RTC\_WEEKDAY\_FRIDAY)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WEEKDAY)\ ==\ RTC\_WEEKDAY\_SATURDAY)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WEEKDAY)\ ==\ RTC\_WEEKDAY\_SUNDAY))}}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ RTC\_ALARMDATEWEEKDAYSEL\_DATE\ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#define\ RTC\_ALARMDATEWEEKDAYSEL\_WEEKDAY\ \ \ ((uint32\_t)0x40000000)}}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ IS\_RTC\_ALARM\_DATE\_WEEKDAY\_SEL(SEL)\ (((SEL)\ ==\ RTC\_ALARMDATEWEEKDAYSEL\_DATE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SEL)\ ==\ RTC\_ALARMDATEWEEKDAYSEL\_WEEKDAY))}}
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#define\ RTC\_ALARMMASK\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#define\ RTC\_ALARMMASK\_DATEWEEKDAY\ \ \ \ \ \ \ \ \ RTC\_ALRMAR\_MSK4}}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#define\ RTC\_ALARMMASK\_HOURS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RTC\_ALRMAR\_MSK3}}
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#define\ RTC\_ALARMMASK\_MINUTES\ \ \ \ \ \ \ \ \ \ \ \ \ RTC\_ALRMAR\_MSK2}}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#define\ RTC\_ALARMMASK\_SECONDS\ \ \ \ \ \ \ \ \ \ \ \ \ RTC\_ALRMAR\_MSK1}}
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#define\ RTC\_ALARMMASK\_ALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x80808080)}}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#define\ IS\_ALARM\_MASK(MASK)\ \ (((MASK)\ \&\ 0x7F7F7F7F)\ ==\ (uint32\_t)RESET)}}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ RTC\_ALARM\_A\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RTC\_CR\_ALRAE}}
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\#define\ RTC\_ALARM\_B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RTC\_CR\_ALRBE}}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\#define\ IS\_ALARM(ALARM)\ \ \ \ \ \ (((ALARM)\ ==\ RTC\_ALARM\_A)\ ||\ ((ALARM)\ ==\ RTC\_ALARM\_B))}}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\#define\ IS\_RTC\_ALARM\_SUB\_SECOND\_VALUE(VALUE)\ ((VALUE)\ <=\ (uint32\_t)0x00007FFF)}}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_ALL\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ \ }}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_1\ \ \ \ \ \ ((uint32\_t)0x01000000)\ \ }}
+\DoxyCodeLine{00454\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_2\ \ \ \ \ \ ((uint32\_t)0x02000000)\ \ }}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_3\ \ \ \ \ \ ((uint32\_t)0x03000000)\ \ }}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_4\ \ \ \ \ \ ((uint32\_t)0x04000000)\ \ }}
+\DoxyCodeLine{00460\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_5\ \ \ \ \ \ ((uint32\_t)0x05000000)\ \ }}
+\DoxyCodeLine{00462\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_6\ \ \ \ \ \ ((uint32\_t)0x06000000)\ \ }}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_7\ \ \ \ \ \ ((uint32\_t)0x07000000)\ \ }}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_8\ \ \ \ \ \ ((uint32\_t)0x08000000)\ \ }}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_9\ \ \ \ \ \ ((uint32\_t)0x09000000)\ \ }}
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_10\ \ \ \ \ ((uint32\_t)0x0A000000)\ \ }}
+\DoxyCodeLine{00472\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_11\ \ \ \ \ ((uint32\_t)0x0B000000)\ \ }}
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_12\ \ \ \ \ ((uint32\_t)0x0C000000)\ \ }}
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\_13\ \ \ \ \ ((uint32\_t)0x0D000000)\ \ }}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_SS14\ \ \ \ \ \ \ \ ((uint32\_t)0x0E000000)\ \ }}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#define\ RTC\_ALARMSUBSECONDMASK\_None\ \ \ \ \ \ \ \ ((uint32\_t)0x0F000000)\ \ }}
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\#define\ IS\_RTC\_ALARM\_SUB\_SECOND\_MASK(MASK)\ \ \ (((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_ALL)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00487\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_4)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_5)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_6)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_7)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_8)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_9)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00493\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_10)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_11)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_12)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14\_13)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_SS14)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MASK)\ ==\ RTC\_ALARMSUBSECONDMASK\_None))}}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#define\ RTC\_IT\_TS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00008000)}}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\#define\ RTC\_IT\_WUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00004000)}}
+\DoxyCodeLine{00508\ \textcolor{preprocessor}{\#define\ RTC\_IT\_ALRB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00002000)}}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\#define\ RTC\_IT\_ALRA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00001000)}}
+\DoxyCodeLine{00510\ \textcolor{preprocessor}{\#define\ RTC\_IT\_TAMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ }\textcolor{comment}{/*\ Used\ only\ to\ Enable\ the\ Tamper\ Interrupt\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\#define\ RTC\_IT\_TAMP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00020000)}}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#define\ RTC\_IT\_TAMP2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00040000)}}
+\DoxyCodeLine{00520\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_RECALPF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00010000)}}
+\DoxyCodeLine{00521\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_TAMP2F\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00004000)}}
+\DoxyCodeLine{00522\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_TAMP1F\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00002000)}}
+\DoxyCodeLine{00523\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_TSOVF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00001000)}}
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_TSF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000800)}}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_WUTF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000400)}}
+\DoxyCodeLine{00526\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_ALRBF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000200)}}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_ALRAF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000100)}}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_INITF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_RSF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000020)}}
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_INITS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)}}
+\DoxyCodeLine{00531\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_SHPF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)}}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_WUTWF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_ALRBWF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_ALRAWF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00543\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00549\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_RESET\_HANDLE\_STATE(\_\_HANDLE\_\_)\ ((\_\_HANDLE\_\_)-\/>State\ =\ HAL\_RTC\_STATE\_RESET)}}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00556\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_WRITEPROTECTION\_DISABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00557\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ do\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00558\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Instance-\/>WPR\ =\ 0xCA;\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00559\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Instance-\/>WPR\ =\ 0x53;\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00560\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00567\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_WRITEPROTECTION\_ENABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00568\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ do\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00569\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_HANDLE\_\_)-\/>Instance-\/>WPR\ =\ 0xFF;\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00570\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00571\ \ }
+\DoxyCodeLine{00577\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_ALARMA\_ENABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ |=\ (RTC\_CR\_ALRAE))}}
+\DoxyCodeLine{00578\ }
+\DoxyCodeLine{00584\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_ALARMA\_DISABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ \&=\ \string~(RTC\_CR\_ALRAE))}}
+\DoxyCodeLine{00585\ }
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_ALARMB\_ENABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ |=\ (RTC\_CR\_ALRBE))}}
+\DoxyCodeLine{00592\ }
+\DoxyCodeLine{00598\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_ALARMB\_DISABLE(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ \&=\ \string~(RTC\_CR\_ALRBE))}}
+\DoxyCodeLine{00599\ }
+\DoxyCodeLine{00609\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_ALARM\_ENABLE\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ |=\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_ALARM\_DISABLE\_IT(\_\_HANDLE\_\_,\ \_\_INTERRUPT\_\_)\ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR\ \&=\ \string~(\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00621\ }
+\DoxyCodeLine{00631\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_ALARM\_GET\_IT(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\&\ ((\_\_FLAG\_\_)>>\ 4))\ \&\ 0x0000FFFF)\ !=\ RESET)?\ SET\ :\ RESET)}}
+\DoxyCodeLine{00632\ }
+\DoxyCodeLine{00644\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_ALARM\_GET\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ \&\ (\_\_FLAG\_\_))\ !=\ RESET)?\ SET\ :\ RESET)}}
+\DoxyCodeLine{00645\ }
+\DoxyCodeLine{00655\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_ALARM\_CLEAR\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ =\ (\string~(((\_\_FLAG\_\_)\ |\ RTC\_ISR\_INIT)\&\ 0x0000FFFF)|((\_\_HANDLE\_\_)-\/>Instance-\/>ISR\ \&\ RTC\_ISR\_INIT))}}
+\DoxyCodeLine{00656\ \ \ }
+\DoxyCodeLine{00657\ \ \ }
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\#define\ RTC\_EXTI\_LINE\_ALARM\_EVENT\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00020000)\ \ }}
+\DoxyCodeLine{00659\ \textcolor{preprocessor}{\#define\ RTC\_EXTI\_LINE\_TAMPER\_TIMESTAMP\_EVENT\ \ ((uint32\_t)0x00200000)\ \ }}
+\DoxyCodeLine{00660\ \textcolor{preprocessor}{\#define\ RTC\_EXTI\_LINE\_WAKEUPTIMER\_EVENT\ \ \ \ \ \ \ ((uint32\_t)0x00400000)\ \ }}
+\DoxyCodeLine{00671\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_ENABLE\_IT(\_\_EXTILINE\_\_)\ \ \ (EXTI-\/>IMR\ |=\ (\_\_EXTILINE\_\_))}}
+\DoxyCodeLine{00672\ }
+\DoxyCodeLine{00682\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_DISABLE\_IT(\_\_EXTILINE\_\_)\ \ (EXTI-\/>IMR\ \&=\ \string~(\_\_EXTILINE\_\_))}}
+\DoxyCodeLine{00683\ }
+\DoxyCodeLine{00693\ \textcolor{preprocessor}{\#define\ \_\_HAL\_RTC\_CLEAR\_FLAG(\_\_FLAG\_\_)\ \ (EXTI-\/>PR\ =\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00695\ \textcolor{comment}{/*\ Include\ RTC\ HAL\ Extension\ module\ */}}
+\DoxyCodeLine{00696\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__hal__rtc__ex_8h}{stm32f4xx\_hal\_rtc\_ex.h}}"{}}}
+\DoxyCodeLine{00697\ }
+\DoxyCodeLine{00698\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00699\ }
+\DoxyCodeLine{00700\ \textcolor{comment}{/*\ Initialization\ and\ de-\/initialization\ functions\ \ ****************************/}}
+\DoxyCodeLine{00701\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_gaa6b53830aa3e2efaf210c0b1d3e5f4a4}{HAL\_RTC\_Init}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00702\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ga24a8aac7bd6d9bac9f211d24ff6930ec}{HAL\_RTC\_DeInit}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00703\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_gaee6eddaa309c8c9829f1ca794d8f99c5}{HAL\_RTC\_MspInit}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00704\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ga8767bc3a4d472d39a688090ab10ba6ce}{HAL\_RTC\_MspDeInit}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00706\ \textcolor{comment}{/*\ RTC\ Time\ and\ Date\ functions\ ************************************************/}}
+\DoxyCodeLine{00707\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_gafe0fed98171a564decd2a6c9be9781d8}{HAL\_RTC\_SetTime}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\_TimeTypeDef}}\ *sTime,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Format);}
+\DoxyCodeLine{00708\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_gae478ca2647e8d2f7dd1828ce43889a9e}{HAL\_RTC\_GetTime}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\_TimeTypeDef}}\ *sTime,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Format);}
+\DoxyCodeLine{00709\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ga6cf6c70227337a564ccef82f64d6268f}{HAL\_RTC\_SetDate}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\_DateTypeDef}}\ *sDate,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Format);}
+\DoxyCodeLine{00710\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ga07ec2e43a305aa55e8c2442a349fc505}{HAL\_RTC\_GetDate}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\_DateTypeDef}}\ *sDate,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Format);}
+\DoxyCodeLine{00711\ }
+\DoxyCodeLine{00712\ \textcolor{comment}{/*\ RTC\ Alarm\ functions\ ********************************************************/}}
+\DoxyCodeLine{00713\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_gafd78015b93b16dcb9e41a4655a7ea972}{HAL\_RTC\_SetAlarm}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\_AlarmTypeDef}}\ *sAlarm,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Format);}
+\DoxyCodeLine{00714\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_gab66a7fec05e9d9374de95d5f61e16c16}{HAL\_RTC\_SetAlarm\_IT}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\_AlarmTypeDef}}\ *sAlarm,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Format);}
+\DoxyCodeLine{00715\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ga186d852f8aee8a4d0dfeec778be35482}{HAL\_RTC\_DeactivateAlarm}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Alarm);}
+\DoxyCodeLine{00716\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ga4786b652ffee2d59da2c65dd78646405}{HAL\_RTC\_GetAlarm}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\_AlarmTypeDef}}\ *sAlarm,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Alarm,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Format);}
+\DoxyCodeLine{00717\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_gac185f2ce34fe566418d0978a48e0c199}{HAL\_RTC\_AlarmIRQHandler}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00718\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \ \mbox{\hyperlink{group___r_t_c_gaedc27fe412f45d999d74a0b98dce4d09}{HAL\_RTC\_PollForAlarmAEvent}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ Timeout);}
+\DoxyCodeLine{00719\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ga11aeff83fd498cddbed3bcddcf017e0a}{HAL\_RTC\_AlarmAEventCallback}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00720\ }
+\DoxyCodeLine{00721\ \textcolor{comment}{/*\ Peripheral\ Control\ functions\ ***********************************************/}}
+\DoxyCodeLine{00722\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \ \mbox{\hyperlink{group___r_t_c_ga62efc08017f7dc4db0bc72f7c68085ad}{HAL\_RTC\_WaitForSynchro}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}*\ hrtc);}
+\DoxyCodeLine{00723\ }
+\DoxyCodeLine{00724\ \textcolor{comment}{/*\ Peripheral\ State\ functions\ *************************************************/}}
+\DoxyCodeLine{00725\ \mbox{\hyperlink{group___r_t_c_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b}{HAL\_RTCStateTypeDef}}\ \mbox{\hyperlink{group___r_t_c_ga527ac04240b47a22bf5ff469609eaa4d}{HAL\_RTC\_GetState}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}\ *hrtc);}
+\DoxyCodeLine{00726\ }
+\DoxyCodeLine{00727\ \mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \mbox{\hyperlink{group___r_t_c_ga50b2ead8d1755be360de2d624beaf9a0}{RTC\_EnterInitMode}}(\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\_HandleTypeDef}}*\ hrtc);}
+\DoxyCodeLine{00728\ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_ga8c33f1358a98db0c7c829c38538bf7ba}{RTC\_ByteToBcd2}}(uint8\_t\ Value);}
+\DoxyCodeLine{00729\ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___r_t_c_gaf1bcb309bb9e7ac4a1b4e95a11cfb26f}{RTC\_Bcd2ToByte}}(uint8\_t\ Value);}
+\DoxyCodeLine{00730\ }
+\DoxyCodeLine{00739\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00740\ \}}
+\DoxyCodeLine{00741\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00742\ }
+\DoxyCodeLine{00743\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_HAL\_RTC\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00744\ }
+\DoxyCodeLine{00745\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

@@ -1,0 +1,189 @@
+\doxysection{src/\+UART\+\_\+poll.cpp File Reference}
+\hypertarget{_u_a_r_t__poll_8cpp}{}\label{_u_a_r_t__poll_8cpp}\index{src/UART\_poll.cpp@{src/UART\_poll.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}shared.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t__poll_8cpp_a1c5cc33333d85d8206bf1660e3a85dea}{OERR}}~(\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$SR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4560fc7a60df4bdf402fc7219ae7b558}{USART\+\_\+\+SR\+\_\+\+ORE}})
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t__poll_8cpp_a7258e04e4aa884e29a879eb2207c54a5}{CREN}}~(\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$CR1 \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gada0d5d407a22264de847bc1b40a17aeb}{USART\+\_\+\+CR1\+\_\+\+RE}})
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t__poll_8cpp_a5e2cd83f448b671ef038ac9e3b455bee}{RCREG}}~\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$DR
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t__poll_8cpp_aafe1f6745f2c0a01f867c686bd69e5c7}{FERR}}~(\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$SR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9eb6fd3f820bd12e0b5a981de1894804}{USART\+\_\+\+SR\+\_\+\+FE}})
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t__poll_8cpp_af3b639b9a4714f95fa0b25629240906b}{RCIF}}~(\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$SR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa0c99e2bb265b3d58a91aca7a93f7836}{USART\+\_\+\+SR\+\_\+\+RXNE}})
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t__poll_8cpp_ac765fb3c77a3c11ddd4e7ac9ea7b4bed}{TXIF}}~(\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$SR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga65e9cddf0890113d405342f1d8b5b980}{USART\+\_\+\+SR\+\_\+\+TXE}})
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t__poll_8cpp_ae52810cc198abb3279a1f966cb6b51ea}{TXREG}}~\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$DR
+\item 
+\#define \mbox{\hyperlink{_u_a_r_t__poll_8cpp_aa059e0488a9d17fab4152d2844c1aedd}{TRMT}}~(\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$SR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga76229b05ac37a5a688e6ba45851a29f1}{USART\+\_\+\+SR\+\_\+\+TC}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_u_a_r_t__poll_8cpp_a44becc30285e88213a624428b2b46cdf}{serial}} (void)
+\item 
+void \mbox{\hyperlink{_u_a_r_t__poll_8cpp_ad56b6abae77fe4b4bea9a839bb47d232}{UART\+\_\+direct\+\_\+msg\+\_\+put}} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+void \mbox{\hyperlink{_u_a_r_t__poll_8cpp_add604cdd864e82c86a61945fa9aed540}{UART\+\_\+put}} (\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} c)
+\item 
+\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{_u_a_r_t__poll_8cpp_a33768775b7fa0439bc8b61c984cc6045}{UART\+\_\+get}} (void)
+\item 
+\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{_u_a_r_t__poll_8cpp_a1b2774203b8f10ef7aebd8fdd032ee8a}{UART\+\_\+input}} (void)
+\item 
+void \mbox{\hyperlink{_u_a_r_t__poll_8cpp_ac6ed065c7d51693d1fbf390c19a7fa4b}{UART\+\_\+msg\+\_\+put}} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{_u_a_r_t__poll_8cpp_a7117579fbe192b60111754244066b879}{hex\+\_\+to\+\_\+asc}} (\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} c)
+\item 
+\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{_u_a_r_t__poll_8cpp_a30c21acf8d72f08ed825128d215dfbbc}{asc\+\_\+to\+\_\+hex}} (\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} c)
+\item 
+void \mbox{\hyperlink{_u_a_r_t__poll_8cpp_a250ea5455b397ab492794e657d8c5bc8}{UART\+\_\+hex\+\_\+put}} (unsigned char c)
+\item 
+void \mbox{\hyperlink{_u_a_r_t__poll_8cpp_aed4756aead0f5bdb87fb09e7ed2f6b91}{UART\+\_\+direct\+\_\+hex\+\_\+put}} (unsigned char c)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{_u_a_r_t__poll_8cpp_a92d77f396856b357bf3b3bf3bb93e320}{error\+\_\+count}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\DoxyHorRuler{0}
+
+
+\DoxyHorRuler{0}
+ -- ECEN 5803 Mastering Embedded System Architecture -- -- Project 1 Module 4 -- -- Microcontroller Firmware -- -- UART\+\_\+poll.\+c -- \hypertarget{_u_a_r_t__poll_8cpp_autotoc_md23}{}\doxysubsubsection{\texorpdfstring{–                                                                           –}{–                                                                           –}}\label{_u_a_r_t__poll_8cpp_autotoc_md23}
+-- \hypertarget{_u_a_r_t__poll_8cpp_autotoc_md24}{}\doxysubsubsection{\texorpdfstring{–  Designed for\+:  University of Colorado at Boulder}{–  Designed for:  University of Colorado at Boulder}}\label{_u_a_r_t__poll_8cpp_autotoc_md24}
+-- ~\newline
+ -- Designed by\+: Tim Scherr \hypertarget{_u_a_r_t__poll_8cpp_autotoc_md25}{}\doxysubsubsection{\texorpdfstring{–  Revised by\+:  Student\textquotesingle{}s name}{–  Revised by:  Student's name}}\label{_u_a_r_t__poll_8cpp_autotoc_md25}
+-- Version\+: 3.\+0 -- Date of current revision\+: 2022-\/06-\/20 ~\newline
+ -- Target Microcontroller\+: ST STM32\+F401\+RE -- Tools used\+: ARM mbed compiler -- ARM mbed SDK \hypertarget{_u_a_r_t__poll_8cpp_autotoc_md26}{}\doxysubsubsection{\texorpdfstring{–              ST Nucleo STM32\+F401\+RE Board}{–              ST Nucleo STM32F401RE Board}}\label{_u_a_r_t__poll_8cpp_autotoc_md26}
+-- -- Functional Description\+: This file contains routines that support messages -- to and from the UART port. Included are\+: -- Serial() -\/ a routine to send/receive bytes on the UART port to -- the transmit/receive buffers -- \doxylink{_u_a_r_t__poll_8cpp_add604cdd864e82c86a61945fa9aed540}{UART\+\_\+put()} -\/ a routine that puts a character in the transmit buffer -- \doxylink{_u_a_r_t__poll_8cpp_a33768775b7fa0439bc8b61c984cc6045}{UART\+\_\+get()} -\/ a routine that gets the next character from the receive -- buffer -- \doxylink{_u_a_r_t__poll_8cpp_ac6ed065c7d51693d1fbf390c19a7fa4b}{UART\+\_\+msg\+\_\+put()} -\/ a routine that puts a string in the transmit buffer -- \doxylink{_u_a_r_t__poll_8cpp_ad56b6abae77fe4b4bea9a839bb47d232}{UART\+\_\+direct\+\_\+msg\+\_\+put()} -\/ routine that sends a string out the UART port -- \doxylink{_u_a_r_t__poll_8cpp_a1b2774203b8f10ef7aebd8fdd032ee8a}{UART\+\_\+input()} -\/ determines if a character has been received \hypertarget{_u_a_r_t__poll_8cpp_autotoc_md27}{}\doxysubsubsection{\texorpdfstring{–       UART\+\_\+hex\+\_\+put() -\/ a routine that puts a hex byte in the transmit buffer}{–       UART\_hex\_put() - a routine that puts a hex byte in the transmit buffer}}\label{_u_a_r_t__poll_8cpp_autotoc_md27}
+\hypertarget{_u_a_r_t__poll_8cpp_autotoc_md28}{}\doxysubsubsection{\texorpdfstring{–      Copyright (c) 2015, 2022 Tim Scherr  All rights reserved.}{–      Copyright (c) 2015, 2022 Tim Scherr  All rights reserved.}}\label{_u_a_r_t__poll_8cpp_autotoc_md28}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_u_a_r_t__poll_8cpp_a7258e04e4aa884e29a879eb2207c54a5}\label{_u_a_r_t__poll_8cpp_a7258e04e4aa884e29a879eb2207c54a5} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!CREN@{CREN}}
+\index{CREN@{CREN}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{CREN}{CREN}}
+{\footnotesize\ttfamily \#define CREN~(\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$CR1 \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gada0d5d407a22264de847bc1b40a17aeb}{USART\+\_\+\+CR1\+\_\+\+RE}})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_aafe1f6745f2c0a01f867c686bd69e5c7}\label{_u_a_r_t__poll_8cpp_aafe1f6745f2c0a01f867c686bd69e5c7} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!FERR@{FERR}}
+\index{FERR@{FERR}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{FERR}{FERR}}
+{\footnotesize\ttfamily \#define FERR~(\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$SR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9eb6fd3f820bd12e0b5a981de1894804}{USART\+\_\+\+SR\+\_\+\+FE}})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_a1c5cc33333d85d8206bf1660e3a85dea}\label{_u_a_r_t__poll_8cpp_a1c5cc33333d85d8206bf1660e3a85dea} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!OERR@{OERR}}
+\index{OERR@{OERR}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{OERR}{OERR}}
+{\footnotesize\ttfamily \#define OERR~(\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$SR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4560fc7a60df4bdf402fc7219ae7b558}{USART\+\_\+\+SR\+\_\+\+ORE}})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_af3b639b9a4714f95fa0b25629240906b}\label{_u_a_r_t__poll_8cpp_af3b639b9a4714f95fa0b25629240906b} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!RCIF@{RCIF}}
+\index{RCIF@{RCIF}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{RCIF}{RCIF}}
+{\footnotesize\ttfamily \#define RCIF~(\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$SR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa0c99e2bb265b3d58a91aca7a93f7836}{USART\+\_\+\+SR\+\_\+\+RXNE}})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_a5e2cd83f448b671ef038ac9e3b455bee}\label{_u_a_r_t__poll_8cpp_a5e2cd83f448b671ef038ac9e3b455bee} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!RCREG@{RCREG}}
+\index{RCREG@{RCREG}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{RCREG}{RCREG}}
+{\footnotesize\ttfamily \#define RCREG~\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$DR}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_aa059e0488a9d17fab4152d2844c1aedd}\label{_u_a_r_t__poll_8cpp_aa059e0488a9d17fab4152d2844c1aedd} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!TRMT@{TRMT}}
+\index{TRMT@{TRMT}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{TRMT}{TRMT}}
+{\footnotesize\ttfamily \#define TRMT~(\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$SR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga76229b05ac37a5a688e6ba45851a29f1}{USART\+\_\+\+SR\+\_\+\+TC}})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_ac765fb3c77a3c11ddd4e7ac9ea7b4bed}\label{_u_a_r_t__poll_8cpp_ac765fb3c77a3c11ddd4e7ac9ea7b4bed} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!TXIF@{TXIF}}
+\index{TXIF@{TXIF}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{TXIF}{TXIF}}
+{\footnotesize\ttfamily \#define TXIF~(\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$SR \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga65e9cddf0890113d405342f1d8b5b980}{USART\+\_\+\+SR\+\_\+\+TXE}})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_ae52810cc198abb3279a1f966cb6b51ea}\label{_u_a_r_t__poll_8cpp_ae52810cc198abb3279a1f966cb6b51ea} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!TXREG@{TXREG}}
+\index{TXREG@{TXREG}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{TXREG}{TXREG}}
+{\footnotesize\ttfamily \#define TXREG~\mbox{\hyperlink{group___peripheral__declaration_gaf114a9eab03ca08a6fb720e511595930}{USART2}}-\/$>$DR}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_u_a_r_t__poll_8cpp_a30c21acf8d72f08ed825128d215dfbbc}\label{_u_a_r_t__poll_8cpp_a30c21acf8d72f08ed825128d215dfbbc} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!asc\_to\_hex@{asc\_to\_hex}}
+\index{asc\_to\_hex@{asc\_to\_hex}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{asc\_to\_hex()}{asc\_to\_hex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} asc\+\_\+to\+\_\+hex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_a7117579fbe192b60111754244066b879}\label{_u_a_r_t__poll_8cpp_a7117579fbe192b60111754244066b879} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!hex\_to\_asc@{hex\_to\_asc}}
+\index{hex\_to\_asc@{hex\_to\_asc}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{hex\_to\_asc()}{hex\_to\_asc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} hex\+\_\+to\+\_\+asc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_a44becc30285e88213a624428b2b46cdf}\label{_u_a_r_t__poll_8cpp_a44becc30285e88213a624428b2b46cdf} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!serial@{serial}}
+\index{serial@{serial}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{serial()}{serial()}}
+{\footnotesize\ttfamily void serial (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+function polls the serial port for Rx or Tx data \Hypertarget{_u_a_r_t__poll_8cpp_aed4756aead0f5bdb87fb09e7ed2f6b91}\label{_u_a_r_t__poll_8cpp_aed4756aead0f5bdb87fb09e7ed2f6b91} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!UART\_direct\_hex\_put@{UART\_direct\_hex\_put}}
+\index{UART\_direct\_hex\_put@{UART\_direct\_hex\_put}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{UART\_direct\_hex\_put()}{UART\_direct\_hex\_put()}}
+{\footnotesize\ttfamily void UART\+\_\+direct\+\_\+hex\+\_\+put (\begin{DoxyParamCaption}\item[{unsigned char}]{c }\end{DoxyParamCaption})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_ad56b6abae77fe4b4bea9a839bb47d232}\label{_u_a_r_t__poll_8cpp_ad56b6abae77fe4b4bea9a839bb47d232} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!UART\_direct\_msg\_put@{UART\_direct\_msg\_put}}
+\index{UART\_direct\_msg\_put@{UART\_direct\_msg\_put}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{UART\_direct\_msg\_put()}{UART\_direct\_msg\_put()}}
+{\footnotesize\ttfamily void UART\+\_\+direct\+\_\+msg\+\_\+put (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_a33768775b7fa0439bc8b61c984cc6045}\label{_u_a_r_t__poll_8cpp_a33768775b7fa0439bc8b61c984cc6045} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!UART\_get@{UART\_get}}
+\index{UART\_get@{UART\_get}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{UART\_get()}{UART\_get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} UART\+\_\+get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_a250ea5455b397ab492794e657d8c5bc8}\label{_u_a_r_t__poll_8cpp_a250ea5455b397ab492794e657d8c5bc8} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!UART\_hex\_put@{UART\_hex\_put}}
+\index{UART\_hex\_put@{UART\_hex\_put}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{UART\_hex\_put()}{UART\_hex\_put()}}
+{\footnotesize\ttfamily void UART\+\_\+hex\+\_\+put (\begin{DoxyParamCaption}\item[{unsigned char}]{c }\end{DoxyParamCaption})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_a1b2774203b8f10ef7aebd8fdd032ee8a}\label{_u_a_r_t__poll_8cpp_a1b2774203b8f10ef7aebd8fdd032ee8a} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!UART\_input@{UART\_input}}
+\index{UART\_input@{UART\_input}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{UART\_input()}{UART\_input()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} UART\+\_\+input (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_ac6ed065c7d51693d1fbf390c19a7fa4b}\label{_u_a_r_t__poll_8cpp_ac6ed065c7d51693d1fbf390c19a7fa4b} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!UART\_msg\_put@{UART\_msg\_put}}
+\index{UART\_msg\_put@{UART\_msg\_put}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{UART\_msg\_put()}{UART\_msg\_put()}}
+{\footnotesize\ttfamily void UART\+\_\+msg\+\_\+put (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+\Hypertarget{_u_a_r_t__poll_8cpp_add604cdd864e82c86a61945fa9aed540}\label{_u_a_r_t__poll_8cpp_add604cdd864e82c86a61945fa9aed540} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!UART\_put@{UART\_put}}
+\index{UART\_put@{UART\_put}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{UART\_put()}{UART\_put()}}
+{\footnotesize\ttfamily void UART\+\_\+put (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_u_a_r_t__poll_8cpp_a92d77f396856b357bf3b3bf3bb93e320}\label{_u_a_r_t__poll_8cpp_a92d77f396856b357bf3b3bf3bb93e320} 
+\index{UART\_poll.cpp@{UART\_poll.cpp}!error\_count@{error\_count}}
+\index{error\_count@{error\_count}!UART\_poll.cpp@{UART\_poll.cpp}}
+\doxysubsubsection{\texorpdfstring{error\_count}{error\_count}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} error\+\_\+count = 0}
+

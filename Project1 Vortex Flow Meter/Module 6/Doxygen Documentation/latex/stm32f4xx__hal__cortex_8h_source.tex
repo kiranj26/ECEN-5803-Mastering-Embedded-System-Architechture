@@ -1,0 +1,81 @@
+\doxysection{stm32f4xx\+\_\+hal\+\_\+cortex.\+h}
+\hypertarget{stm32f4xx__hal__cortex_8h_source}{}\label{stm32f4xx__hal__cortex_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_cortex.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_cortex.h}}
+\mbox{\hyperlink{stm32f4xx__hal__cortex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_HAL\_CORTEX\_H}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_HAL\_CORTEX\_H}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f4xx__hal__def_8h}{stm32f4xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ NVIC\_PRIORITYGROUP\_0\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000007)\ }}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ NVIC\_PRIORITYGROUP\_1\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000006)\ }}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ NVIC\_PRIORITYGROUP\_2\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000005)\ }}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ NVIC\_PRIORITYGROUP\_3\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ NVIC\_PRIORITYGROUP\_4\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000003)\ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ IS\_NVIC\_PRIORITY\_GROUP(GROUP)\ (((GROUP)\ ==\ NVIC\_PRIORITYGROUP\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((GROUP)\ ==\ NVIC\_PRIORITYGROUP\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((GROUP)\ ==\ NVIC\_PRIORITYGROUP\_2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((GROUP)\ ==\ NVIC\_PRIORITYGROUP\_3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((GROUP)\ ==\ NVIC\_PRIORITYGROUP\_4))}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ IS\_NVIC\_PREEMPTION\_PRIORITY(PRIORITY)\ \ ((PRIORITY)\ <\ 0x10)}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ IS\_NVIC\_SUB\_PRIORITY(PRIORITY)\ \ ((PRIORITY)\ <\ 0x10)}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ SYSTICK\_CLKSOURCE\_HCLK\_DIV8\ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ SYSTICK\_CLKSOURCE\_HCLK\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ IS\_SYSTICK\_CLK\_SOURCE(SOURCE)\ (((SOURCE)\ ==\ SYSTICK\_CLKSOURCE\_HCLK)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ SYSTICK\_CLKSOURCE\_HCLK\_DIV8))}}
+\DoxyCodeLine{00104\ \textcolor{comment}{/*\ Exported\ Macros\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ \_\_HAL\_CORTEX\_SYSTICKCLK\_CONFIG(\_\_CLKSRC\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ ((\_\_CLKSRC\_\_)\ ==\ SYSTICK\_CLKSOURCE\_HCLK)\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SysTick-\/>CTRL\ |=\ SYSTICK\_CLKSOURCE\_HCLK;\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SysTick-\/>CTRL\ \&=\ \string~SYSTICK\_CLKSOURCE\_HCLK;\ \ \(\backslash\)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00128\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00129\ \textcolor{comment}{/*\ Initialization\ and\ de-\/initialization\ functions\ *******************************/}}
+\DoxyCodeLine{00130\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_o_r_t_e_x_gad9be53e08b1498adea006e5e037f238f}{HAL\_NVIC\_SetPriorityGrouping}}(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PriorityGroup);}
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_o_r_t_e_x_ga8581a82025a4780efd00876a66e3e91b}{HAL\_NVIC\_SetPriority}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PreemptPriority,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ SubPriority);}
+\DoxyCodeLine{00132\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_o_r_t_e_x_gaaad4492c1b25e006d69948a15790352a}{HAL\_NVIC\_EnableIRQ}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn);}
+\DoxyCodeLine{00133\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_o_r_t_e_x_ga50ca6290e068821cb84aa168f3e13967}{HAL\_NVIC\_DisableIRQ}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn);}
+\DoxyCodeLine{00134\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_o_r_t_e_x_gac83d89028fabdf5d4c38ecf4fbfbefdc}{HAL\_NVIC\_SystemReset}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00135\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_o_r_t_e_x_gac3a3f0d53c315523a8e6e7bcac1940cf}{HAL\_SYSTICK\_Config}}(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ TicksNumb);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{comment}{/*\ Peripheral\ Control\ functions\ *************************************************/}}
+\DoxyCodeLine{00138\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_o_r_t_e_x_gaa02bc953fd4fce22248c491a93c4ce40}{HAL\_NVIC\_GetPriorityGrouping}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00139\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_o_r_t_e_x_ga6a21c9d904b0bcf4cb060f7c5c39b6f5}{HAL\_NVIC\_GetPriority}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ PriorityGroup,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}*\ pPreemptPriority,\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}*\ pSubPriority);}
+\DoxyCodeLine{00140\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_o_r_t_e_x_ga3bd5802a96f0dcbc00ac3b89b134da3b}{HAL\_NVIC\_GetPendingIRQ}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn);}
+\DoxyCodeLine{00141\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_o_r_t_e_x_gaecf50f6c6d0e1fa5f8bd8c1b45309f18}{HAL\_NVIC\_SetPendingIRQ}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn);}
+\DoxyCodeLine{00142\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_o_r_t_e_x_ga0c7d007acf1339ca1bb46f3c6e018ff5}{HAL\_NVIC\_ClearPendingIRQ}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn);}
+\DoxyCodeLine{00143\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{group___c_o_r_t_e_x_gad3f7598e54fb3d74eaf9abedef704c57}{HAL\_NVIC\_GetActive}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_ga7e1129cd8a196f4284d41db3e82ad5c8}{IRQn\_Type}}\ IRQn);}
+\DoxyCodeLine{00144\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_o_r_t_e_x_ga3284dc8428996f5b6aa6b3b99e643788}{HAL\_SYSTICK\_CLKSourceConfig}}(\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ CLKSource);}
+\DoxyCodeLine{00145\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_o_r_t_e_x_ga5b66b62383261c1e0acef98d344aa4c1}{HAL\_SYSTICK\_IRQHandler}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00146\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_o_r_t_e_x_ga5033855e81ba2071231b60599a3ce9a1}{HAL\_SYSTICK\_Callback}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00157\ \}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_HAL\_CORTEX\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00161\ \ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

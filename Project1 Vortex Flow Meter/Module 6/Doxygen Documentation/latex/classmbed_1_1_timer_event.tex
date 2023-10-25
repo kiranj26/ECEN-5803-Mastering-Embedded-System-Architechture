@@ -1,0 +1,101 @@
+\doxysection{mbed\+::Timer\+Event Class Reference}
+\hypertarget{classmbed_1_1_timer_event}{}\label{classmbed_1_1_timer_event}\index{mbed::TimerEvent@{mbed::TimerEvent}}
+
+
+{\ttfamily \#include $<$Timer\+Event.\+h$>$}
+
+Inheritance diagram for mbed\+::Timer\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmbed_1_1_timer_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbed_1_1_timer_event_abeda500413955133108bad0668e2d77b}{Timer\+Event}} ()
+\item 
+virtual \mbox{\hyperlink{classmbed_1_1_timer_event_a6a2a3c2acee5b36ce21e40d84a4f9b71}{\texorpdfstring{$\sim$}{\string~}\+Timer\+Event}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classmbed_1_1_timer_event_a5c57cce06f037a5682fdee29b8dd384e}{irq}} (\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classmbed_1_1_timer_event_ae3e8dbec184090a2d8f9378773bcbc85}{handler}} ()=0
+\item 
+void \mbox{\hyperlink{classmbed_1_1_timer_event_aa9123e5e1aff20d0112e1de3f3d621b5}{insert}} (unsigned int timestamp)
+\item 
+void \mbox{\hyperlink{classmbed_1_1_timer_event_ac8dddb3d9affcc3267e910fb305d956f}{remove}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47}{ticker\+\_\+event\+\_\+t}} \mbox{\hyperlink{classmbed_1_1_timer_event_a80ea97a2c88250aa898f4adda12a9228}{event}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base abstraction for timer interrupts 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmbed_1_1_timer_event_abeda500413955133108bad0668e2d77b}\label{classmbed_1_1_timer_event_abeda500413955133108bad0668e2d77b} 
+\index{mbed::TimerEvent@{mbed::TimerEvent}!TimerEvent@{TimerEvent}}
+\index{TimerEvent@{TimerEvent}!mbed::TimerEvent@{mbed::TimerEvent}}
+\doxysubsubsection{\texorpdfstring{TimerEvent()}{TimerEvent()}}
+{\footnotesize\ttfamily mbed\+::\+Timer\+Event\+::\+Timer\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classmbed_1_1_timer_event_a6a2a3c2acee5b36ce21e40d84a4f9b71}\label{classmbed_1_1_timer_event_a6a2a3c2acee5b36ce21e40d84a4f9b71} 
+\index{mbed::TimerEvent@{mbed::TimerEvent}!````~TimerEvent@{\texorpdfstring{$\sim$}{\string~}TimerEvent}}
+\index{````~TimerEvent@{\texorpdfstring{$\sim$}{\string~}TimerEvent}!mbed::TimerEvent@{mbed::TimerEvent}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TimerEvent()}{\string~TimerEvent()}}
+{\footnotesize\ttfamily virtual mbed\+::\+Timer\+Event\+::\texorpdfstring{$\sim$}{\string~}\+Timer\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destruction removes it... 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmbed_1_1_timer_event_ae3e8dbec184090a2d8f9378773bcbc85}\label{classmbed_1_1_timer_event_ae3e8dbec184090a2d8f9378773bcbc85} 
+\index{mbed::TimerEvent@{mbed::TimerEvent}!handler@{handler}}
+\index{handler@{handler}!mbed::TimerEvent@{mbed::TimerEvent}}
+\doxysubsubsection{\texorpdfstring{handler()}{handler()}}
+{\footnotesize\ttfamily virtual void mbed\+::\+Timer\+Event\+::handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmbed_1_1_ticker_a9e700f503716083f8549eec801f13710}{mbed\+::\+Ticker}}, and \mbox{\hyperlink{classmbed_1_1_timeout_a2324f9b01f39fa36f4b799541a46112b}{mbed\+::\+Timeout}}.
+
+\Hypertarget{classmbed_1_1_timer_event_aa9123e5e1aff20d0112e1de3f3d621b5}\label{classmbed_1_1_timer_event_aa9123e5e1aff20d0112e1de3f3d621b5} 
+\index{mbed::TimerEvent@{mbed::TimerEvent}!insert@{insert}}
+\index{insert@{insert}!mbed::TimerEvent@{mbed::TimerEvent}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void mbed\+::\+Timer\+Event\+::insert (\begin{DoxyParamCaption}\item[{unsigned int}]{timestamp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classmbed_1_1_timer_event_a5c57cce06f037a5682fdee29b8dd384e}\label{classmbed_1_1_timer_event_a5c57cce06f037a5682fdee29b8dd384e} 
+\index{mbed::TimerEvent@{mbed::TimerEvent}!irq@{irq}}
+\index{irq@{irq}!mbed::TimerEvent@{mbed::TimerEvent}}
+\doxysubsubsection{\texorpdfstring{irq()}{irq()}}
+{\footnotesize\ttfamily static void mbed\+::\+Timer\+Event\+::irq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+The handler registered with the underlying timer interrupt \Hypertarget{classmbed_1_1_timer_event_ac8dddb3d9affcc3267e910fb305d956f}\label{classmbed_1_1_timer_event_ac8dddb3d9affcc3267e910fb305d956f} 
+\index{mbed::TimerEvent@{mbed::TimerEvent}!remove@{remove}}
+\index{remove@{remove}!mbed::TimerEvent@{mbed::TimerEvent}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void mbed\+::\+Timer\+Event\+::remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmbed_1_1_timer_event_a80ea97a2c88250aa898f4adda12a9228}\label{classmbed_1_1_timer_event_a80ea97a2c88250aa898f4adda12a9228} 
+\index{mbed::TimerEvent@{mbed::TimerEvent}!event@{event}}
+\index{event@{event}!mbed::TimerEvent@{mbed::TimerEvent}}
+\doxysubsubsection{\texorpdfstring{event}{event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{us__ticker__api_8h_a72ca2ef9e5e60ec062b314f8f8e5cf47}{ticker\+\_\+event\+\_\+t}} mbed\+::\+Timer\+Event\+::event\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbed/\mbox{\hyperlink{_timer_event_8h}{Timer\+Event.\+h}}\end{DoxyCompactItemize}

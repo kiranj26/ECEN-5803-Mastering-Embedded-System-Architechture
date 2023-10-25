@@ -1,0 +1,119 @@
+\doxysection{mbed/\+TARGET\+\_\+\+NUCLEO\+\_\+\+F401\+RE/stm32f4xx\+\_\+hal\+\_\+iwdg.h File Reference}
+\hypertarget{stm32f4xx__hal__iwdg_8h}{}\label{stm32f4xx__hal__iwdg_8h}\index{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_iwdg.h@{mbed/TARGET\_NUCLEO\_F401RE/stm32f4xx\_hal\_iwdg.h}}
+
+
+Header file of IWDG HAL module.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_i_w_d_g___init_type_def}{IWDG\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em IWDG Init structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_i_w_d_g___handle_type_def}{IWDG\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em IWDG handle Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___registers___bit_mask_ga830a9a1bad16c7043c86545f4c159a50}{KR\+\_\+\+KEY\+\_\+\+RELOAD}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x\+AAAA)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___registers___bit_mask_gaeaa0dd2da3f9d0cce0d708cfff1df545}{KR\+\_\+\+KEY\+\_\+\+ENABLE}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x\+CCCC)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___registers___bit_mask_gadf1ad39b6aa3d426f6e7fbf29d088aa5}{KR\+\_\+\+KEY\+\_\+\+EWA}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x5555)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___registers___bit_mask_gae9cf62ac0d5eda2dd2417c280237e446}{KR\+\_\+\+KEY\+\_\+\+DWA}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0000)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___flag__definition_gae20afcf399fad1534e79a8d30ea86c9c}{IWDG\+\_\+\+FLAG\+\_\+\+PVU}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0001)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___flag__definition_ga3731bf2711c234ffe5b405fb6634ebca}{IWDG\+\_\+\+FLAG\+\_\+\+RVU}}~((\mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}})0x0002)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___flag__definition_ga5be9ae9ba267cf09a00523ef3e219293}{IS\+\_\+\+IWDG\+\_\+\+FLAG}}(FLAG)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___prescaler_ga470bb195d35ef7a0b75164c228b4ee69}{IWDG\+\_\+\+PRESCALER\+\_\+4}}~((uint8\+\_\+t)0x00)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___prescaler_ga5f00866f823ee700005e8a753b28ad75}{IWDG\+\_\+\+PRESCALER\+\_\+8}}~((uint8\+\_\+t)0x01)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___prescaler_gab3eb3c6a10facc8b0dc7c33608f6e129}{IWDG\+\_\+\+PRESCALER\+\_\+16}}~((uint8\+\_\+t)0x02)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___prescaler_gac3f33494fb7aaa2845ac106858394e03}{IWDG\+\_\+\+PRESCALER\+\_\+32}}~((uint8\+\_\+t)0x03)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___prescaler_ga52a956c645ce59312c84cbe37b2b20e4}{IWDG\+\_\+\+PRESCALER\+\_\+64}}~((uint8\+\_\+t)0x04)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___prescaler_ga17901d4e3e52af620acbbb146fd79264}{IWDG\+\_\+\+PRESCALER\+\_\+128}}~((uint8\+\_\+t)0x05)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___prescaler_ga885221d5bb09157c9e953a1be38556f0}{IWDG\+\_\+\+PRESCALER\+\_\+256}}~((uint8\+\_\+t)0x06)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___prescaler_gab1e0695c1a22840d5be7c7fad283f4ba}{IS\+\_\+\+IWDG\+\_\+\+PRESCALER}}(PRESCALER)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___reload___value_ga7c319e96bded8e3c38c6a42a1b335c68}{IS\+\_\+\+IWDG\+\_\+\+RELOAD}}(RELOAD)~((RELOAD) $<$= 0x\+FFF)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g_ga9990235f5c32f26ed6455a30bc14ee65}{\+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___i_w_d_g_gga61699dc6f24a3edecddd16018560d0e5afc0696c27fdaa4f7dbe7f08a9b5d6030}{HAL\+\_\+\+IWDG\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset IWDG handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_w_d_g_ga5914aff5b85e3151bb75377a32d83d6a}{\+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+START}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR \texorpdfstring{$\vert$}{|}=  \mbox{\hyperlink{group___i_w_d_g___registers___bit_mask_gaeaa0dd2da3f9d0cce0d708cfff1df545}{KR\+\_\+\+KEY\+\_\+\+ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enables the IWDG peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_w_d_g_gac0eaf381e60a654d6b51c43f645e088f}{\+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+RELOAD\+\_\+\+COUNTER}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR) \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___i_w_d_g___registers___bit_mask_ga830a9a1bad16c7043c86545f4c159a50}{KR\+\_\+\+KEY\+\_\+\+RELOAD}})
+\begin{DoxyCompactList}\small\item\em Reloads IWDG counter with value defined in the reload register (write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers disabled). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_w_d_g_ga425b3021a67a13ce98cf58dd277b5d5b}{\+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+ENABLE\+\_\+\+WRITE\+\_\+\+ACCESS}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR) \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___i_w_d_g___registers___bit_mask_gadf1ad39b6aa3d426f6e7fbf29d088aa5}{KR\+\_\+\+KEY\+\_\+\+EWA}})
+\begin{DoxyCompactList}\small\item\em Enables write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_w_d_g_ga03e0f29f0f6f15c2615b471d67d80a44}{\+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+DISABLE\+\_\+\+WRITE\+\_\+\+ACCESS}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR) \texorpdfstring{$\vert$}{|}= \mbox{\hyperlink{group___i_w_d_g___registers___bit_mask_gae9cf62ac0d5eda2dd2417c280237e446}{KR\+\_\+\+KEY\+\_\+\+DWA}})
+\begin{DoxyCompactList}\small\item\em Disables write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_w_d_g_gae13d68bc29e7d7798cecf9360ac79fed}{\+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Gets the selected IWDG\textquotesingle{}s flag status. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_w_d_g_ga6e4e701321ad8037d4e2feab85d49a8b}{\+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \&= \texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the IWDG\textquotesingle{}s pending flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___i_w_d_g_ga61699dc6f24a3edecddd16018560d0e5}{HAL\+\_\+\+IWDG\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___i_w_d_g_gga61699dc6f24a3edecddd16018560d0e5afc0696c27fdaa4f7dbe7f08a9b5d6030}{HAL\+\_\+\+IWDG\+\_\+\+STATE\+\_\+\+RESET}} = 0x00
+, \mbox{\hyperlink{group___i_w_d_g_gga61699dc6f24a3edecddd16018560d0e5a8aad8fa61ebdbad5411e17f7fdd35803}{HAL\+\_\+\+IWDG\+\_\+\+STATE\+\_\+\+READY}} = 0x01
+, \mbox{\hyperlink{group___i_w_d_g_gga61699dc6f24a3edecddd16018560d0e5a4ba9c9db0e319b41d19d5ad7e5b51c77}{HAL\+\_\+\+IWDG\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02
+, \mbox{\hyperlink{group___i_w_d_g_gga61699dc6f24a3edecddd16018560d0e5a415081e774deff4c59801adf358e2683}{HAL\+\_\+\+IWDG\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03
+, \newline
+\mbox{\hyperlink{group___i_w_d_g_gga61699dc6f24a3edecddd16018560d0e5a79340b932fb1f3b536fd37ebdf7b6fb6}{HAL\+\_\+\+IWDG\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em IWDG HAL State Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i_w_d_g_ga2e1669e60f2dc298fecaed919e7ae810}{HAL\+\_\+\+IWDG\+\_\+\+Init}} (\mbox{\hyperlink{struct_i_w_d_g___handle_type_def}{IWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hiwdg)
+\item 
+void \mbox{\hyperlink{group___i_w_d_g_gaf26b08d1a805d1dd515cafd0278c240c}{HAL\+\_\+\+IWDG\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_i_w_d_g___handle_type_def}{IWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hiwdg)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i_w_d_g_gaaa540681b7a6a4f7cc6b0b5497e6de46}{HAL\+\_\+\+IWDG\+\_\+\+Start}} (\mbox{\hyperlink{struct_i_w_d_g___handle_type_def}{IWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hiwdg)
+\item 
+\mbox{\hyperlink{stm32f4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___i_w_d_g_ga7e86236aea6d2f3638397fdf90333e4a}{HAL\+\_\+\+IWDG\+\_\+\+Refresh}} (\mbox{\hyperlink{struct_i_w_d_g___handle_type_def}{IWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hiwdg)
+\item 
+\mbox{\hyperlink{group___i_w_d_g_ga61699dc6f24a3edecddd16018560d0e5}{HAL\+\_\+\+IWDG\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___i_w_d_g_ga4b2f32b043612fdd1b68f806115d8de4}{HAL\+\_\+\+IWDG\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_i_w_d_g___handle_type_def}{IWDG\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hiwdg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of IWDG HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+0\+RC2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/May-\/2014 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} \doxylink{shared_8h_a6247bc79b0a606bddbf5a90fc3a03194}{COPYRIGHT(c)} 2014 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "{}\+AS IS"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

@@ -1,0 +1,75 @@
+\doxysection{gpio\+\_\+object.\+h}
+\hypertarget{gpio__object_8h_source}{}\label{gpio__object_8h_source}\index{mbed/TARGET\_NUCLEO\_F401RE/TARGET\_STM/TARGET\_NUCLEO\_F401RE/gpio\_object.h@{mbed/TARGET\_NUCLEO\_F401RE/TARGET\_STM/TARGET\_NUCLEO\_F401RE/gpio\_object.h}}
+\mbox{\hyperlink{gpio__object_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ mbed\ Microcontroller\ Library}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *******************************************************************************}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2014,\ STMicroelectronics}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ All\ rights\ reserved.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions\ are\ met:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the\ documentation}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ \ \ \ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ 3.\ Neither\ the\ name\ of\ STMicroelectronics\ nor\ the\ names\ of\ its\ contributors}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ \ \ \ may\ be\ used\ to\ endorse\ or\ promote\ products\ derived\ from\ this\ software}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ \ \ \ without\ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS\ "{}AS\ IS"{}}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *******************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ MBED\_GPIO\_OBJECT\_H}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ MBED\_GPIO\_OBJECT\_H}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mbed__assert_8h}{mbed\_assert.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cmsis_8h}{cmsis.h}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_port_names_8h}{PortNames.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_peripheral_names_8h}{PeripheralNames.h}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pin_names_8h}{PinNames.h}}"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}}\ \ \mbox{\hyperlink{structgpio__t_ae31fd8dc09fc2058c8238b96a32523c6}{pin}};}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ \mbox{\hyperlink{structgpio__t_af0180458c13ff4dba12281b3d763b574}{mask}};}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}}\ *\mbox{\hyperlink{structgpio__t_a3ffb159e16fd0800f20fb0f6beff6487}{reg\_in}};}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *\mbox{\hyperlink{structgpio__t_aca00d4e33abaa07c1f253171d27f1d6d}{reg\_set}};}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{core__cm0_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *\mbox{\hyperlink{structgpio__t_ad690716c1788ae61587afc341eaf0d3c}{reg\_clr}};}
+\DoxyCodeLine{00049\ \}\ \mbox{\hyperlink{structgpio__t}{gpio\_t}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio__api_8h_aedd478762e37aeafcf9ade8e255718b0}{gpio\_write}}(\mbox{\hyperlink{structgpio__t}{gpio\_t}}\ *obj,\ \textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{mbed__assert_8h_a2fb68573313abfce1681c990c68fb089}{MBED\_ASSERT}}(obj-\/>\mbox{\hyperlink{structgpio__t_ae31fd8dc09fc2058c8238b96a32523c6}{pin}}\ !=\ (\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}})\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a3dbd1016ea99d087d747530418b89a01}{NC}});}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (value)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ *obj-\/>\mbox{\hyperlink{structgpio__t_aca00d4e33abaa07c1f253171d27f1d6d}{reg\_set}}\ =\ obj-\/>\mbox{\hyperlink{structgpio__t_af0180458c13ff4dba12281b3d763b574}{mask}};}
+\DoxyCodeLine{00055\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ *obj-\/>\mbox{\hyperlink{structgpio__t_ad690716c1788ae61587afc341eaf0d3c}{reg\_clr}}\ =\ obj-\/>\mbox{\hyperlink{structgpio__t_af0180458c13ff4dba12281b3d763b574}{mask}};}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{gpio__api_8h_abb97298a1eb6f6c11b6290abe7a1823b}{gpio\_read}}(\mbox{\hyperlink{structgpio__t}{gpio\_t}}\ *obj)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{mbed__assert_8h_a2fb68573313abfce1681c990c68fb089}{MBED\_ASSERT}}(obj-\/>\mbox{\hyperlink{structgpio__t_ae31fd8dc09fc2058c8238b96a32523c6}{pin}}\ !=\ (\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1}{PinName}})\mbox{\hyperlink{_pin_names_8h_a5ceb873075d76667eb54dc6a7d2734d1a3dbd1016ea99d087d747530418b89a01}{NC}});}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{return}\ ((*obj-\/>\mbox{\hyperlink{structgpio__t_a3ffb159e16fd0800f20fb0f6beff6487}{reg\_in}}\ \&\ obj-\/>\mbox{\hyperlink{structgpio__t_af0180458c13ff4dba12281b3d763b574}{mask}})\ ?\ 1\ :\ 0);}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
