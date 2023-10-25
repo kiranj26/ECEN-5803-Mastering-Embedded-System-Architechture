@@ -1,0 +1,233 @@
+\doxysection{src/timer0.cpp File Reference}
+\hypertarget{timer0_8cpp}{}\label{timer0_8cpp}\index{src/timer0.cpp@{src/timer0.cpp}}
+{\ttfamily \#include "{}shared.\+h"{}}\newline
+{\ttfamily \#include "{}mbed.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{timer0_8cpp_abf7ad056381e1b93d7e0da0c68156f10}{System}}~Timer\+\_\+\+INCREMENT\+\_\+\+IN\+\_\+\+US 1000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \mbox{\hyperlink{timer0_8cpp_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}}
+\item 
+typedef unsigned char \mbox{\hyperlink{timer0_8cpp_a789d352559efaa396a258805d44f4289}{bit}}
+\item 
+typedef unsigned int \mbox{\hyperlink{timer0_8cpp_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}
+\item 
+typedef unsigned short \mbox{\hyperlink{timer0_8cpp_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Digital\+Out \mbox{\hyperlink{timer0_8cpp_ad44bbefd9c19dd87fe3233a2fb038062}{red\+LED}} (PA\+\_\+7)
+\item 
+void \mbox{\hyperlink{timer0_8cpp_a96d5d27859362b51477fd56bcc67fe7c}{toggle\+Red\+LED}} ()
+\item 
+void \mbox{\hyperlink{timer0_8cpp_a2143aff1e880c3dc51e02ba9120825ea}{timer0}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{timer0_8cpp_a3591e2fcec5782f674080d76012caf1c}{swtimer0}} = 0
+\item 
+volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{timer0_8cpp_a5e9cb685cd7b4f985e2b0c6bc39472d8}{swtimer1}} = 0
+\item 
+volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{timer0_8cpp_a3407372d2e60426487dee32524a7ebfb}{swtimer2}} = 0
+\item 
+volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{timer0_8cpp_acaad6ff331841ea97337be5c006cb463}{swtimer3}} = 0
+\item 
+volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{timer0_8cpp_a1fb728447906b6c9b9ee3f854ed5d998}{swtimer4}} = 0
+\item 
+volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{timer0_8cpp_a59ae86f9818b5ddff6828e037a2d6447}{swtimer5}} = 0
+\item 
+volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{timer0_8cpp_a7c62df53730e4de2996944b82146ab4b}{swtimer6}} = 0
+\item 
+volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{timer0_8cpp_a2c9a6a73d8930dea78d823660d65be44}{swtimer7}} = 0
+\item 
+volatile \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{timer0_8cpp_aeca2f6d177dc8e5ee54061e0acb82822}{Sw\+Timer\+Isr\+Counter}} = 0U
+\item 
+\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{timer0_8cpp_aa86621c08308c22f33cbb7e5ef6cac1d}{display\+\_\+timer}} = 0
+\item 
+\mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} \mbox{\hyperlink{timer0_8cpp_a549da6ca918b08c442877aac53c2c8cd}{display\+\_\+flag}} = 0
+\item 
+int \mbox{\hyperlink{timer0_8cpp_ad4367110e4587fbd42155ba5ebf98d0a}{red\+LEDTick\+Counter}} = 0
+\item 
+Serial \mbox{\hyperlink{timer0_8cpp_a3cbc824c5561efcb87f86e3e817d3d74}{pc}}
+\item 
+Timer \mbox{\hyperlink{timer0_8cpp_a1fbb714a11cebd067ec74b02b0f300a9}{custom\+\_\+timer}}
+\item 
+int \mbox{\hyperlink{timer0_8cpp_a141660ee6c8dfafc61078b09cd71b4c7}{count30s}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{timer0_8cpp_abf7ad056381e1b93d7e0da0c68156f10}\label{timer0_8cpp_abf7ad056381e1b93d7e0da0c68156f10} 
+\index{timer0.cpp@{timer0.cpp}!System@{System}}
+\index{System@{System}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{System}{System}}
+{\footnotesize\ttfamily \#define System~Timer\+\_\+\+INCREMENT\+\_\+\+IN\+\_\+\+US 1000}
+
+\DoxyHorRuler{0}
+ \begin{DoxyVerb}       \file timer0.cpp
+\end{DoxyVerb}
+ \DoxyHorRuler{0}
+ -- ECEN 5803 Mastering Embedded System Architecture -- -- Project 1 Module 4 -- -- Microcontroller Firmware -- -- \doxylink{timer0_8cpp}{Timer0.\+cpp} -- \hypertarget{timer0_8cpp_autotoc_md18}{}\doxysubsubsection{\texorpdfstring{–                                                                           –}{–                                                                           –}}\label{timer0_8cpp_autotoc_md18}
+-- \hypertarget{timer0_8cpp_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{–  Designed for\+:  University of Colorado at Boulder}{–  Designed for:  University of Colorado at Boulder}}\label{timer0_8cpp_autotoc_md19}
+-- ~\newline
+ -- Designed by\+: Tim Scherr \hypertarget{timer0_8cpp_autotoc_md20}{}\doxysubsubsection{\texorpdfstring{–  Revised by\+:  Student\textquotesingle{}s name}{–  Revised by:  Student's name}}\label{timer0_8cpp_autotoc_md20}
+-- Version\+: 3.\+0 -- Date of current revision\+: 2022-\/06-\/20 ~\newline
+ -- Target Microcontroller\+: ST STM32\+F401\+RE -- Tools used\+: ARM mbed compiler -- ARM mbed SDK \hypertarget{timer0_8cpp_autotoc_md21}{}\doxysubsubsection{\texorpdfstring{–              ST Nucleo STM32\+F401\+RE Board}{–              ST Nucleo STM32F401RE Board}}\label{timer0_8cpp_autotoc_md21}
+-- ~\newline
+ Functional Description\+: ~\newline
+ This file contains code for the only interrupt routine, based on the System Timer. ~\newline
+ The System Timer interrupt happens every 100 us as determined by mbed Component Configuration. The System Timer interrupt acts as the real time scheduler for the firmware. Each time the interrupt occurs, different tasks are done based on critical timing requirement for each task. ~\newline
+ There are 256 timer states (an 8-\/bit counter that rolls over) so the period of the scheduler is 25.\+6 ms. However, some tasks are executed every other time (the 200 us group) and some every 4th time (the 400 us group) and so on. Some high priority tasks are executed every time. The code for the tasks is divided up into the groups which define how often the task is executed. The structure of the code is shown below\+:
+
+I. Entry and timer state calculation II. 100 us group A. Fast Software timers B. Read Sensors C. Update III. 200 us group A. B. IV. 400 us group A. Medium Software timers B. V. 800 us group A. Set 420 PWM Period VI 1.\+6 ms group A. Display timer and flag B. Heartbeat/ LED outputs VII 3.\+2 ms group A. Slow Software Timers ~\newline
+ VIII 6.\+4 ms group A A. Very Slow Software Timers IX. Long time group A. Determine Mode B. Heartbeat/ LED outputs ~\newline
+ X. Exit
+
+\DoxyHorRuler{0}
+ -- Copyright (c) 2015, 2022 Tim Scherr All rights reserved. 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{timer0_8cpp_a789d352559efaa396a258805d44f4289}\label{timer0_8cpp_a789d352559efaa396a258805d44f4289} 
+\index{timer0.cpp@{timer0.cpp}!bit@{bit}}
+\index{bit@{bit}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{bit}{bit}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{shared_8h_a789d352559efaa396a258805d44f4289}{bit}}}
+
+\Hypertarget{timer0_8cpp_a25bb6cbe28fb5332625d1d0cd9d65ab1}\label{timer0_8cpp_a25bb6cbe28fb5332625d1d0cd9d65ab1} 
+\index{timer0.cpp@{timer0.cpp}!uchar8\_t@{uchar8\_t}}
+\index{uchar8\_t@{uchar8\_t}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{uchar8\_t}{uchar8\_t}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}}}
+
+\Hypertarget{timer0_8cpp_a273cf69d639a59973b6019625df33e30}\label{timer0_8cpp_a273cf69d639a59973b6019625df33e30} 
+\index{timer0.cpp@{timer0.cpp}!uint16\_t@{uint16\_t}}
+\index{uint16\_t@{uint16\_t}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{uint16\_t}{uint16\_t}}
+{\footnotesize\ttfamily typedef unsigned short \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}
+
+\Hypertarget{timer0_8cpp_a435d1572bf3f880d55459d9805097f62}\label{timer0_8cpp_a435d1572bf3f880d55459d9805097f62} 
+\index{timer0.cpp@{timer0.cpp}!uint32\_t@{uint32\_t}}
+\index{uint32\_t@{uint32\_t}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{uint32\_t}{uint32\_t}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{shared_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{timer0_8cpp_ad44bbefd9c19dd87fe3233a2fb038062}\label{timer0_8cpp_ad44bbefd9c19dd87fe3233a2fb038062} 
+\index{timer0.cpp@{timer0.cpp}!redLED@{redLED}}
+\index{redLED@{redLED}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{redLED()}{redLED()}}
+{\footnotesize\ttfamily Digital\+Out red\+LED (\begin{DoxyParamCaption}\item[{PA\+\_\+7}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{timer0_8cpp_a2143aff1e880c3dc51e02ba9120825ea}\label{timer0_8cpp_a2143aff1e880c3dc51e02ba9120825ea} 
+\index{timer0.cpp@{timer0.cpp}!timer0@{timer0}}
+\index{timer0@{timer0}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{timer0()}{timer0()}}
+{\footnotesize\ttfamily void timer0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{timer0_8cpp_a96d5d27859362b51477fd56bcc67fe7c}\label{timer0_8cpp_a96d5d27859362b51477fd56bcc67fe7c} 
+\index{timer0.cpp@{timer0.cpp}!toggleRedLED@{toggleRedLED}}
+\index{toggleRedLED@{toggleRedLED}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{toggleRedLED()}{toggleRedLED()}}
+{\footnotesize\ttfamily void toggle\+Red\+LED (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{timer0_8cpp_a141660ee6c8dfafc61078b09cd71b4c7}\label{timer0_8cpp_a141660ee6c8dfafc61078b09cd71b4c7} 
+\index{timer0.cpp@{timer0.cpp}!count30s@{count30s}}
+\index{count30s@{count30s}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{count30s}{count30s}}
+{\footnotesize\ttfamily int count30s = 0}
+
+\Hypertarget{timer0_8cpp_a1fbb714a11cebd067ec74b02b0f300a9}\label{timer0_8cpp_a1fbb714a11cebd067ec74b02b0f300a9} 
+\index{timer0.cpp@{timer0.cpp}!custom\_timer@{custom\_timer}}
+\index{custom\_timer@{custom\_timer}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{custom\_timer}{custom\_timer}}
+{\footnotesize\ttfamily Timer custom\+\_\+timer}
+
+\Hypertarget{timer0_8cpp_a549da6ca918b08c442877aac53c2c8cd}\label{timer0_8cpp_a549da6ca918b08c442877aac53c2c8cd} 
+\index{timer0.cpp@{timer0.cpp}!display\_flag@{display\_flag}}
+\index{display\_flag@{display\_flag}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{display\_flag}{display\_flag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} display\+\_\+flag = 0}
+
+\Hypertarget{timer0_8cpp_aa86621c08308c22f33cbb7e5ef6cac1d}\label{timer0_8cpp_aa86621c08308c22f33cbb7e5ef6cac1d} 
+\index{timer0.cpp@{timer0.cpp}!display\_timer@{display\_timer}}
+\index{display\_timer@{display\_timer}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{display\_timer}{display\_timer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} display\+\_\+timer = 0}
+
+\Hypertarget{timer0_8cpp_a3cbc824c5561efcb87f86e3e817d3d74}\label{timer0_8cpp_a3cbc824c5561efcb87f86e3e817d3d74} 
+\index{timer0.cpp@{timer0.cpp}!pc@{pc}}
+\index{pc@{pc}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{pc}{pc}}
+{\footnotesize\ttfamily Serial pc\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{timer0_8cpp_ad4367110e4587fbd42155ba5ebf98d0a}\label{timer0_8cpp_ad4367110e4587fbd42155ba5ebf98d0a} 
+\index{timer0.cpp@{timer0.cpp}!redLEDTickCounter@{redLEDTickCounter}}
+\index{redLEDTickCounter@{redLEDTickCounter}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{redLEDTickCounter}{redLEDTickCounter}}
+{\footnotesize\ttfamily int red\+LEDTick\+Counter = 0}
+
+\Hypertarget{timer0_8cpp_a3591e2fcec5782f674080d76012caf1c}\label{timer0_8cpp_a3591e2fcec5782f674080d76012caf1c} 
+\index{timer0.cpp@{timer0.cpp}!swtimer0@{swtimer0}}
+\index{swtimer0@{swtimer0}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{swtimer0}{swtimer0}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} swtimer0 = 0}
+
+\Hypertarget{timer0_8cpp_a5e9cb685cd7b4f985e2b0c6bc39472d8}\label{timer0_8cpp_a5e9cb685cd7b4f985e2b0c6bc39472d8} 
+\index{timer0.cpp@{timer0.cpp}!swtimer1@{swtimer1}}
+\index{swtimer1@{swtimer1}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{swtimer1}{swtimer1}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} swtimer1 = 0}
+
+\Hypertarget{timer0_8cpp_a3407372d2e60426487dee32524a7ebfb}\label{timer0_8cpp_a3407372d2e60426487dee32524a7ebfb} 
+\index{timer0.cpp@{timer0.cpp}!swtimer2@{swtimer2}}
+\index{swtimer2@{swtimer2}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{swtimer2}{swtimer2}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} swtimer2 = 0}
+
+\Hypertarget{timer0_8cpp_acaad6ff331841ea97337be5c006cb463}\label{timer0_8cpp_acaad6ff331841ea97337be5c006cb463} 
+\index{timer0.cpp@{timer0.cpp}!swtimer3@{swtimer3}}
+\index{swtimer3@{swtimer3}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{swtimer3}{swtimer3}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} swtimer3 = 0}
+
+\Hypertarget{timer0_8cpp_a1fb728447906b6c9b9ee3f854ed5d998}\label{timer0_8cpp_a1fb728447906b6c9b9ee3f854ed5d998} 
+\index{timer0.cpp@{timer0.cpp}!swtimer4@{swtimer4}}
+\index{swtimer4@{swtimer4}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{swtimer4}{swtimer4}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} swtimer4 = 0}
+
+\Hypertarget{timer0_8cpp_a59ae86f9818b5ddff6828e037a2d6447}\label{timer0_8cpp_a59ae86f9818b5ddff6828e037a2d6447} 
+\index{timer0.cpp@{timer0.cpp}!swtimer5@{swtimer5}}
+\index{swtimer5@{swtimer5}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{swtimer5}{swtimer5}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} swtimer5 = 0}
+
+\Hypertarget{timer0_8cpp_a7c62df53730e4de2996944b82146ab4b}\label{timer0_8cpp_a7c62df53730e4de2996944b82146ab4b} 
+\index{timer0.cpp@{timer0.cpp}!swtimer6@{swtimer6}}
+\index{swtimer6@{swtimer6}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{swtimer6}{swtimer6}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} swtimer6 = 0}
+
+\Hypertarget{timer0_8cpp_a2c9a6a73d8930dea78d823660d65be44}\label{timer0_8cpp_a2c9a6a73d8930dea78d823660d65be44} 
+\index{timer0.cpp@{timer0.cpp}!swtimer7@{swtimer7}}
+\index{swtimer7@{swtimer7}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{swtimer7}{swtimer7}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{shared_8h_a25bb6cbe28fb5332625d1d0cd9d65ab1}{uchar8\+\_\+t}} swtimer7 = 0}
+
+\Hypertarget{timer0_8cpp_aeca2f6d177dc8e5ee54061e0acb82822}\label{timer0_8cpp_aeca2f6d177dc8e5ee54061e0acb82822} 
+\index{timer0.cpp@{timer0.cpp}!SwTimerIsrCounter@{SwTimerIsrCounter}}
+\index{SwTimerIsrCounter@{SwTimerIsrCounter}!timer0.cpp@{timer0.cpp}}
+\doxysubsubsection{\texorpdfstring{SwTimerIsrCounter}{SwTimerIsrCounter}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{shared_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Sw\+Timer\+Isr\+Counter = 0U}
+

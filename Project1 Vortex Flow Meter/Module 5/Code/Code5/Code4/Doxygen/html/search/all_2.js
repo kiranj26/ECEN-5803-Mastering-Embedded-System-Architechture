@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['bare_20metal_20os_0',['&amp;ndash;                           modified to implement a super loop bare metal OS.',['../main_8cpp.html#autotoc_md4',1,'']]],
+  ['below_1',['Functional Description: See below',['../_monitor_8cpp.html#autotoc_md10',1,'']]],
+  ['bit_2',['bit',['../shared_8h.html#a789d352559efaa396a258805d44f4289',1,'bit:&#160;shared.h'],['../timer0_8cpp.html#a789d352559efaa396a258805d44f4289',1,'bit:&#160;timer0.cpp']]],
+  ['board_3',['board',['../main_8cpp.html#autotoc_md3',1,'&amp;ndash;              ST Nucleo STM32F401RE Board'],['../_monitor_8cpp.html#autotoc_md9',1,'&amp;ndash;              ST Nucleo STM32F401RE Board'],['../shared_8h.html#autotoc_md15',1,'&amp;ndash;              ST Nucleo STM32F401RE Board'],['../timer0_8cpp.html#autotoc_md21',1,'&amp;ndash;              ST Nucleo STM32F401RE Board'],['../_u_a_r_t__poll_8cpp.html#autotoc_md26',1,'&amp;ndash;              ST Nucleo STM32F401RE Board']]],
+  ['boolean_4',['boolean',['../shared_8h.html#a7c6368b321bd9acd0149b030bb8275ed',1,'shared.h']]],
+  ['boulder_5',['boulder',['../main_8cpp.html#autotoc_md1',1,'&amp;ndash;  Designed for:  University of Colorado at Boulder'],['../_monitor_8cpp.html#autotoc_md7',1,'&amp;ndash;  Designed for:  University of Colorado at Boulder'],['../shared_8h.html#autotoc_md13',1,'&amp;ndash;  Designed for:  University of Colorado at Boulder'],['../timer0_8cpp.html#autotoc_md19',1,'&amp;ndash;  Designed for:  University of Colorado at Boulder'],['../_u_a_r_t__poll_8cpp.html#autotoc_md24',1,'&amp;ndash;  Designed for:  University of Colorado at Boulder']]],
+  ['buffer_6',['&amp;ndash;       UART_hex_put() - a routine that puts a hex byte in the transmit buffer',['../_u_a_r_t__poll_8cpp.html#autotoc_md27',1,'']]],
+  ['by_3a_20student_20s_20name_7',['by: student s name',['../main_8cpp.html#autotoc_md2',1,'&amp;ndash;  Revised by:  Student&apos;s name'],['../_monitor_8cpp.html#autotoc_md8',1,'&amp;ndash;  Revised by:  Student&apos;s name'],['../shared_8h.html#autotoc_md14',1,'&amp;ndash;  Revised by:  Student&apos;s name'],['../timer0_8cpp.html#autotoc_md20',1,'&amp;ndash;  Revised by:  Student&apos;s name'],['../_u_a_r_t__poll_8cpp.html#autotoc_md25',1,'&amp;ndash;  Revised by:  Student&apos;s name']]],
+  ['byte_20in_20the_20transmit_20buffer_8',['&amp;ndash;       UART_hex_put() - a routine that puts a hex byte in the transmit buffer',['../_u_a_r_t__poll_8cpp.html#autotoc_md27',1,'']]]
+];
