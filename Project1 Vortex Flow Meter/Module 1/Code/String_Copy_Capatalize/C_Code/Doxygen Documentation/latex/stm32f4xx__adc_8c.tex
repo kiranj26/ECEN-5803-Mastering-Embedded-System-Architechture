@@ -1,0 +1,226 @@
+\doxysection{drivers/stm32f4xx\+\_\+adc.c File Reference}
+\label{stm32f4xx__adc_8c}\index{drivers/stm32f4xx\_adc.c@{drivers/stm32f4xx\_adc.c}}
+
+
+This file provides firmware functions to manage the following functionalities of the Analog to Digital Convertor (ADC) peripheral\+:  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+adc.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+rcc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ CR1\+\_\+\+DISCNUM\+\_\+\+RESET}~((uint32\+\_\+t)0x\+FFFF1\+FFF)
+\item 
+\#define \textbf{ CR1\+\_\+\+AWDCH\+\_\+\+RESET}~((uint32\+\_\+t)0x\+FFFFFFE0)
+\item 
+\#define \textbf{ CR1\+\_\+\+AWDMode\+\_\+\+RESET}~((uint32\+\_\+t)0x\+FF3\+FFDFF)
+\item 
+\#define \textbf{ CR1\+\_\+\+CLEAR\+\_\+\+MASK}~((uint32\+\_\+t)0x\+FCFFFEFF)
+\item 
+\#define \textbf{ CR2\+\_\+\+EXTEN\+\_\+\+RESET}~((uint32\+\_\+t)0x\+CFFFFFFF)
+\item 
+\#define \textbf{ CR2\+\_\+\+JEXTEN\+\_\+\+RESET}~((uint32\+\_\+t)0x\+FFCFFFFF)
+\item 
+\#define \textbf{ CR2\+\_\+\+JEXTSEL\+\_\+\+RESET}~((uint32\+\_\+t)0x\+FFF0\+FFFF)
+\item 
+\#define \textbf{ CR2\+\_\+\+CLEAR\+\_\+\+MASK}~((uint32\+\_\+t)0x\+C0\+FFF7\+FD)
+\item 
+\#define \textbf{ SQR3\+\_\+\+SQ\+\_\+\+SET}~((uint32\+\_\+t)0x0000001F)
+\item 
+\#define \textbf{ SQR2\+\_\+\+SQ\+\_\+\+SET}~((uint32\+\_\+t)0x0000001F)
+\item 
+\#define \textbf{ SQR1\+\_\+\+SQ\+\_\+\+SET}~((uint32\+\_\+t)0x0000001F)
+\item 
+\#define \textbf{ SQR1\+\_\+\+L\+\_\+\+RESET}~((uint32\+\_\+t)0x\+FF0\+FFFFF)
+\item 
+\#define \textbf{ JSQR\+\_\+\+JSQ\+\_\+\+SET}~((uint32\+\_\+t)0x0000001F)
+\item 
+\#define \textbf{ JSQR\+\_\+\+JL\+\_\+\+SET}~((uint32\+\_\+t)0x00300000)
+\item 
+\#define \textbf{ JSQR\+\_\+\+JL\+\_\+\+RESET}~((uint32\+\_\+t)0x\+FFCFFFFF)
+\item 
+\#define \textbf{ SMPR1\+\_\+\+SMP\+\_\+\+SET}~((uint32\+\_\+t)0x00000007)
+\item 
+\#define \textbf{ SMPR2\+\_\+\+SMP\+\_\+\+SET}~((uint32\+\_\+t)0x00000007)
+\item 
+\#define \textbf{ JDR\+\_\+\+OFFSET}~((uint8\+\_\+t)0x28)
+\item 
+\#define \textbf{ CDR\+\_\+\+ADDRESS}~((uint32\+\_\+t)0x40012308)
+\item 
+\#define \textbf{ CR\+\_\+\+CLEAR\+\_\+\+MASK}~((uint32\+\_\+t)0x\+FFFC30\+E0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ ADC\+\_\+\+De\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes all ADCs peripherals registers to their default reset values. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Init} (ADC\+\_\+\+Type\+Def $\ast$ADCx, \textbf{ ADC\+\_\+\+Init\+Type\+Def} $\ast$ADC\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the ADCx peripheral according to the specified parameters in the ADC\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Struct\+Init} (\textbf{ ADC\+\_\+\+Init\+Type\+Def} $\ast$ADC\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each ADC\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Common\+Init} (\textbf{ ADC\+\_\+\+Common\+Init\+Type\+Def} $\ast$ADC\+\_\+\+Common\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the ADCs peripherals according to the specified parameters in the ADC\+\_\+\+Common\+Init\+Struct. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Common\+Struct\+Init} (\textbf{ ADC\+\_\+\+Common\+Init\+Type\+Def} $\ast$ADC\+\_\+\+Common\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each ADC\+\_\+\+Common\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified ADC peripheral. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Analog\+Watchdog\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint32\+\_\+t ADC\+\_\+\+Analog\+Watchdog)
+\begin{DoxyCompactList}\small\item\em Enables or disables the analog watchdog on single/all regular or injected channels. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Analog\+Watchdog\+Thresholds\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint16\+\_\+t High\+Threshold, uint16\+\_\+t Low\+Threshold)
+\begin{DoxyCompactList}\small\item\em Configures the high and low thresholds of the analog watchdog. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Analog\+Watchdog\+Single\+Channel\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Channel)
+\begin{DoxyCompactList}\small\item\em Configures the analog watchdog guarded single channel. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Temp\+Sensor\+Vrefint\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the temperature sensor and Vrefint channels. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+VBATCmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the VBAT (Voltage Battery) channel. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Regular\+Channel\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Channel, uint8\+\_\+t Rank, uint8\+\_\+t ADC\+\_\+\+Sample\+Time)
+\begin{DoxyCompactList}\small\item\em Configures for the selected ADC regular channel its corresponding rank in the sequencer and its sample time. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Software\+Start\+Conv} (ADC\+\_\+\+Type\+Def $\ast$ADCx)
+\begin{DoxyCompactList}\small\item\em Enables the selected ADC software start conversion of the regular channels. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ ADC\+\_\+\+Get\+Software\+Start\+Conv\+Status} (ADC\+\_\+\+Type\+Def $\ast$ADCx)
+\begin{DoxyCompactList}\small\item\em Gets the selected ADC Software start regular conversion Status. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+EOCOn\+Each\+Regular\+Channel\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the EOC on each regular channel conversion. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Continuous\+Mode\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the ADC continuous conversion mode. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Disc\+Mode\+Channel\+Count\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t Number)
+\begin{DoxyCompactList}\small\item\em Configures the discontinuous mode for the selected ADC regular group channel. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Disc\+Mode\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the discontinuous mode on regular group channel for the specified ADC. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ ADC\+\_\+\+Get\+Conversion\+Value} (ADC\+\_\+\+Type\+Def $\ast$ADCx)
+\begin{DoxyCompactList}\small\item\em Returns the last ADCx conversion result data for regular channel. \end{DoxyCompactList}\item 
+uint32\+\_\+t \textbf{ ADC\+\_\+\+Get\+Multi\+Mode\+Conversion\+Value} (void)
+\begin{DoxyCompactList}\small\item\em Returns the last ADC1, ADC2 and ADC3 regular conversions results data in the selected multi mode. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+DMACmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified ADC DMA request. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+DMARequest\+After\+Last\+Transfer\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the ADC DMA request after last transfer (Single-\/\+ADC mode) ~\newline
+ \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Multi\+Mode\+DMARequest\+After\+Last\+Transfer\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the ADC DMA request after last transfer in multi ADC mode ~\newline
+ \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Injected\+Channel\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Channel, uint8\+\_\+t Rank, uint8\+\_\+t ADC\+\_\+\+Sample\+Time)
+\begin{DoxyCompactList}\small\item\em Configures for the selected ADC injected channel its corresponding rank in the sequencer and its sample time. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Injected\+Sequencer\+Length\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t Length)
+\begin{DoxyCompactList}\small\item\em Configures the sequencer length for injected channels. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Set\+Injected\+Offset} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Injected\+Channel, uint16\+\_\+t Offset)
+\begin{DoxyCompactList}\small\item\em Set the injected channels conversion value offset. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+External\+Trig\+Injected\+Conv\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint32\+\_\+t ADC\+\_\+\+External\+Trig\+Injec\+Conv)
+\begin{DoxyCompactList}\small\item\em Configures the ADCx external trigger for injected channels conversion. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+External\+Trig\+Injected\+Conv\+Edge\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint32\+\_\+t ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge)
+\begin{DoxyCompactList}\small\item\em Configures the ADCx external trigger edge for injected channels conversion. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Software\+Start\+Injected\+Conv} (ADC\+\_\+\+Type\+Def $\ast$ADCx)
+\begin{DoxyCompactList}\small\item\em Enables the selected ADC software start conversion of the injected channels. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ ADC\+\_\+\+Get\+Software\+Start\+Injected\+Conv\+Cmd\+Status} (ADC\+\_\+\+Type\+Def $\ast$ADCx)
+\begin{DoxyCompactList}\small\item\em Gets the selected ADC Software start injected conversion Status. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Auto\+Injected\+Conv\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the selected ADC automatic injected group conversion after regular one. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Injected\+Disc\+Mode\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the discontinuous mode for injected group channel for the specified ADC. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ ADC\+\_\+\+Get\+Injected\+Conversion\+Value} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Injected\+Channel)
+\begin{DoxyCompactList}\small\item\em Returns the ADC injected channel conversion result. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+ITConfig} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint16\+\_\+t ADC\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified ADC interrupts. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ ADC\+\_\+\+Get\+Flag\+Status} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified ADC flag is set or not. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Clear\+Flag} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the ADCx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \textbf{ ADC\+\_\+\+Get\+ITStatus} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint16\+\_\+t ADC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified ADC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Clear\+ITPending\+Bit} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint16\+\_\+t ADC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the ADCx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides firmware functions to manage the following functionalities of the Analog to Digital Convertor (ADC) peripheral\+: 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30-\/September-\/2011
+\begin{DoxyItemize}
+\item Initialization and Configuration (in addition to ADC multi mode selection)
+\item Analog Watchdog configuration
+\item Temperature Sensor \& Vrefint (Voltage Reference internal) \& VBAT management
+\item Regular Channels Configuration
+\item Regular Channels DMA Configuration
+\item Injected channels Configuration
+\item Interrupts and flags management
+\end{DoxyItemize}
+\end{DoxyDate}
+\begin{DoxyVerb}*
+*          ===================================================================
+*                                   How to use this driver
+*          ===================================================================
+
+*          1.  Enable the ADC interface clock using 
+*                  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADCx, ENABLE); 
+*     
+*          2. ADC pins configuration
+*               - Enable the clock for the ADC GPIOs using the following function:
+*                   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOx, ENABLE);   
+*                - Configure these ADC pins in analog mode using GPIO_Init();  
+*
+*          3. Configure the ADC Prescaler, conversion resolution and data 
+*              alignment using the ADC_Init() function.
+*          4. Activate the ADC peripheral using ADC_Cmd() function.
+*
+*          Regular channels group configuration
+*          ====================================    
+*            - To configure the ADC regular channels group features, use 
+*              ADC_Init() and ADC_RegularChannelConfig() functions.
+*            - To activate the continuous mode, use the ADC_continuousModeCmd()
+*              function.
+*            - To configurate and activate the Discontinuous mode, use the 
+*              ADC_DiscModeChannelCountConfig() and ADC_DiscModeCmd() functions.
+*            - To read the ADC converted values, use the ADC_GetConversionValue()
+*              function.
+*
+*          Multi mode ADCs Regular channels configuration
+*          ===============================================
+*            - Refer to "Regular channels group configuration" description to
+*              configure the ADC1, ADC2 and ADC3 regular channels.        
+*            - Select the Multi mode ADC regular channels features (dual or 
+*              triple mode) using ADC_CommonInit() function and configure 
+*              the DMA mode using ADC_MultiModeDMARequestAfterLastTransferCmd() 
+*              functions.        
+*            - Read the ADCs converted values using the 
+*              ADC_GetMultiModeConversionValue() function.
+*
+*          DMA for Regular channels group features configuration
+*          ====================================================== 
+*           - To enable the DMA mode for regular channels group, use the 
+*             ADC_DMACmd() function.
+*           - To enable the generation of DMA requests continuously at the end
+*             of the last DMA transfer, use the ADC_DMARequestAfterLastTransferCmd() 
+*             function.
+*
+*          Injected channels group configuration
+*          =====================================    
+*            - To configure the ADC Injected channels group features, use 
+*              ADC_InjectedChannelConfig() and  ADC_InjectedSequencerLengthConfig()
+*              functions.
+*            - To activate the continuous mode, use the ADC_continuousModeCmd()
+*              function.
+*            - To activate the Injected Discontinuous mode, use the 
+*              ADC_InjectedDiscModeCmd() function.  
+*            - To activate the AutoInjected mode, use the ADC_AutoInjectedConvCmd() 
+*              function.        
+*            - To read the ADC converted values, use the ADC_GetInjectedConversionValue() 
+*              function.
+*
+*  \end{DoxyVerb}
+
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

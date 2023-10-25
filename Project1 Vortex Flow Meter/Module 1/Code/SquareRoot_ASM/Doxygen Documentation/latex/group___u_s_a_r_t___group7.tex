@@ -1,0 +1,99 @@
+\doxysubsubsubsection{Ir\+DA mode functions}
+\hypertarget{group___u_s_a_r_t___group7}{}\label{group___u_s_a_r_t___group7}\index{IrDA mode functions@{IrDA mode functions}}
+
+
+Ir\+DA mode functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___group7_ga81a0cd36199040bf6d266b57babd678e}{USART\+\_\+\+Ir\+DAConfig}} (USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+Ir\+DAMode)
+\begin{DoxyCompactList}\small\item\em Configures the USART\textquotesingle{}s Ir\+DA interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___group7_gabff56ebb494fdfadcc6ef4fe9ac8dd24}{USART\+\_\+\+Ir\+DACmd}} (USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s Ir\+DA interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Ir\+DA mode functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                                IrDA mode functions
+ ===============================================================================  
+
+  This subsection provides a set of functions allowing to manage the USART 
+  IrDA communication.
+  
+  IrDA is a half duplex communication protocol. If the Transmitter is busy, any data
+  on the IrDA receive line will be ignored by the IrDA decoder and if the Receiver 
+  is busy, data on the TX from the USART to IrDA will not be encoded by IrDA.
+  While receiving data, transmission should be avoided as the data to be transmitted
+  could be corrupted.
+
+  IrDA communication is possible through the following procedure:
+     1. Program the Baud rate, Word length = 8 bits, Stop bits, Parity, Transmitter/Receiver 
+        modes and hardware flow control values using the USART_Init() function.
+     2. Enable the USART using the USART_Cmd() function.
+     3. Configures the IrDA pulse width by configuring the prescaler using  
+        the USART_SetPrescaler() function.
+     4. Configures the IrDA  USART_IrDAMode_LowPower or USART_IrDAMode_Normal mode
+        using the USART_IrDAConfig() function.
+     5. Enable the IrDA using the USART_IrDACmd() function.
+
+@note A pulse of width less than two and greater than one PSC period(s) may or may
+      not be rejected.
+@note The receiver set up time should be managed by software. The IrDA physical layer
+      specification specifies a minimum of 10 ms delay between transmission and 
+      reception (IrDA is a half duplex protocol).
+@note In IrDA mode, the following bits must be kept cleared:
+        - LINEN, STOP and CLKEN bits in the USART_CR2 register.
+        - SCEN and HDSEL bits in the USART_CR3 register.\end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\Hypertarget{group___u_s_a_r_t___group7_gabff56ebb494fdfadcc6ef4fe9ac8dd24}\label{group___u_s_a_r_t___group7_gabff56ebb494fdfadcc6ef4fe9ac8dd24} 
+\index{IrDA mode functions@{IrDA mode functions}!USART\_IrDACmd@{USART\_IrDACmd}}
+\index{USART\_IrDACmd@{USART\_IrDACmd}!IrDA mode functions@{IrDA mode functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_IrDACmd()}{USART\_IrDACmd()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Ir\+DACmd (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the USART\textquotesingle{}s Ir\+DA interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em New\+State} & new state of the Ir\+DA mode. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___group7_ga81a0cd36199040bf6d266b57babd678e}\label{group___u_s_a_r_t___group7_ga81a0cd36199040bf6d266b57babd678e} 
+\index{IrDA mode functions@{IrDA mode functions}!USART\_IrDAConfig@{USART\_IrDAConfig}}
+\index{USART\_IrDAConfig@{USART\_IrDAConfig}!IrDA mode functions@{IrDA mode functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_IrDAConfig()}{USART\_IrDAConfig()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Ir\+DAConfig (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+Ir\+DAMode }\end{DoxyParamCaption})}
+
+
+
+Configures the USART\textquotesingle{}s Ir\+DA interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em USART\+\_\+\+Ir\+DAMode} & specifies the Ir\+DA mode. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+Ir\+DAMode\+\_\+\+Low\+Power \item USART\+\_\+\+Ir\+DAMode\+\_\+\+Normal \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

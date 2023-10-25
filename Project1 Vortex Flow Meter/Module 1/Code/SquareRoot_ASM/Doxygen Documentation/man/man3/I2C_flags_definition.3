@@ -1,0 +1,163 @@
+.TH "I2C_flags_definition" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_flags_definition \- I2C_flags_definition
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBI2C_FLAG_DUALF\fP   ((uint32_t)0x00800000)"
+.br
+.RI "SR2 register flags 
+.br
+ "
+.ti -1c
+.RI "#define \fBI2C_FLAG_SMBHOST\fP   ((uint32_t)0x00400000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_SMBDEFAULT\fP   ((uint32_t)0x00200000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_GENCALL\fP   ((uint32_t)0x00100000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_TRA\fP   ((uint32_t)0x00040000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_BUSY\fP   ((uint32_t)0x00020000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_MSL\fP   ((uint32_t)0x00010000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_SMBALERT\fP   ((uint32_t)0x10008000)"
+.br
+.RI "SR1 register flags 
+.br
+ "
+.ti -1c
+.RI "#define \fBI2C_FLAG_TIMEOUT\fP   ((uint32_t)0x10004000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_PECERR\fP   ((uint32_t)0x10001000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_OVR\fP   ((uint32_t)0x10000800)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_AF\fP   ((uint32_t)0x10000400)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_ARLO\fP   ((uint32_t)0x10000200)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_BERR\fP   ((uint32_t)0x10000100)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_TXE\fP   ((uint32_t)0x10000080)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_RXNE\fP   ((uint32_t)0x10000040)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_STOPF\fP   ((uint32_t)0x10000010)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_ADD10\fP   ((uint32_t)0x10000008)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_BTF\fP   ((uint32_t)0x10000004)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_ADDR\fP   ((uint32_t)0x10000002)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_SB\fP   ((uint32_t)0x10000001)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_CLEAR_FLAG\fP(FLAG)   ((((FLAG) & (uint16_t)0x20FF) == 0x00) && ((FLAG) != (uint16_t)0x00))"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_GET_FLAG\fP(FLAG)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define I2C_FLAG_ADD10   ((uint32_t)0x10000008)"
+
+.SS "#define I2C_FLAG_ADDR   ((uint32_t)0x10000002)"
+
+.SS "#define I2C_FLAG_AF   ((uint32_t)0x10000400)"
+
+.SS "#define I2C_FLAG_ARLO   ((uint32_t)0x10000200)"
+
+.SS "#define I2C_FLAG_BERR   ((uint32_t)0x10000100)"
+
+.SS "#define I2C_FLAG_BTF   ((uint32_t)0x10000004)"
+
+.SS "#define I2C_FLAG_BUSY   ((uint32_t)0x00020000)"
+
+.SS "#define I2C_FLAG_DUALF   ((uint32_t)0x00800000)"
+
+.PP
+SR2 register flags 
+.br
+ 
+.SS "#define I2C_FLAG_GENCALL   ((uint32_t)0x00100000)"
+
+.SS "#define I2C_FLAG_MSL   ((uint32_t)0x00010000)"
+
+.SS "#define I2C_FLAG_OVR   ((uint32_t)0x10000800)"
+
+.SS "#define I2C_FLAG_PECERR   ((uint32_t)0x10001000)"
+
+.SS "#define I2C_FLAG_RXNE   ((uint32_t)0x10000040)"
+
+.SS "#define I2C_FLAG_SB   ((uint32_t)0x10000001)"
+
+.SS "#define I2C_FLAG_SMBALERT   ((uint32_t)0x10008000)"
+
+.PP
+SR1 register flags 
+.br
+ 
+.SS "#define I2C_FLAG_SMBDEFAULT   ((uint32_t)0x00200000)"
+
+.SS "#define I2C_FLAG_SMBHOST   ((uint32_t)0x00400000)"
+
+.SS "#define I2C_FLAG_STOPF   ((uint32_t)0x10000010)"
+
+.SS "#define I2C_FLAG_TIMEOUT   ((uint32_t)0x10004000)"
+
+.SS "#define I2C_FLAG_TRA   ((uint32_t)0x00040000)"
+
+.SS "#define I2C_FLAG_TXE   ((uint32_t)0x10000080)"
+
+.SS "#define IS_I2C_CLEAR_FLAG(FLAG)   ((((FLAG) & (uint16_t)0x20FF) == 0x00) && ((FLAG) != (uint16_t)0x00))"
+
+.SS "#define IS_I2C_GET_FLAG(FLAG)"
+\fBValue:\fP.PP
+.nf
+                               (((FLAG) == I2C_FLAG_DUALF) || ((FLAG) == I2C_FLAG_SMBHOST) || \\
+                               ((FLAG) == I2C_FLAG_SMBDEFAULT) || ((FLAG) == I2C_FLAG_GENCALL) || \\
+                               ((FLAG) == I2C_FLAG_TRA) || ((FLAG) == I2C_FLAG_BUSY) || \\
+                               ((FLAG) == I2C_FLAG_MSL) || ((FLAG) == I2C_FLAG_SMBALERT) || \\
+                               ((FLAG) == I2C_FLAG_TIMEOUT) || ((FLAG) == I2C_FLAG_PECERR) || \\
+                               ((FLAG) == I2C_FLAG_OVR) || ((FLAG) == I2C_FLAG_AF) || \\
+                               ((FLAG) == I2C_FLAG_ARLO) || ((FLAG) == I2C_FLAG_BERR) || \\
+                               ((FLAG) == I2C_FLAG_TXE) || ((FLAG) == I2C_FLAG_RXNE) || \\
+                               ((FLAG) == I2C_FLAG_STOPF) || ((FLAG) == I2C_FLAG_ADD10) || \\
+                               ((FLAG) == I2C_FLAG_BTF) || ((FLAG) == I2C_FLAG_ADDR) || \\
+                               ((FLAG) == I2C_FLAG_SB))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

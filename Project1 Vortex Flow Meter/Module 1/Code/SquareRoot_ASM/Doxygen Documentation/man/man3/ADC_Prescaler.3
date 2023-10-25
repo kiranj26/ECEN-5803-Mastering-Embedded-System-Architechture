@@ -1,0 +1,52 @@
+.TH "ADC_Prescaler" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_Prescaler \- ADC_Prescaler
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC_Prescaler_Div2\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_Prescaler_Div4\fP   ((uint32_t)0x00010000)"
+.br
+.ti -1c
+.RI "#define \fBADC_Prescaler_Div6\fP   ((uint32_t)0x00020000)"
+.br
+.ti -1c
+.RI "#define \fBADC_Prescaler_Div8\fP   ((uint32_t)0x00030000)"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_PRESCALER\fP(PRESCALER)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_Prescaler_Div2   ((uint32_t)0x00000000)"
+
+.SS "#define ADC_Prescaler_Div4   ((uint32_t)0x00010000)"
+
+.SS "#define ADC_Prescaler_Div6   ((uint32_t)0x00020000)"
+
+.SS "#define ADC_Prescaler_Div8   ((uint32_t)0x00030000)"
+
+.SS "#define IS_ADC_PRESCALER(PRESCALER)"
+\fBValue:\fP.PP
+.nf
+                                     (((PRESCALER) == ADC_Prescaler_Div2) || \\
+                                     ((PRESCALER) == ADC_Prescaler_Div4) || \\
+                                     ((PRESCALER) == ADC_Prescaler_Div6) || \\
+                                     ((PRESCALER) == ADC_Prescaler_Div8))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

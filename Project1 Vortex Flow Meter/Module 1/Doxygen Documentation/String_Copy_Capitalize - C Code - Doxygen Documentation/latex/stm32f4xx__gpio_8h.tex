@@ -1,0 +1,284 @@
+\doxysection{drivers/stm32f4xx\+\_\+gpio.h File Reference}
+\label{stm32f4xx__gpio_8h}\index{drivers/stm32f4xx\_gpio.h@{drivers/stm32f4xx\_gpio.h}}
+
+
+This file contains all the functions prototypes for the GPIO firmware library.  
+
+
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ GPIO\+\_\+\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em GPIO Init structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ IS\+\_\+\+GPIO\+\_\+\+ALL\+\_\+\+PERIPH}(PERIPH)
+\item 
+\#define \textbf{ IS\+\_\+\+GPIO\+\_\+\+MODE}(MODE)
+\item 
+\#define \textbf{ IS\+\_\+\+GPIO\+\_\+\+OTYPE}(OTYPE)~(((OTYPE) == \textbf{ GPIO\+\_\+\+OType\+\_\+\+PP}) $\vert$$\vert$ ((OTYPE) == \textbf{ GPIO\+\_\+\+OType\+\_\+\+OD}))
+\item 
+\#define \textbf{ IS\+\_\+\+GPIO\+\_\+\+SPEED}(SPEED)
+\item 
+\#define \textbf{ IS\+\_\+\+GPIO\+\_\+\+PUPD}(PUPD)
+\item 
+\#define \textbf{ IS\+\_\+\+GPIO\+\_\+\+BIT\+\_\+\+ACTION}(ACTION)~(((ACTION) == \textbf{ Bit\+\_\+\+RESET}) $\vert$$\vert$ ((ACTION) == \textbf{ Bit\+\_\+\+SET}))
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+0}~((uint16\+\_\+t)0x0001)  /$\ast$ \textbf{ Pin} 0 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+1}~((uint16\+\_\+t)0x0002)  /$\ast$ \textbf{ Pin} 1 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+2}~((uint16\+\_\+t)0x0004)  /$\ast$ \textbf{ Pin} 2 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+3}~((uint16\+\_\+t)0x0008)  /$\ast$ \textbf{ Pin} 3 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+4}~((uint16\+\_\+t)0x0010)  /$\ast$ \textbf{ Pin} 4 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+5}~((uint16\+\_\+t)0x0020)  /$\ast$ \textbf{ Pin} 5 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+6}~((uint16\+\_\+t)0x0040)  /$\ast$ \textbf{ Pin} 6 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+7}~((uint16\+\_\+t)0x0080)  /$\ast$ \textbf{ Pin} 7 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+8}~((uint16\+\_\+t)0x0100)  /$\ast$ \textbf{ Pin} 8 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+9}~((uint16\+\_\+t)0x0200)  /$\ast$ \textbf{ Pin} 9 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+10}~((uint16\+\_\+t)0x0400)  /$\ast$ \textbf{ Pin} 10 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+11}~((uint16\+\_\+t)0x0800)  /$\ast$ \textbf{ Pin} 11 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+12}~((uint16\+\_\+t)0x1000)  /$\ast$ \textbf{ Pin} 12 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+13}~((uint16\+\_\+t)0x2000)  /$\ast$ \textbf{ Pin} 13 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+14}~((uint16\+\_\+t)0x4000)  /$\ast$ \textbf{ Pin} 14 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+15}~((uint16\+\_\+t)0x8000)  /$\ast$ \textbf{ Pin} 15 selected $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+\_\+\+All}~((uint16\+\_\+t)0x\+FFFF)  /$\ast$ All pins selected $\ast$/
+\item 
+\#define \textbf{ IS\+\_\+\+GPIO\+\_\+\+PIN}(PIN)~((((PIN) \& (uint16\+\_\+t)0x00) == 0x00) \&\& ((PIN) != (uint16\+\_\+t)0x00))
+\item 
+\#define \textbf{ IS\+\_\+\+GET\+\_\+\+GPIO\+\_\+\+PIN}(PIN)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source0}~((uint8\+\_\+t)0x00)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source1}~((uint8\+\_\+t)0x01)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source2}~((uint8\+\_\+t)0x02)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source3}~((uint8\+\_\+t)0x03)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source4}~((uint8\+\_\+t)0x04)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source5}~((uint8\+\_\+t)0x05)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source6}~((uint8\+\_\+t)0x06)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source7}~((uint8\+\_\+t)0x07)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source8}~((uint8\+\_\+t)0x08)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source9}~((uint8\+\_\+t)0x09)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source10}~((uint8\+\_\+t)0x0A)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source11}~((uint8\+\_\+t)0x0B)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source12}~((uint8\+\_\+t)0x0C)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source13}~((uint8\+\_\+t)0x0D)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source14}~((uint8\+\_\+t)0x0E)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Pin\+Source15}~((uint8\+\_\+t)0x0F)
+\item 
+\#define \textbf{ IS\+\_\+\+GPIO\+\_\+\+PIN\+\_\+\+SOURCE}(PINSOURCE)
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+RTC\+\_\+50\+Hz}~((uint8\+\_\+t)0x00)  /$\ast$ RTC\+\_\+50\+Hz Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 0 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+MCO}~((uint8\+\_\+t)0x00)  /$\ast$ MCO (MCO1 and MCO2) Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TAMPER}~((uint8\+\_\+t)0x00)  /$\ast$ TAMPER (TAMPER\+\_\+1 and TAMPER\+\_\+2) Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+SWJ}~((uint8\+\_\+t)0x00)  /$\ast$ SWJ (SWD and JTAG) Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TRACE}~((uint8\+\_\+t)0x00)  /$\ast$ TRACE Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TIM1}~((uint8\+\_\+t)0x01)  /$\ast$ TIM1 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 1 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TIM2}~((uint8\+\_\+t)0x01)  /$\ast$ TIM2 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TIM3}~((uint8\+\_\+t)0x02)  /$\ast$ TIM3 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 2 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TIM4}~((uint8\+\_\+t)0x02)  /$\ast$ TIM4 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TIM5}~((uint8\+\_\+t)0x02)  /$\ast$ TIM5 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TIM8}~((uint8\+\_\+t)0x03)  /$\ast$ TIM8 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 3 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TIM9}~((uint8\+\_\+t)0x03)  /$\ast$ TIM9 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TIM10}~((uint8\+\_\+t)0x03)  /$\ast$ TIM10 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TIM11}~((uint8\+\_\+t)0x03)  /$\ast$ TIM11 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+I2\+C1}~((uint8\+\_\+t)0x04)  /$\ast$ I2\+C1 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 4 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+I2\+C2}~((uint8\+\_\+t)0x04)  /$\ast$ I2\+C2 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+I2\+C3}~((uint8\+\_\+t)0x04)  /$\ast$ I2\+C3 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+SPI1}~((uint8\+\_\+t)0x05)  /$\ast$ SPI1 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 5 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+SPI2}~((uint8\+\_\+t)0x05)  /$\ast$ SPI2/I2\+S2 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+SPI3}~((uint8\+\_\+t)0x06)  /$\ast$ SPI3/I2\+S3 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 6 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+USART1}~((uint8\+\_\+t)0x07)  /$\ast$ USART1 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 7 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+USART2}~((uint8\+\_\+t)0x07)  /$\ast$ USART2 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+USART3}~((uint8\+\_\+t)0x07)  /$\ast$ USART3 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+I2\+S3ext}~((uint8\+\_\+t)0x07)  /$\ast$ I2\+S3ext Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+UART4}~((uint8\+\_\+t)0x08)  /$\ast$ UART4 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 8 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+UART5}~((uint8\+\_\+t)0x08)  /$\ast$ UART5 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+USART6}~((uint8\+\_\+t)0x08)  /$\ast$ USART6 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+CAN1}~((uint8\+\_\+t)0x09)  /$\ast$ CAN1 Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 9 selection. \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+CAN2}~((uint8\+\_\+t)0x09)  /$\ast$ CAN2 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TIM12}~((uint8\+\_\+t)0x09)  /$\ast$ TIM12 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TIM13}~((uint8\+\_\+t)0x09)  /$\ast$ TIM13 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+TIM14}~((uint8\+\_\+t)0x09)  /$\ast$ TIM14 Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+OTG\+\_\+\+FS}~((uint8\+\_\+t)0xA)  /$\ast$ OTG\+\_\+\+FS Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 10 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+OTG\+\_\+\+HS}~((uint8\+\_\+t)0xA)  /$\ast$ OTG\+\_\+\+HS Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+ETH}~((uint8\+\_\+t)0x0B)  /$\ast$ ETHERNET Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 11 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+FSMC}~((uint8\+\_\+t)0xC)  /$\ast$ FSMC Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 12 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+OTG\+\_\+\+HS\+\_\+\+FS}~((uint8\+\_\+t)0xC)  /$\ast$ OTG HS configured in FS, Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+SDIO}~((uint8\+\_\+t)0xC)  /$\ast$ SDIO Alternate Function mapping $\ast$/
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+DCMI}~((uint8\+\_\+t)0x0D)  /$\ast$ DCMI Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 13 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+EVENTOUT}~((uint8\+\_\+t)0x0F)  /$\ast$ EVENTOUT Alternate Function mapping $\ast$/
+\begin{DoxyCompactList}\small\item\em AF 15 selection ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ IS\+\_\+\+GPIO\+\_\+\+AF}(AF)
+\item 
+\#define \textbf{ GPIO\+\_\+\+Mode\+\_\+\+AIN}~\textbf{ GPIO\+\_\+\+Mode\+\_\+\+AN}
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+OTG1\+\_\+\+FS}~\textbf{ GPIO\+\_\+\+AF\+\_\+\+OTG\+\_\+\+FS}
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+OTG2\+\_\+\+HS}~\textbf{ GPIO\+\_\+\+AF\+\_\+\+OTG\+\_\+\+HS}
+\item 
+\#define \textbf{ GPIO\+\_\+\+AF\+\_\+\+OTG2\+\_\+\+FS}~\textbf{ GPIO\+\_\+\+AF\+\_\+\+OTG\+\_\+\+HS\+\_\+\+FS}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ GPIOMode\+\_\+\+Type\+Def} \{ \textbf{ GPIO\+\_\+\+Mode\+\_\+\+IN} = 0x00
+, \textbf{ GPIO\+\_\+\+Mode\+\_\+\+OUT} = 0x01
+, \textbf{ GPIO\+\_\+\+Mode\+\_\+\+AF} = 0x02
+, \textbf{ GPIO\+\_\+\+Mode\+\_\+\+AN} = 0x03
+ \}
+\begin{DoxyCompactList}\small\item\em GPIO Configuration Mode enumeration. \end{DoxyCompactList}\item 
+enum \textbf{ GPIOOType\+\_\+\+Type\+Def} \{ \textbf{ GPIO\+\_\+\+OType\+\_\+\+PP} = 0x00
+, \textbf{ GPIO\+\_\+\+OType\+\_\+\+OD} = 0x01
+ \}
+\begin{DoxyCompactList}\small\item\em GPIO Output type enumeration. \end{DoxyCompactList}\item 
+enum \textbf{ GPIOSpeed\+\_\+\+Type\+Def} \{ \textbf{ GPIO\+\_\+\+Speed\+\_\+2\+MHz} = 0x00
+, \textbf{ GPIO\+\_\+\+Speed\+\_\+25\+MHz} = 0x01
+, \textbf{ GPIO\+\_\+\+Speed\+\_\+50\+MHz} = 0x02
+, \textbf{ GPIO\+\_\+\+Speed\+\_\+100\+MHz} = 0x03
+ \}
+\begin{DoxyCompactList}\small\item\em GPIO Output Maximum frequency enumeration. \end{DoxyCompactList}\item 
+enum \textbf{ GPIOPu\+Pd\+\_\+\+Type\+Def} \{ \textbf{ GPIO\+\_\+\+Pu\+Pd\+\_\+\+NOPULL} = 0x00
+, \textbf{ GPIO\+\_\+\+Pu\+Pd\+\_\+\+UP} = 0x01
+, \textbf{ GPIO\+\_\+\+Pu\+Pd\+\_\+\+DOWN} = 0x02
+ \}
+\begin{DoxyCompactList}\small\item\em GPIO Configuration Pull\+Up Pull\+Down enumeration. \end{DoxyCompactList}\item 
+enum \textbf{ Bit\+Action} \{ \textbf{ Bit\+\_\+\+RESET} = 0
+, \textbf{ Bit\+\_\+\+SET}
+ \}
+\begin{DoxyCompactList}\small\item\em GPIO Bit SET and Bit RESET enumeration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ GPIO\+\_\+\+De\+Init} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the GPIOx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Init} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, \textbf{ GPIO\+\_\+\+Init\+Type\+Def} $\ast$GPIO\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the GPIOx peripheral according to the specified parameters in the GPIO\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Struct\+Init} (\textbf{ GPIO\+\_\+\+Init\+Type\+Def} $\ast$GPIO\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each GPIO\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Pin\+Lock\+Config} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Locks GPIO Pins configuration registers. \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ GPIO\+\_\+\+Read\+Input\+Data\+Bit} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified input port pin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ GPIO\+\_\+\+Read\+Input\+Data} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx)
+\begin{DoxyCompactList}\small\item\em Reads the specified GPIO input data port. \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ GPIO\+\_\+\+Read\+Output\+Data\+Bit} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified output data port bit. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ GPIO\+\_\+\+Read\+Output\+Data} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx)
+\begin{DoxyCompactList}\small\item\em Reads the specified GPIO output data port. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Set\+Bits} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets the selected data port bits. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Reset\+Bits} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Clears the selected data port bits. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Write\+Bit} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin, \textbf{ Bit\+Action} Bit\+Val)
+\begin{DoxyCompactList}\small\item\em Sets or clears the selected data port bit. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Write} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t Port\+Val)
+\begin{DoxyCompactList}\small\item\em Writes data to the specified GPIO data port. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Toggle\+Bits} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Toggles the specified GPIO pins.. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Pin\+AFConfig} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin\+Source, uint8\+\_\+t GPIO\+\_\+\+AF)
+\begin{DoxyCompactList}\small\item\em Changes the mapping of the specified pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the GPIO firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30-\/September-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

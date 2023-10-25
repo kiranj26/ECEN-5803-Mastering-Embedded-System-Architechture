@@ -1,0 +1,170 @@
+.TH "ADC_Group2" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_Group2 \- Analog Watchdog configuration functions
+.PP
+ \- Analog Watchdog configuration functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBADC_AnalogWatchdogCmd\fP (ADC_TypeDef *ADCx, uint32_t ADC_AnalogWatchdog)"
+.br
+.RI "Enables or disables the analog watchdog on single/all regular or injected channels\&. "
+.ti -1c
+.RI "void \fBADC_AnalogWatchdogThresholdsConfig\fP (ADC_TypeDef *ADCx, uint16_t HighThreshold, uint16_t LowThreshold)"
+.br
+.RI "Configures the high and low thresholds of the analog watchdog\&. "
+.ti -1c
+.RI "void \fBADC_AnalogWatchdogSingleChannelConfig\fP (ADC_TypeDef *ADCx, uint8_t ADC_Channel)"
+.br
+.RI "Configures the analog watchdog guarded single channel\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Analog Watchdog configuration functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                    Analog Watchdog configuration functions
+ ===============================================================================  
+
+  This section provides functions allowing to configure the Analog Watchdog
+  (AWD) feature in the ADC\&.
+  
+  A typical configuration Analog Watchdog is done following these steps :
+   1\&. the ADC guarded channel(s) is (are) selected using the 
+      ADC_AnalogWatchdogSingleChannelConfig() function\&.
+   2\&. The Analog watchdog lower and higher threshold are configured using the  
+     ADC_AnalogWatchdogThresholdsConfig() function\&.
+   3\&. The Analog watchdog is enabled and configured to enable the check, on one
+      or more channels, using the  ADC_AnalogWatchdogCmd() function\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void ADC_AnalogWatchdogCmd (ADC_TypeDef * ADCx, uint32_t ADC_AnalogWatchdog)"
+
+.PP
+Enables or disables the analog watchdog on single/all regular or injected channels\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_AnalogWatchdog\fP the ADC analog watchdog configuration\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_AnalogWatchdog_SingleRegEnable: Analog watchdog on a single regular channel 
+.IP "\(bu" 1
+ADC_AnalogWatchdog_SingleInjecEnable: Analog watchdog on a single injected channel 
+.IP "\(bu" 1
+ADC_AnalogWatchdog_SingleRegOrInjecEnable: Analog watchdog on a single regular or injected channel 
+.IP "\(bu" 1
+ADC_AnalogWatchdog_AllRegEnable: Analog watchdog on all regular channel 
+.IP "\(bu" 1
+ADC_AnalogWatchdog_AllInjecEnable: Analog watchdog on all injected channel 
+.IP "\(bu" 1
+ADC_AnalogWatchdog_AllRegAllInjecEnable: Analog watchdog on all regular and injected channels 
+.IP "\(bu" 1
+ADC_AnalogWatchdog_None: No channel guarded by the analog watchdog 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.br
+ 
+.RE
+.PP
+
+.SS "void ADC_AnalogWatchdogSingleChannelConfig (ADC_TypeDef * ADCx, uint8_t ADC_Channel)"
+
+.PP
+Configures the analog watchdog guarded single channel\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_Channel\fP the ADC channel to configure for the analog watchdog\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_Channel_0: ADC Channel0 selected 
+.IP "\(bu" 1
+ADC_Channel_1: ADC Channel1 selected 
+.IP "\(bu" 1
+ADC_Channel_2: ADC Channel2 selected 
+.IP "\(bu" 1
+ADC_Channel_3: ADC Channel3 selected 
+.IP "\(bu" 1
+ADC_Channel_4: ADC Channel4 selected 
+.IP "\(bu" 1
+ADC_Channel_5: ADC Channel5 selected 
+.IP "\(bu" 1
+ADC_Channel_6: ADC Channel6 selected 
+.IP "\(bu" 1
+ADC_Channel_7: ADC Channel7 selected 
+.IP "\(bu" 1
+ADC_Channel_8: ADC Channel8 selected 
+.IP "\(bu" 1
+ADC_Channel_9: ADC Channel9 selected 
+.IP "\(bu" 1
+ADC_Channel_10: ADC Channel10 selected 
+.IP "\(bu" 1
+ADC_Channel_11: ADC Channel11 selected 
+.IP "\(bu" 1
+ADC_Channel_12: ADC Channel12 selected 
+.IP "\(bu" 1
+ADC_Channel_13: ADC Channel13 selected 
+.IP "\(bu" 1
+ADC_Channel_14: ADC Channel14 selected 
+.IP "\(bu" 1
+ADC_Channel_15: ADC Channel15 selected 
+.IP "\(bu" 1
+ADC_Channel_16: ADC Channel16 selected 
+.IP "\(bu" 1
+ADC_Channel_17: ADC Channel17 selected 
+.IP "\(bu" 1
+ADC_Channel_18: ADC Channel18 selected 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_AnalogWatchdogThresholdsConfig (ADC_TypeDef * ADCx, uint16_t HighThreshold, uint16_t LowThreshold)"
+
+.PP
+Configures the high and low thresholds of the analog watchdog\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIHighThreshold\fP the ADC analog watchdog High threshold value\&. This parameter must be a 12-bit value\&. 
+.br
+\fILowThreshold\fP the ADC analog watchdog Low threshold value\&. This parameter must be a 12-bit value\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

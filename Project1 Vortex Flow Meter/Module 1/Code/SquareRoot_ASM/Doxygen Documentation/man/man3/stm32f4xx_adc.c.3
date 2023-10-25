@@ -1,0 +1,351 @@
+.TH "drivers/stm32f4xx_adc.c" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/stm32f4xx_adc.c \- This file provides firmware functions to manage the following functionalities of the Analog to Digital Convertor (ADC) peripheral:  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'stm32f4xx_adc\&.h'\fP
+.br
+\fC#include 'stm32f4xx_rcc\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCR1_DISCNUM_RESET\fP   ((uint32_t)0xFFFF1FFF)"
+.br
+.ti -1c
+.RI "#define \fBCR1_AWDCH_RESET\fP   ((uint32_t)0xFFFFFFE0)"
+.br
+.ti -1c
+.RI "#define \fBCR1_AWDMode_RESET\fP   ((uint32_t)0xFF3FFDFF)"
+.br
+.ti -1c
+.RI "#define \fBCR1_CLEAR_MASK\fP   ((uint32_t)0xFCFFFEFF)"
+.br
+.ti -1c
+.RI "#define \fBCR2_EXTEN_RESET\fP   ((uint32_t)0xCFFFFFFF)"
+.br
+.ti -1c
+.RI "#define \fBCR2_JEXTEN_RESET\fP   ((uint32_t)0xFFCFFFFF)"
+.br
+.ti -1c
+.RI "#define \fBCR2_JEXTSEL_RESET\fP   ((uint32_t)0xFFF0FFFF)"
+.br
+.ti -1c
+.RI "#define \fBCR2_CLEAR_MASK\fP   ((uint32_t)0xC0FFF7FD)"
+.br
+.ti -1c
+.RI "#define \fBSQR3_SQ_SET\fP   ((uint32_t)0x0000001F)"
+.br
+.ti -1c
+.RI "#define \fBSQR2_SQ_SET\fP   ((uint32_t)0x0000001F)"
+.br
+.ti -1c
+.RI "#define \fBSQR1_SQ_SET\fP   ((uint32_t)0x0000001F)"
+.br
+.ti -1c
+.RI "#define \fBSQR1_L_RESET\fP   ((uint32_t)0xFF0FFFFF)"
+.br
+.ti -1c
+.RI "#define \fBJSQR_JSQ_SET\fP   ((uint32_t)0x0000001F)"
+.br
+.ti -1c
+.RI "#define \fBJSQR_JL_SET\fP   ((uint32_t)0x00300000)"
+.br
+.ti -1c
+.RI "#define \fBJSQR_JL_RESET\fP   ((uint32_t)0xFFCFFFFF)"
+.br
+.ti -1c
+.RI "#define \fBSMPR1_SMP_SET\fP   ((uint32_t)0x00000007)"
+.br
+.ti -1c
+.RI "#define \fBSMPR2_SMP_SET\fP   ((uint32_t)0x00000007)"
+.br
+.ti -1c
+.RI "#define \fBJDR_OFFSET\fP   ((uint8_t)0x28)"
+.br
+.ti -1c
+.RI "#define \fBCDR_ADDRESS\fP   ((uint32_t)0x40012308)"
+.br
+.ti -1c
+.RI "#define \fBCR_CLEAR_MASK\fP   ((uint32_t)0xFFFC30E0)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBADC_DeInit\fP (void)"
+.br
+.RI "Deinitializes all ADCs peripherals registers to their default reset values\&. "
+.ti -1c
+.RI "void \fBADC_Init\fP (ADC_TypeDef *ADCx, \fBADC_InitTypeDef\fP *ADC_InitStruct)"
+.br
+.RI "Initializes the ADCx peripheral according to the specified parameters in the ADC_InitStruct\&. "
+.ti -1c
+.RI "void \fBADC_StructInit\fP (\fBADC_InitTypeDef\fP *ADC_InitStruct)"
+.br
+.RI "Fills each ADC_InitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBADC_CommonInit\fP (\fBADC_CommonInitTypeDef\fP *ADC_CommonInitStruct)"
+.br
+.RI "Initializes the ADCs peripherals according to the specified parameters in the ADC_CommonInitStruct\&. "
+.ti -1c
+.RI "void \fBADC_CommonStructInit\fP (\fBADC_CommonInitTypeDef\fP *ADC_CommonInitStruct)"
+.br
+.RI "Fills each ADC_CommonInitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBADC_Cmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified ADC peripheral\&. "
+.ti -1c
+.RI "void \fBADC_AnalogWatchdogCmd\fP (ADC_TypeDef *ADCx, uint32_t ADC_AnalogWatchdog)"
+.br
+.RI "Enables or disables the analog watchdog on single/all regular or injected channels\&. "
+.ti -1c
+.RI "void \fBADC_AnalogWatchdogThresholdsConfig\fP (ADC_TypeDef *ADCx, uint16_t HighThreshold, uint16_t LowThreshold)"
+.br
+.RI "Configures the high and low thresholds of the analog watchdog\&. "
+.ti -1c
+.RI "void \fBADC_AnalogWatchdogSingleChannelConfig\fP (ADC_TypeDef *ADCx, uint8_t ADC_Channel)"
+.br
+.RI "Configures the analog watchdog guarded single channel\&. "
+.ti -1c
+.RI "void \fBADC_TempSensorVrefintCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the temperature sensor and Vrefint channels\&. "
+.ti -1c
+.RI "void \fBADC_VBATCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the VBAT (Voltage Battery) channel\&. "
+.ti -1c
+.RI "void \fBADC_RegularChannelConfig\fP (ADC_TypeDef *ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime)"
+.br
+.RI "Configures for the selected ADC regular channel its corresponding rank in the sequencer and its sample time\&. "
+.ti -1c
+.RI "void \fBADC_SoftwareStartConv\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Enables the selected ADC software start conversion of the regular channels\&. "
+.ti -1c
+.RI "FlagStatus \fBADC_GetSoftwareStartConvStatus\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Gets the selected ADC Software start regular conversion Status\&. "
+.ti -1c
+.RI "void \fBADC_EOCOnEachRegularChannelCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the EOC on each regular channel conversion\&. "
+.ti -1c
+.RI "void \fBADC_ContinuousModeCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the ADC continuous conversion mode\&. "
+.ti -1c
+.RI "void \fBADC_DiscModeChannelCountConfig\fP (ADC_TypeDef *ADCx, uint8_t Number)"
+.br
+.RI "Configures the discontinuous mode for the selected ADC regular group channel\&. "
+.ti -1c
+.RI "void \fBADC_DiscModeCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the discontinuous mode on regular group channel for the specified ADC\&. "
+.ti -1c
+.RI "uint16_t \fBADC_GetConversionValue\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Returns the last ADCx conversion result data for regular channel\&. "
+.ti -1c
+.RI "uint32_t \fBADC_GetMultiModeConversionValue\fP (void)"
+.br
+.RI "Returns the last ADC1, ADC2 and ADC3 regular conversions results data in the selected multi mode\&. "
+.ti -1c
+.RI "void \fBADC_DMACmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified ADC DMA request\&. "
+.ti -1c
+.RI "void \fBADC_DMARequestAfterLastTransferCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the ADC DMA request after last transfer (Single-ADC mode) 
+.br
+ "
+.ti -1c
+.RI "void \fBADC_MultiModeDMARequestAfterLastTransferCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the ADC DMA request after last transfer in multi ADC mode 
+.br
+ "
+.ti -1c
+.RI "void \fBADC_InjectedChannelConfig\fP (ADC_TypeDef *ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime)"
+.br
+.RI "Configures for the selected ADC injected channel its corresponding rank in the sequencer and its sample time\&. "
+.ti -1c
+.RI "void \fBADC_InjectedSequencerLengthConfig\fP (ADC_TypeDef *ADCx, uint8_t Length)"
+.br
+.RI "Configures the sequencer length for injected channels\&. "
+.ti -1c
+.RI "void \fBADC_SetInjectedOffset\fP (ADC_TypeDef *ADCx, uint8_t ADC_InjectedChannel, uint16_t Offset)"
+.br
+.RI "Set the injected channels conversion value offset\&. "
+.ti -1c
+.RI "void \fBADC_ExternalTrigInjectedConvConfig\fP (ADC_TypeDef *ADCx, uint32_t ADC_ExternalTrigInjecConv)"
+.br
+.RI "Configures the ADCx external trigger for injected channels conversion\&. "
+.ti -1c
+.RI "void \fBADC_ExternalTrigInjectedConvEdgeConfig\fP (ADC_TypeDef *ADCx, uint32_t ADC_ExternalTrigInjecConvEdge)"
+.br
+.RI "Configures the ADCx external trigger edge for injected channels conversion\&. "
+.ti -1c
+.RI "void \fBADC_SoftwareStartInjectedConv\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Enables the selected ADC software start conversion of the injected channels\&. "
+.ti -1c
+.RI "FlagStatus \fBADC_GetSoftwareStartInjectedConvCmdStatus\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Gets the selected ADC Software start injected conversion Status\&. "
+.ti -1c
+.RI "void \fBADC_AutoInjectedConvCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the selected ADC automatic injected group conversion after regular one\&. "
+.ti -1c
+.RI "void \fBADC_InjectedDiscModeCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the discontinuous mode for injected group channel for the specified ADC\&. "
+.ti -1c
+.RI "uint16_t \fBADC_GetInjectedConversionValue\fP (ADC_TypeDef *ADCx, uint8_t ADC_InjectedChannel)"
+.br
+.RI "Returns the ADC injected channel conversion result\&. "
+.ti -1c
+.RI "void \fBADC_ITConfig\fP (ADC_TypeDef *ADCx, uint16_t ADC_IT, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified ADC interrupts\&. "
+.ti -1c
+.RI "FlagStatus \fBADC_GetFlagStatus\fP (ADC_TypeDef *ADCx, uint8_t ADC_FLAG)"
+.br
+.RI "Checks whether the specified ADC flag is set or not\&. "
+.ti -1c
+.RI "void \fBADC_ClearFlag\fP (ADC_TypeDef *ADCx, uint8_t ADC_FLAG)"
+.br
+.RI "Clears the ADCx's pending flags\&. "
+.ti -1c
+.RI "ITStatus \fBADC_GetITStatus\fP (ADC_TypeDef *ADCx, uint16_t ADC_IT)"
+.br
+.RI "Checks whether the specified ADC interrupt has occurred or not\&. "
+.ti -1c
+.RI "void \fBADC_ClearITPendingBit\fP (ADC_TypeDef *ADCx, uint16_t ADC_IT)"
+.br
+.RI "Clears the ADCx's interrupt pending bits\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file provides firmware functions to manage the following functionalities of the Analog to Digital Convertor (ADC) peripheral: 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+MCD Application Team 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+V1\&.0\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+30-September-2011
+.IP "\(bu" 2
+Initialization and Configuration (in addition to ADC multi mode selection)
+.IP "\(bu" 2
+Analog Watchdog configuration
+.IP "\(bu" 2
+Temperature Sensor & Vrefint (Voltage Reference internal) & VBAT management
+.IP "\(bu" 2
+Regular Channels Configuration
+.IP "\(bu" 2
+Regular Channels DMA Configuration
+.IP "\(bu" 2
+Injected channels Configuration
+.IP "\(bu" 2
+Interrupts and flags management
+.PP
+.RE
+.PP
+.PP
+.nf
+*
+*          ===================================================================
+*                                   How to use this driver
+*          ===================================================================
+
+*          1\&.  Enable the ADC interface clock using 
+*                  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADCx, ENABLE); 
+*     
+*          2\&. ADC pins configuration
+*               - Enable the clock for the ADC GPIOs using the following function:
+*                   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOx, ENABLE);   
+*                - Configure these ADC pins in analog mode using GPIO_Init();  
+*
+*          3\&. Configure the ADC Prescaler, conversion resolution and data 
+*              alignment using the ADC_Init() function\&.
+*          4\&. Activate the ADC peripheral using ADC_Cmd() function\&.
+*
+*          Regular channels group configuration
+*          ====================================    
+*            - To configure the ADC regular channels group features, use 
+*              ADC_Init() and ADC_RegularChannelConfig() functions\&.
+*            - To activate the continuous mode, use the ADC_continuousModeCmd()
+*              function\&.
+*            - To configurate and activate the Discontinuous mode, use the 
+*              ADC_DiscModeChannelCountConfig() and ADC_DiscModeCmd() functions\&.
+*            - To read the ADC converted values, use the ADC_GetConversionValue()
+*              function\&.
+*
+*          Multi mode ADCs Regular channels configuration
+*          ===============================================
+*            - Refer to 'Regular channels group configuration' description to
+*              configure the ADC1, ADC2 and ADC3 regular channels\&.        
+*            - Select the Multi mode ADC regular channels features (dual or 
+*              triple mode) using ADC_CommonInit() function and configure 
+*              the DMA mode using ADC_MultiModeDMARequestAfterLastTransferCmd() 
+*              functions\&.        
+*            - Read the ADCs converted values using the 
+*              ADC_GetMultiModeConversionValue() function\&.
+*
+*          DMA for Regular channels group features configuration
+*          ====================================================== 
+*           - To enable the DMA mode for regular channels group, use the 
+*             ADC_DMACmd() function\&.
+*           - To enable the generation of DMA requests continuously at the end
+*             of the last DMA transfer, use the ADC_DMARequestAfterLastTransferCmd() 
+*             function\&.
+*
+*          Injected channels group configuration
+*          =====================================    
+*            - To configure the ADC Injected channels group features, use 
+*              ADC_InjectedChannelConfig() and  ADC_InjectedSequencerLengthConfig()
+*              functions\&.
+*            - To activate the continuous mode, use the ADC_continuousModeCmd()
+*              function\&.
+*            - To activate the Injected Discontinuous mode, use the 
+*              ADC_InjectedDiscModeCmd() function\&.  
+*            - To activate the AutoInjected mode, use the ADC_AutoInjectedConvCmd() 
+*              function\&.        
+*            - To read the ADC converted values, use the ADC_GetInjectedConversionValue() 
+*              function\&.
+*
+*  .fi
+.PP
+.PP
+\fBAttention\fP
+.RS 4
+.RE
+.PP
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME\&. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS\&.
+.PP
+.SS "(C) COPYRIGHT 2011 STMicroelectronics"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

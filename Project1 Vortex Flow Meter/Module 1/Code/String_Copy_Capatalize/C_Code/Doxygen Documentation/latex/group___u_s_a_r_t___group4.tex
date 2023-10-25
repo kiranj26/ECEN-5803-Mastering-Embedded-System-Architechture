@@ -1,0 +1,126 @@
+\doxysubsubsubsection{LIN mode functions}
+\label{group___u_s_a_r_t___group4}\index{LIN mode functions@{LIN mode functions}}
+
+
+LIN mode functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ USART\+\_\+\+LINBreak\+Detect\+Length\+Config} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+LINBreak\+Detect\+Length)
+\begin{DoxyCompactList}\small\item\em Sets the USART LIN Break detection length. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+LINCmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s LIN mode. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Send\+Break} (USART\+\_\+\+Type\+Def $\ast$USARTx)
+\begin{DoxyCompactList}\small\item\em Transmits break characters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+LIN mode functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                                LIN mode functions
+ ===============================================================================  
+
+  This subsection provides a set of functions allowing to manage the USART LIN 
+  Mode communication.
+  
+  In LIN mode, 8-bit data format with 1 stop bit is required in accordance with 
+  the LIN standard.
+
+  Only this LIN Feature is supported by the USART IP:
+    - LIN Master Synchronous Break send capability and LIN slave break detection
+      capability :  13-bit break generation and 10/11 bit break detection
+
+
+  USART LIN Master transmitter communication is possible through the following procedure:
+     1. Program the Baud rate, Word length = 8bits, Stop bits = 1bit, Parity, 
+        Mode transmitter or Mode receiver and hardware flow control values using 
+        the USART_Init() function.
+     2. Enable the USART using the USART_Cmd() function.
+     3. Enable the LIN mode using the USART_LINCmd() function.
+     4. Send the break character using USART_SendBreak() function.
+
+  USART LIN Master receiver communication is possible through the following procedure:
+     1. Program the Baud rate, Word length = 8bits, Stop bits = 1bit, Parity, 
+        Mode transmitter or Mode receiver and hardware flow control values using 
+        the USART_Init() function.
+     2. Enable the USART using the USART_Cmd() function.
+     3. Configures the break detection length using the USART_LINBreakDetectLengthConfig()
+        function.
+     4. Enable the LIN mode using the USART_LINCmd() function.
+
+
+@note In LIN mode, the following bits must be kept cleared:
+        - CLKEN in the USART_CR2 register,
+        - STOP[1:0], SCEN, HDSEL and IREN in the USART_CR3 register.\end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\label{group___u_s_a_r_t___group4_ga7bc2d291831cbc5e53e73337308029b5} 
+\index{LIN mode functions@{LIN mode functions}!USART\_LINBreakDetectLengthConfig@{USART\_LINBreakDetectLengthConfig}}
+\index{USART\_LINBreakDetectLengthConfig@{USART\_LINBreakDetectLengthConfig}!LIN mode functions@{LIN mode functions}}
+\doxysubsubsubsubsubsection{USART\_LINBreakDetectLengthConfig()}
+{\footnotesize\ttfamily void USART\+\_\+\+LINBreak\+Detect\+Length\+Config (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def $\ast$}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+LINBreak\+Detect\+Length }\end{DoxyParamCaption})}
+
+
+
+Sets the USART LIN Break detection length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em USART\+\_\+\+LINBreak\+Detect\+Length} & specifies the LIN break detection length. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+LINBreak\+Detect\+Length\+\_\+10b\+: 10-\/bit break detection \item USART\+\_\+\+LINBreak\+Detect\+Length\+\_\+11b\+: 11-\/bit break detection \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___u_s_a_r_t___group4_ga9fdd6296f4ca4acdfcbd58bf56bd4185} 
+\index{LIN mode functions@{LIN mode functions}!USART\_LINCmd@{USART\_LINCmd}}
+\index{USART\_LINCmd@{USART\_LINCmd}!LIN mode functions@{LIN mode functions}}
+\doxysubsubsubsubsubsection{USART\_LINCmd()}
+{\footnotesize\ttfamily void USART\+\_\+\+LINCmd (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def $\ast$}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the USART\textquotesingle{}s LIN mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em New\+State} & new state of the USART LIN mode. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___u_s_a_r_t___group4_ga39a3d33e23ee28529fa8f7259ce6811e} 
+\index{LIN mode functions@{LIN mode functions}!USART\_SendBreak@{USART\_SendBreak}}
+\index{USART\_SendBreak@{USART\_SendBreak}!LIN mode functions@{LIN mode functions}}
+\doxysubsubsubsubsubsection{USART\_SendBreak()}
+{\footnotesize\ttfamily void USART\+\_\+\+Send\+Break (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def $\ast$}]{USARTx }\end{DoxyParamCaption})}
+
+
+
+Transmits break characters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

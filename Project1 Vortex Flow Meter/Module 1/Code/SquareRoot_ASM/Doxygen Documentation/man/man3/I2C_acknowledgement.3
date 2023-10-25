@@ -1,0 +1,40 @@
+.TH "I2C_acknowledgement" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_acknowledgement \- I2C_acknowledgement
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBI2C_Ack_Enable\fP   ((uint16_t)0x0400)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Ack_Disable\fP   ((uint16_t)0x0000)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_ACK_STATE\fP(STATE)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define I2C_Ack_Disable   ((uint16_t)0x0000)"
+
+.SS "#define I2C_Ack_Enable   ((uint16_t)0x0400)"
+
+.SS "#define IS_I2C_ACK_STATE(STATE)"
+\fBValue:\fP.PP
+.nf
+                                 (((STATE) == I2C_Ack_Enable) || \\
+                                 ((STATE) == I2C_Ack_Disable))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

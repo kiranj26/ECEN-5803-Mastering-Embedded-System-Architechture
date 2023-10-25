@@ -1,0 +1,140 @@
+.TH "RCC_APB1_Peripherals" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCC_APB1_Peripherals \- RCC_APB1_Peripherals
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_TIM2\fP   ((uint32_t)0x00000001)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_TIM3\fP   ((uint32_t)0x00000002)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_TIM4\fP   ((uint32_t)0x00000004)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_TIM5\fP   ((uint32_t)0x00000008)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_TIM6\fP   ((uint32_t)0x00000010)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_TIM7\fP   ((uint32_t)0x00000020)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_TIM12\fP   ((uint32_t)0x00000040)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_TIM13\fP   ((uint32_t)0x00000080)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_TIM14\fP   ((uint32_t)0x00000100)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_WWDG\fP   ((uint32_t)0x00000800)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_SPI2\fP   ((uint32_t)0x00004000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_SPI3\fP   ((uint32_t)0x00008000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_USART2\fP   ((uint32_t)0x00020000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_USART3\fP   ((uint32_t)0x00040000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_UART4\fP   ((uint32_t)0x00080000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_UART5\fP   ((uint32_t)0x00100000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_I2C1\fP   ((uint32_t)0x00200000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_I2C2\fP   ((uint32_t)0x00400000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_I2C3\fP   ((uint32_t)0x00800000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_CAN1\fP   ((uint32_t)0x02000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_CAN2\fP   ((uint32_t)0x04000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_PWR\fP   ((uint32_t)0x10000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_APB1Periph_DAC\fP   ((uint32_t)0x20000000)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_APB1_PERIPH\fP(PERIPH)   ((((PERIPH) & 0xC9013600) == 0x00) && ((PERIPH) != 0x00))"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_RCC_APB1_PERIPH(PERIPH)   ((((PERIPH) & 0xC9013600) == 0x00) && ((PERIPH) != 0x00))"
+
+.SS "#define RCC_APB1Periph_CAN1   ((uint32_t)0x02000000)"
+
+.SS "#define RCC_APB1Periph_CAN2   ((uint32_t)0x04000000)"
+
+.SS "#define RCC_APB1Periph_DAC   ((uint32_t)0x20000000)"
+
+.SS "#define RCC_APB1Periph_I2C1   ((uint32_t)0x00200000)"
+
+.SS "#define RCC_APB1Periph_I2C2   ((uint32_t)0x00400000)"
+
+.SS "#define RCC_APB1Periph_I2C3   ((uint32_t)0x00800000)"
+
+.SS "#define RCC_APB1Periph_PWR   ((uint32_t)0x10000000)"
+
+.SS "#define RCC_APB1Periph_SPI2   ((uint32_t)0x00004000)"
+
+.SS "#define RCC_APB1Periph_SPI3   ((uint32_t)0x00008000)"
+
+.SS "#define RCC_APB1Periph_TIM12   ((uint32_t)0x00000040)"
+
+.SS "#define RCC_APB1Periph_TIM13   ((uint32_t)0x00000080)"
+
+.SS "#define RCC_APB1Periph_TIM14   ((uint32_t)0x00000100)"
+
+.SS "#define RCC_APB1Periph_TIM2   ((uint32_t)0x00000001)"
+
+.SS "#define RCC_APB1Periph_TIM3   ((uint32_t)0x00000002)"
+
+.SS "#define RCC_APB1Periph_TIM4   ((uint32_t)0x00000004)"
+
+.SS "#define RCC_APB1Periph_TIM5   ((uint32_t)0x00000008)"
+
+.SS "#define RCC_APB1Periph_TIM6   ((uint32_t)0x00000010)"
+
+.SS "#define RCC_APB1Periph_TIM7   ((uint32_t)0x00000020)"
+
+.SS "#define RCC_APB1Periph_UART4   ((uint32_t)0x00080000)"
+
+.SS "#define RCC_APB1Periph_UART5   ((uint32_t)0x00100000)"
+
+.SS "#define RCC_APB1Periph_USART2   ((uint32_t)0x00020000)"
+
+.SS "#define RCC_APB1Periph_USART3   ((uint32_t)0x00040000)"
+
+.SS "#define RCC_APB1Periph_WWDG   ((uint32_t)0x00000800)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

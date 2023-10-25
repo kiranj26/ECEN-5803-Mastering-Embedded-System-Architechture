@@ -1,0 +1,213 @@
+.TH "I2C_Events" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_Events \- I2C_Events
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_MODE_SELECT\fP   ((uint32_t)0x00030001)  /* BUSY, MSL and SB flag */"
+.br
+.RI "Communication start\&. "
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED\fP   ((uint32_t)0x00070082)  /* BUSY, MSL, ADDR, TXE and TRA flags */"
+.br
+.RI "Address Acknowledge\&. "
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_RECEIVER_MODE_SELECTED\fP   ((uint32_t)0x00030002)  /* BUSY, MSL and ADDR flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_MODE_ADDRESS10\fP   ((uint32_t)0x00030008)  /* BUSY, MSL and ADD10 flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_BYTE_RECEIVED\fP   ((uint32_t)0x00030040)  /* BUSY, MSL and RXNE flags */"
+.br
+.RI "Communication events\&. "
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_BYTE_TRANSMITTING\fP   ((uint32_t)0x00070080) /* TRA, BUSY, MSL, TXE flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_BYTE_TRANSMITTED\fP   ((uint32_t)0x00070084)  /* TRA, BUSY, MSL, TXE and BTF flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_RECEIVER_ADDRESS_MATCHED\fP   ((uint32_t)0x00020002) /* BUSY and ADDR flags */"
+.br
+.RI "Communication start events\&. "
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_TRANSMITTER_ADDRESS_MATCHED\fP   ((uint32_t)0x00060082) /* TRA, BUSY, TXE and ADDR flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_RECEIVER_SECONDADDRESS_MATCHED\fP   ((uint32_t)0x00820000)  /* DUALF and BUSY flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_TRANSMITTER_SECONDADDRESS_MATCHED\fP   ((uint32_t)0x00860080)  /* DUALF, TRA, BUSY and TXE flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_GENERALCALLADDRESS_MATCHED\fP   ((uint32_t)0x00120000)  /* GENCALL and BUSY flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_BYTE_RECEIVED\fP   ((uint32_t)0x00020040)  /* BUSY and RXNE flags */"
+.br
+.RI "Communication events\&. "
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_STOP_DETECTED\fP   ((uint32_t)0x00000010)  /* STOPF flag */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_BYTE_TRANSMITTED\fP   ((uint32_t)0x00060084)  /* TRA, BUSY, TXE and BTF flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_BYTE_TRANSMITTING\fP   ((uint32_t)0x00060080)  /* TRA, BUSY and TXE flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_ACK_FAILURE\fP   ((uint32_t)0x00000400)  /* AF flag */"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_EVENT\fP(EVENT)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define I2C_EVENT_MASTER_BYTE_RECEIVED   ((uint32_t)0x00030040)  /* BUSY, MSL and RXNE flags */"
+
+.PP
+Communication events\&. If a communication is established (START condition generated and slave address acknowledged) then the master has to check on one of the following events for communication procedures:
+.PP
+1) Master Receiver mode: The master has to wait on the event EV7 then to read the data received from the slave (\fBI2C_ReceiveData()\fP function)\&.
+.PP
+2) Master Transmitter mode: The master has to send data (\fBI2C_SendData()\fP function) then to wait on event EV8 or EV8_2\&. These two events are similar:
+.IP "\(bu" 2
+EV8 means that the data has been written in the data register and is being shifted out\&.
+.IP "\(bu" 2
+EV8_2 means that the data has been physically shifted out and output on the bus\&. In most cases, using EV8 is sufficient for the application\&. Using EV8_2 leads to a slower communication but ensure more reliable test\&. EV8_2 is also more suitable than EV8 for testing on the last data transmission (before Stop condition generation)\&.
+.PP
+.PP
+\fBNote\fP
+.RS 4
+In case the user software does not guarantee that this event EV7 is managed before the current byte end of transfer, then user may check on EV7 and BTF flag at the same time (ie\&. (I2C_EVENT_MASTER_BYTE_RECEIVED | I2C_FLAG_BTF))\&. In this case the communication may be slower\&. 
+.RE
+.PP
+
+.SS "#define I2C_EVENT_MASTER_BYTE_TRANSMITTED   ((uint32_t)0x00070084)  /* TRA, BUSY, MSL, TXE and BTF flags */"
+
+.SS "#define I2C_EVENT_MASTER_BYTE_TRANSMITTING   ((uint32_t)0x00070080) /* TRA, BUSY, MSL, TXE flags */"
+
+.SS "#define I2C_EVENT_MASTER_MODE_ADDRESS10   ((uint32_t)0x00030008)  /* BUSY, MSL and ADD10 flags */"
+
+.SS "#define I2C_EVENT_MASTER_MODE_SELECT   ((uint32_t)0x00030001)  /* BUSY, MSL and SB flag */"
+
+.PP
+Communication start\&. 
+.PP
+ 
+.SH "I2C Master Events (Events grouped in order of communication)"
+.PP
+After sending the START condition (\fBI2C_GenerateSTART()\fP function) the master has to wait for this event\&. It means that the Start condition has been correctly released on the I2C bus (the bus is free, no other devices is communicating)\&. 
+.SS "#define I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED   ((uint32_t)0x00030002)  /* BUSY, MSL and ADDR flags */"
+
+.SS "#define I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED   ((uint32_t)0x00070082)  /* BUSY, MSL, ADDR, TXE and TRA flags */"
+
+.PP
+Address Acknowledge\&. After checking on EV5 (start condition correctly released on the bus), the master sends the address of the slave(s) with which it will communicate (\fBI2C_Send7bitAddress()\fP function, it also determines the direction of the communication: Master transmitter or Receiver)\&. Then the master has to wait that a slave acknowledges his address\&. If an acknowledge is sent on the bus, one of the following events will be set:
+.PP
+1) In case of Master Receiver (7-bit addressing): the I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED event is set\&.
+.PP
+2) In case of Master Transmitter (7-bit addressing): the I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED is set
+.PP
+3) In case of 10-Bit addressing mode, the master (just after generating the START and checking on EV5) has to send the header of 10-bit addressing mode (\fBI2C_SendData()\fP function)\&. Then master should wait on EV9\&. It means that the 10-bit addressing header has been correctly sent on the bus\&. Then master should send the second part of the 10-bit address (LSB) using the function \fBI2C_Send7bitAddress()\fP\&. Then master should wait for event EV6\&. 
+.SS "#define I2C_EVENT_SLAVE_ACK_FAILURE   ((uint32_t)0x00000400)  /* AF flag */"
+
+.SS "#define I2C_EVENT_SLAVE_BYTE_RECEIVED   ((uint32_t)0x00020040)  /* BUSY and RXNE flags */"
+
+.PP
+Communication events\&. Wait on one of these events when EV1 has already been checked and:
+.PP
+.IP "\(bu" 2
+Slave RECEIVER mode:
+.IP "  \(bu" 4
+EV2: When the application is expecting a data byte to be received\&.
+.IP "  \(bu" 4
+EV4: When the application is expecting the end of the communication: master sends a stop condition and data transmission is stopped\&.
+.PP
+
+.IP "\(bu" 2
+Slave Transmitter mode:
+.IP "  \(bu" 4
+EV3: When a byte has been transmitted by the slave and the application is expecting the end of the byte transmission\&. The two events I2C_EVENT_SLAVE_BYTE_TRANSMITTED and I2C_EVENT_SLAVE_BYTE_TRANSMITTING are similar\&. The second one can optionally be used when the user software doesn't guarantee the EV3 is managed before the current byte end of transfer\&.
+.IP "  \(bu" 4
+EV3_2: When the master sends a NACK in order to tell slave that data transmission shall end (before sending the STOP condition)\&. In this case slave has to stop sending data bytes and expect a Stop condition on the bus\&.
+.PP
+.PP
+\fBNote\fP
+.RS 4
+In case the user software does not guarantee that the event EV2 is managed before the current byte end of transfer, then user may check on EV2 and BTF flag at the same time (ie\&. (I2C_EVENT_SLAVE_BYTE_RECEIVED | I2C_FLAG_BTF))\&. In this case the communication may be slower\&. 
+.RE
+.PP
+
+.PP
+
+.SS "#define I2C_EVENT_SLAVE_BYTE_TRANSMITTED   ((uint32_t)0x00060084)  /* TRA, BUSY, TXE and BTF flags */"
+
+.SS "#define I2C_EVENT_SLAVE_BYTE_TRANSMITTING   ((uint32_t)0x00060080)  /* TRA, BUSY and TXE flags */"
+
+.SS "#define I2C_EVENT_SLAVE_GENERALCALLADDRESS_MATCHED   ((uint32_t)0x00120000)  /* GENCALL and BUSY flags */"
+
+.SS "#define I2C_EVENT_SLAVE_RECEIVER_ADDRESS_MATCHED   ((uint32_t)0x00020002) /* BUSY and ADDR flags */"
+
+.PP
+Communication start events\&. 
+.PP
+ 
+.SH "I2C Slave Events (Events grouped in order of communication)"
+.PP
+Wait on one of these events at the start of the communication\&. It means that the I2C peripheral detected a Start condition on the bus (generated by master device) followed by the peripheral address\&. The peripheral generates an ACK condition on the bus (if the acknowledge feature is enabled through function \fBI2C_AcknowledgeConfig()\fP) and the events listed above are set :
+.PP
+1) In normal case (only one address managed by the slave), when the address sent by the master matches the own address of the peripheral (configured by I2C_OwnAddress1 field) the I2C_EVENT_SLAVE_XXX_ADDRESS_MATCHED event is set (where XXX could be TRANSMITTER or RECEIVER)\&.
+.PP
+2) In case the address sent by the master matches the second address of the peripheral (configured by the function \fBI2C_OwnAddress2Config()\fP and enabled by the function \fBI2C_DualAddressCmd()\fP) the events I2C_EVENT_SLAVE_XXX_SECONDADDRESS_MATCHED (where XXX could be TRANSMITTER or RECEIVER) are set\&.
+.PP
+3) In case the address sent by the master is General Call (address 0x00) and if the General Call is enabled for the peripheral (using function \fBI2C_GeneralCallCmd()\fP) the following event is set I2C_EVENT_SLAVE_GENERALCALLADDRESS_MATCHED\&. 
+.br
+ 
+.SS "#define I2C_EVENT_SLAVE_RECEIVER_SECONDADDRESS_MATCHED   ((uint32_t)0x00820000)  /* DUALF and BUSY flags */"
+
+.SS "#define I2C_EVENT_SLAVE_STOP_DETECTED   ((uint32_t)0x00000010)  /* STOPF flag */"
+
+.SS "#define I2C_EVENT_SLAVE_TRANSMITTER_ADDRESS_MATCHED   ((uint32_t)0x00060082) /* TRA, BUSY, TXE and ADDR flags */"
+
+.SS "#define I2C_EVENT_SLAVE_TRANSMITTER_SECONDADDRESS_MATCHED   ((uint32_t)0x00860080)  /* DUALF, TRA, BUSY and TXE flags */"
+
+.SS "#define IS_I2C_EVENT(EVENT)"
+\fBValue:\fP.PP
+.nf
+                             (((EVENT) == I2C_EVENT_SLAVE_TRANSMITTER_ADDRESS_MATCHED) || \\
+                             ((EVENT) == I2C_EVENT_SLAVE_RECEIVER_ADDRESS_MATCHED) || \\
+                             ((EVENT) == I2C_EVENT_SLAVE_TRANSMITTER_SECONDADDRESS_MATCHED) || \\
+                             ((EVENT) == I2C_EVENT_SLAVE_RECEIVER_SECONDADDRESS_MATCHED) || \\
+                             ((EVENT) == I2C_EVENT_SLAVE_GENERALCALLADDRESS_MATCHED) || \\
+                             ((EVENT) == I2C_EVENT_SLAVE_BYTE_RECEIVED) || \\
+                             ((EVENT) == (I2C_EVENT_SLAVE_BYTE_RECEIVED | I2C_FLAG_DUALF)) || \\
+                             ((EVENT) == (I2C_EVENT_SLAVE_BYTE_RECEIVED | I2C_FLAG_GENCALL)) || \\
+                             ((EVENT) == I2C_EVENT_SLAVE_BYTE_TRANSMITTED) || \\
+                             ((EVENT) == (I2C_EVENT_SLAVE_BYTE_TRANSMITTED | I2C_FLAG_DUALF)) || \\
+                             ((EVENT) == (I2C_EVENT_SLAVE_BYTE_TRANSMITTED | I2C_FLAG_GENCALL)) || \\
+                             ((EVENT) == I2C_EVENT_SLAVE_STOP_DETECTED) || \\
+                             ((EVENT) == I2C_EVENT_MASTER_MODE_SELECT) || \\
+                             ((EVENT) == I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED) || \\
+                             ((EVENT) == I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED) || \\
+                             ((EVENT) == I2C_EVENT_MASTER_BYTE_RECEIVED) || \\
+                             ((EVENT) == I2C_EVENT_MASTER_BYTE_TRANSMITTED) || \\
+                             ((EVENT) == I2C_EVENT_MASTER_BYTE_TRANSMITTING) || \\
+                             ((EVENT) == I2C_EVENT_MASTER_MODE_ADDRESS10) || \\
+                             ((EVENT) == I2C_EVENT_SLAVE_ACK_FAILURE))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

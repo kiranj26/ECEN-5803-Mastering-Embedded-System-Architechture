@@ -1,0 +1,171 @@
+\doxysection{drivers/stm32f4xx\+\_\+i2c.c File Reference}
+\label{stm32f4xx__i2c_8c}\index{drivers/stm32f4xx\_i2c.c@{drivers/stm32f4xx\_i2c.c}}
+
+
+This file provides firmware functions to manage the following functionalities of the Inter-\/integrated circuit (I2C)  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+i2c.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+rcc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ CR1\+\_\+\+CLEAR\+\_\+\+MASK}~((uint16\+\_\+t)0x\+FBF5)      /$\ast$$<$! I2C registers Masks $\ast$/
+\item 
+\#define \textbf{ FLAG\+\_\+\+MASK}~((uint32\+\_\+t)0x00\+FFFFFF)  /$\ast$$<$! I2C FLAG mask $\ast$/
+\item 
+\#define \textbf{ ITEN\+\_\+\+MASK}~((uint32\+\_\+t)0x07000000)  /$\ast$$<$! I2C Interrupt Enable mask $\ast$/
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ I2\+C\+\_\+\+De\+Init} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Deinitialize the I2\+Cx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Init} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, \textbf{ I2\+C\+\_\+\+Init\+Type\+Def} $\ast$I2\+C\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the I2\+Cx peripheral according to the specified parameters in the I2\+C\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Struct\+Init} (\textbf{ I2\+C\+\_\+\+Init\+Type\+Def} $\ast$I2\+C\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each I2\+C\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C peripheral. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Generate\+START} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Generates I2\+Cx communication START condition. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Generate\+STOP} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Generates I2\+Cx communication STOP condition. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Send7bit\+Address} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint8\+\_\+t Address, uint8\+\_\+t I2\+C\+\_\+\+Direction)
+\begin{DoxyCompactList}\small\item\em Transmits the address byte to select the slave device. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Acknowledge\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C acknowledge feature. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Own\+Address2\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint8\+\_\+t Address)
+\begin{DoxyCompactList}\small\item\em Configures the specified I2C own address2. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Dual\+Address\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C dual addressing mode. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+General\+Call\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C general call feature. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Software\+Reset\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C software reset. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Stretch\+Clock\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C Clock stretching. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Fast\+Mode\+Duty\+Cycle\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+Duty\+Cycle)
+\begin{DoxyCompactList}\small\item\em Selects the specified I2C fast mode duty cycle. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+NACKPosition\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+NACKPosition)
+\begin{DoxyCompactList}\small\item\em Selects the specified I2C NACK position in master receiver mode. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+SMBus\+Alert\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+SMBus\+Alert)
+\begin{DoxyCompactList}\small\item\em Drives the SMBus\+Alert pin high or low for the specified I2C. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+ARPCmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C ARP. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Send\+Data} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint8\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Sends a data byte through the I2\+Cx peripheral. \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ I2\+C\+\_\+\+Receive\+Data} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the I2\+Cx peripheral. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Transmit\+PEC} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C PEC transfer. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+PECPosition\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+PECPosition)
+\begin{DoxyCompactList}\small\item\em Selects the specified I2C PEC position. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Calculate\+PEC} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the PEC value calculation of the transferred bytes. \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ I2\+C\+\_\+\+Get\+PEC} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Returns the PEC value for the specified I2C. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+DMACmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C DMA requests. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+DMALast\+Transfer\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Specifies that the next DMA transfer is the last one. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ I2\+C\+\_\+\+Read\+Register} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint8\+\_\+t I2\+C\+\_\+\+Register)
+\begin{DoxyCompactList}\small\item\em Reads the specified I2C register and returns its value. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+ITConfig} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C interrupts. \end{DoxyCompactList}\item 
+Error\+Status \textbf{ I2\+C\+\_\+\+Check\+Event} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+EVENT)
+\begin{DoxyCompactList}\small\item\em Checks whether the last I2\+Cx Event is equal to the one passed as parameter. \end{DoxyCompactList}\item 
+uint32\+\_\+t \textbf{ I2\+C\+\_\+\+Get\+Last\+Event} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Returns the last I2\+Cx Event. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ I2\+C\+\_\+\+Get\+Flag\+Status} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified I2C flag is set or not. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Clear\+Flag} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the I2\+Cx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \textbf{ I2\+C\+\_\+\+Get\+ITStatus} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified I2C interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Clear\+ITPending\+Bit} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the I2\+Cx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides firmware functions to manage the following functionalities of the Inter-\/integrated circuit (I2C) 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30-\/September-\/2011
+\begin{DoxyItemize}
+\item Initialization and Configuration
+\item Data transfers
+\item PEC management
+\item DMA transfers management
+\item Interrupts, events and flags management
+\end{DoxyItemize}
+\end{DoxyDate}
+\begin{DoxyVerb}*    
+*          ===================================================================
+*                                 How to use this driver
+*          ===================================================================
+*          1. Enable peripheral clock using RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2Cx, ENABLE)
+*             function for I2C1, I2C2 or I2C3.
+*
+*          2. Enable SDA, SCL  and SMBA (when used) GPIO clocks using 
+*             RCC_AHBPeriphClockCmd() function. 
+*
+*          3. Peripherals alternate function: 
+*                 - Connect the pin to the desired peripherals' Alternate 
+*                   Function (AF) using GPIO_PinAFConfig() function
+*                 - Configure the desired pin in alternate function by:
+*                   GPIO_InitStruct->GPIO_Mode = GPIO_Mode_AF
+*                 - Select the type, pull-up/pull-down and output speed via 
+*                   GPIO_PuPd, GPIO_OType and GPIO_Speed members
+*                 - Call GPIO_Init() function
+*                 Recommended configuration is Push-Pull, Pull-up, Open-Drain.
+*                 Add an external pull up if necessary (typically 4.7 KOhm).      
+*        
+*          4. Program the Mode, duty cycle , Own address, Ack, Speed and Acknowledged
+*             Address using the I2C_Init() function.
+*
+*          5. Optionally you can enable/configure the following parameters without
+*             re-initialization (i.e there is no need to call again I2C_Init() function):
+*              - Enable the acknowledge feature using I2C_AcknowledgeConfig() function
+*              - Enable the dual addressing mode using I2C_DualAddressCmd() function
+*              - Enable the general call using the I2C_GeneralCallCmd() function
+*              - Enable the clock stretching using I2C_StretchClockCmd() function
+*              - Enable the fast mode duty cycle using the I2C_FastModeDutyCycleConfig()
+*                function.
+*              - Configure the NACK position for Master Receiver mode in case of 
+*                2 bytes reception using the function I2C_NACKPositionConfig().  
+*              - Enable the PEC Calculation using I2C_CalculatePEC() function
+*              - For SMBus Mode: 
+*                   - Enable the Address Resolution Protocol (ARP) using I2C_ARPCmd() function
+*                   - Configure the SMBusAlert pin using I2C_SMBusAlertConfig() function
+*
+*          6. Enable the NVIC and the corresponding interrupt using the function 
+*             I2C_ITConfig() if you need to use interrupt mode. 
+*
+*          7. When using the DMA mode 
+*                   - Configure the DMA using DMA_Init() function
+*                   - Active the needed channel Request using I2C_DMACmd() or
+*                     I2C_DMALastTransferCmd() function.
+*              @note When using DMA mode, I2C interrupts may be used at the same time to
+*                    control the communication flow (Start/Stop/Ack... events and errors).
+* 
+*          8. Enable the I2C using the I2C_Cmd() function.
+* 
+*          9. Enable the DMA using the DMA_Cmd() function when using DMA mode in the 
+*             transfers. 
+*
+*  \end{DoxyVerb}
+
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

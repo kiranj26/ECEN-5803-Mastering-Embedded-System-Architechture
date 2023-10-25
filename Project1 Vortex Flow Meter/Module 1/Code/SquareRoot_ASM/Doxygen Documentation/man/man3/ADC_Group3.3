@@ -1,0 +1,95 @@
+.TH "ADC_Group3" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_Group3 \- Temperature Sensor, Vrefint (Voltage Reference internal)
+.PP
+ \- Temperature Sensor, Vrefint and VBAT management functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBADC_TempSensorVrefintCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the temperature sensor and Vrefint channels\&. "
+.ti -1c
+.RI "void \fBADC_VBATCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the VBAT (Voltage Battery) channel\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Temperature Sensor, Vrefint and VBAT management functions\&. 
+
+and VBAT (Voltage BATtery) management functions 
+.PP
+.PP
+.nf
+ ===============================================================================
+               Temperature Sensor, Vrefint and VBAT management functions
+ ===============================================================================  
+
+  This section provides functions allowing to enable/ disable the internal 
+  connections between the ADC and the Temperature Sensor, the Vrefint and the
+  Vbat sources\&.
+     
+  A typical configuration to get the Temperature sensor and Vrefint channels 
+  voltages is done following these steps :
+   1\&. Enable the internal connection of Temperature sensor and Vrefint sources 
+      with the ADC channels using ADC_TempSensorVrefintCmd() function\&. 
+   2\&. Select the ADC_Channel_TempSensor and/or ADC_Channel_Vrefint using 
+      ADC_RegularChannelConfig() or  ADC_InjectedChannelConfig() functions 
+   3\&. Get the voltage values, using ADC_GetConversionValue() or  
+      ADC_GetInjectedConversionValue()\&.
+
+  A typical configuration to get the VBAT channel voltage is done following 
+  these steps :
+   1\&. Enable the internal connection of VBAT source with the ADC channel using 
+      ADC_VBATCmd() function\&. 
+   2\&. Select the ADC_Channel_Vbat using ADC_RegularChannelConfig() or  
+      ADC_InjectedChannelConfig() functions 
+   3\&. Get the voltage value, using ADC_GetConversionValue() or  
+      ADC_GetInjectedConversionValue()\&..fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void ADC_TempSensorVrefintCmd (FunctionalState NewState)"
+
+.PP
+Enables or disables the temperature sensor and Vrefint channels\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the temperature sensor and Vrefint channels\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_VBATCmd (FunctionalState NewState)"
+
+.PP
+Enables or disables the VBAT (Voltage Battery) channel\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the VBAT channel\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

@@ -1,0 +1,606 @@
+.TH "drivers/adc.h" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/adc.h \- Internal analogue to digital converter (ADC) controller\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'stm32f4xx_adc\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_ADC_InitTypeDef\fP"
+.br
+.ti -1c
+.RI "struct \fBADC_HandleTypeDef\fP"
+.br
+.ti -1c
+.RI "struct \fBGPIO_InitTypeDef\fP"
+.br
+.RI "GPIO Init structure definition 
+.br
+ "
+.ti -1c
+.RI "struct \fBPinMap\fP"
+.br
+.ti -1c
+.RI "struct \fBanalogin_s\fP"
+.br
+.ti -1c
+.RI "struct \fBADC_ChannelConfTypeDef\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC1_BASE\fP   (APB2PERIPH_BASE + 0x2000)"
+.br
+.ti -1c
+.RI "#define \fBSTM_PIN_DATA_EXT\fP(MODE,  PUPD,  AFNUM,  CHANNEL,  INVERTED)   ((int)(((INVERTED & 0x01) << 15) | ((CHANNEL & 0x0F) << 11) | ((AFNUM & 0x0F) << 7) | ((PUPD & 0x07) << 4) | ((MODE & 0x0F) << 0)))"
+.br
+.ti -1c
+.RI "#define \fBSTM_MODE_ANALOG\fP   (5)"
+.br
+.ti -1c
+.RI "#define \fBSTM_PIN_CHANNEL\fP(X)   (((X) >> 11) & 0x0F)"
+.br
+.ti -1c
+.RI "#define \fBSTM_PIN_MODE\fP(X)   (((X) >> 0) & 0x0F)"
+.br
+.ti -1c
+.RI "#define \fBSTM_PIN_PUPD\fP(X)   (((X) >> 4) & 0x07)"
+.br
+.ti -1c
+.RI "#define \fBSTM_PIN_AFNUM\fP(X)   (((X) >> 7) & 0x0F)"
+.br
+.ti -1c
+.RI "#define \fBSTM_PORT\fP(X)   (((uint32_t)(X) >> 4) & 0xF)"
+.br
+.ti -1c
+.RI "#define \fBSTM_PIN\fP(X)   ((uint32_t)(X) & 0xF)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_NOPULL\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PULLUP\fP   ((uint32_t)0x00000001)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PULLDOWN\fP   ((uint32_t)0x00000002)"
+.br
+.ti -1c
+.RI "#define \fBUNUSED\fP(x)   ((void)(x))"
+.br
+.ti -1c
+.RI "#define \fBGPIOA_BASE\fP   (AHB1PERIPH_BASE + 0x0000)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_SPEED_LOW\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_SPEED_MEDIUM\fP   ((uint32_t)0x00000001)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_SPEED_FAST\fP   ((uint32_t)0x00000002)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_SPEED_HIGH\fP   ((uint32_t)0x00000003)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_MODE\fP   ((uint32_t)0x00000003)"
+.br
+.ti -1c
+.RI "#define \fBADC_CR1_SCANCONV\fP(_SCANCONV_MODE_)   ((_SCANCONV_MODE_) << 8)"
+.br
+.ti -1c
+.RI "#define \fBADC_SOFTWARE_START\fP   ((uint32_t)ADC_CR2_EXTSEL + 1)"
+.br
+.ti -1c
+.RI "#define \fBADC_CR2_CONTINUOUS\fP(_CONTINUOUS_MODE_)   ((_CONTINUOUS_MODE_) << 1)"
+.br
+.ti -1c
+.RI "#define \fBADC_CR1_DISCONTINUOUS\fP(_NBR_DISCONTINUOUSCONV_)   (((_NBR_DISCONTINUOUSCONV_) \- 1) << POSITION_VAL(ADC_CR1_DISCNUM))"
+.br
+.ti -1c
+.RI "#define \fBADC_SQR1\fP(_NbrOfConversion_)   (((_NbrOfConversion_) \- (uint8_t)1) << 20)"
+.br
+.ti -1c
+.RI "#define \fBADC_CR2_DMAContReq\fP(_DMAContReq_MODE_)   ((_DMAContReq_MODE_) << 9)"
+.br
+.ti -1c
+.RI "#define \fBADC_CR2_EOCSelection\fP(_EOCSelection_MODE_)   ((_EOCSelection_MODE_) << 10)"
+.br
+.ti -1c
+.RI "#define \fBADC_SMPR1\fP(_SAMPLETIME_,  _CHANNELNB_)   ((_SAMPLETIME_) << (3 * (((uint32_t)((uint16_t)(_CHANNELNB_))) \- 10)))"
+.br
+.ti -1c
+.RI "#define \fBADC_SMPR2\fP(_SAMPLETIME_,  _CHANNELNB_)   ((_SAMPLETIME_) << (3 * ((uint32_t)((uint16_t)(_CHANNELNB_)))))"
+.br
+.ti -1c
+.RI "#define \fBADC_SQR3_RK\fP(_CHANNELNB_,  _RANKNB_)   (((uint32_t)((uint16_t)(_CHANNELNB_))) << (5 * ((_RANKNB_) \- 1)))"
+.br
+.ti -1c
+.RI "#define \fBADC_SQR2_RK\fP(_CHANNELNB_,  _RANKNB_)   (((uint32_t)((uint16_t)(_CHANNELNB_))) << (5 * ((_RANKNB_) \- 7)))"
+.br
+.ti -1c
+.RI "#define \fBADC_SQR1_RK\fP(_CHANNELNB_,  _RANKNB_)   (((uint32_t)((uint16_t)(_CHANNELNB_))) << (5 * ((_RANKNB_) \- 13)))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_VBAT\fP   ((uint32_t)\fBADC_CHANNEL_18\fP)"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_VREFINT\fP   ((uint32_t)\fBADC_CHANNEL_17\fP)"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_TEMPSENSOR\fP   ((uint32_t)\fBADC_CHANNEL_16\fP)"
+.br
+.ti -1c
+.RI "#define \fBADC_STAB_DELAY_US\fP   ((uint32_t) 3)"
+.br
+.ti -1c
+.RI "#define \fB_IS_BIT_CLR\fP(REG,  BIT)   (((REG) & (BIT)) == RESET)"
+.br
+.ti -1c
+.RI "#define \fB_IS_BIT_SET\fP(REG,  BIT)   (((REG) & (BIT)) != RESET)"
+.br
+.ti -1c
+.RI "#define \fB_ADC_GET_FLAG\fP(__HANDLE__,  __FLAG__)   ((((__HANDLE__)\->Instance\->SR) & (__FLAG__)) == (__FLAG__))"
+.br
+.ti -1c
+.RI "#define \fBRCC_GPIOA_CLK_ENABLE\fP()"
+.br
+.ti -1c
+.RI "#define \fBRCC_GPIOB_CLK_ENABLE\fP()"
+.br
+.ti -1c
+.RI "#define \fBRCC_GPIOC_CLK_ENABLE\fP()"
+.br
+.ti -1c
+.RI "#define \fBRCC_ADC1_CLK_ENABLE\fP()"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_0\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_1\fP   ((uint32_t)ADC_CR1_AWDCH_0)"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_2\fP   ((uint32_t)ADC_CR1_AWDCH_1)"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_3\fP   ((uint32_t)(ADC_CR1_AWDCH_1 | ADC_CR1_AWDCH_0))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_4\fP   ((uint32_t)ADC_CR1_AWDCH_2)"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_5\fP   ((uint32_t)(ADC_CR1_AWDCH_2 | ADC_CR1_AWDCH_0))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_6\fP   ((uint32_t)(ADC_CR1_AWDCH_2 | ADC_CR1_AWDCH_1))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_7\fP   ((uint32_t)(ADC_CR1_AWDCH_2 | ADC_CR1_AWDCH_1 | ADC_CR1_AWDCH_0))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_8\fP   ((uint32_t)ADC_CR1_AWDCH_3)"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_9\fP   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_0))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_10\fP   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_1))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_11\fP   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_1 | ADC_CR1_AWDCH_0))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_12\fP   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_2))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_13\fP   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_2 | ADC_CR1_AWDCH_0))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_14\fP   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_2 | ADC_CR1_AWDCH_1))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_15\fP   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_2 | ADC_CR1_AWDCH_1 | ADC_CR1_AWDCH_0))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_16\fP   ((uint32_t)ADC_CR1_AWDCH_4)"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_17\fP   ((uint32_t)(ADC_CR1_AWDCH_4 | ADC_CR1_AWDCH_0))"
+.br
+.ti -1c
+.RI "#define \fBADC_CHANNEL_18\fP   ((uint32_t)(ADC_CR1_AWDCH_4 | ADC_CR1_AWDCH_1))"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBHAL_LockTypeDef\fP { \fBHAL_UNLOCKED\fP = 0x00, \fBHAL_LOCKED\fP = 0x01 }"
+.br
+.ti -1c
+.RI "enum \fBHAL_ADC_StateTypeDef\fP { \fBHAL_ADC_STATE_RESET\fP = 0x00, \fBHAL_ADC_STATE_READY\fP = 0x01, \fBHAL_ADC_STATE_BUSY\fP = 0x02, \fBHAL_ADC_STATE_BUSY_REG\fP = 0x12, \fBHAL_ADC_STATE_BUSY_INJ\fP = 0x22, \fBHAL_ADC_STATE_BUSY_INJ_REG\fP = 0x32, \fBHAL_ADC_STATE_TIMEOUT\fP = 0x03, \fBHAL_ADC_STATE_ERROR\fP = 0x04, \fBHAL_ADC_STATE_EOC\fP = 0x05, \fBHAL_ADC_STATE_EOC_REG\fP = 0x15, \fBHAL_ADC_STATE_EOC_INJ\fP = 0x25, \fBHAL_ADC_STATE_EOC_INJ_REG\fP = 0x35, \fBHAL_ADC_STATE_AWD\fP = 0x06 }"
+.br
+.ti -1c
+.RI "enum \fBPortName\fP { \fBPortA\fP = 0, \fBPortB\fP = 1, \fBPortC\fP = 2, \fBPortD\fP = 3, \fBPortE\fP = 4, \fBPortH\fP = 7 }"
+.br
+.ti -1c
+.RI "enum \fBADCName\fP { \fBADC_1\fP = (int)ADC1_BASE }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBpinmap_function\fP (\fBPin\fP pin)"
+.br
+.RI "Initializes the analogue to digital converter, and configures the appropriate GPIO pin\&. "
+.ti -1c
+.RI "void \fBanalogin_init\fP (\fBanalogin_s\fP *obj, \fBPin\fP pin)"
+.br
+.ti -1c
+.RI "uint32_t \fBpinmap_peripheral\fP (\fBPin\fP pin)"
+.br
+.ti -1c
+.RI "uint32_t \fBpinmap_find_peripheral\fP (\fBPin\fP pin)"
+.br
+.ti -1c
+.RI "void \fBadc_init\fP (\fBPin\fP pin)"
+.br
+.ti -1c
+.RI "void \fBpinmap_pinout\fP (\fBPin\fP pin)"
+.br
+.ti -1c
+.RI "void \fBpin_function\fP (\fBPin\fP pin, int data)"
+.br
+.ti -1c
+.RI "void \fB_GPIO_Init\fP (GPIO_TypeDef *GPIOx, \fBGPIO_InitTypeDef\fP *\fBGPIO_Init\fP)"
+.br
+.ti -1c
+.RI "void \fB_ADC_Init\fP (\fBADC_HandleTypeDef\fP *hadc)"
+.br
+.ti -1c
+.RI "void \fB_ADC_ConfigChannel\fP (\fBADC_HandleTypeDef\fP *hadc, \fBADC_ChannelConfTypeDef\fP *sConfig)"
+.br
+.ti -1c
+.RI "void \fB_ADC_Start\fP (\fBADC_HandleTypeDef\fP *hadc)"
+.br
+.ti -1c
+.RI "int \fB_ADC_PollForConversion\fP (\fBADC_HandleTypeDef\fP *hadc, uint32_t Timeout)"
+.br
+.ti -1c
+.RI "uint32_t \fB_ADC_GetValue\fP (\fBADC_HandleTypeDef\fP *hadc)"
+.br
+.ti -1c
+.RI "uint16_t \fB_adc_read\fP (\fBanalogin_s\fP *obj)"
+.br
+.RI "Reads the current value of the ADC\&. "
+.ti -1c
+.RI "uint16_t \fBadc_read\fP (\fBPin\fP pin)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internal analogue to digital converter (ADC) controller\&. 
+
+
+.PP
+\fBCopyright\fP
+.RS 4
+ARM University Program (C) ARM Ltd 2014\&. 
+.RE
+.PP
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _ADC_GET_FLAG(__HANDLE__, __FLAG__)   ((((__HANDLE__)\->Instance\->SR) & (__FLAG__)) == (__FLAG__))"
+
+.SS "#define _IS_BIT_CLR(REG, BIT)   (((REG) & (BIT)) == RESET)"
+
+.SS "#define _IS_BIT_SET(REG, BIT)   (((REG) & (BIT)) != RESET)"
+
+.SS "#define ADC1_BASE   (APB2PERIPH_BASE + 0x2000)"
+
+.SS "#define ADC_CHANNEL_0   ((uint32_t)0x00000000)"
+
+.SS "#define ADC_CHANNEL_1   ((uint32_t)ADC_CR1_AWDCH_0)"
+
+.SS "#define ADC_CHANNEL_10   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_1))"
+
+.SS "#define ADC_CHANNEL_11   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_1 | ADC_CR1_AWDCH_0))"
+
+.SS "#define ADC_CHANNEL_12   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_2))"
+
+.SS "#define ADC_CHANNEL_13   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_2 | ADC_CR1_AWDCH_0))"
+
+.SS "#define ADC_CHANNEL_14   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_2 | ADC_CR1_AWDCH_1))"
+
+.SS "#define ADC_CHANNEL_15   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_2 | ADC_CR1_AWDCH_1 | ADC_CR1_AWDCH_0))"
+
+.SS "#define ADC_CHANNEL_16   ((uint32_t)ADC_CR1_AWDCH_4)"
+
+.SS "#define ADC_CHANNEL_17   ((uint32_t)(ADC_CR1_AWDCH_4 | ADC_CR1_AWDCH_0))"
+
+.SS "#define ADC_CHANNEL_18   ((uint32_t)(ADC_CR1_AWDCH_4 | ADC_CR1_AWDCH_1))"
+
+.SS "#define ADC_CHANNEL_2   ((uint32_t)ADC_CR1_AWDCH_1)"
+
+.SS "#define ADC_CHANNEL_3   ((uint32_t)(ADC_CR1_AWDCH_1 | ADC_CR1_AWDCH_0))"
+
+.SS "#define ADC_CHANNEL_4   ((uint32_t)ADC_CR1_AWDCH_2)"
+
+.SS "#define ADC_CHANNEL_5   ((uint32_t)(ADC_CR1_AWDCH_2 | ADC_CR1_AWDCH_0))"
+
+.SS "#define ADC_CHANNEL_6   ((uint32_t)(ADC_CR1_AWDCH_2 | ADC_CR1_AWDCH_1))"
+
+.SS "#define ADC_CHANNEL_7   ((uint32_t)(ADC_CR1_AWDCH_2 | ADC_CR1_AWDCH_1 | ADC_CR1_AWDCH_0))"
+
+.SS "#define ADC_CHANNEL_8   ((uint32_t)ADC_CR1_AWDCH_3)"
+
+.SS "#define ADC_CHANNEL_9   ((uint32_t)(ADC_CR1_AWDCH_3 | ADC_CR1_AWDCH_0))"
+
+.SS "#define ADC_CHANNEL_TEMPSENSOR   ((uint32_t)\fBADC_CHANNEL_16\fP)"
+
+.SS "#define ADC_CHANNEL_VBAT   ((uint32_t)\fBADC_CHANNEL_18\fP)"
+
+.SS "#define ADC_CHANNEL_VREFINT   ((uint32_t)\fBADC_CHANNEL_17\fP)"
+
+.SS "#define ADC_CR1_DISCONTINUOUS(_NBR_DISCONTINUOUSCONV_)   (((_NBR_DISCONTINUOUSCONV_) \- 1) << POSITION_VAL(ADC_CR1_DISCNUM))"
+
+.SS "#define ADC_CR1_SCANCONV(_SCANCONV_MODE_)   ((_SCANCONV_MODE_) << 8)"
+
+.SS "#define ADC_CR2_CONTINUOUS(_CONTINUOUS_MODE_)   ((_CONTINUOUS_MODE_) << 1)"
+
+.SS "#define ADC_CR2_DMAContReq(_DMAContReq_MODE_)   ((_DMAContReq_MODE_) << 9)"
+
+.SS "#define ADC_CR2_EOCSelection(_EOCSelection_MODE_)   ((_EOCSelection_MODE_) << 10)"
+
+.SS "#define ADC_SMPR1(_SAMPLETIME_, _CHANNELNB_)   ((_SAMPLETIME_) << (3 * (((uint32_t)((uint16_t)(_CHANNELNB_))) \- 10)))"
+
+.SS "#define ADC_SMPR2(_SAMPLETIME_, _CHANNELNB_)   ((_SAMPLETIME_) << (3 * ((uint32_t)((uint16_t)(_CHANNELNB_)))))"
+
+.SS "#define ADC_SOFTWARE_START   ((uint32_t)ADC_CR2_EXTSEL + 1)"
+
+.SS "#define ADC_SQR1(_NbrOfConversion_)   (((_NbrOfConversion_) \- (uint8_t)1) << 20)"
+
+.SS "#define ADC_SQR1_RK(_CHANNELNB_, _RANKNB_)   (((uint32_t)((uint16_t)(_CHANNELNB_))) << (5 * ((_RANKNB_) \- 13)))"
+
+.SS "#define ADC_SQR2_RK(_CHANNELNB_, _RANKNB_)   (((uint32_t)((uint16_t)(_CHANNELNB_))) << (5 * ((_RANKNB_) \- 7)))"
+
+.SS "#define ADC_SQR3_RK(_CHANNELNB_, _RANKNB_)   (((uint32_t)((uint16_t)(_CHANNELNB_))) << (5 * ((_RANKNB_) \- 1)))"
+
+.SS "#define ADC_STAB_DELAY_US   ((uint32_t) 3)"
+
+.SS "#define GPIO_MODE   ((uint32_t)0x00000003)"
+
+.SS "#define GPIO_NOPULL   ((uint32_t)0x00000000)"
+No Pull-up or Pull-down activation 
+.br
+ 
+.SS "#define GPIO_PULLDOWN   ((uint32_t)0x00000002)"
+Pull-down activation 
+.br
+ 
+.SS "#define GPIO_PULLUP   ((uint32_t)0x00000001)"
+Pull-up activation 
+.br
+ 
+.SS "#define GPIO_SPEED_FAST   ((uint32_t)0x00000002)"
+Fast speed 
+.br
+ 
+.SS "#define GPIO_SPEED_HIGH   ((uint32_t)0x00000003)"
+High speed 
+.br
+ 
+.SS "#define GPIO_SPEED_LOW   ((uint32_t)0x00000000)"
+Low speed 
+.br
+ 
+.SS "#define GPIO_SPEED_MEDIUM   ((uint32_t)0x00000001)"
+Medium speed 
+.br
+ 
+.SS "#define GPIOA_BASE   (AHB1PERIPH_BASE + 0x0000)"
+
+.SS "#define RCC_ADC1_CLK_ENABLE()"
+\fBValue:\fP.PP
+.nf
+                                        do { \\
+                                        __IO uint32_t tmpreg; \\
+                                        SET_BIT(RCC\->APB2ENR, RCC_APB2ENR_ADC1EN);\\
+                                        /* Delay after an RCC peripheral clock enabling */ \\
+                                        tmpreg = READ_BIT(RCC\->APB2ENR, RCC_APB2ENR_ADC1EN);\\
+                                        UNUSED(tmpreg); \\
+                    } while(0)
+.fi
+
+.SS "#define RCC_GPIOA_CLK_ENABLE()"
+\fBValue:\fP.PP
+.nf
+                                        do { \\
+                                        __IO uint32_t tmpreg; \\
+                                        SET_BIT(RCC\->AHB1ENR, RCC_AHB1ENR_GPIOAEN);\\
+                                        /* Delay after an RCC peripheral clock enabling */ \\
+                                        tmpreg = READ_BIT(RCC\->AHB1ENR, RCC_AHB1ENR_GPIOAEN);\\
+                                        UNUSED(tmpreg); \\
+                    } while(0)
+.fi
+
+.SS "#define RCC_GPIOB_CLK_ENABLE()"
+\fBValue:\fP.PP
+.nf
+                                        do { \\
+                                        __IO uint32_t tmpreg; \\
+                                        SET_BIT(RCC\->AHB1ENR, RCC_AHB1ENR_GPIOBEN);\\
+                                        /* Delay after an RCC peripheral clock enabling */ \\
+                                        tmpreg = READ_BIT(RCC\->AHB1ENR, RCC_AHB1ENR_GPIOBEN);\\
+                                        UNUSED(tmpreg); \\
+                    } while(0)
+.fi
+
+.SS "#define RCC_GPIOC_CLK_ENABLE()"
+\fBValue:\fP.PP
+.nf
+                                        do { \\
+                                        __IO uint32_t tmpreg; \\
+                                        SET_BIT(RCC\->AHB1ENR, RCC_AHB1ENR_GPIOCEN);\\
+                                        /* Delay after an RCC peripheral clock enabling */ \\
+                                        tmpreg = READ_BIT(RCC\->AHB1ENR, RCC_AHB1ENR_GPIOCEN);\\
+                                        UNUSED(tmpreg); \\
+                    } while(0)
+.fi
+
+.SS "#define STM_MODE_ANALOG   (5)"
+
+.SS "#define STM_PIN(X)   ((uint32_t)(X) & 0xF)"
+
+.SS "#define STM_PIN_AFNUM(X)   (((X) >> 7) & 0x0F)"
+
+.SS "#define STM_PIN_CHANNEL(X)   (((X) >> 11) & 0x0F)"
+
+.SS "#define STM_PIN_DATA_EXT(MODE, PUPD, AFNUM, CHANNEL, INVERTED)   ((int)(((INVERTED & 0x01) << 15) | ((CHANNEL & 0x0F) << 11) | ((AFNUM & 0x0F) << 7) | ((PUPD & 0x07) << 4) | ((MODE & 0x0F) << 0)))"
+
+.SS "#define STM_PIN_MODE(X)   (((X) >> 0) & 0x0F)"
+
+.SS "#define STM_PIN_PUPD(X)   (((X) >> 4) & 0x07)"
+
+.SS "#define STM_PORT(X)   (((uint32_t)(X) >> 4) & 0xF)"
+
+.SS "#define UNUSED(x)   ((void)(x))"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBADCName\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIADC_1 \fP\fP
+.SS "enum \fBHAL_ADC_StateTypeDef\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIHAL_ADC_STATE_RESET \fP\fP
+ADC not yet initialized or disabled 
+.TP
+\fB\fIHAL_ADC_STATE_READY \fP\fP
+ADC peripheral ready for use 
+.TP
+\fB\fIHAL_ADC_STATE_BUSY \fP\fP
+An internal process is ongoing 
+.TP
+\fB\fIHAL_ADC_STATE_BUSY_REG \fP\fP
+Regular conversion is ongoing 
+.TP
+\fB\fIHAL_ADC_STATE_BUSY_INJ \fP\fP
+Injected conversion is ongoing 
+.TP
+\fB\fIHAL_ADC_STATE_BUSY_INJ_REG \fP\fP
+Injected and regular conversion are ongoing 
+.TP
+\fB\fIHAL_ADC_STATE_TIMEOUT \fP\fP
+Timeout state 
+.TP
+\fB\fIHAL_ADC_STATE_ERROR \fP\fP
+ADC state error 
+.TP
+\fB\fIHAL_ADC_STATE_EOC \fP\fP
+Conversion is completed 
+.TP
+\fB\fIHAL_ADC_STATE_EOC_REG \fP\fP
+Regular conversion is completed 
+.TP
+\fB\fIHAL_ADC_STATE_EOC_INJ \fP\fP
+Injected conversion is completed 
+.TP
+\fB\fIHAL_ADC_STATE_EOC_INJ_REG \fP\fP
+Injected and regular conversion are completed 
+.TP
+\fB\fIHAL_ADC_STATE_AWD \fP\fP
+ADC state analog watchdog 
+.SS "enum \fBHAL_LockTypeDef\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIHAL_UNLOCKED \fP\fP
+.TP
+\fB\fIHAL_LOCKED \fP\fP
+.SS "enum \fBPortName\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPortA \fP\fP
+.TP
+\fB\fIPortB \fP\fP
+.TP
+\fB\fIPortC \fP\fP
+.TP
+\fB\fIPortD \fP\fP
+.TP
+\fB\fIPortE \fP\fP
+.TP
+\fB\fIPortH \fP\fP
+.SH "Function Documentation"
+.PP 
+.SS "void _ADC_ConfigChannel (\fBADC_HandleTypeDef\fP * hadc, \fBADC_ChannelConfTypeDef\fP * sConfig)"
+
+.SS "uint32_t _ADC_GetValue (\fBADC_HandleTypeDef\fP * hadc)"
+
+.SS "void _ADC_Init (\fBADC_HandleTypeDef\fP * hadc)"
+
+.SS "int _ADC_PollForConversion (\fBADC_HandleTypeDef\fP * hadc, uint32_t Timeout)"
+
+.SS "uint16_t _adc_read (\fBanalogin_s\fP * obj)"
+
+.PP
+Reads the current value of the ADC\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Potential of the pin, relative to ground\&. 
+.RE
+.PP
+
+.SS "void _ADC_Start (\fBADC_HandleTypeDef\fP * hadc)"
+
+.SS "void _GPIO_Init (GPIO_TypeDef * GPIOx, \fBGPIO_InitTypeDef\fP * GPIO_Init)"
+
+.SS "void adc_init (\fBPin\fP pin)"
+
+.SS "uint16_t adc_read (\fBPin\fP pin)"
+
+.SS "void analogin_init (\fBanalogin_s\fP * obj, \fBPin\fP pin)"
+
+.SS "void pin_function (\fBPin\fP pin, int data)"
+
+.SS "uint32_t pinmap_find_peripheral (\fBPin\fP pin)"
+
+.SS "uint32_t pinmap_function (\fBPin\fP pin)"
+
+.PP
+Initializes the analogue to digital converter, and configures the appropriate GPIO pin\&. 
+.SS "uint32_t pinmap_peripheral (\fBPin\fP pin)"
+
+.SS "void pinmap_pinout (\fBPin\fP pin)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

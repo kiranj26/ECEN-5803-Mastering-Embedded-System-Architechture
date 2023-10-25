@@ -1,0 +1,157 @@
+.TH "ADC_channels" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_channels \- ADC_channels
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC_Channel_0\fP   ((uint8_t)0x00)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_1\fP   ((uint8_t)0x01)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_2\fP   ((uint8_t)0x02)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_3\fP   ((uint8_t)0x03)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_4\fP   ((uint8_t)0x04)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_5\fP   ((uint8_t)0x05)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_6\fP   ((uint8_t)0x06)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_7\fP   ((uint8_t)0x07)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_8\fP   ((uint8_t)0x08)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_9\fP   ((uint8_t)0x09)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_10\fP   ((uint8_t)0x0A)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_11\fP   ((uint8_t)0x0B)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_12\fP   ((uint8_t)0x0C)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_13\fP   ((uint8_t)0x0D)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_14\fP   ((uint8_t)0x0E)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_15\fP   ((uint8_t)0x0F)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_16\fP   ((uint8_t)0x10)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_17\fP   ((uint8_t)0x11)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_18\fP   ((uint8_t)0x12)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_TempSensor\fP   ((uint8_t)\fBADC_Channel_16\fP)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_Vrefint\fP   ((uint8_t)\fBADC_Channel_17\fP)"
+.br
+.ti -1c
+.RI "#define \fBADC_Channel_Vbat\fP   ((uint8_t)\fBADC_Channel_18\fP)"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_CHANNEL\fP(CHANNEL)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_Channel_0   ((uint8_t)0x00)"
+
+.SS "#define ADC_Channel_1   ((uint8_t)0x01)"
+
+.SS "#define ADC_Channel_10   ((uint8_t)0x0A)"
+
+.SS "#define ADC_Channel_11   ((uint8_t)0x0B)"
+
+.SS "#define ADC_Channel_12   ((uint8_t)0x0C)"
+
+.SS "#define ADC_Channel_13   ((uint8_t)0x0D)"
+
+.SS "#define ADC_Channel_14   ((uint8_t)0x0E)"
+
+.SS "#define ADC_Channel_15   ((uint8_t)0x0F)"
+
+.SS "#define ADC_Channel_16   ((uint8_t)0x10)"
+
+.SS "#define ADC_Channel_17   ((uint8_t)0x11)"
+
+.SS "#define ADC_Channel_18   ((uint8_t)0x12)"
+
+.SS "#define ADC_Channel_2   ((uint8_t)0x02)"
+
+.SS "#define ADC_Channel_3   ((uint8_t)0x03)"
+
+.SS "#define ADC_Channel_4   ((uint8_t)0x04)"
+
+.SS "#define ADC_Channel_5   ((uint8_t)0x05)"
+
+.SS "#define ADC_Channel_6   ((uint8_t)0x06)"
+
+.SS "#define ADC_Channel_7   ((uint8_t)0x07)"
+
+.SS "#define ADC_Channel_8   ((uint8_t)0x08)"
+
+.SS "#define ADC_Channel_9   ((uint8_t)0x09)"
+
+.SS "#define ADC_Channel_TempSensor   ((uint8_t)\fBADC_Channel_16\fP)"
+
+.SS "#define ADC_Channel_Vbat   ((uint8_t)\fBADC_Channel_18\fP)"
+
+.SS "#define ADC_Channel_Vrefint   ((uint8_t)\fBADC_Channel_17\fP)"
+
+.SS "#define IS_ADC_CHANNEL(CHANNEL)"
+\fBValue:\fP.PP
+.nf
+                                 (((CHANNEL) == ADC_Channel_0) || \\
+                                 ((CHANNEL) == ADC_Channel_1) || \\
+                                 ((CHANNEL) == ADC_Channel_2) || \\
+                                 ((CHANNEL) == ADC_Channel_3) || \\
+                                 ((CHANNEL) == ADC_Channel_4) || \\
+                                 ((CHANNEL) == ADC_Channel_5) || \\
+                                 ((CHANNEL) == ADC_Channel_6) || \\
+                                 ((CHANNEL) == ADC_Channel_7) || \\
+                                 ((CHANNEL) == ADC_Channel_8) || \\
+                                 ((CHANNEL) == ADC_Channel_9) || \\
+                                 ((CHANNEL) == ADC_Channel_10) || \\
+                                 ((CHANNEL) == ADC_Channel_11) || \\
+                                 ((CHANNEL) == ADC_Channel_12) || \\
+                                 ((CHANNEL) == ADC_Channel_13) || \\
+                                 ((CHANNEL) == ADC_Channel_14) || \\
+                                 ((CHANNEL) == ADC_Channel_15) || \\
+                                 ((CHANNEL) == ADC_Channel_16) || \\
+                                 ((CHANNEL) == ADC_Channel_17) || \\
+                                 ((CHANNEL) == ADC_Channel_18))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

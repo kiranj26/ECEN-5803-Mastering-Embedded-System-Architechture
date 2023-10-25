@@ -1,0 +1,76 @@
+.TH "ADC_sampling_times" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_sampling_times \- ADC_sampling_times
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC_SampleTime_3Cycles\fP   ((uint8_t)0x00)"
+.br
+.ti -1c
+.RI "#define \fBADC_SampleTime_15Cycles\fP   ((uint8_t)0x01)"
+.br
+.ti -1c
+.RI "#define \fBADC_SampleTime_28Cycles\fP   ((uint8_t)0x02)"
+.br
+.ti -1c
+.RI "#define \fBADC_SampleTime_56Cycles\fP   ((uint8_t)0x03)"
+.br
+.ti -1c
+.RI "#define \fBADC_SampleTime_84Cycles\fP   ((uint8_t)0x04)"
+.br
+.ti -1c
+.RI "#define \fBADC_SampleTime_112Cycles\fP   ((uint8_t)0x05)"
+.br
+.ti -1c
+.RI "#define \fBADC_SampleTime_144Cycles\fP   ((uint8_t)0x06)"
+.br
+.ti -1c
+.RI "#define \fBADC_SampleTime_480Cycles\fP   ((uint8_t)0x07)"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_SAMPLE_TIME\fP(TIME)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_SampleTime_112Cycles   ((uint8_t)0x05)"
+
+.SS "#define ADC_SampleTime_144Cycles   ((uint8_t)0x06)"
+
+.SS "#define ADC_SampleTime_15Cycles   ((uint8_t)0x01)"
+
+.SS "#define ADC_SampleTime_28Cycles   ((uint8_t)0x02)"
+
+.SS "#define ADC_SampleTime_3Cycles   ((uint8_t)0x00)"
+
+.SS "#define ADC_SampleTime_480Cycles   ((uint8_t)0x07)"
+
+.SS "#define ADC_SampleTime_56Cycles   ((uint8_t)0x03)"
+
+.SS "#define ADC_SampleTime_84Cycles   ((uint8_t)0x04)"
+
+.SS "#define IS_ADC_SAMPLE_TIME(TIME)"
+\fBValue:\fP.PP
+.nf
+                                  (((TIME) == ADC_SampleTime_3Cycles) || \\
+                                  ((TIME) == ADC_SampleTime_15Cycles) || \\
+                                  ((TIME) == ADC_SampleTime_28Cycles) || \\
+                                  ((TIME) == ADC_SampleTime_56Cycles) || \\
+                                  ((TIME) == ADC_SampleTime_84Cycles) || \\
+                                  ((TIME) == ADC_SampleTime_112Cycles) || \\
+                                  ((TIME) == ADC_SampleTime_144Cycles) || \\
+                                  ((TIME) == ADC_SampleTime_480Cycles))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

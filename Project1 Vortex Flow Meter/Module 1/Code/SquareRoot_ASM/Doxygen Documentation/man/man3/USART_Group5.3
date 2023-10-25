@@ -1,0 +1,75 @@
+.TH "USART_Group5" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_Group5 \- Halfduplex mode function
+.PP
+ \- Half-duplex mode function\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUSART_HalfDuplexCmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's Half Duplex communication\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Half-duplex mode function\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                         Half-duplex mode function
+ ===============================================================================  
+
+  This subsection provides a set of functions allowing to manage the USART 
+  Half-duplex communication\&.
+  
+  The USART can be configured to follow a single-wire half-duplex protocol where 
+  the TX and RX lines are internally connected\&.
+
+  USART Half duplex communication is possible through the following procedure:
+     1\&. Program the Baud rate, Word length, Stop bits, Parity, Mode transmitter 
+        or Mode receiver and hardware flow control values using the USART_Init()
+        function\&.
+     2\&. Configures the USART address using the USART_SetAddress() function\&.
+     3\&. Enable the USART using the USART_Cmd() function\&.
+     4\&. Enable the half duplex mode using USART_HalfDuplexCmd() function\&.
+
+
+@note The RX pin is no longer used
+@note In Half-duplex mode the following bits must be kept cleared:
+        - LINEN and CLKEN bits in the USART_CR2 register\&.
+        - SCEN and IREN bits in the USART_CR3 register\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void USART_HalfDuplexCmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's Half Duplex communication\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the USART Communication\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

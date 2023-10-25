@@ -1,0 +1,446 @@
+.TH "drivers/stm32f4xx_gpio.h" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/stm32f4xx_gpio.h \- This file contains all the functions prototypes for the GPIO firmware library\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'stm32f4xx\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBGPIO_InitTypeDef\fP"
+.br
+.RI "GPIO Init structure definition 
+.br
+ "
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBIS_GPIO_ALL_PERIPH\fP(PERIPH)"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_MODE\fP(MODE)"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_OTYPE\fP(OTYPE)   (((OTYPE) == \fBGPIO_OType_PP\fP) || ((OTYPE) == \fBGPIO_OType_OD\fP))"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_SPEED\fP(SPEED)"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_PUPD\fP(PUPD)"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_BIT_ACTION\fP(ACTION)   (((ACTION) == \fBBit_RESET\fP) || ((ACTION) == \fBBit_SET\fP))"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_0\fP   ((uint16_t)0x0001)  /* \fBPin\fP 0 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_1\fP   ((uint16_t)0x0002)  /* \fBPin\fP 1 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_2\fP   ((uint16_t)0x0004)  /* \fBPin\fP 2 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_3\fP   ((uint16_t)0x0008)  /* \fBPin\fP 3 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_4\fP   ((uint16_t)0x0010)  /* \fBPin\fP 4 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_5\fP   ((uint16_t)0x0020)  /* \fBPin\fP 5 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_6\fP   ((uint16_t)0x0040)  /* \fBPin\fP 6 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_7\fP   ((uint16_t)0x0080)  /* \fBPin\fP 7 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_8\fP   ((uint16_t)0x0100)  /* \fBPin\fP 8 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_9\fP   ((uint16_t)0x0200)  /* \fBPin\fP 9 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_10\fP   ((uint16_t)0x0400)  /* \fBPin\fP 10 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_11\fP   ((uint16_t)0x0800)  /* \fBPin\fP 11 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_12\fP   ((uint16_t)0x1000)  /* \fBPin\fP 12 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_13\fP   ((uint16_t)0x2000)  /* \fBPin\fP 13 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_14\fP   ((uint16_t)0x4000)  /* \fBPin\fP 14 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_15\fP   ((uint16_t)0x8000)  /* \fBPin\fP 15 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_All\fP   ((uint16_t)0xFFFF)  /* All pins selected */"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_PIN\fP(PIN)   ((((PIN) & (uint16_t)0x00) == 0x00) && ((PIN) != (uint16_t)0x00))"
+.br
+.ti -1c
+.RI "#define \fBIS_GET_GPIO_PIN\fP(PIN)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource0\fP   ((uint8_t)0x00)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource1\fP   ((uint8_t)0x01)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource2\fP   ((uint8_t)0x02)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource3\fP   ((uint8_t)0x03)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource4\fP   ((uint8_t)0x04)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource5\fP   ((uint8_t)0x05)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource6\fP   ((uint8_t)0x06)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource7\fP   ((uint8_t)0x07)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource8\fP   ((uint8_t)0x08)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource9\fP   ((uint8_t)0x09)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource10\fP   ((uint8_t)0x0A)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource11\fP   ((uint8_t)0x0B)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource12\fP   ((uint8_t)0x0C)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource13\fP   ((uint8_t)0x0D)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource14\fP   ((uint8_t)0x0E)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_PinSource15\fP   ((uint8_t)0x0F)"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_PIN_SOURCE\fP(PINSOURCE)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_RTC_50Hz\fP   ((uint8_t)0x00)  /* RTC_50Hz Alternate Function mapping */"
+.br
+.RI "AF 0 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_MCO\fP   ((uint8_t)0x00)  /* MCO (MCO1 and MCO2) Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_TAMPER\fP   ((uint8_t)0x00)  /* TAMPER (TAMPER_1 and TAMPER_2) Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_SWJ\fP   ((uint8_t)0x00)  /* SWJ (SWD and JTAG) Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_TRACE\fP   ((uint8_t)0x00)  /* TRACE Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_TIM1\fP   ((uint8_t)0x01)  /* TIM1 Alternate Function mapping */"
+.br
+.RI "AF 1 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_TIM2\fP   ((uint8_t)0x01)  /* TIM2 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_TIM3\fP   ((uint8_t)0x02)  /* TIM3 Alternate Function mapping */"
+.br
+.RI "AF 2 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_TIM4\fP   ((uint8_t)0x02)  /* TIM4 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_TIM5\fP   ((uint8_t)0x02)  /* TIM5 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_TIM8\fP   ((uint8_t)0x03)  /* TIM8 Alternate Function mapping */"
+.br
+.RI "AF 3 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_TIM9\fP   ((uint8_t)0x03)  /* TIM9 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_TIM10\fP   ((uint8_t)0x03)  /* TIM10 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_TIM11\fP   ((uint8_t)0x03)  /* TIM11 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_I2C1\fP   ((uint8_t)0x04)  /* I2C1 Alternate Function mapping */"
+.br
+.RI "AF 4 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_I2C2\fP   ((uint8_t)0x04)  /* I2C2 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_I2C3\fP   ((uint8_t)0x04)  /* I2C3 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_SPI1\fP   ((uint8_t)0x05)  /* SPI1 Alternate Function mapping */"
+.br
+.RI "AF 5 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_SPI2\fP   ((uint8_t)0x05)  /* SPI2/I2S2 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_SPI3\fP   ((uint8_t)0x06)  /* SPI3/I2S3 Alternate Function mapping */"
+.br
+.RI "AF 6 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_USART1\fP   ((uint8_t)0x07)  /* USART1 Alternate Function mapping */"
+.br
+.RI "AF 7 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_USART2\fP   ((uint8_t)0x07)  /* USART2 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_USART3\fP   ((uint8_t)0x07)  /* USART3 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_I2S3ext\fP   ((uint8_t)0x07)  /* I2S3ext Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_UART4\fP   ((uint8_t)0x08)  /* UART4 Alternate Function mapping */"
+.br
+.RI "AF 8 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_UART5\fP   ((uint8_t)0x08)  /* UART5 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_USART6\fP   ((uint8_t)0x08)  /* USART6 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_CAN1\fP   ((uint8_t)0x09)  /* CAN1 Alternate Function mapping */"
+.br
+.RI "AF 9 selection\&. "
+.ti -1c
+.RI "#define \fBGPIO_AF_CAN2\fP   ((uint8_t)0x09)  /* CAN2 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_TIM12\fP   ((uint8_t)0x09)  /* TIM12 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_TIM13\fP   ((uint8_t)0x09)  /* TIM13 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_TIM14\fP   ((uint8_t)0x09)  /* TIM14 Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_OTG_FS\fP   ((uint8_t)0xA)  /* OTG_FS Alternate Function mapping */"
+.br
+.RI "AF 10 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_OTG_HS\fP   ((uint8_t)0xA)  /* OTG_HS Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_ETH\fP   ((uint8_t)0x0B)  /* ETHERNET Alternate Function mapping */"
+.br
+.RI "AF 11 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_FSMC\fP   ((uint8_t)0xC)  /* FSMC Alternate Function mapping */"
+.br
+.RI "AF 12 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_OTG_HS_FS\fP   ((uint8_t)0xC)  /* OTG HS configured in FS, Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_SDIO\fP   ((uint8_t)0xC)  /* SDIO Alternate Function mapping */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_DCMI\fP   ((uint8_t)0x0D)  /* DCMI Alternate Function mapping */"
+.br
+.RI "AF 13 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBGPIO_AF_EVENTOUT\fP   ((uint8_t)0x0F)  /* EVENTOUT Alternate Function mapping */"
+.br
+.RI "AF 15 selection 
+.br
+ "
+.ti -1c
+.RI "#define \fBIS_GPIO_AF\fP(AF)"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Mode_AIN\fP   \fBGPIO_Mode_AN\fP"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_OTG1_FS\fP   \fBGPIO_AF_OTG_FS\fP"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_OTG2_HS\fP   \fBGPIO_AF_OTG_HS\fP"
+.br
+.ti -1c
+.RI "#define \fBGPIO_AF_OTG2_FS\fP   \fBGPIO_AF_OTG_HS_FS\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBGPIOMode_TypeDef\fP { \fBGPIO_Mode_IN\fP = 0x00, \fBGPIO_Mode_OUT\fP = 0x01, \fBGPIO_Mode_AF\fP = 0x02, \fBGPIO_Mode_AN\fP = 0x03 }"
+.br
+.RI "GPIO Configuration Mode enumeration\&. "
+.ti -1c
+.RI "enum \fBGPIOOType_TypeDef\fP { \fBGPIO_OType_PP\fP = 0x00, \fBGPIO_OType_OD\fP = 0x01 }"
+.br
+.RI "GPIO Output type enumeration\&. "
+.ti -1c
+.RI "enum \fBGPIOSpeed_TypeDef\fP { \fBGPIO_Speed_2MHz\fP = 0x00, \fBGPIO_Speed_25MHz\fP = 0x01, \fBGPIO_Speed_50MHz\fP = 0x02, \fBGPIO_Speed_100MHz\fP = 0x03 }"
+.br
+.RI "GPIO Output Maximum frequency enumeration\&. "
+.ti -1c
+.RI "enum \fBGPIOPuPd_TypeDef\fP { \fBGPIO_PuPd_NOPULL\fP = 0x00, \fBGPIO_PuPd_UP\fP = 0x01, \fBGPIO_PuPd_DOWN\fP = 0x02 }"
+.br
+.RI "GPIO Configuration PullUp PullDown enumeration\&. "
+.ti -1c
+.RI "enum \fBBitAction\fP { \fBBit_RESET\fP = 0, \fBBit_SET\fP }"
+.br
+.RI "GPIO Bit SET and Bit RESET enumeration\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBGPIO_DeInit\fP (GPIO_TypeDef *GPIOx)"
+.br
+.RI "Deinitializes the GPIOx peripheral registers to their default reset values\&. "
+.ti -1c
+.RI "void \fBGPIO_Init\fP (GPIO_TypeDef *GPIOx, \fBGPIO_InitTypeDef\fP *GPIO_InitStruct)"
+.br
+.RI "Initializes the GPIOx peripheral according to the specified parameters in the GPIO_InitStruct\&. "
+.ti -1c
+.RI "void \fBGPIO_StructInit\fP (\fBGPIO_InitTypeDef\fP *GPIO_InitStruct)"
+.br
+.RI "Fills each GPIO_InitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBGPIO_PinLockConfig\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Locks GPIO Pins configuration registers\&. "
+.ti -1c
+.RI "uint8_t \fBGPIO_ReadInputDataBit\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Reads the specified input port pin\&. "
+.ti -1c
+.RI "uint16_t \fBGPIO_ReadInputData\fP (GPIO_TypeDef *GPIOx)"
+.br
+.RI "Reads the specified GPIO input data port\&. "
+.ti -1c
+.RI "uint8_t \fBGPIO_ReadOutputDataBit\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Reads the specified output data port bit\&. "
+.ti -1c
+.RI "uint16_t \fBGPIO_ReadOutputData\fP (GPIO_TypeDef *GPIOx)"
+.br
+.RI "Reads the specified GPIO output data port\&. "
+.ti -1c
+.RI "void \fBGPIO_SetBits\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Sets the selected data port bits\&. "
+.ti -1c
+.RI "void \fBGPIO_ResetBits\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Clears the selected data port bits\&. "
+.ti -1c
+.RI "void \fBGPIO_WriteBit\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, \fBBitAction\fP BitVal)"
+.br
+.RI "Sets or clears the selected data port bit\&. "
+.ti -1c
+.RI "void \fBGPIO_Write\fP (GPIO_TypeDef *GPIOx, uint16_t PortVal)"
+.br
+.RI "Writes data to the specified GPIO data port\&. "
+.ti -1c
+.RI "void \fBGPIO_ToggleBits\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Toggles the specified GPIO pins\&.\&. "
+.ti -1c
+.RI "void \fBGPIO_PinAFConfig\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO_AF)"
+.br
+.RI "Changes the mapping of the specified pin\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains all the functions prototypes for the GPIO firmware library\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+MCD Application Team 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+V1\&.0\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+30-September-2011 
+.RE
+.PP
+\fBAttention\fP
+.RS 4
+.RE
+.PP
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME\&. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS\&.
+.PP
+.SS "(C) COPYRIGHT 2011 STMicroelectronics"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

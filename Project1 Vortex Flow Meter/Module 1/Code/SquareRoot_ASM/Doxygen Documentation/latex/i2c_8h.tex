@@ -1,0 +1,76 @@
+\doxysection{drivers/i2c.h File Reference}
+\hypertarget{i2c_8h}{}\label{i2c_8h}\index{drivers/i2c.h@{drivers/i2c.h}}
+
+
+Controller for hardware I2C module, configured as a master.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{i2c_8h_a5730d9445429351b9f750084c5cb5aae}{i2c\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialises the hardware I2C module, any relevant pins and enables the module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{i2c_8h_a426fd4dca3e6c44e42fe40df1571c817}{i2c\+\_\+write}} (uint8\+\_\+t address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, int buff\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Writes data to an I2C module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{i2c_8h_ac6c61dd5ea172dce13cdf897645ea77d}{i2c\+\_\+read}} (uint8\+\_\+t address, uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, int buff\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Reads data from an I2C module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller for hardware I2C module, configured as a master. 
+
+\begin{DoxyCopyright}{Copyright}
+ARM University Program \copyright{} ARM Ltd 2014. 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{i2c_8h_a5730d9445429351b9f750084c5cb5aae}\label{i2c_8h_a5730d9445429351b9f750084c5cb5aae} 
+\index{i2c.h@{i2c.h}!i2c\_init@{i2c\_init}}
+\index{i2c\_init@{i2c\_init}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_init()}{i2c\_init()}}
+{\footnotesize\ttfamily void i2c\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialises the hardware I2C module, any relevant pins and enables the module. 
+
+\Hypertarget{i2c_8h_ac6c61dd5ea172dce13cdf897645ea77d}\label{i2c_8h_ac6c61dd5ea172dce13cdf897645ea77d} 
+\index{i2c.h@{i2c.h}!i2c\_read@{i2c\_read}}
+\index{i2c\_read@{i2c\_read}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_read()}{i2c\_read()}}
+{\footnotesize\ttfamily void i2c\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{int}]{buff\+\_\+len }\end{DoxyParamCaption})}
+
+
+
+Reads data from an I2C module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & I2C address of the slave. \\
+\hline
+{\em buffer} & Data to be read. \\
+\hline
+{\em buff\+\_\+len} & Number of bytes to read. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{i2c_8h_a426fd4dca3e6c44e42fe40df1571c817}\label{i2c_8h_a426fd4dca3e6c44e42fe40df1571c817} 
+\index{i2c.h@{i2c.h}!i2c\_write@{i2c\_write}}
+\index{i2c\_write@{i2c\_write}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_write()}{i2c\_write()}}
+{\footnotesize\ttfamily void i2c\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{int}]{buff\+\_\+len }\end{DoxyParamCaption})}
+
+
+
+Writes data to an I2C module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & I2C address of the slave. \\
+\hline
+{\em buffer} & Data to be sent. \\
+\hline
+{\em buff\+\_\+len} & Number of bytes to send. \\
+\hline
+\end{DoxyParams}

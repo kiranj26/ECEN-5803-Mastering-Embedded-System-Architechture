@@ -1,0 +1,226 @@
+\doxysubsubsubsection{Interrupts and flags management functions}
+\label{group___a_d_c___group7}\index{Interrupts and flags management functions@{Interrupts and flags management functions}}
+
+
+Interrupts and flags management functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ ADC\+\_\+\+ITConfig} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint16\+\_\+t ADC\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified ADC interrupts. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ ADC\+\_\+\+Get\+Flag\+Status} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified ADC flag is set or not. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Clear\+Flag} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the ADCx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \textbf{ ADC\+\_\+\+Get\+ITStatus} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint16\+\_\+t ADC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified ADC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Clear\+ITPending\+Bit} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint16\+\_\+t ADC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the ADCx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Interrupts and flags management functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                   Interrupts and flags management functions
+ ===============================================================================  
+
+  This section provides functions allowing to configure the ADC Interrupts and 
+  to get the status and clear flags and Interrupts pending bits.
+  
+  Each ADC provides 4 Interrupts sources and 6 Flags which can be divided into 
+  3 groups:
+  
+  I. Flags and Interrupts for ADC regular channels
+  =================================================
+  Flags :
+  ---------- 
+     1. ADC_FLAG_OVR : Overrun detection when regular converted data are lost
+
+     2. ADC_FLAG_EOC : Regular channel end of conversion ==> to indicate (depending 
+              on EOCS bit, managed by ADC_EOCOnEachRegularChannelCmd() ) the end of:
+               ==> a regular CHANNEL conversion 
+               ==> sequence of regular GROUP conversions .
+
+     3. ADC_FLAG_STRT: Regular channel start ==> to indicate when regular CHANNEL 
+              conversion starts.
+
+  Interrupts :
+  ------------
+     1. ADC_IT_OVR : specifies the interrupt source for Overrun detection event.  
+     2. ADC_IT_EOC : specifies the interrupt source for Regular channel end of 
+                     conversion event.
+  
+  
+  II. Flags and Interrupts for ADC Injected channels
+  =================================================
+  Flags :
+  ---------- 
+     1. ADC_FLAG_JEOC : Injected channel end of conversion ==> to indicate at 
+               the end of injected GROUP conversion  
+              
+     2. ADC_FLAG_JSTRT: Injected channel start ==> to indicate hardware when 
+               injected GROUP conversion starts.
+
+  Interrupts :
+  ------------
+     1. ADC_IT_JEOC : specifies the interrupt source for Injected channel end of 
+                      conversion event.     
+
+  III. General Flags and Interrupts for the ADC
+  ================================================= 
+  Flags :
+  ---------- 
+     1. ADC_FLAG_AWD: Analog watchdog ==> to indicate if the converted voltage 
+              crosses the programmed thresholds values.
+              
+  Interrupts :
+  ------------
+     1. ADC_IT_AWD : specifies the interrupt source for Analog watchdog event. 
+
+  
+  The user should identify which mode will be used in his application to manage 
+  the ADC controller events: Polling mode or Interrupt mode.
+  
+  In the Polling Mode it is advised to use the following functions:
+      - ADC_GetFlagStatus() : to check if flags events occur. 
+      - ADC_ClearFlag()     : to clear the flags events.
+      
+  In the Interrupt Mode it is advised to use the following functions:
+     - ADC_ITConfig()          : to enable or disable the interrupt source.
+     - ADC_GetITStatus()       : to check if Interrupt occurs.
+     - ADC_ClearITPendingBit() : to clear the Interrupt pending Bit 
+                                 (corresponding Flag). 
+\end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\label{group___a_d_c___group7_gaf34f36798f811b4a41321ea2d12118d4} 
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!ADC\_ClearFlag@{ADC\_ClearFlag}}
+\index{ADC\_ClearFlag@{ADC\_ClearFlag}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\doxysubsubsubsubsubsection{ADC\_ClearFlag()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Clear\+Flag (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{uint8\+\_\+t}]{ADC\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Clears the ADCx\textquotesingle{}s pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em ADC\+\_\+\+FLAG} & specifies the flag to clear. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item ADC\+\_\+\+FLAG\+\_\+\+AWD\+: Analog watchdog flag \item ADC\+\_\+\+FLAG\+\_\+\+EOC\+: End of conversion flag \item ADC\+\_\+\+FLAG\+\_\+\+JEOC\+: End of injected group conversion flag \item ADC\+\_\+\+FLAG\+\_\+\+JSTRT\+: Start of injected group conversion flag \item ADC\+\_\+\+FLAG\+\_\+\+STRT\+: Start of regular group conversion flag \item ADC\+\_\+\+FLAG\+\_\+\+OVR\+: Overrun flag ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group7_ga601c6a67bd883eb631ecc7aa5e999b9c} 
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!ADC\_ClearITPendingBit@{ADC\_ClearITPendingBit}}
+\index{ADC\_ClearITPendingBit@{ADC\_ClearITPendingBit}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\doxysubsubsubsubsubsection{ADC\_ClearITPendingBit()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Clear\+ITPending\+Bit (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{uint16\+\_\+t}]{ADC\+\_\+\+IT }\end{DoxyParamCaption})}
+
+
+
+Clears the ADCx\textquotesingle{}s interrupt pending bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em ADC\+\_\+\+IT} & specifies the ADC interrupt pending bit to clear. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item ADC\+\_\+\+IT\+\_\+\+EOC\+: End of conversion interrupt mask \item ADC\+\_\+\+IT\+\_\+\+AWD\+: Analog watchdog interrupt mask \item ADC\+\_\+\+IT\+\_\+\+JEOC\+: End of injected conversion interrupt mask \item ADC\+\_\+\+IT\+\_\+\+OVR\+: Overrun interrupt mask ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group7_gaa12546e51ec905c90a3aada432bd4633} 
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!ADC\_GetFlagStatus@{ADC\_GetFlagStatus}}
+\index{ADC\_GetFlagStatus@{ADC\_GetFlagStatus}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\doxysubsubsubsubsubsection{ADC\_GetFlagStatus()}
+{\footnotesize\ttfamily Flag\+Status ADC\+\_\+\+Get\+Flag\+Status (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{uint8\+\_\+t}]{ADC\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Checks whether the specified ADC flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em ADC\+\_\+\+FLAG} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item ADC\+\_\+\+FLAG\+\_\+\+AWD\+: Analog watchdog flag \item ADC\+\_\+\+FLAG\+\_\+\+EOC\+: End of conversion flag \item ADC\+\_\+\+FLAG\+\_\+\+JEOC\+: End of injected group conversion flag \item ADC\+\_\+\+FLAG\+\_\+\+JSTRT\+: Start of injected group conversion flag \item ADC\+\_\+\+FLAG\+\_\+\+STRT\+: Start of regular group conversion flag \item ADC\+\_\+\+FLAG\+\_\+\+OVR\+: Overrun flag ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of ADC\+\_\+\+FLAG (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group7_gaa1d3b910a83dbf14d4f68c8eef058612} 
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!ADC\_GetITStatus@{ADC\_GetITStatus}}
+\index{ADC\_GetITStatus@{ADC\_GetITStatus}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\doxysubsubsubsubsubsection{ADC\_GetITStatus()}
+{\footnotesize\ttfamily ITStatus ADC\+\_\+\+Get\+ITStatus (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{uint16\+\_\+t}]{ADC\+\_\+\+IT }\end{DoxyParamCaption})}
+
+
+
+Checks whether the specified ADC interrupt has occurred or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em ADC\+\_\+\+IT} & specifies the ADC interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item ADC\+\_\+\+IT\+\_\+\+EOC\+: End of conversion interrupt mask \item ADC\+\_\+\+IT\+\_\+\+AWD\+: Analog watchdog interrupt mask \item ADC\+\_\+\+IT\+\_\+\+JEOC\+: End of injected conversion interrupt mask \item ADC\+\_\+\+IT\+\_\+\+OVR\+: Overrun interrupt mask ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of ADC\+\_\+\+IT (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group7_gad4c84b54b539944f555488bf979f82b6} 
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!ADC\_ITConfig@{ADC\_ITConfig}}
+\index{ADC\_ITConfig@{ADC\_ITConfig}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\doxysubsubsubsubsubsection{ADC\_ITConfig()}
+{\footnotesize\ttfamily void ADC\+\_\+\+ITConfig (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{uint16\+\_\+t}]{ADC\+\_\+\+IT,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified ADC interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em ADC\+\_\+\+IT} & specifies the ADC interrupt sources to be enabled or disabled. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item ADC\+\_\+\+IT\+\_\+\+EOC\+: End of conversion interrupt mask \item ADC\+\_\+\+IT\+\_\+\+AWD\+: Analog watchdog interrupt mask \item ADC\+\_\+\+IT\+\_\+\+JEOC\+: End of injected conversion interrupt mask \item ADC\+\_\+\+IT\+\_\+\+OVR\+: Overrun interrupt enable ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+{\em New\+State} & new state of the specified ADC interrupts. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

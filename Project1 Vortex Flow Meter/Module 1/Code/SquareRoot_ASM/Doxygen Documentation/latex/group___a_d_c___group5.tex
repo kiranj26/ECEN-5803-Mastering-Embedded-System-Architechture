@@ -1,0 +1,120 @@
+\doxysubsubsubsection{Regular Channels DMA Configuration functions}
+\hypertarget{group___a_d_c___group5}{}\label{group___a_d_c___group5}\index{Regular Channels DMA Configuration functions@{Regular Channels DMA Configuration functions}}
+
+
+Regular Channels DMA Configuration functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___a_d_c___group5_gac5881d5995818001584b27b137a8dbcb}{ADC\+\_\+\+DMACmd}} (ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified ADC DMA request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___a_d_c___group5_ga912fd3e923ae4435621724e1bbc52729}{ADC\+\_\+\+DMARequest\+After\+Last\+Transfer\+Cmd}} (ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the ADC DMA request after last transfer (Single-\/\+ADC mode) ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___a_d_c___group5_ga40f2be2edf2a33fc15f4a5933b562970}{ADC\+\_\+\+Multi\+Mode\+DMARequest\+After\+Last\+Transfer\+Cmd}} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the ADC DMA request after last transfer in multi ADC mode ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Regular Channels DMA Configuration functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                   Regular Channels DMA Configuration functions
+ ===============================================================================  
+
+  This section provides functions allowing to configure the DMA for ADC regular 
+  channels.
+  Since converted regular channel values are stored into a unique data register, 
+  it is useful to use DMA for conversion of more than one regular channel. This 
+  avoids the loss of the data already stored in the ADC Data register. 
+  
+  When the DMA mode is enabled (using the ADC_DMACmd() function), after each
+  conversion of a regular channel, a DMA request is generated.
+  
+  Depending on the "DMA disable selection for Independent ADC mode" 
+  configuration (using the ADC_DMARequestAfterLastTransferCmd() function), 
+  at the end of the last DMA transfer, two possibilities are allowed:
+  - No new DMA request is issued to the DMA controller (feature DISABLED) 
+  - Requests can continue to be generated (feature ENABLED).
+  
+  Depending on the "DMA disable selection for multi ADC mode" configuration 
+  (using the void ADC_MultiModeDMARequestAfterLastTransferCmd() function), 
+  at the end of the last DMA transfer, two possibilities are allowed:
+  - No new DMA request is issued to the DMA controller (feature DISABLED) 
+  - Requests can continue to be generated (feature ENABLED).\end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\Hypertarget{group___a_d_c___group5_gac5881d5995818001584b27b137a8dbcb}\label{group___a_d_c___group5_gac5881d5995818001584b27b137a8dbcb} 
+\index{Regular Channels DMA Configuration functions@{Regular Channels DMA Configuration functions}!ADC\_DMACmd@{ADC\_DMACmd}}
+\index{ADC\_DMACmd@{ADC\_DMACmd}!Regular Channels DMA Configuration functions@{Regular Channels DMA Configuration functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{ADC\_DMACmd()}{ADC\_DMACmd()}}
+{\footnotesize\ttfamily void ADC\+\_\+\+DMACmd (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{ADCx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified ADC DMA request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em New\+State} & new state of the selected ADC DMA transfer. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___a_d_c___group5_ga912fd3e923ae4435621724e1bbc52729}\label{group___a_d_c___group5_ga912fd3e923ae4435621724e1bbc52729} 
+\index{Regular Channels DMA Configuration functions@{Regular Channels DMA Configuration functions}!ADC\_DMARequestAfterLastTransferCmd@{ADC\_DMARequestAfterLastTransferCmd}}
+\index{ADC\_DMARequestAfterLastTransferCmd@{ADC\_DMARequestAfterLastTransferCmd}!Regular Channels DMA Configuration functions@{Regular Channels DMA Configuration functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{ADC\_DMARequestAfterLastTransferCmd()}{ADC\_DMARequestAfterLastTransferCmd()}}
+{\footnotesize\ttfamily void ADC\+\_\+\+DMARequest\+After\+Last\+Transfer\+Cmd (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{ADCx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the ADC DMA request after last transfer (Single-\/\+ADC mode) ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em New\+State} & new state of the selected ADC DMA request after last transfer. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___a_d_c___group5_ga40f2be2edf2a33fc15f4a5933b562970}\label{group___a_d_c___group5_ga40f2be2edf2a33fc15f4a5933b562970} 
+\index{Regular Channels DMA Configuration functions@{Regular Channels DMA Configuration functions}!ADC\_MultiModeDMARequestAfterLastTransferCmd@{ADC\_MultiModeDMARequestAfterLastTransferCmd}}
+\index{ADC\_MultiModeDMARequestAfterLastTransferCmd@{ADC\_MultiModeDMARequestAfterLastTransferCmd}!Regular Channels DMA Configuration functions@{Regular Channels DMA Configuration functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{ADC\_MultiModeDMARequestAfterLastTransferCmd()}{ADC\_MultiModeDMARequestAfterLastTransferCmd()}}
+{\footnotesize\ttfamily void ADC\+\_\+\+Multi\+Mode\+DMARequest\+After\+Last\+Transfer\+Cmd (\begin{DoxyParamCaption}\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the ADC DMA request after last transfer in multi ADC mode ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New\+State} & new state of the selected ADC DMA request after last transfer. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+if Enabled, DMA requests are issued as long as data are converted and DMA mode for multi ADC mode (selected using \doxylink{group___a_d_c___group1_ga5803f6581a9cd7e90b6e637067102d94}{ADC\+\_\+\+Common\+Init()} function by ADC\+\_\+\+Common\+Init\+Struct.\+ADC\+\_\+\+DMAAccess\+Mode structure member) is ADC\+\_\+\+DMAAccess\+Mode\+\_\+1, ADC\+\_\+\+DMAAccess\+Mode\+\_\+2 or ADC\+\_\+\+DMAAccess\+Mode\+\_\+3. ~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

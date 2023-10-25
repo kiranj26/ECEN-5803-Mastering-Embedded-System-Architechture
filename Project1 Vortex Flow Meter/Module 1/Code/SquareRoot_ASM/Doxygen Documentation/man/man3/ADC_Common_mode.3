@@ -1,0 +1,106 @@
+.TH "ADC_Common_mode" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_Common_mode \- ADC_Common_mode
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC_Mode_Independent\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_DualMode_RegSimult_InjecSimult\fP   ((uint32_t)0x00000001)"
+.br
+.ti -1c
+.RI "#define \fBADC_DualMode_RegSimult_AlterTrig\fP   ((uint32_t)0x00000002)"
+.br
+.ti -1c
+.RI "#define \fBADC_DualMode_InjecSimult\fP   ((uint32_t)0x00000005)"
+.br
+.ti -1c
+.RI "#define \fBADC_DualMode_RegSimult\fP   ((uint32_t)0x00000006)"
+.br
+.ti -1c
+.RI "#define \fBADC_DualMode_Interl\fP   ((uint32_t)0x00000007)"
+.br
+.ti -1c
+.RI "#define \fBADC_DualMode_AlterTrig\fP   ((uint32_t)0x00000009)"
+.br
+.ti -1c
+.RI "#define \fBADC_TripleMode_RegSimult_InjecSimult\fP   ((uint32_t)0x00000011)"
+.br
+.ti -1c
+.RI "#define \fBADC_TripleMode_RegSimult_AlterTrig\fP   ((uint32_t)0x00000012)"
+.br
+.ti -1c
+.RI "#define \fBADC_TripleMode_InjecSimult\fP   ((uint32_t)0x00000015)"
+.br
+.ti -1c
+.RI "#define \fBADC_TripleMode_RegSimult\fP   ((uint32_t)0x00000016)"
+.br
+.ti -1c
+.RI "#define \fBADC_TripleMode_Interl\fP   ((uint32_t)0x00000017)"
+.br
+.ti -1c
+.RI "#define \fBADC_TripleMode_AlterTrig\fP   ((uint32_t)0x00000019)"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_MODE\fP(MODE)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_DualMode_AlterTrig   ((uint32_t)0x00000009)"
+
+.SS "#define ADC_DualMode_InjecSimult   ((uint32_t)0x00000005)"
+
+.SS "#define ADC_DualMode_Interl   ((uint32_t)0x00000007)"
+
+.SS "#define ADC_DualMode_RegSimult   ((uint32_t)0x00000006)"
+
+.SS "#define ADC_DualMode_RegSimult_AlterTrig   ((uint32_t)0x00000002)"
+
+.SS "#define ADC_DualMode_RegSimult_InjecSimult   ((uint32_t)0x00000001)"
+
+.SS "#define ADC_Mode_Independent   ((uint32_t)0x00000000)"
+
+.SS "#define ADC_TripleMode_AlterTrig   ((uint32_t)0x00000019)"
+
+.SS "#define ADC_TripleMode_InjecSimult   ((uint32_t)0x00000015)"
+
+.SS "#define ADC_TripleMode_Interl   ((uint32_t)0x00000017)"
+
+.SS "#define ADC_TripleMode_RegSimult   ((uint32_t)0x00000016)"
+
+.SS "#define ADC_TripleMode_RegSimult_AlterTrig   ((uint32_t)0x00000012)"
+
+.SS "#define ADC_TripleMode_RegSimult_InjecSimult   ((uint32_t)0x00000011)"
+
+.SS "#define IS_ADC_MODE(MODE)"
+\fBValue:\fP.PP
+.nf
+                           (((MODE) == ADC_Mode_Independent) || \\
+                           ((MODE) == ADC_DualMode_RegSimult_InjecSimult) || \\
+                           ((MODE) == ADC_DualMode_RegSimult_AlterTrig) || \\
+                           ((MODE) == ADC_DualMode_InjecSimult) || \\
+                           ((MODE) == ADC_DualMode_RegSimult) || \\
+                           ((MODE) == ADC_DualMode_Interl) || \\
+                           ((MODE) == ADC_DualMode_AlterTrig) || \\
+                           ((MODE) == ADC_TripleMode_RegSimult_InjecSimult) || \\
+                           ((MODE) == ADC_TripleMode_RegSimult_AlterTrig) || \\
+                           ((MODE) == ADC_TripleMode_InjecSimult) || \\
+                           ((MODE) == ADC_TripleMode_RegSimult) || \\
+                           ((MODE) == ADC_TripleMode_Interl) || \\
+                           ((MODE) == ADC_TripleMode_AlterTrig))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

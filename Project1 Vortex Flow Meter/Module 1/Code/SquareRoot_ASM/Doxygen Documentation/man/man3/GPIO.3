@@ -1,0 +1,621 @@
+.TH "GPIO" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GPIO \- GPIO
+.PP
+ \- GPIO driver modules\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Modules"
+
+.in +1c
+.ti -1c
+.RI "\fBGPIO_Private_Functions\fP"
+.br
+.ti -1c
+.RI "\fBGPIO_Exported_Constants\fP"
+.br
+.in -1c
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBGPIO_InitTypeDef\fP"
+.br
+.RI "GPIO Init structure definition 
+.br
+ "
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBIS_GPIO_ALL_PERIPH\fP(PERIPH)"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_MODE\fP(MODE)"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_OTYPE\fP(OTYPE)   (((OTYPE) == \fBGPIO_OType_PP\fP) || ((OTYPE) == \fBGPIO_OType_OD\fP))"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_SPEED\fP(SPEED)"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_PUPD\fP(PUPD)"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_BIT_ACTION\fP(ACTION)   (((ACTION) == \fBBit_RESET\fP) || ((ACTION) == \fBBit_SET\fP))"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBGPIOMode_TypeDef\fP { \fBGPIO_Mode_IN\fP = 0x00, \fBGPIO_Mode_OUT\fP = 0x01, \fBGPIO_Mode_AF\fP = 0x02, \fBGPIO_Mode_AN\fP = 0x03 }"
+.br
+.RI "GPIO Configuration Mode enumeration\&. "
+.ti -1c
+.RI "enum \fBGPIOOType_TypeDef\fP { \fBGPIO_OType_PP\fP = 0x00, \fBGPIO_OType_OD\fP = 0x01 }"
+.br
+.RI "GPIO Output type enumeration\&. "
+.ti -1c
+.RI "enum \fBGPIOSpeed_TypeDef\fP { \fBGPIO_Speed_2MHz\fP = 0x00, \fBGPIO_Speed_25MHz\fP = 0x01, \fBGPIO_Speed_50MHz\fP = 0x02, \fBGPIO_Speed_100MHz\fP = 0x03 }"
+.br
+.RI "GPIO Output Maximum frequency enumeration\&. "
+.ti -1c
+.RI "enum \fBGPIOPuPd_TypeDef\fP { \fBGPIO_PuPd_NOPULL\fP = 0x00, \fBGPIO_PuPd_UP\fP = 0x01, \fBGPIO_PuPd_DOWN\fP = 0x02 }"
+.br
+.RI "GPIO Configuration PullUp PullDown enumeration\&. "
+.ti -1c
+.RI "enum \fBBitAction\fP { \fBBit_RESET\fP = 0, \fBBit_SET\fP }"
+.br
+.RI "GPIO Bit SET and Bit RESET enumeration\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBGPIO_DeInit\fP (GPIO_TypeDef *GPIOx)"
+.br
+.RI "Deinitializes the GPIOx peripheral registers to their default reset values\&. "
+.ti -1c
+.RI "void \fBGPIO_Init\fP (GPIO_TypeDef *GPIOx, \fBGPIO_InitTypeDef\fP *GPIO_InitStruct)"
+.br
+.RI "Initializes the GPIOx peripheral according to the specified parameters in the GPIO_InitStruct\&. "
+.ti -1c
+.RI "void \fBGPIO_StructInit\fP (\fBGPIO_InitTypeDef\fP *GPIO_InitStruct)"
+.br
+.RI "Fills each GPIO_InitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBGPIO_PinLockConfig\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Locks GPIO Pins configuration registers\&. "
+.ti -1c
+.RI "uint8_t \fBGPIO_ReadInputDataBit\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Reads the specified input port pin\&. "
+.ti -1c
+.RI "uint16_t \fBGPIO_ReadInputData\fP (GPIO_TypeDef *GPIOx)"
+.br
+.RI "Reads the specified GPIO input data port\&. "
+.ti -1c
+.RI "uint8_t \fBGPIO_ReadOutputDataBit\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Reads the specified output data port bit\&. "
+.ti -1c
+.RI "uint16_t \fBGPIO_ReadOutputData\fP (GPIO_TypeDef *GPIOx)"
+.br
+.RI "Reads the specified GPIO output data port\&. "
+.ti -1c
+.RI "void \fBGPIO_SetBits\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Sets the selected data port bits\&. "
+.ti -1c
+.RI "void \fBGPIO_ResetBits\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Clears the selected data port bits\&. "
+.ti -1c
+.RI "void \fBGPIO_WriteBit\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, \fBBitAction\fP BitVal)"
+.br
+.RI "Sets or clears the selected data port bit\&. "
+.ti -1c
+.RI "void \fBGPIO_Write\fP (GPIO_TypeDef *GPIOx, uint16_t PortVal)"
+.br
+.RI "Writes data to the specified GPIO data port\&. "
+.ti -1c
+.RI "void \fBGPIO_ToggleBits\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Toggles the specified GPIO pins\&.\&. "
+.ti -1c
+.RI "void \fBGPIO_PinAFConfig\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO_AF)"
+.br
+.RI "Changes the mapping of the specified pin\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+GPIO driver modules\&. 
+
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_GPIO_ALL_PERIPH(PERIPH)"
+\fBValue:\fP.PP
+.nf
+                                    (((PERIPH) == GPIOA) || \\
+                                    ((PERIPH) == GPIOB) || \\
+                                    ((PERIPH) == GPIOC) || \\
+                                    ((PERIPH) == GPIOD) || \\
+                                    ((PERIPH) == GPIOE) || \\
+                                    ((PERIPH) == GPIOF) || \\
+                                    ((PERIPH) == GPIOG) || \\
+                                    ((PERIPH) == GPIOH) || \\
+                                    ((PERIPH) == GPIOI))
+.fi
+
+.SS "#define IS_GPIO_BIT_ACTION(ACTION)   (((ACTION) == \fBBit_RESET\fP) || ((ACTION) == \fBBit_SET\fP))"
+
+.SS "#define IS_GPIO_MODE(MODE)"
+\fBValue:\fP.PP
+.nf
+                            (((MODE) == GPIO_Mode_IN)  || ((MODE) == GPIO_Mode_OUT) || \\
+                            ((MODE) == GPIO_Mode_AF)|| ((MODE) == GPIO_Mode_AN))
+.fi
+
+.SS "#define IS_GPIO_OTYPE(OTYPE)   (((OTYPE) == \fBGPIO_OType_PP\fP) || ((OTYPE) == \fBGPIO_OType_OD\fP))"
+
+.SS "#define IS_GPIO_PUPD(PUPD)"
+\fBValue:\fP.PP
+.nf
+                            (((PUPD) == GPIO_PuPd_NOPULL) || ((PUPD) == GPIO_PuPd_UP) || \\
+                            ((PUPD) == GPIO_PuPd_DOWN))
+.fi
+
+.SS "#define IS_GPIO_SPEED(SPEED)"
+\fBValue:\fP.PP
+.nf
+                              (((SPEED) == GPIO_Speed_2MHz) || ((SPEED) == GPIO_Speed_25MHz) || \\
+                              ((SPEED) == GPIO_Speed_50MHz)||  ((SPEED) == GPIO_Speed_100MHz))
+.fi
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBBitAction\fP"
+
+.PP
+GPIO Bit SET and Bit RESET enumeration\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIBit_RESET \fP\fP
+.TP
+\fB\fIBit_SET \fP\fP
+.SS "enum \fBGPIOMode_TypeDef\fP"
+
+.PP
+GPIO Configuration Mode enumeration\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIGPIO_Mode_IN \fP\fP
+GPIO Input Mode 
+.TP
+\fB\fIGPIO_Mode_OUT \fP\fP
+GPIO Output Mode 
+.TP
+\fB\fIGPIO_Mode_AF \fP\fP
+GPIO Alternate function Mode 
+.TP
+\fB\fIGPIO_Mode_AN \fP\fP
+GPIO Analog Mode 
+.SS "enum \fBGPIOOType_TypeDef\fP"
+
+.PP
+GPIO Output type enumeration\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIGPIO_OType_PP \fP\fP
+.TP
+\fB\fIGPIO_OType_OD \fP\fP
+.SS "enum \fBGPIOPuPd_TypeDef\fP"
+
+.PP
+GPIO Configuration PullUp PullDown enumeration\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIGPIO_PuPd_NOPULL \fP\fP
+.TP
+\fB\fIGPIO_PuPd_UP \fP\fP
+.TP
+\fB\fIGPIO_PuPd_DOWN \fP\fP
+.SS "enum \fBGPIOSpeed_TypeDef\fP"
+
+.PP
+GPIO Output Maximum frequency enumeration\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIGPIO_Speed_2MHz \fP\fP
+Low speed 
+.TP
+\fB\fIGPIO_Speed_25MHz \fP\fP
+Medium speed 
+.TP
+\fB\fIGPIO_Speed_50MHz \fP\fP
+Fast speed 
+.TP
+\fB\fIGPIO_Speed_100MHz \fP\fP
+High speed on 30 pF (80 MHz Output max speed on 15 pF) 
+.SH "Function Documentation"
+.PP 
+.SS "void GPIO_DeInit (GPIO_TypeDef * GPIOx)"
+
+.PP
+Deinitializes the GPIOx peripheral registers to their default reset values\&. 
+.PP
+\fBNote\fP
+.RS 4
+By default, The GPIO pins are configured in input floating mode (except JTAG pins)\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void GPIO_Init (GPIO_TypeDef * GPIOx, \fBGPIO_InitTypeDef\fP * GPIO_InitStruct)"
+
+.PP
+Initializes the GPIOx peripheral according to the specified parameters in the GPIO_InitStruct\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIGPIO_InitStruct\fP pointer to a \fBGPIO_InitTypeDef\fP structure that contains the configuration information for the specified GPIO peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void GPIO_PinAFConfig (GPIO_TypeDef * GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO_AF)"
+
+.PP
+Changes the mapping of the specified pin\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIGPIO_PinSource\fP specifies the pin for the Alternate function\&. This parameter can be GPIO_PinSourcex where x can be (0\&.\&.15)\&. 
+.br
+\fIGPIO_AFSelection\fP selects the pin to used as Alternate function\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+GPIO_AF_RTC_50Hz: Connect RTC_50Hz pin to AF0 (default after reset) 
+.IP "\(bu" 1
+GPIO_AF_MCO: Connect MCO pin (MCO1 and MCO2) to AF0 (default after reset) 
+.IP "\(bu" 1
+GPIO_AF_TAMPER: Connect TAMPER pins (TAMPER_1 and TAMPER_2) to AF0 (default after reset) 
+.IP "\(bu" 1
+GPIO_AF_SWJ: Connect SWJ pins (SWD and JTAG)to AF0 (default after reset) 
+.IP "\(bu" 1
+GPIO_AF_TRACE: Connect TRACE pins to AF0 (default after reset) 
+.IP "\(bu" 1
+GPIO_AF_TIM1: Connect TIM1 pins to AF1 
+.IP "\(bu" 1
+GPIO_AF_TIM2: Connect TIM2 pins to AF1 
+.IP "\(bu" 1
+GPIO_AF_TIM3: Connect TIM3 pins to AF2 
+.IP "\(bu" 1
+GPIO_AF_TIM4: Connect TIM4 pins to AF2 
+.IP "\(bu" 1
+GPIO_AF_TIM5: Connect TIM5 pins to AF2 
+.IP "\(bu" 1
+GPIO_AF_TIM8: Connect TIM8 pins to AF3 
+.IP "\(bu" 1
+GPIO_AF_TIM9: Connect TIM9 pins to AF3 
+.IP "\(bu" 1
+GPIO_AF_TIM10: Connect TIM10 pins to AF3 
+.IP "\(bu" 1
+GPIO_AF_TIM11: Connect TIM11 pins to AF3 
+.IP "\(bu" 1
+GPIO_AF_I2C1: Connect I2C1 pins to AF4 
+.IP "\(bu" 1
+GPIO_AF_I2C2: Connect I2C2 pins to AF4 
+.IP "\(bu" 1
+GPIO_AF_I2C3: Connect I2C3 pins to AF4 
+.IP "\(bu" 1
+GPIO_AF_SPI1: Connect SPI1 pins to AF5 
+.IP "\(bu" 1
+GPIO_AF_SPI2: Connect SPI2/I2S2 pins to AF5 
+.IP "\(bu" 1
+GPIO_AF_SPI3: Connect SPI3/I2S3 pins to AF6 
+.IP "\(bu" 1
+GPIO_AF_I2S3ext: Connect I2S3ext pins to AF7 
+.IP "\(bu" 1
+GPIO_AF_USART1: Connect USART1 pins to AF7 
+.IP "\(bu" 1
+GPIO_AF_USART2: Connect USART2 pins to AF7 
+.IP "\(bu" 1
+GPIO_AF_USART3: Connect USART3 pins to AF7 
+.IP "\(bu" 1
+GPIO_AF_UART4: Connect UART4 pins to AF8 
+.IP "\(bu" 1
+GPIO_AF_UART5: Connect UART5 pins to AF8 
+.IP "\(bu" 1
+GPIO_AF_USART6: Connect USART6 pins to AF8 
+.IP "\(bu" 1
+GPIO_AF_CAN1: Connect CAN1 pins to AF9 
+.IP "\(bu" 1
+GPIO_AF_CAN2: Connect CAN2 pins to AF9 
+.IP "\(bu" 1
+GPIO_AF_TIM12: Connect TIM12 pins to AF9 
+.IP "\(bu" 1
+GPIO_AF_TIM13: Connect TIM13 pins to AF9 
+.IP "\(bu" 1
+GPIO_AF_TIM14: Connect TIM14 pins to AF9 
+.IP "\(bu" 1
+GPIO_AF_OTG_FS: Connect OTG_FS pins to AF10 
+.IP "\(bu" 1
+GPIO_AF_OTG_HS: Connect OTG_HS pins to AF10 
+.IP "\(bu" 1
+GPIO_AF_ETH: Connect ETHERNET pins to AF11 
+.IP "\(bu" 1
+GPIO_AF_FSMC: Connect FSMC pins to AF12 
+.IP "\(bu" 1
+GPIO_AF_OTG_HS_FS: Connect OTG HS (configured in FS) pins to AF12 
+.IP "\(bu" 1
+GPIO_AF_SDIO: Connect SDIO pins to AF12 
+.IP "\(bu" 1
+GPIO_AF_DCMI: Connect DCMI pins to AF13 
+.IP "\(bu" 1
+GPIO_AF_EVENTOUT: Connect EVENTOUT pins to AF15 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void GPIO_PinLockConfig (GPIO_TypeDef * GPIOx, uint16_t GPIO_Pin)"
+
+.PP
+Locks GPIO Pins configuration registers\&. 
+.PP
+\fBNote\fP
+.RS 4
+The locked registers are GPIOx_MODER, GPIOx_OTYPER, GPIOx_OSPEEDR, GPIOx_PUPDR, GPIOx_AFRL and GPIOx_AFRH\&. 
+.PP
+The configuration of the locked GPIO pins can no longer be modified until the next reset\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIGPIO_Pin\fP specifies the port bit to be locked\&. This parameter can be any combination of GPIO_Pin_x where x can be (0\&.\&.15)\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "uint16_t GPIO_ReadInputData (GPIO_TypeDef * GPIOx)"
+
+.PP
+Reads the specified GPIO input data port\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIGPIO\fP input data port value\&. 
+.RE
+.PP
+
+.SS "uint8_t GPIO_ReadInputDataBit (GPIO_TypeDef * GPIOx, uint16_t GPIO_Pin)"
+
+.PP
+Reads the specified input port pin\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIGPIO_Pin\fP specifies the port bit to read\&. This parameter can be GPIO_Pin_x where x can be (0\&.\&.15)\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP input port pin value\&. 
+.RE
+.PP
+
+.SS "uint16_t GPIO_ReadOutputData (GPIO_TypeDef * GPIOx)"
+
+.PP
+Reads the specified GPIO output data port\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIGPIO\fP output data port value\&. 
+.RE
+.PP
+
+.SS "uint8_t GPIO_ReadOutputDataBit (GPIO_TypeDef * GPIOx, uint16_t GPIO_Pin)"
+
+.PP
+Reads the specified output data port bit\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIGPIO_Pin\fP specifies the port bit to read\&. This parameter can be GPIO_Pin_x where x can be (0\&.\&.15)\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP output port pin value\&. 
+.RE
+.PP
+
+.SS "void GPIO_ResetBits (GPIO_TypeDef * GPIOx, uint16_t GPIO_Pin)"
+
+.PP
+Clears the selected data port bits\&. 
+.PP
+\fBNote\fP
+.RS 4
+This functions uses GPIOx_BSRR register to allow atomic read/modify accesses\&. In this way, there is no risk of an IRQ occurring between the read and the modify access\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIGPIO_Pin\fP specifies the port bits to be written\&. This parameter can be any combination of GPIO_Pin_x where x can be (0\&.\&.15)\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void GPIO_SetBits (GPIO_TypeDef * GPIOx, uint16_t GPIO_Pin)"
+
+.PP
+Sets the selected data port bits\&. 
+.PP
+\fBNote\fP
+.RS 4
+This functions uses GPIOx_BSRR register to allow atomic read/modify accesses\&. In this way, there is no risk of an IRQ occurring between the read and the modify access\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIGPIO_Pin\fP specifies the port bits to be written\&. This parameter can be any combination of GPIO_Pin_x where x can be (0\&.\&.15)\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void GPIO_StructInit (\fBGPIO_InitTypeDef\fP * GPIO_InitStruct)"
+
+.PP
+Fills each GPIO_InitStruct member with its default value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIO_InitStruct\fP : pointer to a \fBGPIO_InitTypeDef\fP structure which will be initialized\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void GPIO_ToggleBits (GPIO_TypeDef * GPIOx, uint16_t GPIO_Pin)"
+
+.PP
+Toggles the specified GPIO pins\&.\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIGPIO_Pin\fP Specifies the pins to be toggled\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void GPIO_Write (GPIO_TypeDef * GPIOx, uint16_t PortVal)"
+
+.PP
+Writes data to the specified GPIO data port\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIPortVal\fP specifies the value to be written to the port output data register\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void GPIO_WriteBit (GPIO_TypeDef * GPIOx, uint16_t GPIO_Pin, \fBBitAction\fP BitVal)"
+
+.PP
+Sets or clears the selected data port bit\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIGPIO_Pin\fP specifies the port bit to be written\&. This parameter can be one of GPIO_Pin_x where x can be (0\&.\&.15)\&. 
+.br
+\fIBitVal\fP specifies the value to be written to the selected bit\&. This parameter can be one of the BitAction enum values: 
+.PD 0
+.IP "\(bu" 1
+Bit_RESET: to clear the port pin 
+.IP "\(bu" 1
+Bit_SET: to set the port pin 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

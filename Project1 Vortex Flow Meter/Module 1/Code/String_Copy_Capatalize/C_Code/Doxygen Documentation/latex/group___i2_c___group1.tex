@@ -1,0 +1,451 @@
+\doxysubsubsubsection{Initialization and Configuration functions}
+\label{group___i2_c___group1}\index{Initialization and Configuration functions@{Initialization and Configuration functions}}
+
+
+Initialization and Configuration functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ I2\+C\+\_\+\+De\+Init} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Deinitialize the I2\+Cx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Init} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, \textbf{ I2\+C\+\_\+\+Init\+Type\+Def} $\ast$I2\+C\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the I2\+Cx peripheral according to the specified parameters in the I2\+C\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Struct\+Init} (\textbf{ I2\+C\+\_\+\+Init\+Type\+Def} $\ast$I2\+C\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each I2\+C\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C peripheral. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Generate\+START} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Generates I2\+Cx communication START condition. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Generate\+STOP} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Generates I2\+Cx communication STOP condition. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Send7bit\+Address} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint8\+\_\+t Address, uint8\+\_\+t I2\+C\+\_\+\+Direction)
+\begin{DoxyCompactList}\small\item\em Transmits the address byte to select the slave device. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Acknowledge\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C acknowledge feature. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Own\+Address2\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint8\+\_\+t Address)
+\begin{DoxyCompactList}\small\item\em Configures the specified I2C own address2. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Dual\+Address\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C dual addressing mode. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+General\+Call\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C general call feature. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Software\+Reset\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C software reset. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Stretch\+Clock\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C Clock stretching. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Fast\+Mode\+Duty\+Cycle\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+Duty\+Cycle)
+\begin{DoxyCompactList}\small\item\em Selects the specified I2C fast mode duty cycle. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+NACKPosition\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+NACKPosition)
+\begin{DoxyCompactList}\small\item\em Selects the specified I2C NACK position in master receiver mode. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+SMBus\+Alert\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+SMBus\+Alert)
+\begin{DoxyCompactList}\small\item\em Drives the SMBus\+Alert pin high or low for the specified I2C. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+ARPCmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C ARP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Initialization and Configuration functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                   Initialization and Configuration functions
+ ===============================================================================  \end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\label{group___i2_c___group1_ga7bb44e894d68a7991f564c43fb187486} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_AcknowledgeConfig@{I2C\_AcknowledgeConfig}}
+\index{I2C\_AcknowledgeConfig@{I2C\_AcknowledgeConfig}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_AcknowledgeConfig()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Acknowledge\+Config (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified I2C acknowledge feature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2C Acknowledgement. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga66d86742bf1be58b17ef8779ffc79d02} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_ARPCmd@{I2C\_ARPCmd}}
+\index{I2C\_ARPCmd@{I2C\_ARPCmd}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_ARPCmd()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+ARPCmd (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified I2C ARP. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2\+Cx ARP. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga7e1323c9133c2cb424dfb5b10b7d2f0b} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_Cmd@{I2C\_Cmd}}
+\index{I2C\_Cmd@{I2C\_Cmd}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_Cmd()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Cmd (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified I2C peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2\+Cx peripheral. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga2ee214364603059ad5d9089f749f5bfd} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_DeInit@{I2C\_DeInit}}
+\index{I2C\_DeInit@{I2C\_DeInit}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_DeInit()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx }\end{DoxyParamCaption})}
+
+
+
+Deinitialize the I2\+Cx peripheral registers to their default reset values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga02145a333a56e79557d6ef4ea03fc313} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_DualAddressCmd@{I2C\_DualAddressCmd}}
+\index{I2C\_DualAddressCmd@{I2C\_DualAddressCmd}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_DualAddressCmd()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Dual\+Address\+Cmd (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified I2C dual addressing mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2C dual addressing mode. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_gaa570f76bc34e5b0531b29b1a90af1275} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_FastModeDutyCycleConfig@{I2C\_FastModeDutyCycleConfig}}
+\index{I2C\_FastModeDutyCycleConfig@{I2C\_FastModeDutyCycleConfig}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_FastModeDutyCycleConfig()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Fast\+Mode\+Duty\+Cycle\+Config (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{uint16\+\_\+t}]{I2\+C\+\_\+\+Duty\+Cycle }\end{DoxyParamCaption})}
+
+
+
+Selects the specified I2C fast mode duty cycle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em I2\+C\+\_\+\+Duty\+Cycle} & specifies the fast mode duty cycle. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item I2\+C\+\_\+\+Duty\+Cycle\+\_\+2\+: I2C fast mode Tlow/\+Thigh = 2 \item I2\+C\+\_\+\+Duty\+Cycle\+\_\+16\+\_\+9\+: I2C fast mode Tlow/\+Thigh = 16/9 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga65c740fc8d7b3b9f15cc432d8699d471} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_GeneralCallCmd@{I2C\_GeneralCallCmd}}
+\index{I2C\_GeneralCallCmd@{I2C\_GeneralCallCmd}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_GeneralCallCmd()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+General\+Call\+Cmd (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified I2C general call feature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2C General call. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga36c522b471588be9779c878222ccb20f} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_GenerateSTART@{I2C\_GenerateSTART}}
+\index{I2C\_GenerateSTART@{I2C\_GenerateSTART}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_GenerateSTART()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Generate\+START (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Generates I2\+Cx communication START condition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2C START condition generation. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga5c92cb573ca0ae58cc465e5400246561} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_GenerateSTOP@{I2C\_GenerateSTOP}}
+\index{I2C\_GenerateSTOP@{I2C\_GenerateSTOP}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_GenerateSTOP()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Generate\+STOP (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Generates I2\+Cx communication STOP condition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2C STOP condition generation. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_gaac29465bca70fbc91c2f922ab67bb88e} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_Init@{I2C\_Init}}
+\index{I2C\_Init@{I2C\_Init}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_Init()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Init (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{\textbf{ I2\+C\+\_\+\+Init\+Type\+Def} $\ast$}]{I2\+C\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Initializes the I2\+Cx peripheral according to the specified parameters in the I2\+C\+\_\+\+Init\+Struct. 
+
+\begin{DoxyNote}{Note}
+To use the I2C at 400 KHz (in fast mode), the PCLK1 frequency (I2C peripheral input clock) must be a multiple of 10 MHz. ~\newline
+
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em I2\+C\+\_\+\+Init\+Struct} & pointer to a \doxyref{I2\+C\+\_\+\+Init\+Type\+Def}{p.}{struct_i2_c___init_type_def} structure that contains the configuration information for the specified I2C peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_gad08ebffc3a234d84e6405ec115bd74f1} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_NACKPositionConfig@{I2C\_NACKPositionConfig}}
+\index{I2C\_NACKPositionConfig@{I2C\_NACKPositionConfig}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_NACKPositionConfig()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+NACKPosition\+Config (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{uint16\+\_\+t}]{I2\+C\+\_\+\+NACKPosition }\end{DoxyParamCaption})}
+
+
+
+Selects the specified I2C NACK position in master receiver mode. 
+
+\begin{DoxyNote}{Note}
+This function is useful in I2C Master Receiver mode when the number of data to be received is equal to 2. In this case, this function should be called (with parameter I2\+C\+\_\+\+NACKPosition\+\_\+\+Next) before data reception starts,as described in the 2-\/byte reception procedure recommended in Reference Manual in Section\+: Master receiver. ~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em I2\+C\+\_\+\+NACKPosition} & specifies the NACK position. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item I2\+C\+\_\+\+NACKPosition\+\_\+\+Next\+: indicates that the next byte will be the last received byte. ~\newline
+ \item I2\+C\+\_\+\+NACKPosition\+\_\+\+Current\+: indicates that current byte is the last received byte.\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function configures the same bit (POS) as \doxyref{I2\+C\+\_\+\+PECPosition\+Config()}{p.}{group___i2_c___group3_ga5d0f939bdd45542502827bf408f24161} but is intended to be used in I2C mode while \doxyref{I2\+C\+\_\+\+PECPosition\+Config()}{p.}{group___i2_c___group3_ga5d0f939bdd45542502827bf408f24161} is intended to used in SMBUS mode.
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga7be2cc634a613c8e3539137e897a22df} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_OwnAddress2Config@{I2C\_OwnAddress2Config}}
+\index{I2C\_OwnAddress2Config@{I2C\_OwnAddress2Config}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_OwnAddress2Config()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Own\+Address2\+Config (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{uint8\+\_\+t}]{Address }\end{DoxyParamCaption})}
+
+
+
+Configures the specified I2C own address2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em Address} & specifies the 7bit I2C own address2. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga009fc2a5b2313c36da39ece39a1156a6} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_Send7bitAddress@{I2C\_Send7bitAddress}}
+\index{I2C\_Send7bitAddress@{I2C\_Send7bitAddress}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_Send7bitAddress()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Send7bit\+Address (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{uint8\+\_\+t}]{Address,  }\item[{uint8\+\_\+t}]{I2\+C\+\_\+\+Direction }\end{DoxyParamCaption})}
+
+
+
+Transmits the address byte to select the slave device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em Address} & specifies the slave address which will be transmitted \\
+\hline
+{\em I2\+C\+\_\+\+Direction} & specifies whether the I2C device will be a Transmitter or a Receiver. This parameter can be one of the following values \begin{DoxyItemize}
+\item I2\+C\+\_\+\+Direction\+\_\+\+Transmitter\+: Transmitter mode \item I2\+C\+\_\+\+Direction\+\_\+\+Receiver\+: Receiver mode \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga75a810776d9710d2f6d9c5d9e93241c6} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_SMBusAlertConfig@{I2C\_SMBusAlertConfig}}
+\index{I2C\_SMBusAlertConfig@{I2C\_SMBusAlertConfig}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_SMBusAlertConfig()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+SMBus\+Alert\+Config (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{uint16\+\_\+t}]{I2\+C\+\_\+\+SMBus\+Alert }\end{DoxyParamCaption})}
+
+
+
+Drives the SMBus\+Alert pin high or low for the specified I2C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em I2\+C\+\_\+\+SMBus\+Alert} & specifies SMBAlert pin level. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item I2\+C\+\_\+\+SMBus\+Alert\+\_\+\+Low\+: SMBAlert pin driven low \item I2\+C\+\_\+\+SMBus\+Alert\+\_\+\+High\+: SMBAlert pin driven high \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga1289c908aeb882443aba323b459c638b} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_SoftwareResetCmd@{I2C\_SoftwareResetCmd}}
+\index{I2C\_SoftwareResetCmd@{I2C\_SoftwareResetCmd}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_SoftwareResetCmd()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Software\+Reset\+Cmd (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified I2C software reset. 
+
+\begin{DoxyNote}{Note}
+When software reset is enabled, the I2C IOs are released (this can be useful to recover from bus errors). ~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2C software reset. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga7459feb3b1dfcd3e4f6574002ca7d3bd} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_StretchClockCmd@{I2C\_StretchClockCmd}}
+\index{I2C\_StretchClockCmd@{I2C\_StretchClockCmd}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_StretchClockCmd()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Stretch\+Clock\+Cmd (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified I2C Clock stretching. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2\+Cx Clock stretching. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group1_ga08582aca6d7d7910cd5cbff0d9def350} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!I2C\_StructInit@{I2C\_StructInit}}
+\index{I2C\_StructInit@{I2C\_StructInit}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{I2C\_StructInit()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Struct\+Init (\begin{DoxyParamCaption}\item[{\textbf{ I2\+C\+\_\+\+Init\+Type\+Def} $\ast$}]{I2\+C\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Fills each I2\+C\+\_\+\+Init\+Struct member with its default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+C\+\_\+\+Init\+Struct} & pointer to an \doxyref{I2\+C\+\_\+\+Init\+Type\+Def}{p.}{struct_i2_c___init_type_def} structure which will be initialized. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

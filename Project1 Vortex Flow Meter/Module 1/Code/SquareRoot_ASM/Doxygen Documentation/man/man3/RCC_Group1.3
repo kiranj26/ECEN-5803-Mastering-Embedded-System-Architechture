@@ -1,0 +1,622 @@
+.TH "RCC_Group1" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCC_Group1 \- Internal and external clocks, PLL, CSS and MCO configuration functions
+.PP
+ \- Internal and external clocks, PLL, CSS and MCO configuration functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRCC_DeInit\fP (void)"
+.br
+.RI "Resets the RCC clock configuration to the default reset state\&. "
+.ti -1c
+.RI "void \fBRCC_HSEConfig\fP (uint8_t RCC_HSE)"
+.br
+.RI "Configures the External High Speed oscillator (HSE)\&. "
+.ti -1c
+.RI "ErrorStatus \fBRCC_WaitForHSEStartUp\fP (void)"
+.br
+.RI "Waits for HSE start-up\&. "
+.ti -1c
+.RI "void \fBRCC_AdjustHSICalibrationValue\fP (uint8_t HSICalibrationValue)"
+.br
+.RI "Adjusts the Internal High Speed oscillator (HSI) calibration value\&. "
+.ti -1c
+.RI "void \fBRCC_HSICmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the Internal High Speed oscillator (HSI)\&. "
+.ti -1c
+.RI "void \fBRCC_LSEConfig\fP (uint8_t RCC_LSE)"
+.br
+.RI "Configures the External Low Speed oscillator (LSE)\&. "
+.ti -1c
+.RI "void \fBRCC_LSICmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the Internal Low Speed oscillator (LSI)\&. "
+.ti -1c
+.RI "void \fBRCC_PLLConfig\fP (uint32_t RCC_PLLSource, uint32_t PLLM, uint32_t PLLN, uint32_t PLLP, uint32_t PLLQ)"
+.br
+.RI "Configures the main PLL clock source, multiplication and division factors\&. "
+.ti -1c
+.RI "void \fBRCC_PLLCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the main PLL\&. "
+.ti -1c
+.RI "void \fBRCC_PLLI2SConfig\fP (uint32_t PLLI2SN, uint32_t PLLI2SR)"
+.br
+.RI "Configures the PLLI2S clock multiplication and division factors\&. "
+.ti -1c
+.RI "void \fBRCC_PLLI2SCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the PLLI2S\&. "
+.ti -1c
+.RI "void \fBRCC_ClockSecuritySystemCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the Clock Security System\&. "
+.ti -1c
+.RI "void \fBRCC_MCO1Config\fP (uint32_t RCC_MCO1Source, uint32_t RCC_MCO1Div)"
+.br
+.RI "Selects the clock source to output on MCO1 pin(PA8)\&. "
+.ti -1c
+.RI "void \fBRCC_MCO2Config\fP (uint32_t RCC_MCO2Source, uint32_t RCC_MCO2Div)"
+.br
+.RI "Selects the clock source to output on MCO2 pin(PC9)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Internal and external clocks, PLL, CSS and MCO configuration functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+      Internal/external clocks, PLL, CSS and MCO configuration functions
+ ===============================================================================  
+
+  This section provide functions allowing to configure the internal/external clocks,
+  PLLs, CSS and MCO pins\&.
+  
+  1\&. HSI (high-speed internal), 16 MHz factory-trimmed RC used directly or through
+     the PLL as System clock source\&.
+
+  2\&. LSI (low-speed internal), 32 KHz low consumption RC used as IWDG and/or RTC
+     clock source\&.
+
+  3\&. HSE (high-speed external), 4 to 26 MHz crystal oscillator used directly or
+     through the PLL as System clock source\&. Can be used also as RTC clock source\&.
+
+  4\&. LSE (low-speed external), 32 KHz oscillator used as RTC clock source\&.   
+
+  5\&. PLL (clocked by HSI or HSE), featuring two different output clocks:
+      - The first output is used to generate the high speed system clock (up to 168 MHz)
+      - The second output is used to generate the clock for the USB OTG FS (48 MHz),
+        the random analog generator (<=48 MHz) and the SDIO (<= 48 MHz)\&.
+
+  6\&. PLLI2S (clocked by HSI or HSE), used to generate an accurate clock to achieve 
+     high-quality audio performance on the I2S interface\&.
+  
+  7\&. CSS (Clock security system), once enable and if a HSE clock failure occurs 
+     (HSE used directly or through PLL as System clock source), the System clock
+     is automatically switched to HSI and an interrupt is generated if enabled\&. 
+     The interrupt is linked to the Cortex-M4 NMI (Non-Maskable Interrupt) 
+     exception vector\&.   
+
+  8\&. MCO1 (microcontroller clock output), used to output HSI, LSE, HSE or PLL
+     clock (through a configurable prescaler) on PA8 pin\&.
+
+  9\&. MCO2 (microcontroller clock output), used to output HSE, PLL, SYSCLK or PLLI2S
+     clock (through a configurable prescaler) on PC9 pin\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void RCC_AdjustHSICalibrationValue (uint8_t HSICalibrationValue)"
+
+.PP
+Adjusts the Internal High Speed oscillator (HSI) calibration value\&. 
+.PP
+\fBNote\fP
+.RS 4
+The calibration is used to compensate for the variations in voltage and temperature that influence the frequency of the internal HSI RC\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIHSICalibrationValue\fP specifies the calibration trimming value\&. This parameter must be a number between 0 and 0x1F\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_ClockSecuritySystemCmd (FunctionalState NewState)"
+
+.PP
+Enables or disables the Clock Security System\&. 
+.PP
+\fBNote\fP
+.RS 4
+If a failure is detected on the HSE oscillator clock, this oscillator is automatically disabled and an interrupt is generated to inform the software about the failure (Clock Security System Interrupt, CSSI), allowing the MCU to perform rescue operations\&. The CSSI is linked to the Cortex-M4 NMI (Non-Maskable Interrupt) exception vector\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the Clock Security System\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_DeInit (void)"
+
+.PP
+Resets the RCC clock configuration to the default reset state\&. 
+.PP
+\fBNote\fP
+.RS 4
+The default reset state of the clock configuration is given below:
+.IP "\(bu" 2
+HSI ON and used as system clock source
+.IP "\(bu" 2
+HSE, PLL and PLLI2S OFF
+.IP "\(bu" 2
+AHB, APB1 and APB2 prescaler set to 1\&.
+.IP "\(bu" 2
+CSS, MCO1 and MCO2 OFF
+.IP "\(bu" 2
+All interrupts disabled 
+.PP
+.PP
+This function doesn't modify the configuration of the
+.IP "\(bu" 2
+Peripheral clocks
+.IP "\(bu" 2
+LSI, LSE and RTC clocks 
+.PP
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_HSEConfig (uint8_t RCC_HSE)"
+
+.PP
+Configures the External High Speed oscillator (HSE)\&. 
+.PP
+\fBNote\fP
+.RS 4
+After enabling the HSE (RCC_HSE_ON or RCC_HSE_Bypass), the application software should wait on HSERDY flag to be set indicating that HSE clock is stable and can be used to clock the PLL and/or system clock\&. 
+.PP
+HSE state can not be changed if it is used directly or through the PLL as system clock\&. In this case, you have to select another source of the system clock then change the HSE state (ex\&. disable it)\&. 
+.PP
+The HSE is stopped by hardware when entering STOP and STANDBY modes\&. 
+.br
+ 
+.PP
+This function reset the CSSON bit, so if the Clock security system(CSS) was previously enabled you have to enable it again after calling this function\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_HSE\fP specifies the new state of the HSE\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_HSE_OFF: turn OFF the HSE oscillator, HSERDY flag goes low after 6 HSE oscillator clock cycles\&. 
+.IP "\(bu" 1
+RCC_HSE_ON: turn ON the HSE oscillator 
+.IP "\(bu" 1
+RCC_HSE_Bypass: HSE oscillator bypassed with external clock 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_HSICmd (FunctionalState NewState)"
+
+.PP
+Enables or disables the Internal High Speed oscillator (HSI)\&. 
+.PP
+\fBNote\fP
+.RS 4
+The HSI is stopped by hardware when entering STOP and STANDBY modes\&. It is used (enabled by hardware) as system clock source after startup from Reset, wakeup from STOP and STANDBY mode, or in case of failure of the HSE used directly or indirectly as system clock (if the Clock Security System CSS is enabled)\&. 
+.br
+ 
+.PP
+HSI can not be stopped if it is used as system clock source\&. In this case, you have to select another source of the system clock then stop the HSI\&. 
+.br
+ 
+.PP
+After enabling the HSI, the application software should wait on HSIRDY flag to be set indicating that HSI clock is stable and can be used as system clock source\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the HSI\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+When the HSI is stopped, HSIRDY flag goes low after 6 HSI oscillator clock cycles\&. 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_LSEConfig (uint8_t RCC_LSE)"
+
+.PP
+Configures the External Low Speed oscillator (LSE)\&. 
+.PP
+\fBNote\fP
+.RS 4
+As the LSE is in the Backup domain and write access is denied to this domain after reset, you have to enable write access using PWR_BackupAccessCmd(ENABLE) function before to configure the LSE (to be done once after reset)\&. 
+.br
+ 
+.PP
+After enabling the LSE (RCC_LSE_ON or RCC_LSE_Bypass), the application software should wait on LSERDY flag to be set indicating that LSE clock is stable and can be used to clock the RTC\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_LSE\fP specifies the new state of the LSE\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_LSE_OFF: turn OFF the LSE oscillator, LSERDY flag goes low after 6 LSE oscillator clock cycles\&. 
+.IP "\(bu" 1
+RCC_LSE_ON: turn ON the LSE oscillator 
+.IP "\(bu" 1
+RCC_LSE_Bypass: LSE oscillator bypassed with external clock 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_LSICmd (FunctionalState NewState)"
+
+.PP
+Enables or disables the Internal Low Speed oscillator (LSI)\&. 
+.PP
+\fBNote\fP
+.RS 4
+After enabling the LSI, the application software should wait on LSIRDY flag to be set indicating that LSI clock is stable and can be used to clock the IWDG and/or the RTC\&. 
+.PP
+LSI can not be disabled if the IWDG is running\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the LSI\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+When the LSI is stopped, LSIRDY flag goes low after 6 LSI oscillator clock cycles\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_MCO1Config (uint32_t RCC_MCO1Source, uint32_t RCC_MCO1Div)"
+
+.PP
+Selects the clock source to output on MCO1 pin(PA8)\&. 
+.PP
+\fBNote\fP
+.RS 4
+PA8 should be configured in alternate function mode\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_MCO1Source\fP specifies the clock source to output\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_MCO1Source_HSI: HSI clock selected as MCO1 source 
+.IP "\(bu" 1
+RCC_MCO1Source_LSE: LSE clock selected as MCO1 source 
+.IP "\(bu" 1
+RCC_MCO1Source_HSE: HSE clock selected as MCO1 source 
+.IP "\(bu" 1
+RCC_MCO1Source_PLLCLK: main PLL clock selected as MCO1 source 
+.PP
+.br
+\fIRCC_MCO1Div\fP specifies the MCO1 prescaler\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_MCO1Div_1: no division applied to MCO1 clock 
+.IP "\(bu" 1
+RCC_MCO1Div_2: division by 2 applied to MCO1 clock 
+.IP "\(bu" 1
+RCC_MCO1Div_3: division by 3 applied to MCO1 clock 
+.IP "\(bu" 1
+RCC_MCO1Div_4: division by 4 applied to MCO1 clock 
+.IP "\(bu" 1
+RCC_MCO1Div_5: division by 5 applied to MCO1 clock 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_MCO2Config (uint32_t RCC_MCO2Source, uint32_t RCC_MCO2Div)"
+
+.PP
+Selects the clock source to output on MCO2 pin(PC9)\&. 
+.PP
+\fBNote\fP
+.RS 4
+PC9 should be configured in alternate function mode\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_MCO2Source\fP specifies the clock source to output\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_MCO2Source_SYSCLK: System clock (SYSCLK) selected as MCO2 source 
+.IP "\(bu" 1
+RCC_MCO2Source_PLLI2SCLK: PLLI2S clock selected as MCO2 source 
+.IP "\(bu" 1
+RCC_MCO2Source_HSE: HSE clock selected as MCO2 source 
+.IP "\(bu" 1
+RCC_MCO2Source_PLLCLK: main PLL clock selected as MCO2 source 
+.PP
+.br
+\fIRCC_MCO2Div\fP specifies the MCO2 prescaler\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_MCO2Div_1: no division applied to MCO2 clock 
+.IP "\(bu" 1
+RCC_MCO2Div_2: division by 2 applied to MCO2 clock 
+.IP "\(bu" 1
+RCC_MCO2Div_3: division by 3 applied to MCO2 clock 
+.IP "\(bu" 1
+RCC_MCO2Div_4: division by 4 applied to MCO2 clock 
+.IP "\(bu" 1
+RCC_MCO2Div_5: division by 5 applied to MCO2 clock 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_PLLCmd (FunctionalState NewState)"
+
+.PP
+Enables or disables the main PLL\&. 
+.PP
+\fBNote\fP
+.RS 4
+After enabling the main PLL, the application software should wait on PLLRDY flag to be set indicating that PLL clock is stable and can be used as system clock source\&. 
+.PP
+The main PLL can not be disabled if it is used as system clock source 
+.PP
+The main PLL is disabled by hardware when entering STOP and STANDBY modes\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the main PLL\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_PLLConfig (uint32_t RCC_PLLSource, uint32_t PLLM, uint32_t PLLN, uint32_t PLLP, uint32_t PLLQ)"
+
+.PP
+Configures the main PLL clock source, multiplication and division factors\&. 
+.PP
+\fBNote\fP
+.RS 4
+This function must be used only when the main PLL is disabled\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_PLLSource\fP specifies the PLL entry clock source\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_PLLSource_HSI: HSI oscillator clock selected as PLL clock entry 
+.IP "\(bu" 1
+RCC_PLLSource_HSE: HSE oscillator clock selected as PLL clock entry 
+.PP
+.RE
+.PP
+\fBNote\fP
+.RS 4
+This clock source (RCC_PLLSource) is common for the main PLL and PLLI2S\&. 
+.br
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIPLLM\fP specifies the division factor for PLL VCO input clock This parameter must be a number between 0 and 63\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+You have to set the PLLM parameter correctly to ensure that the VCO input frequency ranges from 1 to 2 MHz\&. It is recommended to select a frequency of 2 MHz to limit PLL jitter\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIPLLN\fP specifies the multiplication factor for PLL VCO output clock This parameter must be a number between 192 and 432\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+You have to set the PLLN parameter correctly to ensure that the VCO output frequency is between 192 and 432 MHz\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIPLLP\fP specifies the division factor for main system clock (SYSCLK) This parameter must be a number in the range {2, 4, 6, or 8}\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+You have to set the PLLP parameter correctly to not exceed 168 MHz on the System clock frequency\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIPLLQ\fP specifies the division factor for OTG FS, SDIO and RNG clocks This parameter must be a number between 4 and 15\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+If the USB OTG FS is used in your application, you have to set the PLLQ parameter correctly to have 48 MHz clock for the USB\&. However, the SDIO and RNG need a frequency lower than or equal to 48 MHz to work correctly\&.
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_PLLI2SCmd (FunctionalState NewState)"
+
+.PP
+Enables or disables the PLLI2S\&. 
+.PP
+\fBNote\fP
+.RS 4
+The PLLI2S is disabled by hardware when entering STOP and STANDBY modes\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the PLLI2S\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_PLLI2SConfig (uint32_t PLLI2SN, uint32_t PLLI2SR)"
+
+.PP
+Configures the PLLI2S clock multiplication and division factors\&. 
+.PP
+\fBNote\fP
+.RS 4
+This function must be used only when the PLLI2S is disabled\&. 
+.PP
+PLLI2S clock source is common with the main PLL (configured in RCC_PLLConfig function ) 
+.br
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIPLLI2SN\fP specifies the multiplication factor for PLLI2S VCO output clock This parameter must be a number between 192 and 432\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+You have to set the PLLI2SN parameter correctly to ensure that the VCO output frequency is between 192 and 432 MHz\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIPLLI2SR\fP specifies the division factor for I2S clock This parameter must be a number between 2 and 7\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+You have to set the PLLI2SR parameter correctly to not exceed 192 MHz on the I2S clock frequency\&.
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "ErrorStatus RCC_WaitForHSEStartUp (void)"
+
+.PP
+Waits for HSE start-up\&. 
+.PP
+\fBNote\fP
+.RS 4
+This functions waits on HSERDY flag to be set and return SUCCESS if this flag is set, otherwise returns ERROR if the timeout is reached and this flag is not set\&. The timeout value is defined by the constant HSE_STARTUP_TIMEOUT in stm32f4xx\&.h file\&. You can tailor it depending on the HSE crystal used in your application\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIAn\fP ErrorStatus enumeration value:
+.IP "\(bu" 2
+SUCCESS: HSE oscillator is stable and ready to use
+.IP "\(bu" 2
+ERROR: HSE oscillator not yet ready 
+.PP
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

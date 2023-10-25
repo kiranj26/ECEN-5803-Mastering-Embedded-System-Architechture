@@ -1,0 +1,111 @@
+.TH "USART_Group7" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_Group7 \- IrDA mode functions
+.PP
+ \- IrDA mode functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUSART_IrDAConfig\fP (USART_TypeDef *USARTx, uint16_t USART_IrDAMode)"
+.br
+.RI "Configures the USART's IrDA interface\&. "
+.ti -1c
+.RI "void \fBUSART_IrDACmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's IrDA interface\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+IrDA mode functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                                IrDA mode functions
+ ===============================================================================  
+
+  This subsection provides a set of functions allowing to manage the USART 
+  IrDA communication\&.
+  
+  IrDA is a half duplex communication protocol\&. If the Transmitter is busy, any data
+  on the IrDA receive line will be ignored by the IrDA decoder and if the Receiver 
+  is busy, data on the TX from the USART to IrDA will not be encoded by IrDA\&.
+  While receiving data, transmission should be avoided as the data to be transmitted
+  could be corrupted\&.
+
+  IrDA communication is possible through the following procedure:
+     1\&. Program the Baud rate, Word length = 8 bits, Stop bits, Parity, Transmitter/Receiver 
+        modes and hardware flow control values using the USART_Init() function\&.
+     2\&. Enable the USART using the USART_Cmd() function\&.
+     3\&. Configures the IrDA pulse width by configuring the prescaler using  
+        the USART_SetPrescaler() function\&.
+     4\&. Configures the IrDA  USART_IrDAMode_LowPower or USART_IrDAMode_Normal mode
+        using the USART_IrDAConfig() function\&.
+     5\&. Enable the IrDA using the USART_IrDACmd() function\&.
+
+@note A pulse of width less than two and greater than one PSC period(s) may or may
+      not be rejected\&.
+@note The receiver set up time should be managed by software\&. The IrDA physical layer
+      specification specifies a minimum of 10 ms delay between transmission and 
+      reception (IrDA is a half duplex protocol)\&.
+@note In IrDA mode, the following bits must be kept cleared:
+        - LINEN, STOP and CLKEN bits in the USART_CR2 register\&.
+        - SCEN and HDSEL bits in the USART_CR3 register\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void USART_IrDACmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's IrDA interface\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the IrDA mode\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_IrDAConfig (USART_TypeDef * USARTx, uint16_t USART_IrDAMode)"
+
+.PP
+Configures the USART's IrDA interface\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_IrDAMode\fP specifies the IrDA mode\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_IrDAMode_LowPower 
+.IP "\(bu" 1
+USART_IrDAMode_Normal 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

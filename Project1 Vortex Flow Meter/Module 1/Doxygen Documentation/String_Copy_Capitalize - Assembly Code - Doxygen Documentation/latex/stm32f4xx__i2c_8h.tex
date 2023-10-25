@@ -1,0 +1,306 @@
+\doxysection{drivers/stm32f4xx\+\_\+i2c.h File Reference}
+\label{stm32f4xx__i2c_8h}\index{drivers/stm32f4xx\_i2c.h@{drivers/stm32f4xx\_i2c.h}}
+
+
+This file contains all the functions prototypes for the I2C firmware library.  
+
+
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ I2\+C\+\_\+\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em I2C Init structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+ALL\+\_\+\+PERIPH}(PERIPH)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Mode\+\_\+\+I2C}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Mode\+\_\+\+SMBus\+Device}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Mode\+\_\+\+SMBus\+Host}~((uint16\+\_\+t)0x000A)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+MODE}(MODE)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Duty\+Cycle\+\_\+16\+\_\+9}~((uint16\+\_\+t)0x4000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Duty\+Cycle\+\_\+2}~((uint16\+\_\+t)0x\+BFFF)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+DUTY\+\_\+\+CYCLE}(CYCLE)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Ack\+\_\+\+Enable}~((uint16\+\_\+t)0x0400)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Ack\+\_\+\+Disable}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+ACK\+\_\+\+STATE}(STATE)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Direction\+\_\+\+Transmitter}~((uint8\+\_\+t)0x00)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Direction\+\_\+\+Receiver}~((uint8\+\_\+t)0x01)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+DIRECTION}(DIRECTION)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Acknowledged\+Address\+\_\+7bit}~((uint16\+\_\+t)0x4000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Acknowledged\+Address\+\_\+10bit}~((uint16\+\_\+t)0x\+C000)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+ACKNOWLEDGE\+\_\+\+ADDRESS}(ADDRESS)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Register\+\_\+\+CR1}~((uint8\+\_\+t)0x00)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Register\+\_\+\+CR2}~((uint8\+\_\+t)0x04)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Register\+\_\+\+OAR1}~((uint8\+\_\+t)0x08)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Register\+\_\+\+OAR2}~((uint8\+\_\+t)0x0C)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Register\+\_\+\+DR}~((uint8\+\_\+t)0x10)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Register\+\_\+\+SR1}~((uint8\+\_\+t)0x14)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Register\+\_\+\+SR2}~((uint8\+\_\+t)0x18)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Register\+\_\+\+CCR}~((uint8\+\_\+t)0x1C)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+Register\+\_\+\+TRISE}~((uint8\+\_\+t)0x20)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+REGISTER}(REGISTER)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+NACKPosition\+\_\+\+Next}~((uint16\+\_\+t)0x0800)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+NACKPosition\+\_\+\+Current}~((uint16\+\_\+t)0x\+F7\+FF)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+NACK\+\_\+\+POSITION}(POSITION)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+SMBus\+Alert\+\_\+\+Low}~((uint16\+\_\+t)0x2000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+SMBus\+Alert\+\_\+\+High}~((uint16\+\_\+t)0x\+DFFF)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+SMBUS\+\_\+\+ALERT}(ALERT)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+PECPosition\+\_\+\+Next}~((uint16\+\_\+t)0x0800)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+PECPosition\+\_\+\+Current}~((uint16\+\_\+t)0x\+F7\+FF)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+PEC\+\_\+\+POSITION}(POSITION)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+BUF}~((uint16\+\_\+t)0x0400)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+EVT}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+ERR}~((uint16\+\_\+t)0x0100)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+CONFIG\+\_\+\+IT}(IT)~((((IT) \& (uint16\+\_\+t)0x\+F8\+FF) == 0x00) \&\& ((IT) != 0x00))
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+SMBALERT}~((uint32\+\_\+t)0x01008000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+TIMEOUT}~((uint32\+\_\+t)0x01004000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+PECERR}~((uint32\+\_\+t)0x01001000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+OVR}~((uint32\+\_\+t)0x01000800)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+AF}~((uint32\+\_\+t)0x01000400)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+ARLO}~((uint32\+\_\+t)0x01000200)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+BERR}~((uint32\+\_\+t)0x01000100)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+TXE}~((uint32\+\_\+t)0x06000080)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+RXNE}~((uint32\+\_\+t)0x06000040)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+STOPF}~((uint32\+\_\+t)0x02000010)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+ADD10}~((uint32\+\_\+t)0x02000008)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+BTF}~((uint32\+\_\+t)0x02000004)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+ADDR}~((uint32\+\_\+t)0x02000002)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+IT\+\_\+\+SB}~((uint32\+\_\+t)0x02000001)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+CLEAR\+\_\+\+IT}(IT)~((((IT) \& (uint16\+\_\+t)0x20\+FF) == 0x00) \&\& ((IT) != (uint16\+\_\+t)0x00))
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+GET\+\_\+\+IT}(IT)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+DUALF}~((uint32\+\_\+t)0x00800000)
+\begin{DoxyCompactList}\small\item\em SR2 register flags ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+SMBHOST}~((uint32\+\_\+t)0x00400000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+SMBDEFAULT}~((uint32\+\_\+t)0x00200000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+GENCALL}~((uint32\+\_\+t)0x00100000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+TRA}~((uint32\+\_\+t)0x00040000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+BUSY}~((uint32\+\_\+t)0x00020000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+MSL}~((uint32\+\_\+t)0x00010000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+SMBALERT}~((uint32\+\_\+t)0x10008000)
+\begin{DoxyCompactList}\small\item\em SR1 register flags ~\newline
+ \end{DoxyCompactList}\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+TIMEOUT}~((uint32\+\_\+t)0x10004000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+PECERR}~((uint32\+\_\+t)0x10001000)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+OVR}~((uint32\+\_\+t)0x10000800)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+AF}~((uint32\+\_\+t)0x10000400)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+ARLO}~((uint32\+\_\+t)0x10000200)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+BERR}~((uint32\+\_\+t)0x10000100)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+TXE}~((uint32\+\_\+t)0x10000080)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+RXNE}~((uint32\+\_\+t)0x10000040)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+STOPF}~((uint32\+\_\+t)0x10000010)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+ADD10}~((uint32\+\_\+t)0x10000008)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+BTF}~((uint32\+\_\+t)0x10000004)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+ADDR}~((uint32\+\_\+t)0x10000002)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+FLAG\+\_\+\+SB}~((uint32\+\_\+t)0x10000001)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+CLEAR\+\_\+\+FLAG}(FLAG)~((((FLAG) \& (uint16\+\_\+t)0x20\+FF) == 0x00) \&\& ((FLAG) != (uint16\+\_\+t)0x00))
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+GET\+\_\+\+FLAG}(FLAG)
+\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+MASTER\+\_\+\+MODE\+\_\+\+SELECT}~((uint32\+\_\+t)0x00030001)  /$\ast$ BUSY, MSL and SB flag $\ast$/
+\begin{DoxyCompactList}\small\item\em Communication start. \end{DoxyCompactList}\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+MASTER\+\_\+\+TRANSMITTER\+\_\+\+MODE\+\_\+\+SELECTED}~((uint32\+\_\+t)0x00070082)  /$\ast$ BUSY, MSL, ADDR, TXE and TRA flags $\ast$/
+\begin{DoxyCompactList}\small\item\em Address Acknowledge. \end{DoxyCompactList}\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+MASTER\+\_\+\+RECEIVER\+\_\+\+MODE\+\_\+\+SELECTED}~((uint32\+\_\+t)0x00030002)  /$\ast$ BUSY, MSL and ADDR flags $\ast$/
+\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+MASTER\+\_\+\+MODE\+\_\+\+ADDRESS10}~((uint32\+\_\+t)0x00030008)  /$\ast$ BUSY, MSL and ADD10 flags $\ast$/
+\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+MASTER\+\_\+\+BYTE\+\_\+\+RECEIVED}~((uint32\+\_\+t)0x00030040)  /$\ast$ BUSY, MSL and RXNE flags $\ast$/
+\begin{DoxyCompactList}\small\item\em Communication events. \end{DoxyCompactList}\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+MASTER\+\_\+\+BYTE\+\_\+\+TRANSMITTING}~((uint32\+\_\+t)0x00070080) /$\ast$ TRA, BUSY, MSL, TXE flags $\ast$/
+\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+MASTER\+\_\+\+BYTE\+\_\+\+TRANSMITTED}~((uint32\+\_\+t)0x00070084)  /$\ast$ TRA, BUSY, MSL, TXE and BTF flags $\ast$/
+\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+SLAVE\+\_\+\+RECEIVER\+\_\+\+ADDRESS\+\_\+\+MATCHED}~((uint32\+\_\+t)0x00020002) /$\ast$ BUSY and ADDR flags $\ast$/
+\begin{DoxyCompactList}\small\item\em Communication start events. \end{DoxyCompactList}\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+SLAVE\+\_\+\+TRANSMITTER\+\_\+\+ADDRESS\+\_\+\+MATCHED}~((uint32\+\_\+t)0x00060082) /$\ast$ TRA, BUSY, TXE and ADDR flags $\ast$/
+\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+SLAVE\+\_\+\+RECEIVER\+\_\+\+SECONDADDRESS\+\_\+\+MATCHED}~((uint32\+\_\+t)0x00820000)  /$\ast$ DUALF and BUSY flags $\ast$/
+\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+SLAVE\+\_\+\+TRANSMITTER\+\_\+\+SECONDADDRESS\+\_\+\+MATCHED}~((uint32\+\_\+t)0x00860080)  /$\ast$ DUALF, TRA, BUSY and TXE flags $\ast$/
+\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+SLAVE\+\_\+\+GENERALCALLADDRESS\+\_\+\+MATCHED}~((uint32\+\_\+t)0x00120000)  /$\ast$ GENCALL and BUSY flags $\ast$/
+\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+SLAVE\+\_\+\+BYTE\+\_\+\+RECEIVED}~((uint32\+\_\+t)0x00020040)  /$\ast$ BUSY and RXNE flags $\ast$/
+\begin{DoxyCompactList}\small\item\em Communication events. \end{DoxyCompactList}\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+SLAVE\+\_\+\+STOP\+\_\+\+DETECTED}~((uint32\+\_\+t)0x00000010)  /$\ast$ STOPF flag $\ast$/
+\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+SLAVE\+\_\+\+BYTE\+\_\+\+TRANSMITTED}~((uint32\+\_\+t)0x00060084)  /$\ast$ TRA, BUSY, TXE and BTF flags $\ast$/
+\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+SLAVE\+\_\+\+BYTE\+\_\+\+TRANSMITTING}~((uint32\+\_\+t)0x00060080)  /$\ast$ TRA, BUSY and TXE flags $\ast$/
+\item 
+\#define \textbf{ I2\+C\+\_\+\+EVENT\+\_\+\+SLAVE\+\_\+\+ACK\+\_\+\+FAILURE}~((uint32\+\_\+t)0x00000400)  /$\ast$ AF flag $\ast$/
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+EVENT}(EVENT)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+OWN\+\_\+\+ADDRESS1}(ADDRESS1)~((ADDRESS1) $<$= 0x3\+FF)
+\item 
+\#define \textbf{ IS\+\_\+\+I2\+C\+\_\+\+CLOCK\+\_\+\+SPEED}(SPEED)~(((SPEED) $>$= 0x1) \&\& ((SPEED) $<$= 400000))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ I2\+C\+\_\+\+De\+Init} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Deinitialize the I2\+Cx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Init} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, \textbf{ I2\+C\+\_\+\+Init\+Type\+Def} $\ast$I2\+C\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the I2\+Cx peripheral according to the specified parameters in the I2\+C\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Struct\+Init} (\textbf{ I2\+C\+\_\+\+Init\+Type\+Def} $\ast$I2\+C\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each I2\+C\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C peripheral. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Generate\+START} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Generates I2\+Cx communication START condition. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Generate\+STOP} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Generates I2\+Cx communication STOP condition. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Send7bit\+Address} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint8\+\_\+t Address, uint8\+\_\+t I2\+C\+\_\+\+Direction)
+\begin{DoxyCompactList}\small\item\em Transmits the address byte to select the slave device. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Acknowledge\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C acknowledge feature. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Own\+Address2\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint8\+\_\+t Address)
+\begin{DoxyCompactList}\small\item\em Configures the specified I2C own address2. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Dual\+Address\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C dual addressing mode. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+General\+Call\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C general call feature. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Software\+Reset\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C software reset. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Stretch\+Clock\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C Clock stretching. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Fast\+Mode\+Duty\+Cycle\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+Duty\+Cycle)
+\begin{DoxyCompactList}\small\item\em Selects the specified I2C fast mode duty cycle. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+NACKPosition\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+NACKPosition)
+\begin{DoxyCompactList}\small\item\em Selects the specified I2C NACK position in master receiver mode. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+SMBus\+Alert\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+SMBus\+Alert)
+\begin{DoxyCompactList}\small\item\em Drives the SMBus\+Alert pin high or low for the specified I2C. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+ARPCmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C ARP. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Send\+Data} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint8\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Sends a data byte through the I2\+Cx peripheral. \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ I2\+C\+\_\+\+Receive\+Data} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the I2\+Cx peripheral. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Transmit\+PEC} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C PEC transfer. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+PECPosition\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+PECPosition)
+\begin{DoxyCompactList}\small\item\em Selects the specified I2C PEC position. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Calculate\+PEC} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the PEC value calculation of the transferred bytes. \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ I2\+C\+\_\+\+Get\+PEC} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Returns the PEC value for the specified I2C. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+DMACmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C DMA requests. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+DMALast\+Transfer\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Specifies that the next DMA transfer is the last one. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ I2\+C\+\_\+\+Read\+Register} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint8\+\_\+t I2\+C\+\_\+\+Register)
+\begin{DoxyCompactList}\small\item\em Reads the specified I2C register and returns its value. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+ITConfig} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C interrupts. \end{DoxyCompactList}\item 
+Error\+Status \textbf{ I2\+C\+\_\+\+Check\+Event} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+EVENT)
+\begin{DoxyCompactList}\small\item\em Checks whether the last I2\+Cx Event is equal to the one passed as parameter. \end{DoxyCompactList}\item 
+uint32\+\_\+t \textbf{ I2\+C\+\_\+\+Get\+Last\+Event} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Returns the last I2\+Cx Event. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ I2\+C\+\_\+\+Get\+Flag\+Status} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified I2C flag is set or not. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Clear\+Flag} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the I2\+Cx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \textbf{ I2\+C\+\_\+\+Get\+ITStatus} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified I2C interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Clear\+ITPending\+Bit} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the I2\+Cx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the I2C firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30-\/September-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

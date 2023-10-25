@@ -1,0 +1,195 @@
+\doxysection{drivers/adc.c File Reference}
+\hypertarget{adc_8c}{}\label{adc_8c}\index{drivers/adc.c@{drivers/adc.c}}
+{\ttfamily \#include $<$platform.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$adc.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{adc_8c_a288bb69f04512be6ade5ff016a43712a}{adc\+\_\+init}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{adc_8c_a4518609ab103b2ffa24082278595efa7}{pinmap\+\_\+find\+\_\+peripheral}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{adc_8c_aadd657a035e5640e26fc72157061c080}{pinmap\+\_\+peripheral}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin)
+\item 
+void \mbox{\hyperlink{adc_8c_aa55a339d0dc6a85ff1d35af3f01c0be9}{analogin\+\_\+init}} (\mbox{\hyperlink{structanalogin__s}{analogin\+\_\+s}} \texorpdfstring{$\ast$}{*}obj, \mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin)
+\item 
+void \mbox{\hyperlink{adc_8c_a9dbf36dc37bb332cc16b1b91c3bfe5d8}{\+\_\+\+ADC\+\_\+\+Init}} (\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hadc)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{adc_8c_ac31efd41e0611d9e4c0e683048950a81}{pinmap\+\_\+find\+\_\+function}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{adc_8c_a2d797b22d683c8e3270338d89f650aaf}{pinmap\+\_\+function}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin)
+\begin{DoxyCompactList}\small\item\em Initializes the analogue to digital converter, and configures the appropriate GPIO pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{adc_8c_a4fcf12fe7657e047ea3853d3da25e76a}{pinmap\+\_\+pinout}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin)
+\item 
+void \mbox{\hyperlink{adc_8c_ade67d1bdd26b6d1ec6c5abeedf8eb4a6}{pin\+\_\+function}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin, int data)
+\item 
+void \mbox{\hyperlink{adc_8c_a9f7d9f5a0894fbcb072e49e954f445ed}{\+\_\+\+GPIO\+\_\+\+Init}} (GPIO\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}GPIOx, \mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{group___g_p_i_o___group1_ga71abf9404261370d03cca449b88d3a65}{GPIO\+\_\+\+Init}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{adc_8c_a21b4f937ae2402956618d35aa6c03923}{adc\+\_\+read}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{adc_8c_afef6c30ca784ef6f47ff577c355d4f8c}{\+\_\+adc\+\_\+read}} (\mbox{\hyperlink{structanalogin__s}{analogin\+\_\+s}} \texorpdfstring{$\ast$}{*}obj)
+\begin{DoxyCompactList}\small\item\em Reads the current value of the ADC. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{adc_8c_abbd7238e400008cf4549ed5e3ab8780c}{\+\_\+\+ADC\+\_\+\+Get\+Value}} (\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hadc)
+\item 
+int \mbox{\hyperlink{adc_8c_a0857b2d8ae59ff706adf8e8d07b0fb4d}{\+\_\+\+ADC\+\_\+\+Poll\+For\+Conversion}} (\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hadc, uint32\+\_\+t Timeout)
+\item 
+void \mbox{\hyperlink{adc_8c_a28cb2a61813855a15cd1bd2587d657dc}{\+\_\+\+ADC\+\_\+\+Config\+Channel}} (\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hadc, \mbox{\hyperlink{struct_a_d_c___channel_conf_type_def}{ADC\+\_\+\+Channel\+Conf\+Type\+Def}} \texorpdfstring{$\ast$}{*}s\+Config)
+\item 
+void \mbox{\hyperlink{adc_8c_ad57db15e40a7a818fc90c75ccc1d36b7}{\+\_\+\+ADC\+\_\+\+Start}} (\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hadc)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{adc_8c_a35c38ca7a8210322754a21a7009e1021}{Adc\+Handle}}
+\item 
+const \mbox{\hyperlink{struct_pin_map}{Pin\+Map}} \mbox{\hyperlink{adc_8c_a9a368cf73e86842f01d50df63f3ddb14}{Pin\+Map\+\_\+\+ADC}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{adc_8c_a28cb2a61813855a15cd1bd2587d657dc}\label{adc_8c_a28cb2a61813855a15cd1bd2587d657dc} 
+\index{adc.c@{adc.c}!\_ADC\_ConfigChannel@{\_ADC\_ConfigChannel}}
+\index{\_ADC\_ConfigChannel@{\_ADC\_ConfigChannel}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{\_ADC\_ConfigChannel()}{\_ADC\_ConfigChannel()}}
+{\footnotesize\ttfamily void \+\_\+\+ADC\+\_\+\+Config\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hadc,  }\item[{\mbox{\hyperlink{struct_a_d_c___channel_conf_type_def}{ADC\+\_\+\+Channel\+Conf\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{s\+Config }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_abbd7238e400008cf4549ed5e3ab8780c}\label{adc_8c_abbd7238e400008cf4549ed5e3ab8780c} 
+\index{adc.c@{adc.c}!\_ADC\_GetValue@{\_ADC\_GetValue}}
+\index{\_ADC\_GetValue@{\_ADC\_GetValue}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{\_ADC\_GetValue()}{\_ADC\_GetValue()}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+\+ADC\+\_\+\+Get\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hadc }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_a9dbf36dc37bb332cc16b1b91c3bfe5d8}\label{adc_8c_a9dbf36dc37bb332cc16b1b91c3bfe5d8} 
+\index{adc.c@{adc.c}!\_ADC\_Init@{\_ADC\_Init}}
+\index{\_ADC\_Init@{\_ADC\_Init}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{\_ADC\_Init()}{\_ADC\_Init()}}
+{\footnotesize\ttfamily void \+\_\+\+ADC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hadc }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_a0857b2d8ae59ff706adf8e8d07b0fb4d}\label{adc_8c_a0857b2d8ae59ff706adf8e8d07b0fb4d} 
+\index{adc.c@{adc.c}!\_ADC\_PollForConversion@{\_ADC\_PollForConversion}}
+\index{\_ADC\_PollForConversion@{\_ADC\_PollForConversion}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{\_ADC\_PollForConversion()}{\_ADC\_PollForConversion()}}
+{\footnotesize\ttfamily int \+\_\+\+ADC\+\_\+\+Poll\+For\+Conversion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hadc,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_afef6c30ca784ef6f47ff577c355d4f8c}\label{adc_8c_afef6c30ca784ef6f47ff577c355d4f8c} 
+\index{adc.c@{adc.c}!\_adc\_read@{\_adc\_read}}
+\index{\_adc\_read@{\_adc\_read}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{\_adc\_read()}{\_adc\_read()}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+adc\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structanalogin__s}{analogin\+\_\+s}} \texorpdfstring{$\ast$}{*}}]{obj }\end{DoxyParamCaption})}
+
+
+
+Reads the current value of the ADC. 
+
+\begin{DoxyReturn}{Returns}
+Potential of the pin, relative to ground. 
+\end{DoxyReturn}
+\Hypertarget{adc_8c_ad57db15e40a7a818fc90c75ccc1d36b7}\label{adc_8c_ad57db15e40a7a818fc90c75ccc1d36b7} 
+\index{adc.c@{adc.c}!\_ADC\_Start@{\_ADC\_Start}}
+\index{\_ADC\_Start@{\_ADC\_Start}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{\_ADC\_Start()}{\_ADC\_Start()}}
+{\footnotesize\ttfamily void \+\_\+\+ADC\+\_\+\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{hadc }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_a9f7d9f5a0894fbcb072e49e954f445ed}\label{adc_8c_a9f7d9f5a0894fbcb072e49e954f445ed} 
+\index{adc.c@{adc.c}!\_GPIO\_Init@{\_GPIO\_Init}}
+\index{\_GPIO\_Init@{\_GPIO\_Init}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{\_GPIO\_Init()}{\_GPIO\_Init()}}
+{\footnotesize\ttfamily void \+\_\+\+GPIO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{\mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIO\+\_\+\+Init }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_a288bb69f04512be6ade5ff016a43712a}\label{adc_8c_a288bb69f04512be6ade5ff016a43712a} 
+\index{adc.c@{adc.c}!adc\_init@{adc\_init}}
+\index{adc\_init@{adc\_init}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{adc\_init()}{adc\_init()}}
+{\footnotesize\ttfamily void adc\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_a21b4f937ae2402956618d35aa6c03923}\label{adc_8c_a21b4f937ae2402956618d35aa6c03923} 
+\index{adc.c@{adc.c}!adc\_read@{adc\_read}}
+\index{adc\_read@{adc\_read}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{adc\_read()}{adc\_read()}}
+{\footnotesize\ttfamily uint16\+\_\+t adc\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_aa55a339d0dc6a85ff1d35af3f01c0be9}\label{adc_8c_aa55a339d0dc6a85ff1d35af3f01c0be9} 
+\index{adc.c@{adc.c}!analogin\_init@{analogin\_init}}
+\index{analogin\_init@{analogin\_init}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{analogin\_init()}{analogin\_init()}}
+{\footnotesize\ttfamily void analogin\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structanalogin__s}{analogin\+\_\+s}} \texorpdfstring{$\ast$}{*}}]{obj,  }\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_ade67d1bdd26b6d1ec6c5abeedf8eb4a6}\label{adc_8c_ade67d1bdd26b6d1ec6c5abeedf8eb4a6} 
+\index{adc.c@{adc.c}!pin\_function@{pin\_function}}
+\index{pin\_function@{pin\_function}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{pin\_function()}{pin\_function()}}
+{\footnotesize\ttfamily void pin\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_ac31efd41e0611d9e4c0e683048950a81}\label{adc_8c_ac31efd41e0611d9e4c0e683048950a81} 
+\index{adc.c@{adc.c}!pinmap\_find\_function@{pinmap\_find\_function}}
+\index{pinmap\_find\_function@{pinmap\_find\_function}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{pinmap\_find\_function()}{pinmap\_find\_function()}}
+{\footnotesize\ttfamily uint32\+\_\+t pinmap\+\_\+find\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_a4518609ab103b2ffa24082278595efa7}\label{adc_8c_a4518609ab103b2ffa24082278595efa7} 
+\index{adc.c@{adc.c}!pinmap\_find\_peripheral@{pinmap\_find\_peripheral}}
+\index{pinmap\_find\_peripheral@{pinmap\_find\_peripheral}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{pinmap\_find\_peripheral()}{pinmap\_find\_peripheral()}}
+{\footnotesize\ttfamily uint32\+\_\+t pinmap\+\_\+find\+\_\+peripheral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_a2d797b22d683c8e3270338d89f650aaf}\label{adc_8c_a2d797b22d683c8e3270338d89f650aaf} 
+\index{adc.c@{adc.c}!pinmap\_function@{pinmap\_function}}
+\index{pinmap\_function@{pinmap\_function}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{pinmap\_function()}{pinmap\_function()}}
+{\footnotesize\ttfamily uint32\+\_\+t pinmap\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin }\end{DoxyParamCaption})}
+
+
+
+Initializes the analogue to digital converter, and configures the appropriate GPIO pin. 
+
+\Hypertarget{adc_8c_aadd657a035e5640e26fc72157061c080}\label{adc_8c_aadd657a035e5640e26fc72157061c080} 
+\index{adc.c@{adc.c}!pinmap\_peripheral@{pinmap\_peripheral}}
+\index{pinmap\_peripheral@{pinmap\_peripheral}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{pinmap\_peripheral()}{pinmap\_peripheral()}}
+{\footnotesize\ttfamily uint32\+\_\+t pinmap\+\_\+peripheral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin }\end{DoxyParamCaption})}
+
+\Hypertarget{adc_8c_a4fcf12fe7657e047ea3853d3da25e76a}\label{adc_8c_a4fcf12fe7657e047ea3853d3da25e76a} 
+\index{adc.c@{adc.c}!pinmap\_pinout@{pinmap\_pinout}}
+\index{pinmap\_pinout@{pinmap\_pinout}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{pinmap\_pinout()}{pinmap\_pinout()}}
+{\footnotesize\ttfamily void pinmap\+\_\+pinout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{adc_8c_a35c38ca7a8210322754a21a7009e1021}\label{adc_8c_a35c38ca7a8210322754a21a7009e1021} 
+\index{adc.c@{adc.c}!AdcHandle@{AdcHandle}}
+\index{AdcHandle@{AdcHandle}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{AdcHandle}{AdcHandle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\+\_\+\+Handle\+Type\+Def}} Adc\+Handle}
+
+\Hypertarget{adc_8c_a9a368cf73e86842f01d50df63f3ddb14}\label{adc_8c_a9a368cf73e86842f01d50df63f3ddb14} 
+\index{adc.c@{adc.c}!PinMap\_ADC@{PinMap\_ADC}}
+\index{PinMap\_ADC@{PinMap\_ADC}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{PinMap\_ADC}{PinMap\_ADC}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_pin_map}{Pin\+Map}} Pin\+Map\+\_\+\+ADC\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5a375a763c1c2d27bb6e2e21bc8c367a21}{PA\_0}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 0,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5a6923c16d8d9d79f8742ac91a133fd6f6}{PA\_1}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 1,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5a85618d80c323e35aef27584d26d0933b}{PA\_2}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 2,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5aed01b69c5cfa6af470984ec888b8d395}{PA\_3}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 3,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5a7a3904c5744d620ba9965c0e9e3b7d97}{PA\_4}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 4,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5adf270d193644a80ade8c26b881b08f81}{PA\_5}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 5,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5a387e0d864c1f773085701a7237053d44}{PA\_6}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 6,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5aee1caff1f31a5e060318712895f5daa3}{PA\_7}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 7,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5a1875c843863636e4d3e568d88714be68}{PB\_0}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 8,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5a965c067ff6ddcb68ec209b60d1748a54}{PB\_1}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 9,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5aedaa921d2b4724a0d50166d00c4fc2cd}{PC\_0}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 10,\ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5adc750c722aa8b3d8a8a68f7c086c2a8b}{PC\_1}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 11,\ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5ae4ecf045b1508a71f05017a611315ad8}{PC\_2}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 12,\ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5a74372d114968e250abda30074038cadb}{PC\_3}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 13,\ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5a2af5727054ef4ce5d9abdf59fb381c7c}{PC\_4}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 14,\ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5a71768d5974f86710758a0fc695bba19f}{PC\_5}},\ (int)\mbox{\hyperlink{adc_8h_a695c9a2f892363a1c942405c8d351b91}{ADC1\_BASE}},\ \mbox{\hyperlink{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c}{STM\_PIN\_DATA\_EXT}}(\mbox{\hyperlink{adc_8h_a722b648dec0c4efc314ddd881e9c1508}{STM\_MODE\_ANALOG}},\ \mbox{\hyperlink{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}},\ 0,\ 15,\ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5a3dbd1016ea99d087d747530418b89a01}{NC}},0,\ 0\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

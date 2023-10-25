@@ -1,0 +1,284 @@
+\doxysection{drivers/gpio.c File Reference}
+\label{gpio_8c}\index{drivers/gpio.c@{drivers/gpio.c}}
+{\ttfamily \#include $<$platform.\+h$>$}\newline
+{\ttfamily \#include $<$gpio.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ gpio\+\_\+toggle} (\textbf{ Pin} pin)
+\begin{DoxyCompactList}\small\item\em Toggles a GPIO pin\textquotesingle{}s output. A pin which is currently high is set low and a pin which is currently low is set high. \end{DoxyCompactList}\item 
+void \textbf{ gpio\+\_\+set} (\textbf{ Pin} pin, int value)
+\begin{DoxyCompactList}\small\item\em Sets a pin to the specified logic level. \end{DoxyCompactList}\item 
+int \textbf{ gpio\+\_\+get} (\textbf{ Pin} pin)
+\begin{DoxyCompactList}\small\item\em Get the current logic level of a GPIO pin. If the pin is high, this function will return a 1, else it will return 0. \end{DoxyCompactList}\item 
+void \textbf{ gpio\+\_\+set\+\_\+range} (\textbf{ Pin} pin\+\_\+base, int count, int value)
+\begin{DoxyCompactList}\small\item\em Sets a range of sequential pins to the specified value. \end{DoxyCompactList}\item 
+unsigned int \textbf{ gpio\+\_\+get\+\_\+range} (\textbf{ Pin} pin\+\_\+base, int count)
+\begin{DoxyCompactList}\small\item\em Returns the value of a range of sequential pins. \end{DoxyCompactList}\item 
+void \textbf{ gpio\+\_\+set\+\_\+mode} (\textbf{ Pin} pin, \textbf{ Pin\+Mode} mode)
+\begin{DoxyCompactList}\small\item\em Configures the output mode of a GPIO pin. \end{DoxyCompactList}\item 
+void \textbf{ gpio\+\_\+set\+\_\+trigger} (\textbf{ Pin} pin, \textbf{ Trigger\+Mode} trig)
+\begin{DoxyCompactList}\small\item\em Configures the event which will cause an interrupt on a specified pin. \end{DoxyCompactList}\item 
+void \textbf{ gpio\+\_\+set\+\_\+callback} (\textbf{ Pin} pin, void($\ast$callback)(int status))
+\begin{DoxyCompactList}\small\item\em Passes a callback function to the api which is called during the port\textquotesingle{}s relevant interrupt. \end{DoxyCompactList}\item 
+void \textbf{ EXTI0\+\_\+\+IRQHandler} (void)
+\item 
+void \textbf{ EXTI1\+\_\+\+IRQHandler} (void)
+\item 
+void \textbf{ EXTI2\+\_\+\+IRQHandler} (void)
+\item 
+void \textbf{ EXTI3\+\_\+\+IRQHandler} (void)
+\item 
+void \textbf{ EXTI4\+\_\+\+IRQHandler} (void)
+\item 
+void \textbf{ EXTI9\+\_\+5\+\_\+\+IRQHandler} (void)
+\item 
+void \textbf{ EXTI15\+\_\+10\+\_\+\+IRQHandler} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \textbf{ IRQ\+\_\+status}
+\item 
+uint32\+\_\+t \textbf{ IRQ\+\_\+port\+\_\+num}
+\item 
+uint32\+\_\+t \textbf{ IRQ\+\_\+pin\+\_\+index}
+\item 
+uint32\+\_\+t \textbf{ EXTI\+\_\+port\+\_\+set}
+\item 
+uint32\+\_\+t \textbf{ prioritygroup}
+\item 
+uint32\+\_\+t \textbf{ priority}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\label{gpio_8c_a17e9789a29a87d2df54f12b94dd1a0b6} 
+\index{gpio.c@{gpio.c}!EXTI0\_IRQHandler@{EXTI0\_IRQHandler}}
+\index{EXTI0\_IRQHandler@{EXTI0\_IRQHandler}!gpio.c@{gpio.c}}
+\doxysubsubsection{EXTI0\_IRQHandler()}
+{\footnotesize\ttfamily void EXTI0\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\label{gpio_8c_a738473a5b43f6c92b80ce1d3d6f77ed9} 
+\index{gpio.c@{gpio.c}!EXTI15\_10\_IRQHandler@{EXTI15\_10\_IRQHandler}}
+\index{EXTI15\_10\_IRQHandler@{EXTI15\_10\_IRQHandler}!gpio.c@{gpio.c}}
+\doxysubsubsection{EXTI15\_10\_IRQHandler()}
+{\footnotesize\ttfamily void EXTI15\+\_\+10\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\label{gpio_8c_a49cfdd46eb8d0ef3e1987514aa9343dc} 
+\index{gpio.c@{gpio.c}!EXTI1\_IRQHandler@{EXTI1\_IRQHandler}}
+\index{EXTI1\_IRQHandler@{EXTI1\_IRQHandler}!gpio.c@{gpio.c}}
+\doxysubsubsection{EXTI1\_IRQHandler()}
+{\footnotesize\ttfamily void EXTI1\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\label{gpio_8c_ab5a1d9e9c8ef50e0cb9ddb5745a20a14} 
+\index{gpio.c@{gpio.c}!EXTI2\_IRQHandler@{EXTI2\_IRQHandler}}
+\index{EXTI2\_IRQHandler@{EXTI2\_IRQHandler}!gpio.c@{gpio.c}}
+\doxysubsubsection{EXTI2\_IRQHandler()}
+{\footnotesize\ttfamily void EXTI2\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\label{gpio_8c_a30c045de96d18ec9c67a7b9e4350920f} 
+\index{gpio.c@{gpio.c}!EXTI3\_IRQHandler@{EXTI3\_IRQHandler}}
+\index{EXTI3\_IRQHandler@{EXTI3\_IRQHandler}!gpio.c@{gpio.c}}
+\doxysubsubsection{EXTI3\_IRQHandler()}
+{\footnotesize\ttfamily void EXTI3\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\label{gpio_8c_a290cb997018c8d85d4b965b4a242842f} 
+\index{gpio.c@{gpio.c}!EXTI4\_IRQHandler@{EXTI4\_IRQHandler}}
+\index{EXTI4\_IRQHandler@{EXTI4\_IRQHandler}!gpio.c@{gpio.c}}
+\doxysubsubsection{EXTI4\_IRQHandler()}
+{\footnotesize\ttfamily void EXTI4\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\label{gpio_8c_a7b2096b8b2643286dc3a7e5110e5ae85} 
+\index{gpio.c@{gpio.c}!EXTI9\_5\_IRQHandler@{EXTI9\_5\_IRQHandler}}
+\index{EXTI9\_5\_IRQHandler@{EXTI9\_5\_IRQHandler}!gpio.c@{gpio.c}}
+\doxysubsubsection{EXTI9\_5\_IRQHandler()}
+{\footnotesize\ttfamily void EXTI9\+\_\+5\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\label{gpio_8c_a35225e71a6e9f179ea7ad32e26c05dee} 
+\index{gpio.c@{gpio.c}!gpio\_get@{gpio\_get}}
+\index{gpio\_get@{gpio\_get}!gpio.c@{gpio.c}}
+\doxysubsubsection{gpio\_get()}
+{\footnotesize\ttfamily int gpio\+\_\+get (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+
+
+Get the current logic level of a GPIO pin. If the pin is high, this function will return a 1, else it will return 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The logic level of the GPIO pin (0 if low, 1 if high). 
+\end{DoxyReturn}
+\label{gpio_8c_a5fd3050f98ad44e44aeb6dc06f2743ee} 
+\index{gpio.c@{gpio.c}!gpio\_get\_range@{gpio\_get\_range}}
+\index{gpio\_get\_range@{gpio\_get\_range}!gpio.c@{gpio.c}}
+\doxysubsubsection{gpio\_get\_range()}
+{\footnotesize\ttfamily unsigned int gpio\+\_\+get\+\_\+range (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin\+\_\+base,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Returns the value of a range of sequential pins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+\_\+base} & Starting pin. \\
+\hline
+{\em count} & Number of pins to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the pins. 
+\end{DoxyReturn}
+\label{gpio_8c_a68a2c0030bf99c03001ea27ca74f88b5} 
+\index{gpio.c@{gpio.c}!gpio\_set@{gpio\_set}}
+\index{gpio\_set@{gpio\_set}!gpio.c@{gpio.c}}
+\doxysubsubsection{gpio\_set()}
+{\footnotesize\ttfamily void gpio\+\_\+set (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Sets a pin to the specified logic level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to set. \\
+\hline
+{\em value} & New logic level of the pin (0 is low, otherwise high). \\
+\hline
+\end{DoxyParams}
+\label{gpio_8c_a1d30ff6012f46b9d9ae0939956f2cefb} 
+\index{gpio.c@{gpio.c}!gpio\_set\_callback@{gpio\_set\_callback}}
+\index{gpio\_set\_callback@{gpio\_set\_callback}!gpio.c@{gpio.c}}
+\doxysubsubsection{gpio\_set\_callback()}
+{\footnotesize\ttfamily void gpio\+\_\+set\+\_\+callback (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin,  }\item[{void($\ast$)(int status)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Passes a callback function to the api which is called during the port\textquotesingle{}s relevant interrupt. 
+
+\begin{DoxyWarning}{Warning}
+The pin argument specifies the port which will be interrupted on, not an individual pin. It is advised check the {\itshape status} variable to determine which pin caused the interrupt.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxyref{gpio\+\_\+set\+\_\+trigger}{p.}{gpio_8h_a1bc7a23e2b08450c406c31ca1712560d} to configure and enable the interrupt.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin which specifies the port to use. \\
+\hline
+{\em callback} & Callback function. \\
+\hline
+\end{DoxyParams}
+\label{gpio_8c_ae16c16efcfed8cc1781ab6f883449a14} 
+\index{gpio.c@{gpio.c}!gpio\_set\_mode@{gpio\_set\_mode}}
+\index{gpio\_set\_mode@{gpio\_set\_mode}!gpio.c@{gpio.c}}
+\doxysubsubsection{gpio\_set\_mode()}
+{\footnotesize\ttfamily void gpio\+\_\+set\+\_\+mode (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin,  }\item[{\textbf{ Pin\+Mode}}]{mode }\end{DoxyParamCaption})}
+
+
+
+Configures the output mode of a GPIO pin. 
+
+Used to set the GPIO as an input, output, and configure the possible pull-\/up or pull-\/down resistors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to set. \\
+\hline
+{\em mode} & New output mode of the pin. \\
+\hline
+\end{DoxyParams}
+\label{gpio_8c_a9ec98bbec4ff895828e0c626528a2db0} 
+\index{gpio.c@{gpio.c}!gpio\_set\_range@{gpio\_set\_range}}
+\index{gpio\_set\_range@{gpio\_set\_range}!gpio.c@{gpio.c}}
+\doxysubsubsection{gpio\_set\_range()}
+{\footnotesize\ttfamily void gpio\+\_\+set\+\_\+range (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin\+\_\+base,  }\item[{int}]{count,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Sets a range of sequential pins to the specified value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+\_\+base} & Starting pin. \\
+\hline
+{\em count} & Number of pins to set. \\
+\hline
+{\em value} & New value of the pins. \\
+\hline
+\end{DoxyParams}
+\label{gpio_8c_a1bc7a23e2b08450c406c31ca1712560d} 
+\index{gpio.c@{gpio.c}!gpio\_set\_trigger@{gpio\_set\_trigger}}
+\index{gpio\_set\_trigger@{gpio\_set\_trigger}!gpio.c@{gpio.c}}
+\doxysubsubsection{gpio\_set\_trigger()}
+{\footnotesize\ttfamily void gpio\+\_\+set\+\_\+trigger (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin,  }\item[{\textbf{ Trigger\+Mode}}]{trig }\end{DoxyParamCaption})}
+
+
+
+Configures the event which will cause an interrupt on a specified pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to trigger off. \\
+\hline
+{\em trig} & New triggering mode for the pin. \\
+\hline
+\end{DoxyParams}
+\label{gpio_8c_a5f465a4985de1b8d74dce50df9080fe0} 
+\index{gpio.c@{gpio.c}!gpio\_toggle@{gpio\_toggle}}
+\index{gpio\_toggle@{gpio\_toggle}!gpio.c@{gpio.c}}
+\doxysubsubsection{gpio\_toggle()}
+{\footnotesize\ttfamily void gpio\+\_\+toggle (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+
+
+Toggles a GPIO pin\textquotesingle{}s output. A pin which is currently high is set low and a pin which is currently low is set high. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to toggle. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\label{gpio_8c_aac120930133d56e554c36e59d2161b9c} 
+\index{gpio.c@{gpio.c}!EXTI\_port\_set@{EXTI\_port\_set}}
+\index{EXTI\_port\_set@{EXTI\_port\_set}!gpio.c@{gpio.c}}
+\doxysubsubsection{EXTI\_port\_set}
+{\footnotesize\ttfamily uint32\+\_\+t EXTI\+\_\+port\+\_\+set}
+
+\label{gpio_8c_a21695782bc13940e3bf170885753755c} 
+\index{gpio.c@{gpio.c}!IRQ\_pin\_index@{IRQ\_pin\_index}}
+\index{IRQ\_pin\_index@{IRQ\_pin\_index}!gpio.c@{gpio.c}}
+\doxysubsubsection{IRQ\_pin\_index}
+{\footnotesize\ttfamily uint32\+\_\+t IRQ\+\_\+pin\+\_\+index}
+
+\label{gpio_8c_ae0750a8834283ad55d884369e51dad85} 
+\index{gpio.c@{gpio.c}!IRQ\_port\_num@{IRQ\_port\_num}}
+\index{IRQ\_port\_num@{IRQ\_port\_num}!gpio.c@{gpio.c}}
+\doxysubsubsection{IRQ\_port\_num}
+{\footnotesize\ttfamily uint32\+\_\+t IRQ\+\_\+port\+\_\+num}
+
+\label{gpio_8c_aebdc1c7951a8b18209690d7ef831009d} 
+\index{gpio.c@{gpio.c}!IRQ\_status@{IRQ\_status}}
+\index{IRQ\_status@{IRQ\_status}!gpio.c@{gpio.c}}
+\doxysubsubsection{IRQ\_status}
+{\footnotesize\ttfamily uint32\+\_\+t IRQ\+\_\+status}
+
+\label{gpio_8c_a90249de64da5ae5d7acd34da7ea1b857} 
+\index{gpio.c@{gpio.c}!priority@{priority}}
+\index{priority@{priority}!gpio.c@{gpio.c}}
+\doxysubsubsection{priority}
+{\footnotesize\ttfamily uint32\+\_\+t priority}
+
+\label{gpio_8c_af869edf37b97cc8183709c5603482b21} 
+\index{gpio.c@{gpio.c}!prioritygroup@{prioritygroup}}
+\index{prioritygroup@{prioritygroup}!gpio.c@{gpio.c}}
+\doxysubsubsection{prioritygroup}
+{\footnotesize\ttfamily uint32\+\_\+t prioritygroup}
+

@@ -1,0 +1,114 @@
+.TH "drivers/comparator.h" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/comparator.h \- Exposes functions of an internal comparator\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <adc\&.h>\fP
+.br
+
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBComparatorTriggerMode\fP { \fBCompNone\fP, \fBCompRising\fP, \fBCompFalling\fP, \fBCompBoth\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcomparator_init\fP (void)"
+.br
+.RI "Initializes the internal comparator\&. "
+.ti -1c
+.RI "void \fBcomparator_set_trigger\fP (\fBComparatorTriggerMode\fP trig)"
+.br
+.RI "Reads the current value of the comparator\&. "
+.ti -1c
+.RI "void \fBcomparator_set_callback\fP (void(*callback)(int state))"
+.br
+.RI "Pass a callback to the API, which is executed during the interrupt handler\&. "
+.ti -1c
+.RI "int \fBcomparator_read\fP (void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Exposes functions of an internal comparator\&. 
+
+
+.PP
+\fBCopyright\fP
+.RS 4
+ARM University Program (C) ARM Ltd 2014\&. 
+.RE
+.PP
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBComparatorTriggerMode\fP"
+Defines the triggering mode of the comparator's interrupt\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICompNone \fP\fP
+Disables the interrupt\&. 
+.TP
+\fB\fICompRising \fP\fP
+Enables an interrupt on the falling edge\&. 
+.TP
+\fB\fICompFalling \fP\fP
+Enables an interrupt on the rising edge\&. 
+.TP
+\fB\fICompBoth \fP\fP
+Enables an interrupt on both the rising and falling edges\&. 
+.SH "Function Documentation"
+.PP 
+.SS "void comparator_init (void)"
+
+.PP
+Initializes the internal comparator\&. 
+.SS "int comparator_read (void)"
+
+.SS "void comparator_set_callback (void(*)(int state) callback)"
+
+.PP
+Pass a callback to the API, which is executed during the interrupt handler\&. 
+.PP
+\fBSee also\fP
+.RS 4
+\fBcomparator_set_trigger\fP to configure and enable the interrupt\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIcallback\fP Callback function\&. 
+.RE
+.PP
+
+.SS "void comparator_set_trigger (\fBComparatorTriggerMode\fP trig)"
+
+.PP
+Reads the current value of the comparator\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Output value of the comparator\&.
+.RE
+.PP
+Configures the event which will cause an interrupt\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItrig\fP New triggering mode\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

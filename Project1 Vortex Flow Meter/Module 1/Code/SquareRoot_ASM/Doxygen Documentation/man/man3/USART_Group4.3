@@ -1,0 +1,136 @@
+.TH "USART_Group4" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_Group4 \- LIN mode functions
+.PP
+ \- LIN mode functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUSART_LINBreakDetectLengthConfig\fP (USART_TypeDef *USARTx, uint16_t USART_LINBreakDetectLength)"
+.br
+.RI "Sets the USART LIN Break detection length\&. "
+.ti -1c
+.RI "void \fBUSART_LINCmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's LIN mode\&. "
+.ti -1c
+.RI "void \fBUSART_SendBreak\fP (USART_TypeDef *USARTx)"
+.br
+.RI "Transmits break characters\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+LIN mode functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                                LIN mode functions
+ ===============================================================================  
+
+  This subsection provides a set of functions allowing to manage the USART LIN 
+  Mode communication\&.
+  
+  In LIN mode, 8-bit data format with 1 stop bit is required in accordance with 
+  the LIN standard\&.
+
+  Only this LIN Feature is supported by the USART IP:
+    - LIN Master Synchronous Break send capability and LIN slave break detection
+      capability :  13-bit break generation and 10/11 bit break detection
+
+
+  USART LIN Master transmitter communication is possible through the following procedure:
+     1\&. Program the Baud rate, Word length = 8bits, Stop bits = 1bit, Parity, 
+        Mode transmitter or Mode receiver and hardware flow control values using 
+        the USART_Init() function\&.
+     2\&. Enable the USART using the USART_Cmd() function\&.
+     3\&. Enable the LIN mode using the USART_LINCmd() function\&.
+     4\&. Send the break character using USART_SendBreak() function\&.
+
+  USART LIN Master receiver communication is possible through the following procedure:
+     1\&. Program the Baud rate, Word length = 8bits, Stop bits = 1bit, Parity, 
+        Mode transmitter or Mode receiver and hardware flow control values using 
+        the USART_Init() function\&.
+     2\&. Enable the USART using the USART_Cmd() function\&.
+     3\&. Configures the break detection length using the USART_LINBreakDetectLengthConfig()
+        function\&.
+     4\&. Enable the LIN mode using the USART_LINCmd() function\&.
+
+
+@note In LIN mode, the following bits must be kept cleared:
+        - CLKEN in the USART_CR2 register,
+        - STOP[1:0], SCEN, HDSEL and IREN in the USART_CR3 register\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void USART_LINBreakDetectLengthConfig (USART_TypeDef * USARTx, uint16_t USART_LINBreakDetectLength)"
+
+.PP
+Sets the USART LIN Break detection length\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_LINBreakDetectLength\fP specifies the LIN break detection length\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_LINBreakDetectLength_10b: 10-bit break detection 
+.IP "\(bu" 1
+USART_LINBreakDetectLength_11b: 11-bit break detection 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_LINCmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's LIN mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the USART LIN mode\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_SendBreak (USART_TypeDef * USARTx)"
+
+.PP
+Transmits break characters\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

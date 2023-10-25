@@ -1,0 +1,215 @@
+.TH "RCC_Group4" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCC_Group4 \- Interrupts and flags management functions
+.PP
+ \- Interrupts and flags management functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRCC_ITConfig\fP (uint8_t RCC_IT, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified RCC interrupts\&. "
+.ti -1c
+.RI "FlagStatus \fBRCC_GetFlagStatus\fP (uint8_t RCC_FLAG)"
+.br
+.RI "Checks whether the specified RCC flag is set or not\&. "
+.ti -1c
+.RI "void \fBRCC_ClearFlag\fP (void)"
+.br
+.RI "Clears the RCC reset flags\&. The reset flags are: RCC_FLAG_PINRST, RCC_FLAG_PORRST, RCC_FLAG_SFTRST, RCC_FLAG_IWDGRST, RCC_FLAG_WWDGRST, RCC_FLAG_LPWRRST\&. "
+.ti -1c
+.RI "ITStatus \fBRCC_GetITStatus\fP (uint8_t RCC_IT)"
+.br
+.RI "Checks whether the specified RCC interrupt has occurred or not\&. "
+.ti -1c
+.RI "void \fBRCC_ClearITPendingBit\fP (uint8_t RCC_IT)"
+.br
+.RI "Clears the RCC's interrupt pending bits\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interrupts and flags management functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                   Interrupts and flags management functions
+ ===============================================================================  
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void RCC_ClearFlag (void)"
+
+.PP
+Clears the RCC reset flags\&. The reset flags are: RCC_FLAG_PINRST, RCC_FLAG_PORRST, RCC_FLAG_SFTRST, RCC_FLAG_IWDGRST, RCC_FLAG_WWDGRST, RCC_FLAG_LPWRRST\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_ClearITPendingBit (uint8_t RCC_IT)"
+
+.PP
+Clears the RCC's interrupt pending bits\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_IT\fP specifies the interrupt pending bit to clear\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_IT_LSIRDY: LSI ready interrupt 
+.IP "\(bu" 1
+RCC_IT_LSERDY: LSE ready interrupt 
+.IP "\(bu" 1
+RCC_IT_HSIRDY: HSI ready interrupt 
+.IP "\(bu" 1
+RCC_IT_HSERDY: HSE ready interrupt 
+.IP "\(bu" 1
+RCC_IT_PLLRDY: main PLL ready interrupt 
+.IP "\(bu" 1
+RCC_IT_PLLI2SRDY: PLLI2S ready interrupt 
+.br
+ 
+.IP "\(bu" 1
+RCC_IT_CSS: Clock Security System interrupt 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "FlagStatus RCC_GetFlagStatus (uint8_t RCC_FLAG)"
+
+.PP
+Checks whether the specified RCC flag is set or not\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_FLAG\fP specifies the flag to check\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_FLAG_HSIRDY: HSI oscillator clock ready 
+.IP "\(bu" 1
+RCC_FLAG_HSERDY: HSE oscillator clock ready 
+.IP "\(bu" 1
+RCC_FLAG_PLLRDY: main PLL clock ready 
+.IP "\(bu" 1
+RCC_FLAG_PLLI2SRDY: PLLI2S clock ready 
+.IP "\(bu" 1
+RCC_FLAG_LSERDY: LSE oscillator clock ready 
+.IP "\(bu" 1
+RCC_FLAG_LSIRDY: LSI oscillator clock ready 
+.IP "\(bu" 1
+RCC_FLAG_BORRST: POR/PDR or BOR reset 
+.IP "\(bu" 1
+RCC_FLAG_PINRST: Pin reset 
+.IP "\(bu" 1
+RCC_FLAG_PORRST: POR/PDR reset 
+.IP "\(bu" 1
+RCC_FLAG_SFTRST: Software reset 
+.IP "\(bu" 1
+RCC_FLAG_IWDGRST: Independent Watchdog reset 
+.IP "\(bu" 1
+RCC_FLAG_WWDGRST: Window Watchdog reset 
+.IP "\(bu" 1
+RCC_FLAG_LPWRRST: Low Power reset 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of RCC_FLAG (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "ITStatus RCC_GetITStatus (uint8_t RCC_IT)"
+
+.PP
+Checks whether the specified RCC interrupt has occurred or not\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_IT\fP specifies the RCC interrupt source to check\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_IT_LSIRDY: LSI ready interrupt 
+.IP "\(bu" 1
+RCC_IT_LSERDY: LSE ready interrupt 
+.IP "\(bu" 1
+RCC_IT_HSIRDY: HSI ready interrupt 
+.IP "\(bu" 1
+RCC_IT_HSERDY: HSE ready interrupt 
+.IP "\(bu" 1
+RCC_IT_PLLRDY: main PLL ready interrupt 
+.IP "\(bu" 1
+RCC_IT_PLLI2SRDY: PLLI2S ready interrupt 
+.br
+ 
+.IP "\(bu" 1
+RCC_IT_CSS: Clock Security System interrupt 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of RCC_IT (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "void RCC_ITConfig (uint8_t RCC_IT, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified RCC interrupts\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_IT\fP specifies the RCC interrupt sources to be enabled or disabled\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_IT_LSIRDY: LSI ready interrupt 
+.IP "\(bu" 1
+RCC_IT_LSERDY: LSE ready interrupt 
+.IP "\(bu" 1
+RCC_IT_HSIRDY: HSI ready interrupt 
+.IP "\(bu" 1
+RCC_IT_HSERDY: HSE ready interrupt 
+.IP "\(bu" 1
+RCC_IT_PLLRDY: main PLL ready interrupt 
+.IP "\(bu" 1
+RCC_IT_PLLI2SRDY: PLLI2S ready interrupt 
+.br
+ 
+.PP
+.br
+\fINewState\fP new state of the specified RCC interrupts\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

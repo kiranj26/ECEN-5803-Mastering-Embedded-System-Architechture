@@ -1,0 +1,63 @@
+.TH "ADC_InitTypeDef" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_InitTypeDef \- ADC Init structure definition 
+.br
+  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <stm32f4xx_adc\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBADC_Resolution\fP"
+.br
+.ti -1c
+.RI "FunctionalState \fBADC_ScanConvMode\fP"
+.br
+.ti -1c
+.RI "FunctionalState \fBADC_ContinuousConvMode\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBADC_ExternalTrigConvEdge\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBADC_ExternalTrigConv\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBADC_DataAlign\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBADC_NbrOfConversion\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+ADC Init structure definition 
+.br
+ 
+.SH "Field Documentation"
+.PP 
+.SS "FunctionalState ADC_ContinuousConvMode"
+Specifies whether the conversion is performed in Continuous or Single mode\&. This parameter can be set to ENABLE or DISABLE\&. 
+.SS "uint32_t ADC_DataAlign"
+Specifies whether the ADC data alignment is left or right\&. This parameter can be a value of \fBADC_data_align\fP 
+.SS "uint32_t ADC_ExternalTrigConv"
+Select the external event used to trigger the start of conversion of a regular group\&. This parameter can be a value of \fBADC_extrenal_trigger_sources_for_regular_channels_conversion\fP 
+.SS "uint32_t ADC_ExternalTrigConvEdge"
+Select the external trigger edge and enable the trigger of a regular group\&. This parameter can be a value of \fBADC_external_trigger_edge_for_regular_channels_conversion\fP 
+.SS "uint8_t ADC_NbrOfConversion"
+Specifies the number of ADC conversions that will be done using the sequencer for regular channel group\&. This parameter must range from 1 to 16\&. 
+.SS "uint32_t ADC_Resolution"
+Configures the ADC resolution dual mode\&. This parameter can be a value of \fBADC_resolution\fP 
+.SS "FunctionalState ADC_ScanConvMode"
+Specifies whether the conversion is performed in Scan (multichannels) or Single (one channel) mode\&. This parameter can be set to ENABLE or DISABLE 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

@@ -1,0 +1,185 @@
+.TH "ADC_Group1" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_Group1 \- Initialization and Configuration functions
+.PP
+ \- Initialization and Configuration functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBADC_DeInit\fP (void)"
+.br
+.RI "Deinitializes all ADCs peripherals registers to their default reset values\&. "
+.ti -1c
+.RI "void \fBADC_Init\fP (ADC_TypeDef *ADCx, \fBADC_InitTypeDef\fP *ADC_InitStruct)"
+.br
+.RI "Initializes the ADCx peripheral according to the specified parameters in the ADC_InitStruct\&. "
+.ti -1c
+.RI "void \fBADC_StructInit\fP (\fBADC_InitTypeDef\fP *ADC_InitStruct)"
+.br
+.RI "Fills each ADC_InitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBADC_CommonInit\fP (\fBADC_CommonInitTypeDef\fP *ADC_CommonInitStruct)"
+.br
+.RI "Initializes the ADCs peripherals according to the specified parameters in the ADC_CommonInitStruct\&. "
+.ti -1c
+.RI "void \fBADC_CommonStructInit\fP (\fBADC_CommonInitTypeDef\fP *ADC_CommonInitStruct)"
+.br
+.RI "Fills each ADC_CommonInitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBADC_Cmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified ADC peripheral\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Initialization and Configuration functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                      Initialization and Configuration functions
+ ===============================================================================  
+  This section provides functions allowing to:
+   - Initialize and configure the ADC Prescaler
+   - ADC Conversion Resolution (12bit\&.\&.6bit)
+   - Scan Conversion Mode (multichannels or one channel) for regular group
+   - ADC Continuous Conversion Mode (Continuous or Single conversion) for 
+     regular group
+   - External trigger Edge and source of regular group, 
+   - Converted data alignment (left or right)
+   - The number of ADC conversions that will be done using the sequencer for 
+     regular channel group
+   - Multi ADC mode selection
+   - Direct memory access mode selection for multi ADC mode  
+   - Delay between 2 sampling phases (used in dual or triple interleaved modes)
+   - Enable or disable the ADC peripheral
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void ADC_Cmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified ADC peripheral\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the ADCx peripheral\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_CommonInit (\fBADC_CommonInitTypeDef\fP * ADC_CommonInitStruct)"
+
+.PP
+Initializes the ADCs peripherals according to the specified parameters in the ADC_CommonInitStruct\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADC_CommonInitStruct\fP pointer to an \fBADC_CommonInitTypeDef\fP structure that contains the configuration information for All ADCs peripherals\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_CommonStructInit (\fBADC_CommonInitTypeDef\fP * ADC_CommonInitStruct)"
+
+.PP
+Fills each ADC_CommonInitStruct member with its default value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADC_CommonInitStruct\fP pointer to an \fBADC_CommonInitTypeDef\fP structure which will be initialized\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_DeInit (void)"
+
+.PP
+Deinitializes all ADCs peripherals registers to their default reset values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_Init (ADC_TypeDef * ADCx, \fBADC_InitTypeDef\fP * ADC_InitStruct)"
+
+.PP
+Initializes the ADCx peripheral according to the specified parameters in the ADC_InitStruct\&. 
+.PP
+\fBNote\fP
+.RS 4
+This function is used to configure the global features of the ADC ( Resolution and Data Alignment), however, the rest of the configuration parameters are specific to the regular channels group (scan mode activation, continuous mode activation, External trigger source and edge, number of conversion in the regular channels group sequencer)\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_InitStruct\fP pointer to an \fBADC_InitTypeDef\fP structure that contains the configuration information for the specified ADC peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_StructInit (\fBADC_InitTypeDef\fP * ADC_InitStruct)"
+
+.PP
+Fills each ADC_InitStruct member with its default value\&. 
+.PP
+\fBNote\fP
+.RS 4
+This function is used to initialize the global features of the ADC ( Resolution and Data Alignment), however, the rest of the configuration parameters are specific to the regular channels group (scan mode activation, continuous mode activation, External trigger source and edge, number of conversion in the regular channels group sequencer)\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIADC_InitStruct\fP pointer to an \fBADC_InitTypeDef\fP structure which will be initialized\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

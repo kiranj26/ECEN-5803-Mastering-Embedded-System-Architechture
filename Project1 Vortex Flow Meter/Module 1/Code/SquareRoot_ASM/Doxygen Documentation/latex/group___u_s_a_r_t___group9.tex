@@ -1,0 +1,245 @@
+\doxysubsubsubsection{Interrupts and flags management functions}
+\hypertarget{group___u_s_a_r_t___group9}{}\label{group___u_s_a_r_t___group9}\index{Interrupts and flags management functions@{Interrupts and flags management functions}}
+
+
+Interrupts and flags management functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___group9_ga6d8f2dd1f34060ae7e386e3e5d56b6f6}{USART\+\_\+\+ITConfig}} (USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified USART interrupts. \end{DoxyCompactList}\item 
+Flag\+Status \mbox{\hyperlink{group___u_s_a_r_t___group9_ga144630722defc9e312f0ad280b68e9da}{USART\+\_\+\+Get\+Flag\+Status}} (USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified USART flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___group9_gad962e148fc466ae1b45b288f6c91d966}{USART\+\_\+\+Clear\+Flag}} (USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the USARTx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \mbox{\hyperlink{group___u_s_a_r_t___group9_ga93d8f031241bcdbe938d091a85295445}{USART\+\_\+\+Get\+ITStatus}} (USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified USART interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___group9_ga1fc25d0338695063be5e50156955d9bc}{USART\+\_\+\+Clear\+ITPending\+Bit}} (USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the USARTx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Interrupts and flags management functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                   Interrupts and flags management functions
+ ===============================================================================  
+
+  This subsection provides a set of functions allowing to configure the USART 
+  Interrupts sources, DMA channels requests and check or clear the flags or 
+  pending bits status.
+  The user should identify which mode will be used in his application to manage 
+  the communication: Polling mode, Interrupt mode or DMA mode. 
+    
+  Polling Mode
+  =============
+  In Polling Mode, the SPI communication can be managed by 10 flags:
+     1. USART_FLAG_TXE : to indicate the status of the transmit buffer register
+     2. USART_FLAG_RXNE : to indicate the status of the receive buffer register
+     3. USART_FLAG_TC : to indicate the status of the transmit operation
+     4. USART_FLAG_IDLE : to indicate the status of the Idle Line             
+     5. USART_FLAG_CTS : to indicate the status of the nCTS input
+     6. USART_FLAG_LBD : to indicate the status of the LIN break detection
+     7. USART_FLAG_NE : to indicate if a noise error occur
+     8. USART_FLAG_FE : to indicate if a frame error occur
+     9. USART_FLAG_PE : to indicate if a parity error occur
+     10. USART_FLAG_ORE : to indicate if an Overrun error occur
+
+  In this Mode it is advised to use the following functions:
+      - FlagStatus USART_GetFlagStatus(USART_TypeDef* USARTx, uint16_t USART_FLAG);
+      - void USART_ClearFlag(USART_TypeDef* USARTx, uint16_t USART_FLAG);
+
+  Interrupt Mode
+  ===============
+  In Interrupt Mode, the USART communication can be managed by 8 interrupt sources
+  and 10 pending bits: 
+
+  Pending Bits:
+  ------------- 
+     1. USART_IT_TXE : to indicate the status of the transmit buffer register
+     2. USART_IT_RXNE : to indicate the status of the receive buffer register
+     3. USART_IT_TC : to indicate the status of the transmit operation
+     4. USART_IT_IDLE : to indicate the status of the Idle Line             
+     5. USART_IT_CTS : to indicate the status of the nCTS input
+     6. USART_IT_LBD : to indicate the status of the LIN break detection
+     7. USART_IT_NE : to indicate if a noise error occur
+     8. USART_IT_FE : to indicate if a frame error occur
+     9. USART_IT_PE : to indicate if a parity error occur
+     10. USART_IT_ORE : to indicate if an Overrun error occur
+
+  Interrupt Source:
+  -----------------
+     1. USART_IT_TXE : specifies the interrupt source for the Tx buffer empty 
+                       interrupt. 
+     2. USART_IT_RXNE : specifies the interrupt source for the Rx buffer not 
+                        empty interrupt.
+     3. USART_IT_TC : specifies the interrupt source for the Transmit complete 
+                       interrupt. 
+     4. USART_IT_IDLE : specifies the interrupt source for the Idle Line interrupt.             
+     5. USART_IT_CTS : specifies the interrupt source for the CTS interrupt. 
+     6. USART_IT_LBD : specifies the interrupt source for the LIN break detection
+                       interrupt. 
+     7. USART_IT_PE : specifies the interrupt source for the parity error interrupt. 
+     8. USART_IT_ERR :  specifies the interrupt source for the errors interrupt.
+
+@note Some parameters are coded in order to use them as interrupt source or as pending bits.
+
+  In this Mode it is advised to use the following functions:
+     - void USART_ITConfig(USART_TypeDef* USARTx, uint16_t USART_IT, FunctionalState NewState);
+     - ITStatus USART_GetITStatus(USART_TypeDef* USARTx, uint16_t USART_IT);
+     - void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);
+
+  DMA Mode
+  ========
+  In DMA Mode, the USART communication can be managed by 2 DMA Channel requests:
+     1. USART_DMAReq_Tx: specifies the Tx buffer DMA transfer request
+     2. USART_DMAReq_Rx: specifies the Rx buffer DMA transfer request
+
+  In this Mode it is advised to use the following function:
+     - void USART_DMACmd(USART_TypeDef* USARTx, uint16_t USART_DMAReq, FunctionalState NewState);\end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\Hypertarget{group___u_s_a_r_t___group9_gad962e148fc466ae1b45b288f6c91d966}\label{group___u_s_a_r_t___group9_gad962e148fc466ae1b45b288f6c91d966} 
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!USART\_ClearFlag@{USART\_ClearFlag}}
+\index{USART\_ClearFlag@{USART\_ClearFlag}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_ClearFlag()}{USART\_ClearFlag()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Clear\+Flag (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Clears the USARTx\textquotesingle{}s pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em USART\+\_\+\+FLAG} & specifies the flag to clear. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+FLAG\+\_\+\+CTS\+: CTS Change flag (not available for UART4 and UART5). \item USART\+\_\+\+FLAG\+\_\+\+LBD\+: LIN Break detection flag. \item USART\+\_\+\+FLAG\+\_\+\+TC\+: Transmission Complete flag. \item USART\+\_\+\+FLAG\+\_\+\+RXNE\+: Receive data register not empty flag.\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+PE (Parity error), FE (Framing error), NE (Noise error), ORE (Over\+Run error) and IDLE (Idle line detected) flags are cleared by software sequence\+: a read operation to USART\+\_\+\+SR register (\doxylink{group___u_s_a_r_t___group9_ga144630722defc9e312f0ad280b68e9da}{USART\+\_\+\+Get\+Flag\+Status()}) followed by a read operation to USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___group2_gac67a91845b0b1d54d31bdfb1c5e9867c}{USART\+\_\+\+Receive\+Data()}). 
+
+RXNE flag can be also cleared by a read to the USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___group2_gac67a91845b0b1d54d31bdfb1c5e9867c}{USART\+\_\+\+Receive\+Data()}). 
+
+TC flag can be also cleared by software sequence\+: a read operation to USART\+\_\+\+SR register (\doxylink{group___u_s_a_r_t___group9_ga144630722defc9e312f0ad280b68e9da}{USART\+\_\+\+Get\+Flag\+Status()}) followed by a write operation to USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___group2_ga0b43d42da9540f446d494bf69823c6fb}{USART\+\_\+\+Send\+Data()}). 
+
+TXE flag is cleared only by a write to the USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___group2_ga0b43d42da9540f446d494bf69823c6fb}{USART\+\_\+\+Send\+Data()}).
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___group9_ga1fc25d0338695063be5e50156955d9bc}\label{group___u_s_a_r_t___group9_ga1fc25d0338695063be5e50156955d9bc} 
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!USART\_ClearITPendingBit@{USART\_ClearITPendingBit}}
+\index{USART\_ClearITPendingBit@{USART\_ClearITPendingBit}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_ClearITPendingBit()}{USART\_ClearITPendingBit()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Clear\+ITPending\+Bit (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+IT }\end{DoxyParamCaption})}
+
+
+
+Clears the USARTx\textquotesingle{}s interrupt pending bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em USART\+\_\+\+IT} & specifies the interrupt pending bit to clear. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+IT\+\_\+\+CTS\+: CTS change interrupt (not available for UART4 and UART5) \item USART\+\_\+\+IT\+\_\+\+LBD\+: LIN Break detection interrupt \item USART\+\_\+\+IT\+\_\+\+TC\+: Transmission complete interrupt. \item USART\+\_\+\+IT\+\_\+\+RXNE\+: Receive Data register not empty interrupt.\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+PE (Parity error), FE (Framing error), NE (Noise error), ORE (Over\+Run error) and IDLE (Idle line detected) pending bits are cleared by software sequence\+: a read operation to USART\+\_\+\+SR register (\doxylink{group___u_s_a_r_t___group9_ga93d8f031241bcdbe938d091a85295445}{USART\+\_\+\+Get\+ITStatus()}) followed by a read operation to USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___group2_gac67a91845b0b1d54d31bdfb1c5e9867c}{USART\+\_\+\+Receive\+Data()}). 
+
+RXNE pending bit can be also cleared by a read to the USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___group2_gac67a91845b0b1d54d31bdfb1c5e9867c}{USART\+\_\+\+Receive\+Data()}). 
+
+TC pending bit can be also cleared by software sequence\+: a read operation to USART\+\_\+\+SR register (\doxylink{group___u_s_a_r_t___group9_ga93d8f031241bcdbe938d091a85295445}{USART\+\_\+\+Get\+ITStatus()}) followed by a write operation to USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___group2_ga0b43d42da9540f446d494bf69823c6fb}{USART\+\_\+\+Send\+Data()}). 
+
+TXE pending bit is cleared only by a write to the USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___group2_ga0b43d42da9540f446d494bf69823c6fb}{USART\+\_\+\+Send\+Data()}).
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___group9_ga144630722defc9e312f0ad280b68e9da}\label{group___u_s_a_r_t___group9_ga144630722defc9e312f0ad280b68e9da} 
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!USART\_GetFlagStatus@{USART\_GetFlagStatus}}
+\index{USART\_GetFlagStatus@{USART\_GetFlagStatus}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_GetFlagStatus()}{USART\_GetFlagStatus()}}
+{\footnotesize\ttfamily Flag\+Status USART\+\_\+\+Get\+Flag\+Status (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Checks whether the specified USART flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em USART\+\_\+\+FLAG} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+FLAG\+\_\+\+CTS\+: CTS Change flag (not available for UART4 and UART5) \item USART\+\_\+\+FLAG\+\_\+\+LBD\+: LIN Break detection flag \item USART\+\_\+\+FLAG\+\_\+\+TXE\+: Transmit data register empty flag \item USART\+\_\+\+FLAG\+\_\+\+TC\+: Transmission Complete flag \item USART\+\_\+\+FLAG\+\_\+\+RXNE\+: Receive data register not empty flag \item USART\+\_\+\+FLAG\+\_\+\+IDLE\+: Idle Line detection flag \item USART\+\_\+\+FLAG\+\_\+\+ORE\+: Over\+Run Error flag \item USART\+\_\+\+FLAG\+\_\+\+NE\+: Noise Error flag \item USART\+\_\+\+FLAG\+\_\+\+FE\+: Framing Error flag \item USART\+\_\+\+FLAG\+\_\+\+PE\+: Parity Error flag \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of USART\+\_\+\+FLAG (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___group9_ga93d8f031241bcdbe938d091a85295445}\label{group___u_s_a_r_t___group9_ga93d8f031241bcdbe938d091a85295445} 
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!USART\_GetITStatus@{USART\_GetITStatus}}
+\index{USART\_GetITStatus@{USART\_GetITStatus}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_GetITStatus()}{USART\_GetITStatus()}}
+{\footnotesize\ttfamily ITStatus USART\+\_\+\+Get\+ITStatus (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+IT }\end{DoxyParamCaption})}
+
+
+
+Checks whether the specified USART interrupt has occurred or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em USART\+\_\+\+IT} & specifies the USART interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+IT\+\_\+\+CTS\+: CTS change interrupt (not available for UART4 and UART5) \item USART\+\_\+\+IT\+\_\+\+LBD\+: LIN Break detection interrupt \item USART\+\_\+\+IT\+\_\+\+TXE\+: Transmit Data Register empty interrupt \item USART\+\_\+\+IT\+\_\+\+TC\+: Transmission complete interrupt \item USART\+\_\+\+IT\+\_\+\+RXNE\+: Receive Data register not empty interrupt \item USART\+\_\+\+IT\+\_\+\+IDLE\+: Idle line detection interrupt \item USART\+\_\+\+IT\+\_\+\+ORE\+\_\+\+RX \+: Over\+Run Error interrupt if the RXNEIE bit is set \item USART\+\_\+\+IT\+\_\+\+ORE\+\_\+\+ER \+: Over\+Run Error interrupt if the EIE bit is set ~\newline
+ \item USART\+\_\+\+IT\+\_\+\+NE\+: Noise Error interrupt \item USART\+\_\+\+IT\+\_\+\+FE\+: Framing Error interrupt \item USART\+\_\+\+IT\+\_\+\+PE\+: Parity Error interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of USART\+\_\+\+IT (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___group9_ga6d8f2dd1f34060ae7e386e3e5d56b6f6}\label{group___u_s_a_r_t___group9_ga6d8f2dd1f34060ae7e386e3e5d56b6f6} 
+\index{Interrupts and flags management functions@{Interrupts and flags management functions}!USART\_ITConfig@{USART\_ITConfig}}
+\index{USART\_ITConfig@{USART\_ITConfig}!Interrupts and flags management functions@{Interrupts and flags management functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_ITConfig()}{USART\_ITConfig()}}
+{\footnotesize\ttfamily void USART\+\_\+\+ITConfig (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+IT,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified USART interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em USART\+\_\+\+IT} & specifies the USART interrupt sources to be enabled or disabled. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+IT\+\_\+\+CTS\+: CTS change interrupt \item USART\+\_\+\+IT\+\_\+\+LBD\+: LIN Break detection interrupt \item USART\+\_\+\+IT\+\_\+\+TXE\+: Transmit Data Register empty interrupt \item USART\+\_\+\+IT\+\_\+\+TC\+: Transmission complete interrupt \item USART\+\_\+\+IT\+\_\+\+RXNE\+: Receive Data register not empty interrupt \item USART\+\_\+\+IT\+\_\+\+IDLE\+: Idle line detection interrupt \item USART\+\_\+\+IT\+\_\+\+PE\+: Parity Error interrupt \item USART\+\_\+\+IT\+\_\+\+ERR\+: Error interrupt(\+Frame error, noise error, overrun error) \end{DoxyItemize}
+\\
+\hline
+{\em New\+State} & new state of the specified USARTx interrupts. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,221 @@
+\doxysection{adc.\+h}
+\label{adc_8h_source}\index{drivers/adc.h@{drivers/adc.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ ADC\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ ADC\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_adc.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ \#define\ ADC1\_BASE\ \ \ \ \ \ \ \ \ \ \ \ \ (APB2PERIPH\_BASE\ +\ 0x2000)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ STM\_PIN\_DATA\_EXT(MODE,\ PUPD,\ AFNUM,\ CHANNEL,\ INVERTED)\ \ ((int)(((INVERTED\ \&\ 0x01)\ <<\ 15)\ |\ ((CHANNEL\ \&\ 0x0F)\ <<\ 11)\ |\ ((AFNUM\ \&\ 0x0F)\ <<\ 7)\ |\ ((PUPD\ \&\ 0x07)\ <<\ 4)\ |\ ((MODE\ \&\ 0x0F)\ <<\ 0)))}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ STM\_MODE\_ANALOG\ \ \ \ \ \ \ \ \ \ \ \ \ (5)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ STM\_PIN\_CHANNEL(X)\ \ (((X)\ >>\ 11)\ \&\ 0x0F)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ STM\_PIN\_MODE(X)\ \ \ (((X)\ >>\ 0)\ \&\ 0x0F)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ STM\_PIN\_PUPD(X)\ \ \ (((X)\ >>\ 4)\ \&\ 0x07)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ STM\_PIN\_AFNUM(X)\ \ (((X)\ >>\ 7)\ \&\ 0x0F)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ STM\_PORT(X)\ (((uint32\_t)(X)\ >>\ 4)\ \&\ 0xF)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ STM\_PIN(X)\ \ ((uint32\_t)(X)\ \&\ 0xF)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ GPIO\_NOPULL\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ \ \ }}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ \ GPIO\_PULLUP\ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)\ \ \ }}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \ GPIO\_PULLDOWN\ \ \ \ \ \ ((uint32\_t)0x00000002)\ \ \ }}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ UNUSED(x)\ ((void)(x))}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\#define\ GPIOA\_BASE\ \ \ \ \ \ \ \ \ \ \ \ (AHB1PERIPH\_BASE\ +\ 0x0000)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ \ GPIO\_SPEED\_LOW\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ \ }}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \ GPIO\_SPEED\_MEDIUM\ \ \ \ \ \ ((uint32\_t)0x00000001)\ \ }}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ \ GPIO\_SPEED\_FAST\ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)\ \ }}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ \ GPIO\_SPEED\_HIGH\ \ \ \ \ \ \ \ ((uint32\_t)0x00000003)\ \ }}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ GPIO\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000003)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ ADC\_CR1\_SCANCONV(\_SCANCONV\_MODE\_)\ ((\_SCANCONV\_MODE\_)\ <<\ 8)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ ADC\_SOFTWARE\_START\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)ADC\_CR2\_EXTSEL\ +\ 1)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ ADC\_CR2\_CONTINUOUS(\_CONTINUOUS\_MODE\_)\ ((\_CONTINUOUS\_MODE\_)\ <<\ 1)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ ADC\_CR1\_DISCONTINUOUS(\_NBR\_DISCONTINUOUSCONV\_)\ (((\_NBR\_DISCONTINUOUSCONV\_)\ -\/\ 1)\ <<\ POSITION\_VAL(ADC\_CR1\_DISCNUM))}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ ADC\_SQR1(\_NbrOfConversion\_)\ (((\_NbrOfConversion\_)\ -\/\ (uint8\_t)1)\ <<\ 20)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ ADC\_CR2\_DMAContReq(\_DMAContReq\_MODE\_)\ ((\_DMAContReq\_MODE\_)\ <<\ 9)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ ADC\_CR2\_EOCSelection(\_EOCSelection\_MODE\_)\ ((\_EOCSelection\_MODE\_)\ <<\ 10)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ ADC\_SMPR1(\_SAMPLETIME\_,\ \_CHANNELNB\_)\ ((\_SAMPLETIME\_)\ <<\ (3\ *\ (((uint32\_t)((uint16\_t)(\_CHANNELNB\_)))\ -\/\ 10)))}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ ADC\_SMPR2(\_SAMPLETIME\_,\ \_CHANNELNB\_)\ ((\_SAMPLETIME\_)\ <<\ (3\ *\ ((uint32\_t)((uint16\_t)(\_CHANNELNB\_)))))}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ ADC\_SQR3\_RK(\_CHANNELNB\_,\ \_RANKNB\_)\ (((uint32\_t)((uint16\_t)(\_CHANNELNB\_)))\ <<\ (5\ *\ ((\_RANKNB\_)\ -\/\ 1)))}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ ADC\_SQR2\_RK(\_CHANNELNB\_,\ \_RANKNB\_)\ (((uint32\_t)((uint16\_t)(\_CHANNELNB\_)))\ <<\ (5\ *\ ((\_RANKNB\_)\ -\/\ 7)))}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ ADC\_SQR1\_RK(\_CHANNELNB\_,\ \_RANKNB\_)\ (((uint32\_t)((uint16\_t)(\_CHANNELNB\_)))\ <<\ (5\ *\ ((\_RANKNB\_)\ -\/\ 13)))}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_VBAT\ \ \ \ \ \ \ \ ((uint32\_t)ADC\_CHANNEL\_18)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_VREFINT\ \ \ \ \ ((uint32\_t)ADC\_CHANNEL\_17)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_TEMPSENSOR\ \ ((uint32\_t)ADC\_CHANNEL\_16)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ ADC\_STAB\_DELAY\_US\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)\ 3)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ \_IS\_BIT\_CLR(REG,\ BIT)\ \ \ \ \ \ \ \ \ (((REG)\ \&\ (BIT))\ ==\ RESET)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ \_IS\_BIT\_SET(REG,\ BIT)\ \ \ \ \ \ \ \ \ (((REG)\ \&\ (BIT))\ !=\ RESET)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \_ADC\_GET\_FLAG(\_\_HANDLE\_\_,\ \_\_FLAG\_\_)\ ((((\_\_HANDLE\_\_)-\/>Instance-\/>SR)\ \&\ (\_\_FLAG\_\_))\ ==\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ RCC\_GPIOA\_CLK\_ENABLE()\ \ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_IO\ uint32\_t\ tmpreg;\ \(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RCC-\/>AHB1ENR,\ RCC\_AHB1ENR\_GPIOAEN);\(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ READ\_BIT(RCC-\/>AHB1ENR,\ RCC\_AHB1ENR\_GPIOAEN);\(\backslash\)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ RCC\_GPIOB\_CLK\_ENABLE()\ \ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_IO\ uint32\_t\ tmpreg;\ \(\backslash\)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RCC-\/>AHB1ENR,\ RCC\_AHB1ENR\_GPIOBEN);\(\backslash\)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ READ\_BIT(RCC-\/>AHB1ENR,\ RCC\_AHB1ENR\_GPIOBEN);\(\backslash\)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ RCC\_GPIOC\_CLK\_ENABLE()\ \ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_IO\ uint32\_t\ tmpreg;\ \(\backslash\)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RCC-\/>AHB1ENR,\ RCC\_AHB1ENR\_GPIOCEN);\(\backslash\)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ READ\_BIT(RCC-\/>AHB1ENR,\ RCC\_AHB1ENR\_GPIOCEN);\(\backslash\)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ RCC\_ADC1\_CLK\_ENABLE()\ \ \ \ \ do\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_IO\ uint32\_t\ tmpreg;\ \(\backslash\)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RCC-\/>APB2ENR,\ RCC\_APB2ENR\_ADC1EN);\(\backslash\)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ READ\_BIT(RCC-\/>APB2ENR,\ RCC\_APB2ENR\_ADC1EN);\(\backslash\)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ while(0)}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_0\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_1\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)ADC\_CR1\_AWDCH\_0)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_2\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)ADC\_CR1\_AWDCH\_1)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_3\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_1\ |\ ADC\_CR1\_AWDCH\_0))}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_4\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)ADC\_CR1\_AWDCH\_2)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_5\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_2\ |\ ADC\_CR1\_AWDCH\_0))}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_6\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_2\ |\ ADC\_CR1\_AWDCH\_1))}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_7\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_2\ |\ ADC\_CR1\_AWDCH\_1\ |\ ADC\_CR1\_AWDCH\_0))}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_8\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)ADC\_CR1\_AWDCH\_3)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_9\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_3\ |\ ADC\_CR1\_AWDCH\_0))}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_10\ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_3\ |\ ADC\_CR1\_AWDCH\_1))}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_11\ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_3\ |\ ADC\_CR1\_AWDCH\_1\ |\ ADC\_CR1\_AWDCH\_0))}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_12\ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_3\ |\ ADC\_CR1\_AWDCH\_2))}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_13\ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_3\ |\ ADC\_CR1\_AWDCH\_2\ |\ ADC\_CR1\_AWDCH\_0))}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_14\ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_3\ |\ ADC\_CR1\_AWDCH\_2\ |\ ADC\_CR1\_AWDCH\_1))}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_15\ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_3\ |\ ADC\_CR1\_AWDCH\_2\ |\ ADC\_CR1\_AWDCH\_1\ |\ ADC\_CR1\_AWDCH\_0))}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_16\ \ \ \ \ \ \ \ \ \ ((uint32\_t)ADC\_CR1\_AWDCH\_4)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_17\ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_4\ |\ ADC\_CR1\_AWDCH\_0))}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ ADC\_CHANNEL\_18\ \ \ \ \ \ \ \ \ \ ((uint32\_t)(ADC\_CR1\_AWDCH\_4\ |\ ADC\_CR1\_AWDCH\_1))}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ }
+\DoxyCodeLine{00101\ \{}
+\DoxyCodeLine{00102\ \ \ HAL\_UNLOCKED\ =\ 0x00,}
+\DoxyCodeLine{00103\ \ \ HAL\_LOCKED\ \ \ =\ 0x01\ \ }
+\DoxyCodeLine{00104\ \}\ HAL\_LockTypeDef;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00107\ \{}
+\DoxyCodeLine{00108\ \ \ HAL\_ADC\_STATE\_RESET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00,\ \ \ \ }
+\DoxyCodeLine{00109\ \ \ HAL\_ADC\_STATE\_READY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x01,\ \ \ \ }
+\DoxyCodeLine{00110\ \ \ HAL\_ADC\_STATE\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x02,\ \ \ \ }
+\DoxyCodeLine{00111\ \ \ HAL\_ADC\_STATE\_BUSY\_REG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x12,\ \ \ \ }
+\DoxyCodeLine{00112\ \ \ HAL\_ADC\_STATE\_BUSY\_INJ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x22,\ \ \ \ }
+\DoxyCodeLine{00113\ \ \ HAL\_ADC\_STATE\_BUSY\_INJ\_REG\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x32,\ \ \ \ }
+\DoxyCodeLine{00114\ \ \ HAL\_ADC\_STATE\_TIMEOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x03,\ \ \ \ }
+\DoxyCodeLine{00115\ \ \ HAL\_ADC\_STATE\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x04,\ \ \ \ }
+\DoxyCodeLine{00116\ \ \ HAL\_ADC\_STATE\_EOC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x05,\ \ \ \ }
+\DoxyCodeLine{00117\ \ \ HAL\_ADC\_STATE\_EOC\_REG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x15,\ \ \ \ }
+\DoxyCodeLine{00118\ \ \ HAL\_ADC\_STATE\_EOC\_INJ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x25,\ \ \ \ }
+\DoxyCodeLine{00119\ \ \ HAL\_ADC\_STATE\_EOC\_INJ\_REG\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x35,\ \ \ \ }
+\DoxyCodeLine{00120\ \ \ HAL\_ADC\_STATE\_AWD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x06\ \ \ \ }
+\DoxyCodeLine{00122\ \}HAL\_ADC\_StateTypeDef;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00125\ \{}
+\DoxyCodeLine{00126\ \ \ uint32\_t\ ClockPrescaler;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ uint32\_t\ Resolution;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00131\ \ \ uint32\_t\ DataAlign;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ uint32\_t\ ScanConvMode;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ uint32\_t\ EOCSelection;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00143\ \ \ uint32\_t\ ContinuousConvMode;\ \ \ \ }
+\DoxyCodeLine{00145\ \ \ uint32\_t\ DMAContinuousRequests;\ }
+\DoxyCodeLine{00147\ \ \ uint32\_t\ NbrOfConversion;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00150\ \ \ uint32\_t\ DiscontinuousConvMode;\ }
+\DoxyCodeLine{00153\ \ \ uint32\_t\ NbrOfDiscConversion;\ \ \ }
+\DoxyCodeLine{00156\ \ \ uint32\_t\ ExternalTrigConv;\ \ \ \ \ \ }
+\DoxyCodeLine{00160\ \ \ uint32\_t\ ExternalTrigConvEdge;\ \ }
+\DoxyCodeLine{00164\ \}\_ADC\_InitTypeDef;}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00167\ \{}
+\DoxyCodeLine{00168\ \ \ ADC\_TypeDef\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Instance;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00170\ \ \ \_ADC\_InitTypeDef\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Init;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00172\ \ \ \_\_IO\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NbrOfCurrentConversionRank;\ \ }
+\DoxyCodeLine{00174\ \ \ \textcolor{comment}{//DMA\_HandleTypeDef\ \ \ \ \ \ \ \ \ \ \ \ \ *DMA\_Handle;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ /*!<\ Pointer\ DMA\ Handler\ */}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ HAL\_LockTypeDef\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lock;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00178\ \ \ \_\_IO\ HAL\_ADC\_StateTypeDef\ \ \ \ \ State;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \_\_IO\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ErrorCode;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00181\ \}ADC\_HandleTypeDef;}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00184\ \{}
+\DoxyCodeLine{00185\ \ \ uint32\_t\ Pin;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00187\ \ \ uint32\_t\ Mode;\ \ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ uint32\_t\ Pull;\ \ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ uint32\_t\ Speed;\ \ \ \ \ }
+\DoxyCodeLine{00193\ \ \ uint32\_t\ Alternate;\ \ }
+\DoxyCodeLine{00195\ \}GPIO\_InitTypeDef;}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ PortA\ =\ 0,}
+\DoxyCodeLine{00199\ \ \ \ \ PortB\ =\ 1,}
+\DoxyCodeLine{00200\ \ \ \ \ PortC\ =\ 2,}
+\DoxyCodeLine{00201\ \ \ \ \ PortD\ =\ 3,}
+\DoxyCodeLine{00202\ \ \ \ \ PortE\ =\ 4,}
+\DoxyCodeLine{00203\ \ \ \ \ PortH\ =\ 7}
+\DoxyCodeLine{00204\ \}\ PortName;}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00207\ \ \ \ \ Pin\ pin;}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{int}\ peripheral;}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{int}\ function;}
+\DoxyCodeLine{00210\ \}\ PinMap;}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ ADC\_1\ =\ (int)ADC1\_BASE}
+\DoxyCodeLine{00217\ \}\ ADCName;}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00221\ \ \ \ \ ADCName\ adc;}
+\DoxyCodeLine{00222\ \ \ \ \ Pin\ pin;}
+\DoxyCodeLine{00223\ \ \ \ \ uint8\_t\ channel;}
+\DoxyCodeLine{00224\ \}analogin\_s\ ;}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }}
+\DoxyCodeLine{00227\ \{}
+\DoxyCodeLine{00228\ \ \ uint32\_t\ Channel;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00230\ \ \ uint32\_t\ Rank;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00232\ \ \ uint32\_t\ SamplingTime;\ \ \ }
+\DoxyCodeLine{00234\ \ \ uint32\_t\ Offset;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00235\ \}ADC\_ChannelConfTypeDef;}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00241\ uint32\_t\ pinmap\_function(Pin\ pin);}
+\DoxyCodeLine{00242\ \textcolor{keywordtype}{void}\ analogin\_init(analogin\_s\ *obj,\ Pin\ pin);}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ uint32\_t\ pinmap\_peripheral(Pin\ pin);}
+\DoxyCodeLine{00245\ uint32\_t\ pinmap\_find\_peripheral(Pin\ pin);}
+\DoxyCodeLine{00246\ \textcolor{keywordtype}{void}\ adc\_init(Pin\ pin);}
+\DoxyCodeLine{00247\ \textcolor{keywordtype}{void}\ pinmap\_pinout(Pin\ pin);}
+\DoxyCodeLine{00248\ \textcolor{keywordtype}{void}\ pin\_function(Pin\ pin,\ \textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00249\ \textcolor{keywordtype}{void}\ \_GPIO\_Init(GPIO\_TypeDef\ \ *GPIOx,\ GPIO\_InitTypeDef\ *GPIO\_Init);}
+\DoxyCodeLine{00250\ \textcolor{keywordtype}{void}\ \_ADC\_Init(ADC\_HandleTypeDef*\ hadc);}
+\DoxyCodeLine{00251\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ local\_ADC\_Init(ADC\_HandleTypeDef*\ hadc);}
+\DoxyCodeLine{00252\ \textcolor{keywordtype}{void}\ \_ADC\_ConfigChannel(ADC\_HandleTypeDef*\ hadc,\ ADC\_ChannelConfTypeDef*\ sConfig);}
+\DoxyCodeLine{00253\ \textcolor{keywordtype}{void}\ \_ADC\_Start(ADC\_HandleTypeDef*\ hadc);}
+\DoxyCodeLine{00254\ \textcolor{keywordtype}{int}\ \_ADC\_PollForConversion(ADC\_HandleTypeDef*\ hadc,\ uint32\_t\ Timeout);}
+\DoxyCodeLine{00255\ uint32\_t\ \_ADC\_GetValue(ADC\_HandleTypeDef*\ hadc);}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00262\ uint16\_t\ \_adc\_read(analogin\_s\ *obj);}
+\DoxyCodeLine{00263\ uint16\_t\ adc\_read(Pin\ pin);}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ADC\_H}}
+
+\end{DoxyCode}

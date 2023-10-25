@@ -1,0 +1,50 @@
+.TH "ADC_HandleTypeDef" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_HandleTypeDef
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <adc\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "ADC_TypeDef * \fBInstance\fP"
+.br
+.ti -1c
+.RI "\fB_ADC_InitTypeDef\fP \fBInit\fP"
+.br
+.ti -1c
+.RI "__IO uint32_t \fBNbrOfCurrentConversionRank\fP"
+.br
+.ti -1c
+.RI "\fBHAL_LockTypeDef\fP \fBLock\fP"
+.br
+.ti -1c
+.RI "__IO \fBHAL_ADC_StateTypeDef\fP \fBState\fP"
+.br
+.ti -1c
+.RI "__IO uint32_t \fBErrorCode\fP"
+.br
+.in -1c
+.SH "Field Documentation"
+.PP 
+.SS "__IO uint32_t ErrorCode"
+ADC Error code 
+.SS "\fB_ADC_InitTypeDef\fP Init"
+ADC required parameters 
+.SS "ADC_TypeDef* Instance"
+Register base address 
+.SS "\fBHAL_LockTypeDef\fP Lock"
+ADC locking object 
+.SS "__IO uint32_t NbrOfCurrentConversionRank"
+ADC number of current conversion rank 
+.SS "__IO \fBHAL_ADC_StateTypeDef\fP State"
+ADC communication state 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

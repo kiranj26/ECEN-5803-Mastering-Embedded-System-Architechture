@@ -1,0 +1,255 @@
+\doxysection{drivers/stm32f4xx\+\_\+usart.h File Reference}
+\label{stm32f4xx__usart_8h}\index{drivers/stm32f4xx\_usart.h@{drivers/stm32f4xx\_usart.h}}
+
+
+This file contains all the functions prototypes for the USART firmware library.  
+
+
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ USART\+\_\+\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em USART Init Structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \textbf{ USART\+\_\+\+Clock\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em USART Clock Init Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+ALL\+\_\+\+PERIPH}(PERIPH)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+1236\+\_\+\+PERIPH}(PERIPH)
+\item 
+\#define \textbf{ USART\+\_\+\+Word\+Length\+\_\+8b}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ USART\+\_\+\+Word\+Length\+\_\+9b}~((uint16\+\_\+t)0x1000)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+WORD\+\_\+\+LENGTH}(LENGTH)
+\item 
+\#define \textbf{ USART\+\_\+\+Stop\+Bits\+\_\+1}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ USART\+\_\+\+Stop\+Bits\+\_\+0\+\_\+5}~((uint16\+\_\+t)0x1000)
+\item 
+\#define \textbf{ USART\+\_\+\+Stop\+Bits\+\_\+2}~((uint16\+\_\+t)0x2000)
+\item 
+\#define \textbf{ USART\+\_\+\+Stop\+Bits\+\_\+1\+\_\+5}~((uint16\+\_\+t)0x3000)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+STOPBITS}(STOPBITS)
+\item 
+\#define \textbf{ USART\+\_\+\+Parity\+\_\+\+No}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ USART\+\_\+\+Parity\+\_\+\+Even}~((uint16\+\_\+t)0x0400)
+\item 
+\#define \textbf{ USART\+\_\+\+Parity\+\_\+\+Odd}~((uint16\+\_\+t)0x0600)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+PARITY}(PARITY)
+\item 
+\#define \textbf{ USART\+\_\+\+Mode\+\_\+\+Rx}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \textbf{ USART\+\_\+\+Mode\+\_\+\+Tx}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+MODE}(MODE)~((((MODE) \& (uint16\+\_\+t)0x\+FFF3) == 0x00) \&\& ((MODE) != (uint16\+\_\+t)0x00))
+\item 
+\#define \textbf{ USART\+\_\+\+Hardware\+Flow\+Control\+\_\+\+None}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ USART\+\_\+\+Hardware\+Flow\+Control\+\_\+\+RTS}~((uint16\+\_\+t)0x0100)
+\item 
+\#define \textbf{ USART\+\_\+\+Hardware\+Flow\+Control\+\_\+\+CTS}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \textbf{ USART\+\_\+\+Hardware\+Flow\+Control\+\_\+\+RTS\+\_\+\+CTS}~((uint16\+\_\+t)0x0300)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+HARDWARE\+\_\+\+FLOW\+\_\+\+CONTROL}(CONTROL)
+\item 
+\#define \textbf{ USART\+\_\+\+Clock\+\_\+\+Disable}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ USART\+\_\+\+Clock\+\_\+\+Enable}~((uint16\+\_\+t)0x0800)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+CLOCK}(CLOCK)
+\item 
+\#define \textbf{ USART\+\_\+\+CPOL\+\_\+\+Low}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ USART\+\_\+\+CPOL\+\_\+\+High}~((uint16\+\_\+t)0x0400)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+CPOL}(CPOL)~(((CPOL) == \textbf{ USART\+\_\+\+CPOL\+\_\+\+Low}) $\vert$$\vert$ ((CPOL) == \textbf{ USART\+\_\+\+CPOL\+\_\+\+High}))
+\item 
+\#define \textbf{ USART\+\_\+\+CPHA\+\_\+1\+Edge}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ USART\+\_\+\+CPHA\+\_\+2\+Edge}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+CPHA}(CPHA)~(((CPHA) == \textbf{ USART\+\_\+\+CPHA\+\_\+1\+Edge}) $\vert$$\vert$ ((CPHA) == \textbf{ USART\+\_\+\+CPHA\+\_\+2\+Edge}))
+\item 
+\#define \textbf{ USART\+\_\+\+Last\+Bit\+\_\+\+Disable}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ USART\+\_\+\+Last\+Bit\+\_\+\+Enable}~((uint16\+\_\+t)0x0100)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+LASTBIT}(LASTBIT)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+PE}~((uint16\+\_\+t)0x0028)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+TXE}~((uint16\+\_\+t)0x0727)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+TC}~((uint16\+\_\+t)0x0626)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+RXNE}~((uint16\+\_\+t)0x0525)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+ORE\+\_\+\+RX}~((uint16\+\_\+t)0x0325) /$\ast$ In case interrupt is generated if the RXNEIE bit is set $\ast$/
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+IDLE}~((uint16\+\_\+t)0x0424)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+LBD}~((uint16\+\_\+t)0x0846)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+CTS}~((uint16\+\_\+t)0x096A)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+ERR}~((uint16\+\_\+t)0x0060)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+ORE\+\_\+\+ER}~((uint16\+\_\+t)0x0360) /$\ast$ In case interrupt is generated if the EIE bit is set $\ast$/
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+NE}~((uint16\+\_\+t)0x0260)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+FE}~((uint16\+\_\+t)0x0160)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+ORE}~\textbf{ USART\+\_\+\+IT\+\_\+\+ORE\+\_\+\+ER}
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+CONFIG\+\_\+\+IT}(IT)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+GET\+\_\+\+IT}(IT)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+CLEAR\+\_\+\+IT}(IT)
+\item 
+\#define \textbf{ USART\+\_\+\+DMAReq\+\_\+\+Tx}~((uint16\+\_\+t)0x0080)
+\item 
+\#define \textbf{ USART\+\_\+\+DMAReq\+\_\+\+Rx}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+DMAREQ}(DMAREQ)~((((DMAREQ) \& (uint16\+\_\+t)0x\+FF3F) == 0x00) \&\& ((DMAREQ) != (uint16\+\_\+t)0x00))
+\item 
+\#define \textbf{ USART\+\_\+\+Wake\+Up\+\_\+\+Idle\+Line}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ USART\+\_\+\+Wake\+Up\+\_\+\+Address\+Mark}~((uint16\+\_\+t)0x0800)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+WAKEUP}(WAKEUP)
+\item 
+\#define \textbf{ USART\+\_\+\+LINBreak\+Detect\+Length\+\_\+10b}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ USART\+\_\+\+LINBreak\+Detect\+Length\+\_\+11b}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+LIN\+\_\+\+BREAK\+\_\+\+DETECT\+\_\+\+LENGTH}(LENGTH)
+\item 
+\#define \textbf{ USART\+\_\+\+Ir\+DAMode\+\_\+\+Low\+Power}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \textbf{ USART\+\_\+\+Ir\+DAMode\+\_\+\+Normal}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+IRDA\+\_\+\+MODE}(MODE)
+\item 
+\#define \textbf{ USART\+\_\+\+FLAG\+\_\+\+CTS}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \textbf{ USART\+\_\+\+FLAG\+\_\+\+LBD}~((uint16\+\_\+t)0x0100)
+\item 
+\#define \textbf{ USART\+\_\+\+FLAG\+\_\+\+TXE}~((uint16\+\_\+t)0x0080)
+\item 
+\#define \textbf{ USART\+\_\+\+FLAG\+\_\+\+TC}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \textbf{ USART\+\_\+\+FLAG\+\_\+\+RXNE}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \textbf{ USART\+\_\+\+FLAG\+\_\+\+IDLE}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \textbf{ USART\+\_\+\+FLAG\+\_\+\+ORE}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \textbf{ USART\+\_\+\+FLAG\+\_\+\+NE}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \textbf{ USART\+\_\+\+FLAG\+\_\+\+FE}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \textbf{ USART\+\_\+\+FLAG\+\_\+\+PE}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+FLAG}(FLAG)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+CLEAR\+\_\+\+FLAG}(FLAG)~((((FLAG) \& (uint16\+\_\+t)0x\+FC9F) == 0x00) \&\& ((FLAG) != (uint16\+\_\+t)0x00))
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+BAUDRATE}(BAUDRATE)~(((BAUDRATE) $>$ 0) \&\& ((BAUDRATE) $<$ 7500001))
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+ADDRESS}(ADDRESS)~((ADDRESS) $<$= 0xF)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+DATA}(DATA)~((DATA) $<$= 0x1\+FF)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ USART\+\_\+\+De\+Init} (USART\+\_\+\+Type\+Def $\ast$USARTx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the USARTx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Init} (USART\+\_\+\+Type\+Def $\ast$USARTx, \textbf{ USART\+\_\+\+Init\+Type\+Def} $\ast$USART\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the USARTx peripheral according to the specified parameters in the USART\+\_\+\+Init\+Struct . \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Struct\+Init} (\textbf{ USART\+\_\+\+Init\+Type\+Def} $\ast$USART\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each USART\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Clock\+Init} (USART\+\_\+\+Type\+Def $\ast$USARTx, \textbf{ USART\+\_\+\+Clock\+Init\+Type\+Def} $\ast$USART\+\_\+\+Clock\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the USARTx peripheral Clock according to the specified parameters in the USART\+\_\+\+Clock\+Init\+Struct . \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Clock\+Struct\+Init} (\textbf{ USART\+\_\+\+Clock\+Init\+Type\+Def} $\ast$USART\+\_\+\+Clock\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each USART\+\_\+\+Clock\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified USART peripheral. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Set\+Prescaler} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint8\+\_\+t USART\+\_\+\+Prescaler)
+\begin{DoxyCompactList}\small\item\em Sets the system clock prescaler. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Over\+Sampling8\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s 8x oversampling mode. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+One\+Bit\+Method\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s one bit sampling method. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Send\+Data} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Transmits single data through the USARTx peripheral. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ USART\+\_\+\+Receive\+Data} (USART\+\_\+\+Type\+Def $\ast$USARTx)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the USARTx peripheral. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Set\+Address} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint8\+\_\+t USART\+\_\+\+Address)
+\begin{DoxyCompactList}\small\item\em Sets the address of the USART node. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Wake\+Up\+Config} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+Wake\+Up)
+\begin{DoxyCompactList}\small\item\em Selects the USART Wake\+Up method. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Receiver\+Wake\+Up\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Determines if the USART is in mute mode or not. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+LINBreak\+Detect\+Length\+Config} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+LINBreak\+Detect\+Length)
+\begin{DoxyCompactList}\small\item\em Sets the USART LIN Break detection length. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+LINCmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s LIN mode. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Send\+Break} (USART\+\_\+\+Type\+Def $\ast$USARTx)
+\begin{DoxyCompactList}\small\item\em Transmits break characters. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Half\+Duplex\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s Half Duplex communication. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Smart\+Card\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s Smart Card mode. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Smart\+Card\+NACKCmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables NACK transmission. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Set\+Guard\+Time} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint8\+\_\+t USART\+\_\+\+Guard\+Time)
+\begin{DoxyCompactList}\small\item\em Sets the specified USART guard time. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Ir\+DAConfig} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+Ir\+DAMode)
+\begin{DoxyCompactList}\small\item\em Configures the USART\textquotesingle{}s Ir\+DA interface. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Ir\+DACmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s Ir\+DA interface. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+DMACmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+DMAReq, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s DMA interface. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+ITConfig} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified USART interrupts. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ USART\+\_\+\+Get\+Flag\+Status} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified USART flag is set or not. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Clear\+Flag} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the USARTx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \textbf{ USART\+\_\+\+Get\+ITStatus} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified USART interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Clear\+ITPending\+Bit} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the USARTx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the USART firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30-\/September-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

@@ -1,0 +1,45 @@
+.TH "RCC_HSE_configuration" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCC_HSE_configuration \- RCC_HSE_configuration
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRCC_HSE_OFF\fP   ((uint8_t)0x00)"
+.br
+.ti -1c
+.RI "#define \fBRCC_HSE_ON\fP   ((uint8_t)0x01)"
+.br
+.ti -1c
+.RI "#define \fBRCC_HSE_Bypass\fP   ((uint8_t)0x05)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_HSE\fP(HSE)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_RCC_HSE(HSE)"
+\fBValue:\fP.PP
+.nf
+                         (((HSE) == RCC_HSE_OFF) || ((HSE) == RCC_HSE_ON) || \\
+                         ((HSE) == RCC_HSE_Bypass))
+.fi
+
+.SS "#define RCC_HSE_Bypass   ((uint8_t)0x05)"
+
+.SS "#define RCC_HSE_OFF   ((uint8_t)0x00)"
+
+.SS "#define RCC_HSE_ON   ((uint8_t)0x01)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

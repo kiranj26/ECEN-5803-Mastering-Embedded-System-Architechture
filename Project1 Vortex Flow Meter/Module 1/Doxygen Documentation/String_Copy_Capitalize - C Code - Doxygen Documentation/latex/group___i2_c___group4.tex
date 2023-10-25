@@ -1,0 +1,71 @@
+\doxysubsubsubsection{DMA transfers management functions}
+\label{group___i2_c___group4}\index{DMA transfers management functions@{DMA transfers management functions}}
+
+
+DMA transfers management functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ I2\+C\+\_\+\+DMACmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C DMA requests. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+DMALast\+Transfer\+Cmd} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Specifies that the next DMA transfer is the last one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+DMA transfers management functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                         DMA transfers management functions
+ ===============================================================================  
+  This section provides functions allowing to configure the I2C DMA channels 
+  requests.\end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\label{group___i2_c___group4_ga38502ce11e5ec923e0f6476aaa35b45c} 
+\index{DMA transfers management functions@{DMA transfers management functions}!I2C\_DMACmd@{I2C\_DMACmd}}
+\index{I2C\_DMACmd@{I2C\_DMACmd}!DMA transfers management functions@{DMA transfers management functions}}
+\doxysubsubsubsubsubsection{I2C\_DMACmd()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+DMACmd (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified I2C DMA requests. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2C DMA transfer. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group4_gab2e994c5681eb6ec7c26a03ffe1de060} 
+\index{DMA transfers management functions@{DMA transfers management functions}!I2C\_DMALastTransferCmd@{I2C\_DMALastTransferCmd}}
+\index{I2C\_DMALastTransferCmd@{I2C\_DMALastTransferCmd}!DMA transfers management functions@{DMA transfers management functions}}
+\doxysubsubsubsubsubsection{I2C\_DMALastTransferCmd()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+DMALast\+Transfer\+Cmd (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Specifies that the next DMA transfer is the last one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2C DMA last transfer. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

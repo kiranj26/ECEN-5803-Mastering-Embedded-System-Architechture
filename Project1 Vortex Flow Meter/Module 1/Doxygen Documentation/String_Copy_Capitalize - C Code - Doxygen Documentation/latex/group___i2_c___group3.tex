@@ -1,0 +1,120 @@
+\doxysubsubsubsection{PEC management functions}
+\label{group___i2_c___group3}\index{PEC management functions@{PEC management functions}}
+
+
+PEC management functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ I2\+C\+\_\+\+Transmit\+PEC} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C PEC transfer. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+PECPosition\+Config} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+PECPosition)
+\begin{DoxyCompactList}\small\item\em Selects the specified I2C PEC position. \end{DoxyCompactList}\item 
+void \textbf{ I2\+C\+\_\+\+Calculate\+PEC} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the PEC value calculation of the transferred bytes. \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ I2\+C\+\_\+\+Get\+PEC} (I2\+C\+\_\+\+Type\+Def $\ast$I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Returns the PEC value for the specified I2C. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+PEC management functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                         PEC management functions
+ ===============================================================================  \end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\label{group___i2_c___group3_gae86801251359226c35745e0a258388b0} 
+\index{PEC management functions@{PEC management functions}!I2C\_CalculatePEC@{I2C\_CalculatePEC}}
+\index{I2C\_CalculatePEC@{I2C\_CalculatePEC}!PEC management functions@{PEC management functions}}
+\doxysubsubsubsubsubsection{I2C\_CalculatePEC()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Calculate\+PEC (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the PEC value calculation of the transferred bytes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2\+Cx PEC value calculation. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group3_ga7bf75e7c27c0e1d73e70fc0e1c7cd1dd} 
+\index{PEC management functions@{PEC management functions}!I2C\_GetPEC@{I2C\_GetPEC}}
+\index{I2C\_GetPEC@{I2C\_GetPEC}!PEC management functions@{PEC management functions}}
+\doxysubsubsubsubsubsection{I2C\_GetPEC()}
+{\footnotesize\ttfamily uint8\+\_\+t I2\+C\+\_\+\+Get\+PEC (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx }\end{DoxyParamCaption})}
+
+
+
+Returns the PEC value for the specified I2C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & PEC value. \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group3_ga5d0f939bdd45542502827bf408f24161} 
+\index{PEC management functions@{PEC management functions}!I2C\_PECPositionConfig@{I2C\_PECPositionConfig}}
+\index{I2C\_PECPositionConfig@{I2C\_PECPositionConfig}!PEC management functions@{PEC management functions}}
+\doxysubsubsubsubsubsection{I2C\_PECPositionConfig()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+PECPosition\+Config (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{uint16\+\_\+t}]{I2\+C\+\_\+\+PECPosition }\end{DoxyParamCaption})}
+
+
+
+Selects the specified I2C PEC position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em I2\+C\+\_\+\+PECPosition} & specifies the PEC position. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item I2\+C\+\_\+\+PECPosition\+\_\+\+Next\+: indicates that the next byte is PEC \item I2\+C\+\_\+\+PECPosition\+\_\+\+Current\+: indicates that current byte is PEC\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function configures the same bit (POS) as \doxyref{I2\+C\+\_\+\+NACKPosition\+Config()}{p.}{group___i2_c___group1_gad08ebffc3a234d84e6405ec115bd74f1} but is intended to be used in SMBUS mode while \doxyref{I2\+C\+\_\+\+NACKPosition\+Config()}{p.}{group___i2_c___group1_gad08ebffc3a234d84e6405ec115bd74f1} is intended to used in I2C mode.
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___i2_c___group3_gaa27d1440290fe601e730b6980999afe3} 
+\index{PEC management functions@{PEC management functions}!I2C\_TransmitPEC@{I2C\_TransmitPEC}}
+\index{I2C\_TransmitPEC@{I2C\_TransmitPEC}!PEC management functions@{PEC management functions}}
+\doxysubsubsubsubsubsection{I2C\_TransmitPEC()}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Transmit\+PEC (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified I2C PEC transfer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em New\+State} & new state of the I2C PEC transmission. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

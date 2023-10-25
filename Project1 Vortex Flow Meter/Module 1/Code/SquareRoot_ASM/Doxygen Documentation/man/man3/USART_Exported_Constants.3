@@ -1,0 +1,95 @@
+.TH "USART_Exported_Constants" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_Exported_Constants \- USART_Exported_Constants
+.SH SYNOPSIS
+.br
+.PP
+.SS "Modules"
+
+.in +1c
+.ti -1c
+.RI "\fBUSART_Word_Length\fP"
+.br
+.ti -1c
+.RI "\fBUSART_Stop_Bits\fP"
+.br
+.ti -1c
+.RI "\fBUSART_Parity\fP"
+.br
+.ti -1c
+.RI "\fBUSART_Mode\fP"
+.br
+.ti -1c
+.RI "\fBUSART_Hardware_Flow_Control\fP"
+.br
+.ti -1c
+.RI "\fBUSART_Clock\fP"
+.br
+.ti -1c
+.RI "\fBUSART_Clock_Polarity\fP"
+.br
+.ti -1c
+.RI "\fBUSART_Clock_Phase\fP"
+.br
+.ti -1c
+.RI "\fBUSART_Last_Bit\fP"
+.br
+.ti -1c
+.RI "\fBUSART_Interrupt_definition\fP"
+.br
+.ti -1c
+.RI "\fBUSART_DMA_Requests\fP"
+.br
+.ti -1c
+.RI "\fBUSART_WakeUp_methods\fP"
+.br
+.ti -1c
+.RI "\fBUSART_LIN_Break_Detection_Length\fP"
+.br
+.ti -1c
+.RI "\fBUSART_IrDA_Low_Power\fP"
+.br
+.ti -1c
+.RI "\fBUSART_Flags\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBIS_USART_ALL_PERIPH\fP(PERIPH)"
+.br
+.ti -1c
+.RI "#define \fBIS_USART_1236_PERIPH\fP(PERIPH)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_USART_1236_PERIPH(PERIPH)"
+\fBValue:\fP.PP
+.nf
+                                      (((PERIPH) == USART1) || \\
+                                      ((PERIPH) == USART2) || \\
+                                      ((PERIPH) == USART3) || \\
+                                      ((PERIPH) == USART6))
+.fi
+
+.SS "#define IS_USART_ALL_PERIPH(PERIPH)"
+\fBValue:\fP.PP
+.nf
+                                     (((PERIPH) == USART1) || \\
+                                     ((PERIPH) == USART2) || \\
+                                     ((PERIPH) == USART3) || \\
+                                     ((PERIPH) == UART4)  || \\
+                                     ((PERIPH) == UART5)  || \\
+                                     ((PERIPH) == USART6))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

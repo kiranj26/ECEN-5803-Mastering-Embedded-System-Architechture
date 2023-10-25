@@ -1,0 +1,305 @@
+.TH "RCC_Group2" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCC_Group2 \- System AHB and APB busses clocks configuration functions
+.PP
+ \- System, AHB and APB busses clocks configuration functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRCC_SYSCLKConfig\fP (uint32_t RCC_SYSCLKSource)"
+.br
+.RI "Configures the system clock (SYSCLK)\&. "
+.ti -1c
+.RI "uint8_t \fBRCC_GetSYSCLKSource\fP (void)"
+.br
+.RI "Returns the clock source used as system clock\&. "
+.ti -1c
+.RI "void \fBRCC_HCLKConfig\fP (uint32_t RCC_SYSCLK)"
+.br
+.RI "Configures the AHB clock (HCLK)\&. "
+.ti -1c
+.RI "void \fBRCC_PCLK1Config\fP (uint32_t RCC_HCLK)"
+.br
+.RI "Configures the Low Speed APB clock (PCLK1)\&. "
+.ti -1c
+.RI "void \fBRCC_PCLK2Config\fP (uint32_t RCC_HCLK)"
+.br
+.RI "Configures the High Speed APB clock (PCLK2)\&. "
+.ti -1c
+.RI "void \fBRCC_GetClocksFreq\fP (\fBRCC_ClocksTypeDef\fP *RCC_Clocks)"
+.br
+.RI "Returns the frequencies of different on chip clocks; SYSCLK, HCLK, PCLK1 and PCLK2\&. 
+.br
+ "
+.in -1c
+.SH "Detailed Description"
+.PP 
+System, AHB and APB busses clocks configuration functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+             System, AHB and APB busses clocks configuration functions
+ ===============================================================================  
+
+  This section provide functions allowing to configure the System, AHB, APB1 and 
+  APB2 busses clocks\&.
+  
+  1\&. Several clock sources can be used to drive the System clock (SYSCLK): HSI,
+     HSE and PLL\&.
+     The AHB clock (HCLK) is derived from System clock through configurable prescaler
+     and used to clock the CPU, memory and peripherals mapped on AHB bus (DMA, GPIO\&.\&.\&.)\&.
+     APB1 (PCLK1) and APB2 (PCLK2) clocks are derived from AHB clock through 
+     configurable prescalers and used to clock the peripherals mapped on these busses\&.
+     You can use 'RCC_GetClocksFreq()' function to retrieve the frequencies of these clocks\&.  
+
+@note All the peripheral clocks are derived from the System clock (SYSCLK) except:
+       - I2S: the I2S clock can be derived either from a specific PLL (PLLI2S) or
+          from an external clock mapped on the I2S_CKIN pin\&. 
+          You have to use RCC_I2SCLKConfig() function to configure this clock\&. 
+       - RTC: the RTC clock can be derived either from the LSI, LSE or HSE clock
+          divided by 2 to 31\&. You have to use RCC_RTCCLKConfig() and RCC_RTCCLKCmd()
+          functions to configure this clock\&. 
+       - USB OTG FS, SDIO and RTC: USB OTG FS require a frequency equal to 48 MHz
+          to work correctly, while the SDIO require a frequency equal or lower than
+          to 48\&. This clock is derived of the main PLL through PLLQ divider\&.
+       - IWDG clock which is always the LSI clock\&.
+       
+  2\&. The maximum frequency of the SYSCLK and HCLK is 168 MHz, PCLK2 82 MHz and PCLK1 42 MHz\&.
+     Depending on the device voltage range, the maximum frequency should be 
+     adapted accordingly:
+ +-------------------------------------------------------------------------------------+     
+ | Latency       |                HCLK clock frequency (MHz)                           |
+ |               |---------------------------------------------------------------------|     
+ |               | voltage range  | voltage range  | voltage range   | voltage range   |
+ |               | 2\&.7 V - 3\&.6 V  | 2\&.4 V - 2\&.7 V  | 2\&.1 V - 2\&.4 V   | 1\&.8 V - 2\&.1 V   |
+ |---------------|----------------|----------------|-----------------|-----------------|              
+ |0WS(1CPU cycle)|0 < HCLK <= 30  |0 < HCLK <= 24  |0 < HCLK <= 18   |0 < HCLK <= 16   |
+ |---------------|----------------|----------------|-----------------|-----------------|   
+ |1WS(2CPU cycle)|30 < HCLK <= 60 |24 < HCLK <= 48 |18 < HCLK <= 36  |16 < HCLK <= 32  | 
+ |---------------|----------------|----------------|-----------------|-----------------|   
+ |2WS(3CPU cycle)|60 < HCLK <= 90 |48 < HCLK <= 72 |36 < HCLK <= 54  |32 < HCLK <= 48  |
+ |---------------|----------------|----------------|-----------------|-----------------| 
+ |3WS(4CPU cycle)|90 < HCLK <= 120|72 < HCLK <= 96 |54 < HCLK <= 72  |48 < HCLK <= 64  |
+ |---------------|----------------|----------------|-----------------|-----------------| 
+ |4WS(5CPU cycle)|120< HCLK <= 150|96 < HCLK <= 120|72 < HCLK <= 90  |64 < HCLK <= 80  |
+ |---------------|----------------|----------------|-----------------|-----------------| 
+ |5WS(6CPU cycle)|120< HCLK <= 168|120< HCLK <= 144|90 < HCLK <= 108 |80 < HCLK <= 96  | 
+ |---------------|----------------|----------------|-----------------|-----------------| 
+ |6WS(7CPU cycle)|      NA        |144< HCLK <= 168|108 < HCLK <= 120|96 < HCLK <= 112 | 
+ |---------------|----------------|----------------|-----------------|-----------------| 
+ |7WS(8CPU cycle)|      NA        |      NA        |120 < HCLK <= 138|112 < HCLK <= 120| 
+ +-------------------------------------------------------------------------------------+    
+   @note When VOS bit (in PWR_CR register) is reset to '0’, the maximum value of HCLK is 144 MHz\&.
+         You can use PWR_MainRegulatorModeConfig() function to set or reset this bit\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void RCC_GetClocksFreq (\fBRCC_ClocksTypeDef\fP * RCC_Clocks)"
+
+.PP
+Returns the frequencies of different on chip clocks; SYSCLK, HCLK, PCLK1 and PCLK2\&. 
+.br
+ 
+.PP
+\fBNote\fP
+.RS 4
+The system frequency computed by this function is not the real frequency in the chip\&. It is calculated based on the predefined constant and the selected clock source: 
+.PP
+If SYSCLK source is HSI, function returns values based on \fBHSI_VALUE(*)\fP 
+.PP
+If SYSCLK source is HSE, function returns values based on \fBHSE_VALUE(**)\fP 
+.PP
+If SYSCLK source is PLL, function returns values based on \fBHSE_VALUE(**)\fP or \fBHSI_VALUE(*)\fP multiplied/divided by the PLL factors\&. 
+.br
+ 
+.PP
+(*) HSI_VALUE is a constant defined in stm32f4xx\&.h file (default value 16 MHz) but the real value may vary depending on the variations in voltage and temperature\&. 
+.PP
+(**) HSE_VALUE is a constant defined in stm32f4xx\&.h file (default value 25 MHz), user has to ensure that HSE_VALUE is same as the real frequency of the crystal used\&. Otherwise, this function may have wrong result\&.
+.PP
+The result of this function could be not correct when using fractional value for HSE crystal\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_Clocks\fP pointer to a \fBRCC_ClocksTypeDef\fP structure which will hold the clocks frequencies\&.
+.RE
+.PP
+\fBNote\fP
+.RS 4
+This function can be used by the user application to compute the baudrate for the communication peripherals or configure other parameters\&. 
+.PP
+Each time SYSCLK, HCLK, PCLK1 and/or PCLK2 clock changes, this function must be called to update the structure's field\&. Otherwise, any configuration based on this function will be incorrect\&.
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "uint8_t RCC_GetSYSCLKSource (void)"
+
+.PP
+Returns the clock source used as system clock\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP clock source used as system clock\&. The returned value can be one of the following:
+.IP "\(bu" 2
+0x00: HSI used as system clock
+.IP "\(bu" 2
+0x04: HSE used as system clock
+.IP "\(bu" 2
+0x08: PLL used as system clock 
+.PP
+.RE
+.PP
+
+.SS "void RCC_HCLKConfig (uint32_t RCC_SYSCLK)"
+
+.PP
+Configures the AHB clock (HCLK)\&. 
+.PP
+\fBNote\fP
+.RS 4
+Depending on the device voltage range, the software has to set correctly these bits to ensure that HCLK not exceed the maximum allowed frequency (for more details refer to section above 'CPU, AHB and APB busses clocks configuration functions') 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_SYSCLK\fP defines the AHB clock divider\&. This clock is derived from the system clock (SYSCLK)\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_SYSCLK_Div1: AHB clock = SYSCLK 
+.IP "\(bu" 1
+RCC_SYSCLK_Div2: AHB clock = SYSCLK/2 
+.IP "\(bu" 1
+RCC_SYSCLK_Div4: AHB clock = SYSCLK/4 
+.IP "\(bu" 1
+RCC_SYSCLK_Div8: AHB clock = SYSCLK/8 
+.IP "\(bu" 1
+RCC_SYSCLK_Div16: AHB clock = SYSCLK/16 
+.IP "\(bu" 1
+RCC_SYSCLK_Div64: AHB clock = SYSCLK/64 
+.IP "\(bu" 1
+RCC_SYSCLK_Div128: AHB clock = SYSCLK/128 
+.IP "\(bu" 1
+RCC_SYSCLK_Div256: AHB clock = SYSCLK/256 
+.IP "\(bu" 1
+RCC_SYSCLK_Div512: AHB clock = SYSCLK/512 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_PCLK1Config (uint32_t RCC_HCLK)"
+
+.PP
+Configures the Low Speed APB clock (PCLK1)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_HCLK\fP defines the APB1 clock divider\&. This clock is derived from the AHB clock (HCLK)\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_HCLK_Div1: APB1 clock = HCLK 
+.IP "\(bu" 1
+RCC_HCLK_Div2: APB1 clock = HCLK/2 
+.IP "\(bu" 1
+RCC_HCLK_Div4: APB1 clock = HCLK/4 
+.IP "\(bu" 1
+RCC_HCLK_Div8: APB1 clock = HCLK/8 
+.IP "\(bu" 1
+RCC_HCLK_Div16: APB1 clock = HCLK/16 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_PCLK2Config (uint32_t RCC_HCLK)"
+
+.PP
+Configures the High Speed APB clock (PCLK2)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_HCLK\fP defines the APB2 clock divider\&. This clock is derived from the AHB clock (HCLK)\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_HCLK_Div1: APB2 clock = HCLK 
+.IP "\(bu" 1
+RCC_HCLK_Div2: APB2 clock = HCLK/2 
+.IP "\(bu" 1
+RCC_HCLK_Div4: APB2 clock = HCLK/4 
+.IP "\(bu" 1
+RCC_HCLK_Div8: APB2 clock = HCLK/8 
+.IP "\(bu" 1
+RCC_HCLK_Div16: APB2 clock = HCLK/16 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_SYSCLKConfig (uint32_t RCC_SYSCLKSource)"
+
+.PP
+Configures the system clock (SYSCLK)\&. 
+.PP
+\fBNote\fP
+.RS 4
+The HSI is used (enabled by hardware) as system clock source after startup from Reset, wake-up from STOP and STANDBY mode, or in case of failure of the HSE used directly or indirectly as system clock (if the Clock Security System CSS is enabled)\&. 
+.PP
+A switch from one clock source to another occurs only if the target clock source is ready (clock stable after startup delay or PLL locked)\&. If a clock source which is not yet ready is selected, the switch will occur when the clock source will be ready\&. You can use \fBRCC_GetSYSCLKSource()\fP function to know which clock is currently used as system clock source\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_SYSCLKSource\fP specifies the clock source used as system clock\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_SYSCLKSource_HSI: HSI selected as system clock source 
+.IP "\(bu" 1
+RCC_SYSCLKSource_HSE: HSE selected as system clock source 
+.IP "\(bu" 1
+RCC_SYSCLKSource_PLLCLK: PLL selected as system clock source 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

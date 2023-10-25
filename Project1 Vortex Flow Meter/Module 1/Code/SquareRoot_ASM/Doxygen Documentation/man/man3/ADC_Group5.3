@@ -1,0 +1,133 @@
+.TH "ADC_Group5" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_Group5 \- Regular Channels DMA Configuration functions
+.PP
+ \- Regular Channels DMA Configuration functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBADC_DMACmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified ADC DMA request\&. "
+.ti -1c
+.RI "void \fBADC_DMARequestAfterLastTransferCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the ADC DMA request after last transfer (Single-ADC mode) 
+.br
+ "
+.ti -1c
+.RI "void \fBADC_MultiModeDMARequestAfterLastTransferCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the ADC DMA request after last transfer in multi ADC mode 
+.br
+ "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Regular Channels DMA Configuration functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                   Regular Channels DMA Configuration functions
+ ===============================================================================  
+
+  This section provides functions allowing to configure the DMA for ADC regular 
+  channels\&.
+  Since converted regular channel values are stored into a unique data register, 
+  it is useful to use DMA for conversion of more than one regular channel\&. This 
+  avoids the loss of the data already stored in the ADC Data register\&. 
+  
+  When the DMA mode is enabled (using the ADC_DMACmd() function), after each
+  conversion of a regular channel, a DMA request is generated\&.
+  
+  Depending on the 'DMA disable selection for Independent ADC mode' 
+  configuration (using the ADC_DMARequestAfterLastTransferCmd() function), 
+  at the end of the last DMA transfer, two possibilities are allowed:
+  - No new DMA request is issued to the DMA controller (feature DISABLED) 
+  - Requests can continue to be generated (feature ENABLED)\&.
+  
+  Depending on the 'DMA disable selection for multi ADC mode' configuration 
+  (using the void ADC_MultiModeDMARequestAfterLastTransferCmd() function), 
+  at the end of the last DMA transfer, two possibilities are allowed:
+  - No new DMA request is issued to the DMA controller (feature DISABLED) 
+  - Requests can continue to be generated (feature ENABLED)\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void ADC_DMACmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified ADC DMA request\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC DMA transfer\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_DMARequestAfterLastTransferCmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the ADC DMA request after last transfer (Single-ADC mode) 
+.br
+ 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC DMA request after last transfer\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_MultiModeDMARequestAfterLastTransferCmd (FunctionalState NewState)"
+
+.PP
+Enables or disables the ADC DMA request after last transfer in multi ADC mode 
+.br
+ 
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the selected ADC DMA request after last transfer\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+if Enabled, DMA requests are issued as long as data are converted and DMA mode for multi ADC mode (selected using \fBADC_CommonInit()\fP function by ADC_CommonInitStruct\&.ADC_DMAAccessMode structure member) is ADC_DMAAccessMode_1, ADC_DMAAccessMode_2 or ADC_DMAAccessMode_3\&. 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

@@ -1,0 +1,124 @@
+.TH "ADC_extrenal_trigger_sources_for_injected_channels_conversion" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_extrenal_trigger_sources_for_injected_channels_conversion \- ADC_extrenal_trigger_sources_for_injected_channels_conversion
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T1_CC4\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T1_TRGO\fP   ((uint32_t)0x00010000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T2_CC1\fP   ((uint32_t)0x00020000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T2_TRGO\fP   ((uint32_t)0x00030000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T3_CC2\fP   ((uint32_t)0x00040000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T3_CC4\fP   ((uint32_t)0x00050000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T4_CC1\fP   ((uint32_t)0x00060000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T4_CC2\fP   ((uint32_t)0x00070000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T4_CC3\fP   ((uint32_t)0x00080000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T4_TRGO\fP   ((uint32_t)0x00090000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T5_CC4\fP   ((uint32_t)0x000A0000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T5_TRGO\fP   ((uint32_t)0x000B0000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T8_CC2\fP   ((uint32_t)0x000C0000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T8_CC3\fP   ((uint32_t)0x000D0000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_T8_CC4\fP   ((uint32_t)0x000E0000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigInjecConv_Ext_IT15\fP   ((uint32_t)0x000F0000)"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_EXT_INJEC_TRIG\fP(INJTRIG)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_ExternalTrigInjecConv_Ext_IT15   ((uint32_t)0x000F0000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T1_CC4   ((uint32_t)0x00000000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T1_TRGO   ((uint32_t)0x00010000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T2_CC1   ((uint32_t)0x00020000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T2_TRGO   ((uint32_t)0x00030000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T3_CC2   ((uint32_t)0x00040000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T3_CC4   ((uint32_t)0x00050000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T4_CC1   ((uint32_t)0x00060000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T4_CC2   ((uint32_t)0x00070000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T4_CC3   ((uint32_t)0x00080000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T4_TRGO   ((uint32_t)0x00090000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T5_CC4   ((uint32_t)0x000A0000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T5_TRGO   ((uint32_t)0x000B0000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T8_CC2   ((uint32_t)0x000C0000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T8_CC3   ((uint32_t)0x000D0000)"
+
+.SS "#define ADC_ExternalTrigInjecConv_T8_CC4   ((uint32_t)0x000E0000)"
+
+.SS "#define IS_ADC_EXT_INJEC_TRIG(INJTRIG)"
+\fBValue:\fP.PP
+.nf
+                                        (((INJTRIG) == ADC_ExternalTrigInjecConv_T1_CC4) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T1_TRGO) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T2_CC1) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T2_TRGO) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T3_CC2) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T3_CC4) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T4_CC1) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T4_CC2) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T4_CC3) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T4_TRGO) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T5_CC4) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T5_TRGO) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T8_CC2) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T8_CC3) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_T8_CC4) || \\
+                                        ((INJTRIG) == ADC_ExternalTrigInjecConv_Ext_IT15))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

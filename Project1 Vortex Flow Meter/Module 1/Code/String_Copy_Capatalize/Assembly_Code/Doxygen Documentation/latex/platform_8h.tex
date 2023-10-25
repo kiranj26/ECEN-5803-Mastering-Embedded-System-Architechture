@@ -1,0 +1,605 @@
+\doxysection{drivers/platform.h File Reference}
+\label{platform_8h}\index{drivers/platform.h@{drivers/platform.h}}
+{\ttfamily \#include $<$STM32\+F4xx.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ CLK\+\_\+\+FREQ}~8400000\+UL
+\item 
+\#define \textbf{ P\+\_\+\+SW}~\textbf{ PC\+\_\+13}
+\item 
+\#define \textbf{ P\+\_\+\+LED\+\_\+R}~\textbf{ PA\+\_\+5}
+\item 
+\#define \textbf{ P\+\_\+\+LED\+\_\+G}~\textbf{ PA\+\_\+6}
+\item 
+\#define \textbf{ P\+\_\+\+LED\+\_\+B}~\textbf{ PA\+\_\+7}
+\item 
+\#define \textbf{ P\+\_\+\+SW\+\_\+\+UP}~\textbf{ PA\+\_\+1}
+\item 
+\#define \textbf{ P\+\_\+\+SW\+\_\+\+CR}~\textbf{ PA\+\_\+4}
+\item 
+\#define \textbf{ P\+\_\+\+SW\+\_\+\+DN}~\textbf{ PB\+\_\+0}
+\item 
+\#define \textbf{ P\+\_\+\+SW\+\_\+\+LT}~\textbf{ PC\+\_\+1}
+\item 
+\#define \textbf{ P\+\_\+\+SW\+\_\+\+RT}~\textbf{ PC\+\_\+0}
+\item 
+\#define \textbf{ P\+\_\+\+DBG\+\_\+\+ISR}~\textbf{ PC\+\_\+8}
+\item 
+\#define \textbf{ P\+\_\+\+DBG\+\_\+\+MAIN}~\textbf{ PC\+\_\+6}
+\item 
+\#define \textbf{ P\+\_\+\+SPEAKER}~\textbf{ PB\+\_\+6}
+\item 
+\#define \textbf{ P\+\_\+\+LCD\+\_\+\+RS}~\textbf{ PA\+\_\+9}
+\item 
+\#define \textbf{ P\+\_\+\+LCD\+\_\+\+RW}~\textbf{ PA\+\_\+8}
+\item 
+\#define \textbf{ P\+\_\+\+LCD\+\_\+E}~\textbf{ PB\+\_\+10}
+\item 
+\#define \textbf{ P\+\_\+\+LCD\+\_\+\+DATA4}~\textbf{ PB\+\_\+4}
+\item 
+\#define \textbf{ P\+\_\+\+LCD\+\_\+\+DATA5}~\textbf{ PB\+\_\+5}
+\item 
+\#define \textbf{ P\+\_\+\+LCD\+\_\+\+DATA6}~\textbf{ PB\+\_\+3}
+\item 
+\#define \textbf{ P\+\_\+\+LCD\+\_\+\+DATA7}~\textbf{ PA\+\_\+10}
+\item 
+\#define \textbf{ P\+\_\+\+IR}~\textbf{ PA\+\_\+8}
+\item 
+\#define \textbf{ P\+\_\+\+SAMPLE}~\textbf{ PC\+\_\+10}
+\item 
+\#define \textbf{ P\+\_\+\+PERIOD}~\textbf{ PC\+\_\+12}
+\item 
+\#define \textbf{ P\+\_\+\+ADC}~\textbf{ PA\+\_\+0}
+\item 
+\#define \textbf{ P\+\_\+\+CMP\+\_\+\+PLUS}~\textbf{ PA\+\_\+1}
+\item 
+\#define \textbf{ P\+\_\+\+CMP\+\_\+\+NEG}~\textbf{ PA\+\_\+0}
+\item 
+\#define \textbf{ P\+\_\+\+RX}~\textbf{ PA\+\_\+3}
+\item 
+\#define \textbf{ P\+\_\+\+TX}~\textbf{ PA\+\_\+2}
+\item 
+\#define \textbf{ P\+\_\+\+SCL}~\textbf{ PB\+\_\+8}
+\item 
+\#define \textbf{ P\+\_\+\+SDA}~\textbf{ PB\+\_\+9}
+\item 
+\#define \textbf{ GET\+\_\+\+PORT\+\_\+\+INDEX}(pin)~((pin) $>$$>$ 16)
+\item 
+\#define \textbf{ GET\+\_\+\+PIN\+\_\+\+INDEX}(pin)~((pin) \& 0x\+FF)
+\item 
+\#define \textbf{ ADC\+\_\+\+BITS}~12
+\item 
+\#define \textbf{ ADC\+\_\+\+MASK}~((1u $<$$<$ \textbf{ ADC\+\_\+\+BITS}) -\/ 1)
+\item 
+\#define \textbf{ DAC\+\_\+\+BITS}~8
+\item 
+\#define \textbf{ DAC\+\_\+\+MASK}~((1u $<$$<$ \textbf{ DAC\+\_\+\+BITS}) -\/ 1)
+\item 
+\#define \textbf{ LED\+\_\+\+ON}~1
+\item 
+\#define \textbf{ LED\+\_\+\+OFF}~0
+\item 
+\#define \textbf{ GET\+\_\+\+PORT}(pin)~((GPIO\+\_\+\+Type\+Def$\ast$)(AHB1\+PERIPH\+\_\+\+BASE + 0x0400 $\ast$ \textbf{ GET\+\_\+\+PORT\+\_\+\+INDEX}(pin)))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ Pin} \{ \newline
+\textbf{ PA\+\_\+0} = (0 $<$$<$ 16) $\vert$ 0
+, \textbf{ PA\+\_\+1} = (0 $<$$<$ 16) $\vert$ 1
+, \textbf{ PA\+\_\+2} = (0 $<$$<$ 16) $\vert$ 2
+, \textbf{ PA\+\_\+3} = (0 $<$$<$ 16) $\vert$ 3
+, \newline
+\textbf{ PA\+\_\+4} = (0 $<$$<$ 16) $\vert$ 4
+, \textbf{ PA\+\_\+5} = (0 $<$$<$ 16) $\vert$ 5
+, \textbf{ PA\+\_\+6} = (0 $<$$<$ 16) $\vert$ 6
+, \textbf{ PA\+\_\+7} = (0 $<$$<$ 16) $\vert$ 7
+, \newline
+\textbf{ PA\+\_\+8} = (0 $<$$<$ 16) $\vert$ 8
+, \textbf{ PA\+\_\+9} = (0 $<$$<$ 16) $\vert$ 9
+, \textbf{ PA\+\_\+10} = (0 $<$$<$ 16) $\vert$ 10
+, \textbf{ PA\+\_\+11} = (0 $<$$<$ 16) $\vert$ 11
+, \newline
+\textbf{ PA\+\_\+12} = (0 $<$$<$ 16) $\vert$ 12
+, \textbf{ PA\+\_\+13} = (0 $<$$<$ 16) $\vert$ 13
+, \textbf{ PA\+\_\+14} = (0 $<$$<$ 16) $\vert$ 14
+, \textbf{ PA\+\_\+15} = (0 $<$$<$ 16) $\vert$ 15
+, \newline
+\textbf{ PB\+\_\+0} = (1 $<$$<$ 16) $\vert$ 0
+, \textbf{ PB\+\_\+1} = (1 $<$$<$ 16) $\vert$ 1
+, \textbf{ PB\+\_\+2} = (1 $<$$<$ 16) $\vert$ 2
+, \textbf{ PB\+\_\+3} = (1 $<$$<$ 16) $\vert$ 3
+, \newline
+\textbf{ PB\+\_\+4} = (1 $<$$<$ 16) $\vert$ 4
+, \textbf{ PB\+\_\+5} = (1 $<$$<$ 16) $\vert$ 5
+, \textbf{ PB\+\_\+6} = (1 $<$$<$ 16) $\vert$ 6
+, \textbf{ PB\+\_\+7} = (1 $<$$<$ 16) $\vert$ 7
+, \newline
+\textbf{ PB\+\_\+8} = (1 $<$$<$ 16) $\vert$ 8
+, \textbf{ PB\+\_\+9} = (1 $<$$<$ 16) $\vert$ 9
+, \textbf{ PB\+\_\+10} = (1 $<$$<$ 16) $\vert$ 10
+, \textbf{ PB\+\_\+12} = (1 $<$$<$ 16) $\vert$ 12
+, \newline
+\textbf{ PB\+\_\+13} = (1 $<$$<$ 16) $\vert$ 13
+, \textbf{ PB\+\_\+14} = (1 $<$$<$ 16) $\vert$ 14
+, \textbf{ PB\+\_\+15} = (1 $<$$<$ 16) $\vert$ 15
+, \textbf{ PC\+\_\+0} = (2 $<$$<$ 16) $\vert$ 0
+, \newline
+\textbf{ PC\+\_\+1} = (2 $<$$<$ 16) $\vert$ 1
+, \textbf{ PC\+\_\+2} = (2 $<$$<$ 16) $\vert$ 2
+, \textbf{ PC\+\_\+3} = (2 $<$$<$ 16) $\vert$ 3
+, \textbf{ PC\+\_\+4} = (2 $<$$<$ 16) $\vert$ 4
+, \newline
+\textbf{ PC\+\_\+5} = (2 $<$$<$ 16) $\vert$ 5
+, \textbf{ PC\+\_\+6} = (2 $<$$<$ 16) $\vert$ 6
+, \textbf{ PC\+\_\+7} = (2 $<$$<$ 16) $\vert$ 7
+, \textbf{ PC\+\_\+8} = (2 $<$$<$ 16) $\vert$ 8
+, \newline
+\textbf{ PC\+\_\+9} = (2 $<$$<$ 16) $\vert$ 9
+, \textbf{ PC\+\_\+10} = (2 $<$$<$ 16) $\vert$ 10
+, \textbf{ PC\+\_\+11} = (2 $<$$<$ 16) $\vert$ 11
+, \textbf{ PC\+\_\+12} = (2 $<$$<$ 16) $\vert$ 12
+, \newline
+\textbf{ PC\+\_\+13} = (2 $<$$<$ 16) $\vert$ 13
+, \textbf{ PC\+\_\+14} = (2 $<$$<$ 16) $\vert$ 14
+, \textbf{ PC\+\_\+15} = (2 $<$$<$ 16) $\vert$ 15
+, \textbf{ PD\+\_\+2} = (3 $<$$<$ 16) $\vert$ 2
+, \newline
+\textbf{ PH\+\_\+0} = (7 $<$$<$ 16) $\vert$ 0
+, \textbf{ PH\+\_\+1} = (7 $<$$<$ 16) $\vert$ 1
+, \textbf{ NC} = (int)0x\+FFFFFFFF
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\label{platform_8h_ae678d504181814806fe8acf281cb7c31} 
+\index{platform.h@{platform.h}!ADC\_BITS@{ADC\_BITS}}
+\index{ADC\_BITS@{ADC\_BITS}!platform.h@{platform.h}}
+\doxysubsubsection{ADC\_BITS}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+BITS~12}
+
+\label{platform_8h_a3416b39e4841b9e27bb2e8e490cecf5b} 
+\index{platform.h@{platform.h}!ADC\_MASK@{ADC\_MASK}}
+\index{ADC\_MASK@{ADC\_MASK}!platform.h@{platform.h}}
+\doxysubsubsection{ADC\_MASK}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+MASK~((1u $<$$<$ \textbf{ ADC\+\_\+\+BITS}) -\/ 1)}
+
+\label{platform_8h_aafc10c8bbf3d3c18ed615f24925bbb10} 
+\index{platform.h@{platform.h}!CLK\_FREQ@{CLK\_FREQ}}
+\index{CLK\_FREQ@{CLK\_FREQ}!platform.h@{platform.h}}
+\doxysubsubsection{CLK\_FREQ}
+{\footnotesize\ttfamily \#define CLK\+\_\+\+FREQ~8400000\+UL}
+
+\label{platform_8h_a473ba74d5d0b54a161a17d1ea5348cfe} 
+\index{platform.h@{platform.h}!DAC\_BITS@{DAC\_BITS}}
+\index{DAC\_BITS@{DAC\_BITS}!platform.h@{platform.h}}
+\doxysubsubsection{DAC\_BITS}
+{\footnotesize\ttfamily \#define DAC\+\_\+\+BITS~8}
+
+\label{platform_8h_a2eabc598482ce623789f2bcc230a0e77} 
+\index{platform.h@{platform.h}!DAC\_MASK@{DAC\_MASK}}
+\index{DAC\_MASK@{DAC\_MASK}!platform.h@{platform.h}}
+\doxysubsubsection{DAC\_MASK}
+{\footnotesize\ttfamily \#define DAC\+\_\+\+MASK~((1u $<$$<$ \textbf{ DAC\+\_\+\+BITS}) -\/ 1)}
+
+\label{platform_8h_a689d3fb7e191926d6b305d35ac06409c} 
+\index{platform.h@{platform.h}!GET\_PIN\_INDEX@{GET\_PIN\_INDEX}}
+\index{GET\_PIN\_INDEX@{GET\_PIN\_INDEX}!platform.h@{platform.h}}
+\doxysubsubsection{GET\_PIN\_INDEX}
+{\footnotesize\ttfamily \#define GET\+\_\+\+PIN\+\_\+\+INDEX(\begin{DoxyParamCaption}\item[{}]{pin }\end{DoxyParamCaption})~((pin) \& 0x\+FF)}
+
+\label{platform_8h_aee377c2557c99456511a4745548616fc} 
+\index{platform.h@{platform.h}!GET\_PORT@{GET\_PORT}}
+\index{GET\_PORT@{GET\_PORT}!platform.h@{platform.h}}
+\doxysubsubsection{GET\_PORT}
+{\footnotesize\ttfamily \#define GET\+\_\+\+PORT(\begin{DoxyParamCaption}\item[{}]{pin }\end{DoxyParamCaption})~((GPIO\+\_\+\+Type\+Def$\ast$)(AHB1\+PERIPH\+\_\+\+BASE + 0x0400 $\ast$ \textbf{ GET\+\_\+\+PORT\+\_\+\+INDEX}(pin)))}
+
+\label{platform_8h_a3d62adc285a143bf7a26200a7e8014f9} 
+\index{platform.h@{platform.h}!GET\_PORT\_INDEX@{GET\_PORT\_INDEX}}
+\index{GET\_PORT\_INDEX@{GET\_PORT\_INDEX}!platform.h@{platform.h}}
+\doxysubsubsection{GET\_PORT\_INDEX}
+{\footnotesize\ttfamily \#define GET\+\_\+\+PORT\+\_\+\+INDEX(\begin{DoxyParamCaption}\item[{}]{pin }\end{DoxyParamCaption})~((pin) $>$$>$ 16)}
+
+\label{platform_8h_a80700bb63bd56ebabbb4728aa433fd29} 
+\index{platform.h@{platform.h}!LED\_OFF@{LED\_OFF}}
+\index{LED\_OFF@{LED\_OFF}!platform.h@{platform.h}}
+\doxysubsubsection{LED\_OFF}
+{\footnotesize\ttfamily \#define LED\+\_\+\+OFF~0}
+
+\label{platform_8h_af2e697ac60e05813d45ea2c9c9e79c25} 
+\index{platform.h@{platform.h}!LED\_ON@{LED\_ON}}
+\index{LED\_ON@{LED\_ON}!platform.h@{platform.h}}
+\doxysubsubsection{LED\_ON}
+{\footnotesize\ttfamily \#define LED\+\_\+\+ON~1}
+
+\label{platform_8h_a0766219d8a137a675a4d9b3715c2fe3c} 
+\index{platform.h@{platform.h}!P\_ADC@{P\_ADC}}
+\index{P\_ADC@{P\_ADC}!platform.h@{platform.h}}
+\doxysubsubsection{P\_ADC}
+{\footnotesize\ttfamily \#define P\+\_\+\+ADC~\textbf{ PA\+\_\+0}}
+
+\label{platform_8h_a8f2d66743d983ecaf801b3d9e74ea9f0} 
+\index{platform.h@{platform.h}!P\_CMP\_NEG@{P\_CMP\_NEG}}
+\index{P\_CMP\_NEG@{P\_CMP\_NEG}!platform.h@{platform.h}}
+\doxysubsubsection{P\_CMP\_NEG}
+{\footnotesize\ttfamily \#define P\+\_\+\+CMP\+\_\+\+NEG~\textbf{ PA\+\_\+0}}
+
+\label{platform_8h_ae8fa0a536144a93cc5180b6ce2d89737} 
+\index{platform.h@{platform.h}!P\_CMP\_PLUS@{P\_CMP\_PLUS}}
+\index{P\_CMP\_PLUS@{P\_CMP\_PLUS}!platform.h@{platform.h}}
+\doxysubsubsection{P\_CMP\_PLUS}
+{\footnotesize\ttfamily \#define P\+\_\+\+CMP\+\_\+\+PLUS~\textbf{ PA\+\_\+1}}
+
+\label{platform_8h_a6d6d1493d59987d2982b09110e62f2fb} 
+\index{platform.h@{platform.h}!P\_DBG\_ISR@{P\_DBG\_ISR}}
+\index{P\_DBG\_ISR@{P\_DBG\_ISR}!platform.h@{platform.h}}
+\doxysubsubsection{P\_DBG\_ISR}
+{\footnotesize\ttfamily \#define P\+\_\+\+DBG\+\_\+\+ISR~\textbf{ PC\+\_\+8}}
+
+\label{platform_8h_afde82050becb620ca9a6f0a48c08bbef} 
+\index{platform.h@{platform.h}!P\_DBG\_MAIN@{P\_DBG\_MAIN}}
+\index{P\_DBG\_MAIN@{P\_DBG\_MAIN}!platform.h@{platform.h}}
+\doxysubsubsection{P\_DBG\_MAIN}
+{\footnotesize\ttfamily \#define P\+\_\+\+DBG\+\_\+\+MAIN~\textbf{ PC\+\_\+6}}
+
+\label{platform_8h_a89ac05371c8c2b0b852b3e7e9b9dda10} 
+\index{platform.h@{platform.h}!P\_IR@{P\_IR}}
+\index{P\_IR@{P\_IR}!platform.h@{platform.h}}
+\doxysubsubsection{P\_IR}
+{\footnotesize\ttfamily \#define P\+\_\+\+IR~\textbf{ PA\+\_\+8}}
+
+\label{platform_8h_a124676faa969b60ae3f03d7c6cbce790} 
+\index{platform.h@{platform.h}!P\_LCD\_DATA4@{P\_LCD\_DATA4}}
+\index{P\_LCD\_DATA4@{P\_LCD\_DATA4}!platform.h@{platform.h}}
+\doxysubsubsection{P\_LCD\_DATA4}
+{\footnotesize\ttfamily \#define P\+\_\+\+LCD\+\_\+\+DATA4~\textbf{ PB\+\_\+4}}
+
+\label{platform_8h_adf9f14d855ec0b9b0eadde34fb73ab15} 
+\index{platform.h@{platform.h}!P\_LCD\_DATA5@{P\_LCD\_DATA5}}
+\index{P\_LCD\_DATA5@{P\_LCD\_DATA5}!platform.h@{platform.h}}
+\doxysubsubsection{P\_LCD\_DATA5}
+{\footnotesize\ttfamily \#define P\+\_\+\+LCD\+\_\+\+DATA5~\textbf{ PB\+\_\+5}}
+
+\label{platform_8h_a5e9dc2318418ac766c49636e0899d9e1} 
+\index{platform.h@{platform.h}!P\_LCD\_DATA6@{P\_LCD\_DATA6}}
+\index{P\_LCD\_DATA6@{P\_LCD\_DATA6}!platform.h@{platform.h}}
+\doxysubsubsection{P\_LCD\_DATA6}
+{\footnotesize\ttfamily \#define P\+\_\+\+LCD\+\_\+\+DATA6~\textbf{ PB\+\_\+3}}
+
+\label{platform_8h_a18837e83a4a3efe7d7c75b55c3d784ca} 
+\index{platform.h@{platform.h}!P\_LCD\_DATA7@{P\_LCD\_DATA7}}
+\index{P\_LCD\_DATA7@{P\_LCD\_DATA7}!platform.h@{platform.h}}
+\doxysubsubsection{P\_LCD\_DATA7}
+{\footnotesize\ttfamily \#define P\+\_\+\+LCD\+\_\+\+DATA7~\textbf{ PA\+\_\+10}}
+
+\label{platform_8h_a0add3466e8ef307b73c92ca9acff8d30} 
+\index{platform.h@{platform.h}!P\_LCD\_E@{P\_LCD\_E}}
+\index{P\_LCD\_E@{P\_LCD\_E}!platform.h@{platform.h}}
+\doxysubsubsection{P\_LCD\_E}
+{\footnotesize\ttfamily \#define P\+\_\+\+LCD\+\_\+E~\textbf{ PB\+\_\+10}}
+
+\label{platform_8h_a76a9680a90b4a3f8cfc0422c0bd93245} 
+\index{platform.h@{platform.h}!P\_LCD\_RS@{P\_LCD\_RS}}
+\index{P\_LCD\_RS@{P\_LCD\_RS}!platform.h@{platform.h}}
+\doxysubsubsection{P\_LCD\_RS}
+{\footnotesize\ttfamily \#define P\+\_\+\+LCD\+\_\+\+RS~\textbf{ PA\+\_\+9}}
+
+\label{platform_8h_af17381f6f5a3e8b0daa43162b97cc88f} 
+\index{platform.h@{platform.h}!P\_LCD\_RW@{P\_LCD\_RW}}
+\index{P\_LCD\_RW@{P\_LCD\_RW}!platform.h@{platform.h}}
+\doxysubsubsection{P\_LCD\_RW}
+{\footnotesize\ttfamily \#define P\+\_\+\+LCD\+\_\+\+RW~\textbf{ PA\+\_\+8}}
+
+\label{platform_8h_aebc0918807afca32d61ccb0c7a313928} 
+\index{platform.h@{platform.h}!P\_LED\_B@{P\_LED\_B}}
+\index{P\_LED\_B@{P\_LED\_B}!platform.h@{platform.h}}
+\doxysubsubsection{P\_LED\_B}
+{\footnotesize\ttfamily \#define P\+\_\+\+LED\+\_\+B~\textbf{ PA\+\_\+7}}
+
+\label{platform_8h_afca3e09f20c9ad224b81ee32d7e8158f} 
+\index{platform.h@{platform.h}!P\_LED\_G@{P\_LED\_G}}
+\index{P\_LED\_G@{P\_LED\_G}!platform.h@{platform.h}}
+\doxysubsubsection{P\_LED\_G}
+{\footnotesize\ttfamily \#define P\+\_\+\+LED\+\_\+G~\textbf{ PA\+\_\+6}}
+
+\label{platform_8h_a08be19685b921896bb5c6d224ddd20ad} 
+\index{platform.h@{platform.h}!P\_LED\_R@{P\_LED\_R}}
+\index{P\_LED\_R@{P\_LED\_R}!platform.h@{platform.h}}
+\doxysubsubsection{P\_LED\_R}
+{\footnotesize\ttfamily \#define P\+\_\+\+LED\+\_\+R~\textbf{ PA\+\_\+5}}
+
+\label{platform_8h_a1c0d06bb560a0bf90abcabf8db9de43c} 
+\index{platform.h@{platform.h}!P\_PERIOD@{P\_PERIOD}}
+\index{P\_PERIOD@{P\_PERIOD}!platform.h@{platform.h}}
+\doxysubsubsection{P\_PERIOD}
+{\footnotesize\ttfamily \#define P\+\_\+\+PERIOD~\textbf{ PC\+\_\+12}}
+
+\label{platform_8h_a78a5b235b9ee4ce991672ee886939f0d} 
+\index{platform.h@{platform.h}!P\_RX@{P\_RX}}
+\index{P\_RX@{P\_RX}!platform.h@{platform.h}}
+\doxysubsubsection{P\_RX}
+{\footnotesize\ttfamily \#define P\+\_\+\+RX~\textbf{ PA\+\_\+3}}
+
+\label{platform_8h_a803069f7ea5ed3cd4431c00905b3d440} 
+\index{platform.h@{platform.h}!P\_SAMPLE@{P\_SAMPLE}}
+\index{P\_SAMPLE@{P\_SAMPLE}!platform.h@{platform.h}}
+\doxysubsubsection{P\_SAMPLE}
+{\footnotesize\ttfamily \#define P\+\_\+\+SAMPLE~\textbf{ PC\+\_\+10}}
+
+\label{platform_8h_a016123a4dd9bdd99a9e79b1a7578d969} 
+\index{platform.h@{platform.h}!P\_SCL@{P\_SCL}}
+\index{P\_SCL@{P\_SCL}!platform.h@{platform.h}}
+\doxysubsubsection{P\_SCL}
+{\footnotesize\ttfamily \#define P\+\_\+\+SCL~\textbf{ PB\+\_\+8}}
+
+\label{platform_8h_aa7855a2c7b010a1653a0e0a1391b6309} 
+\index{platform.h@{platform.h}!P\_SDA@{P\_SDA}}
+\index{P\_SDA@{P\_SDA}!platform.h@{platform.h}}
+\doxysubsubsection{P\_SDA}
+{\footnotesize\ttfamily \#define P\+\_\+\+SDA~\textbf{ PB\+\_\+9}}
+
+\label{platform_8h_a6a71e92bf53b266f280b5bca2cde0145} 
+\index{platform.h@{platform.h}!P\_SPEAKER@{P\_SPEAKER}}
+\index{P\_SPEAKER@{P\_SPEAKER}!platform.h@{platform.h}}
+\doxysubsubsection{P\_SPEAKER}
+{\footnotesize\ttfamily \#define P\+\_\+\+SPEAKER~\textbf{ PB\+\_\+6}}
+
+\label{platform_8h_a3c83d7eca7d4ad2ade6e5744f1082656} 
+\index{platform.h@{platform.h}!P\_SW@{P\_SW}}
+\index{P\_SW@{P\_SW}!platform.h@{platform.h}}
+\doxysubsubsection{P\_SW}
+{\footnotesize\ttfamily \#define P\+\_\+\+SW~\textbf{ PC\+\_\+13}}
+
+\label{platform_8h_aaddf44c02ca3e0808eed6438e01ed25a} 
+\index{platform.h@{platform.h}!P\_SW\_CR@{P\_SW\_CR}}
+\index{P\_SW\_CR@{P\_SW\_CR}!platform.h@{platform.h}}
+\doxysubsubsection{P\_SW\_CR}
+{\footnotesize\ttfamily \#define P\+\_\+\+SW\+\_\+\+CR~\textbf{ PA\+\_\+4}}
+
+\label{platform_8h_a38f551506265e33d748e88125bed00c8} 
+\index{platform.h@{platform.h}!P\_SW\_DN@{P\_SW\_DN}}
+\index{P\_SW\_DN@{P\_SW\_DN}!platform.h@{platform.h}}
+\doxysubsubsection{P\_SW\_DN}
+{\footnotesize\ttfamily \#define P\+\_\+\+SW\+\_\+\+DN~\textbf{ PB\+\_\+0}}
+
+\label{platform_8h_a5d412f2b18760724389cce87ac094af0} 
+\index{platform.h@{platform.h}!P\_SW\_LT@{P\_SW\_LT}}
+\index{P\_SW\_LT@{P\_SW\_LT}!platform.h@{platform.h}}
+\doxysubsubsection{P\_SW\_LT}
+{\footnotesize\ttfamily \#define P\+\_\+\+SW\+\_\+\+LT~\textbf{ PC\+\_\+1}}
+
+\label{platform_8h_a7ea609c5f0399f14e7a71df37e02f7b9} 
+\index{platform.h@{platform.h}!P\_SW\_RT@{P\_SW\_RT}}
+\index{P\_SW\_RT@{P\_SW\_RT}!platform.h@{platform.h}}
+\doxysubsubsection{P\_SW\_RT}
+{\footnotesize\ttfamily \#define P\+\_\+\+SW\+\_\+\+RT~\textbf{ PC\+\_\+0}}
+
+\label{platform_8h_ab74b226367e52767bc7f057df07c5548} 
+\index{platform.h@{platform.h}!P\_SW\_UP@{P\_SW\_UP}}
+\index{P\_SW\_UP@{P\_SW\_UP}!platform.h@{platform.h}}
+\doxysubsubsection{P\_SW\_UP}
+{\footnotesize\ttfamily \#define P\+\_\+\+SW\+\_\+\+UP~\textbf{ PA\+\_\+1}}
+
+\label{platform_8h_a3acc56460da3dafb375786fe29ed6b68} 
+\index{platform.h@{platform.h}!P\_TX@{P\_TX}}
+\index{P\_TX@{P\_TX}!platform.h@{platform.h}}
+\doxysubsubsection{P\_TX}
+{\footnotesize\ttfamily \#define P\+\_\+\+TX~\textbf{ PA\+\_\+2}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\label{platform_8h_a0ae899668c707dacc092ff40985035f5} 
+\index{platform.h@{platform.h}!Pin@{Pin}}
+\index{Pin@{Pin}!platform.h@{platform.h}}
+\doxysubsubsection{Pin}
+{\footnotesize\ttfamily enum \textbf{ Pin}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_0@{PA\_0}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_0@{PA\_0}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a375a763c1c2d27bb6e2e21bc8c367a21} 
+PA\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_1@{PA\_1}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_1@{PA\_1}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a6923c16d8d9d79f8742ac91a133fd6f6} 
+PA\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_2@{PA\_2}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_2@{PA\_2}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a85618d80c323e35aef27584d26d0933b} 
+PA\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_3@{PA\_3}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_3@{PA\_3}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5aed01b69c5cfa6af470984ec888b8d395} 
+PA\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_4@{PA\_4}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_4@{PA\_4}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a7a3904c5744d620ba9965c0e9e3b7d97} 
+PA\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_5@{PA\_5}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_5@{PA\_5}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5adf270d193644a80ade8c26b881b08f81} 
+PA\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_6@{PA\_6}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_6@{PA\_6}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a387e0d864c1f773085701a7237053d44} 
+PA\+\_\+6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_7@{PA\_7}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_7@{PA\_7}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5aee1caff1f31a5e060318712895f5daa3} 
+PA\+\_\+7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_8@{PA\_8}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_8@{PA\_8}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a07cedc29dbe73cd8d4ba623f7e553c03} 
+PA\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_9@{PA\_9}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_9@{PA\_9}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a995091eb3b8d1cb614f15209bf66e0ed} 
+PA\+\_\+9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_10@{PA\_10}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_10@{PA\_10}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a19d16ed7b1ae25ddebdf1af7b70c6e52} 
+PA\+\_\+10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_11@{PA\_11}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_11@{PA\_11}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a1d6f54ca8075f2113c1a2ef5a304fbf2} 
+PA\+\_\+11&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_12@{PA\_12}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_12@{PA\_12}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5adc16951020f29ed581f578df3f8d8fb7} 
+PA\+\_\+12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_13@{PA\_13}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_13@{PA\_13}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a6b78d15223132d0fa8632e18192b88c5} 
+PA\+\_\+13&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_14@{PA\_14}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_14@{PA\_14}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5ac64e5e470cc0bb3be17ccfbc1d85d066} 
+PA\+\_\+14&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_15@{PA\_15}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PA\_15@{PA\_15}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a61c6e2de446b02eaf50dff8452387e4b} 
+PA\+\_\+15&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_0@{PB\_0}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_0@{PB\_0}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a1875c843863636e4d3e568d88714be68} 
+PB\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_1@{PB\_1}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_1@{PB\_1}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a965c067ff6ddcb68ec209b60d1748a54} 
+PB\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_2@{PB\_2}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_2@{PB\_2}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a8b1b08a8319c546d312f18ea3ad7e303} 
+PB\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_3@{PB\_3}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_3@{PB\_3}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5ae449230f3a5e944f98b8a5b217d5ffc0} 
+PB\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_4@{PB\_4}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_4@{PB\_4}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a0a514b69f7b61d63630c97aa16297969} 
+PB\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_5@{PB\_5}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_5@{PB\_5}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5adab3d73753fc9ab599c991d1419b907b} 
+PB\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_6@{PB\_6}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_6@{PB\_6}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a76212493e652fc8262ed4d054ec6586c} 
+PB\+\_\+6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_7@{PB\_7}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_7@{PB\_7}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5ab92d8cd6e96d9c0b8d01066fba92bc3a} 
+PB\+\_\+7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_8@{PB\_8}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_8@{PB\_8}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a115536dc4db97f12ca5281e7e3ec861f} 
+PB\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_9@{PB\_9}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_9@{PB\_9}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5ae58e0d355985d0ec18336006664630da} 
+PB\+\_\+9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_10@{PB\_10}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_10@{PB\_10}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a0a1b46e1055dee7cc919d4cf9aa02a21} 
+PB\+\_\+10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_12@{PB\_12}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_12@{PB\_12}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a31138415701cb9ff8bf0fe56c37b656f} 
+PB\+\_\+12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_13@{PB\_13}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_13@{PB\_13}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a5fe0dfec56a8a5e1554cb2c1d2e990f1} 
+PB\+\_\+13&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_14@{PB\_14}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_14@{PB\_14}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a12d54a825000c01fdd7433412f0ae91e} 
+PB\+\_\+14&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PB\_15@{PB\_15}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PB\_15@{PB\_15}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a3bcf436a81547dbf6615b48a44544a62} 
+PB\+\_\+15&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_0@{PC\_0}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_0@{PC\_0}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5aedaa921d2b4724a0d50166d00c4fc2cd} 
+PC\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_1@{PC\_1}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_1@{PC\_1}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5adc750c722aa8b3d8a8a68f7c086c2a8b} 
+PC\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_2@{PC\_2}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_2@{PC\_2}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5ae4ecf045b1508a71f05017a611315ad8} 
+PC\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_3@{PC\_3}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_3@{PC\_3}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a74372d114968e250abda30074038cadb} 
+PC\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_4@{PC\_4}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_4@{PC\_4}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a2af5727054ef4ce5d9abdf59fb381c7c} 
+PC\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_5@{PC\_5}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_5@{PC\_5}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a71768d5974f86710758a0fc695bba19f} 
+PC\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_6@{PC\_6}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_6@{PC\_6}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a86e3a2f87486ca801334e6089c481d62} 
+PC\+\_\+6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_7@{PC\_7}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_7@{PC\_7}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5ac97a8e19d982244786f7ff90d73fb6c7} 
+PC\+\_\+7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_8@{PC\_8}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_8@{PC\_8}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5ad39865ac0088f540b44b1283d805aece} 
+PC\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_9@{PC\_9}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_9@{PC\_9}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a1c1d754d4d5c505db86b14df3aab28d8} 
+PC\+\_\+9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_10@{PC\_10}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_10@{PC\_10}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5ade10b11d8f228f71e6f108008280646a} 
+PC\+\_\+10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_11@{PC\_11}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_11@{PC\_11}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5aa6d12cb6b81df608d96cf5fa64e6b6aa} 
+PC\+\_\+11&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_12@{PC\_12}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_12@{PC\_12}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5af18bc58e8ed0769ea6d97fbdb62429d7} 
+PC\+\_\+12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_13@{PC\_13}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_13@{PC\_13}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a9c48cb3112e4d858966bf0df2101fdd7} 
+PC\+\_\+13&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_14@{PC\_14}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_14@{PC\_14}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a154505e413ca9655e2532d6d6959b725} 
+PC\+\_\+14&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PC\_15@{PC\_15}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PC\_15@{PC\_15}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a2d67a713825ab6aedfcc4228e7e64c56} 
+PC\+\_\+15&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PD\_2@{PD\_2}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PD\_2@{PD\_2}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a6ae7aa1bd8e1e0eca2ce6d31aa867f27} 
+PD\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PH\_0@{PH\_0}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PH\_0@{PH\_0}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a86ab8ef6f8b9121c0e1d79fb2c1d445f} 
+PH\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PH\_1@{PH\_1}!platform.h@{platform.h}}\index{platform.h@{platform.h}!PH\_1@{PH\_1}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a7ab44bda22f88cb53ca12b4aee652a6c} 
+PH\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NC@{NC}!platform.h@{platform.h}}\index{platform.h@{platform.h}!NC@{NC}}}\label{platform_8h_a0ae899668c707dacc092ff40985035f5a3dbd1016ea99d087d747530418b89a01} 
+NC&\\
+\hline
+
+\end{DoxyEnumFields}

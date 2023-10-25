@@ -1,0 +1,91 @@
+.TH "USART_Group2" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_Group2 \- Data transfers functions
+.PP
+ \- Data transfers functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUSART_SendData\fP (USART_TypeDef *USARTx, uint16_t Data)"
+.br
+.RI "Transmits single data through the USARTx peripheral\&. "
+.ti -1c
+.RI "uint16_t \fBUSART_ReceiveData\fP (USART_TypeDef *USARTx)"
+.br
+.RI "Returns the most recent received data by the USARTx peripheral\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Data transfers functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                            Data transfers functions
+ ===============================================================================  
+
+  This subsection provides a set of functions allowing to manage the USART data 
+  transfers\&.
+  
+  During an USART reception, data shifts in least significant bit first through 
+  the RX pin\&. In this mode, the USART_DR register consists of a buffer (RDR) 
+  between the internal bus and the received shift register\&.
+
+  When a transmission is taking place, a write instruction to the USART_DR register 
+  stores the data in the TDR register and which is copied in the shift register 
+  at the end of the current transmission\&.
+
+  The read access of the USART_DR register can be done using the USART_ReceiveData()
+  function and returns the RDR buffered value\&. Whereas a write access to the USART_DR 
+  can be done using USART_SendData() function and stores the written data into 
+  TDR buffer\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "uint16_t USART_ReceiveData (USART_TypeDef * USARTx)"
+
+.PP
+Returns the most recent received data by the USARTx peripheral\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP received data\&. 
+.RE
+.PP
+
+.SS "void USART_SendData (USART_TypeDef * USARTx, uint16_t Data)"
+
+.PP
+Transmits single data through the USARTx peripheral\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIData\fP the data to transmit\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

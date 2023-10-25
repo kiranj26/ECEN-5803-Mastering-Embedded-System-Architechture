@@ -1,0 +1,75 @@
+\doxysection{I2\+C\+\_\+\+Init\+Type\+Def Struct Reference}
+\label{struct_i2_c___init_type_def}\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+
+
+I2C Init structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+i2c.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \textbf{ I2\+C\+\_\+\+Clock\+Speed}
+\item 
+uint16\+\_\+t \textbf{ I2\+C\+\_\+\+Mode}
+\item 
+uint16\+\_\+t \textbf{ I2\+C\+\_\+\+Duty\+Cycle}
+\item 
+uint16\+\_\+t \textbf{ I2\+C\+\_\+\+Own\+Address1}
+\item 
+uint16\+\_\+t \textbf{ I2\+C\+\_\+\+Ack}
+\item 
+uint16\+\_\+t \textbf{ I2\+C\+\_\+\+Acknowledged\+Address}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I2C Init structure definition ~\newline
+ 
+
+\doxysubsection{Field Documentation}
+\label{struct_i2_c___init_type_def_ab21d61d68d06e97d7c0ab90c8e396464} 
+\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}!I2C\_Ack@{I2C\_Ack}}
+\index{I2C\_Ack@{I2C\_Ack}!I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+\doxysubsubsection{I2C\_Ack}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+\_\+\+Ack}
+
+Enables or disables the acknowledgement. This parameter can be a value of \doxyref{I2\+C\+\_\+acknowledgement}{p.}{group___i2_c__acknowledgement} \label{struct_i2_c___init_type_def_af46be2bc866a7dbf0d529dd770b105b3} 
+\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}!I2C\_AcknowledgedAddress@{I2C\_AcknowledgedAddress}}
+\index{I2C\_AcknowledgedAddress@{I2C\_AcknowledgedAddress}!I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+\doxysubsubsection{I2C\_AcknowledgedAddress}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+\_\+\+Acknowledged\+Address}
+
+Specifies if 7-\/bit or 10-\/bit address is acknowledged. This parameter can be a value of \doxyref{I2\+C\+\_\+acknowledged\+\_\+address}{p.}{group___i2_c__acknowledged__address} \label{struct_i2_c___init_type_def_af8d72d15cd29b7e69591ce3edab497f6} 
+\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}!I2C\_ClockSpeed@{I2C\_ClockSpeed}}
+\index{I2C\_ClockSpeed@{I2C\_ClockSpeed}!I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+\doxysubsubsection{I2C\_ClockSpeed}
+{\footnotesize\ttfamily uint32\+\_\+t I2\+C\+\_\+\+Clock\+Speed}
+
+Specifies the clock frequency. This parameter must be set to a value lower than 400k\+Hz \label{struct_i2_c___init_type_def_a349afc2bb8534c072349a6061f29344a} 
+\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}!I2C\_DutyCycle@{I2C\_DutyCycle}}
+\index{I2C\_DutyCycle@{I2C\_DutyCycle}!I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+\doxysubsubsection{I2C\_DutyCycle}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+\_\+\+Duty\+Cycle}
+
+Specifies the I2C fast mode duty cycle. This parameter can be a value of \doxyref{I2\+C\+\_\+duty\+\_\+cycle\+\_\+in\+\_\+fast\+\_\+mode}{p.}{group___i2_c__duty__cycle__in__fast__mode} \label{struct_i2_c___init_type_def_a165269b65702e348e32ccd8029e65af1} 
+\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}!I2C\_Mode@{I2C\_Mode}}
+\index{I2C\_Mode@{I2C\_Mode}!I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+\doxysubsubsection{I2C\_Mode}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+\_\+\+Mode}
+
+Specifies the I2C mode. This parameter can be a value of \doxyref{I2\+C\+\_\+mode}{p.}{group___i2_c__mode} \label{struct_i2_c___init_type_def_ae62dca9cea4fdb3eb8f9554b5f35fe4f} 
+\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}!I2C\_OwnAddress1@{I2C\_OwnAddress1}}
+\index{I2C\_OwnAddress1@{I2C\_OwnAddress1}!I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+\doxysubsubsection{I2C\_OwnAddress1}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+\_\+\+Own\+Address1}
+
+Specifies the first device own address. This parameter can be a 7-\/bit or 10-\/bit address. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+drivers/\textbf{ stm32f4xx\+\_\+i2c.\+h}\end{DoxyCompactItemize}

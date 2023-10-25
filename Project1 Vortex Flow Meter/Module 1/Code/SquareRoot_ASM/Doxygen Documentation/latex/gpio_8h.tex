@@ -1,0 +1,254 @@
+\doxysection{drivers/gpio.h File Reference}
+\hypertarget{gpio_8h}{}\label{gpio_8h}\index{drivers/gpio.h@{drivers/gpio.h}}
+
+
+Implements general purpose I/O.  
+
+
+{\ttfamily \#include $<$platform.\+h$>$}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{Pin\+Mode}} \{ \newline
+\mbox{\hyperlink{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96a92793663441ced378f4676b8a6524385}{Reset}}
+, \mbox{\hyperlink{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96abd62348391d75c7fc8c130ea346cba29}{Input}}
+, \mbox{\hyperlink{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96ae18e94624772459b0083ef7cc362fc96}{Output}}
+, \mbox{\hyperlink{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96a3be493d0479ea10ea2b1fdcd7b33ec3b}{Pull\+Up}}
+, \newline
+\mbox{\hyperlink{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96ac71cd2b9d40cca631e53f37874c53f5f}{Pull\+Down}}
+ \}
+\item 
+enum \mbox{\hyperlink{gpio_8h_aa534ed76b07c3983382a53e00e53e94a}{Trigger\+Mode}} \{ \mbox{\hyperlink{gpio_8h_aa534ed76b07c3983382a53e00e53e94aac9d3e887722f2bc482bcca9d41c512af}{None}}
+, \mbox{\hyperlink{gpio_8h_aa534ed76b07c3983382a53e00e53e94aa6e520e0e7f14dd669c193c4f966da30c}{Rising}}
+, \mbox{\hyperlink{gpio_8h_aa534ed76b07c3983382a53e00e53e94aa746691be2cff34db1c8ed48b73305601}{Falling}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gpio_8h_a5f465a4985de1b8d74dce50df9080fe0}{gpio\+\_\+toggle}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin)
+\begin{DoxyCompactList}\small\item\em Toggles a GPIO pin\textquotesingle{}s output. A pin which is currently high is set low and a pin which is currently low is set high. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio_8h_a68a2c0030bf99c03001ea27ca74f88b5}{gpio\+\_\+set}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin, int value)
+\begin{DoxyCompactList}\small\item\em Sets a pin to the specified logic level. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gpio_8h_a35225e71a6e9f179ea7ad32e26c05dee}{gpio\+\_\+get}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin)
+\begin{DoxyCompactList}\small\item\em Get the current logic level of a GPIO pin. If the pin is high, this function will return a 1, else it will return 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio_8h_a9ec98bbec4ff895828e0c626528a2db0}{gpio\+\_\+set\+\_\+range}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin\+\_\+base, int count, int value)
+\begin{DoxyCompactList}\small\item\em Sets a range of sequential pins to the specified value. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{gpio_8h_a5fd3050f98ad44e44aeb6dc06f2743ee}{gpio\+\_\+get\+\_\+range}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin\+\_\+base, int count)
+\begin{DoxyCompactList}\small\item\em Returns the value of a range of sequential pins. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio_8h_ae16c16efcfed8cc1781ab6f883449a14}{gpio\+\_\+set\+\_\+mode}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin, \mbox{\hyperlink{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{Pin\+Mode}} mode)
+\begin{DoxyCompactList}\small\item\em Configures the output mode of a GPIO pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio_8h_a1bc7a23e2b08450c406c31ca1712560d}{gpio\+\_\+set\+\_\+trigger}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin, \mbox{\hyperlink{gpio_8h_aa534ed76b07c3983382a53e00e53e94a}{Trigger\+Mode}} trig)
+\begin{DoxyCompactList}\small\item\em Configures the event which will cause an interrupt on a specified pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio_8h_a1d30ff6012f46b9d9ae0939956f2cefb}{gpio\+\_\+set\+\_\+callback}} (\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}} pin, void(\texorpdfstring{$\ast$}{*}callback)(int status))
+\begin{DoxyCompactList}\small\item\em Passes a callback function to the api which is called during the port\textquotesingle{}s relevant interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements general purpose I/O. 
+
+\begin{DoxyCopyright}{Copyright}
+ARM University Program \copyright{} ARM Ltd 2014.
+\end{DoxyCopyright}
+Exposes generic pin input / output controls. Use for any direct pin manipulation. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96}\label{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96} 
+\index{gpio.h@{gpio.h}!PinMode@{PinMode}}
+\index{PinMode@{PinMode}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{PinMode}{PinMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{Pin\+Mode}}}
+
+This enum describes the directional setup of a GPIO pin. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Reset@{Reset}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!Reset@{Reset}}}\Hypertarget{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96a92793663441ced378f4676b8a6524385}\label{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96a92793663441ced378f4676b8a6524385} 
+Reset&Resets the pin-\/mode to the default value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Input@{Input}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!Input@{Input}}}\Hypertarget{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96abd62348391d75c7fc8c130ea346cba29}\label{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96abd62348391d75c7fc8c130ea346cba29} 
+Input&Sets the pin as an input with no pull-\/up or pull-\/down. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Output@{Output}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!Output@{Output}}}\Hypertarget{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96ae18e94624772459b0083ef7cc362fc96}\label{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96ae18e94624772459b0083ef7cc362fc96} 
+Output&Sets the pin as a low impedance output. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PullUp@{PullUp}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!PullUp@{PullUp}}}\Hypertarget{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96a3be493d0479ea10ea2b1fdcd7b33ec3b}\label{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96a3be493d0479ea10ea2b1fdcd7b33ec3b} 
+Pull\+Up&Enables the internal pull-\/up resistor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PullDown@{PullDown}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!PullDown@{PullDown}}}\Hypertarget{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96ac71cd2b9d40cca631e53f37874c53f5f}\label{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96ac71cd2b9d40cca631e53f37874c53f5f} 
+Pull\+Down&Enables the internal pull-\/down resistor. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gpio_8h_aa534ed76b07c3983382a53e00e53e94a}\label{gpio_8h_aa534ed76b07c3983382a53e00e53e94a} 
+\index{gpio.h@{gpio.h}!TriggerMode@{TriggerMode}}
+\index{TriggerMode@{TriggerMode}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{TriggerMode}{TriggerMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{gpio_8h_aa534ed76b07c3983382a53e00e53e94a}{Trigger\+Mode}}}
+
+Defines the triggering mode of an interrupt. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!None@{None}}}\Hypertarget{gpio_8h_aa534ed76b07c3983382a53e00e53e94aac9d3e887722f2bc482bcca9d41c512af}\label{gpio_8h_aa534ed76b07c3983382a53e00e53e94aac9d3e887722f2bc482bcca9d41c512af} 
+None&Disables the interrupt. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rising@{Rising}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!Rising@{Rising}}}\Hypertarget{gpio_8h_aa534ed76b07c3983382a53e00e53e94aa6e520e0e7f14dd669c193c4f966da30c}\label{gpio_8h_aa534ed76b07c3983382a53e00e53e94aa6e520e0e7f14dd669c193c4f966da30c} 
+Rising&Enables an interrupt on the falling edge. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Falling@{Falling}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!Falling@{Falling}}}\Hypertarget{gpio_8h_aa534ed76b07c3983382a53e00e53e94aa746691be2cff34db1c8ed48b73305601}\label{gpio_8h_aa534ed76b07c3983382a53e00e53e94aa746691be2cff34db1c8ed48b73305601} 
+Falling&Enables an interrupt on the rising edge. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gpio_8h_a35225e71a6e9f179ea7ad32e26c05dee}\label{gpio_8h_a35225e71a6e9f179ea7ad32e26c05dee} 
+\index{gpio.h@{gpio.h}!gpio\_get@{gpio\_get}}
+\index{gpio\_get@{gpio\_get}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_get()}{gpio\_get()}}
+{\footnotesize\ttfamily int gpio\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin }\end{DoxyParamCaption})}
+
+
+
+Get the current logic level of a GPIO pin. If the pin is high, this function will return a 1, else it will return 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The logic level of the GPIO pin (0 if low, 1 if high). 
+\end{DoxyReturn}
+\Hypertarget{gpio_8h_a5fd3050f98ad44e44aeb6dc06f2743ee}\label{gpio_8h_a5fd3050f98ad44e44aeb6dc06f2743ee} 
+\index{gpio.h@{gpio.h}!gpio\_get\_range@{gpio\_get\_range}}
+\index{gpio\_get\_range@{gpio\_get\_range}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_get\_range()}{gpio\_get\_range()}}
+{\footnotesize\ttfamily unsigned int gpio\+\_\+get\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin\+\_\+base,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Returns the value of a range of sequential pins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+\_\+base} & Starting pin. \\
+\hline
+{\em count} & Number of pins to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the pins. 
+\end{DoxyReturn}
+\Hypertarget{gpio_8h_a68a2c0030bf99c03001ea27ca74f88b5}\label{gpio_8h_a68a2c0030bf99c03001ea27ca74f88b5} 
+\index{gpio.h@{gpio.h}!gpio\_set@{gpio\_set}}
+\index{gpio\_set@{gpio\_set}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_set()}{gpio\_set()}}
+{\footnotesize\ttfamily void gpio\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Sets a pin to the specified logic level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to set. \\
+\hline
+{\em value} & New logic level of the pin (0 is low, otherwise high). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpio_8h_a1d30ff6012f46b9d9ae0939956f2cefb}\label{gpio_8h_a1d30ff6012f46b9d9ae0939956f2cefb} 
+\index{gpio.h@{gpio.h}!gpio\_set\_callback@{gpio\_set\_callback}}
+\index{gpio\_set\_callback@{gpio\_set\_callback}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_set\_callback()}{gpio\_set\_callback()}}
+{\footnotesize\ttfamily void gpio\+\_\+set\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin,  }\item[{void(\texorpdfstring{$\ast$}{*})(int status)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Passes a callback function to the api which is called during the port\textquotesingle{}s relevant interrupt. 
+
+\begin{DoxyWarning}{Warning}
+The pin argument specifies the port which will be interrupted on, not an individual pin. It is advised check the {\itshape status} variable to determine which pin caused the interrupt.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{gpio_8h_a1bc7a23e2b08450c406c31ca1712560d}{gpio\+\_\+set\+\_\+trigger} to configure and enable the interrupt.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin which specifies the port to use. \\
+\hline
+{\em callback} & Callback function. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpio_8h_ae16c16efcfed8cc1781ab6f883449a14}\label{gpio_8h_ae16c16efcfed8cc1781ab6f883449a14} 
+\index{gpio.h@{gpio.h}!gpio\_set\_mode@{gpio\_set\_mode}}
+\index{gpio\_set\_mode@{gpio\_set\_mode}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_set\_mode()}{gpio\_set\_mode()}}
+{\footnotesize\ttfamily void gpio\+\_\+set\+\_\+mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin,  }\item[{\mbox{\hyperlink{gpio_8h_a15c0c34a3baec6b9d2390a426bd3ba96}{Pin\+Mode}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+Configures the output mode of a GPIO pin. 
+
+Used to set the GPIO as an input, output, and configure the possible pull-\/up or pull-\/down resistors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to set. \\
+\hline
+{\em mode} & New output mode of the pin. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpio_8h_a9ec98bbec4ff895828e0c626528a2db0}\label{gpio_8h_a9ec98bbec4ff895828e0c626528a2db0} 
+\index{gpio.h@{gpio.h}!gpio\_set\_range@{gpio\_set\_range}}
+\index{gpio\_set\_range@{gpio\_set\_range}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_set\_range()}{gpio\_set\_range()}}
+{\footnotesize\ttfamily void gpio\+\_\+set\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin\+\_\+base,  }\item[{int}]{count,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Sets a range of sequential pins to the specified value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+\_\+base} & Starting pin. \\
+\hline
+{\em count} & Number of pins to set. \\
+\hline
+{\em value} & New value of the pins. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpio_8h_a1bc7a23e2b08450c406c31ca1712560d}\label{gpio_8h_a1bc7a23e2b08450c406c31ca1712560d} 
+\index{gpio.h@{gpio.h}!gpio\_set\_trigger@{gpio\_set\_trigger}}
+\index{gpio\_set\_trigger@{gpio\_set\_trigger}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_set\_trigger()}{gpio\_set\_trigger()}}
+{\footnotesize\ttfamily void gpio\+\_\+set\+\_\+trigger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin,  }\item[{\mbox{\hyperlink{gpio_8h_aa534ed76b07c3983382a53e00e53e94a}{Trigger\+Mode}}}]{trig }\end{DoxyParamCaption})}
+
+
+
+Configures the event which will cause an interrupt on a specified pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to trigger off. \\
+\hline
+{\em trig} & New triggering mode for the pin. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpio_8h_a5f465a4985de1b8d74dce50df9080fe0}\label{gpio_8h_a5f465a4985de1b8d74dce50df9080fe0} 
+\index{gpio.h@{gpio.h}!gpio\_toggle@{gpio\_toggle}}
+\index{gpio\_toggle@{gpio\_toggle}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{gpio\_toggle()}{gpio\_toggle()}}
+{\footnotesize\ttfamily void gpio\+\_\+toggle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8h_a0ae899668c707dacc092ff40985035f5}{Pin}}}]{pin }\end{DoxyParamCaption})}
+
+
+
+Toggles a GPIO pin\textquotesingle{}s output. A pin which is currently high is set low and a pin which is currently low is set high. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to toggle. \\
+\hline
+\end{DoxyParams}

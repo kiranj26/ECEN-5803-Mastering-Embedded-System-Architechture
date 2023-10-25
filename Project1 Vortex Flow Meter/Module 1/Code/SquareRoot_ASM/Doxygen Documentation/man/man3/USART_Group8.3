@@ -1,0 +1,65 @@
+.TH "USART_Group8" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_Group8 \- DMA transfers management functions
+.PP
+ \- DMA transfers management functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUSART_DMACmd\fP (USART_TypeDef *USARTx, uint16_t USART_DMAReq, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's DMA interface\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+DMA transfers management functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                      DMA transfers management functions
+ ===============================================================================  
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void USART_DMACmd (USART_TypeDef * USARTx, uint16_t USART_DMAReq, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's DMA interface\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_DMAReq\fP specifies the DMA request\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_DMAReq_Tx: USART DMA transmit request 
+.IP "\(bu" 1
+USART_DMAReq_Rx: USART DMA receive request 
+.PP
+.br
+\fINewState\fP new state of the DMA Request sources\&. This parameter can be: ENABLE or DISABLE\&. 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

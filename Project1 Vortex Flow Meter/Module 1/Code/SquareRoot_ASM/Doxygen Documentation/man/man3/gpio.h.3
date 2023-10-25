@@ -1,0 +1,233 @@
+.TH "drivers/gpio.h" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/gpio.h \- Implements general purpose I/O\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <platform\&.h>\fP
+.br
+
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPinMode\fP { \fBReset\fP, \fBInput\fP, \fBOutput\fP, \fBPullUp\fP, \fBPullDown\fP }"
+.br
+.ti -1c
+.RI "enum \fBTriggerMode\fP { \fBNone\fP, \fBRising\fP, \fBFalling\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBgpio_toggle\fP (\fBPin\fP pin)"
+.br
+.RI "Toggles a GPIO pin's output\&. A pin which is currently high is set low and a pin which is currently low is set high\&. "
+.ti -1c
+.RI "void \fBgpio_set\fP (\fBPin\fP pin, int value)"
+.br
+.RI "Sets a pin to the specified logic level\&. "
+.ti -1c
+.RI "int \fBgpio_get\fP (\fBPin\fP pin)"
+.br
+.RI "Get the current logic level of a GPIO pin\&. If the pin is high, this function will return a 1, else it will return 0\&. "
+.ti -1c
+.RI "void \fBgpio_set_range\fP (\fBPin\fP pin_base, int count, int value)"
+.br
+.RI "Sets a range of sequential pins to the specified value\&. "
+.ti -1c
+.RI "unsigned int \fBgpio_get_range\fP (\fBPin\fP pin_base, int count)"
+.br
+.RI "Returns the value of a range of sequential pins\&. "
+.ti -1c
+.RI "void \fBgpio_set_mode\fP (\fBPin\fP pin, \fBPinMode\fP mode)"
+.br
+.RI "Configures the output mode of a GPIO pin\&. "
+.ti -1c
+.RI "void \fBgpio_set_trigger\fP (\fBPin\fP pin, \fBTriggerMode\fP trig)"
+.br
+.RI "Configures the event which will cause an interrupt on a specified pin\&. "
+.ti -1c
+.RI "void \fBgpio_set_callback\fP (\fBPin\fP pin, void(*callback)(int status))"
+.br
+.RI "Passes a callback function to the api which is called during the port's relevant interrupt\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implements general purpose I/O\&. 
+
+
+.PP
+\fBCopyright\fP
+.RS 4
+ARM University Program (C) ARM Ltd 2014\&.
+.RE
+.PP
+Exposes generic pin input / output controls\&. Use for any direct pin manipulation\&. 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBPinMode\fP"
+This enum describes the directional setup of a GPIO pin\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIReset \fP\fP
+Resets the pin-mode to the default value\&. 
+.TP
+\fB\fIInput \fP\fP
+Sets the pin as an input with no pull-up or pull-down\&. 
+.TP
+\fB\fIOutput \fP\fP
+Sets the pin as a low impedance output\&. 
+.TP
+\fB\fIPullUp \fP\fP
+Enables the internal pull-up resistor\&. 
+.TP
+\fB\fIPullDown \fP\fP
+Enables the internal pull-down resistor\&. 
+.SS "enum \fBTriggerMode\fP"
+Defines the triggering mode of an interrupt\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINone \fP\fP
+Disables the interrupt\&. 
+.TP
+\fB\fIRising \fP\fP
+Enables an interrupt on the falling edge\&. 
+.TP
+\fB\fIFalling \fP\fP
+Enables an interrupt on the rising edge\&. 
+.SH "Function Documentation"
+.PP 
+.SS "int gpio_get (\fBPin\fP pin)"
+
+.PP
+Get the current logic level of a GPIO pin\&. If the pin is high, this function will return a 1, else it will return 0\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP Pin to read\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The logic level of the GPIO pin (0 if low, 1 if high)\&. 
+.RE
+.PP
+
+.SS "unsigned int gpio_get_range (\fBPin\fP pin_base, int count)"
+
+.PP
+Returns the value of a range of sequential pins\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin_base\fP Starting pin\&. 
+.br
+\fIcount\fP Number of pins to set\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Value of the pins\&. 
+.RE
+.PP
+
+.SS "void gpio_set (\fBPin\fP pin, int value)"
+
+.PP
+Sets a pin to the specified logic level\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP Pin to set\&. 
+.br
+\fIvalue\fP New logic level of the pin (0 is low, otherwise high)\&. 
+.RE
+.PP
+
+.SS "void gpio_set_callback (\fBPin\fP pin, void(*)(int status) callback)"
+
+.PP
+Passes a callback function to the api which is called during the port's relevant interrupt\&. 
+.PP
+\fBWarning\fP
+.RS 4
+The pin argument specifies the port which will be interrupted on, not an individual pin\&. It is advised check the \fIstatus\fP variable to determine which pin caused the interrupt\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBgpio_set_trigger\fP to configure and enable the interrupt\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP Pin which specifies the port to use\&. 
+.br
+\fIcallback\fP Callback function\&. 
+.RE
+.PP
+
+.SS "void gpio_set_mode (\fBPin\fP pin, \fBPinMode\fP mode)"
+
+.PP
+Configures the output mode of a GPIO pin\&. Used to set the GPIO as an input, output, and configure the possible pull-up or pull-down resistors\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP Pin to set\&. 
+.br
+\fImode\fP New output mode of the pin\&. 
+.RE
+.PP
+
+.SS "void gpio_set_range (\fBPin\fP pin_base, int count, int value)"
+
+.PP
+Sets a range of sequential pins to the specified value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin_base\fP Starting pin\&. 
+.br
+\fIcount\fP Number of pins to set\&. 
+.br
+\fIvalue\fP New value of the pins\&. 
+.RE
+.PP
+
+.SS "void gpio_set_trigger (\fBPin\fP pin, \fBTriggerMode\fP trig)"
+
+.PP
+Configures the event which will cause an interrupt on a specified pin\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP Pin to trigger off\&. 
+.br
+\fItrig\fP New triggering mode for the pin\&. 
+.RE
+.PP
+
+.SS "void gpio_toggle (\fBPin\fP pin)"
+
+.PP
+Toggles a GPIO pin's output\&. A pin which is currently high is set low and a pin which is currently low is set high\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP Pin to toggle\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

@@ -1,0 +1,31 @@
+\doxysection{comparator.\+h}
+\hypertarget{comparator_8h_source}{}\label{comparator_8h_source}\index{drivers/comparator.h@{drivers/comparator.h}}
+\mbox{\hyperlink{comparator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{adc_8h}{adc.h}}>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ COMPARATOR\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ COMPARATOR\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44a2b271b9d117c7ba44cc18ce67fac1e2f}{CompNone}},\ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44a91c2b90feb1360fa7a0b559114299f79}{CompRising}},\ \ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44acb8b973d7fc757fd4bc3100460949f04}{CompFalling}},\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44a2f9b1206bf801ecd563a8178aa5677d7}{CompBoth}}\ \ \ \ \ }
+\DoxyCodeLine{00017\ \}\ \mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44}{ComparatorTriggerMode}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{comparator_8h_afae9a1d5efe50d7e2634e7da7f9fc844}{comparator\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//int\ comparator\_read(void);}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{comparator_8h_a3f402bf0dddabea9206c3150581f935e}{comparator\_set\_trigger}}(\mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44}{ComparatorTriggerMode}}\ trig);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{comparator_8h_aeb0816ac669231739dda94a5910dae08}{comparator\_set\_callback}}(\textcolor{keywordtype}{void}\ (*callback)(\textcolor{keywordtype}{int}\ state));}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{comparator_8h_a3fee3196af1c628b17c4afeb34604d12}{comparator\_read}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMPARATOR\_H}}
+
+\end{DoxyCode}

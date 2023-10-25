@@ -1,0 +1,118 @@
+\doxysection{drivers/comparator.h File Reference}
+\hypertarget{comparator_8h}{}\label{comparator_8h}\index{drivers/comparator.h@{drivers/comparator.h}}
+
+
+Exposes functions of an internal comparator.  
+
+
+{\ttfamily \#include $<$adc.\+h$>$}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44}{Comparator\+Trigger\+Mode}} \{ \mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44a2b271b9d117c7ba44cc18ce67fac1e2f}{Comp\+None}}
+, \mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44a91c2b90feb1360fa7a0b559114299f79}{Comp\+Rising}}
+, \mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44acb8b973d7fc757fd4bc3100460949f04}{Comp\+Falling}}
+, \mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44a2f9b1206bf801ecd563a8178aa5677d7}{Comp\+Both}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{comparator_8h_afae9a1d5efe50d7e2634e7da7f9fc844}{comparator\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the internal comparator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{comparator_8h_a3f402bf0dddabea9206c3150581f935e}{comparator\+\_\+set\+\_\+trigger}} (\mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44}{Comparator\+Trigger\+Mode}} trig)
+\begin{DoxyCompactList}\small\item\em Reads the current value of the comparator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{comparator_8h_aeb0816ac669231739dda94a5910dae08}{comparator\+\_\+set\+\_\+callback}} (void(\texorpdfstring{$\ast$}{*}callback)(int state))
+\begin{DoxyCompactList}\small\item\em Pass a callback to the API, which is executed during the interrupt handler. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{comparator_8h_a3fee3196af1c628b17c4afeb34604d12}{comparator\+\_\+read}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Exposes functions of an internal comparator. 
+
+\begin{DoxyCopyright}{Copyright}
+ARM University Program \copyright{} ARM Ltd 2014. 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{comparator_8h_a346f1fb20d6cf086b87e80226922ae44}\label{comparator_8h_a346f1fb20d6cf086b87e80226922ae44} 
+\index{comparator.h@{comparator.h}!ComparatorTriggerMode@{ComparatorTriggerMode}}
+\index{ComparatorTriggerMode@{ComparatorTriggerMode}!comparator.h@{comparator.h}}
+\doxysubsubsection{\texorpdfstring{ComparatorTriggerMode}{ComparatorTriggerMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44}{Comparator\+Trigger\+Mode}}}
+
+Defines the triggering mode of the comparator\textquotesingle{}s interrupt. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CompNone@{CompNone}!comparator.h@{comparator.h}}\index{comparator.h@{comparator.h}!CompNone@{CompNone}}}\Hypertarget{comparator_8h_a346f1fb20d6cf086b87e80226922ae44a2b271b9d117c7ba44cc18ce67fac1e2f}\label{comparator_8h_a346f1fb20d6cf086b87e80226922ae44a2b271b9d117c7ba44cc18ce67fac1e2f} 
+Comp\+None&Disables the interrupt. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CompRising@{CompRising}!comparator.h@{comparator.h}}\index{comparator.h@{comparator.h}!CompRising@{CompRising}}}\Hypertarget{comparator_8h_a346f1fb20d6cf086b87e80226922ae44a91c2b90feb1360fa7a0b559114299f79}\label{comparator_8h_a346f1fb20d6cf086b87e80226922ae44a91c2b90feb1360fa7a0b559114299f79} 
+Comp\+Rising&Enables an interrupt on the falling edge. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CompFalling@{CompFalling}!comparator.h@{comparator.h}}\index{comparator.h@{comparator.h}!CompFalling@{CompFalling}}}\Hypertarget{comparator_8h_a346f1fb20d6cf086b87e80226922ae44acb8b973d7fc757fd4bc3100460949f04}\label{comparator_8h_a346f1fb20d6cf086b87e80226922ae44acb8b973d7fc757fd4bc3100460949f04} 
+Comp\+Falling&Enables an interrupt on the rising edge. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CompBoth@{CompBoth}!comparator.h@{comparator.h}}\index{comparator.h@{comparator.h}!CompBoth@{CompBoth}}}\Hypertarget{comparator_8h_a346f1fb20d6cf086b87e80226922ae44a2f9b1206bf801ecd563a8178aa5677d7}\label{comparator_8h_a346f1fb20d6cf086b87e80226922ae44a2f9b1206bf801ecd563a8178aa5677d7} 
+Comp\+Both&Enables an interrupt on both the rising and falling edges. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{comparator_8h_afae9a1d5efe50d7e2634e7da7f9fc844}\label{comparator_8h_afae9a1d5efe50d7e2634e7da7f9fc844} 
+\index{comparator.h@{comparator.h}!comparator\_init@{comparator\_init}}
+\index{comparator\_init@{comparator\_init}!comparator.h@{comparator.h}}
+\doxysubsubsection{\texorpdfstring{comparator\_init()}{comparator\_init()}}
+{\footnotesize\ttfamily void comparator\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the internal comparator. 
+
+\Hypertarget{comparator_8h_a3fee3196af1c628b17c4afeb34604d12}\label{comparator_8h_a3fee3196af1c628b17c4afeb34604d12} 
+\index{comparator.h@{comparator.h}!comparator\_read@{comparator\_read}}
+\index{comparator\_read@{comparator\_read}!comparator.h@{comparator.h}}
+\doxysubsubsection{\texorpdfstring{comparator\_read()}{comparator\_read()}}
+{\footnotesize\ttfamily int comparator\+\_\+read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{comparator_8h_aeb0816ac669231739dda94a5910dae08}\label{comparator_8h_aeb0816ac669231739dda94a5910dae08} 
+\index{comparator.h@{comparator.h}!comparator\_set\_callback@{comparator\_set\_callback}}
+\index{comparator\_set\_callback@{comparator\_set\_callback}!comparator.h@{comparator.h}}
+\doxysubsubsection{\texorpdfstring{comparator\_set\_callback()}{comparator\_set\_callback()}}
+{\footnotesize\ttfamily void comparator\+\_\+set\+\_\+callback (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(int state)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Pass a callback to the API, which is executed during the interrupt handler. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{comparator_8h_a3f402bf0dddabea9206c3150581f935e}{comparator\+\_\+set\+\_\+trigger} to configure and enable the interrupt.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Callback function. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{comparator_8h_a3f402bf0dddabea9206c3150581f935e}\label{comparator_8h_a3f402bf0dddabea9206c3150581f935e} 
+\index{comparator.h@{comparator.h}!comparator\_set\_trigger@{comparator\_set\_trigger}}
+\index{comparator\_set\_trigger@{comparator\_set\_trigger}!comparator.h@{comparator.h}}
+\doxysubsubsection{\texorpdfstring{comparator\_set\_trigger()}{comparator\_set\_trigger()}}
+{\footnotesize\ttfamily void comparator\+\_\+set\+\_\+trigger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{comparator_8h_a346f1fb20d6cf086b87e80226922ae44}{Comparator\+Trigger\+Mode}}}]{trig }\end{DoxyParamCaption})}
+
+
+
+Reads the current value of the comparator. 
+
+\begin{DoxyReturn}{Returns}
+Output value of the comparator.
+\end{DoxyReturn}
+Configures the event which will cause an interrupt. 
+\begin{DoxyParams}{Parameters}
+{\em trig} & New triggering mode. \\
+\hline
+\end{DoxyParams}

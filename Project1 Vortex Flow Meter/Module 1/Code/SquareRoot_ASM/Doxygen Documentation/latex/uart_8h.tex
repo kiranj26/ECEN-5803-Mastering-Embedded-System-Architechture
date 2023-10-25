@@ -1,0 +1,120 @@
+\doxysection{drivers/uart.h File Reference}
+\hypertarget{uart_8h}{}\label{uart_8h}\index{drivers/uart.h@{drivers/uart.h}}
+
+
+Controller for a hardware UART module.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{uart_8h_ad8f6a793347af79ca41a3363dbd3fd96}{uart\+\_\+init}} (uint32\+\_\+t baud)
+\begin{DoxyCompactList}\small\item\em Initialises the UART controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{uart_8h_affcbd24efeade3b1444100dbbc614e88}{uart\+\_\+enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enables UART transmission and reception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{uart_8h_a8c9bbde91db3b1826adee92cafc571b0}{uart\+\_\+tx}} (uint8\+\_\+t c)
+\begin{DoxyCompactList}\small\item\em Transmit a single character. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{uart_8h_ad53b8dfee3f151d0c8f516d5993c5d98}{uart\+\_\+rx}} (void)
+\begin{DoxyCompactList}\small\item\em Receive a single character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{uart_8h_a26a67a79ed0ebfc8ce6b86184cc5219a}{uart\+\_\+print}} (char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Transmit a null terminated string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{uart_8h_af454c6e806dba14d50e4d48d9a2bd9a4}{uart\+\_\+set\+\_\+rx\+\_\+callback}} (void(\texorpdfstring{$\ast$}{*}callback)(uint8\+\_\+t c))
+\begin{DoxyCompactList}\small\item\em Passes a callback function to the API which is executed during the receive interrupt handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller for a hardware UART module. 
+
+\begin{DoxyCopyright}{Copyright}
+ARM University Program \copyright{} ARM Ltd 2014. 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{uart_8h_affcbd24efeade3b1444100dbbc614e88}\label{uart_8h_affcbd24efeade3b1444100dbbc614e88} 
+\index{uart.h@{uart.h}!uart\_enable@{uart\_enable}}
+\index{uart\_enable@{uart\_enable}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{uart\_enable()}{uart\_enable()}}
+{\footnotesize\ttfamily void uart\+\_\+enable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Enables UART transmission and reception. 
+
+\Hypertarget{uart_8h_ad8f6a793347af79ca41a3363dbd3fd96}\label{uart_8h_ad8f6a793347af79ca41a3363dbd3fd96} 
+\index{uart.h@{uart.h}!uart\_init@{uart\_init}}
+\index{uart\_init@{uart\_init}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{uart\_init()}{uart\_init()}}
+{\footnotesize\ttfamily void uart\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{baud }\end{DoxyParamCaption})}
+
+
+
+Initialises the UART controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em baud} & Baud rate to be used (symbols per second). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{uart_8h_a26a67a79ed0ebfc8ce6b86184cc5219a}\label{uart_8h_a26a67a79ed0ebfc8ce6b86184cc5219a} 
+\index{uart.h@{uart.h}!uart\_print@{uart\_print}}
+\index{uart\_print@{uart\_print}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{uart\_print()}{uart\_print()}}
+{\footnotesize\ttfamily void uart\+\_\+print (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Transmit a null terminated string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & String to be sent. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{uart_8h_ad53b8dfee3f151d0c8f516d5993c5d98}\label{uart_8h_ad53b8dfee3f151d0c8f516d5993c5d98} 
+\index{uart.h@{uart.h}!uart\_rx@{uart\_rx}}
+\index{uart\_rx@{uart\_rx}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{uart\_rx()}{uart\_rx()}}
+{\footnotesize\ttfamily uint8\+\_\+t uart\+\_\+rx (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Receive a single character. 
+
+\begin{DoxyWarning}{Warning}
+This function blocks until a character is available. For a non-\/blocking receive, see \doxylink{uart_8h_af454c6e806dba14d50e4d48d9a2bd9a4}{uart\+\_\+set\+\_\+rx\+\_\+callback()}. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+Received character. 
+\end{DoxyReturn}
+\Hypertarget{uart_8h_af454c6e806dba14d50e4d48d9a2bd9a4}\label{uart_8h_af454c6e806dba14d50e4d48d9a2bd9a4} 
+\index{uart.h@{uart.h}!uart\_set\_rx\_callback@{uart\_set\_rx\_callback}}
+\index{uart\_set\_rx\_callback@{uart\_set\_rx\_callback}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{uart\_set\_rx\_callback()}{uart\_set\_rx\_callback()}}
+{\footnotesize\ttfamily void uart\+\_\+set\+\_\+rx\+\_\+callback (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(uint8\+\_\+t c)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Passes a callback function to the API which is executed during the receive interrupt handler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Callback function. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{uart_8h_a8c9bbde91db3b1826adee92cafc571b0}\label{uart_8h_a8c9bbde91db3b1826adee92cafc571b0} 
+\index{uart.h@{uart.h}!uart\_tx@{uart\_tx}}
+\index{uart\_tx@{uart\_tx}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{uart\_tx()}{uart\_tx()}}
+{\footnotesize\ttfamily void uart\+\_\+tx (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{c }\end{DoxyParamCaption})}
+
+
+
+Transmit a single character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to be sent. \\
+\hline
+\end{DoxyParams}

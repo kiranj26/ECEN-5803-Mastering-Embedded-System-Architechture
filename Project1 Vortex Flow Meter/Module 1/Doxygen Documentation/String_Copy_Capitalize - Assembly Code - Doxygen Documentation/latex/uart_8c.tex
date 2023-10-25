@@ -1,0 +1,110 @@
+\doxysection{drivers/uart.c File Reference}
+\label{uart_8c}\index{drivers/uart.c@{drivers/uart.c}}
+{\ttfamily \#include $<$platform.\+h$>$}\newline
+{\ttfamily \#include $<$uart.\+h$>$}\newline
+{\ttfamily \#include $<$STM32\+F4xx\+\_\+\+RCC.\+h$>$}\newline
+{\ttfamily \#include $<$STM32\+F4xx\+\_\+\+USART.\+h$>$}\newline
+{\ttfamily \#include $<$STM32\+F4xx\+\_\+\+GPIO.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ uart\+\_\+init} (uint32\+\_\+t baud)
+\begin{DoxyCompactList}\small\item\em Initialises the UART controller. \end{DoxyCompactList}\item 
+void \textbf{ uart\+\_\+enable} (void)
+\begin{DoxyCompactList}\small\item\em Enables UART transmission and reception. \end{DoxyCompactList}\item 
+void \textbf{ uart\+\_\+print} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Transmit a null terminated string. \end{DoxyCompactList}\item 
+void \textbf{ uart\+\_\+set\+\_\+rx\+\_\+callback} (void($\ast$callback)(uint8\+\_\+t))
+\item 
+void \textbf{ uart\+\_\+tx} (uint8\+\_\+t c)
+\begin{DoxyCompactList}\small\item\em Transmit a single character. \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ uart\+\_\+rx} (void)
+\begin{DoxyCompactList}\small\item\em Receive a single character. \end{DoxyCompactList}\item 
+void \textbf{ USART2\+\_\+\+IRQHandler} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\label{uart_8c_affcbd24efeade3b1444100dbbc614e88} 
+\index{uart.c@{uart.c}!uart\_enable@{uart\_enable}}
+\index{uart\_enable@{uart\_enable}!uart.c@{uart.c}}
+\doxysubsubsection{uart\_enable()}
+{\footnotesize\ttfamily void uart\+\_\+enable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Enables UART transmission and reception. 
+
+\label{uart_8c_ad8f6a793347af79ca41a3363dbd3fd96} 
+\index{uart.c@{uart.c}!uart\_init@{uart\_init}}
+\index{uart\_init@{uart\_init}!uart.c@{uart.c}}
+\doxysubsubsection{uart\_init()}
+{\footnotesize\ttfamily void uart\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{baud }\end{DoxyParamCaption})}
+
+
+
+Initialises the UART controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em baud} & Baud rate to be used (symbols per second). \\
+\hline
+\end{DoxyParams}
+\label{uart_8c_a80f964b3164f193e2f1b0e85767e0f29} 
+\index{uart.c@{uart.c}!uart\_print@{uart\_print}}
+\index{uart\_print@{uart\_print}!uart.c@{uart.c}}
+\doxysubsubsection{uart\_print()}
+{\footnotesize\ttfamily void uart\+\_\+print (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Transmit a null terminated string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & String to be sent. \\
+\hline
+\end{DoxyParams}
+\label{uart_8c_ad53b8dfee3f151d0c8f516d5993c5d98} 
+\index{uart.c@{uart.c}!uart\_rx@{uart\_rx}}
+\index{uart\_rx@{uart\_rx}!uart.c@{uart.c}}
+\doxysubsubsection{uart\_rx()}
+{\footnotesize\ttfamily uint8\+\_\+t uart\+\_\+rx (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Receive a single character. 
+
+\begin{DoxyWarning}{Warning}
+This function blocks until a character is available. For a non-\/blocking receive, see \doxyref{uart\+\_\+set\+\_\+rx\+\_\+callback()}{p.}{uart_8h_af454c6e806dba14d50e4d48d9a2bd9a4}. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+Received character. 
+\end{DoxyReturn}
+\label{uart_8c_ab1db28cb920c50def16133e9281215ed} 
+\index{uart.c@{uart.c}!uart\_set\_rx\_callback@{uart\_set\_rx\_callback}}
+\index{uart\_set\_rx\_callback@{uart\_set\_rx\_callback}!uart.c@{uart.c}}
+\doxysubsubsection{uart\_set\_rx\_callback()}
+{\footnotesize\ttfamily void uart\+\_\+set\+\_\+rx\+\_\+callback (\begin{DoxyParamCaption}\item[{void($\ast$)(uint8\+\_\+t)}]{callback }\end{DoxyParamCaption})}
+
+\label{uart_8c_a8c9bbde91db3b1826adee92cafc571b0} 
+\index{uart.c@{uart.c}!uart\_tx@{uart\_tx}}
+\index{uart\_tx@{uart\_tx}!uart.c@{uart.c}}
+\doxysubsubsection{uart\_tx()}
+{\footnotesize\ttfamily void uart\+\_\+tx (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{c }\end{DoxyParamCaption})}
+
+
+
+Transmit a single character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to be sent. \\
+\hline
+\end{DoxyParams}
+\label{uart_8c_a0ca6fd0e6f77921dd1123539857ba0a8} 
+\index{uart.c@{uart.c}!USART2\_IRQHandler@{USART2\_IRQHandler}}
+\index{USART2\_IRQHandler@{USART2\_IRQHandler}!uart.c@{uart.c}}
+\doxysubsubsection{USART2\_IRQHandler()}
+{\footnotesize\ttfamily void USART2\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

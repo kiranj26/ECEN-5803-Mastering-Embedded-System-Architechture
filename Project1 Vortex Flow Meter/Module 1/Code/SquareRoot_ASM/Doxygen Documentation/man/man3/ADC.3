@@ -1,0 +1,1357 @@
+.TH "ADC" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC \- ADC
+.PP
+ \- ADC driver modules\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Modules"
+
+.in +1c
+.ti -1c
+.RI "\fBADC_Private_Functions\fP"
+.br
+.ti -1c
+.RI "\fBADC_Exported_Constants\fP"
+.br
+.in -1c
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBADC_InitTypeDef\fP"
+.br
+.RI "ADC Init structure definition 
+.br
+ "
+.ti -1c
+.RI "struct \fBADC_CommonInitTypeDef\fP"
+.br
+.RI "ADC Common Init structure definition 
+.br
+ "
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCR1_DISCNUM_RESET\fP   ((uint32_t)0xFFFF1FFF)"
+.br
+.ti -1c
+.RI "#define \fBCR1_AWDCH_RESET\fP   ((uint32_t)0xFFFFFFE0)"
+.br
+.ti -1c
+.RI "#define \fBCR1_AWDMode_RESET\fP   ((uint32_t)0xFF3FFDFF)"
+.br
+.ti -1c
+.RI "#define \fBCR1_CLEAR_MASK\fP   ((uint32_t)0xFCFFFEFF)"
+.br
+.ti -1c
+.RI "#define \fBCR2_EXTEN_RESET\fP   ((uint32_t)0xCFFFFFFF)"
+.br
+.ti -1c
+.RI "#define \fBCR2_JEXTEN_RESET\fP   ((uint32_t)0xFFCFFFFF)"
+.br
+.ti -1c
+.RI "#define \fBCR2_JEXTSEL_RESET\fP   ((uint32_t)0xFFF0FFFF)"
+.br
+.ti -1c
+.RI "#define \fBCR2_CLEAR_MASK\fP   ((uint32_t)0xC0FFF7FD)"
+.br
+.ti -1c
+.RI "#define \fBSQR3_SQ_SET\fP   ((uint32_t)0x0000001F)"
+.br
+.ti -1c
+.RI "#define \fBSQR2_SQ_SET\fP   ((uint32_t)0x0000001F)"
+.br
+.ti -1c
+.RI "#define \fBSQR1_SQ_SET\fP   ((uint32_t)0x0000001F)"
+.br
+.ti -1c
+.RI "#define \fBSQR1_L_RESET\fP   ((uint32_t)0xFF0FFFFF)"
+.br
+.ti -1c
+.RI "#define \fBJSQR_JSQ_SET\fP   ((uint32_t)0x0000001F)"
+.br
+.ti -1c
+.RI "#define \fBJSQR_JL_SET\fP   ((uint32_t)0x00300000)"
+.br
+.ti -1c
+.RI "#define \fBJSQR_JL_RESET\fP   ((uint32_t)0xFFCFFFFF)"
+.br
+.ti -1c
+.RI "#define \fBSMPR1_SMP_SET\fP   ((uint32_t)0x00000007)"
+.br
+.ti -1c
+.RI "#define \fBSMPR2_SMP_SET\fP   ((uint32_t)0x00000007)"
+.br
+.ti -1c
+.RI "#define \fBJDR_OFFSET\fP   ((uint8_t)0x28)"
+.br
+.ti -1c
+.RI "#define \fBCDR_ADDRESS\fP   ((uint32_t)0x40012308)"
+.br
+.ti -1c
+.RI "#define \fBCR_CLEAR_MASK\fP   ((uint32_t)0xFFFC30E0)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBADC_DeInit\fP (void)"
+.br
+.RI "Deinitializes all ADCs peripherals registers to their default reset values\&. "
+.ti -1c
+.RI "void \fBADC_Init\fP (ADC_TypeDef *ADCx, \fBADC_InitTypeDef\fP *ADC_InitStruct)"
+.br
+.RI "Initializes the ADCx peripheral according to the specified parameters in the ADC_InitStruct\&. "
+.ti -1c
+.RI "void \fBADC_StructInit\fP (\fBADC_InitTypeDef\fP *ADC_InitStruct)"
+.br
+.RI "Fills each ADC_InitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBADC_CommonInit\fP (\fBADC_CommonInitTypeDef\fP *ADC_CommonInitStruct)"
+.br
+.RI "Initializes the ADCs peripherals according to the specified parameters in the ADC_CommonInitStruct\&. "
+.ti -1c
+.RI "void \fBADC_CommonStructInit\fP (\fBADC_CommonInitTypeDef\fP *ADC_CommonInitStruct)"
+.br
+.RI "Fills each ADC_CommonInitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBADC_Cmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified ADC peripheral\&. "
+.ti -1c
+.RI "void \fBADC_AnalogWatchdogCmd\fP (ADC_TypeDef *ADCx, uint32_t ADC_AnalogWatchdog)"
+.br
+.RI "Enables or disables the analog watchdog on single/all regular or injected channels\&. "
+.ti -1c
+.RI "void \fBADC_AnalogWatchdogThresholdsConfig\fP (ADC_TypeDef *ADCx, uint16_t HighThreshold, uint16_t LowThreshold)"
+.br
+.RI "Configures the high and low thresholds of the analog watchdog\&. "
+.ti -1c
+.RI "void \fBADC_AnalogWatchdogSingleChannelConfig\fP (ADC_TypeDef *ADCx, uint8_t ADC_Channel)"
+.br
+.RI "Configures the analog watchdog guarded single channel\&. "
+.ti -1c
+.RI "void \fBADC_TempSensorVrefintCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the temperature sensor and Vrefint channels\&. "
+.ti -1c
+.RI "void \fBADC_VBATCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the VBAT (Voltage Battery) channel\&. "
+.ti -1c
+.RI "void \fBADC_RegularChannelConfig\fP (ADC_TypeDef *ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime)"
+.br
+.RI "Configures for the selected ADC regular channel its corresponding rank in the sequencer and its sample time\&. "
+.ti -1c
+.RI "void \fBADC_SoftwareStartConv\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Enables the selected ADC software start conversion of the regular channels\&. "
+.ti -1c
+.RI "FlagStatus \fBADC_GetSoftwareStartConvStatus\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Gets the selected ADC Software start regular conversion Status\&. "
+.ti -1c
+.RI "void \fBADC_EOCOnEachRegularChannelCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the EOC on each regular channel conversion\&. "
+.ti -1c
+.RI "void \fBADC_ContinuousModeCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the ADC continuous conversion mode\&. "
+.ti -1c
+.RI "void \fBADC_DiscModeChannelCountConfig\fP (ADC_TypeDef *ADCx, uint8_t Number)"
+.br
+.RI "Configures the discontinuous mode for the selected ADC regular group channel\&. "
+.ti -1c
+.RI "void \fBADC_DiscModeCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the discontinuous mode on regular group channel for the specified ADC\&. "
+.ti -1c
+.RI "uint16_t \fBADC_GetConversionValue\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Returns the last ADCx conversion result data for regular channel\&. "
+.ti -1c
+.RI "uint32_t \fBADC_GetMultiModeConversionValue\fP (void)"
+.br
+.RI "Returns the last ADC1, ADC2 and ADC3 regular conversions results data in the selected multi mode\&. "
+.ti -1c
+.RI "void \fBADC_DMACmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified ADC DMA request\&. "
+.ti -1c
+.RI "void \fBADC_DMARequestAfterLastTransferCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the ADC DMA request after last transfer (Single-ADC mode) 
+.br
+ "
+.ti -1c
+.RI "void \fBADC_MultiModeDMARequestAfterLastTransferCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the ADC DMA request after last transfer in multi ADC mode 
+.br
+ "
+.ti -1c
+.RI "void \fBADC_InjectedChannelConfig\fP (ADC_TypeDef *ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime)"
+.br
+.RI "Configures for the selected ADC injected channel its corresponding rank in the sequencer and its sample time\&. "
+.ti -1c
+.RI "void \fBADC_InjectedSequencerLengthConfig\fP (ADC_TypeDef *ADCx, uint8_t Length)"
+.br
+.RI "Configures the sequencer length for injected channels\&. "
+.ti -1c
+.RI "void \fBADC_SetInjectedOffset\fP (ADC_TypeDef *ADCx, uint8_t ADC_InjectedChannel, uint16_t Offset)"
+.br
+.RI "Set the injected channels conversion value offset\&. "
+.ti -1c
+.RI "void \fBADC_ExternalTrigInjectedConvConfig\fP (ADC_TypeDef *ADCx, uint32_t ADC_ExternalTrigInjecConv)"
+.br
+.RI "Configures the ADCx external trigger for injected channels conversion\&. "
+.ti -1c
+.RI "void \fBADC_ExternalTrigInjectedConvEdgeConfig\fP (ADC_TypeDef *ADCx, uint32_t ADC_ExternalTrigInjecConvEdge)"
+.br
+.RI "Configures the ADCx external trigger edge for injected channels conversion\&. "
+.ti -1c
+.RI "void \fBADC_SoftwareStartInjectedConv\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Enables the selected ADC software start conversion of the injected channels\&. "
+.ti -1c
+.RI "FlagStatus \fBADC_GetSoftwareStartInjectedConvCmdStatus\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Gets the selected ADC Software start injected conversion Status\&. "
+.ti -1c
+.RI "void \fBADC_AutoInjectedConvCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the selected ADC automatic injected group conversion after regular one\&. "
+.ti -1c
+.RI "void \fBADC_InjectedDiscModeCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the discontinuous mode for injected group channel for the specified ADC\&. "
+.ti -1c
+.RI "uint16_t \fBADC_GetInjectedConversionValue\fP (ADC_TypeDef *ADCx, uint8_t ADC_InjectedChannel)"
+.br
+.RI "Returns the ADC injected channel conversion result\&. "
+.ti -1c
+.RI "void \fBADC_ITConfig\fP (ADC_TypeDef *ADCx, uint16_t ADC_IT, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified ADC interrupts\&. "
+.ti -1c
+.RI "FlagStatus \fBADC_GetFlagStatus\fP (ADC_TypeDef *ADCx, uint8_t ADC_FLAG)"
+.br
+.RI "Checks whether the specified ADC flag is set or not\&. "
+.ti -1c
+.RI "void \fBADC_ClearFlag\fP (ADC_TypeDef *ADCx, uint8_t ADC_FLAG)"
+.br
+.RI "Clears the ADCx's pending flags\&. "
+.ti -1c
+.RI "ITStatus \fBADC_GetITStatus\fP (ADC_TypeDef *ADCx, uint16_t ADC_IT)"
+.br
+.RI "Checks whether the specified ADC interrupt has occurred or not\&. "
+.ti -1c
+.RI "void \fBADC_ClearITPendingBit\fP (ADC_TypeDef *ADCx, uint16_t ADC_IT)"
+.br
+.RI "Clears the ADCx's interrupt pending bits\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+ADC driver modules\&. 
+
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CDR_ADDRESS   ((uint32_t)0x40012308)"
+
+.SS "#define CR1_AWDCH_RESET   ((uint32_t)0xFFFFFFE0)"
+
+.SS "#define CR1_AWDMode_RESET   ((uint32_t)0xFF3FFDFF)"
+
+.SS "#define CR1_CLEAR_MASK   ((uint32_t)0xFCFFFEFF)"
+
+.SS "#define CR1_DISCNUM_RESET   ((uint32_t)0xFFFF1FFF)"
+
+.SS "#define CR2_CLEAR_MASK   ((uint32_t)0xC0FFF7FD)"
+
+.SS "#define CR2_EXTEN_RESET   ((uint32_t)0xCFFFFFFF)"
+
+.SS "#define CR2_JEXTEN_RESET   ((uint32_t)0xFFCFFFFF)"
+
+.SS "#define CR2_JEXTSEL_RESET   ((uint32_t)0xFFF0FFFF)"
+
+.SS "#define CR_CLEAR_MASK   ((uint32_t)0xFFFC30E0)"
+
+.SS "#define JDR_OFFSET   ((uint8_t)0x28)"
+
+.SS "#define JSQR_JL_RESET   ((uint32_t)0xFFCFFFFF)"
+
+.SS "#define JSQR_JL_SET   ((uint32_t)0x00300000)"
+
+.SS "#define JSQR_JSQ_SET   ((uint32_t)0x0000001F)"
+
+.SS "#define SMPR1_SMP_SET   ((uint32_t)0x00000007)"
+
+.SS "#define SMPR2_SMP_SET   ((uint32_t)0x00000007)"
+
+.SS "#define SQR1_L_RESET   ((uint32_t)0xFF0FFFFF)"
+
+.SS "#define SQR1_SQ_SET   ((uint32_t)0x0000001F)"
+
+.SS "#define SQR2_SQ_SET   ((uint32_t)0x0000001F)"
+
+.SS "#define SQR3_SQ_SET   ((uint32_t)0x0000001F)"
+
+.SH "Function Documentation"
+.PP 
+.SS "void ADC_AnalogWatchdogCmd (ADC_TypeDef * ADCx, uint32_t ADC_AnalogWatchdog)"
+
+.PP
+Enables or disables the analog watchdog on single/all regular or injected channels\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_AnalogWatchdog\fP the ADC analog watchdog configuration\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_AnalogWatchdog_SingleRegEnable: Analog watchdog on a single regular channel 
+.IP "\(bu" 1
+ADC_AnalogWatchdog_SingleInjecEnable: Analog watchdog on a single injected channel 
+.IP "\(bu" 1
+ADC_AnalogWatchdog_SingleRegOrInjecEnable: Analog watchdog on a single regular or injected channel 
+.IP "\(bu" 1
+ADC_AnalogWatchdog_AllRegEnable: Analog watchdog on all regular channel 
+.IP "\(bu" 1
+ADC_AnalogWatchdog_AllInjecEnable: Analog watchdog on all injected channel 
+.IP "\(bu" 1
+ADC_AnalogWatchdog_AllRegAllInjecEnable: Analog watchdog on all regular and injected channels 
+.IP "\(bu" 1
+ADC_AnalogWatchdog_None: No channel guarded by the analog watchdog 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.br
+ 
+.RE
+.PP
+
+.SS "void ADC_AnalogWatchdogSingleChannelConfig (ADC_TypeDef * ADCx, uint8_t ADC_Channel)"
+
+.PP
+Configures the analog watchdog guarded single channel\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_Channel\fP the ADC channel to configure for the analog watchdog\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_Channel_0: ADC Channel0 selected 
+.IP "\(bu" 1
+ADC_Channel_1: ADC Channel1 selected 
+.IP "\(bu" 1
+ADC_Channel_2: ADC Channel2 selected 
+.IP "\(bu" 1
+ADC_Channel_3: ADC Channel3 selected 
+.IP "\(bu" 1
+ADC_Channel_4: ADC Channel4 selected 
+.IP "\(bu" 1
+ADC_Channel_5: ADC Channel5 selected 
+.IP "\(bu" 1
+ADC_Channel_6: ADC Channel6 selected 
+.IP "\(bu" 1
+ADC_Channel_7: ADC Channel7 selected 
+.IP "\(bu" 1
+ADC_Channel_8: ADC Channel8 selected 
+.IP "\(bu" 1
+ADC_Channel_9: ADC Channel9 selected 
+.IP "\(bu" 1
+ADC_Channel_10: ADC Channel10 selected 
+.IP "\(bu" 1
+ADC_Channel_11: ADC Channel11 selected 
+.IP "\(bu" 1
+ADC_Channel_12: ADC Channel12 selected 
+.IP "\(bu" 1
+ADC_Channel_13: ADC Channel13 selected 
+.IP "\(bu" 1
+ADC_Channel_14: ADC Channel14 selected 
+.IP "\(bu" 1
+ADC_Channel_15: ADC Channel15 selected 
+.IP "\(bu" 1
+ADC_Channel_16: ADC Channel16 selected 
+.IP "\(bu" 1
+ADC_Channel_17: ADC Channel17 selected 
+.IP "\(bu" 1
+ADC_Channel_18: ADC Channel18 selected 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_AnalogWatchdogThresholdsConfig (ADC_TypeDef * ADCx, uint16_t HighThreshold, uint16_t LowThreshold)"
+
+.PP
+Configures the high and low thresholds of the analog watchdog\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIHighThreshold\fP the ADC analog watchdog High threshold value\&. This parameter must be a 12-bit value\&. 
+.br
+\fILowThreshold\fP the ADC analog watchdog Low threshold value\&. This parameter must be a 12-bit value\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_AutoInjectedConvCmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the selected ADC automatic injected group conversion after regular one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC auto injected conversion This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_ClearFlag (ADC_TypeDef * ADCx, uint8_t ADC_FLAG)"
+
+.PP
+Clears the ADCx's pending flags\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_FLAG\fP specifies the flag to clear\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_FLAG_AWD: Analog watchdog flag 
+.IP "\(bu" 1
+ADC_FLAG_EOC: End of conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_JEOC: End of injected group conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_JSTRT: Start of injected group conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_STRT: Start of regular group conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_OVR: Overrun flag 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_ClearITPendingBit (ADC_TypeDef * ADCx, uint16_t ADC_IT)"
+
+.PP
+Clears the ADCx's interrupt pending bits\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_IT\fP specifies the ADC interrupt pending bit to clear\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_IT_EOC: End of conversion interrupt mask 
+.IP "\(bu" 1
+ADC_IT_AWD: Analog watchdog interrupt mask 
+.IP "\(bu" 1
+ADC_IT_JEOC: End of injected conversion interrupt mask 
+.IP "\(bu" 1
+ADC_IT_OVR: Overrun interrupt mask 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_Cmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified ADC peripheral\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the ADCx peripheral\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_CommonInit (\fBADC_CommonInitTypeDef\fP * ADC_CommonInitStruct)"
+
+.PP
+Initializes the ADCs peripherals according to the specified parameters in the ADC_CommonInitStruct\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADC_CommonInitStruct\fP pointer to an \fBADC_CommonInitTypeDef\fP structure that contains the configuration information for All ADCs peripherals\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_CommonStructInit (\fBADC_CommonInitTypeDef\fP * ADC_CommonInitStruct)"
+
+.PP
+Fills each ADC_CommonInitStruct member with its default value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADC_CommonInitStruct\fP pointer to an \fBADC_CommonInitTypeDef\fP structure which will be initialized\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_ContinuousModeCmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the ADC continuous conversion mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC continuous conversion mode This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_DeInit (void)"
+
+.PP
+Deinitializes all ADCs peripherals registers to their default reset values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_DiscModeChannelCountConfig (ADC_TypeDef * ADCx, uint8_t Number)"
+
+.PP
+Configures the discontinuous mode for the selected ADC regular group channel\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINumber\fP specifies the discontinuous mode regular channel count value\&. This number must be between 1 and 8\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_DiscModeCmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the discontinuous mode on regular group channel for the specified ADC\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC discontinuous mode on regular group channel\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_DMACmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified ADC DMA request\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC DMA transfer\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_DMARequestAfterLastTransferCmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the ADC DMA request after last transfer (Single-ADC mode) 
+.br
+ 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC DMA request after last transfer\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_EOCOnEachRegularChannelCmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the EOC on each regular channel conversion\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC EOC flag rising This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_ExternalTrigInjectedConvConfig (ADC_TypeDef * ADCx, uint32_t ADC_ExternalTrigInjecConv)"
+
+.PP
+Configures the ADCx external trigger for injected channels conversion\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_ExternalTrigInjecConv\fP specifies the ADC trigger to start injected conversion\&. This parameter can be one of the following values: 
+.br
+ 
+.PD 0
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T1_CC4: Timer1 capture compare4 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T1_TRGO: Timer1 TRGO event selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T2_CC1: Timer2 capture compare1 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T2_TRGO: Timer2 TRGO event selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T3_CC2: Timer3 capture compare2 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T3_CC4: Timer3 capture compare4 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T4_CC1: Timer4 capture compare1 selected 
+.br
+ 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T4_CC2: Timer4 capture compare2 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T4_CC3: Timer4 capture compare3 selected 
+.br
+ 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T4_TRGO: Timer4 TRGO event selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T5_CC4: Timer5 capture compare4 selected 
+.br
+ 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T5_TRGO: Timer5 TRGO event selected 
+.br
+ 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T8_CC2: Timer8 capture compare2 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T8_CC3: Timer8 capture compare3 selected 
+.br
+ 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T8_CC4: Timer8 capture compare4 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_Ext_IT15: External interrupt line 15 event selected 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_ExternalTrigInjectedConvEdgeConfig (ADC_TypeDef * ADCx, uint32_t ADC_ExternalTrigInjecConvEdge)"
+
+.PP
+Configures the ADCx external trigger edge for injected channels conversion\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_ExternalTrigInjecConvEdge\fP specifies the ADC external trigger edge to start injected conversion\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConvEdge_None: external trigger disabled for injected conversion 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConvEdge_Rising: detection on rising edge 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConvEdge_Falling: detection on falling edge 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConvEdge_RisingFalling: detection on both rising and falling edge 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "uint16_t ADC_GetConversionValue (ADC_TypeDef * ADCx)"
+
+.PP
+Returns the last ADCx conversion result data for regular channel\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP Data conversion value\&. 
+.RE
+.PP
+
+.SS "FlagStatus ADC_GetFlagStatus (ADC_TypeDef * ADCx, uint8_t ADC_FLAG)"
+
+.PP
+Checks whether the specified ADC flag is set or not\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_FLAG\fP specifies the flag to check\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_FLAG_AWD: Analog watchdog flag 
+.IP "\(bu" 1
+ADC_FLAG_EOC: End of conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_JEOC: End of injected group conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_JSTRT: Start of injected group conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_STRT: Start of regular group conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_OVR: Overrun flag 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of ADC_FLAG (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "uint16_t ADC_GetInjectedConversionValue (ADC_TypeDef * ADCx, uint8_t ADC_InjectedChannel)"
+
+.PP
+Returns the ADC injected channel conversion result\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_InjectedChannel\fP the converted ADC injected channel\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_InjectedChannel_1: Injected Channel1 selected 
+.IP "\(bu" 1
+ADC_InjectedChannel_2: Injected Channel2 selected 
+.IP "\(bu" 1
+ADC_InjectedChannel_3: Injected Channel3 selected 
+.IP "\(bu" 1
+ADC_InjectedChannel_4: Injected Channel4 selected 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP Data conversion value\&. 
+.RE
+.PP
+
+.SS "ITStatus ADC_GetITStatus (ADC_TypeDef * ADCx, uint16_t ADC_IT)"
+
+.PP
+Checks whether the specified ADC interrupt has occurred or not\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_IT\fP specifies the ADC interrupt source to check\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_IT_EOC: End of conversion interrupt mask 
+.IP "\(bu" 1
+ADC_IT_AWD: Analog watchdog interrupt mask 
+.IP "\(bu" 1
+ADC_IT_JEOC: End of injected conversion interrupt mask 
+.IP "\(bu" 1
+ADC_IT_OVR: Overrun interrupt mask 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of ADC_IT (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "uint32_t ADC_GetMultiModeConversionValue (void)"
+
+.PP
+Returns the last ADC1, ADC2 and ADC3 regular conversions results data in the selected multi mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP Data conversion value\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+In dual mode, the value returned by this function is as following Data[15:0] : these bits contain the regular data of ADC1\&. Data[31:16]: these bits contain the regular data of ADC2\&. 
+.PP
+In triple mode, the value returned by this function is as following Data[15:0] : these bits contain alternatively the regular data of ADC1, ADC3 and ADC2\&. Data[31:16]: these bits contain alternatively the regular data of ADC2, ADC1 and ADC3\&. 
+.br
+ 
+.RE
+.PP
+
+.SS "FlagStatus ADC_GetSoftwareStartConvStatus (ADC_TypeDef * ADCx)"
+
+.PP
+Gets the selected ADC Software start regular conversion Status\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of ADC software start conversion (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "FlagStatus ADC_GetSoftwareStartInjectedConvCmdStatus (ADC_TypeDef * ADCx)"
+
+.PP
+Gets the selected ADC Software start injected conversion Status\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of ADC software start injected conversion (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "void ADC_Init (ADC_TypeDef * ADCx, \fBADC_InitTypeDef\fP * ADC_InitStruct)"
+
+.PP
+Initializes the ADCx peripheral according to the specified parameters in the ADC_InitStruct\&. 
+.PP
+\fBNote\fP
+.RS 4
+This function is used to configure the global features of the ADC ( Resolution and Data Alignment), however, the rest of the configuration parameters are specific to the regular channels group (scan mode activation, continuous mode activation, External trigger source and edge, number of conversion in the regular channels group sequencer)\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_InitStruct\fP pointer to an \fBADC_InitTypeDef\fP structure that contains the configuration information for the specified ADC peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_InjectedChannelConfig (ADC_TypeDef * ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime)"
+
+.PP
+Configures for the selected ADC injected channel its corresponding rank in the sequencer and its sample time\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_Channel\fP the ADC channel to configure\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_Channel_0: ADC Channel0 selected 
+.IP "\(bu" 1
+ADC_Channel_1: ADC Channel1 selected 
+.IP "\(bu" 1
+ADC_Channel_2: ADC Channel2 selected 
+.IP "\(bu" 1
+ADC_Channel_3: ADC Channel3 selected 
+.IP "\(bu" 1
+ADC_Channel_4: ADC Channel4 selected 
+.IP "\(bu" 1
+ADC_Channel_5: ADC Channel5 selected 
+.IP "\(bu" 1
+ADC_Channel_6: ADC Channel6 selected 
+.IP "\(bu" 1
+ADC_Channel_7: ADC Channel7 selected 
+.IP "\(bu" 1
+ADC_Channel_8: ADC Channel8 selected 
+.IP "\(bu" 1
+ADC_Channel_9: ADC Channel9 selected 
+.IP "\(bu" 1
+ADC_Channel_10: ADC Channel10 selected 
+.IP "\(bu" 1
+ADC_Channel_11: ADC Channel11 selected 
+.IP "\(bu" 1
+ADC_Channel_12: ADC Channel12 selected 
+.IP "\(bu" 1
+ADC_Channel_13: ADC Channel13 selected 
+.IP "\(bu" 1
+ADC_Channel_14: ADC Channel14 selected 
+.IP "\(bu" 1
+ADC_Channel_15: ADC Channel15 selected 
+.IP "\(bu" 1
+ADC_Channel_16: ADC Channel16 selected 
+.IP "\(bu" 1
+ADC_Channel_17: ADC Channel17 selected 
+.IP "\(bu" 1
+ADC_Channel_18: ADC Channel18 selected 
+.br
+ 
+.PP
+.br
+\fIRank\fP The rank in the injected group sequencer\&. This parameter must be between 1 to 4\&. 
+.br
+\fIADC_SampleTime\fP The sample time value to be set for the selected channel\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_SampleTime_3Cycles: Sample time equal to 3 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_15Cycles: Sample time equal to 15 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_28Cycles: Sample time equal to 28 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_56Cycles: Sample time equal to 56 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_84Cycles: Sample time equal to 84 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_112Cycles: Sample time equal to 112 cycles 
+.br
+ 
+.IP "\(bu" 1
+ADC_SampleTime_144Cycles: Sample time equal to 144 cycles 
+.br
+ 
+.IP "\(bu" 1
+ADC_SampleTime_480Cycles: Sample time equal to 480 cycles 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_InjectedDiscModeCmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the discontinuous mode for injected group channel for the specified ADC\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC discontinuous mode on injected group channel\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_InjectedSequencerLengthConfig (ADC_TypeDef * ADCx, uint8_t Length)"
+
+.PP
+Configures the sequencer length for injected channels\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fILength\fP The sequencer length\&. This parameter must be a number between 1 to 4\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_ITConfig (ADC_TypeDef * ADCx, uint16_t ADC_IT, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified ADC interrupts\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_IT\fP specifies the ADC interrupt sources to be enabled or disabled\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_IT_EOC: End of conversion interrupt mask 
+.IP "\(bu" 1
+ADC_IT_AWD: Analog watchdog interrupt mask 
+.IP "\(bu" 1
+ADC_IT_JEOC: End of injected conversion interrupt mask 
+.IP "\(bu" 1
+ADC_IT_OVR: Overrun interrupt enable 
+.br
+ 
+.PP
+.br
+\fINewState\fP new state of the specified ADC interrupts\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_MultiModeDMARequestAfterLastTransferCmd (FunctionalState NewState)"
+
+.PP
+Enables or disables the ADC DMA request after last transfer in multi ADC mode 
+.br
+ 
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the selected ADC DMA request after last transfer\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+if Enabled, DMA requests are issued as long as data are converted and DMA mode for multi ADC mode (selected using \fBADC_CommonInit()\fP function by ADC_CommonInitStruct\&.ADC_DMAAccessMode structure member) is ADC_DMAAccessMode_1, ADC_DMAAccessMode_2 or ADC_DMAAccessMode_3\&. 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_RegularChannelConfig (ADC_TypeDef * ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime)"
+
+.PP
+Configures for the selected ADC regular channel its corresponding rank in the sequencer and its sample time\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_Channel\fP the ADC channel to configure\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_Channel_0: ADC Channel0 selected 
+.IP "\(bu" 1
+ADC_Channel_1: ADC Channel1 selected 
+.IP "\(bu" 1
+ADC_Channel_2: ADC Channel2 selected 
+.IP "\(bu" 1
+ADC_Channel_3: ADC Channel3 selected 
+.IP "\(bu" 1
+ADC_Channel_4: ADC Channel4 selected 
+.IP "\(bu" 1
+ADC_Channel_5: ADC Channel5 selected 
+.IP "\(bu" 1
+ADC_Channel_6: ADC Channel6 selected 
+.IP "\(bu" 1
+ADC_Channel_7: ADC Channel7 selected 
+.IP "\(bu" 1
+ADC_Channel_8: ADC Channel8 selected 
+.IP "\(bu" 1
+ADC_Channel_9: ADC Channel9 selected 
+.IP "\(bu" 1
+ADC_Channel_10: ADC Channel10 selected 
+.IP "\(bu" 1
+ADC_Channel_11: ADC Channel11 selected 
+.IP "\(bu" 1
+ADC_Channel_12: ADC Channel12 selected 
+.IP "\(bu" 1
+ADC_Channel_13: ADC Channel13 selected 
+.IP "\(bu" 1
+ADC_Channel_14: ADC Channel14 selected 
+.IP "\(bu" 1
+ADC_Channel_15: ADC Channel15 selected 
+.IP "\(bu" 1
+ADC_Channel_16: ADC Channel16 selected 
+.IP "\(bu" 1
+ADC_Channel_17: ADC Channel17 selected 
+.IP "\(bu" 1
+ADC_Channel_18: ADC Channel18 selected 
+.br
+ 
+.PP
+.br
+\fIRank\fP The rank in the regular group sequencer\&. This parameter must be between 1 to 16\&. 
+.br
+\fIADC_SampleTime\fP The sample time value to be set for the selected channel\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_SampleTime_3Cycles: Sample time equal to 3 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_15Cycles: Sample time equal to 15 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_28Cycles: Sample time equal to 28 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_56Cycles: Sample time equal to 56 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_84Cycles: Sample time equal to 84 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_112Cycles: Sample time equal to 112 cycles 
+.br
+ 
+.IP "\(bu" 1
+ADC_SampleTime_144Cycles: Sample time equal to 144 cycles 
+.br
+ 
+.IP "\(bu" 1
+ADC_SampleTime_480Cycles: Sample time equal to 480 cycles 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_SetInjectedOffset (ADC_TypeDef * ADCx, uint8_t ADC_InjectedChannel, uint16_t Offset)"
+
+.PP
+Set the injected channels conversion value offset\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_InjectedChannel\fP the ADC injected channel to set its offset\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_InjectedChannel_1: Injected Channel1 selected 
+.IP "\(bu" 1
+ADC_InjectedChannel_2: Injected Channel2 selected 
+.IP "\(bu" 1
+ADC_InjectedChannel_3: Injected Channel3 selected 
+.IP "\(bu" 1
+ADC_InjectedChannel_4: Injected Channel4 selected 
+.PP
+.br
+\fIOffset\fP the offset value for the selected ADC injected channel This parameter must be a 12bit value\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_SoftwareStartConv (ADC_TypeDef * ADCx)"
+
+.PP
+Enables the selected ADC software start conversion of the regular channels\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_SoftwareStartInjectedConv (ADC_TypeDef * ADCx)"
+
+.PP
+Enables the selected ADC software start conversion of the injected channels\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_StructInit (\fBADC_InitTypeDef\fP * ADC_InitStruct)"
+
+.PP
+Fills each ADC_InitStruct member with its default value\&. 
+.PP
+\fBNote\fP
+.RS 4
+This function is used to initialize the global features of the ADC ( Resolution and Data Alignment), however, the rest of the configuration parameters are specific to the regular channels group (scan mode activation, continuous mode activation, External trigger source and edge, number of conversion in the regular channels group sequencer)\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIADC_InitStruct\fP pointer to an \fBADC_InitTypeDef\fP structure which will be initialized\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_TempSensorVrefintCmd (FunctionalState NewState)"
+
+.PP
+Enables or disables the temperature sensor and Vrefint channels\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the temperature sensor and Vrefint channels\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_VBATCmd (FunctionalState NewState)"
+
+.PP
+Enables or disables the VBAT (Voltage Battery) channel\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the VBAT channel\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

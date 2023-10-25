@@ -1,0 +1,88 @@
+\doxysection{src/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{src/main.c@{src/main.c}}
+
+
+Square Root Approximation using Integer Approach -\/ Project 1 Module 1.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+asm int \mbox{\hyperlink{main_8c_a550b84f26e256c2091e743266d00bf82}{my\+\_\+sqrt\+\_\+int}} (int x)
+\begin{DoxyCompactList}\small\item\em Compute the integer square root of a number using approximate bisection method. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm int \mbox{\hyperlink{main_8c_a603d23c67237688c6e075299c31ab60a}{my\+\_\+sqrt\+\_\+fixed\+\_\+point}} (int x)
+\begin{DoxyCompactList}\small\item\em Compute the square root of a number using approximate bisection method in Q16.\+16 number format. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Application Entry Point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Square Root Approximation using Integer Approach -\/ Project 1 Module 1. 
+
+\begin{DoxyAuthor}{Author}
+Viraj Patel, Kiran jojare 
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{See also}
+\href{https://developer.arm.com/documentation/ddi0439/b/Programmers-Model/Instruction-set-summary/Cortex-M4-instructions?lang=en}{\texttt{ ARM Cortex-\/\+M4 Instructions}} 
+
+PDF obtained from professor "{}\+Approximate Square Root Bisection Method"{} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Application Entry Point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\Hypertarget{main_8c_a603d23c67237688c6e075299c31ab60a}\label{main_8c_a603d23c67237688c6e075299c31ab60a} 
+\index{main.c@{main.c}!my\_sqrt\_fixed\_point@{my\_sqrt\_fixed\_point}}
+\index{my\_sqrt\_fixed\_point@{my\_sqrt\_fixed\_point}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{my\_sqrt\_fixed\_point()}{my\_sqrt\_fixed\_point()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm int my\+\_\+sqrt\+\_\+fixed\+\_\+point (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Compute the square root of a number using approximate bisection method in Q16.\+16 number format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & x -\/ The input integer to take the square root in Q16.\+16 number format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The square root of the given number in Q16.\+16 format 
+\end{DoxyReturn}
+\Hypertarget{main_8c_a550b84f26e256c2091e743266d00bf82}\label{main_8c_a550b84f26e256c2091e743266d00bf82} 
+\index{main.c@{main.c}!my\_sqrt\_int@{my\_sqrt\_int}}
+\index{my\_sqrt\_int@{my\_sqrt\_int}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{my\_sqrt\_int()}{my\_sqrt\_int()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm int my\+\_\+sqrt\+\_\+int (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Compute the integer square root of a number using approximate bisection method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & x -\/ The input integer to take the square root. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The integer square root of the given number. 
+\end{DoxyReturn}

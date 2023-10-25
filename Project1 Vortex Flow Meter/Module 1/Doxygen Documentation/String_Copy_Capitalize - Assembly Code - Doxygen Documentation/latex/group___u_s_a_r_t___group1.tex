@@ -1,0 +1,278 @@
+\doxysubsubsubsection{Initialization and Configuration functions}
+\label{group___u_s_a_r_t___group1}\index{Initialization and Configuration functions@{Initialization and Configuration functions}}
+
+
+Initialization and Configuration functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ USART\+\_\+\+De\+Init} (USART\+\_\+\+Type\+Def $\ast$USARTx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the USARTx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Init} (USART\+\_\+\+Type\+Def $\ast$USARTx, \textbf{ USART\+\_\+\+Init\+Type\+Def} $\ast$USART\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the USARTx peripheral according to the specified parameters in the USART\+\_\+\+Init\+Struct . \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Struct\+Init} (\textbf{ USART\+\_\+\+Init\+Type\+Def} $\ast$USART\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each USART\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Clock\+Init} (USART\+\_\+\+Type\+Def $\ast$USARTx, \textbf{ USART\+\_\+\+Clock\+Init\+Type\+Def} $\ast$USART\+\_\+\+Clock\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the USARTx peripheral Clock according to the specified parameters in the USART\+\_\+\+Clock\+Init\+Struct . \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Clock\+Struct\+Init} (\textbf{ USART\+\_\+\+Clock\+Init\+Type\+Def} $\ast$USART\+\_\+\+Clock\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each USART\+\_\+\+Clock\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified USART peripheral. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Set\+Prescaler} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint8\+\_\+t USART\+\_\+\+Prescaler)
+\begin{DoxyCompactList}\small\item\em Sets the system clock prescaler. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Over\+Sampling8\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s 8x oversampling mode. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+One\+Bit\+Method\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s one bit sampling method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Initialization and Configuration functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                  Initialization and Configuration functions
+ ===============================================================================  
+
+  This subsection provides a set of functions allowing to initialize the USART 
+  in asynchronous and in synchronous modes.
+   - For the asynchronous mode only these parameters can be configured: 
+        - Baud Rate
+        - Word Length 
+        - Stop Bit
+        - Parity: If the parity is enabled, then the MSB bit of the data written
+          in the data register is transmitted but is changed by the parity bit.
+          Depending on the frame length defined by the M bit (8-bits or 9-bits),
+          the possible USART frame formats are as listed in the following table:
+   +-------------------------------------------------------------+     
+   |   M bit |  PCE bit  |            USART frame                |
+   |---------------------|---------------------------------------|             
+   |    0    |    0      |    | SB | 8 bit data | STB |          |
+   |---------|-----------|---------------------------------------|  
+   |    0    |    1      |    | SB | 7 bit data | PB | STB |     |
+   |---------|-----------|---------------------------------------|  
+   |    1    |    0      |    | SB | 9 bit data | STB |          |
+   |---------|-----------|---------------------------------------|  
+   |    1    |    1      |    | SB | 8 bit data | PB | STB |     |
+   +-------------------------------------------------------------+            
+        - Hardware flow control
+        - Receiver/transmitter modes
+
+  The USART_Init() function follows the USART  asynchronous configuration procedure
+  (details for the procedure are available in reference manual (RM0090)).
+
+  - For the synchronous mode in addition to the asynchronous mode parameters these 
+    parameters should be also configured:
+        - USART Clock Enabled
+        - USART polarity
+        - USART phase
+        - USART LastBit
+  
+  These parameters can be configured using the USART_ClockInit() function.\end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\label{group___u_s_a_r_t___group1_gadb50c7a2175c91acd3728f8eefd0c63d} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!USART\_ClockInit@{USART\_ClockInit}}
+\index{USART\_ClockInit@{USART\_ClockInit}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{USART\_ClockInit()}
+{\footnotesize\ttfamily void USART\+\_\+\+Clock\+Init (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def $\ast$}]{USARTx,  }\item[{\textbf{ USART\+\_\+\+Clock\+Init\+Type\+Def} $\ast$}]{USART\+\_\+\+Clock\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Initializes the USARTx peripheral Clock according to the specified parameters in the USART\+\_\+\+Clock\+Init\+Struct . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3 or 6 to select the USART peripheral. \\
+\hline
+{\em USART\+\_\+\+Clock\+Init\+Struct} & pointer to a \doxyref{USART\+\_\+\+Clock\+Init\+Type\+Def}{p.}{struct_u_s_a_r_t___clock_init_type_def} structure that contains the configuration information for the specified USART peripheral. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The Smart Card and Synchronous modes are not available for UART4 and UART5. ~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___u_s_a_r_t___group1_ga59df27d0adda18b16ee28d47672cc724} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!USART\_ClockStructInit@{USART\_ClockStructInit}}
+\index{USART\_ClockStructInit@{USART\_ClockStructInit}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{USART\_ClockStructInit()}
+{\footnotesize\ttfamily void USART\+\_\+\+Clock\+Struct\+Init (\begin{DoxyParamCaption}\item[{\textbf{ USART\+\_\+\+Clock\+Init\+Type\+Def} $\ast$}]{USART\+\_\+\+Clock\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Fills each USART\+\_\+\+Clock\+Init\+Struct member with its default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USART\+\_\+\+Clock\+Init\+Struct} & pointer to a \doxyref{USART\+\_\+\+Clock\+Init\+Type\+Def}{p.}{struct_u_s_a_r_t___clock_init_type_def} structure which will be initialized. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___u_s_a_r_t___group1_ga45e51626739c5f22a6567c8a85d1d85e} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!USART\_Cmd@{USART\_Cmd}}
+\index{USART\_Cmd@{USART\_Cmd}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{USART\_Cmd()}
+{\footnotesize\ttfamily void USART\+\_\+\+Cmd (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def $\ast$}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified USART peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em New\+State} & new state of the USARTx peripheral. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___u_s_a_r_t___group1_ga2f8e1ce72da21b6539d8e1f299ec3b0d} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!USART\_DeInit@{USART\_DeInit}}
+\index{USART\_DeInit@{USART\_DeInit}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{USART\_DeInit()}
+{\footnotesize\ttfamily void USART\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def $\ast$}]{USARTx }\end{DoxyParamCaption})}
+
+
+
+Deinitializes the USARTx peripheral registers to their default reset values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___u_s_a_r_t___group1_ga98da340ea0324002ba1b4263e91ab2ff} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!USART\_Init@{USART\_Init}}
+\index{USART\_Init@{USART\_Init}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{USART\_Init()}
+{\footnotesize\ttfamily void USART\+\_\+\+Init (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def $\ast$}]{USARTx,  }\item[{\textbf{ USART\+\_\+\+Init\+Type\+Def} $\ast$}]{USART\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Initializes the USARTx peripheral according to the specified parameters in the USART\+\_\+\+Init\+Struct . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em USART\+\_\+\+Init\+Struct} & pointer to a \doxyref{USART\+\_\+\+Init\+Type\+Def}{p.}{struct_u_s_a_r_t___init_type_def} structure that contains the configuration information for the specified USART peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___u_s_a_r_t___group1_ga3ed89ea8765d851510cfe90f7d90cbbb} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!USART\_OneBitMethodCmd@{USART\_OneBitMethodCmd}}
+\index{USART\_OneBitMethodCmd@{USART\_OneBitMethodCmd}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{USART\_OneBitMethodCmd()}
+{\footnotesize\ttfamily void USART\+\_\+\+One\+Bit\+Method\+Cmd (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def $\ast$}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the USART\textquotesingle{}s one bit sampling method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em New\+State} & new state of the USART one bit sampling method. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___u_s_a_r_t___group1_ga3897bab07491d9239f8a238a9a7cddea} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!USART\_OverSampling8Cmd@{USART\_OverSampling8Cmd}}
+\index{USART\_OverSampling8Cmd@{USART\_OverSampling8Cmd}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{USART\_OverSampling8Cmd()}
+{\footnotesize\ttfamily void USART\+\_\+\+Over\+Sampling8\+Cmd (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def $\ast$}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the USART\textquotesingle{}s 8x oversampling mode. 
+
+\begin{DoxyNote}{Note}
+This function has to be called before calling \doxyref{USART\+\_\+\+Init()}{p.}{group___u_s_a_r_t___group1_ga98da340ea0324002ba1b4263e91ab2ff} function in order to have correct baudrate Divider value. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em New\+State} & new state of the USART 8x oversampling mode. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___u_s_a_r_t___group1_gaf5da8f2eee8245425584d85d4f62cc33} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!USART\_SetPrescaler@{USART\_SetPrescaler}}
+\index{USART\_SetPrescaler@{USART\_SetPrescaler}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{USART\_SetPrescaler()}
+{\footnotesize\ttfamily void USART\+\_\+\+Set\+Prescaler (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def $\ast$}]{USARTx,  }\item[{uint8\+\_\+t}]{USART\+\_\+\+Prescaler }\end{DoxyParamCaption})}
+
+
+
+Sets the system clock prescaler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em USART\+\_\+\+Prescaler} & specifies the prescaler clock. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The function is used for Ir\+DA mode with UART4 and UART5. ~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___u_s_a_r_t___group1_ga34e1faa2f312496c16cfd05155f4c8b1} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!USART\_StructInit@{USART\_StructInit}}
+\index{USART\_StructInit@{USART\_StructInit}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{USART\_StructInit()}
+{\footnotesize\ttfamily void USART\+\_\+\+Struct\+Init (\begin{DoxyParamCaption}\item[{\textbf{ USART\+\_\+\+Init\+Type\+Def} $\ast$}]{USART\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Fills each USART\+\_\+\+Init\+Struct member with its default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USART\+\_\+\+Init\+Struct} & pointer to a \doxyref{USART\+\_\+\+Init\+Type\+Def}{p.}{struct_u_s_a_r_t___init_type_def} structure which will be initialized. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

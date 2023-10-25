@@ -1,0 +1,372 @@
+.TH "drivers/stm32f4xx_rcc.c" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/stm32f4xx_rcc.c \- This file provides firmware functions to manage the following functionalities of the Reset and clock control (RCC) peripheral:  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'stm32f4xx_rcc\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBHSE_VALUE\fP   ((uint32_t)25000000)"
+.br
+.ti -1c
+.RI "#define \fBHSE_STARTUP_TIMEOUT\fP   ((uint16_t)0x0500)"
+.br
+.RI "In the following line adjust the External High Speed oscillator (HSE) Startup Timeout value\&. "
+.ti -1c
+.RI "#define \fBHSI_VALUE\fP   ((uint32_t)16000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_OFFSET\fP   (RCC_BASE \- PERIPH_BASE)"
+.br
+.ti -1c
+.RI "#define \fBCR_OFFSET\fP   (\fBRCC_OFFSET\fP + 0x00)"
+.br
+.ti -1c
+.RI "#define \fBHSION_BitNumber\fP   0x00"
+.br
+.ti -1c
+.RI "#define \fBCR_HSION_BB\fP   (PERIPH_BB_BASE + (\fBCR_OFFSET\fP * 32) + (\fBHSION_BitNumber\fP * 4))"
+.br
+.ti -1c
+.RI "#define \fBCSSON_BitNumber\fP   0x13"
+.br
+.ti -1c
+.RI "#define \fBCR_CSSON_BB\fP   (PERIPH_BB_BASE + (\fBCR_OFFSET\fP * 32) + (\fBCSSON_BitNumber\fP * 4))"
+.br
+.ti -1c
+.RI "#define \fBPLLON_BitNumber\fP   0x18"
+.br
+.ti -1c
+.RI "#define \fBCR_PLLON_BB\fP   (PERIPH_BB_BASE + (\fBCR_OFFSET\fP * 32) + (\fBPLLON_BitNumber\fP * 4))"
+.br
+.ti -1c
+.RI "#define \fBPLLI2SON_BitNumber\fP   0x1A"
+.br
+.ti -1c
+.RI "#define \fBCR_PLLI2SON_BB\fP   (PERIPH_BB_BASE + (\fBCR_OFFSET\fP * 32) + (\fBPLLI2SON_BitNumber\fP * 4))"
+.br
+.ti -1c
+.RI "#define \fBCFGR_OFFSET\fP   (\fBRCC_OFFSET\fP + 0x08)"
+.br
+.ti -1c
+.RI "#define \fBI2SSRC_BitNumber\fP   0x17"
+.br
+.ti -1c
+.RI "#define \fBCFGR_I2SSRC_BB\fP   (PERIPH_BB_BASE + (\fBCFGR_OFFSET\fP * 32) + (\fBI2SSRC_BitNumber\fP * 4))"
+.br
+.ti -1c
+.RI "#define \fBBDCR_OFFSET\fP   (\fBRCC_OFFSET\fP + 0x70)"
+.br
+.ti -1c
+.RI "#define \fBRTCEN_BitNumber\fP   0x0F"
+.br
+.ti -1c
+.RI "#define \fBBDCR_RTCEN_BB\fP   (PERIPH_BB_BASE + (\fBBDCR_OFFSET\fP * 32) + (\fBRTCEN_BitNumber\fP * 4))"
+.br
+.ti -1c
+.RI "#define \fBBDRST_BitNumber\fP   0x10"
+.br
+.ti -1c
+.RI "#define \fBBDCR_BDRST_BB\fP   (PERIPH_BB_BASE + (\fBBDCR_OFFSET\fP * 32) + (\fBBDRST_BitNumber\fP * 4))"
+.br
+.ti -1c
+.RI "#define \fBCSR_OFFSET\fP   (\fBRCC_OFFSET\fP + 0x74)"
+.br
+.ti -1c
+.RI "#define \fBLSION_BitNumber\fP   0x00"
+.br
+.ti -1c
+.RI "#define \fBCSR_LSION_BB\fP   (PERIPH_BB_BASE + (\fBCSR_OFFSET\fP * 32) + (\fBLSION_BitNumber\fP * 4))"
+.br
+.ti -1c
+.RI "#define \fBCFGR_MCO2_RESET_MASK\fP   ((uint32_t)0x07FFFFFF)"
+.br
+.ti -1c
+.RI "#define \fBCFGR_MCO1_RESET_MASK\fP   ((uint32_t)0xF89FFFFF)"
+.br
+.ti -1c
+.RI "#define \fBFLAG_MASK\fP   ((uint8_t)0x1F)"
+.br
+.ti -1c
+.RI "#define \fBCR_BYTE3_ADDRESS\fP   ((uint32_t)0x40023802)"
+.br
+.ti -1c
+.RI "#define \fBCIR_BYTE2_ADDRESS\fP   ((uint32_t)(RCC_BASE + 0x0C + 0x01))"
+.br
+.ti -1c
+.RI "#define \fBCIR_BYTE3_ADDRESS\fP   ((uint32_t)(RCC_BASE + 0x0C + 0x02))"
+.br
+.ti -1c
+.RI "#define \fBBDCR_ADDRESS\fP   (PERIPH_BASE + \fBBDCR_OFFSET\fP)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRCC_DeInit\fP (void)"
+.br
+.RI "Resets the RCC clock configuration to the default reset state\&. "
+.ti -1c
+.RI "void \fBRCC_HSEConfig\fP (uint8_t RCC_HSE)"
+.br
+.RI "Configures the External High Speed oscillator (HSE)\&. "
+.ti -1c
+.RI "ErrorStatus \fBRCC_WaitForHSEStartUp\fP (void)"
+.br
+.RI "Waits for HSE start-up\&. "
+.ti -1c
+.RI "void \fBRCC_AdjustHSICalibrationValue\fP (uint8_t HSICalibrationValue)"
+.br
+.RI "Adjusts the Internal High Speed oscillator (HSI) calibration value\&. "
+.ti -1c
+.RI "void \fBRCC_HSICmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the Internal High Speed oscillator (HSI)\&. "
+.ti -1c
+.RI "void \fBRCC_LSEConfig\fP (uint8_t RCC_LSE)"
+.br
+.RI "Configures the External Low Speed oscillator (LSE)\&. "
+.ti -1c
+.RI "void \fBRCC_LSICmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the Internal Low Speed oscillator (LSI)\&. "
+.ti -1c
+.RI "void \fBRCC_PLLConfig\fP (uint32_t RCC_PLLSource, uint32_t PLLM, uint32_t PLLN, uint32_t PLLP, uint32_t PLLQ)"
+.br
+.RI "Configures the main PLL clock source, multiplication and division factors\&. "
+.ti -1c
+.RI "void \fBRCC_PLLCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the main PLL\&. "
+.ti -1c
+.RI "void \fBRCC_PLLI2SConfig\fP (uint32_t PLLI2SN, uint32_t PLLI2SR)"
+.br
+.RI "Configures the PLLI2S clock multiplication and division factors\&. "
+.ti -1c
+.RI "void \fBRCC_PLLI2SCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the PLLI2S\&. "
+.ti -1c
+.RI "void \fBRCC_ClockSecuritySystemCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the Clock Security System\&. "
+.ti -1c
+.RI "void \fBRCC_MCO1Config\fP (uint32_t RCC_MCO1Source, uint32_t RCC_MCO1Div)"
+.br
+.RI "Selects the clock source to output on MCO1 pin(PA8)\&. "
+.ti -1c
+.RI "void \fBRCC_MCO2Config\fP (uint32_t RCC_MCO2Source, uint32_t RCC_MCO2Div)"
+.br
+.RI "Selects the clock source to output on MCO2 pin(PC9)\&. "
+.ti -1c
+.RI "void \fBRCC_SYSCLKConfig\fP (uint32_t RCC_SYSCLKSource)"
+.br
+.RI "Configures the system clock (SYSCLK)\&. "
+.ti -1c
+.RI "uint8_t \fBRCC_GetSYSCLKSource\fP (void)"
+.br
+.RI "Returns the clock source used as system clock\&. "
+.ti -1c
+.RI "void \fBRCC_HCLKConfig\fP (uint32_t RCC_SYSCLK)"
+.br
+.RI "Configures the AHB clock (HCLK)\&. "
+.ti -1c
+.RI "void \fBRCC_PCLK1Config\fP (uint32_t RCC_HCLK)"
+.br
+.RI "Configures the Low Speed APB clock (PCLK1)\&. "
+.ti -1c
+.RI "void \fBRCC_PCLK2Config\fP (uint32_t RCC_HCLK)"
+.br
+.RI "Configures the High Speed APB clock (PCLK2)\&. "
+.ti -1c
+.RI "void \fBRCC_GetClocksFreq\fP (\fBRCC_ClocksTypeDef\fP *RCC_Clocks)"
+.br
+.RI "Returns the frequencies of different on chip clocks; SYSCLK, HCLK, PCLK1 and PCLK2\&. 
+.br
+ "
+.ti -1c
+.RI "void \fBRCC_RTCCLKConfig\fP (uint32_t RCC_RTCCLKSource)"
+.br
+.RI "Configures the RTC clock (RTCCLK)\&. "
+.ti -1c
+.RI "void \fBRCC_RTCCLKCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the RTC clock\&. "
+.ti -1c
+.RI "void \fBRCC_BackupResetCmd\fP (FunctionalState NewState)"
+.br
+.RI "Forces or releases the Backup domain reset\&. "
+.ti -1c
+.RI "void \fBRCC_I2SCLKConfig\fP (uint32_t RCC_I2SCLKSource)"
+.br
+.RI "Configures the I2S clock source (I2SCLK)\&. "
+.ti -1c
+.RI "void \fBRCC_AHB1PeriphClockCmd\fP (uint32_t RCC_AHB1Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the AHB1 peripheral clock\&. "
+.ti -1c
+.RI "void \fBRCC_AHB2PeriphClockCmd\fP (uint32_t RCC_AHB2Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the AHB2 peripheral clock\&. "
+.ti -1c
+.RI "void \fBRCC_AHB3PeriphClockCmd\fP (uint32_t RCC_AHB3Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the AHB3 peripheral clock\&. "
+.ti -1c
+.RI "void \fBRCC_APB1PeriphClockCmd\fP (uint32_t RCC_APB1Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the Low Speed APB (APB1) peripheral clock\&. "
+.ti -1c
+.RI "void \fBRCC_APB2PeriphClockCmd\fP (uint32_t RCC_APB2Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the High Speed APB (APB2) peripheral clock\&. "
+.ti -1c
+.RI "void \fBRCC_AHB1PeriphResetCmd\fP (uint32_t RCC_AHB1Periph, FunctionalState NewState)"
+.br
+.RI "Forces or releases AHB1 peripheral reset\&. "
+.ti -1c
+.RI "void \fBRCC_AHB2PeriphResetCmd\fP (uint32_t RCC_AHB2Periph, FunctionalState NewState)"
+.br
+.RI "Forces or releases AHB2 peripheral reset\&. "
+.ti -1c
+.RI "void \fBRCC_AHB3PeriphResetCmd\fP (uint32_t RCC_AHB3Periph, FunctionalState NewState)"
+.br
+.RI "Forces or releases AHB3 peripheral reset\&. "
+.ti -1c
+.RI "void \fBRCC_APB1PeriphResetCmd\fP (uint32_t RCC_APB1Periph, FunctionalState NewState)"
+.br
+.RI "Forces or releases Low Speed APB (APB1) peripheral reset\&. "
+.ti -1c
+.RI "void \fBRCC_APB2PeriphResetCmd\fP (uint32_t RCC_APB2Periph, FunctionalState NewState)"
+.br
+.RI "Forces or releases High Speed APB (APB2) peripheral reset\&. "
+.ti -1c
+.RI "void \fBRCC_AHB1PeriphClockLPModeCmd\fP (uint32_t RCC_AHB1Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the AHB1 peripheral clock during Low Power (Sleep) mode\&. "
+.ti -1c
+.RI "void \fBRCC_AHB2PeriphClockLPModeCmd\fP (uint32_t RCC_AHB2Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the AHB2 peripheral clock during Low Power (Sleep) mode\&. "
+.ti -1c
+.RI "void \fBRCC_AHB3PeriphClockLPModeCmd\fP (uint32_t RCC_AHB3Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the AHB3 peripheral clock during Low Power (Sleep) mode\&. "
+.ti -1c
+.RI "void \fBRCC_APB1PeriphClockLPModeCmd\fP (uint32_t RCC_APB1Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the APB1 peripheral clock during Low Power (Sleep) mode\&. "
+.ti -1c
+.RI "void \fBRCC_APB2PeriphClockLPModeCmd\fP (uint32_t RCC_APB2Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the APB2 peripheral clock during Low Power (Sleep) mode\&. "
+.ti -1c
+.RI "void \fBRCC_ITConfig\fP (uint8_t RCC_IT, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified RCC interrupts\&. "
+.ti -1c
+.RI "FlagStatus \fBRCC_GetFlagStatus\fP (uint8_t RCC_FLAG)"
+.br
+.RI "Checks whether the specified RCC flag is set or not\&. "
+.ti -1c
+.RI "void \fBRCC_ClearFlag\fP (void)"
+.br
+.RI "Clears the RCC reset flags\&. The reset flags are: RCC_FLAG_PINRST, RCC_FLAG_PORRST, RCC_FLAG_SFTRST, RCC_FLAG_IWDGRST, RCC_FLAG_WWDGRST, RCC_FLAG_LPWRRST\&. "
+.ti -1c
+.RI "ITStatus \fBRCC_GetITStatus\fP (uint8_t RCC_IT)"
+.br
+.RI "Checks whether the specified RCC interrupt has occurred or not\&. "
+.ti -1c
+.RI "void \fBRCC_ClearITPendingBit\fP (uint8_t RCC_IT)"
+.br
+.RI "Clears the RCC's interrupt pending bits\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file provides firmware functions to manage the following functionalities of the Reset and clock control (RCC) peripheral: 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+MCD Application Team 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+V1\&.0\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+30-September-2011
+.IP "\(bu" 2
+Internal/external clocks, PLL, CSS and MCO configuration
+.IP "\(bu" 2
+System, AHB and APB busses clocks configuration
+.IP "\(bu" 2
+Peripheral clocks configuration
+.IP "\(bu" 2
+Interrupts and flags management
+.PP
+.RE
+.PP
+.PP
+.nf
+*               
+*          ===================================================================
+*                               RCC specific features
+*          ===================================================================
+*    
+*          After reset the device is running from Internal High Speed oscillator 
+*          (HSI 16MHz) with Flash 0 wait state, Flash prefetch buffer, D-Cache 
+*          and I-Cache are disabled, and all peripherals are off except internal
+*          SRAM, Flash and JTAG\&.
+*           - There is no prescaler on High speed (AHB) and Low speed (APB) busses;
+*             all peripherals mapped on these busses are running at HSI speed\&.
+*             - The clock for all peripherals is switched off, except the SRAM and FLASH\&.
+*           - All GPIOs are in input floating state, except the JTAG pins which
+*             are assigned to be used for debug purpose\&.
+*        
+*          Once the device started from reset, the user application has to:        
+*           - Configure the clock source to be used to drive the System clock
+*             (if the application needs higher frequency/performance)
+*           - Configure the System clock frequency and Flash settings  
+*           - Configure the AHB and APB busses prescalers
+*           - Enable the clock for the peripheral(s) to be used
+*           - Configure the clock source(s) for peripherals which clocks are not
+*             derived from the System clock (I2S, RTC, ADC, USB OTG FS/SDIO/RNG)      
+*                        
+*  .fi
+.PP
+.PP
+\fBAttention\fP
+.RS 4
+.RE
+.PP
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME\&. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS\&.
+.PP
+.SS "(C) COPYRIGHT 2011 STMicroelectronics"
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define HSE_STARTUP_TIMEOUT   ((uint16_t)0x0500)"
+
+.PP
+In the following line adjust the External High Speed oscillator (HSE) Startup Timeout value\&. Time out for HSE start up 
+.SS "#define HSE_VALUE   ((uint32_t)25000000)"
+Value of the External oscillator in Hz 
+.SS "#define HSI_VALUE   ((uint32_t)16000000)"
+Value of the Internal oscillator in Hz 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

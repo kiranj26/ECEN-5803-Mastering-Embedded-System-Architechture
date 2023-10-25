@@ -1,0 +1,439 @@
+\doxysection{drivers/stm32f4xx\+\_\+adc.h File Reference}
+\label{stm32f4xx__adc_8h}\index{drivers/stm32f4xx\_adc.h@{drivers/stm32f4xx\_adc.h}}
+
+
+This file contains all the functions prototypes for the ADC firmware library.  
+
+
+{\ttfamily \#include "{}stm32f4xx.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ ADC\+\_\+\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em ADC Init structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \textbf{ ADC\+\_\+\+Common\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em ADC Common Init structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+ALL\+\_\+\+PERIPH}(PERIPH)
+\item 
+\#define \textbf{ ADC\+\_\+\+Mode\+\_\+\+Independent}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+Dual\+Mode\+\_\+\+Reg\+Simult\+\_\+\+Injec\+Simult}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \textbf{ ADC\+\_\+\+Dual\+Mode\+\_\+\+Reg\+Simult\+\_\+\+Alter\+Trig}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \textbf{ ADC\+\_\+\+Dual\+Mode\+\_\+\+Injec\+Simult}~((uint32\+\_\+t)0x00000005)
+\item 
+\#define \textbf{ ADC\+\_\+\+Dual\+Mode\+\_\+\+Reg\+Simult}~((uint32\+\_\+t)0x00000006)
+\item 
+\#define \textbf{ ADC\+\_\+\+Dual\+Mode\+\_\+\+Interl}~((uint32\+\_\+t)0x00000007)
+\item 
+\#define \textbf{ ADC\+\_\+\+Dual\+Mode\+\_\+\+Alter\+Trig}~((uint32\+\_\+t)0x00000009)
+\item 
+\#define \textbf{ ADC\+\_\+\+Triple\+Mode\+\_\+\+Reg\+Simult\+\_\+\+Injec\+Simult}~((uint32\+\_\+t)0x00000011)
+\item 
+\#define \textbf{ ADC\+\_\+\+Triple\+Mode\+\_\+\+Reg\+Simult\+\_\+\+Alter\+Trig}~((uint32\+\_\+t)0x00000012)
+\item 
+\#define \textbf{ ADC\+\_\+\+Triple\+Mode\+\_\+\+Injec\+Simult}~((uint32\+\_\+t)0x00000015)
+\item 
+\#define \textbf{ ADC\+\_\+\+Triple\+Mode\+\_\+\+Reg\+Simult}~((uint32\+\_\+t)0x00000016)
+\item 
+\#define \textbf{ ADC\+\_\+\+Triple\+Mode\+\_\+\+Interl}~((uint32\+\_\+t)0x00000017)
+\item 
+\#define \textbf{ ADC\+\_\+\+Triple\+Mode\+\_\+\+Alter\+Trig}~((uint32\+\_\+t)0x00000019)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+MODE}(MODE)
+\item 
+\#define \textbf{ ADC\+\_\+\+Prescaler\+\_\+\+Div2}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+Prescaler\+\_\+\+Div4}~((uint32\+\_\+t)0x00010000)
+\item 
+\#define \textbf{ ADC\+\_\+\+Prescaler\+\_\+\+Div6}~((uint32\+\_\+t)0x00020000)
+\item 
+\#define \textbf{ ADC\+\_\+\+Prescaler\+\_\+\+Div8}~((uint32\+\_\+t)0x00030000)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+PRESCALER}(PRESCALER)
+\item 
+\#define \textbf{ ADC\+\_\+\+DMAAccess\+Mode\+\_\+\+Disabled}~((uint32\+\_\+t)0x00000000)     /$\ast$ DMA mode disabled $\ast$/
+\item 
+\#define \textbf{ ADC\+\_\+\+DMAAccess\+Mode\+\_\+1}~((uint32\+\_\+t)0x00004000)     /$\ast$ DMA mode 1 enabled (2 / 3 half-\/words one by one -\/ 1 then 2 then 3)$\ast$/
+\item 
+\#define \textbf{ ADC\+\_\+\+DMAAccess\+Mode\+\_\+2}~((uint32\+\_\+t)0x00008000)     /$\ast$ DMA mode 2 enabled (2 / 3 half-\/words by pairs -\/ 2\&1 then 1\&3 then 3\&2)$\ast$/
+\item 
+\#define \textbf{ ADC\+\_\+\+DMAAccess\+Mode\+\_\+3}~((uint32\+\_\+t)0x0000\+C000)     /$\ast$ DMA mode 3 enabled (2 / 3 bytes by pairs -\/ 2\&1 then 1\&3 then 3\&2) $\ast$/
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+DMA\+\_\+\+ACCESS\+\_\+\+MODE}(MODE)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+5\+Cycles}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+6\+Cycles}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+7\+Cycles}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+8\+Cycles}~((uint32\+\_\+t)0x00000300)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+9\+Cycles}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+10\+Cycles}~((uint32\+\_\+t)0x00000500)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+11\+Cycles}~((uint32\+\_\+t)0x00000600)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+12\+Cycles}~((uint32\+\_\+t)0x00000700)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+13\+Cycles}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+14\+Cycles}~((uint32\+\_\+t)0x00000900)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+15\+Cycles}~((uint32\+\_\+t)0x00000\+A00)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+16\+Cycles}~((uint32\+\_\+t)0x00000\+B00)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+17\+Cycles}~((uint32\+\_\+t)0x00000\+C00)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+18\+Cycles}~((uint32\+\_\+t)0x00000\+D00)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+19\+Cycles}~((uint32\+\_\+t)0x00000\+E00)
+\item 
+\#define \textbf{ ADC\+\_\+\+Two\+Sampling\+Delay\+\_\+20\+Cycles}~((uint32\+\_\+t)0x00000\+F00)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+SAMPLING\+\_\+\+DELAY}(DELAY)
+\item 
+\#define \textbf{ ADC\+\_\+\+Resolution\+\_\+12b}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+Resolution\+\_\+10b}~((uint32\+\_\+t)0x01000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+Resolution\+\_\+8b}~((uint32\+\_\+t)0x02000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+Resolution\+\_\+6b}~((uint32\+\_\+t)0x03000000)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+RESOLUTION}(RESOLUTION)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+Edge\+\_\+\+None}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+Edge\+\_\+\+Rising}~((uint32\+\_\+t)0x10000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+Edge\+\_\+\+Falling}~((uint32\+\_\+t)0x20000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+Edge\+\_\+\+Rising\+Falling}~((uint32\+\_\+t)0x30000000)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+EXT\+\_\+\+TRIG\+\_\+\+EDGE}(EDGE)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T1\+\_\+\+CC1}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T1\+\_\+\+CC2}~((uint32\+\_\+t)0x01000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T1\+\_\+\+CC3}~((uint32\+\_\+t)0x02000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T2\+\_\+\+CC2}~((uint32\+\_\+t)0x03000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T2\+\_\+\+CC3}~((uint32\+\_\+t)0x04000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T2\+\_\+\+CC4}~((uint32\+\_\+t)0x05000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T2\+\_\+\+TRGO}~((uint32\+\_\+t)0x06000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T3\+\_\+\+CC1}~((uint32\+\_\+t)0x07000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T3\+\_\+\+TRGO}~((uint32\+\_\+t)0x08000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T4\+\_\+\+CC4}~((uint32\+\_\+t)0x09000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T5\+\_\+\+CC1}~((uint32\+\_\+t)0x0\+A000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T5\+\_\+\+CC2}~((uint32\+\_\+t)0x0\+B000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T5\+\_\+\+CC3}~((uint32\+\_\+t)0x0\+C000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T8\+\_\+\+CC1}~((uint32\+\_\+t)0x0\+D000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+T8\+\_\+\+TRGO}~((uint32\+\_\+t)0x0\+E000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Conv\+\_\+\+Ext\+\_\+\+IT11}~((uint32\+\_\+t)0x0\+F000000)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+EXT\+\_\+\+TRIG}(REGTRIG)
+\item 
+\#define \textbf{ ADC\+\_\+\+Data\+Align\+\_\+\+Right}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+Data\+Align\+\_\+\+Left}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+DATA\+\_\+\+ALIGN}(ALIGN)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+0}~((uint8\+\_\+t)0x00)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+1}~((uint8\+\_\+t)0x01)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+2}~((uint8\+\_\+t)0x02)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+3}~((uint8\+\_\+t)0x03)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+4}~((uint8\+\_\+t)0x04)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+5}~((uint8\+\_\+t)0x05)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+6}~((uint8\+\_\+t)0x06)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+7}~((uint8\+\_\+t)0x07)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+8}~((uint8\+\_\+t)0x08)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+9}~((uint8\+\_\+t)0x09)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+10}~((uint8\+\_\+t)0x0A)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+11}~((uint8\+\_\+t)0x0B)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+12}~((uint8\+\_\+t)0x0C)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+13}~((uint8\+\_\+t)0x0D)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+14}~((uint8\+\_\+t)0x0E)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+15}~((uint8\+\_\+t)0x0F)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+16}~((uint8\+\_\+t)0x10)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+17}~((uint8\+\_\+t)0x11)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+18}~((uint8\+\_\+t)0x12)
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+\+Temp\+Sensor}~((uint8\+\_\+t)\textbf{ ADC\+\_\+\+Channel\+\_\+16})
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+\+Vrefint}~((uint8\+\_\+t)\textbf{ ADC\+\_\+\+Channel\+\_\+17})
+\item 
+\#define \textbf{ ADC\+\_\+\+Channel\+\_\+\+Vbat}~((uint8\+\_\+t)\textbf{ ADC\+\_\+\+Channel\+\_\+18})
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+CHANNEL}(CHANNEL)
+\item 
+\#define \textbf{ ADC\+\_\+\+Sample\+Time\+\_\+3\+Cycles}~((uint8\+\_\+t)0x00)
+\item 
+\#define \textbf{ ADC\+\_\+\+Sample\+Time\+\_\+15\+Cycles}~((uint8\+\_\+t)0x01)
+\item 
+\#define \textbf{ ADC\+\_\+\+Sample\+Time\+\_\+28\+Cycles}~((uint8\+\_\+t)0x02)
+\item 
+\#define \textbf{ ADC\+\_\+\+Sample\+Time\+\_\+56\+Cycles}~((uint8\+\_\+t)0x03)
+\item 
+\#define \textbf{ ADC\+\_\+\+Sample\+Time\+\_\+84\+Cycles}~((uint8\+\_\+t)0x04)
+\item 
+\#define \textbf{ ADC\+\_\+\+Sample\+Time\+\_\+112\+Cycles}~((uint8\+\_\+t)0x05)
+\item 
+\#define \textbf{ ADC\+\_\+\+Sample\+Time\+\_\+144\+Cycles}~((uint8\+\_\+t)0x06)
+\item 
+\#define \textbf{ ADC\+\_\+\+Sample\+Time\+\_\+480\+Cycles}~((uint8\+\_\+t)0x07)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+SAMPLE\+\_\+\+TIME}(TIME)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge\+\_\+\+None}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge\+\_\+\+Rising}~((uint32\+\_\+t)0x00100000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge\+\_\+\+Falling}~((uint32\+\_\+t)0x00200000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge\+\_\+\+Rising\+Falling}~((uint32\+\_\+t)0x00300000)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+EXT\+\_\+\+INJEC\+\_\+\+TRIG\+\_\+\+EDGE}(EDGE)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T1\+\_\+\+CC4}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T1\+\_\+\+TRGO}~((uint32\+\_\+t)0x00010000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T2\+\_\+\+CC1}~((uint32\+\_\+t)0x00020000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T2\+\_\+\+TRGO}~((uint32\+\_\+t)0x00030000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T3\+\_\+\+CC2}~((uint32\+\_\+t)0x00040000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T3\+\_\+\+CC4}~((uint32\+\_\+t)0x00050000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T4\+\_\+\+CC1}~((uint32\+\_\+t)0x00060000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T4\+\_\+\+CC2}~((uint32\+\_\+t)0x00070000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T4\+\_\+\+CC3}~((uint32\+\_\+t)0x00080000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T4\+\_\+\+TRGO}~((uint32\+\_\+t)0x00090000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T5\+\_\+\+CC4}~((uint32\+\_\+t)0x000\+A0000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T5\+\_\+\+TRGO}~((uint32\+\_\+t)0x000\+B0000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T8\+\_\+\+CC2}~((uint32\+\_\+t)0x000\+C0000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T8\+\_\+\+CC3}~((uint32\+\_\+t)0x000\+D0000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T8\+\_\+\+CC4}~((uint32\+\_\+t)0x000\+E0000)
+\item 
+\#define \textbf{ ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+Ext\+\_\+\+IT15}~((uint32\+\_\+t)0x000\+F0000)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+EXT\+\_\+\+INJEC\+\_\+\+TRIG}(INJTRIG)
+\item 
+\#define \textbf{ ADC\+\_\+\+Injected\+Channel\+\_\+1}~((uint8\+\_\+t)0x14)
+\item 
+\#define \textbf{ ADC\+\_\+\+Injected\+Channel\+\_\+2}~((uint8\+\_\+t)0x18)
+\item 
+\#define \textbf{ ADC\+\_\+\+Injected\+Channel\+\_\+3}~((uint8\+\_\+t)0x1C)
+\item 
+\#define \textbf{ ADC\+\_\+\+Injected\+Channel\+\_\+4}~((uint8\+\_\+t)0x20)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+INJECTED\+\_\+\+CHANNEL}(CHANNEL)
+\item 
+\#define \textbf{ ADC\+\_\+\+Analog\+Watchdog\+\_\+\+Single\+Reg\+Enable}~((uint32\+\_\+t)0x00800200)
+\item 
+\#define \textbf{ ADC\+\_\+\+Analog\+Watchdog\+\_\+\+Single\+Injec\+Enable}~((uint32\+\_\+t)0x00400200)
+\item 
+\#define \textbf{ ADC\+\_\+\+Analog\+Watchdog\+\_\+\+Single\+Reg\+Or\+Injec\+Enable}~((uint32\+\_\+t)0x00\+C00200)
+\item 
+\#define \textbf{ ADC\+\_\+\+Analog\+Watchdog\+\_\+\+All\+Reg\+Enable}~((uint32\+\_\+t)0x00800000)
+\item 
+\#define \textbf{ ADC\+\_\+\+Analog\+Watchdog\+\_\+\+All\+Injec\+Enable}~((uint32\+\_\+t)0x00400000)
+\item 
+\#define \textbf{ ADC\+\_\+\+Analog\+Watchdog\+\_\+\+All\+Reg\+All\+Injec\+Enable}~((uint32\+\_\+t)0x00\+C00000)
+\item 
+\#define \textbf{ ADC\+\_\+\+Analog\+Watchdog\+\_\+\+None}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+ANALOG\+\_\+\+WATCHDOG}(WATCHDOG)
+\item 
+\#define \textbf{ ADC\+\_\+\+IT\+\_\+\+EOC}~((uint16\+\_\+t)0x0205)
+\item 
+\#define \textbf{ ADC\+\_\+\+IT\+\_\+\+AWD}~((uint16\+\_\+t)0x0106)
+\item 
+\#define \textbf{ ADC\+\_\+\+IT\+\_\+\+JEOC}~((uint16\+\_\+t)0x0407)
+\item 
+\#define \textbf{ ADC\+\_\+\+IT\+\_\+\+OVR}~((uint16\+\_\+t)0x201A)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+IT}(IT)
+\item 
+\#define \textbf{ ADC\+\_\+\+FLAG\+\_\+\+AWD}~((uint8\+\_\+t)0x01)
+\item 
+\#define \textbf{ ADC\+\_\+\+FLAG\+\_\+\+EOC}~((uint8\+\_\+t)0x02)
+\item 
+\#define \textbf{ ADC\+\_\+\+FLAG\+\_\+\+JEOC}~((uint8\+\_\+t)0x04)
+\item 
+\#define \textbf{ ADC\+\_\+\+FLAG\+\_\+\+JSTRT}~((uint8\+\_\+t)0x08)
+\item 
+\#define \textbf{ ADC\+\_\+\+FLAG\+\_\+\+STRT}~((uint8\+\_\+t)0x10)
+\item 
+\#define \textbf{ ADC\+\_\+\+FLAG\+\_\+\+OVR}~((uint8\+\_\+t)0x20)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+CLEAR\+\_\+\+FLAG}(FLAG)~((((FLAG) \& (uint8\+\_\+t)0x\+C0) == 0x00) \&\& ((FLAG) != 0x00))
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+GET\+\_\+\+FLAG}(FLAG)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+THRESHOLD}(THRESHOLD)~((THRESHOLD) $<$= 0x\+FFF)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+OFFSET}(OFFSET)~((OFFSET) $<$= 0x\+FFF)
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+INJECTED\+\_\+\+LENGTH}(LENGTH)~(((LENGTH) $>$= 0x1) \&\& ((LENGTH) $<$= 0x4))
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+INJECTED\+\_\+\+RANK}(RANK)~(((RANK) $>$= 0x1) \&\& ((RANK) $<$= 0x4))
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+REGULAR\+\_\+\+LENGTH}(LENGTH)~(((LENGTH) $>$= 0x1) \&\& ((LENGTH) $<$= 0x10))
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+REGULAR\+\_\+\+RANK}(RANK)~(((RANK) $>$= 0x1) \&\& ((RANK) $<$= 0x10))
+\item 
+\#define \textbf{ IS\+\_\+\+ADC\+\_\+\+REGULAR\+\_\+\+DISC\+\_\+\+NUMBER}(NUMBER)~(((NUMBER) $>$= 0x1) \&\& ((NUMBER) $<$= 0x8))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ ADC\+\_\+\+De\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes all ADCs peripherals registers to their default reset values. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Init} (ADC\+\_\+\+Type\+Def $\ast$ADCx, \textbf{ ADC\+\_\+\+Init\+Type\+Def} $\ast$ADC\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the ADCx peripheral according to the specified parameters in the ADC\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Struct\+Init} (\textbf{ ADC\+\_\+\+Init\+Type\+Def} $\ast$ADC\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each ADC\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Common\+Init} (\textbf{ ADC\+\_\+\+Common\+Init\+Type\+Def} $\ast$ADC\+\_\+\+Common\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the ADCs peripherals according to the specified parameters in the ADC\+\_\+\+Common\+Init\+Struct. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Common\+Struct\+Init} (\textbf{ ADC\+\_\+\+Common\+Init\+Type\+Def} $\ast$ADC\+\_\+\+Common\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each ADC\+\_\+\+Common\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified ADC peripheral. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Analog\+Watchdog\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint32\+\_\+t ADC\+\_\+\+Analog\+Watchdog)
+\begin{DoxyCompactList}\small\item\em Enables or disables the analog watchdog on single/all regular or injected channels. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Analog\+Watchdog\+Thresholds\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint16\+\_\+t High\+Threshold, uint16\+\_\+t Low\+Threshold)
+\begin{DoxyCompactList}\small\item\em Configures the high and low thresholds of the analog watchdog. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Analog\+Watchdog\+Single\+Channel\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Channel)
+\begin{DoxyCompactList}\small\item\em Configures the analog watchdog guarded single channel. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Temp\+Sensor\+Vrefint\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the temperature sensor and Vrefint channels. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+VBATCmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the VBAT (Voltage Battery) channel. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Regular\+Channel\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Channel, uint8\+\_\+t Rank, uint8\+\_\+t ADC\+\_\+\+Sample\+Time)
+\begin{DoxyCompactList}\small\item\em Configures for the selected ADC regular channel its corresponding rank in the sequencer and its sample time. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Software\+Start\+Conv} (ADC\+\_\+\+Type\+Def $\ast$ADCx)
+\begin{DoxyCompactList}\small\item\em Enables the selected ADC software start conversion of the regular channels. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ ADC\+\_\+\+Get\+Software\+Start\+Conv\+Status} (ADC\+\_\+\+Type\+Def $\ast$ADCx)
+\begin{DoxyCompactList}\small\item\em Gets the selected ADC Software start regular conversion Status. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+EOCOn\+Each\+Regular\+Channel\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the EOC on each regular channel conversion. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Continuous\+Mode\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the ADC continuous conversion mode. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Disc\+Mode\+Channel\+Count\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t Number)
+\begin{DoxyCompactList}\small\item\em Configures the discontinuous mode for the selected ADC regular group channel. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Disc\+Mode\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the discontinuous mode on regular group channel for the specified ADC. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ ADC\+\_\+\+Get\+Conversion\+Value} (ADC\+\_\+\+Type\+Def $\ast$ADCx)
+\begin{DoxyCompactList}\small\item\em Returns the last ADCx conversion result data for regular channel. \end{DoxyCompactList}\item 
+uint32\+\_\+t \textbf{ ADC\+\_\+\+Get\+Multi\+Mode\+Conversion\+Value} (void)
+\begin{DoxyCompactList}\small\item\em Returns the last ADC1, ADC2 and ADC3 regular conversions results data in the selected multi mode. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+DMACmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified ADC DMA request. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+DMARequest\+After\+Last\+Transfer\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the ADC DMA request after last transfer (Single-\/\+ADC mode) ~\newline
+ \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Multi\+Mode\+DMARequest\+After\+Last\+Transfer\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the ADC DMA request after last transfer in multi ADC mode ~\newline
+ \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Injected\+Channel\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Channel, uint8\+\_\+t Rank, uint8\+\_\+t ADC\+\_\+\+Sample\+Time)
+\begin{DoxyCompactList}\small\item\em Configures for the selected ADC injected channel its corresponding rank in the sequencer and its sample time. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Injected\+Sequencer\+Length\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t Length)
+\begin{DoxyCompactList}\small\item\em Configures the sequencer length for injected channels. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Set\+Injected\+Offset} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Injected\+Channel, uint16\+\_\+t Offset)
+\begin{DoxyCompactList}\small\item\em Set the injected channels conversion value offset. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+External\+Trig\+Injected\+Conv\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint32\+\_\+t ADC\+\_\+\+External\+Trig\+Injec\+Conv)
+\begin{DoxyCompactList}\small\item\em Configures the ADCx external trigger for injected channels conversion. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+External\+Trig\+Injected\+Conv\+Edge\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint32\+\_\+t ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge)
+\begin{DoxyCompactList}\small\item\em Configures the ADCx external trigger edge for injected channels conversion. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Software\+Start\+Injected\+Conv} (ADC\+\_\+\+Type\+Def $\ast$ADCx)
+\begin{DoxyCompactList}\small\item\em Enables the selected ADC software start conversion of the injected channels. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ ADC\+\_\+\+Get\+Software\+Start\+Injected\+Conv\+Cmd\+Status} (ADC\+\_\+\+Type\+Def $\ast$ADCx)
+\begin{DoxyCompactList}\small\item\em Gets the selected ADC Software start injected conversion Status. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Auto\+Injected\+Conv\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the selected ADC automatic injected group conversion after regular one. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Injected\+Disc\+Mode\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the discontinuous mode for injected group channel for the specified ADC. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ ADC\+\_\+\+Get\+Injected\+Conversion\+Value} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Injected\+Channel)
+\begin{DoxyCompactList}\small\item\em Returns the ADC injected channel conversion result. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+ITConfig} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint16\+\_\+t ADC\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified ADC interrupts. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ ADC\+\_\+\+Get\+Flag\+Status} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified ADC flag is set or not. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Clear\+Flag} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the ADCx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \textbf{ ADC\+\_\+\+Get\+ITStatus} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint16\+\_\+t ADC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified ADC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Clear\+ITPending\+Bit} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint16\+\_\+t ADC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the ADCx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the ADC firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30-\/September-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

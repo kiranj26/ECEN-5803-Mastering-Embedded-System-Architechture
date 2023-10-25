@@ -1,0 +1,40 @@
+.TH "ADC_data_align" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_data_align \- ADC_data_align
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC_DataAlign_Right\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_DataAlign_Left\fP   ((uint32_t)0x00000800)"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_DATA_ALIGN\fP(ALIGN)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_DataAlign_Left   ((uint32_t)0x00000800)"
+
+.SS "#define ADC_DataAlign_Right   ((uint32_t)0x00000000)"
+
+.SS "#define IS_ADC_DATA_ALIGN(ALIGN)"
+\fBValue:\fP.PP
+.nf
+                                  (((ALIGN) == ADC_DataAlign_Right) || \\
+                                  ((ALIGN) == ADC_DataAlign_Left))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

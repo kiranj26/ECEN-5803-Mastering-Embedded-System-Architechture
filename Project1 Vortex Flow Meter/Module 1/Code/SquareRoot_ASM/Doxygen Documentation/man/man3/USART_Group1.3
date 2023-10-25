@@ -1,0 +1,280 @@
+.TH "USART_Group1" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_Group1 \- Initialization and Configuration functions
+.PP
+ \- Initialization and Configuration functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUSART_DeInit\fP (USART_TypeDef *USARTx)"
+.br
+.RI "Deinitializes the USARTx peripheral registers to their default reset values\&. "
+.ti -1c
+.RI "void \fBUSART_Init\fP (USART_TypeDef *USARTx, \fBUSART_InitTypeDef\fP *USART_InitStruct)"
+.br
+.RI "Initializes the USARTx peripheral according to the specified parameters in the USART_InitStruct \&. "
+.ti -1c
+.RI "void \fBUSART_StructInit\fP (\fBUSART_InitTypeDef\fP *USART_InitStruct)"
+.br
+.RI "Fills each USART_InitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBUSART_ClockInit\fP (USART_TypeDef *USARTx, \fBUSART_ClockInitTypeDef\fP *USART_ClockInitStruct)"
+.br
+.RI "Initializes the USARTx peripheral Clock according to the specified parameters in the USART_ClockInitStruct \&. "
+.ti -1c
+.RI "void \fBUSART_ClockStructInit\fP (\fBUSART_ClockInitTypeDef\fP *USART_ClockInitStruct)"
+.br
+.RI "Fills each USART_ClockInitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBUSART_Cmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified USART peripheral\&. "
+.ti -1c
+.RI "void \fBUSART_SetPrescaler\fP (USART_TypeDef *USARTx, uint8_t USART_Prescaler)"
+.br
+.RI "Sets the system clock prescaler\&. "
+.ti -1c
+.RI "void \fBUSART_OverSampling8Cmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's 8x oversampling mode\&. "
+.ti -1c
+.RI "void \fBUSART_OneBitMethodCmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's one bit sampling method\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Initialization and Configuration functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                  Initialization and Configuration functions
+ ===============================================================================  
+
+  This subsection provides a set of functions allowing to initialize the USART 
+  in asynchronous and in synchronous modes\&.
+   - For the asynchronous mode only these parameters can be configured: 
+        - Baud Rate
+        - Word Length 
+        - Stop Bit
+        - Parity: If the parity is enabled, then the MSB bit of the data written
+          in the data register is transmitted but is changed by the parity bit\&.
+          Depending on the frame length defined by the M bit (8-bits or 9-bits),
+          the possible USART frame formats are as listed in the following table:
+   +-------------------------------------------------------------+     
+   |   M bit |  PCE bit  |            USART frame                |
+   |---------------------|---------------------------------------|             
+   |    0    |    0      |    | SB | 8 bit data | STB |          |
+   |---------|-----------|---------------------------------------|  
+   |    0    |    1      |    | SB | 7 bit data | PB | STB |     |
+   |---------|-----------|---------------------------------------|  
+   |    1    |    0      |    | SB | 9 bit data | STB |          |
+   |---------|-----------|---------------------------------------|  
+   |    1    |    1      |    | SB | 8 bit data | PB | STB |     |
+   +-------------------------------------------------------------+            
+        - Hardware flow control
+        - Receiver/transmitter modes
+
+  The USART_Init() function follows the USART  asynchronous configuration procedure
+  (details for the procedure are available in reference manual (RM0090))\&.
+
+  - For the synchronous mode in addition to the asynchronous mode parameters these 
+    parameters should be also configured:
+        - USART Clock Enabled
+        - USART polarity
+        - USART phase
+        - USART LastBit
+  
+  These parameters can be configured using the USART_ClockInit() function\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void USART_ClockInit (USART_TypeDef * USARTx, \fBUSART_ClockInitTypeDef\fP * USART_ClockInitStruct)"
+
+.PP
+Initializes the USARTx peripheral Clock according to the specified parameters in the USART_ClockInitStruct \&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3 or 6 to select the USART peripheral\&. 
+.br
+\fIUSART_ClockInitStruct\fP pointer to a \fBUSART_ClockInitTypeDef\fP structure that contains the configuration information for the specified USART peripheral\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+The Smart Card and Synchronous modes are not available for UART4 and UART5\&. 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_ClockStructInit (\fBUSART_ClockInitTypeDef\fP * USART_ClockInitStruct)"
+
+.PP
+Fills each USART_ClockInitStruct member with its default value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSART_ClockInitStruct\fP pointer to a \fBUSART_ClockInitTypeDef\fP structure which will be initialized\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_Cmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified USART peripheral\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the USARTx peripheral\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_DeInit (USART_TypeDef * USARTx)"
+
+.PP
+Deinitializes the USARTx peripheral registers to their default reset values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_Init (USART_TypeDef * USARTx, \fBUSART_InitTypeDef\fP * USART_InitStruct)"
+
+.PP
+Initializes the USARTx peripheral according to the specified parameters in the USART_InitStruct \&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_InitStruct\fP pointer to a \fBUSART_InitTypeDef\fP structure that contains the configuration information for the specified USART peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_OneBitMethodCmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's one bit sampling method\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the USART one bit sampling method\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_OverSampling8Cmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's 8x oversampling mode\&. 
+.PP
+\fBNote\fP
+.RS 4
+This function has to be called before calling \fBUSART_Init()\fP function in order to have correct baudrate Divider value\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the USART 8x oversampling mode\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_SetPrescaler (USART_TypeDef * USARTx, uint8_t USART_Prescaler)"
+
+.PP
+Sets the system clock prescaler\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_Prescaler\fP specifies the prescaler clock\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+The function is used for IrDA mode with UART4 and UART5\&. 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_StructInit (\fBUSART_InitTypeDef\fP * USART_InitStruct)"
+
+.PP
+Fills each USART_InitStruct member with its default value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSART_InitStruct\fP pointer to a \fBUSART_InitTypeDef\fP structure which will be initialized\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

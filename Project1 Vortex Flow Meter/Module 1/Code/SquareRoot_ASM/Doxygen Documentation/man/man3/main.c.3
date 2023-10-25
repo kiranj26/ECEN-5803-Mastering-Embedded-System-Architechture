@@ -1,0 +1,102 @@
+.TH "src/main.c" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/main.c \- Square Root Approximation using Integer Approach - Project 1 Module 1\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "__asm int \fBmy_sqrt_int\fP (int x)"
+.br
+.RI "Compute the integer square root of a number using approximate bisection method\&. "
+.ti -1c
+.RI "__asm int \fBmy_sqrt_fixed_point\fP (int x)"
+.br
+.RI "Compute the square root of a number using approximate bisection method in Q16\&.16 number format\&. "
+.ti -1c
+.RI "int \fBmain\fP (void)"
+.br
+.RI "Application Entry Point\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Square Root Approximation using Integer Approach - Project 1 Module 1\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+Viraj Patel, Kiran jojare 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fCARM Cortex-M4 Instructions\fP 
+.PP
+PDF obtained from professor 'Approximate Square Root Bisection Method' 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "int main (void)"
+
+.PP
+Application Entry Point\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvoid\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+nothing 
+.RE
+.PP
+
+.SS "__asm int my_sqrt_fixed_point (int x)"
+
+.PP
+Compute the square root of a number using approximate bisection method in Q16\&.16 number format\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIint\fP x - The input integer to take the square root in Q16\&.16 number format\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The square root of the given number in Q16\&.16 format 
+.RE
+.PP
+
+.SS "__asm int my_sqrt_int (int x)"
+
+.PP
+Compute the integer square root of a number using approximate bisection method\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIint\fP x - The input integer to take the square root\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The integer square root of the given number\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

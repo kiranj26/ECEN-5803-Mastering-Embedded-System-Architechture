@@ -1,0 +1,111 @@
+.TH "drivers/uart.c" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/uart.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <platform\&.h>\fP
+.br
+\fC#include <uart\&.h>\fP
+.br
+\fC#include <STM32F4xx_RCC\&.h>\fP
+.br
+\fC#include <STM32F4xx_USART\&.h>\fP
+.br
+\fC#include <STM32F4xx_GPIO\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBuart_init\fP (uint32_t baud)"
+.br
+.RI "Initialises the UART controller\&. "
+.ti -1c
+.RI "void \fBuart_enable\fP (void)"
+.br
+.RI "Enables UART transmission and reception\&. "
+.ti -1c
+.RI "void \fBuart_print\fP (char *string)"
+.br
+.RI "Transmit a null terminated string\&. "
+.ti -1c
+.RI "void \fBuart_set_rx_callback\fP (void(*callback)(uint8_t))"
+.br
+.ti -1c
+.RI "void \fBuart_tx\fP (uint8_t c)"
+.br
+.RI "Transmit a single character\&. "
+.ti -1c
+.RI "uint8_t \fBuart_rx\fP (void)"
+.br
+.RI "Receive a single character\&. "
+.ti -1c
+.RI "void \fBUSART2_IRQHandler\fP (void)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void uart_enable (void)"
+
+.PP
+Enables UART transmission and reception\&. 
+.SS "void uart_init (uint32_t baud)"
+
+.PP
+Initialises the UART controller\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbaud\fP Baud rate to be used (symbols per second)\&. 
+.RE
+.PP
+
+.SS "void uart_print (char * str)"
+
+.PP
+Transmit a null terminated string\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP String to be sent\&. 
+.RE
+.PP
+
+.SS "uint8_t uart_rx (void)"
+
+.PP
+Receive a single character\&. 
+.PP
+\fBWarning\fP
+.RS 4
+This function blocks until a character is available\&. For a non-blocking receive, see \fBuart_set_rx_callback()\fP\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Received character\&. 
+.RE
+.PP
+
+.SS "void uart_set_rx_callback (void(*)(uint8_t) callback)"
+
+.SS "void uart_tx (uint8_t c)"
+
+.PP
+Transmit a single character\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIc\fP Character to be sent\&. 
+.RE
+.PP
+
+.SS "void USART2_IRQHandler (void)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

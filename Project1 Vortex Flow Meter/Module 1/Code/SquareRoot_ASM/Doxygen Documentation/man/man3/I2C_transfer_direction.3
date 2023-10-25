@@ -1,0 +1,40 @@
+.TH "I2C_transfer_direction" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_transfer_direction \- I2C_transfer_direction
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBI2C_Direction_Transmitter\fP   ((uint8_t)0x00)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Direction_Receiver\fP   ((uint8_t)0x01)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_DIRECTION\fP(DIRECTION)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define I2C_Direction_Receiver   ((uint8_t)0x01)"
+
+.SS "#define I2C_Direction_Transmitter   ((uint8_t)0x00)"
+
+.SS "#define IS_I2C_DIRECTION(DIRECTION)"
+\fBValue:\fP.PP
+.nf
+                                     (((DIRECTION) == I2C_Direction_Transmitter) || \\
+                                     ((DIRECTION) == I2C_Direction_Receiver))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

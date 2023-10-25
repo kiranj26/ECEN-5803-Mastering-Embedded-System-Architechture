@@ -1,0 +1,123 @@
+.TH "USART_Interrupt_definition" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_Interrupt_definition \- USART_Interrupt_definition
+.SH SYNOPSIS
+.br
+.PP
+.SS "Modules"
+
+.in +1c
+.ti -1c
+.RI "\fBUSART_Legacy\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBUSART_IT_PE\fP   ((uint16_t)0x0028)"
+.br
+.ti -1c
+.RI "#define \fBUSART_IT_TXE\fP   ((uint16_t)0x0727)"
+.br
+.ti -1c
+.RI "#define \fBUSART_IT_TC\fP   ((uint16_t)0x0626)"
+.br
+.ti -1c
+.RI "#define \fBUSART_IT_RXNE\fP   ((uint16_t)0x0525)"
+.br
+.ti -1c
+.RI "#define \fBUSART_IT_ORE_RX\fP   ((uint16_t)0x0325) /* In case interrupt is generated if the RXNEIE bit is set */"
+.br
+.ti -1c
+.RI "#define \fBUSART_IT_IDLE\fP   ((uint16_t)0x0424)"
+.br
+.ti -1c
+.RI "#define \fBUSART_IT_LBD\fP   ((uint16_t)0x0846)"
+.br
+.ti -1c
+.RI "#define \fBUSART_IT_CTS\fP   ((uint16_t)0x096A)"
+.br
+.ti -1c
+.RI "#define \fBUSART_IT_ERR\fP   ((uint16_t)0x0060)"
+.br
+.ti -1c
+.RI "#define \fBUSART_IT_ORE_ER\fP   ((uint16_t)0x0360) /* In case interrupt is generated if the EIE bit is set */"
+.br
+.ti -1c
+.RI "#define \fBUSART_IT_NE\fP   ((uint16_t)0x0260)"
+.br
+.ti -1c
+.RI "#define \fBUSART_IT_FE\fP   ((uint16_t)0x0160)"
+.br
+.ti -1c
+.RI "#define \fBIS_USART_CONFIG_IT\fP(IT)"
+.br
+.ti -1c
+.RI "#define \fBIS_USART_GET_IT\fP(IT)"
+.br
+.ti -1c
+.RI "#define \fBIS_USART_CLEAR_IT\fP(IT)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_USART_CLEAR_IT(IT)"
+\fBValue:\fP.PP
+.nf
+                               (((IT) == USART_IT_TC) || ((IT) == USART_IT_RXNE) || \\
+                               ((IT) == USART_IT_LBD) || ((IT) == USART_IT_CTS))
+.fi
+
+.SS "#define IS_USART_CONFIG_IT(IT)"
+\fBValue:\fP.PP
+.nf
+                                (((IT) == USART_IT_PE) || ((IT) == USART_IT_TXE) || \\
+                                ((IT) == USART_IT_TC) || ((IT) == USART_IT_RXNE) || \\
+                                ((IT) == USART_IT_IDLE) || ((IT) == USART_IT_LBD) || \\
+                                ((IT) == USART_IT_CTS) || ((IT) == USART_IT_ERR))
+.fi
+
+.SS "#define IS_USART_GET_IT(IT)"
+\fBValue:\fP.PP
+.nf
+                             (((IT) == USART_IT_PE) || ((IT) == USART_IT_TXE) || \\
+                             ((IT) == USART_IT_TC) || ((IT) == USART_IT_RXNE) || \\
+                             ((IT) == USART_IT_IDLE) || ((IT) == USART_IT_LBD) || \\
+                             ((IT) == USART_IT_CTS) || ((IT) == USART_IT_ORE) || \\
+                             ((IT) == USART_IT_ORE_RX) || ((IT) == USART_IT_ORE_ER) || \\
+                             ((IT) == USART_IT_NE) || ((IT) == USART_IT_FE))
+.fi
+
+.SS "#define USART_IT_CTS   ((uint16_t)0x096A)"
+
+.SS "#define USART_IT_ERR   ((uint16_t)0x0060)"
+
+.SS "#define USART_IT_FE   ((uint16_t)0x0160)"
+
+.SS "#define USART_IT_IDLE   ((uint16_t)0x0424)"
+
+.SS "#define USART_IT_LBD   ((uint16_t)0x0846)"
+
+.SS "#define USART_IT_NE   ((uint16_t)0x0260)"
+
+.SS "#define USART_IT_ORE_ER   ((uint16_t)0x0360) /* In case interrupt is generated if the EIE bit is set */"
+
+.SS "#define USART_IT_ORE_RX   ((uint16_t)0x0325) /* In case interrupt is generated if the RXNEIE bit is set */"
+
+.SS "#define USART_IT_PE   ((uint16_t)0x0028)"
+
+.SS "#define USART_IT_RXNE   ((uint16_t)0x0525)"
+
+.SS "#define USART_IT_TC   ((uint16_t)0x0626)"
+
+.SS "#define USART_IT_TXE   ((uint16_t)0x0727)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

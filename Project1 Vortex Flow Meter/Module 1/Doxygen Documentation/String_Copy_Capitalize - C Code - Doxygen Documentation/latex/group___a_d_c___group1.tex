@@ -1,0 +1,179 @@
+\doxysubsubsubsection{Initialization and Configuration functions}
+\label{group___a_d_c___group1}\index{Initialization and Configuration functions@{Initialization and Configuration functions}}
+
+
+Initialization and Configuration functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ ADC\+\_\+\+De\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes all ADCs peripherals registers to their default reset values. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Init} (ADC\+\_\+\+Type\+Def $\ast$ADCx, \textbf{ ADC\+\_\+\+Init\+Type\+Def} $\ast$ADC\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the ADCx peripheral according to the specified parameters in the ADC\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Struct\+Init} (\textbf{ ADC\+\_\+\+Init\+Type\+Def} $\ast$ADC\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each ADC\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Common\+Init} (\textbf{ ADC\+\_\+\+Common\+Init\+Type\+Def} $\ast$ADC\+\_\+\+Common\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the ADCs peripherals according to the specified parameters in the ADC\+\_\+\+Common\+Init\+Struct. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Common\+Struct\+Init} (\textbf{ ADC\+\_\+\+Common\+Init\+Type\+Def} $\ast$ADC\+\_\+\+Common\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each ADC\+\_\+\+Common\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified ADC peripheral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Initialization and Configuration functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                      Initialization and Configuration functions
+ ===============================================================================  
+  This section provides functions allowing to:
+   - Initialize and configure the ADC Prescaler
+   - ADC Conversion Resolution (12bit..6bit)
+   - Scan Conversion Mode (multichannels or one channel) for regular group
+   - ADC Continuous Conversion Mode (Continuous or Single conversion) for 
+     regular group
+   - External trigger Edge and source of regular group, 
+   - Converted data alignment (left or right)
+   - The number of ADC conversions that will be done using the sequencer for 
+     regular channel group
+   - Multi ADC mode selection
+   - Direct memory access mode selection for multi ADC mode  
+   - Delay between 2 sampling phases (used in dual or triple interleaved modes)
+   - Enable or disable the ADC peripheral\end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\label{group___a_d_c___group1_ga40882d399e3371755ed610c1134e634e} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!ADC\_Cmd@{ADC\_Cmd}}
+\index{ADC\_Cmd@{ADC\_Cmd}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_Cmd()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Cmd (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified ADC peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em New\+State} & new state of the ADCx peripheral. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group1_ga5803f6581a9cd7e90b6e637067102d94} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!ADC\_CommonInit@{ADC\_CommonInit}}
+\index{ADC\_CommonInit@{ADC\_CommonInit}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_CommonInit()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Common\+Init (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Common\+Init\+Type\+Def} $\ast$}]{ADC\+\_\+\+Common\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Initializes the ADCs peripherals according to the specified parameters in the ADC\+\_\+\+Common\+Init\+Struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADC\+\_\+\+Common\+Init\+Struct} & pointer to an \doxyref{ADC\+\_\+\+Common\+Init\+Type\+Def}{p.}{struct_a_d_c___common_init_type_def} structure that contains the configuration information for All ADCs peripherals. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group1_gad60a6414b4932c704f6f7a7c2963fa2a} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!ADC\_CommonStructInit@{ADC\_CommonStructInit}}
+\index{ADC\_CommonStructInit@{ADC\_CommonStructInit}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_CommonStructInit()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Common\+Struct\+Init (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Common\+Init\+Type\+Def} $\ast$}]{ADC\+\_\+\+Common\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Fills each ADC\+\_\+\+Common\+Init\+Struct member with its default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADC\+\_\+\+Common\+Init\+Struct} & pointer to an \doxyref{ADC\+\_\+\+Common\+Init\+Type\+Def}{p.}{struct_a_d_c___common_init_type_def} structure which will be initialized. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group1_ga1962afdd9eebe5c896bbba2e4f26fe09} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!ADC\_DeInit@{ADC\_DeInit}}
+\index{ADC\_DeInit@{ADC\_DeInit}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_DeInit()}
+{\footnotesize\ttfamily void ADC\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Deinitializes all ADCs peripherals registers to their default reset values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group1_gabbab6038cf8691404350625e477254f9} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!ADC\_Init@{ADC\_Init}}
+\index{ADC\_Init@{ADC\_Init}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_Init()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{\textbf{ ADC\+\_\+\+Init\+Type\+Def} $\ast$}]{ADC\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Initializes the ADCx peripheral according to the specified parameters in the ADC\+\_\+\+Init\+Struct. 
+
+\begin{DoxyNote}{Note}
+This function is used to configure the global features of the ADC ( Resolution and Data Alignment), however, the rest of the configuration parameters are specific to the regular channels group (scan mode activation, continuous mode activation, External trigger source and edge, number of conversion in the regular channels group sequencer). ~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em ADC\+\_\+\+Init\+Struct} & pointer to an \doxyref{ADC\+\_\+\+Init\+Type\+Def}{p.}{struct_a_d_c___init_type_def} structure that contains the configuration information for the specified ADC peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group1_ga6c6e754d1d0a98d56e465efaf73272ec} 
+\index{Initialization and Configuration functions@{Initialization and Configuration functions}!ADC\_StructInit@{ADC\_StructInit}}
+\index{ADC\_StructInit@{ADC\_StructInit}!Initialization and Configuration functions@{Initialization and Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_StructInit()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Struct\+Init (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Init\+Type\+Def} $\ast$}]{ADC\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Fills each ADC\+\_\+\+Init\+Struct member with its default value. 
+
+\begin{DoxyNote}{Note}
+This function is used to initialize the global features of the ADC ( Resolution and Data Alignment), however, the rest of the configuration parameters are specific to the regular channels group (scan mode activation, continuous mode activation, External trigger source and edge, number of conversion in the regular channels group sequencer). ~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ADC\+\_\+\+Init\+Struct} & pointer to an \doxyref{ADC\+\_\+\+Init\+Type\+Def}{p.}{struct_a_d_c___init_type_def} structure which will be initialized. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

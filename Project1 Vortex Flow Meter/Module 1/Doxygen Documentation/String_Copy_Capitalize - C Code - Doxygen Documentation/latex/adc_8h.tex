@@ -1,0 +1,860 @@
+\doxysection{drivers/adc.h File Reference}
+\label{adc_8h}\index{drivers/adc.h@{drivers/adc.h}}
+
+
+Internal analogue to digital converter (ADC) controller.  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+adc.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ \+\_\+\+ADC\+\_\+\+Init\+Type\+Def}
+\item 
+struct \textbf{ ADC\+\_\+\+Handle\+Type\+Def}
+\item 
+struct \textbf{ GPIO\+\_\+\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em GPIO Init structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \textbf{ Pin\+Map}
+\item 
+struct \textbf{ analogin\+\_\+s}
+\item 
+struct \textbf{ ADC\+\_\+\+Channel\+Conf\+Type\+Def}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ STM\+\_\+\+PIN\+\_\+\+DATA\+\_\+\+EXT}(MODE,  PUPD,  AFNUM,  CHANNEL,  INVERTED)~((int)(((INVERTED \& 0x01) $<$$<$ 15) $\vert$ ((CHANNEL \& 0x0F) $<$$<$ 11) $\vert$ ((AFNUM \& 0x0F) $<$$<$ 7) $\vert$ ((PUPD \& 0x07) $<$$<$ 4) $\vert$ ((MODE \& 0x0F) $<$$<$ 0)))
+\item 
+\#define \textbf{ STM\+\_\+\+MODE\+\_\+\+ANALOG}~(5)
+\item 
+\#define \textbf{ STM\+\_\+\+PIN\+\_\+\+CHANNEL}(X)~(((X) $>$$>$ 11) \& 0x0F)
+\item 
+\#define \textbf{ STM\+\_\+\+PIN\+\_\+\+MODE}(X)~(((X) $>$$>$ 0) \& 0x0F)
+\item 
+\#define \textbf{ STM\+\_\+\+PIN\+\_\+\+PUPD}(X)~(((X) $>$$>$ 4) \& 0x07)
+\item 
+\#define \textbf{ STM\+\_\+\+PIN\+\_\+\+AFNUM}(X)~(((X) $>$$>$ 7) \& 0x0F)
+\item 
+\#define \textbf{ STM\+\_\+\+PORT}(X)~(((uint32\+\_\+t)(X) $>$$>$ 4) \& 0xF)
+\item 
+\#define \textbf{ STM\+\_\+\+PIN}(X)~((uint32\+\_\+t)(X) \& 0xF)
+\item 
+\#define \textbf{ GPIO\+\_\+\+NOPULL}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ GPIO\+\_\+\+PULLUP}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \textbf{ GPIO\+\_\+\+PULLDOWN}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \textbf{ UNUSED}(x)~((void)(x))
+\item 
+\#define \textbf{ GPIO\+\_\+\+SPEED\+\_\+\+LOW}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ GPIO\+\_\+\+SPEED\+\_\+\+MEDIUM}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \textbf{ GPIO\+\_\+\+SPEED\+\_\+\+FAST}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \textbf{ GPIO\+\_\+\+SPEED\+\_\+\+HIGH}~((uint32\+\_\+t)0x00000003)
+\item 
+\#define \textbf{ GPIO\+\_\+\+MODE}~((uint32\+\_\+t)0x00000003)
+\item 
+\#define \textbf{ ADC\+\_\+\+CR1\+\_\+\+SCANCONV}(\+\_\+\+SCANCONV\+\_\+\+MODE\+\_\+)~((\+\_\+\+SCANCONV\+\_\+\+MODE\+\_\+) $<$$<$ 8)
+\item 
+\#define \textbf{ ADC\+\_\+\+SOFTWARE\+\_\+\+START}~((uint32\+\_\+t)ADC\+\_\+\+CR2\+\_\+\+EXTSEL + 1)
+\item 
+\#define \textbf{ ADC\+\_\+\+CR2\+\_\+\+CONTINUOUS}(\+\_\+\+CONTINUOUS\+\_\+\+MODE\+\_\+)~((\+\_\+\+CONTINUOUS\+\_\+\+MODE\+\_\+) $<$$<$ 1)
+\item 
+\#define \textbf{ ADC\+\_\+\+CR1\+\_\+\+DISCONTINUOUS}(\+\_\+\+NBR\+\_\+\+DISCONTINUOUSCONV\+\_\+)~(((\+\_\+\+NBR\+\_\+\+DISCONTINUOUSCONV\+\_\+) -\/ 1) $<$$<$ POSITION\+\_\+\+VAL(ADC\+\_\+\+CR1\+\_\+\+DISCNUM))
+\item 
+\#define \textbf{ ADC\+\_\+\+SQR1}(\+\_\+\+Nbr\+Of\+Conversion\+\_\+)~(((\+\_\+\+Nbr\+Of\+Conversion\+\_\+) -\/ (uint8\+\_\+t)1) $<$$<$ 20)
+\item 
+\#define \textbf{ ADC\+\_\+\+CR2\+\_\+\+DMACont\+Req}(\+\_\+\+DMACont\+Req\+\_\+\+MODE\+\_\+)~((\+\_\+\+DMACont\+Req\+\_\+\+MODE\+\_\+) $<$$<$ 9)
+\item 
+\#define \textbf{ ADC\+\_\+\+CR2\+\_\+\+EOCSelection}(\+\_\+\+EOCSelection\+\_\+\+MODE\+\_\+)~((\+\_\+\+EOCSelection\+\_\+\+MODE\+\_\+) $<$$<$ 10)
+\item 
+\#define \textbf{ ADC\+\_\+\+SMPR1}(\+\_\+\+SAMPLETIME\+\_\+,  \+\_\+\+CHANNELNB\+\_\+)~((\+\_\+\+SAMPLETIME\+\_\+) $<$$<$ (3 $\ast$ (((uint32\+\_\+t)((uint16\+\_\+t)(\+\_\+\+CHANNELNB\+\_\+))) -\/ 10)))
+\item 
+\#define \textbf{ ADC\+\_\+\+SMPR2}(\+\_\+\+SAMPLETIME\+\_\+,  \+\_\+\+CHANNELNB\+\_\+)~((\+\_\+\+SAMPLETIME\+\_\+) $<$$<$ (3 $\ast$ ((uint32\+\_\+t)((uint16\+\_\+t)(\+\_\+\+CHANNELNB\+\_\+)))))
+\item 
+\#define \textbf{ ADC\+\_\+\+SQR3\+\_\+\+RK}(\+\_\+\+CHANNELNB\+\_\+,  \+\_\+\+RANKNB\+\_\+)~(((uint32\+\_\+t)((uint16\+\_\+t)(\+\_\+\+CHANNELNB\+\_\+))) $<$$<$ (5 $\ast$ ((\+\_\+\+RANKNB\+\_\+) -\/ 1)))
+\item 
+\#define \textbf{ ADC\+\_\+\+SQR2\+\_\+\+RK}(\+\_\+\+CHANNELNB\+\_\+,  \+\_\+\+RANKNB\+\_\+)~(((uint32\+\_\+t)((uint16\+\_\+t)(\+\_\+\+CHANNELNB\+\_\+))) $<$$<$ (5 $\ast$ ((\+\_\+\+RANKNB\+\_\+) -\/ 7)))
+\item 
+\#define \textbf{ ADC\+\_\+\+SQR1\+\_\+\+RK}(\+\_\+\+CHANNELNB\+\_\+,  \+\_\+\+RANKNB\+\_\+)~(((uint32\+\_\+t)((uint16\+\_\+t)(\+\_\+\+CHANNELNB\+\_\+))) $<$$<$ (5 $\ast$ ((\+\_\+\+RANKNB\+\_\+) -\/ 13)))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+\+VBAT}~((uint32\+\_\+t)\textbf{ ADC\+\_\+\+CHANNEL\+\_\+18})
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+\+VREFINT}~((uint32\+\_\+t)\textbf{ ADC\+\_\+\+CHANNEL\+\_\+17})
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+\+TEMPSENSOR}~((uint32\+\_\+t)\textbf{ ADC\+\_\+\+CHANNEL\+\_\+16})
+\item 
+\#define \textbf{ ADC\+\_\+\+STAB\+\_\+\+DELAY\+\_\+\+US}~((uint32\+\_\+t) 3)
+\item 
+\#define \textbf{ \+\_\+\+IS\+\_\+\+BIT\+\_\+\+CLR}(REG,  BIT)~(((REG) \& (BIT)) == RESET)
+\item 
+\#define \textbf{ \+\_\+\+IS\+\_\+\+BIT\+\_\+\+SET}(REG,  BIT)~(((REG) \& (BIT)) != RESET)
+\item 
+\#define \textbf{ \+\_\+\+ADC\+\_\+\+GET\+\_\+\+FLAG}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\item 
+\#define \textbf{ RCC\+\_\+\+GPIOA\+\_\+\+CLK\+\_\+\+ENABLE}()
+\item 
+\#define \textbf{ RCC\+\_\+\+GPIOB\+\_\+\+CLK\+\_\+\+ENABLE}()
+\item 
+\#define \textbf{ RCC\+\_\+\+GPIOC\+\_\+\+CLK\+\_\+\+ENABLE}()
+\item 
+\#define \textbf{ RCC\+\_\+\+ADC1\+\_\+\+CLK\+\_\+\+ENABLE}()
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+0}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+1}~((uint32\+\_\+t)ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0)
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+2}~((uint32\+\_\+t)ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1)
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+3}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+4}~((uint32\+\_\+t)ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2)
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+5}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+6}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+7}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+8}~((uint32\+\_\+t)ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3)
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+9}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+10}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+11}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+12}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+13}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+14}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+15}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+16}~((uint32\+\_\+t)ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+4)
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+17}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+4 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))
+\item 
+\#define \textbf{ ADC\+\_\+\+CHANNEL\+\_\+18}~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+4 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ HAL\+\_\+\+Lock\+Type\+Def} \{ \textbf{ HAL\+\_\+\+UNLOCKED} = 0x00
+, \textbf{ HAL\+\_\+\+LOCKED} = 0x01
+ \}
+\item 
+enum \textbf{ HAL\+\_\+\+ADC\+\_\+\+State\+Type\+Def} \{ \newline
+\textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+RESET} = 0x00
+, \textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+READY} = 0x01
+, \textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+BUSY} = 0x02
+, \textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+REG} = 0x12
+, \newline
+\textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+INJ} = 0x22
+, \textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+INJ\+\_\+\+REG} = 0x32
+, \textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+TIMEOUT} = 0x03
+, \textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+ERROR} = 0x04
+, \newline
+\textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+EOC} = 0x05
+, \textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+EOC\+\_\+\+REG} = 0x15
+, \textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+EOC\+\_\+\+INJ} = 0x25
+, \textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+EOC\+\_\+\+INJ\+\_\+\+REG} = 0x35
+, \newline
+\textbf{ HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+AWD} = 0x06
+ \}
+\item 
+enum \textbf{ Port\+Name} \{ \newline
+\textbf{ PortA} = 0
+, \textbf{ PortB} = 1
+, \textbf{ PortC} = 2
+, \textbf{ PortD} = 3
+, \newline
+\textbf{ PortE} = 4
+, \textbf{ PortH} = 7
+ \}
+\item 
+enum \textbf{ ADCName} \{ \textbf{ ADC\+\_\+1} = (int)ADC1\+\_\+\+BASE
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \textbf{ pinmap\+\_\+function} (\textbf{ Pin} pin)
+\begin{DoxyCompactList}\small\item\em Initializes the analogue to digital converter, and configures the appropriate GPIO pin. \end{DoxyCompactList}\item 
+void \textbf{ analogin\+\_\+init} (\textbf{ analogin\+\_\+s} $\ast$obj, \textbf{ Pin} pin)
+\item 
+uint32\+\_\+t \textbf{ pinmap\+\_\+peripheral} (\textbf{ Pin} pin)
+\item 
+uint32\+\_\+t \textbf{ pinmap\+\_\+find\+\_\+peripheral} (\textbf{ Pin} pin)
+\item 
+void \textbf{ adc\+\_\+init} (\textbf{ Pin} pin)
+\item 
+void \textbf{ pinmap\+\_\+pinout} (\textbf{ Pin} pin)
+\item 
+void \textbf{ pin\+\_\+function} (\textbf{ Pin} pin, int data)
+\item 
+void \textbf{ \+\_\+\+GPIO\+\_\+\+Init} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, \textbf{ GPIO\+\_\+\+Init\+Type\+Def} $\ast$\textbf{ GPIO\+\_\+\+Init})
+\item 
+void \textbf{ \+\_\+\+ADC\+\_\+\+Init} (\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$hadc)
+\item 
+void \textbf{ \+\_\+\+ADC\+\_\+\+Config\+Channel} (\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$hadc, \textbf{ ADC\+\_\+\+Channel\+Conf\+Type\+Def} $\ast$s\+Config)
+\item 
+void \textbf{ \+\_\+\+ADC\+\_\+\+Start} (\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$hadc)
+\item 
+int \textbf{ \+\_\+\+ADC\+\_\+\+Poll\+For\+Conversion} (\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$hadc, uint32\+\_\+t Timeout)
+\item 
+uint32\+\_\+t \textbf{ \+\_\+\+ADC\+\_\+\+Get\+Value} (\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$hadc)
+\item 
+uint16\+\_\+t \textbf{ \+\_\+adc\+\_\+read} (\textbf{ analogin\+\_\+s} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Reads the current value of the ADC. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ adc\+\_\+read} (\textbf{ Pin} pin)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Internal analogue to digital converter (ADC) controller. 
+
+\begin{DoxyCopyright}{Copyright}
+ARM University Program \copyright{} ARM Ltd 2014. 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\label{adc_8h_a97875f7afa7f703dbcb6ed63375de2eb} 
+\index{adc.h@{adc.h}!\_ADC\_GET\_FLAG@{\_ADC\_GET\_FLAG}}
+\index{\_ADC\_GET\_FLAG@{\_ADC\_GET\_FLAG}!adc.h@{adc.h}}
+\doxysubsubsection{\_ADC\_GET\_FLAG}
+{\footnotesize\ttfamily \#define \+\_\+\+ADC\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))}
+
+\label{adc_8h_a38260493d04fc484f0dd70ebebbf21c2} 
+\index{adc.h@{adc.h}!\_IS\_BIT\_CLR@{\_IS\_BIT\_CLR}}
+\index{\_IS\_BIT\_CLR@{\_IS\_BIT\_CLR}!adc.h@{adc.h}}
+\doxysubsubsection{\_IS\_BIT\_CLR}
+{\footnotesize\ttfamily \#define \+\_\+\+IS\+\_\+\+BIT\+\_\+\+CLR(\begin{DoxyParamCaption}\item[{}]{REG,  }\item[{}]{BIT }\end{DoxyParamCaption})~(((REG) \& (BIT)) == RESET)}
+
+\label{adc_8h_abee109543891f7835477f20640f1d2ff} 
+\index{adc.h@{adc.h}!\_IS\_BIT\_SET@{\_IS\_BIT\_SET}}
+\index{\_IS\_BIT\_SET@{\_IS\_BIT\_SET}!adc.h@{adc.h}}
+\doxysubsubsection{\_IS\_BIT\_SET}
+{\footnotesize\ttfamily \#define \+\_\+\+IS\+\_\+\+BIT\+\_\+\+SET(\begin{DoxyParamCaption}\item[{}]{REG,  }\item[{}]{BIT }\end{DoxyParamCaption})~(((REG) \& (BIT)) != RESET)}
+
+\label{adc_8h_a3c5075aee5af4eae02f1a72d6216199c} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_0@{ADC\_CHANNEL\_0}}
+\index{ADC\_CHANNEL\_0@{ADC\_CHANNEL\_0}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_0}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+0~((uint32\+\_\+t)0x00000000)}
+
+\label{adc_8h_aeb119201733a871c94971c51843ffaac} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_1@{ADC\_CHANNEL\_1}}
+\index{ADC\_CHANNEL\_1@{ADC\_CHANNEL\_1}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_1}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+1~((uint32\+\_\+t)ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0)}
+
+\label{adc_8h_aa55df8c97225d32b495959896897567c} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_10@{ADC\_CHANNEL\_10}}
+\index{ADC\_CHANNEL\_10@{ADC\_CHANNEL\_10}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_10}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+10~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1))}
+
+\label{adc_8h_af36361a33c07b04f8ab1d58d232bc434} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_11@{ADC\_CHANNEL\_11}}
+\index{ADC\_CHANNEL\_11@{ADC\_CHANNEL\_11}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_11}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+11~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))}
+
+\label{adc_8h_ad5ff4f4f0e5f6f9ffbdfb6f4cbc3a6e0} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_12@{ADC\_CHANNEL\_12}}
+\index{ADC\_CHANNEL\_12@{ADC\_CHANNEL\_12}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_12}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+12~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2))}
+
+\label{adc_8h_ad7550270d90a1a12b00cd9f8ad9f1fc2} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_13@{ADC\_CHANNEL\_13}}
+\index{ADC\_CHANNEL\_13@{ADC\_CHANNEL\_13}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_13}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+13~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))}
+
+\label{adc_8h_a9caff32bcda5dd83f662bf398ab14d36} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_14@{ADC\_CHANNEL\_14}}
+\index{ADC\_CHANNEL\_14@{ADC\_CHANNEL\_14}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_14}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+14~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1))}
+
+\label{adc_8h_a66f41aad197a6de160dd8958c90653a2} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_15@{ADC\_CHANNEL\_15}}
+\index{ADC\_CHANNEL\_15@{ADC\_CHANNEL\_15}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_15}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+15~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))}
+
+\label{adc_8h_a7892590f524e7356deb1e513bbc0cdaf} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_16@{ADC\_CHANNEL\_16}}
+\index{ADC\_CHANNEL\_16@{ADC\_CHANNEL\_16}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_16}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+16~((uint32\+\_\+t)ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+4)}
+
+\label{adc_8h_af7760a480f79c62d19260291f8afb6e1} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_17@{ADC\_CHANNEL\_17}}
+\index{ADC\_CHANNEL\_17@{ADC\_CHANNEL\_17}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_17}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+17~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+4 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))}
+
+\label{adc_8h_a30fc8e77b4c89d3ea0609cfbc7fc90fd} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_18@{ADC\_CHANNEL\_18}}
+\index{ADC\_CHANNEL\_18@{ADC\_CHANNEL\_18}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_18}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+18~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+4 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1))}
+
+\label{adc_8h_ad576132ebd78a3429be34f44e474c914} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_2@{ADC\_CHANNEL\_2}}
+\index{ADC\_CHANNEL\_2@{ADC\_CHANNEL\_2}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_2}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+2~((uint32\+\_\+t)ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1)}
+
+\label{adc_8h_a56dba5d35f1f7bcad41e4f9a7da3b125} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_3@{ADC\_CHANNEL\_3}}
+\index{ADC\_CHANNEL\_3@{ADC\_CHANNEL\_3}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_3}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+3~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))}
+
+\label{adc_8h_a66f19737ad81a0a62eb97854d0e41a54} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_4@{ADC\_CHANNEL\_4}}
+\index{ADC\_CHANNEL\_4@{ADC\_CHANNEL\_4}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_4}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+4~((uint32\+\_\+t)ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2)}
+
+\label{adc_8h_a716f2836f655c753c629de439ce50ecf} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_5@{ADC\_CHANNEL\_5}}
+\index{ADC\_CHANNEL\_5@{ADC\_CHANNEL\_5}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_5}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+5~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))}
+
+\label{adc_8h_a418f0223ea88773157638097391716a5} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_6@{ADC\_CHANNEL\_6}}
+\index{ADC\_CHANNEL\_6@{ADC\_CHANNEL\_6}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_6}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+6~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1))}
+
+\label{adc_8h_a03b8138c2d87274f94ba675a7e18e666} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_7@{ADC\_CHANNEL\_7}}
+\index{ADC\_CHANNEL\_7@{ADC\_CHANNEL\_7}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_7}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+7~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+2 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+1 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))}
+
+\label{adc_8h_ab0917f6b66213f33f2e2ea8781df5aa9} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_8@{ADC\_CHANNEL\_8}}
+\index{ADC\_CHANNEL\_8@{ADC\_CHANNEL\_8}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_8}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+8~((uint32\+\_\+t)ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3)}
+
+\label{adc_8h_a95f485ecc05187c3d475238a88beef1c} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_9@{ADC\_CHANNEL\_9}}
+\index{ADC\_CHANNEL\_9@{ADC\_CHANNEL\_9}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_9}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+9~((uint32\+\_\+t)(ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+3 $\vert$ ADC\+\_\+\+CR1\+\_\+\+AWDCH\+\_\+0))}
+
+\label{adc_8h_a8f0da1e8fa8504c92a368f6eb8e229b3} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_TEMPSENSOR@{ADC\_CHANNEL\_TEMPSENSOR}}
+\index{ADC\_CHANNEL\_TEMPSENSOR@{ADC\_CHANNEL\_TEMPSENSOR}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_TEMPSENSOR}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+\+TEMPSENSOR~((uint32\+\_\+t)\textbf{ ADC\+\_\+\+CHANNEL\+\_\+16})}
+
+\label{adc_8h_a60210f1e9305301dea9e42afedd9093f} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_VBAT@{ADC\_CHANNEL\_VBAT}}
+\index{ADC\_CHANNEL\_VBAT@{ADC\_CHANNEL\_VBAT}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_VBAT}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+\+VBAT~((uint32\+\_\+t)\textbf{ ADC\+\_\+\+CHANNEL\+\_\+18})}
+
+\label{adc_8h_a2647a044275a295693e8fb01db3172f9} 
+\index{adc.h@{adc.h}!ADC\_CHANNEL\_VREFINT@{ADC\_CHANNEL\_VREFINT}}
+\index{ADC\_CHANNEL\_VREFINT@{ADC\_CHANNEL\_VREFINT}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CHANNEL\_VREFINT}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+\+VREFINT~((uint32\+\_\+t)\textbf{ ADC\+\_\+\+CHANNEL\+\_\+17})}
+
+\label{adc_8h_a5b8b6fe1d24684616ccf43b8e5e0ef23} 
+\index{adc.h@{adc.h}!ADC\_CR1\_DISCONTINUOUS@{ADC\_CR1\_DISCONTINUOUS}}
+\index{ADC\_CR1\_DISCONTINUOUS@{ADC\_CR1\_DISCONTINUOUS}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CR1\_DISCONTINUOUS}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CR1\+\_\+\+DISCONTINUOUS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+NBR\+\_\+\+DISCONTINUOUSCONV\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+NBR\+\_\+\+DISCONTINUOUSCONV\+\_\+) -\/ 1) $<$$<$ POSITION\+\_\+\+VAL(ADC\+\_\+\+CR1\+\_\+\+DISCNUM))}
+
+\label{adc_8h_ad46aba92287da828c570fab3599e38c2} 
+\index{adc.h@{adc.h}!ADC\_CR1\_SCANCONV@{ADC\_CR1\_SCANCONV}}
+\index{ADC\_CR1\_SCANCONV@{ADC\_CR1\_SCANCONV}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CR1\_SCANCONV}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CR1\+\_\+\+SCANCONV(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+SCANCONV\+\_\+\+MODE\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+SCANCONV\+\_\+\+MODE\+\_\+) $<$$<$ 8)}
+
+\label{adc_8h_ae92924f248b2fd7693ce648275a8087c} 
+\index{adc.h@{adc.h}!ADC\_CR2\_CONTINUOUS@{ADC\_CR2\_CONTINUOUS}}
+\index{ADC\_CR2\_CONTINUOUS@{ADC\_CR2\_CONTINUOUS}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CR2\_CONTINUOUS}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CR2\+\_\+\+CONTINUOUS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+CONTINUOUS\+\_\+\+MODE\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+CONTINUOUS\+\_\+\+MODE\+\_\+) $<$$<$ 1)}
+
+\label{adc_8h_a93bf2d0e4b9f98b83ee48be918e9c940} 
+\index{adc.h@{adc.h}!ADC\_CR2\_DMAContReq@{ADC\_CR2\_DMAContReq}}
+\index{ADC\_CR2\_DMAContReq@{ADC\_CR2\_DMAContReq}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CR2\_DMAContReq}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CR2\+\_\+\+DMACont\+Req(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+DMACont\+Req\+\_\+\+MODE\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+DMACont\+Req\+\_\+\+MODE\+\_\+) $<$$<$ 9)}
+
+\label{adc_8h_aa6514c197b4d16b3d08938cdad573ef5} 
+\index{adc.h@{adc.h}!ADC\_CR2\_EOCSelection@{ADC\_CR2\_EOCSelection}}
+\index{ADC\_CR2\_EOCSelection@{ADC\_CR2\_EOCSelection}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_CR2\_EOCSelection}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CR2\+\_\+\+EOCSelection(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+EOCSelection\+\_\+\+MODE\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+EOCSelection\+\_\+\+MODE\+\_\+) $<$$<$ 10)}
+
+\label{adc_8h_a29f7414128fbbdb81db6ea6ede449f4b} 
+\index{adc.h@{adc.h}!ADC\_SMPR1@{ADC\_SMPR1}}
+\index{ADC\_SMPR1@{ADC\_SMPR1}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_SMPR1}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+SMPR1(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+SAMPLETIME\+\_\+,  }\item[{}]{\+\_\+\+CHANNELNB\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+SAMPLETIME\+\_\+) $<$$<$ (3 $\ast$ (((uint32\+\_\+t)((uint16\+\_\+t)(\+\_\+\+CHANNELNB\+\_\+))) -\/ 10)))}
+
+\label{adc_8h_aeb66714538d978d4d336a4a6ef0d58bc} 
+\index{adc.h@{adc.h}!ADC\_SMPR2@{ADC\_SMPR2}}
+\index{ADC\_SMPR2@{ADC\_SMPR2}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_SMPR2}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+SMPR2(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+SAMPLETIME\+\_\+,  }\item[{}]{\+\_\+\+CHANNELNB\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+SAMPLETIME\+\_\+) $<$$<$ (3 $\ast$ ((uint32\+\_\+t)((uint16\+\_\+t)(\+\_\+\+CHANNELNB\+\_\+)))))}
+
+\label{adc_8h_a349ec6a1c2a362fba718cbfd068e50dc} 
+\index{adc.h@{adc.h}!ADC\_SOFTWARE\_START@{ADC\_SOFTWARE\_START}}
+\index{ADC\_SOFTWARE\_START@{ADC\_SOFTWARE\_START}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_SOFTWARE\_START}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+SOFTWARE\+\_\+\+START~((uint32\+\_\+t)ADC\+\_\+\+CR2\+\_\+\+EXTSEL + 1)}
+
+\label{adc_8h_a1958741688a480069df9ab5e15be93ca} 
+\index{adc.h@{adc.h}!ADC\_SQR1@{ADC\_SQR1}}
+\index{ADC\_SQR1@{ADC\_SQR1}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_SQR1}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+SQR1(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+Nbr\+Of\+Conversion\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+Nbr\+Of\+Conversion\+\_\+) -\/ (uint8\+\_\+t)1) $<$$<$ 20)}
+
+\label{adc_8h_a89869cd79b14d222a9b235bd150fc512} 
+\index{adc.h@{adc.h}!ADC\_SQR1\_RK@{ADC\_SQR1\_RK}}
+\index{ADC\_SQR1\_RK@{ADC\_SQR1\_RK}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_SQR1\_RK}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+SQR1\+\_\+\+RK(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+CHANNELNB\+\_\+,  }\item[{}]{\+\_\+\+RANKNB\+\_\+ }\end{DoxyParamCaption})~(((uint32\+\_\+t)((uint16\+\_\+t)(\+\_\+\+CHANNELNB\+\_\+))) $<$$<$ (5 $\ast$ ((\+\_\+\+RANKNB\+\_\+) -\/ 13)))}
+
+\label{adc_8h_ad07a38a5b6d28f23ecbe027222f59bd0} 
+\index{adc.h@{adc.h}!ADC\_SQR2\_RK@{ADC\_SQR2\_RK}}
+\index{ADC\_SQR2\_RK@{ADC\_SQR2\_RK}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_SQR2\_RK}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+SQR2\+\_\+\+RK(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+CHANNELNB\+\_\+,  }\item[{}]{\+\_\+\+RANKNB\+\_\+ }\end{DoxyParamCaption})~(((uint32\+\_\+t)((uint16\+\_\+t)(\+\_\+\+CHANNELNB\+\_\+))) $<$$<$ (5 $\ast$ ((\+\_\+\+RANKNB\+\_\+) -\/ 7)))}
+
+\label{adc_8h_a173aa2d3480ddaac12fe6a853bead899} 
+\index{adc.h@{adc.h}!ADC\_SQR3\_RK@{ADC\_SQR3\_RK}}
+\index{ADC\_SQR3\_RK@{ADC\_SQR3\_RK}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_SQR3\_RK}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+SQR3\+\_\+\+RK(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+CHANNELNB\+\_\+,  }\item[{}]{\+\_\+\+RANKNB\+\_\+ }\end{DoxyParamCaption})~(((uint32\+\_\+t)((uint16\+\_\+t)(\+\_\+\+CHANNELNB\+\_\+))) $<$$<$ (5 $\ast$ ((\+\_\+\+RANKNB\+\_\+) -\/ 1)))}
+
+\label{adc_8h_ad0d1562099d9e378dd1d33b3519cd0c2} 
+\index{adc.h@{adc.h}!ADC\_STAB\_DELAY\_US@{ADC\_STAB\_DELAY\_US}}
+\index{ADC\_STAB\_DELAY\_US@{ADC\_STAB\_DELAY\_US}!adc.h@{adc.h}}
+\doxysubsubsection{ADC\_STAB\_DELAY\_US}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+STAB\+\_\+\+DELAY\+\_\+\+US~((uint32\+\_\+t) 3)}
+
+\label{adc_8h_a9f30425211b75e4ab36c4e7cbea06a41} 
+\index{adc.h@{adc.h}!GPIO\_MODE@{GPIO\_MODE}}
+\index{GPIO\_MODE@{GPIO\_MODE}!adc.h@{adc.h}}
+\doxysubsubsection{GPIO\_MODE}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+MODE~((uint32\+\_\+t)0x00000003)}
+
+\label{adc_8h_a5c2862579882c1cc64e36d38fbd07a4c} 
+\index{adc.h@{adc.h}!GPIO\_NOPULL@{GPIO\_NOPULL}}
+\index{GPIO\_NOPULL@{GPIO\_NOPULL}!adc.h@{adc.h}}
+\doxysubsubsection{GPIO\_NOPULL}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+NOPULL~((uint32\+\_\+t)0x00000000)}
+
+No Pull-\/up or Pull-\/down activation ~\newline
+ \label{adc_8h_a75d958d0410c36da7f27d1f4f5c36c14} 
+\index{adc.h@{adc.h}!GPIO\_PULLDOWN@{GPIO\_PULLDOWN}}
+\index{GPIO\_PULLDOWN@{GPIO\_PULLDOWN}!adc.h@{adc.h}}
+\doxysubsubsection{GPIO\_PULLDOWN}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+PULLDOWN~((uint32\+\_\+t)0x00000002)}
+
+Pull-\/down activation ~\newline
+ \label{adc_8h_ae689bc8f5c42d6df7bd54a8dd372e072} 
+\index{adc.h@{adc.h}!GPIO\_PULLUP@{GPIO\_PULLUP}}
+\index{GPIO\_PULLUP@{GPIO\_PULLUP}!adc.h@{adc.h}}
+\doxysubsubsection{GPIO\_PULLUP}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+PULLUP~((uint32\+\_\+t)0x00000001)}
+
+Pull-\/up activation ~\newline
+ \label{adc_8h_ac1b1830b902c29ae791caa033d14202c} 
+\index{adc.h@{adc.h}!GPIO\_SPEED\_FAST@{GPIO\_SPEED\_FAST}}
+\index{GPIO\_SPEED\_FAST@{GPIO\_SPEED\_FAST}!adc.h@{adc.h}}
+\doxysubsubsection{GPIO\_SPEED\_FAST}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+SPEED\+\_\+\+FAST~((uint32\+\_\+t)0x00000002)}
+
+Fast speed ~\newline
+ \label{adc_8h_ad693110177bf2e34c5431555c6977e8c} 
+\index{adc.h@{adc.h}!GPIO\_SPEED\_HIGH@{GPIO\_SPEED\_HIGH}}
+\index{GPIO\_SPEED\_HIGH@{GPIO\_SPEED\_HIGH}!adc.h@{adc.h}}
+\doxysubsubsection{GPIO\_SPEED\_HIGH}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+SPEED\+\_\+\+HIGH~((uint32\+\_\+t)0x00000003)}
+
+High speed ~\newline
+ \label{adc_8h_a5510b387afb7ec2117b5d4207889163c} 
+\index{adc.h@{adc.h}!GPIO\_SPEED\_LOW@{GPIO\_SPEED\_LOW}}
+\index{GPIO\_SPEED\_LOW@{GPIO\_SPEED\_LOW}!adc.h@{adc.h}}
+\doxysubsubsection{GPIO\_SPEED\_LOW}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+SPEED\+\_\+\+LOW~((uint32\+\_\+t)0x00000000)}
+
+Low speed ~\newline
+ \label{adc_8h_a44a0eb2335a21858efbbb1557ce8d5e5} 
+\index{adc.h@{adc.h}!GPIO\_SPEED\_MEDIUM@{GPIO\_SPEED\_MEDIUM}}
+\index{GPIO\_SPEED\_MEDIUM@{GPIO\_SPEED\_MEDIUM}!adc.h@{adc.h}}
+\doxysubsubsection{GPIO\_SPEED\_MEDIUM}
+{\footnotesize\ttfamily \#define GPIO\+\_\+\+SPEED\+\_\+\+MEDIUM~((uint32\+\_\+t)0x00000001)}
+
+Medium speed ~\newline
+ \label{adc_8h_a878af765c3ec91abd7a375b6565e0ed6} 
+\index{adc.h@{adc.h}!RCC\_ADC1\_CLK\_ENABLE@{RCC\_ADC1\_CLK\_ENABLE}}
+\index{RCC\_ADC1\_CLK\_ENABLE@{RCC\_ADC1\_CLK\_ENABLE}!adc.h@{adc.h}}
+\doxysubsubsection{RCC\_ADC1\_CLK\_ENABLE}
+{\footnotesize\ttfamily \#define RCC\+\_\+\+ADC1\+\_\+\+CLK\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_IO\ uint32\_t\ tmpreg;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RCC-\/>APB2ENR,\ RCC\_APB2ENR\_ADC1EN);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ READ\_BIT(RCC-\/>APB2ENR,\ RCC\_APB2ENR\_ADC1EN);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\label{adc_8h_a4f6994819c6b623e19e438eb36df82b7} 
+\index{adc.h@{adc.h}!RCC\_GPIOA\_CLK\_ENABLE@{RCC\_GPIOA\_CLK\_ENABLE}}
+\index{RCC\_GPIOA\_CLK\_ENABLE@{RCC\_GPIOA\_CLK\_ENABLE}!adc.h@{adc.h}}
+\doxysubsubsection{RCC\_GPIOA\_CLK\_ENABLE}
+{\footnotesize\ttfamily \#define RCC\+\_\+\+GPIOA\+\_\+\+CLK\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_IO\ uint32\_t\ tmpreg;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RCC-\/>AHB1ENR,\ RCC\_AHB1ENR\_GPIOAEN);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ READ\_BIT(RCC-\/>AHB1ENR,\ RCC\_AHB1ENR\_GPIOAEN);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\label{adc_8h_a9103a7776b1ec5d020fdc70bf2aa457e} 
+\index{adc.h@{adc.h}!RCC\_GPIOB\_CLK\_ENABLE@{RCC\_GPIOB\_CLK\_ENABLE}}
+\index{RCC\_GPIOB\_CLK\_ENABLE@{RCC\_GPIOB\_CLK\_ENABLE}!adc.h@{adc.h}}
+\doxysubsubsection{RCC\_GPIOB\_CLK\_ENABLE}
+{\footnotesize\ttfamily \#define RCC\+\_\+\+GPIOB\+\_\+\+CLK\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_IO\ uint32\_t\ tmpreg;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RCC-\/>AHB1ENR,\ RCC\_AHB1ENR\_GPIOBEN);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ READ\_BIT(RCC-\/>AHB1ENR,\ RCC\_AHB1ENR\_GPIOBEN);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\label{adc_8h_abc1c7b9e366fcb64ead745e8d2f62840} 
+\index{adc.h@{adc.h}!RCC\_GPIOC\_CLK\_ENABLE@{RCC\_GPIOC\_CLK\_ENABLE}}
+\index{RCC\_GPIOC\_CLK\_ENABLE@{RCC\_GPIOC\_CLK\_ENABLE}!adc.h@{adc.h}}
+\doxysubsubsection{RCC\_GPIOC\_CLK\_ENABLE}
+{\footnotesize\ttfamily \#define RCC\+\_\+\+GPIOC\+\_\+\+CLK\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_IO\ uint32\_t\ tmpreg;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RCC-\/>AHB1ENR,\ RCC\_AHB1ENR\_GPIOCEN);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ READ\_BIT(RCC-\/>AHB1ENR,\ RCC\_AHB1ENR\_GPIOCEN);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\label{adc_8h_a722b648dec0c4efc314ddd881e9c1508} 
+\index{adc.h@{adc.h}!STM\_MODE\_ANALOG@{STM\_MODE\_ANALOG}}
+\index{STM\_MODE\_ANALOG@{STM\_MODE\_ANALOG}!adc.h@{adc.h}}
+\doxysubsubsection{STM\_MODE\_ANALOG}
+{\footnotesize\ttfamily \#define STM\+\_\+\+MODE\+\_\+\+ANALOG~(5)}
+
+\label{adc_8h_aea888dc57a1a48aa9460875c2c4e5528} 
+\index{adc.h@{adc.h}!STM\_PIN@{STM\_PIN}}
+\index{STM\_PIN@{STM\_PIN}!adc.h@{adc.h}}
+\doxysubsubsection{STM\_PIN}
+{\footnotesize\ttfamily \#define STM\+\_\+\+PIN(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})~((uint32\+\_\+t)(X) \& 0xF)}
+
+\label{adc_8h_ad5019bb80d48630802c584a828a4abac} 
+\index{adc.h@{adc.h}!STM\_PIN\_AFNUM@{STM\_PIN\_AFNUM}}
+\index{STM\_PIN\_AFNUM@{STM\_PIN\_AFNUM}!adc.h@{adc.h}}
+\doxysubsubsection{STM\_PIN\_AFNUM}
+{\footnotesize\ttfamily \#define STM\+\_\+\+PIN\+\_\+\+AFNUM(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})~(((X) $>$$>$ 7) \& 0x0F)}
+
+\label{adc_8h_aacb84088834af73124aee6c56c5f63bd} 
+\index{adc.h@{adc.h}!STM\_PIN\_CHANNEL@{STM\_PIN\_CHANNEL}}
+\index{STM\_PIN\_CHANNEL@{STM\_PIN\_CHANNEL}!adc.h@{adc.h}}
+\doxysubsubsection{STM\_PIN\_CHANNEL}
+{\footnotesize\ttfamily \#define STM\+\_\+\+PIN\+\_\+\+CHANNEL(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})~(((X) $>$$>$ 11) \& 0x0F)}
+
+\label{adc_8h_a2f002932cd3428f6b97d0c84ac5a128c} 
+\index{adc.h@{adc.h}!STM\_PIN\_DATA\_EXT@{STM\_PIN\_DATA\_EXT}}
+\index{STM\_PIN\_DATA\_EXT@{STM\_PIN\_DATA\_EXT}!adc.h@{adc.h}}
+\doxysubsubsection{STM\_PIN\_DATA\_EXT}
+{\footnotesize\ttfamily \#define STM\+\_\+\+PIN\+\_\+\+DATA\+\_\+\+EXT(\begin{DoxyParamCaption}\item[{}]{MODE,  }\item[{}]{PUPD,  }\item[{}]{AFNUM,  }\item[{}]{CHANNEL,  }\item[{}]{INVERTED }\end{DoxyParamCaption})~((int)(((INVERTED \& 0x01) $<$$<$ 15) $\vert$ ((CHANNEL \& 0x0F) $<$$<$ 11) $\vert$ ((AFNUM \& 0x0F) $<$$<$ 7) $\vert$ ((PUPD \& 0x07) $<$$<$ 4) $\vert$ ((MODE \& 0x0F) $<$$<$ 0)))}
+
+\label{adc_8h_a8800e350aeb8754595cfb659a02926dd} 
+\index{adc.h@{adc.h}!STM\_PIN\_MODE@{STM\_PIN\_MODE}}
+\index{STM\_PIN\_MODE@{STM\_PIN\_MODE}!adc.h@{adc.h}}
+\doxysubsubsection{STM\_PIN\_MODE}
+{\footnotesize\ttfamily \#define STM\+\_\+\+PIN\+\_\+\+MODE(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})~(((X) $>$$>$ 0) \& 0x0F)}
+
+\label{adc_8h_a94c4cad602a11464b0a9adc3bd2a1777} 
+\index{adc.h@{adc.h}!STM\_PIN\_PUPD@{STM\_PIN\_PUPD}}
+\index{STM\_PIN\_PUPD@{STM\_PIN\_PUPD}!adc.h@{adc.h}}
+\doxysubsubsection{STM\_PIN\_PUPD}
+{\footnotesize\ttfamily \#define STM\+\_\+\+PIN\+\_\+\+PUPD(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})~(((X) $>$$>$ 4) \& 0x07)}
+
+\label{adc_8h_a77bc379e9700e90660f86ed286053075} 
+\index{adc.h@{adc.h}!STM\_PORT@{STM\_PORT}}
+\index{STM\_PORT@{STM\_PORT}!adc.h@{adc.h}}
+\doxysubsubsection{STM\_PORT}
+{\footnotesize\ttfamily \#define STM\+\_\+\+PORT(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})~(((uint32\+\_\+t)(X) $>$$>$ 4) \& 0xF)}
+
+\label{adc_8h_a86d500a34c624c2cae56bc25a31b12f3} 
+\index{adc.h@{adc.h}!UNUSED@{UNUSED}}
+\index{UNUSED@{UNUSED}!adc.h@{adc.h}}
+\doxysubsubsection{UNUSED}
+{\footnotesize\ttfamily \#define UNUSED(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((void)(x))}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\label{adc_8h_ad006a1e84e1ac337633cb06868e31c17} 
+\index{adc.h@{adc.h}!ADCName@{ADCName}}
+\index{ADCName@{ADCName}!adc.h@{adc.h}}
+\doxysubsubsection{ADCName}
+{\footnotesize\ttfamily enum \textbf{ ADCName}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_1@{ADC\_1}!adc.h@{adc.h}}\index{adc.h@{adc.h}!ADC\_1@{ADC\_1}}}\label{adc_8h_ad006a1e84e1ac337633cb06868e31c17ac7f9ee52a56e7cb14a6f4ab1104436a1} 
+ADC\+\_\+1&\\
+\hline
+
+\end{DoxyEnumFields}
+\label{adc_8h_afd66db22d830742b403c1f7f32d4630e} 
+\index{adc.h@{adc.h}!HAL\_ADC\_StateTypeDef@{HAL\_ADC\_StateTypeDef}}
+\index{HAL\_ADC\_StateTypeDef@{HAL\_ADC\_StateTypeDef}!adc.h@{adc.h}}
+\doxysubsubsection{HAL\_ADC\_StateTypeDef}
+{\footnotesize\ttfamily enum \textbf{ HAL\+\_\+\+ADC\+\_\+\+State\+Type\+Def}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_RESET@{HAL\_ADC\_STATE\_RESET}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_RESET@{HAL\_ADC\_STATE\_RESET}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630ea0a8dc247045fffb859639f78670970bd} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+RESET&ADC not yet initialized or disabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_READY@{HAL\_ADC\_STATE\_READY}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_READY@{HAL\_ADC\_STATE\_READY}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630ea80ed6f45e533fb9b25313197743df45f} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+READY&ADC peripheral ready for use \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_BUSY@{HAL\_ADC\_STATE\_BUSY}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_BUSY@{HAL\_ADC\_STATE\_BUSY}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630ead1b790ee536ba17dc1dc8e1810a61369} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+BUSY&An internal process is ongoing \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_BUSY\_REG@{HAL\_ADC\_STATE\_BUSY\_REG}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_BUSY\_REG@{HAL\_ADC\_STATE\_BUSY\_REG}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630eae41abc22307997e2c99410e749bba59c} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+REG&Regular conversion is ongoing \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_BUSY\_INJ@{HAL\_ADC\_STATE\_BUSY\_INJ}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_BUSY\_INJ@{HAL\_ADC\_STATE\_BUSY\_INJ}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630eac3a54423cfd0d83901bd17c6696d81eb} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+INJ&Injected conversion is ongoing \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_BUSY\_INJ\_REG@{HAL\_ADC\_STATE\_BUSY\_INJ\_REG}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_BUSY\_INJ\_REG@{HAL\_ADC\_STATE\_BUSY\_INJ\_REG}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630eab7aba96942579addd8506609317094e7} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+INJ\+\_\+\+REG&Injected and regular conversion are ongoing \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_TIMEOUT@{HAL\_ADC\_STATE\_TIMEOUT}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_TIMEOUT@{HAL\_ADC\_STATE\_TIMEOUT}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630ea3baf09bb91e728be72bfe236208d20c3} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+TIMEOUT&Timeout state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_ERROR@{HAL\_ADC\_STATE\_ERROR}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_ERROR@{HAL\_ADC\_STATE\_ERROR}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630ea8cb47a47374f50216663d39c58683d3a} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+ERROR&ADC state error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_EOC@{HAL\_ADC\_STATE\_EOC}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_EOC@{HAL\_ADC\_STATE\_EOC}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630eadf8131952ee3a76a31f833fc70c9acc2} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+EOC&Conversion is completed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_EOC\_REG@{HAL\_ADC\_STATE\_EOC\_REG}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_EOC\_REG@{HAL\_ADC\_STATE\_EOC\_REG}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630ea2ef0a3c19e949a247549ac4274361e87} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+EOC\+\_\+\+REG&Regular conversion is completed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_EOC\_INJ@{HAL\_ADC\_STATE\_EOC\_INJ}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_EOC\_INJ@{HAL\_ADC\_STATE\_EOC\_INJ}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630ea6ef78197eb20289a8b664bdf83256fca} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+EOC\+\_\+\+INJ&Injected conversion is completed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_EOC\_INJ\_REG@{HAL\_ADC\_STATE\_EOC\_INJ\_REG}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_EOC\_INJ\_REG@{HAL\_ADC\_STATE\_EOC\_INJ\_REG}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630ea39ef50d09363cf94db58782b8eb0b801} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+EOC\+\_\+\+INJ\+\_\+\+REG&Injected and regular conversion are completed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_ADC\_STATE\_AWD@{HAL\_ADC\_STATE\_AWD}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_ADC\_STATE\_AWD@{HAL\_ADC\_STATE\_AWD}}}\label{adc_8h_afd66db22d830742b403c1f7f32d4630eaedb3b42980def95403baae66c3b5a0c9} 
+HAL\+\_\+\+ADC\+\_\+\+STATE\+\_\+\+AWD&ADC state analog watchdog \\
+\hline
+
+\end{DoxyEnumFields}
+\label{adc_8h_ab367482e943333a1299294eadaad284b} 
+\index{adc.h@{adc.h}!HAL\_LockTypeDef@{HAL\_LockTypeDef}}
+\index{HAL\_LockTypeDef@{HAL\_LockTypeDef}!adc.h@{adc.h}}
+\doxysubsubsection{HAL\_LockTypeDef}
+{\footnotesize\ttfamily enum \textbf{ HAL\+\_\+\+Lock\+Type\+Def}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_UNLOCKED@{HAL\_UNLOCKED}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_UNLOCKED@{HAL\_UNLOCKED}}}\label{adc_8h_ab367482e943333a1299294eadaad284ba9bd487430440139444e6e7ff226005c0} 
+HAL\+\_\+\+UNLOCKED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_LOCKED@{HAL\_LOCKED}!adc.h@{adc.h}}\index{adc.h@{adc.h}!HAL\_LOCKED@{HAL\_LOCKED}}}\label{adc_8h_ab367482e943333a1299294eadaad284ba656ad5f6dad97210cf3ccf107c033e4d} 
+HAL\+\_\+\+LOCKED&\\
+\hline
+
+\end{DoxyEnumFields}
+\label{adc_8h_a59d6d8d6337e04ac7ad3dc96eb920416} 
+\index{adc.h@{adc.h}!PortName@{PortName}}
+\index{PortName@{PortName}!adc.h@{adc.h}}
+\doxysubsubsection{PortName}
+{\footnotesize\ttfamily enum \textbf{ Port\+Name}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PortA@{PortA}!adc.h@{adc.h}}\index{adc.h@{adc.h}!PortA@{PortA}}}\label{adc_8h_a59d6d8d6337e04ac7ad3dc96eb920416a14a06735f7c30f2eece0bf8b5f86cf3b} 
+PortA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PortB@{PortB}!adc.h@{adc.h}}\index{adc.h@{adc.h}!PortB@{PortB}}}\label{adc_8h_a59d6d8d6337e04ac7ad3dc96eb920416a6196d78f61fc4e54bd299cf9944421bd} 
+PortB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PortC@{PortC}!adc.h@{adc.h}}\index{adc.h@{adc.h}!PortC@{PortC}}}\label{adc_8h_a59d6d8d6337e04ac7ad3dc96eb920416a7a93181b9b6cb3f0c0ef2e4c4b20542b} 
+PortC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PortD@{PortD}!adc.h@{adc.h}}\index{adc.h@{adc.h}!PortD@{PortD}}}\label{adc_8h_a59d6d8d6337e04ac7ad3dc96eb920416ae4afd1b2213c739f3413f899893971c1} 
+PortD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PortE@{PortE}!adc.h@{adc.h}}\index{adc.h@{adc.h}!PortE@{PortE}}}\label{adc_8h_a59d6d8d6337e04ac7ad3dc96eb920416abdf5fffebe4f01d75b75f8341f82f423} 
+PortE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PortH@{PortH}!adc.h@{adc.h}}\index{adc.h@{adc.h}!PortH@{PortH}}}\label{adc_8h_a59d6d8d6337e04ac7ad3dc96eb920416a42eb93c662922b1e08e4b6d2b3d85bc3} 
+PortH&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\label{adc_8h_a28cb2a61813855a15cd1bd2587d657dc} 
+\index{adc.h@{adc.h}!\_ADC\_ConfigChannel@{\_ADC\_ConfigChannel}}
+\index{\_ADC\_ConfigChannel@{\_ADC\_ConfigChannel}!adc.h@{adc.h}}
+\doxysubsubsection{\_ADC\_ConfigChannel()}
+{\footnotesize\ttfamily void \+\_\+\+ADC\+\_\+\+Config\+Channel (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$}]{hadc,  }\item[{\textbf{ ADC\+\_\+\+Channel\+Conf\+Type\+Def} $\ast$}]{s\+Config }\end{DoxyParamCaption})}
+
+\label{adc_8h_abbd7238e400008cf4549ed5e3ab8780c} 
+\index{adc.h@{adc.h}!\_ADC\_GetValue@{\_ADC\_GetValue}}
+\index{\_ADC\_GetValue@{\_ADC\_GetValue}!adc.h@{adc.h}}
+\doxysubsubsection{\_ADC\_GetValue()}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+\+ADC\+\_\+\+Get\+Value (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$}]{hadc }\end{DoxyParamCaption})}
+
+\label{adc_8h_a9dbf36dc37bb332cc16b1b91c3bfe5d8} 
+\index{adc.h@{adc.h}!\_ADC\_Init@{\_ADC\_Init}}
+\index{\_ADC\_Init@{\_ADC\_Init}!adc.h@{adc.h}}
+\doxysubsubsection{\_ADC\_Init()}
+{\footnotesize\ttfamily void \+\_\+\+ADC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$}]{hadc }\end{DoxyParamCaption})}
+
+\label{adc_8h_a0857b2d8ae59ff706adf8e8d07b0fb4d} 
+\index{adc.h@{adc.h}!\_ADC\_PollForConversion@{\_ADC\_PollForConversion}}
+\index{\_ADC\_PollForConversion@{\_ADC\_PollForConversion}!adc.h@{adc.h}}
+\doxysubsubsection{\_ADC\_PollForConversion()}
+{\footnotesize\ttfamily int \+\_\+\+ADC\+\_\+\+Poll\+For\+Conversion (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$}]{hadc,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+\label{adc_8h_afef6c30ca784ef6f47ff577c355d4f8c} 
+\index{adc.h@{adc.h}!\_adc\_read@{\_adc\_read}}
+\index{\_adc\_read@{\_adc\_read}!adc.h@{adc.h}}
+\doxysubsubsection{\_adc\_read()}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+adc\+\_\+read (\begin{DoxyParamCaption}\item[{\textbf{ analogin\+\_\+s} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Reads the current value of the ADC. 
+
+\begin{DoxyReturn}{Returns}
+Potential of the pin, relative to ground. 
+\end{DoxyReturn}
+\label{adc_8h_ad57db15e40a7a818fc90c75ccc1d36b7} 
+\index{adc.h@{adc.h}!\_ADC\_Start@{\_ADC\_Start}}
+\index{\_ADC\_Start@{\_ADC\_Start}!adc.h@{adc.h}}
+\doxysubsubsection{\_ADC\_Start()}
+{\footnotesize\ttfamily void \+\_\+\+ADC\+\_\+\+Start (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$}]{hadc }\end{DoxyParamCaption})}
+
+\label{adc_8h_a9f7d9f5a0894fbcb072e49e954f445ed} 
+\index{adc.h@{adc.h}!\_GPIO\_Init@{\_GPIO\_Init}}
+\index{\_GPIO\_Init@{\_GPIO\_Init}!adc.h@{adc.h}}
+\doxysubsubsection{\_GPIO\_Init()}
+{\footnotesize\ttfamily void \+\_\+\+GPIO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{GPIOx,  }\item[{\textbf{ GPIO\+\_\+\+Init\+Type\+Def} $\ast$}]{GPIO\+\_\+\+Init }\end{DoxyParamCaption})}
+
+\label{adc_8h_a288bb69f04512be6ade5ff016a43712a} 
+\index{adc.h@{adc.h}!adc\_init@{adc\_init}}
+\index{adc\_init@{adc\_init}!adc.h@{adc.h}}
+\doxysubsubsection{adc\_init()}
+{\footnotesize\ttfamily void adc\+\_\+init (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+\label{adc_8h_a21b4f937ae2402956618d35aa6c03923} 
+\index{adc.h@{adc.h}!adc\_read@{adc\_read}}
+\index{adc\_read@{adc\_read}!adc.h@{adc.h}}
+\doxysubsubsection{adc\_read()}
+{\footnotesize\ttfamily uint16\+\_\+t adc\+\_\+read (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+\label{adc_8h_aa55a339d0dc6a85ff1d35af3f01c0be9} 
+\index{adc.h@{adc.h}!analogin\_init@{analogin\_init}}
+\index{analogin\_init@{analogin\_init}!adc.h@{adc.h}}
+\doxysubsubsection{analogin\_init()}
+{\footnotesize\ttfamily void analogin\+\_\+init (\begin{DoxyParamCaption}\item[{\textbf{ analogin\+\_\+s} $\ast$}]{obj,  }\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+\label{adc_8h_ade67d1bdd26b6d1ec6c5abeedf8eb4a6} 
+\index{adc.h@{adc.h}!pin\_function@{pin\_function}}
+\index{pin\_function@{pin\_function}!adc.h@{adc.h}}
+\doxysubsubsection{pin\_function()}
+{\footnotesize\ttfamily void pin\+\_\+function (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+\label{adc_8h_a4518609ab103b2ffa24082278595efa7} 
+\index{adc.h@{adc.h}!pinmap\_find\_peripheral@{pinmap\_find\_peripheral}}
+\index{pinmap\_find\_peripheral@{pinmap\_find\_peripheral}!adc.h@{adc.h}}
+\doxysubsubsection{pinmap\_find\_peripheral()}
+{\footnotesize\ttfamily uint32\+\_\+t pinmap\+\_\+find\+\_\+peripheral (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+\label{adc_8h_a2d797b22d683c8e3270338d89f650aaf} 
+\index{adc.h@{adc.h}!pinmap\_function@{pinmap\_function}}
+\index{pinmap\_function@{pinmap\_function}!adc.h@{adc.h}}
+\doxysubsubsection{pinmap\_function()}
+{\footnotesize\ttfamily uint32\+\_\+t pinmap\+\_\+function (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+
+
+Initializes the analogue to digital converter, and configures the appropriate GPIO pin. 
+
+\label{adc_8h_aadd657a035e5640e26fc72157061c080} 
+\index{adc.h@{adc.h}!pinmap\_peripheral@{pinmap\_peripheral}}
+\index{pinmap\_peripheral@{pinmap\_peripheral}!adc.h@{adc.h}}
+\doxysubsubsection{pinmap\_peripheral()}
+{\footnotesize\ttfamily uint32\+\_\+t pinmap\+\_\+peripheral (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+\label{adc_8h_a4fcf12fe7657e047ea3853d3da25e76a} 
+\index{adc.h@{adc.h}!pinmap\_pinout@{pinmap\_pinout}}
+\index{pinmap\_pinout@{pinmap\_pinout}!adc.h@{adc.h}}
+\doxysubsubsection{pinmap\_pinout()}
+{\footnotesize\ttfamily void pinmap\+\_\+pinout (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+

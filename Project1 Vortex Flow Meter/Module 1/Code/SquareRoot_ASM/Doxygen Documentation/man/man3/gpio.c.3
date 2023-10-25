@@ -1,0 +1,247 @@
+.TH "drivers/gpio.c" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/gpio.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <platform\&.h>\fP
+.br
+\fC#include <gpio\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBgpio_toggle\fP (\fBPin\fP pin)"
+.br
+.RI "Toggles a GPIO pin's output\&. A pin which is currently high is set low and a pin which is currently low is set high\&. "
+.ti -1c
+.RI "void \fBgpio_set\fP (\fBPin\fP pin, int value)"
+.br
+.RI "Sets a pin to the specified logic level\&. "
+.ti -1c
+.RI "int \fBgpio_get\fP (\fBPin\fP pin)"
+.br
+.RI "Get the current logic level of a GPIO pin\&. If the pin is high, this function will return a 1, else it will return 0\&. "
+.ti -1c
+.RI "void \fBgpio_set_range\fP (\fBPin\fP pin_base, int count, int value)"
+.br
+.RI "Sets a range of sequential pins to the specified value\&. "
+.ti -1c
+.RI "unsigned int \fBgpio_get_range\fP (\fBPin\fP pin_base, int count)"
+.br
+.RI "Returns the value of a range of sequential pins\&. "
+.ti -1c
+.RI "void \fBgpio_set_mode\fP (\fBPin\fP pin, \fBPinMode\fP mode)"
+.br
+.RI "Configures the output mode of a GPIO pin\&. "
+.ti -1c
+.RI "void \fBgpio_set_trigger\fP (\fBPin\fP pin, \fBTriggerMode\fP trig)"
+.br
+.RI "Configures the event which will cause an interrupt on a specified pin\&. "
+.ti -1c
+.RI "void \fBgpio_set_callback\fP (\fBPin\fP pin, void(*callback)(int status))"
+.br
+.RI "Passes a callback function to the api which is called during the port's relevant interrupt\&. "
+.ti -1c
+.RI "void \fBEXTI0_IRQHandler\fP (void)"
+.br
+.ti -1c
+.RI "void \fBEXTI1_IRQHandler\fP (void)"
+.br
+.ti -1c
+.RI "void \fBEXTI2_IRQHandler\fP (void)"
+.br
+.ti -1c
+.RI "void \fBEXTI3_IRQHandler\fP (void)"
+.br
+.ti -1c
+.RI "void \fBEXTI4_IRQHandler\fP (void)"
+.br
+.ti -1c
+.RI "void \fBEXTI9_5_IRQHandler\fP (void)"
+.br
+.ti -1c
+.RI "void \fBEXTI15_10_IRQHandler\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBIRQ_status\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBIRQ_port_num\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBIRQ_pin_index\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBEXTI_port_set\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBprioritygroup\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBpriority\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void EXTI0_IRQHandler (void)"
+
+.SS "void EXTI15_10_IRQHandler (void)"
+
+.SS "void EXTI1_IRQHandler (void)"
+
+.SS "void EXTI2_IRQHandler (void)"
+
+.SS "void EXTI3_IRQHandler (void)"
+
+.SS "void EXTI4_IRQHandler (void)"
+
+.SS "void EXTI9_5_IRQHandler (void)"
+
+.SS "int gpio_get (\fBPin\fP pin)"
+
+.PP
+Get the current logic level of a GPIO pin\&. If the pin is high, this function will return a 1, else it will return 0\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP Pin to read\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The logic level of the GPIO pin (0 if low, 1 if high)\&. 
+.RE
+.PP
+
+.SS "unsigned int gpio_get_range (\fBPin\fP pin_base, int count)"
+
+.PP
+Returns the value of a range of sequential pins\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin_base\fP Starting pin\&. 
+.br
+\fIcount\fP Number of pins to set\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Value of the pins\&. 
+.RE
+.PP
+
+.SS "void gpio_set (\fBPin\fP pin, int value)"
+
+.PP
+Sets a pin to the specified logic level\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP Pin to set\&. 
+.br
+\fIvalue\fP New logic level of the pin (0 is low, otherwise high)\&. 
+.RE
+.PP
+
+.SS "void gpio_set_callback (\fBPin\fP pin, void(*)(int status) callback)"
+
+.PP
+Passes a callback function to the api which is called during the port's relevant interrupt\&. 
+.PP
+\fBWarning\fP
+.RS 4
+The pin argument specifies the port which will be interrupted on, not an individual pin\&. It is advised check the \fIstatus\fP variable to determine which pin caused the interrupt\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBgpio_set_trigger\fP to configure and enable the interrupt\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP Pin which specifies the port to use\&. 
+.br
+\fIcallback\fP Callback function\&. 
+.RE
+.PP
+
+.SS "void gpio_set_mode (\fBPin\fP pin, \fBPinMode\fP mode)"
+
+.PP
+Configures the output mode of a GPIO pin\&. Used to set the GPIO as an input, output, and configure the possible pull-up or pull-down resistors\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP Pin to set\&. 
+.br
+\fImode\fP New output mode of the pin\&. 
+.RE
+.PP
+
+.SS "void gpio_set_range (\fBPin\fP pin_base, int count, int value)"
+
+.PP
+Sets a range of sequential pins to the specified value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin_base\fP Starting pin\&. 
+.br
+\fIcount\fP Number of pins to set\&. 
+.br
+\fIvalue\fP New value of the pins\&. 
+.RE
+.PP
+
+.SS "void gpio_set_trigger (\fBPin\fP pin, \fBTriggerMode\fP trig)"
+
+.PP
+Configures the event which will cause an interrupt on a specified pin\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP Pin to trigger off\&. 
+.br
+\fItrig\fP New triggering mode for the pin\&. 
+.RE
+.PP
+
+.SS "void gpio_toggle (\fBPin\fP pin)"
+
+.PP
+Toggles a GPIO pin's output\&. A pin which is currently high is set low and a pin which is currently low is set high\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpin\fP Pin to toggle\&. 
+.RE
+.PP
+
+.SH "Variable Documentation"
+.PP 
+.SS "uint32_t EXTI_port_set"
+
+.SS "uint32_t IRQ_pin_index"
+
+.SS "uint32_t IRQ_port_num"
+
+.SS "uint32_t IRQ_status"
+
+.SS "uint32_t priority"
+
+.SS "uint32_t prioritygroup"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

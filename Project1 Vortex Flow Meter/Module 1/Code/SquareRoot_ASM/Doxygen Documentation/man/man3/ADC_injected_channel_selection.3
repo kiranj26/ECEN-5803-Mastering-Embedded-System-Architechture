@@ -1,0 +1,52 @@
+.TH "ADC_injected_channel_selection" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_injected_channel_selection \- ADC_injected_channel_selection
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC_InjectedChannel_1\fP   ((uint8_t)0x14)"
+.br
+.ti -1c
+.RI "#define \fBADC_InjectedChannel_2\fP   ((uint8_t)0x18)"
+.br
+.ti -1c
+.RI "#define \fBADC_InjectedChannel_3\fP   ((uint8_t)0x1C)"
+.br
+.ti -1c
+.RI "#define \fBADC_InjectedChannel_4\fP   ((uint8_t)0x20)"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_INJECTED_CHANNEL\fP(CHANNEL)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_InjectedChannel_1   ((uint8_t)0x14)"
+
+.SS "#define ADC_InjectedChannel_2   ((uint8_t)0x18)"
+
+.SS "#define ADC_InjectedChannel_3   ((uint8_t)0x1C)"
+
+.SS "#define ADC_InjectedChannel_4   ((uint8_t)0x20)"
+
+.SS "#define IS_ADC_INJECTED_CHANNEL(CHANNEL)"
+\fBValue:\fP.PP
+.nf
+                                          (((CHANNEL) == ADC_InjectedChannel_1) || \\
+                                          ((CHANNEL) == ADC_InjectedChannel_2) || \\
+                                          ((CHANNEL) == ADC_InjectedChannel_3) || \\
+                                          ((CHANNEL) == ADC_InjectedChannel_4))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

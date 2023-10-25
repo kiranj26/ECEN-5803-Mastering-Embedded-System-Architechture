@@ -1,0 +1,124 @@
+.TH "USART_Group3" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_Group3 \- MultiProcessor Communication functions
+.PP
+ \- Multi-Processor Communication functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUSART_SetAddress\fP (USART_TypeDef *USARTx, uint8_t USART_Address)"
+.br
+.RI "Sets the address of the USART node\&. "
+.ti -1c
+.RI "void \fBUSART_ReceiverWakeUpCmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Determines if the USART is in mute mode or not\&. "
+.ti -1c
+.RI "void \fBUSART_WakeUpConfig\fP (USART_TypeDef *USARTx, uint16_t USART_WakeUp)"
+.br
+.RI "Selects the USART WakeUp method\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Multi-Processor Communication functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                    Multi-Processor Communication functions
+ ===============================================================================  
+
+  This subsection provides a set of functions allowing to manage the USART 
+  multiprocessor communication\&.
+  
+  For instance one of the USARTs can be the master, its TX output is connected to 
+  the RX input of the other USART\&. The others are slaves, their respective TX outputs 
+  are logically ANDed together and connected to the RX input of the master\&.
+
+  USART multiprocessor communication is possible through the following procedure:
+     1\&. Program the Baud rate, Word length = 9 bits, Stop bits, Parity, Mode transmitter 
+        or Mode receiver and hardware flow control values using the USART_Init()
+        function\&.
+     2\&. Configures the USART address using the USART_SetAddress() function\&.
+     3\&. Configures the wake up method (USART_WakeUp_IdleLine or USART_WakeUp_AddressMark)
+        using USART_WakeUpConfig() function only for the slaves\&.
+     4\&. Enable the USART using the USART_Cmd() function\&.
+     5\&. Enter the USART slaves in mute mode using USART_ReceiverWakeUpCmd() function\&.
+
+  The USART Slave exit from mute mode when receive the wake up condition\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void USART_ReceiverWakeUpCmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Determines if the USART is in mute mode or not\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the USART mute mode\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_SetAddress (USART_TypeDef * USARTx, uint8_t USART_Address)"
+
+.PP
+Sets the address of the USART node\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_Address\fP Indicates the address of the USART node\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_WakeUpConfig (USART_TypeDef * USARTx, uint16_t USART_WakeUp)"
+
+.PP
+Selects the USART WakeUp method\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_WakeUp\fP specifies the USART wakeup method\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_WakeUp_IdleLine: WakeUp by an idle line detection 
+.IP "\(bu" 1
+USART_WakeUp_AddressMark: WakeUp by an address mark 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

@@ -1,0 +1,31 @@
+\doxysection{comparator.\+h}
+\label{comparator_8h_source}\index{drivers/comparator.h@{drivers/comparator.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <adc.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ COMPARATOR\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ COMPARATOR\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ CompNone,\ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ CompRising,\ \ }
+\DoxyCodeLine{00015\ \ \ \ \ CompFalling,\ }
+\DoxyCodeLine{00016\ \ \ \ \ CompBoth\ \ \ \ \ }
+\DoxyCodeLine{00017\ \}\ ComparatorTriggerMode;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ comparator\_init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//int\ comparator\_read(void);}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ comparator\_set\_trigger(ComparatorTriggerMode\ trig);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ comparator\_set\_callback(\textcolor{keywordtype}{void}\ (*callback)(\textcolor{keywordtype}{int}\ state));}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ comparator\_read(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMPARATOR\_H}}
+
+\end{DoxyCode}

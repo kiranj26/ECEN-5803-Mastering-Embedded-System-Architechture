@@ -1,0 +1,69 @@
+.TH "ADC_flags_definition" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_flags_definition \- ADC_flags_definition
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC_FLAG_AWD\fP   ((uint8_t)0x01)"
+.br
+.ti -1c
+.RI "#define \fBADC_FLAG_EOC\fP   ((uint8_t)0x02)"
+.br
+.ti -1c
+.RI "#define \fBADC_FLAG_JEOC\fP   ((uint8_t)0x04)"
+.br
+.ti -1c
+.RI "#define \fBADC_FLAG_JSTRT\fP   ((uint8_t)0x08)"
+.br
+.ti -1c
+.RI "#define \fBADC_FLAG_STRT\fP   ((uint8_t)0x10)"
+.br
+.ti -1c
+.RI "#define \fBADC_FLAG_OVR\fP   ((uint8_t)0x20)"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_CLEAR_FLAG\fP(FLAG)   ((((FLAG) & (uint8_t)0xC0) == 0x00) && ((FLAG) != 0x00))"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_GET_FLAG\fP(FLAG)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_FLAG_AWD   ((uint8_t)0x01)"
+
+.SS "#define ADC_FLAG_EOC   ((uint8_t)0x02)"
+
+.SS "#define ADC_FLAG_JEOC   ((uint8_t)0x04)"
+
+.SS "#define ADC_FLAG_JSTRT   ((uint8_t)0x08)"
+
+.SS "#define ADC_FLAG_OVR   ((uint8_t)0x20)"
+
+.SS "#define ADC_FLAG_STRT   ((uint8_t)0x10)"
+
+.SS "#define IS_ADC_CLEAR_FLAG(FLAG)   ((((FLAG) & (uint8_t)0xC0) == 0x00) && ((FLAG) != 0x00))"
+
+.SS "#define IS_ADC_GET_FLAG(FLAG)"
+\fBValue:\fP.PP
+.nf
+                               (((FLAG) == ADC_FLAG_AWD) || \\
+                               ((FLAG) == ADC_FLAG_EOC) || \\
+                               ((FLAG) == ADC_FLAG_JEOC) || \\
+                               ((FLAG)== ADC_FLAG_JSTRT) || \\
+                               ((FLAG) == ADC_FLAG_STRT) || \\
+                               ((FLAG)== ADC_FLAG_OVR))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

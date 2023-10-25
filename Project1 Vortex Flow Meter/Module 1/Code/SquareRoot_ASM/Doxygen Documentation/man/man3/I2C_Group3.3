@@ -1,0 +1,130 @@
+.TH "I2C_Group3" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_Group3 \- PEC management functions
+.PP
+ \- PEC management functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBI2C_TransmitPEC\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C PEC transfer\&. "
+.ti -1c
+.RI "void \fBI2C_PECPositionConfig\fP (I2C_TypeDef *I2Cx, uint16_t I2C_PECPosition)"
+.br
+.RI "Selects the specified I2C PEC position\&. "
+.ti -1c
+.RI "void \fBI2C_CalculatePEC\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the PEC value calculation of the transferred bytes\&. "
+.ti -1c
+.RI "uint8_t \fBI2C_GetPEC\fP (I2C_TypeDef *I2Cx)"
+.br
+.RI "Returns the PEC value for the specified I2C\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+PEC management functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                         PEC management functions
+ ===============================================================================  
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void I2C_CalculatePEC (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Enables or disables the PEC value calculation of the transferred bytes\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2Cx PEC value calculation\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "uint8_t I2C_GetPEC (I2C_TypeDef * I2Cx)"
+
+.PP
+Returns the PEC value for the specified I2C\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP PEC value\&. 
+.RE
+.PP
+
+.SS "void I2C_PECPositionConfig (I2C_TypeDef * I2Cx, uint16_t I2C_PECPosition)"
+
+.PP
+Selects the specified I2C PEC position\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fII2C_PECPosition\fP specifies the PEC position\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+I2C_PECPosition_Next: indicates that the next byte is PEC 
+.IP "\(bu" 1
+I2C_PECPosition_Current: indicates that current byte is PEC
+.PP
+.RE
+.PP
+\fBNote\fP
+.RS 4
+This function configures the same bit (POS) as \fBI2C_NACKPositionConfig()\fP but is intended to be used in SMBUS mode while \fBI2C_NACKPositionConfig()\fP is intended to used in I2C mode\&.
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_TransmitPEC (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified I2C PEC transfer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2C PEC transmission\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

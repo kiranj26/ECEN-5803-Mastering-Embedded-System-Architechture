@@ -1,0 +1,118 @@
+\doxysection{drivers/stm32f4xx\+\_\+gpio.c File Reference}
+\label{stm32f4xx__gpio_8c}\index{drivers/stm32f4xx\_gpio.c@{drivers/stm32f4xx\_gpio.c}}
+
+
+This file provides firmware functions to manage the following functionalities of the GPIO peripheral\+: ~\newline
+  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+rcc.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+gpio.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ GPIO\+\_\+\+De\+Init} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the GPIOx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Init} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, \textbf{ GPIO\+\_\+\+Init\+Type\+Def} $\ast$GPIO\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the GPIOx peripheral according to the specified parameters in the GPIO\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Struct\+Init} (\textbf{ GPIO\+\_\+\+Init\+Type\+Def} $\ast$GPIO\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each GPIO\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Pin\+Lock\+Config} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Locks GPIO Pins configuration registers. \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ GPIO\+\_\+\+Read\+Input\+Data\+Bit} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified input port pin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ GPIO\+\_\+\+Read\+Input\+Data} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx)
+\begin{DoxyCompactList}\small\item\em Reads the specified GPIO input data port. \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ GPIO\+\_\+\+Read\+Output\+Data\+Bit} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified output data port bit. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ GPIO\+\_\+\+Read\+Output\+Data} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx)
+\begin{DoxyCompactList}\small\item\em Reads the specified GPIO output data port. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Set\+Bits} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets the selected data port bits. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Reset\+Bits} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Clears the selected data port bits. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Write\+Bit} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin, \textbf{ Bit\+Action} Bit\+Val)
+\begin{DoxyCompactList}\small\item\em Sets or clears the selected data port bit. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Write} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t Port\+Val)
+\begin{DoxyCompactList}\small\item\em Writes data to the specified GPIO data port. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Toggle\+Bits} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Toggles the specified GPIO pins.. \end{DoxyCompactList}\item 
+void \textbf{ GPIO\+\_\+\+Pin\+AFConfig} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin\+Source, uint8\+\_\+t GPIO\+\_\+\+AF)
+\begin{DoxyCompactList}\small\item\em Changes the mapping of the specified pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides firmware functions to manage the following functionalities of the GPIO peripheral\+: ~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30-\/September-\/2011
+\begin{DoxyItemize}
+\item Initialization and Configuration
+\item GPIO Read and Write
+\item GPIO Alternate functions configuration
+\end{DoxyItemize}
+\end{DoxyDate}
+\begin{DoxyVerb}*
+*          ===================================================================
+*                                 How to use this driver
+*          ===================================================================       
+*           1. Enable the GPIO AHB clock using the following function
+*                RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOx, ENABLE);
+*             
+*           2. Configure the GPIO pin(s) using GPIO_Init()
+*              Four possible configuration are available for each pin:
+*                - Input: Floating, Pull-up, Pull-down.
+*                - Output: Push-Pull (Pull-up, Pull-down or no Pull)
+*                          Open Drain (Pull-up, Pull-down or no Pull).
+*                  In output mode, the speed is configurable: 2 MHz, 25 MHz,
+*                  50 MHz or 100 MHz.
+*                - Alternate Function: Push-Pull (Pull-up, Pull-down or no Pull)
+*                                      Open Drain (Pull-up, Pull-down or no Pull).
+*                - Analog: required mode when a pin is to be used as ADC channel
+*                          or DAC output.
+* 
+*          3- Peripherals alternate function:
+*              - For ADC and DAC, configure the desired pin in analog mode using 
+*                  GPIO_InitStruct->GPIO_Mode = GPIO_Mode_AN;
+*              - For other peripherals (TIM, USART...):
+*                 - Connect the pin to the desired peripherals' Alternate 
+*                   Function (AF) using GPIO_PinAFConfig() function
+*                 - Configure the desired pin in alternate function mode using
+*                   GPIO_InitStruct->GPIO_Mode = GPIO_Mode_AF
+*                 - Select the type, pull-up/pull-down and output speed via 
+*                   GPIO_PuPd, GPIO_OType and GPIO_Speed members
+*                 - Call GPIO_Init() function
+*        
+*          4. To get the level of a pin configured in input mode use GPIO_ReadInputDataBit()
+*          
+*          5. To set/reset the level of a pin configured in output mode use
+*             GPIO_SetBits()/GPIO_ResetBits()
+*               
+*          6. During and just after reset, the alternate functions are not 
+*             active and the GPIO pins are configured in input floating mode
+*             (except JTAG pins).
+*
+*          7. The LSE oscillator pins OSC32_IN and OSC32_OUT can be used as 
+*             general-purpose (PC14 and PC15, respectively) when the LSE
+*             oscillator is off. The LSE has priority over the GPIO function.
+*
+*          8. The HSE oscillator pins OSC_IN/OSC_OUT can be used as 
+*             general-purpose PH0 and PH1, respectively, when the HSE 
+*             oscillator is off. The HSE has priority over the GPIO function.
+*             
+*  \end{DoxyVerb}
+
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

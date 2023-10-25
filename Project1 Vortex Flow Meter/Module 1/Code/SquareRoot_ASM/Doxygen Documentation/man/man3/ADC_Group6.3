@@ -1,0 +1,417 @@
+.TH "ADC_Group6" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_Group6 \- Injected channels Configuration functions
+.PP
+ \- Injected channels Configuration functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBADC_InjectedChannelConfig\fP (ADC_TypeDef *ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime)"
+.br
+.RI "Configures for the selected ADC injected channel its corresponding rank in the sequencer and its sample time\&. "
+.ti -1c
+.RI "void \fBADC_InjectedSequencerLengthConfig\fP (ADC_TypeDef *ADCx, uint8_t Length)"
+.br
+.RI "Configures the sequencer length for injected channels\&. "
+.ti -1c
+.RI "void \fBADC_SetInjectedOffset\fP (ADC_TypeDef *ADCx, uint8_t ADC_InjectedChannel, uint16_t Offset)"
+.br
+.RI "Set the injected channels conversion value offset\&. "
+.ti -1c
+.RI "void \fBADC_ExternalTrigInjectedConvConfig\fP (ADC_TypeDef *ADCx, uint32_t ADC_ExternalTrigInjecConv)"
+.br
+.RI "Configures the ADCx external trigger for injected channels conversion\&. "
+.ti -1c
+.RI "void \fBADC_ExternalTrigInjectedConvEdgeConfig\fP (ADC_TypeDef *ADCx, uint32_t ADC_ExternalTrigInjecConvEdge)"
+.br
+.RI "Configures the ADCx external trigger edge for injected channels conversion\&. "
+.ti -1c
+.RI "void \fBADC_SoftwareStartInjectedConv\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Enables the selected ADC software start conversion of the injected channels\&. "
+.ti -1c
+.RI "FlagStatus \fBADC_GetSoftwareStartInjectedConvCmdStatus\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Gets the selected ADC Software start injected conversion Status\&. "
+.ti -1c
+.RI "void \fBADC_AutoInjectedConvCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the selected ADC automatic injected group conversion after regular one\&. "
+.ti -1c
+.RI "void \fBADC_InjectedDiscModeCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the discontinuous mode for injected group channel for the specified ADC\&. "
+.ti -1c
+.RI "uint16_t \fBADC_GetInjectedConversionValue\fP (ADC_TypeDef *ADCx, uint8_t ADC_InjectedChannel)"
+.br
+.RI "Returns the ADC injected channel conversion result\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Injected channels Configuration functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                     Injected channels Configuration functions
+ ===============================================================================  
+
+  This section provide functions allowing to configure the ADC Injected channels,
+  it is composed of 2 sub sections : 
+    
+  1\&. Configuration functions for Injected channels: This subsection provides 
+     functions allowing to configure the ADC injected channels :    
+    - Configure the rank in the injected group sequencer for each channel
+    - Configure the sampling time for each channel    
+    - Activate the Auto injected Mode  
+    - Activate the Discontinuous Mode 
+    - scan mode activation  
+    - External/software trigger source   
+    - External trigger edge 
+    - injected channels sequencer\&.
+    
+   2\&. Get the Specified Injected channel conversion data: This subsection 
+      provides an important function in the ADC peripheral since it returns the 
+      converted data of the specific injected channel\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void ADC_AutoInjectedConvCmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the selected ADC automatic injected group conversion after regular one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC auto injected conversion This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_ExternalTrigInjectedConvConfig (ADC_TypeDef * ADCx, uint32_t ADC_ExternalTrigInjecConv)"
+
+.PP
+Configures the ADCx external trigger for injected channels conversion\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_ExternalTrigInjecConv\fP specifies the ADC trigger to start injected conversion\&. This parameter can be one of the following values: 
+.br
+ 
+.PD 0
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T1_CC4: Timer1 capture compare4 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T1_TRGO: Timer1 TRGO event selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T2_CC1: Timer2 capture compare1 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T2_TRGO: Timer2 TRGO event selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T3_CC2: Timer3 capture compare2 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T3_CC4: Timer3 capture compare4 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T4_CC1: Timer4 capture compare1 selected 
+.br
+ 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T4_CC2: Timer4 capture compare2 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T4_CC3: Timer4 capture compare3 selected 
+.br
+ 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T4_TRGO: Timer4 TRGO event selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T5_CC4: Timer5 capture compare4 selected 
+.br
+ 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T5_TRGO: Timer5 TRGO event selected 
+.br
+ 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T8_CC2: Timer8 capture compare2 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T8_CC3: Timer8 capture compare3 selected 
+.br
+ 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_T8_CC4: Timer8 capture compare4 selected 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConv_Ext_IT15: External interrupt line 15 event selected 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_ExternalTrigInjectedConvEdgeConfig (ADC_TypeDef * ADCx, uint32_t ADC_ExternalTrigInjecConvEdge)"
+
+.PP
+Configures the ADCx external trigger edge for injected channels conversion\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_ExternalTrigInjecConvEdge\fP specifies the ADC external trigger edge to start injected conversion\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConvEdge_None: external trigger disabled for injected conversion 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConvEdge_Rising: detection on rising edge 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConvEdge_Falling: detection on falling edge 
+.IP "\(bu" 1
+ADC_ExternalTrigInjecConvEdge_RisingFalling: detection on both rising and falling edge 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "uint16_t ADC_GetInjectedConversionValue (ADC_TypeDef * ADCx, uint8_t ADC_InjectedChannel)"
+
+.PP
+Returns the ADC injected channel conversion result\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_InjectedChannel\fP the converted ADC injected channel\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_InjectedChannel_1: Injected Channel1 selected 
+.IP "\(bu" 1
+ADC_InjectedChannel_2: Injected Channel2 selected 
+.IP "\(bu" 1
+ADC_InjectedChannel_3: Injected Channel3 selected 
+.IP "\(bu" 1
+ADC_InjectedChannel_4: Injected Channel4 selected 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP Data conversion value\&. 
+.RE
+.PP
+
+.SS "FlagStatus ADC_GetSoftwareStartInjectedConvCmdStatus (ADC_TypeDef * ADCx)"
+
+.PP
+Gets the selected ADC Software start injected conversion Status\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of ADC software start injected conversion (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "void ADC_InjectedChannelConfig (ADC_TypeDef * ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime)"
+
+.PP
+Configures for the selected ADC injected channel its corresponding rank in the sequencer and its sample time\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_Channel\fP the ADC channel to configure\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_Channel_0: ADC Channel0 selected 
+.IP "\(bu" 1
+ADC_Channel_1: ADC Channel1 selected 
+.IP "\(bu" 1
+ADC_Channel_2: ADC Channel2 selected 
+.IP "\(bu" 1
+ADC_Channel_3: ADC Channel3 selected 
+.IP "\(bu" 1
+ADC_Channel_4: ADC Channel4 selected 
+.IP "\(bu" 1
+ADC_Channel_5: ADC Channel5 selected 
+.IP "\(bu" 1
+ADC_Channel_6: ADC Channel6 selected 
+.IP "\(bu" 1
+ADC_Channel_7: ADC Channel7 selected 
+.IP "\(bu" 1
+ADC_Channel_8: ADC Channel8 selected 
+.IP "\(bu" 1
+ADC_Channel_9: ADC Channel9 selected 
+.IP "\(bu" 1
+ADC_Channel_10: ADC Channel10 selected 
+.IP "\(bu" 1
+ADC_Channel_11: ADC Channel11 selected 
+.IP "\(bu" 1
+ADC_Channel_12: ADC Channel12 selected 
+.IP "\(bu" 1
+ADC_Channel_13: ADC Channel13 selected 
+.IP "\(bu" 1
+ADC_Channel_14: ADC Channel14 selected 
+.IP "\(bu" 1
+ADC_Channel_15: ADC Channel15 selected 
+.IP "\(bu" 1
+ADC_Channel_16: ADC Channel16 selected 
+.IP "\(bu" 1
+ADC_Channel_17: ADC Channel17 selected 
+.IP "\(bu" 1
+ADC_Channel_18: ADC Channel18 selected 
+.br
+ 
+.PP
+.br
+\fIRank\fP The rank in the injected group sequencer\&. This parameter must be between 1 to 4\&. 
+.br
+\fIADC_SampleTime\fP The sample time value to be set for the selected channel\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_SampleTime_3Cycles: Sample time equal to 3 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_15Cycles: Sample time equal to 15 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_28Cycles: Sample time equal to 28 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_56Cycles: Sample time equal to 56 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_84Cycles: Sample time equal to 84 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_112Cycles: Sample time equal to 112 cycles 
+.br
+ 
+.IP "\(bu" 1
+ADC_SampleTime_144Cycles: Sample time equal to 144 cycles 
+.br
+ 
+.IP "\(bu" 1
+ADC_SampleTime_480Cycles: Sample time equal to 480 cycles 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_InjectedDiscModeCmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the discontinuous mode for injected group channel for the specified ADC\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC discontinuous mode on injected group channel\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_InjectedSequencerLengthConfig (ADC_TypeDef * ADCx, uint8_t Length)"
+
+.PP
+Configures the sequencer length for injected channels\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fILength\fP The sequencer length\&. This parameter must be a number between 1 to 4\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_SetInjectedOffset (ADC_TypeDef * ADCx, uint8_t ADC_InjectedChannel, uint16_t Offset)"
+
+.PP
+Set the injected channels conversion value offset\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_InjectedChannel\fP the ADC injected channel to set its offset\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_InjectedChannel_1: Injected Channel1 selected 
+.IP "\(bu" 1
+ADC_InjectedChannel_2: Injected Channel2 selected 
+.IP "\(bu" 1
+ADC_InjectedChannel_3: Injected Channel3 selected 
+.IP "\(bu" 1
+ADC_InjectedChannel_4: Injected Channel4 selected 
+.PP
+.br
+\fIOffset\fP the offset value for the selected ADC injected channel This parameter must be a 12bit value\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_SoftwareStartInjectedConv (ADC_TypeDef * ADCx)"
+
+.PP
+Enables the selected ADC software start conversion of the injected channels\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

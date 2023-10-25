@@ -1,0 +1,334 @@
+.TH "ADC_Group4" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_Group4 \- Regular Channels Configuration functions
+.PP
+ \- Regular Channels Configuration functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBADC_RegularChannelConfig\fP (ADC_TypeDef *ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime)"
+.br
+.RI "Configures for the selected ADC regular channel its corresponding rank in the sequencer and its sample time\&. "
+.ti -1c
+.RI "void \fBADC_SoftwareStartConv\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Enables the selected ADC software start conversion of the regular channels\&. "
+.ti -1c
+.RI "FlagStatus \fBADC_GetSoftwareStartConvStatus\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Gets the selected ADC Software start regular conversion Status\&. "
+.ti -1c
+.RI "void \fBADC_EOCOnEachRegularChannelCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the EOC on each regular channel conversion\&. "
+.ti -1c
+.RI "void \fBADC_ContinuousModeCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the ADC continuous conversion mode\&. "
+.ti -1c
+.RI "void \fBADC_DiscModeChannelCountConfig\fP (ADC_TypeDef *ADCx, uint8_t Number)"
+.br
+.RI "Configures the discontinuous mode for the selected ADC regular group channel\&. "
+.ti -1c
+.RI "void \fBADC_DiscModeCmd\fP (ADC_TypeDef *ADCx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the discontinuous mode on regular group channel for the specified ADC\&. "
+.ti -1c
+.RI "uint16_t \fBADC_GetConversionValue\fP (ADC_TypeDef *ADCx)"
+.br
+.RI "Returns the last ADCx conversion result data for regular channel\&. "
+.ti -1c
+.RI "uint32_t \fBADC_GetMultiModeConversionValue\fP (void)"
+.br
+.RI "Returns the last ADC1, ADC2 and ADC3 regular conversions results data in the selected multi mode\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Regular Channels Configuration functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                  Regular Channels Configuration functions
+ ===============================================================================  
+
+  This section provides functions allowing to manage the ADC's regular channels,
+  it is composed of 2 sub sections : 
+  
+  1\&. Configuration and management functions for regular channels: This subsection 
+     provides functions allowing to configure the ADC regular channels :    
+          - Configure the rank in the regular group sequencer for each channel
+          - Configure the sampling time for each channel
+          - select the conversion Trigger for regular channels
+          - select the desired EOC event behavior configuration
+          - Activate the continuous Mode  (*)
+          - Activate the Discontinuous Mode 
+     Please Note that the following features for regular channels are configurated
+     using the ADC_Init() function : 
+          - scan mode activation 
+          - continuous mode activation (**) 
+          - External trigger source  
+          - External trigger edge 
+          - number of conversion in the regular channels group sequencer\&.
+     
+     @note (*) and (**) are performing the same configuration
+     
+  2\&. Get the conversion data: This subsection provides an important function in 
+     the ADC peripheral since it returns the converted data of the current 
+     regular channel\&. When the Conversion value is read, the EOC Flag is 
+     automatically cleared\&.
+     
+     @note For multi ADC mode, the last ADC1, ADC2 and ADC3 regular conversions 
+           results data (in the selected multi mode) can be returned in the same 
+           time using ADC_GetMultiModeConversionValue() function\&. 
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void ADC_ContinuousModeCmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the ADC continuous conversion mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC continuous conversion mode This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_DiscModeChannelCountConfig (ADC_TypeDef * ADCx, uint8_t Number)"
+
+.PP
+Configures the discontinuous mode for the selected ADC regular group channel\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINumber\fP specifies the discontinuous mode regular channel count value\&. This number must be between 1 and 8\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_DiscModeCmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the discontinuous mode on regular group channel for the specified ADC\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC discontinuous mode on regular group channel\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_EOCOnEachRegularChannelCmd (ADC_TypeDef * ADCx, FunctionalState NewState)"
+
+.PP
+Enables or disables the EOC on each regular channel conversion\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fINewState\fP new state of the selected ADC EOC flag rising This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "uint16_t ADC_GetConversionValue (ADC_TypeDef * ADCx)"
+
+.PP
+Returns the last ADCx conversion result data for regular channel\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP Data conversion value\&. 
+.RE
+.PP
+
+.SS "uint32_t ADC_GetMultiModeConversionValue (void)"
+
+.PP
+Returns the last ADC1, ADC2 and ADC3 regular conversions results data in the selected multi mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINone\fP 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP Data conversion value\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+In dual mode, the value returned by this function is as following Data[15:0] : these bits contain the regular data of ADC1\&. Data[31:16]: these bits contain the regular data of ADC2\&. 
+.PP
+In triple mode, the value returned by this function is as following Data[15:0] : these bits contain alternatively the regular data of ADC1, ADC3 and ADC2\&. Data[31:16]: these bits contain alternatively the regular data of ADC2, ADC1 and ADC3\&. 
+.br
+ 
+.RE
+.PP
+
+.SS "FlagStatus ADC_GetSoftwareStartConvStatus (ADC_TypeDef * ADCx)"
+
+.PP
+Gets the selected ADC Software start regular conversion Status\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of ADC software start conversion (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "void ADC_RegularChannelConfig (ADC_TypeDef * ADCx, uint8_t ADC_Channel, uint8_t Rank, uint8_t ADC_SampleTime)"
+
+.PP
+Configures for the selected ADC regular channel its corresponding rank in the sequencer and its sample time\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_Channel\fP the ADC channel to configure\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_Channel_0: ADC Channel0 selected 
+.IP "\(bu" 1
+ADC_Channel_1: ADC Channel1 selected 
+.IP "\(bu" 1
+ADC_Channel_2: ADC Channel2 selected 
+.IP "\(bu" 1
+ADC_Channel_3: ADC Channel3 selected 
+.IP "\(bu" 1
+ADC_Channel_4: ADC Channel4 selected 
+.IP "\(bu" 1
+ADC_Channel_5: ADC Channel5 selected 
+.IP "\(bu" 1
+ADC_Channel_6: ADC Channel6 selected 
+.IP "\(bu" 1
+ADC_Channel_7: ADC Channel7 selected 
+.IP "\(bu" 1
+ADC_Channel_8: ADC Channel8 selected 
+.IP "\(bu" 1
+ADC_Channel_9: ADC Channel9 selected 
+.IP "\(bu" 1
+ADC_Channel_10: ADC Channel10 selected 
+.IP "\(bu" 1
+ADC_Channel_11: ADC Channel11 selected 
+.IP "\(bu" 1
+ADC_Channel_12: ADC Channel12 selected 
+.IP "\(bu" 1
+ADC_Channel_13: ADC Channel13 selected 
+.IP "\(bu" 1
+ADC_Channel_14: ADC Channel14 selected 
+.IP "\(bu" 1
+ADC_Channel_15: ADC Channel15 selected 
+.IP "\(bu" 1
+ADC_Channel_16: ADC Channel16 selected 
+.IP "\(bu" 1
+ADC_Channel_17: ADC Channel17 selected 
+.IP "\(bu" 1
+ADC_Channel_18: ADC Channel18 selected 
+.br
+ 
+.PP
+.br
+\fIRank\fP The rank in the regular group sequencer\&. This parameter must be between 1 to 16\&. 
+.br
+\fIADC_SampleTime\fP The sample time value to be set for the selected channel\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_SampleTime_3Cycles: Sample time equal to 3 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_15Cycles: Sample time equal to 15 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_28Cycles: Sample time equal to 28 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_56Cycles: Sample time equal to 56 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_84Cycles: Sample time equal to 84 cycles 
+.IP "\(bu" 1
+ADC_SampleTime_112Cycles: Sample time equal to 112 cycles 
+.br
+ 
+.IP "\(bu" 1
+ADC_SampleTime_144Cycles: Sample time equal to 144 cycles 
+.br
+ 
+.IP "\(bu" 1
+ADC_SampleTime_480Cycles: Sample time equal to 480 cycles 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_SoftwareStartConv (ADC_TypeDef * ADCx)"
+
+.PP
+Enables the selected ADC software start conversion of the regular channels\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

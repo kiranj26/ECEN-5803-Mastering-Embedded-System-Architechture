@@ -1,0 +1,81 @@
+\doxysection{drivers/timer.c File Reference}
+\label{timer_8c}\index{drivers/timer.c@{drivers/timer.c}}
+{\ttfamily \#include $<$platform.\+h$>$}\newline
+{\ttfamily \#include $<$timer.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ timer\+\_\+init} (uint32\+\_\+t timestamp)
+\item 
+void \textbf{ timer\+\_\+enable} (void)
+\begin{DoxyCompactList}\small\item\em Enables the timer operation. \end{DoxyCompactList}\item 
+void \textbf{ timer\+\_\+disable} (void)
+\begin{DoxyCompactList}\small\item\em Disables the timer. \end{DoxyCompactList}\item 
+void \textbf{ timer\+\_\+set\+\_\+callback} (void($\ast$callback)(void))
+\begin{DoxyCompactList}\small\item\em Pass a callback to the API, which is executed during the interrupt handler. \end{DoxyCompactList}\item 
+void \textbf{ Sys\+Tick\+\_\+\+Handler} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \textbf{ timer\+\_\+period}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\label{timer_8c_ab5e09814056d617c521549e542639b7e} 
+\index{timer.c@{timer.c}!SysTick\_Handler@{SysTick\_Handler}}
+\index{SysTick\_Handler@{SysTick\_Handler}!timer.c@{timer.c}}
+\doxysubsubsection{SysTick\_Handler()}
+{\footnotesize\ttfamily void Sys\+Tick\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\label{timer_8c_a47348d175d3ca6ed550605ea82673286} 
+\index{timer.c@{timer.c}!timer\_disable@{timer\_disable}}
+\index{timer\_disable@{timer\_disable}!timer.c@{timer.c}}
+\doxysubsubsection{timer\_disable()}
+{\footnotesize\ttfamily void timer\+\_\+disable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disables the timer. 
+
+\label{timer_8c_a5243088e0c54713a694ab90fe797c02e} 
+\index{timer.c@{timer.c}!timer\_enable@{timer\_enable}}
+\index{timer\_enable@{timer\_enable}!timer.c@{timer.c}}
+\doxysubsubsection{timer\_enable()}
+{\footnotesize\ttfamily void timer\+\_\+enable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Enables the timer operation. 
+
+\label{timer_8c_ae4b54f70f48b9324426f628c83f5834e} 
+\index{timer.c@{timer.c}!timer\_init@{timer\_init}}
+\index{timer\_init@{timer\_init}!timer.c@{timer.c}}
+\doxysubsubsection{timer\_init()}
+{\footnotesize\ttfamily void timer\+\_\+init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{timestamp }\end{DoxyParamCaption})}
+
+\label{timer_8c_ae486e1bb80e11b3a9a2064ac10a0c127} 
+\index{timer.c@{timer.c}!timer\_set\_callback@{timer\_set\_callback}}
+\index{timer\_set\_callback@{timer\_set\_callback}!timer.c@{timer.c}}
+\doxysubsubsection{timer\_set\_callback()}
+{\footnotesize\ttfamily void timer\+\_\+set\+\_\+callback (\begin{DoxyParamCaption}\item[{void($\ast$)(void)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Pass a callback to the API, which is executed during the interrupt handler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Callback function. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\label{timer_8c_ac0c27301e134af3ce80814a553601074} 
+\index{timer.c@{timer.c}!timer\_period@{timer\_period}}
+\index{timer\_period@{timer\_period}!timer.c@{timer.c}}
+\doxysubsubsection{timer\_period}
+{\footnotesize\ttfamily uint32\+\_\+t timer\+\_\+period}
+

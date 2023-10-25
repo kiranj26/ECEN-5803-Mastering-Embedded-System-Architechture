@@ -1,0 +1,197 @@
+\doxysection{drivers/adc.c File Reference}
+\label{adc_8c}\index{drivers/adc.c@{drivers/adc.c}}
+{\ttfamily \#include $<$platform.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$adc.\+h$>$}\newline
+Include dependency graph for adc.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ adc\+\_\+init} (\textbf{ Pin} pin)
+\item 
+uint32\+\_\+t \textbf{ pinmap\+\_\+find\+\_\+peripheral} (\textbf{ Pin} pin)
+\item 
+uint32\+\_\+t \textbf{ pinmap\+\_\+peripheral} (\textbf{ Pin} pin)
+\item 
+void \textbf{ analogin\+\_\+init} (\textbf{ analogin\+\_\+s} $\ast$obj, \textbf{ Pin} pin)
+\item 
+void \textbf{ \+\_\+\+ADC\+\_\+\+Init} (\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$hadc)
+\item 
+uint32\+\_\+t \textbf{ pinmap\+\_\+find\+\_\+function} (\textbf{ Pin} pin)
+\item 
+uint32\+\_\+t \textbf{ pinmap\+\_\+function} (\textbf{ Pin} pin)
+\begin{DoxyCompactList}\small\item\em Initializes the analogue to digital converter, and configures the appropriate GPIO pin. \end{DoxyCompactList}\item 
+void \textbf{ pinmap\+\_\+pinout} (\textbf{ Pin} pin)
+\item 
+void \textbf{ pin\+\_\+function} (\textbf{ Pin} pin, int data)
+\item 
+void \textbf{ \+\_\+\+GPIO\+\_\+\+Init} (GPIO\+\_\+\+Type\+Def $\ast$GPIOx, \textbf{ GPIO\+\_\+\+Init\+Type\+Def} $\ast$\textbf{ GPIO\+\_\+\+Init})
+\item 
+uint16\+\_\+t \textbf{ adc\+\_\+read} (\textbf{ Pin} pin)
+\item 
+uint16\+\_\+t \textbf{ \+\_\+adc\+\_\+read} (\textbf{ analogin\+\_\+s} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Reads the current value of the ADC. \end{DoxyCompactList}\item 
+uint32\+\_\+t \textbf{ \+\_\+\+ADC\+\_\+\+Get\+Value} (\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$hadc)
+\item 
+int \textbf{ \+\_\+\+ADC\+\_\+\+Poll\+For\+Conversion} (\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$hadc, uint32\+\_\+t Timeout)
+\item 
+void \textbf{ \+\_\+\+ADC\+\_\+\+Config\+Channel} (\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$hadc, \textbf{ ADC\+\_\+\+Channel\+Conf\+Type\+Def} $\ast$s\+Config)
+\item 
+void \textbf{ \+\_\+\+ADC\+\_\+\+Start} (\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$hadc)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ ADC\+\_\+\+Handle\+Type\+Def} \textbf{ Adc\+Handle}
+\item 
+const \textbf{ Pin\+Map} \textbf{ Pin\+Map\+\_\+\+ADC} [$\,$]
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\label{adc_8c_a28cb2a61813855a15cd1bd2587d657dc} 
+\index{adc.c@{adc.c}!\_ADC\_ConfigChannel@{\_ADC\_ConfigChannel}}
+\index{\_ADC\_ConfigChannel@{\_ADC\_ConfigChannel}!adc.c@{adc.c}}
+\doxysubsubsection{\_ADC\_ConfigChannel()}
+{\footnotesize\ttfamily void \+\_\+\+ADC\+\_\+\+Config\+Channel (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$}]{hadc,  }\item[{\textbf{ ADC\+\_\+\+Channel\+Conf\+Type\+Def} $\ast$}]{s\+Config }\end{DoxyParamCaption})}
+
+\label{adc_8c_abbd7238e400008cf4549ed5e3ab8780c} 
+\index{adc.c@{adc.c}!\_ADC\_GetValue@{\_ADC\_GetValue}}
+\index{\_ADC\_GetValue@{\_ADC\_GetValue}!adc.c@{adc.c}}
+\doxysubsubsection{\_ADC\_GetValue()}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+\+ADC\+\_\+\+Get\+Value (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$}]{hadc }\end{DoxyParamCaption})}
+
+\label{adc_8c_a9dbf36dc37bb332cc16b1b91c3bfe5d8} 
+\index{adc.c@{adc.c}!\_ADC\_Init@{\_ADC\_Init}}
+\index{\_ADC\_Init@{\_ADC\_Init}!adc.c@{adc.c}}
+\doxysubsubsection{\_ADC\_Init()}
+{\footnotesize\ttfamily void \+\_\+\+ADC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$}]{hadc }\end{DoxyParamCaption})}
+
+\label{adc_8c_a0857b2d8ae59ff706adf8e8d07b0fb4d} 
+\index{adc.c@{adc.c}!\_ADC\_PollForConversion@{\_ADC\_PollForConversion}}
+\index{\_ADC\_PollForConversion@{\_ADC\_PollForConversion}!adc.c@{adc.c}}
+\doxysubsubsection{\_ADC\_PollForConversion()}
+{\footnotesize\ttfamily int \+\_\+\+ADC\+\_\+\+Poll\+For\+Conversion (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$}]{hadc,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+\label{adc_8c_afef6c30ca784ef6f47ff577c355d4f8c} 
+\index{adc.c@{adc.c}!\_adc\_read@{\_adc\_read}}
+\index{\_adc\_read@{\_adc\_read}!adc.c@{adc.c}}
+\doxysubsubsection{\_adc\_read()}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+adc\+\_\+read (\begin{DoxyParamCaption}\item[{\textbf{ analogin\+\_\+s} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Reads the current value of the ADC. 
+
+\begin{DoxyReturn}{Returns}
+Potential of the pin, relative to ground. 
+\end{DoxyReturn}
+\label{adc_8c_ad57db15e40a7a818fc90c75ccc1d36b7} 
+\index{adc.c@{adc.c}!\_ADC\_Start@{\_ADC\_Start}}
+\index{\_ADC\_Start@{\_ADC\_Start}!adc.c@{adc.c}}
+\doxysubsubsection{\_ADC\_Start()}
+{\footnotesize\ttfamily void \+\_\+\+ADC\+\_\+\+Start (\begin{DoxyParamCaption}\item[{\textbf{ ADC\+\_\+\+Handle\+Type\+Def} $\ast$}]{hadc }\end{DoxyParamCaption})}
+
+\label{adc_8c_a9f7d9f5a0894fbcb072e49e954f445ed} 
+\index{adc.c@{adc.c}!\_GPIO\_Init@{\_GPIO\_Init}}
+\index{\_GPIO\_Init@{\_GPIO\_Init}!adc.c@{adc.c}}
+\doxysubsubsection{\_GPIO\_Init()}
+{\footnotesize\ttfamily void \+\_\+\+GPIO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{GPIOx,  }\item[{\textbf{ GPIO\+\_\+\+Init\+Type\+Def} $\ast$}]{GPIO\+\_\+\+Init }\end{DoxyParamCaption})}
+
+\label{adc_8c_a288bb69f04512be6ade5ff016a43712a} 
+\index{adc.c@{adc.c}!adc\_init@{adc\_init}}
+\index{adc\_init@{adc\_init}!adc.c@{adc.c}}
+\doxysubsubsection{adc\_init()}
+{\footnotesize\ttfamily void adc\+\_\+init (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+\label{adc_8c_a21b4f937ae2402956618d35aa6c03923} 
+\index{adc.c@{adc.c}!adc\_read@{adc\_read}}
+\index{adc\_read@{adc\_read}!adc.c@{adc.c}}
+\doxysubsubsection{adc\_read()}
+{\footnotesize\ttfamily uint16\+\_\+t adc\+\_\+read (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+\label{adc_8c_aa55a339d0dc6a85ff1d35af3f01c0be9} 
+\index{adc.c@{adc.c}!analogin\_init@{analogin\_init}}
+\index{analogin\_init@{analogin\_init}!adc.c@{adc.c}}
+\doxysubsubsection{analogin\_init()}
+{\footnotesize\ttfamily void analogin\+\_\+init (\begin{DoxyParamCaption}\item[{\textbf{ analogin\+\_\+s} $\ast$}]{obj,  }\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+\label{adc_8c_ade67d1bdd26b6d1ec6c5abeedf8eb4a6} 
+\index{adc.c@{adc.c}!pin\_function@{pin\_function}}
+\index{pin\_function@{pin\_function}!adc.c@{adc.c}}
+\doxysubsubsection{pin\_function()}
+{\footnotesize\ttfamily void pin\+\_\+function (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+\label{adc_8c_ac31efd41e0611d9e4c0e683048950a81} 
+\index{adc.c@{adc.c}!pinmap\_find\_function@{pinmap\_find\_function}}
+\index{pinmap\_find\_function@{pinmap\_find\_function}!adc.c@{adc.c}}
+\doxysubsubsection{pinmap\_find\_function()}
+{\footnotesize\ttfamily uint32\+\_\+t pinmap\+\_\+find\+\_\+function (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+\label{adc_8c_a4518609ab103b2ffa24082278595efa7} 
+\index{adc.c@{adc.c}!pinmap\_find\_peripheral@{pinmap\_find\_peripheral}}
+\index{pinmap\_find\_peripheral@{pinmap\_find\_peripheral}!adc.c@{adc.c}}
+\doxysubsubsection{pinmap\_find\_peripheral()}
+{\footnotesize\ttfamily uint32\+\_\+t pinmap\+\_\+find\+\_\+peripheral (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+\label{adc_8c_a2d797b22d683c8e3270338d89f650aaf} 
+\index{adc.c@{adc.c}!pinmap\_function@{pinmap\_function}}
+\index{pinmap\_function@{pinmap\_function}!adc.c@{adc.c}}
+\doxysubsubsection{pinmap\_function()}
+{\footnotesize\ttfamily uint32\+\_\+t pinmap\+\_\+function (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+
+
+Initializes the analogue to digital converter, and configures the appropriate GPIO pin. 
+
+\label{adc_8c_aadd657a035e5640e26fc72157061c080} 
+\index{adc.c@{adc.c}!pinmap\_peripheral@{pinmap\_peripheral}}
+\index{pinmap\_peripheral@{pinmap\_peripheral}!adc.c@{adc.c}}
+\doxysubsubsection{pinmap\_peripheral()}
+{\footnotesize\ttfamily uint32\+\_\+t pinmap\+\_\+peripheral (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+\label{adc_8c_a4fcf12fe7657e047ea3853d3da25e76a} 
+\index{adc.c@{adc.c}!pinmap\_pinout@{pinmap\_pinout}}
+\index{pinmap\_pinout@{pinmap\_pinout}!adc.c@{adc.c}}
+\doxysubsubsection{pinmap\_pinout()}
+{\footnotesize\ttfamily void pinmap\+\_\+pinout (\begin{DoxyParamCaption}\item[{\textbf{ Pin}}]{pin }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\label{adc_8c_a35c38ca7a8210322754a21a7009e1021} 
+\index{adc.c@{adc.c}!AdcHandle@{AdcHandle}}
+\index{AdcHandle@{AdcHandle}!adc.c@{adc.c}}
+\doxysubsubsection{AdcHandle}
+{\footnotesize\ttfamily \textbf{ ADC\+\_\+\+Handle\+Type\+Def} Adc\+Handle}
+
+\label{adc_8c_a9a368cf73e86842f01d50df63f3ddb14} 
+\index{adc.c@{adc.c}!PinMap\_ADC@{PinMap\_ADC}}
+\index{PinMap\_ADC@{PinMap\_ADC}!adc.c@{adc.c}}
+\doxysubsubsection{PinMap\_ADC}
+{\footnotesize\ttfamily const \textbf{ Pin\+Map} Pin\+Map\+\_\+\+ADC[$\,$]}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{PA\_0,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 0,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PA\_1,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 1,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PA\_2,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 2,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PA\_3,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 3,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PA\_4,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 4,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PA\_5,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 5,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PA\_6,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 6,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PA\_7,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 7,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PB\_0,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 8,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PB\_1,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 9,\ \ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PC\_0,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 10,\ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PC\_1,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 11,\ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PC\_2,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 12,\ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PC\_3,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 13,\ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PC\_4,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 14,\ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \{PC\_5,\ (int)ADC1\_BASE,\ STM\_PIN\_DATA\_EXT(STM\_MODE\_ANALOG,\ GPIO\_NOPULL,\ 0,\ 15,\ 0)\},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{NC,0,\ 0\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

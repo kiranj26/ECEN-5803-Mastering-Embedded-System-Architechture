@@ -1,0 +1,105 @@
+.TH "RCC_Flag" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCC_Flag \- RCC_Flag
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRCC_FLAG_HSIRDY\fP   ((uint8_t)0x21)"
+.br
+.ti -1c
+.RI "#define \fBRCC_FLAG_HSERDY\fP   ((uint8_t)0x31)"
+.br
+.ti -1c
+.RI "#define \fBRCC_FLAG_PLLRDY\fP   ((uint8_t)0x39)"
+.br
+.ti -1c
+.RI "#define \fBRCC_FLAG_PLLI2SRDY\fP   ((uint8_t)0x3B)"
+.br
+.ti -1c
+.RI "#define \fBRCC_FLAG_LSERDY\fP   ((uint8_t)0x41)"
+.br
+.ti -1c
+.RI "#define \fBRCC_FLAG_LSIRDY\fP   ((uint8_t)0x61)"
+.br
+.ti -1c
+.RI "#define \fBRCC_FLAG_BORRST\fP   ((uint8_t)0x79)"
+.br
+.ti -1c
+.RI "#define \fBRCC_FLAG_PINRST\fP   ((uint8_t)0x7A)"
+.br
+.ti -1c
+.RI "#define \fBRCC_FLAG_PORRST\fP   ((uint8_t)0x7B)"
+.br
+.ti -1c
+.RI "#define \fBRCC_FLAG_SFTRST\fP   ((uint8_t)0x7C)"
+.br
+.ti -1c
+.RI "#define \fBRCC_FLAG_IWDGRST\fP   ((uint8_t)0x7D)"
+.br
+.ti -1c
+.RI "#define \fBRCC_FLAG_WWDGRST\fP   ((uint8_t)0x7E)"
+.br
+.ti -1c
+.RI "#define \fBRCC_FLAG_LPWRRST\fP   ((uint8_t)0x7F)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_FLAG\fP(FLAG)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_CALIBRATION_VALUE\fP(VALUE)   ((VALUE) <= 0x1F)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_RCC_CALIBRATION_VALUE(VALUE)   ((VALUE) <= 0x1F)"
+
+.SS "#define IS_RCC_FLAG(FLAG)"
+\fBValue:\fP.PP
+.nf
+                           (((FLAG) == RCC_FLAG_HSIRDY) || ((FLAG) == RCC_FLAG_HSERDY) || \\
+                           ((FLAG) == RCC_FLAG_PLLRDY) || ((FLAG) == RCC_FLAG_LSERDY) || \\
+                           ((FLAG) == RCC_FLAG_LSIRDY) || ((FLAG) == RCC_FLAG_BORRST) || \\
+                           ((FLAG) == RCC_FLAG_PINRST) || ((FLAG) == RCC_FLAG_PORRST) || \\
+                           ((FLAG) == RCC_FLAG_SFTRST) || ((FLAG) == RCC_FLAG_IWDGRST)|| \\
+                           ((FLAG) == RCC_FLAG_WWDGRST)|| ((FLAG) == RCC_FLAG_LPWRRST)|| \\
+                           ((FLAG) == RCC_FLAG_PLLI2SRDY))
+.fi
+
+.SS "#define RCC_FLAG_BORRST   ((uint8_t)0x79)"
+
+.SS "#define RCC_FLAG_HSERDY   ((uint8_t)0x31)"
+
+.SS "#define RCC_FLAG_HSIRDY   ((uint8_t)0x21)"
+
+.SS "#define RCC_FLAG_IWDGRST   ((uint8_t)0x7D)"
+
+.SS "#define RCC_FLAG_LPWRRST   ((uint8_t)0x7F)"
+
+.SS "#define RCC_FLAG_LSERDY   ((uint8_t)0x41)"
+
+.SS "#define RCC_FLAG_LSIRDY   ((uint8_t)0x61)"
+
+.SS "#define RCC_FLAG_PINRST   ((uint8_t)0x7A)"
+
+.SS "#define RCC_FLAG_PLLI2SRDY   ((uint8_t)0x3B)"
+
+.SS "#define RCC_FLAG_PLLRDY   ((uint8_t)0x39)"
+
+.SS "#define RCC_FLAG_PORRST   ((uint8_t)0x7B)"
+
+.SS "#define RCC_FLAG_SFTRST   ((uint8_t)0x7C)"
+
+.SS "#define RCC_FLAG_WWDGRST   ((uint8_t)0x7E)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

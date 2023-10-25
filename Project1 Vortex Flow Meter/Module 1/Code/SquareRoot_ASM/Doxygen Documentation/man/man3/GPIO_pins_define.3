@@ -1,0 +1,134 @@
+.TH "GPIO_pins_define" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GPIO_pins_define \- GPIO_pins_define
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBGPIO_Pin_0\fP   ((uint16_t)0x0001)  /* \fBPin\fP 0 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_1\fP   ((uint16_t)0x0002)  /* \fBPin\fP 1 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_2\fP   ((uint16_t)0x0004)  /* \fBPin\fP 2 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_3\fP   ((uint16_t)0x0008)  /* \fBPin\fP 3 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_4\fP   ((uint16_t)0x0010)  /* \fBPin\fP 4 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_5\fP   ((uint16_t)0x0020)  /* \fBPin\fP 5 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_6\fP   ((uint16_t)0x0040)  /* \fBPin\fP 6 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_7\fP   ((uint16_t)0x0080)  /* \fBPin\fP 7 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_8\fP   ((uint16_t)0x0100)  /* \fBPin\fP 8 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_9\fP   ((uint16_t)0x0200)  /* \fBPin\fP 9 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_10\fP   ((uint16_t)0x0400)  /* \fBPin\fP 10 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_11\fP   ((uint16_t)0x0800)  /* \fBPin\fP 11 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_12\fP   ((uint16_t)0x1000)  /* \fBPin\fP 12 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_13\fP   ((uint16_t)0x2000)  /* \fBPin\fP 13 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_14\fP   ((uint16_t)0x4000)  /* \fBPin\fP 14 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_15\fP   ((uint16_t)0x8000)  /* \fBPin\fP 15 selected */"
+.br
+.ti -1c
+.RI "#define \fBGPIO_Pin_All\fP   ((uint16_t)0xFFFF)  /* All pins selected */"
+.br
+.ti -1c
+.RI "#define \fBIS_GPIO_PIN\fP(PIN)   ((((PIN) & (uint16_t)0x00) == 0x00) && ((PIN) != (uint16_t)0x00))"
+.br
+.ti -1c
+.RI "#define \fBIS_GET_GPIO_PIN\fP(PIN)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define GPIO_Pin_0   ((uint16_t)0x0001)  /* \fBPin\fP 0 selected */"
+
+.SS "#define GPIO_Pin_1   ((uint16_t)0x0002)  /* \fBPin\fP 1 selected */"
+
+.SS "#define GPIO_Pin_10   ((uint16_t)0x0400)  /* \fBPin\fP 10 selected */"
+
+.SS "#define GPIO_Pin_11   ((uint16_t)0x0800)  /* \fBPin\fP 11 selected */"
+
+.SS "#define GPIO_Pin_12   ((uint16_t)0x1000)  /* \fBPin\fP 12 selected */"
+
+.SS "#define GPIO_Pin_13   ((uint16_t)0x2000)  /* \fBPin\fP 13 selected */"
+
+.SS "#define GPIO_Pin_14   ((uint16_t)0x4000)  /* \fBPin\fP 14 selected */"
+
+.SS "#define GPIO_Pin_15   ((uint16_t)0x8000)  /* \fBPin\fP 15 selected */"
+
+.SS "#define GPIO_Pin_2   ((uint16_t)0x0004)  /* \fBPin\fP 2 selected */"
+
+.SS "#define GPIO_Pin_3   ((uint16_t)0x0008)  /* \fBPin\fP 3 selected */"
+
+.SS "#define GPIO_Pin_4   ((uint16_t)0x0010)  /* \fBPin\fP 4 selected */"
+
+.SS "#define GPIO_Pin_5   ((uint16_t)0x0020)  /* \fBPin\fP 5 selected */"
+
+.SS "#define GPIO_Pin_6   ((uint16_t)0x0040)  /* \fBPin\fP 6 selected */"
+
+.SS "#define GPIO_Pin_7   ((uint16_t)0x0080)  /* \fBPin\fP 7 selected */"
+
+.SS "#define GPIO_Pin_8   ((uint16_t)0x0100)  /* \fBPin\fP 8 selected */"
+
+.SS "#define GPIO_Pin_9   ((uint16_t)0x0200)  /* \fBPin\fP 9 selected */"
+
+.SS "#define GPIO_Pin_All   ((uint16_t)0xFFFF)  /* All pins selected */"
+
+.SS "#define IS_GET_GPIO_PIN(PIN)"
+\fBValue:\fP.PP
+.nf
+                              (((PIN) == GPIO_Pin_0) || \\
+                              ((PIN) == GPIO_Pin_1) || \\
+                              ((PIN) == GPIO_Pin_2) || \\
+                              ((PIN) == GPIO_Pin_3) || \\
+                              ((PIN) == GPIO_Pin_4) || \\
+                              ((PIN) == GPIO_Pin_5) || \\
+                              ((PIN) == GPIO_Pin_6) || \\
+                              ((PIN) == GPIO_Pin_7) || \\
+                              ((PIN) == GPIO_Pin_8) || \\
+                              ((PIN) == GPIO_Pin_9) || \\
+                              ((PIN) == GPIO_Pin_10) || \\
+                              ((PIN) == GPIO_Pin_11) || \\
+                              ((PIN) == GPIO_Pin_12) || \\
+                              ((PIN) == GPIO_Pin_13) || \\
+                              ((PIN) == GPIO_Pin_14) || \\
+                              ((PIN) == GPIO_Pin_15))
+.fi
+
+.SS "#define IS_GPIO_PIN(PIN)   ((((PIN) & (uint16_t)0x00) == 0x00) && ((PIN) != (uint16_t)0x00))"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

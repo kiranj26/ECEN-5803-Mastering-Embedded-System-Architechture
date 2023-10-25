@@ -1,0 +1,74 @@
+.TH "drivers/timer.c" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/timer.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <platform\&.h>\fP
+.br
+\fC#include <timer\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBtimer_init\fP (uint32_t timestamp)"
+.br
+.ti -1c
+.RI "void \fBtimer_enable\fP (void)"
+.br
+.RI "Enables the timer operation\&. "
+.ti -1c
+.RI "void \fBtimer_disable\fP (void)"
+.br
+.RI "Disables the timer\&. "
+.ti -1c
+.RI "void \fBtimer_set_callback\fP (void(*callback)(void))"
+.br
+.RI "Pass a callback to the API, which is executed during the interrupt handler\&. "
+.ti -1c
+.RI "void \fBSysTick_Handler\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBtimer_period\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void SysTick_Handler (void)"
+
+.SS "void timer_disable (void)"
+
+.PP
+Disables the timer\&. 
+.SS "void timer_enable (void)"
+
+.PP
+Enables the timer operation\&. 
+.SS "void timer_init (uint32_t timestamp)"
+
+.SS "void timer_set_callback (void(*)(void) callback)"
+
+.PP
+Pass a callback to the API, which is executed during the interrupt handler\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcallback\fP Callback function\&. 
+.RE
+.PP
+
+.SH "Variable Documentation"
+.PP 
+.SS "uint32_t timer_period"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

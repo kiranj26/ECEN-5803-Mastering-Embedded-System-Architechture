@@ -1,0 +1,82 @@
+.TH "I2C_registers" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_registers \- I2C_registers
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBI2C_Register_CR1\fP   ((uint8_t)0x00)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_CR2\fP   ((uint8_t)0x04)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_OAR1\fP   ((uint8_t)0x08)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_OAR2\fP   ((uint8_t)0x0C)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_DR\fP   ((uint8_t)0x10)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_SR1\fP   ((uint8_t)0x14)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_SR2\fP   ((uint8_t)0x18)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_CCR\fP   ((uint8_t)0x1C)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_TRISE\fP   ((uint8_t)0x20)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_REGISTER\fP(REGISTER)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define I2C_Register_CCR   ((uint8_t)0x1C)"
+
+.SS "#define I2C_Register_CR1   ((uint8_t)0x00)"
+
+.SS "#define I2C_Register_CR2   ((uint8_t)0x04)"
+
+.SS "#define I2C_Register_DR   ((uint8_t)0x10)"
+
+.SS "#define I2C_Register_OAR1   ((uint8_t)0x08)"
+
+.SS "#define I2C_Register_OAR2   ((uint8_t)0x0C)"
+
+.SS "#define I2C_Register_SR1   ((uint8_t)0x14)"
+
+.SS "#define I2C_Register_SR2   ((uint8_t)0x18)"
+
+.SS "#define I2C_Register_TRISE   ((uint8_t)0x20)"
+
+.SS "#define IS_I2C_REGISTER(REGISTER)"
+\fBValue:\fP.PP
+.nf
+                                   (((REGISTER) == I2C_Register_CR1) || \\
+                                   ((REGISTER) == I2C_Register_CR2) || \\
+                                   ((REGISTER) == I2C_Register_OAR1) || \\
+                                   ((REGISTER) == I2C_Register_OAR2) || \\
+                                   ((REGISTER) == I2C_Register_DR) || \\
+                                   ((REGISTER) == I2C_Register_SR1) || \\
+                                   ((REGISTER) == I2C_Register_SR2) || \\
+                                   ((REGISTER) == I2C_Register_CCR) || \\
+                                   ((REGISTER) == I2C_Register_TRISE))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

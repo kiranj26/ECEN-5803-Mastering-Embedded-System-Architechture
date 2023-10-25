@@ -1,0 +1,108 @@
+\doxysection{GPIO\+\_\+\+Init\+Type\+Def Struct Reference}
+\label{struct_g_p_i_o___init_type_def}\index{GPIO\_InitTypeDef@{GPIO\_InitTypeDef}}
+
+
+GPIO Init structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$adc.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \textbf{ Pin}
+\item 
+uint32\+\_\+t \textbf{ Mode}
+\item 
+uint32\+\_\+t \textbf{ Pull}
+\item 
+uint32\+\_\+t \textbf{ Speed}
+\item 
+uint32\+\_\+t \textbf{ Alternate}
+\item 
+uint32\+\_\+t \textbf{ GPIO\+\_\+\+Pin}
+\item 
+\textbf{ GPIOMode\+\_\+\+Type\+Def} \textbf{ GPIO\+\_\+\+Mode}
+\item 
+\textbf{ GPIOSpeed\+\_\+\+Type\+Def} \textbf{ GPIO\+\_\+\+Speed}
+\item 
+\textbf{ GPIOOType\+\_\+\+Type\+Def} \textbf{ GPIO\+\_\+\+OType}
+\item 
+\textbf{ GPIOPu\+Pd\+\_\+\+Type\+Def} \textbf{ GPIO\+\_\+\+Pu\+Pd}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GPIO Init structure definition ~\newline
+ 
+
+\doxysubsection{Field Documentation}
+\label{struct_g_p_i_o___init_type_def_a9a352764836bb14ec56a94f77697b52d} 
+\index{GPIO\_InitTypeDef@{GPIO\_InitTypeDef}!Alternate@{Alternate}}
+\index{Alternate@{Alternate}!GPIO\_InitTypeDef@{GPIO\_InitTypeDef}}
+\doxysubsubsection{Alternate}
+{\footnotesize\ttfamily uint32\+\_\+t Alternate}
+
+Peripheral to be connected to the selected pins. This parameter can be a value of GPIO\+\_\+\+Alternate\+\_\+function\+\_\+selection \label{struct_g_p_i_o___init_type_def_a0c7e8901d8b511bbb8c3b153f705dbba} 
+\index{GPIO\_InitTypeDef@{GPIO\_InitTypeDef}!GPIO\_Mode@{GPIO\_Mode}}
+\index{GPIO\_Mode@{GPIO\_Mode}!GPIO\_InitTypeDef@{GPIO\_InitTypeDef}}
+\doxysubsubsection{GPIO\_Mode}
+{\footnotesize\ttfamily \textbf{ GPIOMode\+\_\+\+Type\+Def} GPIO\+\_\+\+Mode}
+
+Specifies the operating mode for the selected pins. This parameter can be a value of \doxyref{GPIOMode\+\_\+\+Type\+Def}{p.}{group___g_p_i_o_ga1347339e1c84a196fabbb31205eec5d4} \label{struct_g_p_i_o___init_type_def_a321a268abbed3d2f01c27383e8daf92d} 
+\index{GPIO\_InitTypeDef@{GPIO\_InitTypeDef}!GPIO\_OType@{GPIO\_OType}}
+\index{GPIO\_OType@{GPIO\_OType}!GPIO\_InitTypeDef@{GPIO\_InitTypeDef}}
+\doxysubsubsection{GPIO\_OType}
+{\footnotesize\ttfamily \textbf{ GPIOOType\+\_\+\+Type\+Def} GPIO\+\_\+\+OType}
+
+Specifies the operating output type for the selected pins. This parameter can be a value of \doxyref{GPIOOType\+\_\+\+Type\+Def}{p.}{group___g_p_i_o_gae74212e8d66c389f47326b06bdf6d2ab} \label{struct_g_p_i_o___init_type_def_a15699fc7e215ac2579cd24ca76cd4591} 
+\index{GPIO\_InitTypeDef@{GPIO\_InitTypeDef}!GPIO\_Pin@{GPIO\_Pin}}
+\index{GPIO\_Pin@{GPIO\_Pin}!GPIO\_InitTypeDef@{GPIO\_InitTypeDef}}
+\doxysubsubsection{GPIO\_Pin}
+{\footnotesize\ttfamily uint32\+\_\+t GPIO\+\_\+\+Pin}
+
+Specifies the GPIO pins to be configured. This parameter can be any value of \doxyref{GPIO\+\_\+pins\+\_\+define}{p.}{group___g_p_i_o__pins__define} \label{struct_g_p_i_o___init_type_def_aeb0168ffc465346d21f3120aec320b72} 
+\index{GPIO\_InitTypeDef@{GPIO\_InitTypeDef}!GPIO\_PuPd@{GPIO\_PuPd}}
+\index{GPIO\_PuPd@{GPIO\_PuPd}!GPIO\_InitTypeDef@{GPIO\_InitTypeDef}}
+\doxysubsubsection{GPIO\_PuPd}
+{\footnotesize\ttfamily \textbf{ GPIOPu\+Pd\+\_\+\+Type\+Def} GPIO\+\_\+\+Pu\+Pd}
+
+Specifies the operating Pull-\/up/\+Pull down for the selected pins. This parameter can be a value of \doxyref{GPIOPu\+Pd\+\_\+\+Type\+Def}{p.}{group___g_p_i_o_gafb7ecd99c44b4fd702d669304a36c2c8} \label{struct_g_p_i_o___init_type_def_a57b08335216f50618ebc080e4fbb0a80} 
+\index{GPIO\_InitTypeDef@{GPIO\_InitTypeDef}!GPIO\_Speed@{GPIO\_Speed}}
+\index{GPIO\_Speed@{GPIO\_Speed}!GPIO\_InitTypeDef@{GPIO\_InitTypeDef}}
+\doxysubsubsection{GPIO\_Speed}
+{\footnotesize\ttfamily \textbf{ GPIOSpeed\+\_\+\+Type\+Def} GPIO\+\_\+\+Speed}
+
+Specifies the speed for the selected pins. This parameter can be a value of \doxyref{GPIOSpeed\+\_\+\+Type\+Def}{p.}{group___g_p_i_o_ga062ad92b67b4a1f301c161022cf3ba8e} \label{struct_g_p_i_o___init_type_def_a0ffc93ec511ed9cf1663f6939bd3e839} 
+\index{GPIO\_InitTypeDef@{GPIO\_InitTypeDef}!Mode@{Mode}}
+\index{Mode@{Mode}!GPIO\_InitTypeDef@{GPIO\_InitTypeDef}}
+\doxysubsubsection{Mode}
+{\footnotesize\ttfamily uint32\+\_\+t Mode}
+
+Specifies the operating mode for the selected pins. This parameter can be a value of GPIO\+\_\+mode\+\_\+define \label{struct_g_p_i_o___init_type_def_a871d0ab74071724e96b7cc9ae2a7532b} 
+\index{GPIO\_InitTypeDef@{GPIO\_InitTypeDef}!Pin@{Pin}}
+\index{Pin@{Pin}!GPIO\_InitTypeDef@{GPIO\_InitTypeDef}}
+\doxysubsubsection{Pin}
+{\footnotesize\ttfamily uint32\+\_\+t \textbf{ Pin}}
+
+Specifies the GPIO pins to be configured. This parameter can be any value of \doxyref{GPIO\+\_\+pins\+\_\+define}{p.}{group___g_p_i_o__pins__define} \label{struct_g_p_i_o___init_type_def_a6cdde08eb507b710f8179a4326548e26} 
+\index{GPIO\_InitTypeDef@{GPIO\_InitTypeDef}!Pull@{Pull}}
+\index{Pull@{Pull}!GPIO\_InitTypeDef@{GPIO\_InitTypeDef}}
+\doxysubsubsection{Pull}
+{\footnotesize\ttfamily uint32\+\_\+t Pull}
+
+Specifies the Pull-\/up or Pull-\/\+Down activation for the selected pins. This parameter can be a value of GPIO\+\_\+pull\+\_\+define \label{struct_g_p_i_o___init_type_def_ad04b2041f59d32492ec36a891418f3fd} 
+\index{GPIO\_InitTypeDef@{GPIO\_InitTypeDef}!Speed@{Speed}}
+\index{Speed@{Speed}!GPIO\_InitTypeDef@{GPIO\_InitTypeDef}}
+\doxysubsubsection{Speed}
+{\footnotesize\ttfamily uint32\+\_\+t Speed}
+
+Specifies the speed for the selected pins. This parameter can be a value of GPIO\+\_\+speed\+\_\+define 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+drivers/\textbf{ adc.\+h}\item 
+drivers/\textbf{ stm32f4xx\+\_\+gpio.\+h}\end{DoxyCompactItemize}

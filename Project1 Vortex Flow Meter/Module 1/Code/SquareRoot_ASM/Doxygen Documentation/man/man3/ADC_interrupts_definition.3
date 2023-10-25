@@ -1,0 +1,50 @@
+.TH "ADC_interrupts_definition" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_interrupts_definition \- ADC_interrupts_definition
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC_IT_EOC\fP   ((uint16_t)0x0205)"
+.br
+.ti -1c
+.RI "#define \fBADC_IT_AWD\fP   ((uint16_t)0x0106)"
+.br
+.ti -1c
+.RI "#define \fBADC_IT_JEOC\fP   ((uint16_t)0x0407)"
+.br
+.ti -1c
+.RI "#define \fBADC_IT_OVR\fP   ((uint16_t)0x201A)"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_IT\fP(IT)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_IT_AWD   ((uint16_t)0x0106)"
+
+.SS "#define ADC_IT_EOC   ((uint16_t)0x0205)"
+
+.SS "#define ADC_IT_JEOC   ((uint16_t)0x0407)"
+
+.SS "#define ADC_IT_OVR   ((uint16_t)0x201A)"
+
+.SS "#define IS_ADC_IT(IT)"
+\fBValue:\fP.PP
+.nf
+                       (((IT) == ADC_IT_EOC) || ((IT) == ADC_IT_AWD) || \\
+                       ((IT) == ADC_IT_JEOC)|| ((IT) == ADC_IT_OVR))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

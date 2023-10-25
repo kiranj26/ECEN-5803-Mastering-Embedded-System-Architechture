@@ -1,0 +1,77 @@
+.TH "RTE/Device/STM32F401RETx/system_stm32f4xx.c" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RTE/Device/STM32F401RETx/system_stm32f4xx.c \- CMSIS Cortex-M4 Device Peripheral Access Layer System Source File\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'stm32f4xx\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBHSE_VALUE\fP   ((uint32_t)25000000)"
+.br
+.ti -1c
+.RI "#define \fBHSI_VALUE\fP   ((uint32_t)16000000)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSystemInit\fP (void)"
+.br
+.RI "Setup the microcontroller system Initialize the FPU setting, vector table location and External memory configuration\&. "
+.ti -1c
+.RI "void \fBSystemCoreClockUpdate\fP (void)"
+.br
+.RI "Update SystemCoreClock variable according to Clock Register Values\&. The SystemCoreClock variable contains the core clock (HCLK), it can be used by the user application to setup the SysTick timer or configure other parameters\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBSystemCoreClock\fP = 16000000"
+.br
+.ti -1c
+.RI "const uint8_t \fBAHBPrescTable\fP [16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9}"
+.br
+.ti -1c
+.RI "const uint8_t \fBAPBPrescTable\fP [8] = {0, 0, 0, 0, 1, 2, 3, 4}"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+CMSIS Cortex-M4 Device Peripheral Access Layer System Source File\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+MCD Application Team 
+.RE
+.PP
+This file provides two functions and one global variable to be called from user application:
+.IP "\(bu" 2
+\fBSystemInit()\fP: This function is called at startup just after reset and before branch to main program\&. This call is made inside the 'startup_stm32f4xx\&.s' file\&.
+.IP "\(bu" 2
+SystemCoreClock variable: Contains the core clock (HCLK), it can be used by the user application to setup the SysTick timer or configure other parameters\&.
+.IP "\(bu" 2
+\fBSystemCoreClockUpdate()\fP: Updates the variable SystemCoreClock and must be called whenever the core clock is changed during program execution\&.
+.PP
+.PP
+\fBAttention\fP
+.RS 4
+.RE
+.PP
+.SS "(C) Copyright (c) 2017 STMicroelectronics\&. All rights reserved\&."
+.PP
+This software component is licensed by ST under BSD 3-Clause license, the 'License'; You may not use this file except in compliance with the License\&. You may obtain a copy of the License at: opensource\&.org/licenses/BSD-3-Clause 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

@@ -1,0 +1,86 @@
+.TH "RCC_MCO1_Clock_Source_Prescaler" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCC_MCO1_Clock_Source_Prescaler \- RCC_MCO1_Clock_Source_Prescaler
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRCC_MCO1Source_HSI\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO1Source_LSE\fP   ((uint32_t)0x00200000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO1Source_HSE\fP   ((uint32_t)0x00400000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO1Source_PLLCLK\fP   ((uint32_t)0x00600000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO1Div_1\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO1Div_2\fP   ((uint32_t)0x04000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO1Div_3\fP   ((uint32_t)0x05000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO1Div_4\fP   ((uint32_t)0x06000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO1Div_5\fP   ((uint32_t)0x07000000)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_MCO1SOURCE\fP(SOURCE)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_MCO1DIV\fP(DIV)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_RCC_MCO1DIV(DIV)"
+\fBValue:\fP.PP
+.nf
+                             (((DIV) == RCC_MCO1Div_1) || ((DIV) == RCC_MCO1Div_2) || \\
+                             ((DIV) == RCC_MCO1Div_3) || ((DIV) == RCC_MCO1Div_4) || \\
+                             ((DIV) == RCC_MCO1Div_5))
+.fi
+
+.SS "#define IS_RCC_MCO1SOURCE(SOURCE)"
+\fBValue:\fP.PP
+.nf
+                                   (((SOURCE) == RCC_MCO1Source_HSI) || ((SOURCE) == RCC_MCO1Source_LSE) || \\
+                                   ((SOURCE) == RCC_MCO1Source_HSE) || ((SOURCE) == RCC_MCO1Source_PLLCLK))
+.fi
+
+.SS "#define RCC_MCO1Div_1   ((uint32_t)0x00000000)"
+
+.SS "#define RCC_MCO1Div_2   ((uint32_t)0x04000000)"
+
+.SS "#define RCC_MCO1Div_3   ((uint32_t)0x05000000)"
+
+.SS "#define RCC_MCO1Div_4   ((uint32_t)0x06000000)"
+
+.SS "#define RCC_MCO1Div_5   ((uint32_t)0x07000000)"
+
+.SS "#define RCC_MCO1Source_HSE   ((uint32_t)0x00400000)"
+
+.SS "#define RCC_MCO1Source_HSI   ((uint32_t)0x00000000)"
+
+.SS "#define RCC_MCO1Source_LSE   ((uint32_t)0x00200000)"
+
+.SS "#define RCC_MCO1Source_PLLCLK   ((uint32_t)0x00600000)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

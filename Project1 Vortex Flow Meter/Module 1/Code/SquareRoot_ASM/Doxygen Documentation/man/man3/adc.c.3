@@ -1,0 +1,155 @@
+.TH "drivers/adc.c" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/adc.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <platform\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <adc\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBadc_init\fP (\fBPin\fP pin)"
+.br
+.ti -1c
+.RI "uint32_t \fBpinmap_find_peripheral\fP (\fBPin\fP pin)"
+.br
+.ti -1c
+.RI "uint32_t \fBpinmap_peripheral\fP (\fBPin\fP pin)"
+.br
+.ti -1c
+.RI "void \fBanalogin_init\fP (\fBanalogin_s\fP *obj, \fBPin\fP pin)"
+.br
+.ti -1c
+.RI "void \fB_ADC_Init\fP (\fBADC_HandleTypeDef\fP *hadc)"
+.br
+.ti -1c
+.RI "uint32_t \fBpinmap_find_function\fP (\fBPin\fP pin)"
+.br
+.ti -1c
+.RI "uint32_t \fBpinmap_function\fP (\fBPin\fP pin)"
+.br
+.RI "Initializes the analogue to digital converter, and configures the appropriate GPIO pin\&. "
+.ti -1c
+.RI "void \fBpinmap_pinout\fP (\fBPin\fP pin)"
+.br
+.ti -1c
+.RI "void \fBpin_function\fP (\fBPin\fP pin, int data)"
+.br
+.ti -1c
+.RI "void \fB_GPIO_Init\fP (GPIO_TypeDef *GPIOx, \fBGPIO_InitTypeDef\fP *\fBGPIO_Init\fP)"
+.br
+.ti -1c
+.RI "uint16_t \fBadc_read\fP (\fBPin\fP pin)"
+.br
+.ti -1c
+.RI "uint16_t \fB_adc_read\fP (\fBanalogin_s\fP *obj)"
+.br
+.RI "Reads the current value of the ADC\&. "
+.ti -1c
+.RI "uint32_t \fB_ADC_GetValue\fP (\fBADC_HandleTypeDef\fP *hadc)"
+.br
+.ti -1c
+.RI "int \fB_ADC_PollForConversion\fP (\fBADC_HandleTypeDef\fP *hadc, uint32_t Timeout)"
+.br
+.ti -1c
+.RI "void \fB_ADC_ConfigChannel\fP (\fBADC_HandleTypeDef\fP *hadc, \fBADC_ChannelConfTypeDef\fP *sConfig)"
+.br
+.ti -1c
+.RI "void \fB_ADC_Start\fP (\fBADC_HandleTypeDef\fP *hadc)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBADC_HandleTypeDef\fP \fBAdcHandle\fP"
+.br
+.ti -1c
+.RI "const \fBPinMap\fP \fBPinMap_ADC\fP []"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void _ADC_ConfigChannel (\fBADC_HandleTypeDef\fP * hadc, \fBADC_ChannelConfTypeDef\fP * sConfig)"
+
+.SS "uint32_t _ADC_GetValue (\fBADC_HandleTypeDef\fP * hadc)"
+
+.SS "void _ADC_Init (\fBADC_HandleTypeDef\fP * hadc)"
+
+.SS "int _ADC_PollForConversion (\fBADC_HandleTypeDef\fP * hadc, uint32_t Timeout)"
+
+.SS "uint16_t _adc_read (\fBanalogin_s\fP * obj)"
+
+.PP
+Reads the current value of the ADC\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Potential of the pin, relative to ground\&. 
+.RE
+.PP
+
+.SS "void _ADC_Start (\fBADC_HandleTypeDef\fP * hadc)"
+
+.SS "void _GPIO_Init (GPIO_TypeDef * GPIOx, \fBGPIO_InitTypeDef\fP * GPIO_Init)"
+
+.SS "void adc_init (\fBPin\fP pin)"
+
+.SS "uint16_t adc_read (\fBPin\fP pin)"
+
+.SS "void analogin_init (\fBanalogin_s\fP * obj, \fBPin\fP pin)"
+
+.SS "void pin_function (\fBPin\fP pin, int data)"
+
+.SS "uint32_t pinmap_find_function (\fBPin\fP pin)"
+
+.SS "uint32_t pinmap_find_peripheral (\fBPin\fP pin)"
+
+.SS "uint32_t pinmap_function (\fBPin\fP pin)"
+
+.PP
+Initializes the analogue to digital converter, and configures the appropriate GPIO pin\&. 
+.SS "uint32_t pinmap_peripheral (\fBPin\fP pin)"
+
+.SS "void pinmap_pinout (\fBPin\fP pin)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBADC_HandleTypeDef\fP AdcHandle"
+
+.SS "const \fBPinMap\fP PinMap_ADC[]"
+\fBInitial value:\fP.PP
+.nf
+= {
+    {PA_0, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 0,  0)}, 
+    {PA_1, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 1,  0)}, 
+    {PA_2, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 2,  0)}, 
+    {PA_3, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 3,  0)}, 
+    {PA_4, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 4,  0)}, 
+    {PA_5, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 5,  0)}, 
+    {PA_6, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 6,  0)}, 
+    {PA_7, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 7,  0)}, 
+    {PB_0, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 8,  0)}, 
+    {PB_1, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 9,  0)}, 
+    {PC_0, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 10, 0)}, 
+    {PC_1, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 11, 0)}, 
+    {PC_2, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 12, 0)}, 
+    {PC_3, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 13, 0)}, 
+    {PC_4, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 14, 0)}, 
+    {PC_5, (int)ADC1_BASE, STM_PIN_DATA_EXT(STM_MODE_ANALOG, GPIO_NOPULL, 0, 15, 0)}, 
+        {NC,0, 0}
+}
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

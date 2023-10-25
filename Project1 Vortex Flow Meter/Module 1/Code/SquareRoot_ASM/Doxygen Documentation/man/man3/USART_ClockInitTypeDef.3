@@ -1,0 +1,48 @@
+.TH "USART_ClockInitTypeDef" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_ClockInitTypeDef \- USART Clock Init Structure definition 
+.br
+  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <stm32f4xx_usart\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "uint16_t \fBUSART_Clock\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBUSART_CPOL\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBUSART_CPHA\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBUSART_LastBit\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+USART Clock Init Structure definition 
+.br
+ 
+.SH "Field Documentation"
+.PP 
+.SS "uint16_t USART_Clock"
+Specifies whether the USART clock is enabled or disabled\&. This parameter can be a value of \fBUSART_Clock\fP 
+.SS "uint16_t USART_CPHA"
+Specifies the clock transition on which the bit capture is made\&. This parameter can be a value of \fBUSART_Clock_Phase\fP 
+.SS "uint16_t USART_CPOL"
+Specifies the steady state of the serial clock\&. This parameter can be a value of \fBUSART_Clock_Polarity\fP 
+.SS "uint16_t USART_LastBit"
+Specifies whether the clock pulse corresponding to the last transmitted data bit (MSB) has to be output on the SCLK pin in synchronous mode\&. This parameter can be a value of \fBUSART_Last_Bit\fP 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

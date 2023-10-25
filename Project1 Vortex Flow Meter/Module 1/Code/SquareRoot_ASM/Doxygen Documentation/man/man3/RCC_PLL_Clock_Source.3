@@ -1,0 +1,70 @@
+.TH "RCC_PLL_Clock_Source" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCC_PLL_Clock_Source \- RCC_PLL_Clock_Source
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRCC_PLLSource_HSI\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_PLLSource_HSE\fP   ((uint32_t)0x00400000)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_PLL_SOURCE\fP(SOURCE)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_PLLM_VALUE\fP(VALUE)   ((VALUE) <= 63)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_PLLN_VALUE\fP(VALUE)   ((192 <= (VALUE)) && ((VALUE) <= 432))"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_PLLP_VALUE\fP(VALUE)   (((VALUE) == 2) || ((VALUE) == 4) || ((VALUE) == 6) || ((VALUE) == 8))"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_PLLQ_VALUE\fP(VALUE)   ((4 <= (VALUE)) && ((VALUE) <= 15))"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_PLLI2SN_VALUE\fP(VALUE)   ((192 <= (VALUE)) && ((VALUE) <= 432))"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_PLLI2SR_VALUE\fP(VALUE)   ((2 <= (VALUE)) && ((VALUE) <= 7))"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_RCC_PLL_SOURCE(SOURCE)"
+\fBValue:\fP.PP
+.nf
+                                   (((SOURCE) == RCC_PLLSource_HSI) || \\
+                                   ((SOURCE) == RCC_PLLSource_HSE))
+.fi
+
+.SS "#define IS_RCC_PLLI2SN_VALUE(VALUE)   ((192 <= (VALUE)) && ((VALUE) <= 432))"
+
+.SS "#define IS_RCC_PLLI2SR_VALUE(VALUE)   ((2 <= (VALUE)) && ((VALUE) <= 7))"
+
+.SS "#define IS_RCC_PLLM_VALUE(VALUE)   ((VALUE) <= 63)"
+
+.SS "#define IS_RCC_PLLN_VALUE(VALUE)   ((192 <= (VALUE)) && ((VALUE) <= 432))"
+
+.SS "#define IS_RCC_PLLP_VALUE(VALUE)   (((VALUE) == 2) || ((VALUE) == 4) || ((VALUE) == 6) || ((VALUE) == 8))"
+
+.SS "#define IS_RCC_PLLQ_VALUE(VALUE)   ((4 <= (VALUE)) && ((VALUE) <= 15))"
+
+.SS "#define RCC_PLLSource_HSE   ((uint32_t)0x00400000)"
+
+.SS "#define RCC_PLLSource_HSI   ((uint32_t)0x00000000)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

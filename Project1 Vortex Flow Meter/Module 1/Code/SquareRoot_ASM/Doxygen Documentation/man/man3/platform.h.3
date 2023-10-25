@@ -1,0 +1,331 @@
+.TH "drivers/platform.h" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/platform.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <STM32F4xx\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCLK_FREQ\fP   8400000UL"
+.br
+.ti -1c
+.RI "#define \fBP_SW\fP   \fBPC_13\fP"
+.br
+.ti -1c
+.RI "#define \fBP_LED_R\fP   \fBPA_5\fP"
+.br
+.ti -1c
+.RI "#define \fBP_LED_G\fP   \fBPA_6\fP"
+.br
+.ti -1c
+.RI "#define \fBP_LED_B\fP   \fBPA_7\fP"
+.br
+.ti -1c
+.RI "#define \fBP_SW_UP\fP   \fBPA_1\fP"
+.br
+.ti -1c
+.RI "#define \fBP_SW_CR\fP   \fBPA_4\fP"
+.br
+.ti -1c
+.RI "#define \fBP_SW_DN\fP   \fBPB_0\fP"
+.br
+.ti -1c
+.RI "#define \fBP_SW_LT\fP   \fBPC_1\fP"
+.br
+.ti -1c
+.RI "#define \fBP_SW_RT\fP   \fBPC_0\fP"
+.br
+.ti -1c
+.RI "#define \fBP_DBG_ISR\fP   \fBPC_8\fP"
+.br
+.ti -1c
+.RI "#define \fBP_DBG_MAIN\fP   \fBPC_6\fP"
+.br
+.ti -1c
+.RI "#define \fBP_SPEAKER\fP   \fBPB_6\fP"
+.br
+.ti -1c
+.RI "#define \fBP_LCD_RS\fP   \fBPA_9\fP"
+.br
+.ti -1c
+.RI "#define \fBP_LCD_RW\fP   \fBPA_8\fP"
+.br
+.ti -1c
+.RI "#define \fBP_LCD_E\fP   \fBPB_10\fP"
+.br
+.ti -1c
+.RI "#define \fBP_LCD_DATA4\fP   \fBPB_4\fP"
+.br
+.ti -1c
+.RI "#define \fBP_LCD_DATA5\fP   \fBPB_5\fP"
+.br
+.ti -1c
+.RI "#define \fBP_LCD_DATA6\fP   \fBPB_3\fP"
+.br
+.ti -1c
+.RI "#define \fBP_LCD_DATA7\fP   \fBPA_10\fP"
+.br
+.ti -1c
+.RI "#define \fBP_IR\fP   \fBPA_8\fP"
+.br
+.ti -1c
+.RI "#define \fBP_SAMPLE\fP   \fBPC_10\fP"
+.br
+.ti -1c
+.RI "#define \fBP_PERIOD\fP   \fBPC_12\fP"
+.br
+.ti -1c
+.RI "#define \fBP_ADC\fP   \fBPA_0\fP"
+.br
+.ti -1c
+.RI "#define \fBP_CMP_PLUS\fP   \fBPA_1\fP"
+.br
+.ti -1c
+.RI "#define \fBP_CMP_NEG\fP   \fBPA_0\fP"
+.br
+.ti -1c
+.RI "#define \fBP_RX\fP   \fBPA_3\fP"
+.br
+.ti -1c
+.RI "#define \fBP_TX\fP   \fBPA_2\fP"
+.br
+.ti -1c
+.RI "#define \fBP_SCL\fP   \fBPB_8\fP"
+.br
+.ti -1c
+.RI "#define \fBP_SDA\fP   \fBPB_9\fP"
+.br
+.ti -1c
+.RI "#define \fBGET_PORT_INDEX\fP(pin)   ((pin) >> 16)"
+.br
+.ti -1c
+.RI "#define \fBGET_PIN_INDEX\fP(pin)   ((pin) & 0xFF)"
+.br
+.ti -1c
+.RI "#define \fBADC_BITS\fP   12"
+.br
+.ti -1c
+.RI "#define \fBADC_MASK\fP   ((1u << \fBADC_BITS\fP) \- 1)"
+.br
+.ti -1c
+.RI "#define \fBDAC_BITS\fP   8"
+.br
+.ti -1c
+.RI "#define \fBDAC_MASK\fP   ((1u << \fBDAC_BITS\fP) \- 1)"
+.br
+.ti -1c
+.RI "#define \fBLED_ON\fP   1"
+.br
+.ti -1c
+.RI "#define \fBLED_OFF\fP   0"
+.br
+.ti -1c
+.RI "#define \fBGET_PORT\fP(pin)   ((GPIO_TypeDef*)(AHB1PERIPH_BASE + 0x0400 * \fBGET_PORT_INDEX\fP(pin)))"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPin\fP { \fBPA_0\fP = (0 << 16) | 0, \fBPA_1\fP = (0 << 16) | 1, \fBPA_2\fP = (0 << 16) | 2, \fBPA_3\fP = (0 << 16) | 3, \fBPA_4\fP = (0 << 16) | 4, \fBPA_5\fP = (0 << 16) | 5, \fBPA_6\fP = (0 << 16) | 6, \fBPA_7\fP = (0 << 16) | 7, \fBPA_8\fP = (0 << 16) | 8, \fBPA_9\fP = (0 << 16) | 9, \fBPA_10\fP = (0 << 16) | 10, \fBPA_11\fP = (0 << 16) | 11, \fBPA_12\fP = (0 << 16) | 12, \fBPA_13\fP = (0 << 16) | 13, \fBPA_14\fP = (0 << 16) | 14, \fBPA_15\fP = (0 << 16) | 15, \fBPB_0\fP = (1 << 16) | 0, \fBPB_1\fP = (1 << 16) | 1, \fBPB_2\fP = (1 << 16) | 2, \fBPB_3\fP = (1 << 16) | 3, \fBPB_4\fP = (1 << 16) | 4, \fBPB_5\fP = (1 << 16) | 5, \fBPB_6\fP = (1 << 16) | 6, \fBPB_7\fP = (1 << 16) | 7, \fBPB_8\fP = (1 << 16) | 8, \fBPB_9\fP = (1 << 16) | 9, \fBPB_10\fP = (1 << 16) | 10, \fBPB_12\fP = (1 << 16) | 12, \fBPB_13\fP = (1 << 16) | 13, \fBPB_14\fP = (1 << 16) | 14, \fBPB_15\fP = (1 << 16) | 15, \fBPC_0\fP = (2 << 16) | 0, \fBPC_1\fP = (2 << 16) | 1, \fBPC_2\fP = (2 << 16) | 2, \fBPC_3\fP = (2 << 16) | 3, \fBPC_4\fP = (2 << 16) | 4, \fBPC_5\fP = (2 << 16) | 5, \fBPC_6\fP = (2 << 16) | 6, \fBPC_7\fP = (2 << 16) | 7, \fBPC_8\fP = (2 << 16) | 8, \fBPC_9\fP = (2 << 16) | 9, \fBPC_10\fP = (2 << 16) | 10, \fBPC_11\fP = (2 << 16) | 11, \fBPC_12\fP = (2 << 16) | 12, \fBPC_13\fP = (2 << 16) | 13, \fBPC_14\fP = (2 << 16) | 14, \fBPC_15\fP = (2 << 16) | 15, \fBPD_2\fP = (3 << 16) | 2, \fBPH_0\fP = (7 << 16) | 0, \fBPH_1\fP = (7 << 16) | 1, \fBNC\fP = (int)0xFFFFFFFF }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_BITS   12"
+
+.SS "#define ADC_MASK   ((1u << \fBADC_BITS\fP) \- 1)"
+
+.SS "#define CLK_FREQ   8400000UL"
+
+.SS "#define DAC_BITS   8"
+
+.SS "#define DAC_MASK   ((1u << \fBDAC_BITS\fP) \- 1)"
+
+.SS "#define GET_PIN_INDEX(pin)   ((pin) & 0xFF)"
+
+.SS "#define GET_PORT(pin)   ((GPIO_TypeDef*)(AHB1PERIPH_BASE + 0x0400 * \fBGET_PORT_INDEX\fP(pin)))"
+
+.SS "#define GET_PORT_INDEX(pin)   ((pin) >> 16)"
+
+.SS "#define LED_OFF   0"
+
+.SS "#define LED_ON   1"
+
+.SS "#define P_ADC   \fBPA_0\fP"
+
+.SS "#define P_CMP_NEG   \fBPA_0\fP"
+
+.SS "#define P_CMP_PLUS   \fBPA_1\fP"
+
+.SS "#define P_DBG_ISR   \fBPC_8\fP"
+
+.SS "#define P_DBG_MAIN   \fBPC_6\fP"
+
+.SS "#define P_IR   \fBPA_8\fP"
+
+.SS "#define P_LCD_DATA4   \fBPB_4\fP"
+
+.SS "#define P_LCD_DATA5   \fBPB_5\fP"
+
+.SS "#define P_LCD_DATA6   \fBPB_3\fP"
+
+.SS "#define P_LCD_DATA7   \fBPA_10\fP"
+
+.SS "#define P_LCD_E   \fBPB_10\fP"
+
+.SS "#define P_LCD_RS   \fBPA_9\fP"
+
+.SS "#define P_LCD_RW   \fBPA_8\fP"
+
+.SS "#define P_LED_B   \fBPA_7\fP"
+
+.SS "#define P_LED_G   \fBPA_6\fP"
+
+.SS "#define P_LED_R   \fBPA_5\fP"
+
+.SS "#define P_PERIOD   \fBPC_12\fP"
+
+.SS "#define P_RX   \fBPA_3\fP"
+
+.SS "#define P_SAMPLE   \fBPC_10\fP"
+
+.SS "#define P_SCL   \fBPB_8\fP"
+
+.SS "#define P_SDA   \fBPB_9\fP"
+
+.SS "#define P_SPEAKER   \fBPB_6\fP"
+
+.SS "#define P_SW   \fBPC_13\fP"
+
+.SS "#define P_SW_CR   \fBPA_4\fP"
+
+.SS "#define P_SW_DN   \fBPB_0\fP"
+
+.SS "#define P_SW_LT   \fBPC_1\fP"
+
+.SS "#define P_SW_RT   \fBPC_0\fP"
+
+.SS "#define P_SW_UP   \fBPA_1\fP"
+
+.SS "#define P_TX   \fBPA_2\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBPin\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPA_0 \fP\fP
+.TP
+\fB\fIPA_1 \fP\fP
+.TP
+\fB\fIPA_2 \fP\fP
+.TP
+\fB\fIPA_3 \fP\fP
+.TP
+\fB\fIPA_4 \fP\fP
+.TP
+\fB\fIPA_5 \fP\fP
+.TP
+\fB\fIPA_6 \fP\fP
+.TP
+\fB\fIPA_7 \fP\fP
+.TP
+\fB\fIPA_8 \fP\fP
+.TP
+\fB\fIPA_9 \fP\fP
+.TP
+\fB\fIPA_10 \fP\fP
+.TP
+\fB\fIPA_11 \fP\fP
+.TP
+\fB\fIPA_12 \fP\fP
+.TP
+\fB\fIPA_13 \fP\fP
+.TP
+\fB\fIPA_14 \fP\fP
+.TP
+\fB\fIPA_15 \fP\fP
+.TP
+\fB\fIPB_0 \fP\fP
+.TP
+\fB\fIPB_1 \fP\fP
+.TP
+\fB\fIPB_2 \fP\fP
+.TP
+\fB\fIPB_3 \fP\fP
+.TP
+\fB\fIPB_4 \fP\fP
+.TP
+\fB\fIPB_5 \fP\fP
+.TP
+\fB\fIPB_6 \fP\fP
+.TP
+\fB\fIPB_7 \fP\fP
+.TP
+\fB\fIPB_8 \fP\fP
+.TP
+\fB\fIPB_9 \fP\fP
+.TP
+\fB\fIPB_10 \fP\fP
+.TP
+\fB\fIPB_12 \fP\fP
+.TP
+\fB\fIPB_13 \fP\fP
+.TP
+\fB\fIPB_14 \fP\fP
+.TP
+\fB\fIPB_15 \fP\fP
+.TP
+\fB\fIPC_0 \fP\fP
+.TP
+\fB\fIPC_1 \fP\fP
+.TP
+\fB\fIPC_2 \fP\fP
+.TP
+\fB\fIPC_3 \fP\fP
+.TP
+\fB\fIPC_4 \fP\fP
+.TP
+\fB\fIPC_5 \fP\fP
+.TP
+\fB\fIPC_6 \fP\fP
+.TP
+\fB\fIPC_7 \fP\fP
+.TP
+\fB\fIPC_8 \fP\fP
+.TP
+\fB\fIPC_9 \fP\fP
+.TP
+\fB\fIPC_10 \fP\fP
+.TP
+\fB\fIPC_11 \fP\fP
+.TP
+\fB\fIPC_12 \fP\fP
+.TP
+\fB\fIPC_13 \fP\fP
+.TP
+\fB\fIPC_14 \fP\fP
+.TP
+\fB\fIPC_15 \fP\fP
+.TP
+\fB\fIPD_2 \fP\fP
+.TP
+\fB\fIPH_0 \fP\fP
+.TP
+\fB\fIPH_1 \fP\fP
+.TP
+\fB\fINC \fP\fP
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

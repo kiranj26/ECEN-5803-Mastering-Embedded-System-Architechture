@@ -1,0 +1,964 @@
+.TH "RCC_Group3" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCC_Group3 \- Peripheral clocks configuration functions
+.PP
+ \- Peripheral clocks configuration functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRCC_RTCCLKConfig\fP (uint32_t RCC_RTCCLKSource)"
+.br
+.RI "Configures the RTC clock (RTCCLK)\&. "
+.ti -1c
+.RI "void \fBRCC_RTCCLKCmd\fP (FunctionalState NewState)"
+.br
+.RI "Enables or disables the RTC clock\&. "
+.ti -1c
+.RI "void \fBRCC_BackupResetCmd\fP (FunctionalState NewState)"
+.br
+.RI "Forces or releases the Backup domain reset\&. "
+.ti -1c
+.RI "void \fBRCC_I2SCLKConfig\fP (uint32_t RCC_I2SCLKSource)"
+.br
+.RI "Configures the I2S clock source (I2SCLK)\&. "
+.ti -1c
+.RI "void \fBRCC_AHB1PeriphClockCmd\fP (uint32_t RCC_AHB1Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the AHB1 peripheral clock\&. "
+.ti -1c
+.RI "void \fBRCC_AHB2PeriphClockCmd\fP (uint32_t RCC_AHB2Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the AHB2 peripheral clock\&. "
+.ti -1c
+.RI "void \fBRCC_AHB3PeriphClockCmd\fP (uint32_t RCC_AHB3Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the AHB3 peripheral clock\&. "
+.ti -1c
+.RI "void \fBRCC_APB1PeriphClockCmd\fP (uint32_t RCC_APB1Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the Low Speed APB (APB1) peripheral clock\&. "
+.ti -1c
+.RI "void \fBRCC_APB2PeriphClockCmd\fP (uint32_t RCC_APB2Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the High Speed APB (APB2) peripheral clock\&. "
+.ti -1c
+.RI "void \fBRCC_AHB1PeriphResetCmd\fP (uint32_t RCC_AHB1Periph, FunctionalState NewState)"
+.br
+.RI "Forces or releases AHB1 peripheral reset\&. "
+.ti -1c
+.RI "void \fBRCC_AHB2PeriphResetCmd\fP (uint32_t RCC_AHB2Periph, FunctionalState NewState)"
+.br
+.RI "Forces or releases AHB2 peripheral reset\&. "
+.ti -1c
+.RI "void \fBRCC_AHB3PeriphResetCmd\fP (uint32_t RCC_AHB3Periph, FunctionalState NewState)"
+.br
+.RI "Forces or releases AHB3 peripheral reset\&. "
+.ti -1c
+.RI "void \fBRCC_APB1PeriphResetCmd\fP (uint32_t RCC_APB1Periph, FunctionalState NewState)"
+.br
+.RI "Forces or releases Low Speed APB (APB1) peripheral reset\&. "
+.ti -1c
+.RI "void \fBRCC_APB2PeriphResetCmd\fP (uint32_t RCC_APB2Periph, FunctionalState NewState)"
+.br
+.RI "Forces or releases High Speed APB (APB2) peripheral reset\&. "
+.ti -1c
+.RI "void \fBRCC_AHB1PeriphClockLPModeCmd\fP (uint32_t RCC_AHB1Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the AHB1 peripheral clock during Low Power (Sleep) mode\&. "
+.ti -1c
+.RI "void \fBRCC_AHB2PeriphClockLPModeCmd\fP (uint32_t RCC_AHB2Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the AHB2 peripheral clock during Low Power (Sleep) mode\&. "
+.ti -1c
+.RI "void \fBRCC_AHB3PeriphClockLPModeCmd\fP (uint32_t RCC_AHB3Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the AHB3 peripheral clock during Low Power (Sleep) mode\&. "
+.ti -1c
+.RI "void \fBRCC_APB1PeriphClockLPModeCmd\fP (uint32_t RCC_APB1Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the APB1 peripheral clock during Low Power (Sleep) mode\&. "
+.ti -1c
+.RI "void \fBRCC_APB2PeriphClockLPModeCmd\fP (uint32_t RCC_APB2Periph, FunctionalState NewState)"
+.br
+.RI "Enables or disables the APB2 peripheral clock during Low Power (Sleep) mode\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Peripheral clocks configuration functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                   Peripheral clocks configuration functions
+ ===============================================================================  
+
+  This section provide functions allowing to configure the Peripheral clocks\&. 
+  
+  1\&. The RTC clock which is derived from the LSI, LSE or HSE clock divided by 2 to 31\&.
+     
+  2\&. After restart from Reset or wakeup from STANDBY, all peripherals are off
+     except internal SRAM, Flash and JTAG\&. Before to start using a peripheral you
+     have to enable its interface clock\&. You can do this using RCC_AHBPeriphClockCmd()
+     , RCC_APB2PeriphClockCmd() and RCC_APB1PeriphClockCmd() functions\&.
+
+  3\&. To reset the peripherals configuration (to the default state after device reset)
+     you can use RCC_AHBPeriphResetCmd(), RCC_APB2PeriphResetCmd() and 
+     RCC_APB1PeriphResetCmd() functions\&.
+     
+  4\&. To further reduce power consumption in SLEEP mode the peripheral clocks can
+     be disabled prior to executing the WFI or WFE instructions\&. You can do this
+     using RCC_AHBPeriphClockLPModeCmd(), RCC_APB2PeriphClockLPModeCmd() and
+     RCC_APB1PeriphClockLPModeCmd() functions\&.  
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void RCC_AHB1PeriphClockCmd (uint32_t RCC_AHB1Periph, FunctionalState NewState)"
+
+.PP
+Enables or disables the AHB1 peripheral clock\&. 
+.PP
+\fBNote\fP
+.RS 4
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_AHBPeriph\fP specifies the AHB1 peripheral to gates its clock\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOA: GPIOA clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOB: GPIOB clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOC: GPIOC clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOD: GPIOD clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOE: GPIOE clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOF: GPIOF clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOG: GPIOG clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOG: GPIOG clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOI: GPIOI clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_CRC: CRC clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_BKPSRAM: BKPSRAM interface clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_CCMDATARAMEN CCM data RAM interface clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_DMA1: DMA1 clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_DMA2: DMA2 clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_ETH_MAC: Ethernet MAC clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_ETH_MAC_Tx: Ethernet Transmission clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_ETH_MAC_Rx: Ethernet Reception clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_ETH_MAC_PTP: Ethernet PTP clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_OTG_HS: USB OTG HS clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_OTG_HS_ULPI: USB OTG HS ULPI clock 
+.PP
+.br
+\fINewState\fP new state of the specified peripheral clock\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_AHB1PeriphClockLPModeCmd (uint32_t RCC_AHB1Periph, FunctionalState NewState)"
+
+.PP
+Enables or disables the AHB1 peripheral clock during Low Power (Sleep) mode\&. 
+.PP
+\fBNote\fP
+.RS 4
+Peripheral clock gating in SLEEP mode can be used to further reduce power consumption\&. 
+.PP
+After wakeup from SLEEP mode, the peripheral clock is enabled again\&. 
+.PP
+By default, all peripheral clocks are enabled during SLEEP mode\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_AHBPeriph\fP specifies the AHB1 peripheral to gates its clock\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOA: GPIOA clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOB: GPIOB clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOC: GPIOC clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOD: GPIOD clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOE: GPIOE clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOF: GPIOF clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOG: GPIOG clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOG: GPIOG clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOI: GPIOI clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_CRC: CRC clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_BKPSRAM: BKPSRAM interface clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_DMA1: DMA1 clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_DMA2: DMA2 clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_ETH_MAC: Ethernet MAC clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_ETH_MAC_Tx: Ethernet Transmission clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_ETH_MAC_Rx: Ethernet Reception clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_ETH_MAC_PTP: Ethernet PTP clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_OTG_HS: USB OTG HS clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_OTG_HS_ULPI: USB OTG HS ULPI clock 
+.PP
+.br
+\fINewState\fP new state of the specified peripheral clock\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_AHB1PeriphResetCmd (uint32_t RCC_AHB1Periph, FunctionalState NewState)"
+
+.PP
+Forces or releases AHB1 peripheral reset\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_AHB1Periph\fP specifies the AHB1 peripheral to reset\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOA: GPIOA clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOB: GPIOB clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOC: GPIOC clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOD: GPIOD clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOE: GPIOE clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOF: GPIOF clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOG: GPIOG clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOG: GPIOG clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_GPIOI: GPIOI clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_CRC: CRC clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_DMA1: DMA1 clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_DMA2: DMA2 clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_ETH_MAC: Ethernet MAC clock 
+.IP "\(bu" 1
+RCC_AHB1Periph_OTG_HS: USB OTG HS clock
+.PP
+.br
+\fINewState\fP new state of the specified peripheral reset\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_AHB2PeriphClockCmd (uint32_t RCC_AHB2Periph, FunctionalState NewState)"
+
+.PP
+Enables or disables the AHB2 peripheral clock\&. 
+.PP
+\fBNote\fP
+.RS 4
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_AHBPeriph\fP specifies the AHB2 peripheral to gates its clock\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_AHB2Periph_DCMI: DCMI clock 
+.IP "\(bu" 1
+RCC_AHB2Periph_CRYP: CRYP clock 
+.IP "\(bu" 1
+RCC_AHB2Periph_HASH: HASH clock 
+.IP "\(bu" 1
+RCC_AHB2Periph_RNG: RNG clock 
+.IP "\(bu" 1
+RCC_AHB2Periph_OTG_FS: USB OTG FS clock 
+.PP
+.br
+\fINewState\fP new state of the specified peripheral clock\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_AHB2PeriphClockLPModeCmd (uint32_t RCC_AHB2Periph, FunctionalState NewState)"
+
+.PP
+Enables or disables the AHB2 peripheral clock during Low Power (Sleep) mode\&. 
+.PP
+\fBNote\fP
+.RS 4
+Peripheral clock gating in SLEEP mode can be used to further reduce power consumption\&. 
+.PP
+After wakeup from SLEEP mode, the peripheral clock is enabled again\&. 
+.PP
+By default, all peripheral clocks are enabled during SLEEP mode\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_AHBPeriph\fP specifies the AHB2 peripheral to gates its clock\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_AHB2Periph_DCMI: DCMI clock 
+.IP "\(bu" 1
+RCC_AHB2Periph_CRYP: CRYP clock 
+.IP "\(bu" 1
+RCC_AHB2Periph_HASH: HASH clock 
+.IP "\(bu" 1
+RCC_AHB2Periph_RNG: RNG clock 
+.IP "\(bu" 1
+RCC_AHB2Periph_OTG_FS: USB OTG FS clock 
+.br
+ 
+.PP
+.br
+\fINewState\fP new state of the specified peripheral clock\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_AHB2PeriphResetCmd (uint32_t RCC_AHB2Periph, FunctionalState NewState)"
+
+.PP
+Forces or releases AHB2 peripheral reset\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_AHB2Periph\fP specifies the AHB2 peripheral to reset\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_AHB2Periph_DCMI: DCMI clock 
+.IP "\(bu" 1
+RCC_AHB2Periph_CRYP: CRYP clock 
+.IP "\(bu" 1
+RCC_AHB2Periph_HASH: HASH clock 
+.IP "\(bu" 1
+RCC_AHB2Periph_RNG: RNG clock 
+.IP "\(bu" 1
+RCC_AHB2Periph_OTG_FS: USB OTG FS clock 
+.PP
+.br
+\fINewState\fP new state of the specified peripheral reset\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_AHB3PeriphClockCmd (uint32_t RCC_AHB3Periph, FunctionalState NewState)"
+
+.PP
+Enables or disables the AHB3 peripheral clock\&. 
+.PP
+\fBNote\fP
+.RS 4
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_AHBPeriph\fP specifies the AHB3 peripheral to gates its clock\&. This parameter must be: RCC_AHB3Periph_FSMC 
+.br
+\fINewState\fP new state of the specified peripheral clock\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_AHB3PeriphClockLPModeCmd (uint32_t RCC_AHB3Periph, FunctionalState NewState)"
+
+.PP
+Enables or disables the AHB3 peripheral clock during Low Power (Sleep) mode\&. 
+.PP
+\fBNote\fP
+.RS 4
+Peripheral clock gating in SLEEP mode can be used to further reduce power consumption\&. 
+.PP
+After wakeup from SLEEP mode, the peripheral clock is enabled again\&. 
+.PP
+By default, all peripheral clocks are enabled during SLEEP mode\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_AHBPeriph\fP specifies the AHB3 peripheral to gates its clock\&. This parameter must be: RCC_AHB3Periph_FSMC 
+.br
+\fINewState\fP new state of the specified peripheral clock\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_AHB3PeriphResetCmd (uint32_t RCC_AHB3Periph, FunctionalState NewState)"
+
+.PP
+Forces or releases AHB3 peripheral reset\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_AHB3Periph\fP specifies the AHB3 peripheral to reset\&. This parameter must be: RCC_AHB3Periph_FSMC 
+.br
+\fINewState\fP new state of the specified peripheral reset\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_APB1PeriphClockCmd (uint32_t RCC_APB1Periph, FunctionalState NewState)"
+
+.PP
+Enables or disables the Low Speed APB (APB1) peripheral clock\&. 
+.PP
+\fBNote\fP
+.RS 4
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_APB1Periph\fP specifies the APB1 peripheral to gates its clock\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_APB1Periph_TIM2: TIM2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM3: TIM3 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM4: TIM4 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM5: TIM5 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM6: TIM6 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM7: TIM7 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM12: TIM12 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM13: TIM13 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM14: TIM14 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_WWDG: WWDG clock 
+.IP "\(bu" 1
+RCC_APB1Periph_SPI2: SPI2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_SPI3: SPI3 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_USART2: USART2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_USART3: USART3 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_UART4: UART4 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_UART5: UART5 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_I2C1: I2C1 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_I2C2: I2C2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_I2C3: I2C3 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_CAN1: CAN1 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_CAN2: CAN2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_PWR: PWR clock 
+.IP "\(bu" 1
+RCC_APB1Periph_DAC: DAC clock 
+.PP
+.br
+\fINewState\fP new state of the specified peripheral clock\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_APB1PeriphClockLPModeCmd (uint32_t RCC_APB1Periph, FunctionalState NewState)"
+
+.PP
+Enables or disables the APB1 peripheral clock during Low Power (Sleep) mode\&. 
+.PP
+\fBNote\fP
+.RS 4
+Peripheral clock gating in SLEEP mode can be used to further reduce power consumption\&. 
+.PP
+After wakeup from SLEEP mode, the peripheral clock is enabled again\&. 
+.PP
+By default, all peripheral clocks are enabled during SLEEP mode\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_APB1Periph\fP specifies the APB1 peripheral to gates its clock\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_APB1Periph_TIM2: TIM2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM3: TIM3 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM4: TIM4 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM5: TIM5 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM6: TIM6 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM7: TIM7 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM12: TIM12 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM13: TIM13 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM14: TIM14 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_WWDG: WWDG clock 
+.IP "\(bu" 1
+RCC_APB1Periph_SPI2: SPI2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_SPI3: SPI3 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_USART2: USART2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_USART3: USART3 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_UART4: UART4 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_UART5: UART5 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_I2C1: I2C1 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_I2C2: I2C2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_I2C3: I2C3 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_CAN1: CAN1 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_CAN2: CAN2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_PWR: PWR clock 
+.IP "\(bu" 1
+RCC_APB1Periph_DAC: DAC clock 
+.PP
+.br
+\fINewState\fP new state of the specified peripheral clock\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_APB1PeriphResetCmd (uint32_t RCC_APB1Periph, FunctionalState NewState)"
+
+.PP
+Forces or releases Low Speed APB (APB1) peripheral reset\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_APB1Periph\fP specifies the APB1 peripheral to reset\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_APB1Periph_TIM2: TIM2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM3: TIM3 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM4: TIM4 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM5: TIM5 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM6: TIM6 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM7: TIM7 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM12: TIM12 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM13: TIM13 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_TIM14: TIM14 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_WWDG: WWDG clock 
+.IP "\(bu" 1
+RCC_APB1Periph_SPI2: SPI2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_SPI3: SPI3 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_USART2: USART2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_USART3: USART3 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_UART4: UART4 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_UART5: UART5 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_I2C1: I2C1 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_I2C2: I2C2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_I2C3: I2C3 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_CAN1: CAN1 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_CAN2: CAN2 clock 
+.IP "\(bu" 1
+RCC_APB1Periph_PWR: PWR clock 
+.IP "\(bu" 1
+RCC_APB1Periph_DAC: DAC clock 
+.PP
+.br
+\fINewState\fP new state of the specified peripheral reset\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_APB2PeriphClockCmd (uint32_t RCC_APB2Periph, FunctionalState NewState)"
+
+.PP
+Enables or disables the High Speed APB (APB2) peripheral clock\&. 
+.PP
+\fBNote\fP
+.RS 4
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_APB2Periph\fP specifies the APB2 peripheral to gates its clock\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_APB2Periph_TIM1: TIM1 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_TIM8: TIM8 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_USART1: USART1 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_USART6: USART6 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_ADC1: ADC1 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_ADC2: ADC2 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_ADC3: ADC3 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_SDIO: SDIO clock 
+.IP "\(bu" 1
+RCC_APB2Periph_SPI1: SPI1 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_SYSCFG: SYSCFG clock 
+.IP "\(bu" 1
+RCC_APB2Periph_TIM9: TIM9 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_TIM10: TIM10 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_TIM11: TIM11 clock 
+.PP
+.br
+\fINewState\fP new state of the specified peripheral clock\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_APB2PeriphClockLPModeCmd (uint32_t RCC_APB2Periph, FunctionalState NewState)"
+
+.PP
+Enables or disables the APB2 peripheral clock during Low Power (Sleep) mode\&. 
+.PP
+\fBNote\fP
+.RS 4
+Peripheral clock gating in SLEEP mode can be used to further reduce power consumption\&. 
+.PP
+After wakeup from SLEEP mode, the peripheral clock is enabled again\&. 
+.PP
+By default, all peripheral clocks are enabled during SLEEP mode\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_APB2Periph\fP specifies the APB2 peripheral to gates its clock\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_APB2Periph_TIM1: TIM1 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_TIM8: TIM8 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_USART1: USART1 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_USART6: USART6 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_ADC1: ADC1 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_ADC2: ADC2 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_ADC3: ADC3 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_SDIO: SDIO clock 
+.IP "\(bu" 1
+RCC_APB2Periph_SPI1: SPI1 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_SYSCFG: SYSCFG clock 
+.IP "\(bu" 1
+RCC_APB2Periph_TIM9: TIM9 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_TIM10: TIM10 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_TIM11: TIM11 clock 
+.PP
+.br
+\fINewState\fP new state of the specified peripheral clock\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_APB2PeriphResetCmd (uint32_t RCC_APB2Periph, FunctionalState NewState)"
+
+.PP
+Forces or releases High Speed APB (APB2) peripheral reset\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_APB2Periph\fP specifies the APB2 peripheral to reset\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_APB2Periph_TIM1: TIM1 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_TIM8: TIM8 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_USART1: USART1 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_USART6: USART6 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_ADC1: ADC1 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_ADC2: ADC2 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_ADC3: ADC3 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_SDIO: SDIO clock 
+.IP "\(bu" 1
+RCC_APB2Periph_SPI1: SPI1 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_SYSCFG: SYSCFG clock 
+.IP "\(bu" 1
+RCC_APB2Periph_TIM9: TIM9 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_TIM10: TIM10 clock 
+.IP "\(bu" 1
+RCC_APB2Periph_TIM11: TIM11 clock 
+.PP
+.br
+\fINewState\fP new state of the specified peripheral reset\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_BackupResetCmd (FunctionalState NewState)"
+
+.PP
+Forces or releases the Backup domain reset\&. 
+.PP
+\fBNote\fP
+.RS 4
+This function resets the RTC peripheral (including the backup registers) and the RTC clock source selection in RCC_CSR register\&. 
+.PP
+The BKPSRAM is not affected by this reset\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the Backup domain reset\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_I2SCLKConfig (uint32_t RCC_I2SCLKSource)"
+
+.PP
+Configures the I2S clock source (I2SCLK)\&. 
+.PP
+\fBNote\fP
+.RS 4
+This function must be called before enabling the I2S APB clock\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_I2SCLKSource\fP specifies the I2S clock source\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_I2S2CLKSource_PLLI2S: PLLI2S clock used as I2S clock source 
+.IP "\(bu" 1
+RCC_I2S2CLKSource_Ext: External clock mapped on the I2S_CKIN pin used as I2S clock source 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_RTCCLKCmd (FunctionalState NewState)"
+
+.PP
+Enables or disables the RTC clock\&. 
+.PP
+\fBNote\fP
+.RS 4
+This function must be used only after the RTC clock source was selected using the RCC_RTCCLKConfig function\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fINewState\fP new state of the RTC clock\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void RCC_RTCCLKConfig (uint32_t RCC_RTCCLKSource)"
+
+.PP
+Configures the RTC clock (RTCCLK)\&. 
+.PP
+\fBNote\fP
+.RS 4
+As the RTC clock configuration bits are in the Backup domain and write access is denied to this domain after reset, you have to enable write access using PWR_BackupAccessCmd(ENABLE) function before to configure the RTC clock source (to be done once after reset)\&. 
+.br
+ 
+.PP
+Once the RTC clock is configured it can't be changed unless the 
+.br
+ Backup domain is reset using \fBRCC_BackupResetCmd()\fP function, or by a Power On Reset (POR)\&.
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIRCC_RTCCLKSource\fP specifies the RTC clock source\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+RCC_RTCCLKSource_LSE: LSE selected as RTC clock 
+.IP "\(bu" 1
+RCC_RTCCLKSource_LSI: LSI selected as RTC clock 
+.IP "\(bu" 1
+RCC_RTCCLKSource_HSE_Divx: HSE clock divided by x selected as RTC clock, where x:[2,31]
+.PP
+.RE
+.PP
+\fBNote\fP
+.RS 4
+If the LSE or LSI is used as RTC clock source, the RTC continues to work in STOP and STANDBY modes, and can be used as wakeup source\&. However, when the HSE clock is used as RTC clock source, the RTC cannot be used in STOP and STANDBY modes\&. 
+.br
+ 
+.PP
+The maximum input clock frequency for RTC is 1MHz (when using HSE as RTC clock source)\&.
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

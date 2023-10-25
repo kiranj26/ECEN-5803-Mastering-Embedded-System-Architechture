@@ -1,0 +1,456 @@
+.TH "I2C_Group1" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_Group1 \- Initialization and Configuration functions
+.PP
+ \- Initialization and Configuration functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBI2C_DeInit\fP (I2C_TypeDef *I2Cx)"
+.br
+.RI "Deinitialize the I2Cx peripheral registers to their default reset values\&. "
+.ti -1c
+.RI "void \fBI2C_Init\fP (I2C_TypeDef *I2Cx, \fBI2C_InitTypeDef\fP *I2C_InitStruct)"
+.br
+.RI "Initializes the I2Cx peripheral according to the specified parameters in the I2C_InitStruct\&. "
+.ti -1c
+.RI "void \fBI2C_StructInit\fP (\fBI2C_InitTypeDef\fP *I2C_InitStruct)"
+.br
+.RI "Fills each I2C_InitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBI2C_Cmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C peripheral\&. "
+.ti -1c
+.RI "void \fBI2C_GenerateSTART\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Generates I2Cx communication START condition\&. "
+.ti -1c
+.RI "void \fBI2C_GenerateSTOP\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Generates I2Cx communication STOP condition\&. "
+.ti -1c
+.RI "void \fBI2C_Send7bitAddress\fP (I2C_TypeDef *I2Cx, uint8_t Address, uint8_t I2C_Direction)"
+.br
+.RI "Transmits the address byte to select the slave device\&. "
+.ti -1c
+.RI "void \fBI2C_AcknowledgeConfig\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C acknowledge feature\&. "
+.ti -1c
+.RI "void \fBI2C_OwnAddress2Config\fP (I2C_TypeDef *I2Cx, uint8_t Address)"
+.br
+.RI "Configures the specified I2C own address2\&. "
+.ti -1c
+.RI "void \fBI2C_DualAddressCmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C dual addressing mode\&. "
+.ti -1c
+.RI "void \fBI2C_GeneralCallCmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C general call feature\&. "
+.ti -1c
+.RI "void \fBI2C_SoftwareResetCmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C software reset\&. "
+.ti -1c
+.RI "void \fBI2C_StretchClockCmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C Clock stretching\&. "
+.ti -1c
+.RI "void \fBI2C_FastModeDutyCycleConfig\fP (I2C_TypeDef *I2Cx, uint16_t I2C_DutyCycle)"
+.br
+.RI "Selects the specified I2C fast mode duty cycle\&. "
+.ti -1c
+.RI "void \fBI2C_NACKPositionConfig\fP (I2C_TypeDef *I2Cx, uint16_t I2C_NACKPosition)"
+.br
+.RI "Selects the specified I2C NACK position in master receiver mode\&. "
+.ti -1c
+.RI "void \fBI2C_SMBusAlertConfig\fP (I2C_TypeDef *I2Cx, uint16_t I2C_SMBusAlert)"
+.br
+.RI "Drives the SMBusAlert pin high or low for the specified I2C\&. "
+.ti -1c
+.RI "void \fBI2C_ARPCmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C ARP\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Initialization and Configuration functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                   Initialization and Configuration functions
+ ===============================================================================  
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void I2C_AcknowledgeConfig (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified I2C acknowledge feature\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2C Acknowledgement\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\&.\fP 
+.RE
+.PP
+
+.SS "void I2C_ARPCmd (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified I2C ARP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2Cx ARP\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_Cmd (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified I2C peripheral\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2Cx peripheral\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_DeInit (I2C_TypeDef * I2Cx)"
+
+.PP
+Deinitialize the I2Cx peripheral registers to their default reset values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_DualAddressCmd (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified I2C dual addressing mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2C dual addressing mode\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_FastModeDutyCycleConfig (I2C_TypeDef * I2Cx, uint16_t I2C_DutyCycle)"
+
+.PP
+Selects the specified I2C fast mode duty cycle\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fII2C_DutyCycle\fP specifies the fast mode duty cycle\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+I2C_DutyCycle_2: I2C fast mode Tlow/Thigh = 2 
+.IP "\(bu" 1
+I2C_DutyCycle_16_9: I2C fast mode Tlow/Thigh = 16/9 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_GeneralCallCmd (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified I2C general call feature\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2C General call\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_GenerateSTART (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Generates I2Cx communication START condition\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2C START condition generation\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\&.\fP 
+.RE
+.PP
+
+.SS "void I2C_GenerateSTOP (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Generates I2Cx communication STOP condition\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2C STOP condition generation\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\&.\fP 
+.RE
+.PP
+
+.SS "void I2C_Init (I2C_TypeDef * I2Cx, \fBI2C_InitTypeDef\fP * I2C_InitStruct)"
+
+.PP
+Initializes the I2Cx peripheral according to the specified parameters in the I2C_InitStruct\&. 
+.PP
+\fBNote\fP
+.RS 4
+To use the I2C at 400 KHz (in fast mode), the PCLK1 frequency (I2C peripheral input clock) must be a multiple of 10 MHz\&. 
+.br
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fII2C_InitStruct\fP pointer to a \fBI2C_InitTypeDef\fP structure that contains the configuration information for the specified I2C peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_NACKPositionConfig (I2C_TypeDef * I2Cx, uint16_t I2C_NACKPosition)"
+
+.PP
+Selects the specified I2C NACK position in master receiver mode\&. 
+.PP
+\fBNote\fP
+.RS 4
+This function is useful in I2C Master Receiver mode when the number of data to be received is equal to 2\&. In this case, this function should be called (with parameter I2C_NACKPosition_Next) before data reception starts,as described in the 2-byte reception procedure recommended in Reference Manual in Section: Master receiver\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fII2C_NACKPosition\fP specifies the NACK position\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+I2C_NACKPosition_Next: indicates that the next byte will be the last received byte\&. 
+.br
+ 
+.IP "\(bu" 1
+I2C_NACKPosition_Current: indicates that current byte is the last received byte\&.
+.PP
+.RE
+.PP
+\fBNote\fP
+.RS 4
+This function configures the same bit (POS) as \fBI2C_PECPositionConfig()\fP but is intended to be used in I2C mode while \fBI2C_PECPositionConfig()\fP is intended to used in SMBUS mode\&.
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_OwnAddress2Config (I2C_TypeDef * I2Cx, uint8_t Address)"
+
+.PP
+Configures the specified I2C own address2\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fIAddress\fP specifies the 7bit I2C own address2\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\&.\fP 
+.RE
+.PP
+
+.SS "void I2C_Send7bitAddress (I2C_TypeDef * I2Cx, uint8_t Address, uint8_t I2C_Direction)"
+
+.PP
+Transmits the address byte to select the slave device\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fIAddress\fP specifies the slave address which will be transmitted 
+.br
+\fII2C_Direction\fP specifies whether the I2C device will be a Transmitter or a Receiver\&. This parameter can be one of the following values 
+.PD 0
+.IP "\(bu" 1
+I2C_Direction_Transmitter: Transmitter mode 
+.IP "\(bu" 1
+I2C_Direction_Receiver: Receiver mode 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\&.\fP 
+.RE
+.PP
+
+.SS "void I2C_SMBusAlertConfig (I2C_TypeDef * I2Cx, uint16_t I2C_SMBusAlert)"
+
+.PP
+Drives the SMBusAlert pin high or low for the specified I2C\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fII2C_SMBusAlert\fP specifies SMBAlert pin level\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+I2C_SMBusAlert_Low: SMBAlert pin driven low 
+.IP "\(bu" 1
+I2C_SMBusAlert_High: SMBAlert pin driven high 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_SoftwareResetCmd (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified I2C software reset\&. 
+.PP
+\fBNote\fP
+.RS 4
+When software reset is enabled, the I2C IOs are released (this can be useful to recover from bus errors)\&. 
+.br
+ 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2C software reset\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_StretchClockCmd (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified I2C Clock stretching\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2Cx Clock stretching\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_StructInit (\fBI2C_InitTypeDef\fP * I2C_InitStruct)"
+
+.PP
+Fills each I2C_InitStruct member with its default value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2C_InitStruct\fP pointer to an \fBI2C_InitTypeDef\fP structure which will be initialized\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

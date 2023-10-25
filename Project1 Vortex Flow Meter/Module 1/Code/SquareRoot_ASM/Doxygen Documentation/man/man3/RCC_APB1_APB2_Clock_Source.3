@@ -1,0 +1,56 @@
+.TH "RCC_APB1_APB2_Clock_Source" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCC_APB1_APB2_Clock_Source \- RCC_APB1_APB2_Clock_Source
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRCC_HCLK_Div1\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_HCLK_Div2\fP   ((uint32_t)0x00001000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_HCLK_Div4\fP   ((uint32_t)0x00001400)"
+.br
+.ti -1c
+.RI "#define \fBRCC_HCLK_Div8\fP   ((uint32_t)0x00001800)"
+.br
+.ti -1c
+.RI "#define \fBRCC_HCLK_Div16\fP   ((uint32_t)0x00001C00)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_PCLK\fP(PCLK)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_RCC_PCLK(PCLK)"
+\fBValue:\fP.PP
+.nf
+                           (((PCLK) == RCC_HCLK_Div1) || ((PCLK) == RCC_HCLK_Div2) || \\
+                           ((PCLK) == RCC_HCLK_Div4) || ((PCLK) == RCC_HCLK_Div8) || \\
+                           ((PCLK) == RCC_HCLK_Div16))
+.fi
+
+.SS "#define RCC_HCLK_Div1   ((uint32_t)0x00000000)"
+
+.SS "#define RCC_HCLK_Div16   ((uint32_t)0x00001C00)"
+
+.SS "#define RCC_HCLK_Div2   ((uint32_t)0x00001000)"
+
+.SS "#define RCC_HCLK_Div4   ((uint32_t)0x00001400)"
+
+.SS "#define RCC_HCLK_Div8   ((uint32_t)0x00001800)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

@@ -1,0 +1,78 @@
+.TH "GPIO_InitTypeDef" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GPIO_InitTypeDef \- GPIO Init structure definition 
+.br
+  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <adc\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBPin\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBMode\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBPull\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBSpeed\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBAlternate\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBGPIO_Pin\fP"
+.br
+.ti -1c
+.RI "\fBGPIOMode_TypeDef\fP \fBGPIO_Mode\fP"
+.br
+.ti -1c
+.RI "\fBGPIOSpeed_TypeDef\fP \fBGPIO_Speed\fP"
+.br
+.ti -1c
+.RI "\fBGPIOOType_TypeDef\fP \fBGPIO_OType\fP"
+.br
+.ti -1c
+.RI "\fBGPIOPuPd_TypeDef\fP \fBGPIO_PuPd\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+GPIO Init structure definition 
+.br
+ 
+.SH "Field Documentation"
+.PP 
+.SS "uint32_t Alternate"
+Peripheral to be connected to the selected pins\&. This parameter can be a value of \fBGPIO_Alternate_function_selection\fP 
+.SS "\fBGPIOMode_TypeDef\fP GPIO_Mode"
+Specifies the operating mode for the selected pins\&. This parameter can be a value of \fBGPIOMode_TypeDef\fP 
+.SS "\fBGPIOOType_TypeDef\fP GPIO_OType"
+Specifies the operating output type for the selected pins\&. This parameter can be a value of \fBGPIOOType_TypeDef\fP 
+.SS "uint32_t GPIO_Pin"
+Specifies the GPIO pins to be configured\&. This parameter can be any value of \fBGPIO_pins_define\fP 
+.SS "\fBGPIOPuPd_TypeDef\fP GPIO_PuPd"
+Specifies the operating Pull-up/Pull down for the selected pins\&. This parameter can be a value of \fBGPIOPuPd_TypeDef\fP 
+.SS "\fBGPIOSpeed_TypeDef\fP GPIO_Speed"
+Specifies the speed for the selected pins\&. This parameter can be a value of \fBGPIOSpeed_TypeDef\fP 
+.SS "uint32_t Mode"
+Specifies the operating mode for the selected pins\&. This parameter can be a value of \fBGPIO_mode_define\fP 
+.SS "uint32_t \fBPin\fP"
+Specifies the GPIO pins to be configured\&. This parameter can be any value of \fBGPIO_pins_define\fP 
+.SS "uint32_t Pull"
+Specifies the Pull-up or Pull-Down activation for the selected pins\&. This parameter can be a value of \fBGPIO_pull_define\fP 
+.SS "uint32_t Speed"
+Specifies the speed for the selected pins\&. This parameter can be a value of \fBGPIO_speed_define\fP 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

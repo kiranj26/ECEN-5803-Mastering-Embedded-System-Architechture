@@ -1,0 +1,83 @@
+\doxysubsubsubsection{Data transfers functions}
+\label{group___u_s_a_r_t___group2}\index{Data transfers functions@{Data transfers functions}}
+
+
+Data transfers functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ USART\+\_\+\+Send\+Data} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Transmits single data through the USARTx peripheral. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ USART\+\_\+\+Receive\+Data} (USART\+\_\+\+Type\+Def $\ast$USARTx)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the USARTx peripheral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Data transfers functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                            Data transfers functions
+ ===============================================================================  
+
+  This subsection provides a set of functions allowing to manage the USART data 
+  transfers.
+  
+  During an USART reception, data shifts in least significant bit first through 
+  the RX pin. In this mode, the USART_DR register consists of a buffer (RDR) 
+  between the internal bus and the received shift register.
+
+  When a transmission is taking place, a write instruction to the USART_DR register 
+  stores the data in the TDR register and which is copied in the shift register 
+  at the end of the current transmission.
+
+  The read access of the USART_DR register can be done using the USART_ReceiveData()
+  function and returns the RDR buffered value. Whereas a write access to the USART_DR 
+  can be done using USART_SendData() function and stores the written data into 
+  TDR buffer.\end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\label{group___u_s_a_r_t___group2_gac67a91845b0b1d54d31bdfb1c5e9867c} 
+\index{Data transfers functions@{Data transfers functions}!USART\_ReceiveData@{USART\_ReceiveData}}
+\index{USART\_ReceiveData@{USART\_ReceiveData}!Data transfers functions@{Data transfers functions}}
+\doxysubsubsubsubsubsection{USART\_ReceiveData()}
+{\footnotesize\ttfamily uint16\+\_\+t USART\+\_\+\+Receive\+Data (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def $\ast$}]{USARTx }\end{DoxyParamCaption})}
+
+
+
+Returns the most recent received data by the USARTx peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & received data. \\
+\hline
+\end{DoxyRetVals}
+\label{group___u_s_a_r_t___group2_ga0b43d42da9540f446d494bf69823c6fb} 
+\index{Data transfers functions@{Data transfers functions}!USART\_SendData@{USART\_SendData}}
+\index{USART\_SendData@{USART\_SendData}!Data transfers functions@{Data transfers functions}}
+\doxysubsubsubsubsubsection{USART\_SendData()}
+{\footnotesize\ttfamily void USART\+\_\+\+Send\+Data (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def $\ast$}]{USARTx,  }\item[{uint16\+\_\+t}]{Data }\end{DoxyParamCaption})}
+
+
+
+Transmits single data through the USARTx peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em Data} & the data to transmit. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

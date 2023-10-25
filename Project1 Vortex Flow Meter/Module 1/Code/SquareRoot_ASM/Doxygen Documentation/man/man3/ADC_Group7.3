@@ -1,0 +1,281 @@
+.TH "ADC_Group7" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_Group7 \- Interrupts and flags management functions
+.PP
+ \- Interrupts and flags management functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBADC_ITConfig\fP (ADC_TypeDef *ADCx, uint16_t ADC_IT, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified ADC interrupts\&. "
+.ti -1c
+.RI "FlagStatus \fBADC_GetFlagStatus\fP (ADC_TypeDef *ADCx, uint8_t ADC_FLAG)"
+.br
+.RI "Checks whether the specified ADC flag is set or not\&. "
+.ti -1c
+.RI "void \fBADC_ClearFlag\fP (ADC_TypeDef *ADCx, uint8_t ADC_FLAG)"
+.br
+.RI "Clears the ADCx's pending flags\&. "
+.ti -1c
+.RI "ITStatus \fBADC_GetITStatus\fP (ADC_TypeDef *ADCx, uint16_t ADC_IT)"
+.br
+.RI "Checks whether the specified ADC interrupt has occurred or not\&. "
+.ti -1c
+.RI "void \fBADC_ClearITPendingBit\fP (ADC_TypeDef *ADCx, uint16_t ADC_IT)"
+.br
+.RI "Clears the ADCx's interrupt pending bits\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interrupts and flags management functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                   Interrupts and flags management functions
+ ===============================================================================  
+
+  This section provides functions allowing to configure the ADC Interrupts and 
+  to get the status and clear flags and Interrupts pending bits\&.
+  
+  Each ADC provides 4 Interrupts sources and 6 Flags which can be divided into 
+  3 groups:
+  
+  I\&. Flags and Interrupts for ADC regular channels
+  =================================================
+  Flags :
+  ---------- 
+     1\&. ADC_FLAG_OVR : Overrun detection when regular converted data are lost
+
+     2\&. ADC_FLAG_EOC : Regular channel end of conversion ==> to indicate (depending 
+              on EOCS bit, managed by ADC_EOCOnEachRegularChannelCmd() ) the end of:
+               ==> a regular CHANNEL conversion 
+               ==> sequence of regular GROUP conversions \&.
+
+     3\&. ADC_FLAG_STRT: Regular channel start ==> to indicate when regular CHANNEL 
+              conversion starts\&.
+
+  Interrupts :
+  ------------
+     1\&. ADC_IT_OVR : specifies the interrupt source for Overrun detection event\&.  
+     2\&. ADC_IT_EOC : specifies the interrupt source for Regular channel end of 
+                     conversion event\&.
+  
+  
+  II\&. Flags and Interrupts for ADC Injected channels
+  =================================================
+  Flags :
+  ---------- 
+     1\&. ADC_FLAG_JEOC : Injected channel end of conversion ==> to indicate at 
+               the end of injected GROUP conversion  
+              
+     2\&. ADC_FLAG_JSTRT: Injected channel start ==> to indicate hardware when 
+               injected GROUP conversion starts\&.
+
+  Interrupts :
+  ------------
+     1\&. ADC_IT_JEOC : specifies the interrupt source for Injected channel end of 
+                      conversion event\&.     
+
+  III\&. General Flags and Interrupts for the ADC
+  ================================================= 
+  Flags :
+  ---------- 
+     1\&. ADC_FLAG_AWD: Analog watchdog ==> to indicate if the converted voltage 
+              crosses the programmed thresholds values\&.
+              
+  Interrupts :
+  ------------
+     1\&. ADC_IT_AWD : specifies the interrupt source for Analog watchdog event\&. 
+
+  
+  The user should identify which mode will be used in his application to manage 
+  the ADC controller events: Polling mode or Interrupt mode\&.
+  
+  In the Polling Mode it is advised to use the following functions:
+      - ADC_GetFlagStatus() : to check if flags events occur\&. 
+      - ADC_ClearFlag()     : to clear the flags events\&.
+      
+  In the Interrupt Mode it is advised to use the following functions:
+     - ADC_ITConfig()          : to enable or disable the interrupt source\&.
+     - ADC_GetITStatus()       : to check if Interrupt occurs\&.
+     - ADC_ClearITPendingBit() : to clear the Interrupt pending Bit 
+                                 (corresponding Flag)\&. 
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void ADC_ClearFlag (ADC_TypeDef * ADCx, uint8_t ADC_FLAG)"
+
+.PP
+Clears the ADCx's pending flags\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_FLAG\fP specifies the flag to clear\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_FLAG_AWD: Analog watchdog flag 
+.IP "\(bu" 1
+ADC_FLAG_EOC: End of conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_JEOC: End of injected group conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_JSTRT: Start of injected group conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_STRT: Start of regular group conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_OVR: Overrun flag 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void ADC_ClearITPendingBit (ADC_TypeDef * ADCx, uint16_t ADC_IT)"
+
+.PP
+Clears the ADCx's interrupt pending bits\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_IT\fP specifies the ADC interrupt pending bit to clear\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_IT_EOC: End of conversion interrupt mask 
+.IP "\(bu" 1
+ADC_IT_AWD: Analog watchdog interrupt mask 
+.IP "\(bu" 1
+ADC_IT_JEOC: End of injected conversion interrupt mask 
+.IP "\(bu" 1
+ADC_IT_OVR: Overrun interrupt mask 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "FlagStatus ADC_GetFlagStatus (ADC_TypeDef * ADCx, uint8_t ADC_FLAG)"
+
+.PP
+Checks whether the specified ADC flag is set or not\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_FLAG\fP specifies the flag to check\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_FLAG_AWD: Analog watchdog flag 
+.IP "\(bu" 1
+ADC_FLAG_EOC: End of conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_JEOC: End of injected group conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_JSTRT: Start of injected group conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_STRT: Start of regular group conversion flag 
+.IP "\(bu" 1
+ADC_FLAG_OVR: Overrun flag 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of ADC_FLAG (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "ITStatus ADC_GetITStatus (ADC_TypeDef * ADCx, uint16_t ADC_IT)"
+
+.PP
+Checks whether the specified ADC interrupt has occurred or not\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_IT\fP specifies the ADC interrupt source to check\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_IT_EOC: End of conversion interrupt mask 
+.IP "\(bu" 1
+ADC_IT_AWD: Analog watchdog interrupt mask 
+.IP "\(bu" 1
+ADC_IT_JEOC: End of injected conversion interrupt mask 
+.IP "\(bu" 1
+ADC_IT_OVR: Overrun interrupt mask 
+.br
+ 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of ADC_IT (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "void ADC_ITConfig (ADC_TypeDef * ADCx, uint16_t ADC_IT, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified ADC interrupts\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIADCx\fP where x can be 1, 2 or 3 to select the ADC peripheral\&. 
+.br
+\fIADC_IT\fP specifies the ADC interrupt sources to be enabled or disabled\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+ADC_IT_EOC: End of conversion interrupt mask 
+.IP "\(bu" 1
+ADC_IT_AWD: Analog watchdog interrupt mask 
+.IP "\(bu" 1
+ADC_IT_JEOC: End of injected conversion interrupt mask 
+.IP "\(bu" 1
+ADC_IT_OVR: Overrun interrupt enable 
+.br
+ 
+.PP
+.br
+\fINewState\fP new state of the specified ADC interrupts\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

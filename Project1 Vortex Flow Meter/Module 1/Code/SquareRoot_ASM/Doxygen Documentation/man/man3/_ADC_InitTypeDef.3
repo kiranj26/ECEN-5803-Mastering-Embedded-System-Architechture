@@ -1,0 +1,82 @@
+.TH "_ADC_InitTypeDef" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_ADC_InitTypeDef
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <adc\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBClockPrescaler\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBResolution\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBDataAlign\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBScanConvMode\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBEOCSelection\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBContinuousConvMode\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBDMAContinuousRequests\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBNbrOfConversion\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBDiscontinuousConvMode\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBNbrOfDiscConversion\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBExternalTrigConv\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBExternalTrigConvEdge\fP"
+.br
+.in -1c
+.SH "Field Documentation"
+.PP 
+.SS "uint32_t ClockPrescaler"
+Select the frequency of the clock to the ADC\&. The clock is common for all the ADCs\&. This parameter can be a value of \fBADC_ClockPrescaler\fP 
+.SS "uint32_t ContinuousConvMode"
+Specifies whether the conversion is performed in Continuous or Single mode\&. This parameter can be set to ENABLE or DISABLE\&. 
+.SS "uint32_t DataAlign"
+Specifies whether the ADC data alignment is left or right\&. 
+.br
+ This parameter can be a value of \fBADC_data_align\fP 
+.SS "uint32_t DiscontinuousConvMode"
+Specifies whether the conversion is performed in Discontinuous or not for regular channels\&. This parameter can be set to ENABLE or DISABLE\&. 
+.SS "uint32_t DMAContinuousRequests"
+Specifies whether the DMA requests is performed in Continuous or in Single mode\&. This parameter can be set to ENABLE or DISABLE\&. 
+.SS "uint32_t EOCSelection"
+Specifies whether the EOC flag is set at the end of single channel conversion or at the end of all conversions\&. This parameter can be a value of \fBADC_EOCSelection\fP Note: Impact on overrun when not using DMA: When EOCSelection is set to ADC_EOC_SINGLE_CONV, overrun detection is automatically enabled, in this case each conversion data must be read\&. To perform ADC conversions without having to read all conversion data, this parameter must be set to ADC_EOC_SEQ_CONV 
+.SS "uint32_t ExternalTrigConv"
+Selects the external event used to trigger the conversion start of regular group\&. If set to ADC_SOFTWARE_START, external triggers are disabled\&. This parameter can be a value of \fBADC_External_trigger_Source_Regular\fP Note: This parameter can be modified only if there is no conversion is ongoing\&. 
+.SS "uint32_t ExternalTrigConvEdge"
+Selects the external trigger edge of regular group\&. If trigger is set to ADC_SOFTWARE_START, this parameter is discarded\&. This parameter can be a value of \fBADC_External_trigger_edge_Regular\fP Note: This parameter can be modified only if there is no conversion is ongoing\&. 
+.SS "uint32_t NbrOfConversion"
+Specifies the number of ADC conversions that will be done using the sequencer for regular channel group\&. This parameter must be a number between Min_Data = 1 and Max_Data = 16\&. 
+.SS "uint32_t NbrOfDiscConversion"
+Specifies the number of ADC discontinuous conversions that will be done using the sequencer for regular channel group\&. This parameter must be a number between Min_Data = 1 and Max_Data = 8\&. 
+.SS "uint32_t Resolution"
+Configures the ADC resolution dual mode\&. This parameter can be a value of \fBADC_Resolution\fP 
+.SS "uint32_t ScanConvMode"
+Specifies whether the conversion is performed in Scan (multi channels) or Single (one channel) mode\&. This parameter can be set to ENABLE or DISABLE 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

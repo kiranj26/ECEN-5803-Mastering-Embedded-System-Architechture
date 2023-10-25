@@ -1,0 +1,170 @@
+.TH "drivers/stm32f4xx_gpio.c" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/stm32f4xx_gpio.c \- This file provides firmware functions to manage the following functionalities of the GPIO peripheral: 
+.br
+  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'stm32f4xx_rcc\&.h'\fP
+.br
+\fC#include 'stm32f4xx_gpio\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBGPIO_DeInit\fP (GPIO_TypeDef *GPIOx)"
+.br
+.RI "Deinitializes the GPIOx peripheral registers to their default reset values\&. "
+.ti -1c
+.RI "void \fBGPIO_Init\fP (GPIO_TypeDef *GPIOx, \fBGPIO_InitTypeDef\fP *GPIO_InitStruct)"
+.br
+.RI "Initializes the GPIOx peripheral according to the specified parameters in the GPIO_InitStruct\&. "
+.ti -1c
+.RI "void \fBGPIO_StructInit\fP (\fBGPIO_InitTypeDef\fP *GPIO_InitStruct)"
+.br
+.RI "Fills each GPIO_InitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBGPIO_PinLockConfig\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Locks GPIO Pins configuration registers\&. "
+.ti -1c
+.RI "uint8_t \fBGPIO_ReadInputDataBit\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Reads the specified input port pin\&. "
+.ti -1c
+.RI "uint16_t \fBGPIO_ReadInputData\fP (GPIO_TypeDef *GPIOx)"
+.br
+.RI "Reads the specified GPIO input data port\&. "
+.ti -1c
+.RI "uint8_t \fBGPIO_ReadOutputDataBit\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Reads the specified output data port bit\&. "
+.ti -1c
+.RI "uint16_t \fBGPIO_ReadOutputData\fP (GPIO_TypeDef *GPIOx)"
+.br
+.RI "Reads the specified GPIO output data port\&. "
+.ti -1c
+.RI "void \fBGPIO_SetBits\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Sets the selected data port bits\&. "
+.ti -1c
+.RI "void \fBGPIO_ResetBits\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Clears the selected data port bits\&. "
+.ti -1c
+.RI "void \fBGPIO_WriteBit\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, \fBBitAction\fP BitVal)"
+.br
+.RI "Sets or clears the selected data port bit\&. "
+.ti -1c
+.RI "void \fBGPIO_Write\fP (GPIO_TypeDef *GPIOx, uint16_t PortVal)"
+.br
+.RI "Writes data to the specified GPIO data port\&. "
+.ti -1c
+.RI "void \fBGPIO_ToggleBits\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Toggles the specified GPIO pins\&.\&. "
+.ti -1c
+.RI "void \fBGPIO_PinAFConfig\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO_AF)"
+.br
+.RI "Changes the mapping of the specified pin\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file provides firmware functions to manage the following functionalities of the GPIO peripheral: 
+.br
+ 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+MCD Application Team 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+V1\&.0\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+30-September-2011
+.IP "\(bu" 2
+Initialization and Configuration
+.IP "\(bu" 2
+GPIO Read and Write
+.IP "\(bu" 2
+GPIO Alternate functions configuration
+.PP
+.RE
+.PP
+.PP
+.nf
+*
+*          ===================================================================
+*                                 How to use this driver
+*          ===================================================================       
+*           1\&. Enable the GPIO AHB clock using the following function
+*                RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOx, ENABLE);
+*             
+*           2\&. Configure the GPIO pin(s) using GPIO_Init()
+*              Four possible configuration are available for each pin:
+*                - Input: Floating, Pull-up, Pull-down\&.
+*                - Output: Push-Pull (Pull-up, Pull-down or no Pull)
+*                          Open Drain (Pull-up, Pull-down or no Pull)\&.
+*                  In output mode, the speed is configurable: 2 MHz, 25 MHz,
+*                  50 MHz or 100 MHz\&.
+*                - Alternate Function: Push-Pull (Pull-up, Pull-down or no Pull)
+*                                      Open Drain (Pull-up, Pull-down or no Pull)\&.
+*                - Analog: required mode when a pin is to be used as ADC channel
+*                          or DAC output\&.
+* 
+*          3- Peripherals alternate function:
+*              - For ADC and DAC, configure the desired pin in analog mode using 
+*                  GPIO_InitStruct->GPIO_Mode = GPIO_Mode_AN;
+*              - For other peripherals (TIM, USART\&.\&.\&.):
+*                 - Connect the pin to the desired peripherals' Alternate 
+*                   Function (AF) using GPIO_PinAFConfig() function
+*                 - Configure the desired pin in alternate function mode using
+*                   GPIO_InitStruct->GPIO_Mode = GPIO_Mode_AF
+*                 - Select the type, pull-up/pull-down and output speed via 
+*                   GPIO_PuPd, GPIO_OType and GPIO_Speed members
+*                 - Call GPIO_Init() function
+*        
+*          4\&. To get the level of a pin configured in input mode use GPIO_ReadInputDataBit()
+*          
+*          5\&. To set/reset the level of a pin configured in output mode use
+*             GPIO_SetBits()/GPIO_ResetBits()
+*               
+*          6\&. During and just after reset, the alternate functions are not 
+*             active and the GPIO pins are configured in input floating mode
+*             (except JTAG pins)\&.
+*
+*          7\&. The LSE oscillator pins OSC32_IN and OSC32_OUT can be used as 
+*             general-purpose (PC14 and PC15, respectively) when the LSE
+*             oscillator is off\&. The LSE has priority over the GPIO function\&.
+*
+*          8\&. The HSE oscillator pins OSC_IN/OSC_OUT can be used as 
+*             general-purpose PH0 and PH1, respectively, when the HSE 
+*             oscillator is off\&. The HSE has priority over the GPIO function\&.
+*             
+*  .fi
+.PP
+.PP
+\fBAttention\fP
+.RS 4
+.RE
+.PP
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME\&. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS\&.
+.PP
+.SS "(C) COPYRIGHT 2011 STMicroelectronics"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

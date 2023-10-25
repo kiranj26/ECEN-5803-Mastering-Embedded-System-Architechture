@@ -1,0 +1,71 @@
+.TH "USART_InitTypeDef" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_InitTypeDef \- USART Init Structure definition 
+.br
+  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <stm32f4xx_usart\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBUSART_BaudRate\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBUSART_WordLength\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBUSART_StopBits\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBUSART_Parity\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBUSART_Mode\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBUSART_HardwareFlowControl\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+USART Init Structure definition 
+.br
+ 
+.SH "Field Documentation"
+.PP 
+.SS "uint32_t USART_BaudRate"
+This member configures the USART communication baud rate\&. The baud rate is computed using the following formula:
+.IP "\(bu" 2
+IntegerDivider = ((PCLKx) / (8 * (OVR8+1) * (USART_InitStruct->USART_BaudRate)))
+.IP "\(bu" 2
+FractionalDivider = ((IntegerDivider - ((u32) IntegerDivider)) * 8 * (OVR8+1)) + 0\&.5 Where OVR8 is the 'oversampling by 8 mode' configuration bit in the CR1 register\&. 
+.PP
+
+.SS "uint16_t USART_HardwareFlowControl"
+Specifies wether the hardware flow control mode is enabled or disabled\&. This parameter can be a value of \fBUSART_Hardware_Flow_Control\fP 
+.SS "uint16_t USART_Mode"
+Specifies wether the Receive or Transmit mode is enabled or disabled\&. This parameter can be a value of \fBUSART_Mode\fP 
+.SS "uint16_t USART_Parity"
+Specifies the parity mode\&. This parameter can be a value of \fBUSART_Parity\fP 
+.PP
+\fBNote\fP
+.RS 4
+When parity is enabled, the computed parity is inserted at the MSB position of the transmitted data (9th bit when the word length is set to 9 data bits; 8th bit when the word length is set to 8 data bits)\&. 
+.RE
+.PP
+
+.SS "uint16_t USART_StopBits"
+Specifies the number of stop bits transmitted\&. This parameter can be a value of \fBUSART_Stop_Bits\fP 
+.SS "uint16_t USART_WordLength"
+Specifies the number of data bits transmitted or received in a frame\&. This parameter can be a value of \fBUSART_Word_Length\fP 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

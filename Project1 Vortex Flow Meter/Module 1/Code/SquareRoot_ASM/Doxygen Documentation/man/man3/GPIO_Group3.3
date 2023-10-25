@@ -1,0 +1,139 @@
+.TH "GPIO_Group3" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GPIO_Group3 \- GPIO Alternate functions configuration function
+.PP
+ \- GPIO Alternate functions configuration function\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBGPIO_PinAFConfig\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO_AF)"
+.br
+.RI "Changes the mapping of the specified pin\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+GPIO Alternate functions configuration function\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+               GPIO Alternate functions configuration function
+ ===============================================================================  
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void GPIO_PinAFConfig (GPIO_TypeDef * GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO_AF)"
+
+.PP
+Changes the mapping of the specified pin\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIGPIO_PinSource\fP specifies the pin for the Alternate function\&. This parameter can be GPIO_PinSourcex where x can be (0\&.\&.15)\&. 
+.br
+\fIGPIO_AFSelection\fP selects the pin to used as Alternate function\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+GPIO_AF_RTC_50Hz: Connect RTC_50Hz pin to AF0 (default after reset) 
+.IP "\(bu" 1
+GPIO_AF_MCO: Connect MCO pin (MCO1 and MCO2) to AF0 (default after reset) 
+.IP "\(bu" 1
+GPIO_AF_TAMPER: Connect TAMPER pins (TAMPER_1 and TAMPER_2) to AF0 (default after reset) 
+.IP "\(bu" 1
+GPIO_AF_SWJ: Connect SWJ pins (SWD and JTAG)to AF0 (default after reset) 
+.IP "\(bu" 1
+GPIO_AF_TRACE: Connect TRACE pins to AF0 (default after reset) 
+.IP "\(bu" 1
+GPIO_AF_TIM1: Connect TIM1 pins to AF1 
+.IP "\(bu" 1
+GPIO_AF_TIM2: Connect TIM2 pins to AF1 
+.IP "\(bu" 1
+GPIO_AF_TIM3: Connect TIM3 pins to AF2 
+.IP "\(bu" 1
+GPIO_AF_TIM4: Connect TIM4 pins to AF2 
+.IP "\(bu" 1
+GPIO_AF_TIM5: Connect TIM5 pins to AF2 
+.IP "\(bu" 1
+GPIO_AF_TIM8: Connect TIM8 pins to AF3 
+.IP "\(bu" 1
+GPIO_AF_TIM9: Connect TIM9 pins to AF3 
+.IP "\(bu" 1
+GPIO_AF_TIM10: Connect TIM10 pins to AF3 
+.IP "\(bu" 1
+GPIO_AF_TIM11: Connect TIM11 pins to AF3 
+.IP "\(bu" 1
+GPIO_AF_I2C1: Connect I2C1 pins to AF4 
+.IP "\(bu" 1
+GPIO_AF_I2C2: Connect I2C2 pins to AF4 
+.IP "\(bu" 1
+GPIO_AF_I2C3: Connect I2C3 pins to AF4 
+.IP "\(bu" 1
+GPIO_AF_SPI1: Connect SPI1 pins to AF5 
+.IP "\(bu" 1
+GPIO_AF_SPI2: Connect SPI2/I2S2 pins to AF5 
+.IP "\(bu" 1
+GPIO_AF_SPI3: Connect SPI3/I2S3 pins to AF6 
+.IP "\(bu" 1
+GPIO_AF_I2S3ext: Connect I2S3ext pins to AF7 
+.IP "\(bu" 1
+GPIO_AF_USART1: Connect USART1 pins to AF7 
+.IP "\(bu" 1
+GPIO_AF_USART2: Connect USART2 pins to AF7 
+.IP "\(bu" 1
+GPIO_AF_USART3: Connect USART3 pins to AF7 
+.IP "\(bu" 1
+GPIO_AF_UART4: Connect UART4 pins to AF8 
+.IP "\(bu" 1
+GPIO_AF_UART5: Connect UART5 pins to AF8 
+.IP "\(bu" 1
+GPIO_AF_USART6: Connect USART6 pins to AF8 
+.IP "\(bu" 1
+GPIO_AF_CAN1: Connect CAN1 pins to AF9 
+.IP "\(bu" 1
+GPIO_AF_CAN2: Connect CAN2 pins to AF9 
+.IP "\(bu" 1
+GPIO_AF_TIM12: Connect TIM12 pins to AF9 
+.IP "\(bu" 1
+GPIO_AF_TIM13: Connect TIM13 pins to AF9 
+.IP "\(bu" 1
+GPIO_AF_TIM14: Connect TIM14 pins to AF9 
+.IP "\(bu" 1
+GPIO_AF_OTG_FS: Connect OTG_FS pins to AF10 
+.IP "\(bu" 1
+GPIO_AF_OTG_HS: Connect OTG_HS pins to AF10 
+.IP "\(bu" 1
+GPIO_AF_ETH: Connect ETHERNET pins to AF11 
+.IP "\(bu" 1
+GPIO_AF_FSMC: Connect FSMC pins to AF12 
+.IP "\(bu" 1
+GPIO_AF_OTG_HS_FS: Connect OTG HS (configured in FS) pins to AF12 
+.IP "\(bu" 1
+GPIO_AF_SDIO: Connect SDIO pins to AF12 
+.IP "\(bu" 1
+GPIO_AF_DCMI: Connect DCMI pins to AF13 
+.IP "\(bu" 1
+GPIO_AF_EVENTOUT: Connect EVENTOUT pins to AF15 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

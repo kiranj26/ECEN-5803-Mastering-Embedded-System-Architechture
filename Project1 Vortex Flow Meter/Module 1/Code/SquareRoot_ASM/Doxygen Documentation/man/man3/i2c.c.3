@@ -1,0 +1,72 @@
+.TH "drivers/i2c.c" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/i2c.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <platform\&.h>\fP
+.br
+\fC#include <stm32f4xx_i2c\&.h>\fP
+.br
+\fC#include <STM32F4xx_RCC\&.h>\fP
+.br
+\fC#include <STM32F4xx_GPIO\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBi2c_init\fP ()"
+.br
+.RI "Initialises the hardware I2C module, any relevant pins and enables the module\&. "
+.ti -1c
+.RI "void \fBi2c_write\fP (uint8_t address, uint8_t *buffer, int buff_len)"
+.br
+.RI "Writes data to an I2C module\&. "
+.ti -1c
+.RI "void \fBi2c_read\fP (uint8_t address, uint8_t *buffer, int buff_len)"
+.br
+.RI "Reads data from an I2C module\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void i2c_init (void)"
+
+.PP
+Initialises the hardware I2C module, any relevant pins and enables the module\&. 
+.SS "void i2c_read (uint8_t address, uint8_t * buffer, int buff_len)"
+
+.PP
+Reads data from an I2C module\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddress\fP I2C address of the slave\&. 
+.br
+\fIbuffer\fP Data to be read\&. 
+.br
+\fIbuff_len\fP Number of bytes to read\&. 
+.RE
+.PP
+
+.SS "void i2c_write (uint8_t address, uint8_t * buffer, int buff_len)"
+
+.PP
+Writes data to an I2C module\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIaddress\fP I2C address of the slave\&. 
+.br
+\fIbuffer\fP Data to be sent\&. 
+.br
+\fIbuff_len\fP Number of bytes to send\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

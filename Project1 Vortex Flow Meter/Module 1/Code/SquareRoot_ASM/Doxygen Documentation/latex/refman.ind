@@ -1,0 +1,4418 @@
+\begin{theindex}
+
+  \item {\_ADC\_ConfigChannel}
+    \subitem {adc.c}, \hyperpage{323}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {\_ADC\_GET\_FLAG}
+    \subitem {adc.h}, \hyperpage{328}
+  \item {\_ADC\_GetValue}
+    \subitem {adc.c}, \hyperpage{323}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {\_ADC\_Init}
+    \subitem {adc.c}, \hyperpage{324}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {\_ADC\_InitTypeDef}, \hyperpage{311}
+    \subitem {ClockPrescaler}, \hyperpage{311}
+    \subitem {ContinuousConvMode}, \hyperpage{311}
+    \subitem {DataAlign}, \hyperpage{311}
+    \subitem {DiscontinuousConvMode}, \hyperpage{311}
+    \subitem {DMAContinuousRequests}, \hyperpage{311}
+    \subitem {EOCSelection}, \hyperpage{312}
+    \subitem {ExternalTrigConv}, \hyperpage{312}
+    \subitem {ExternalTrigConvEdge}, \hyperpage{312}
+    \subitem {NbrOfConversion}, \hyperpage{312}
+    \subitem {NbrOfDiscConversion}, \hyperpage{312}
+    \subitem {Resolution}, \hyperpage{312}
+    \subitem {ScanConvMode}, \hyperpage{312}
+  \item {\_ADC\_PollForConversion}
+    \subitem {adc.c}, \hyperpage{324}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {\_ADC\_Start}
+    \subitem {adc.c}, \hyperpage{324}
+    \subitem {adc.h}, \hyperpage{335}
+  \item {\_GPIO\_Init}
+    \subitem {adc.c}, \hyperpage{324}
+    \subitem {adc.h}, \hyperpage{335}
+  \item {\_IS\_BIT\_CLR}
+    \subitem {adc.h}, \hyperpage{328}
+  \item {\_IS\_BIT\_SET}
+    \subitem {adc.h}, \hyperpage{328}
+  \item {\_adc\_read}
+    \subitem {adc.c}, \hyperpage{324}
+    \subitem {adc.h}, \hyperpage{335}
+
+  \indexspace
+
+  \item {ADC}, \hyperpage{9}
+    \subitem {ADC\_AnalogWatchdogCmd}, \hyperpage{14}
+    \subitem {ADC\_AnalogWatchdogSingleChannelConfig}, \hyperpage{14}
+    \subitem {ADC\_AnalogWatchdogThresholdsConfig}, \hyperpage{15}
+    \subitem {ADC\_AutoInjectedConvCmd}, \hyperpage{16}
+    \subitem {ADC\_ClearFlag}, \hyperpage{16}
+    \subitem {ADC\_ClearITPendingBit}, \hyperpage{17}
+    \subitem {ADC\_Cmd}, \hyperpage{17}
+    \subitem {ADC\_CommonInit}, \hyperpage{17}
+    \subitem {ADC\_CommonStructInit}, \hyperpage{18}
+    \subitem {ADC\_ContinuousModeCmd}, \hyperpage{18}
+    \subitem {ADC\_DeInit}, \hyperpage{19}
+    \subitem {ADC\_DiscModeChannelCountConfig}, \hyperpage{19}
+    \subitem {ADC\_DiscModeCmd}, \hyperpage{19}
+    \subitem {ADC\_DMACmd}, \hyperpage{20}
+    \subitem {ADC\_DMARequestAfterLastTransferCmd}, \hyperpage{20}
+    \subitem {ADC\_EOCOnEachRegularChannelCmd}, \hyperpage{20}
+    \subitem {ADC\_ExternalTrigInjectedConvConfig}, \hyperpage{21}
+    \subitem {ADC\_ExternalTrigInjectedConvEdgeConfig}, \hyperpage{22}
+    \subitem {ADC\_GetConversionValue}, \hyperpage{23}
+    \subitem {ADC\_GetFlagStatus}, \hyperpage{23}
+    \subitem {ADC\_GetInjectedConversionValue}, \hyperpage{24}
+    \subitem {ADC\_GetITStatus}, \hyperpage{24}
+    \subitem {ADC\_GetMultiModeConversionValue}, \hyperpage{25}
+    \subitem {ADC\_GetSoftwareStartConvStatus}, \hyperpage{25}
+    \subitem {ADC\_GetSoftwareStartInjectedConvCmdStatus}, 
+		\hyperpage{26}
+    \subitem {ADC\_Init}, \hyperpage{26}
+    \subitem {ADC\_InjectedChannelConfig}, \hyperpage{27}
+    \subitem {ADC\_InjectedDiscModeCmd}, \hyperpage{28}
+    \subitem {ADC\_InjectedSequencerLengthConfig}, \hyperpage{28}
+    \subitem {ADC\_ITConfig}, \hyperpage{29}
+    \subitem {ADC\_MultiModeDMARequestAfterLastTransferCmd}, 
+		\hyperpage{29}
+    \subitem {ADC\_RegularChannelConfig}, \hyperpage{30}
+    \subitem {ADC\_SetInjectedOffset}, \hyperpage{31}
+    \subitem {ADC\_SoftwareStartConv}, \hyperpage{32}
+    \subitem {ADC\_SoftwareStartInjectedConv}, \hyperpage{32}
+    \subitem {ADC\_StructInit}, \hyperpage{32}
+    \subitem {ADC\_TempSensorVrefintCmd}, \hyperpage{33}
+    \subitem {ADC\_VBATCmd}, \hyperpage{33}
+    \subitem {CDR\_ADDRESS}, \hyperpage{12}
+    \subitem {CR1\_AWDCH\_RESET}, \hyperpage{12}
+    \subitem {CR1\_AWDMode\_RESET}, \hyperpage{12}
+    \subitem {CR1\_CLEAR\_MASK}, \hyperpage{12}
+    \subitem {CR1\_DISCNUM\_RESET}, \hyperpage{12}
+    \subitem {CR2\_CLEAR\_MASK}, \hyperpage{12}
+    \subitem {CR2\_EXTEN\_RESET}, \hyperpage{12}
+    \subitem {CR2\_JEXTEN\_RESET}, \hyperpage{12}
+    \subitem {CR2\_JEXTSEL\_RESET}, \hyperpage{12}
+    \subitem {CR\_CLEAR\_MASK}, \hyperpage{13}
+    \subitem {JDR\_OFFSET}, \hyperpage{13}
+    \subitem {JSQR\_JL\_RESET}, \hyperpage{13}
+    \subitem {JSQR\_JL\_SET}, \hyperpage{13}
+    \subitem {JSQR\_JSQ\_SET}, \hyperpage{13}
+    \subitem {SMPR1\_SMP\_SET}, \hyperpage{13}
+    \subitem {SMPR2\_SMP\_SET}, \hyperpage{13}
+    \subitem {SQR1\_L\_RESET}, \hyperpage{13}
+    \subitem {SQR1\_SQ\_SET}, \hyperpage{13}
+    \subitem {SQR2\_SQ\_SET}, \hyperpage{13}
+    \subitem {SQR3\_SQ\_SET}, \hyperpage{14}
+  \item {adc}
+    \subitem {analogin\_s}, \hyperpage{316}
+  \item {adc.c}
+    \subitem {\_ADC\_ConfigChannel}, \hyperpage{323}
+    \subitem {\_ADC\_GetValue}, \hyperpage{323}
+    \subitem {\_ADC\_Init}, \hyperpage{324}
+    \subitem {\_ADC\_PollForConversion}, \hyperpage{324}
+    \subitem {\_ADC\_Start}, \hyperpage{324}
+    \subitem {\_GPIO\_Init}, \hyperpage{324}
+    \subitem {\_adc\_read}, \hyperpage{324}
+    \subitem {adc\_init}, \hyperpage{324}
+    \subitem {adc\_read}, \hyperpage{324}
+    \subitem {AdcHandle}, \hyperpage{325}
+    \subitem {analogin\_init}, \hyperpage{324}
+    \subitem {pin\_function}, \hyperpage{324}
+    \subitem {PinMap\_ADC}, \hyperpage{325}
+    \subitem {pinmap\_find\_function}, \hyperpage{324}
+    \subitem {pinmap\_find\_peripheral}, \hyperpage{325}
+    \subitem {pinmap\_function}, \hyperpage{325}
+    \subitem {pinmap\_peripheral}, \hyperpage{325}
+    \subitem {pinmap\_pinout}, \hyperpage{325}
+  \item {adc.h}
+    \subitem {\_ADC\_ConfigChannel}, \hyperpage{334}
+    \subitem {\_ADC\_GET\_FLAG}, \hyperpage{328}
+    \subitem {\_ADC\_GetValue}, \hyperpage{334}
+    \subitem {\_ADC\_Init}, \hyperpage{334}
+    \subitem {\_ADC\_PollForConversion}, \hyperpage{334}
+    \subitem {\_ADC\_Start}, \hyperpage{335}
+    \subitem {\_GPIO\_Init}, \hyperpage{335}
+    \subitem {\_IS\_BIT\_CLR}, \hyperpage{328}
+    \subitem {\_IS\_BIT\_SET}, \hyperpage{328}
+    \subitem {\_adc\_read}, \hyperpage{335}
+    \subitem {ADC1\_BASE}, \hyperpage{328}
+    \subitem {ADC\_1}, \hyperpage{333}
+    \subitem {ADC\_CHANNEL\_0}, \hyperpage{328}
+    \subitem {ADC\_CHANNEL\_1}, \hyperpage{328}
+    \subitem {ADC\_CHANNEL\_10}, \hyperpage{328}
+    \subitem {ADC\_CHANNEL\_11}, \hyperpage{328}
+    \subitem {ADC\_CHANNEL\_12}, \hyperpage{328}
+    \subitem {ADC\_CHANNEL\_13}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_14}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_15}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_16}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_17}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_18}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_2}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_3}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_4}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_5}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_6}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_7}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_8}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_9}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_TEMPSENSOR}, \hyperpage{329}
+    \subitem {ADC\_CHANNEL\_VBAT}, \hyperpage{330}
+    \subitem {ADC\_CHANNEL\_VREFINT}, \hyperpage{330}
+    \subitem {ADC\_CR1\_DISCONTINUOUS}, \hyperpage{330}
+    \subitem {ADC\_CR1\_SCANCONV}, \hyperpage{330}
+    \subitem {ADC\_CR2\_CONTINUOUS}, \hyperpage{330}
+    \subitem {ADC\_CR2\_DMAContReq}, \hyperpage{330}
+    \subitem {ADC\_CR2\_EOCSelection}, \hyperpage{330}
+    \subitem {adc\_init}, \hyperpage{335}
+    \subitem {adc\_read}, \hyperpage{335}
+    \subitem {ADC\_SMPR1}, \hyperpage{330}
+    \subitem {ADC\_SMPR2}, \hyperpage{330}
+    \subitem {ADC\_SOFTWARE\_START}, \hyperpage{330}
+    \subitem {ADC\_SQR1}, \hyperpage{330}
+    \subitem {ADC\_SQR1\_RK}, \hyperpage{330}
+    \subitem {ADC\_SQR2\_RK}, \hyperpage{331}
+    \subitem {ADC\_SQR3\_RK}, \hyperpage{331}
+    \subitem {ADC\_STAB\_DELAY\_US}, \hyperpage{331}
+    \subitem {ADCName}, \hyperpage{333}
+    \subitem {analogin\_init}, \hyperpage{335}
+    \subitem {GPIO\_MODE}, \hyperpage{331}
+    \subitem {GPIO\_NOPULL}, \hyperpage{331}
+    \subitem {GPIO\_PULLDOWN}, \hyperpage{331}
+    \subitem {GPIO\_PULLUP}, \hyperpage{331}
+    \subitem {GPIO\_SPEED\_FAST}, \hyperpage{331}
+    \subitem {GPIO\_SPEED\_HIGH}, \hyperpage{331}
+    \subitem {GPIO\_SPEED\_LOW}, \hyperpage{331}
+    \subitem {GPIO\_SPEED\_MEDIUM}, \hyperpage{331}
+    \subitem {GPIOA\_BASE}, \hyperpage{332}
+    \subitem {HAL\_ADC\_STATE\_AWD}, \hyperpage{334}
+    \subitem {HAL\_ADC\_STATE\_BUSY}, \hyperpage{334}
+    \subitem {HAL\_ADC\_STATE\_BUSY\_INJ}, \hyperpage{334}
+    \subitem {HAL\_ADC\_STATE\_BUSY\_INJ\_REG}, \hyperpage{334}
+    \subitem {HAL\_ADC\_STATE\_BUSY\_REG}, \hyperpage{334}
+    \subitem {HAL\_ADC\_STATE\_EOC}, \hyperpage{334}
+    \subitem {HAL\_ADC\_STATE\_EOC\_INJ}, \hyperpage{334}
+    \subitem {HAL\_ADC\_STATE\_EOC\_INJ\_REG}, \hyperpage{334}
+    \subitem {HAL\_ADC\_STATE\_EOC\_REG}, \hyperpage{334}
+    \subitem {HAL\_ADC\_STATE\_ERROR}, \hyperpage{334}
+    \subitem {HAL\_ADC\_STATE\_READY}, \hyperpage{333}
+    \subitem {HAL\_ADC\_STATE\_RESET}, \hyperpage{333}
+    \subitem {HAL\_ADC\_STATE\_TIMEOUT}, \hyperpage{334}
+    \subitem {HAL\_ADC\_StateTypeDef}, \hyperpage{333}
+    \subitem {HAL\_LOCKED}, \hyperpage{334}
+    \subitem {HAL\_LockTypeDef}, \hyperpage{334}
+    \subitem {HAL\_UNLOCKED}, \hyperpage{334}
+    \subitem {pin\_function}, \hyperpage{335}
+    \subitem {pinmap\_find\_peripheral}, \hyperpage{335}
+    \subitem {pinmap\_function}, \hyperpage{335}
+    \subitem {pinmap\_peripheral}, \hyperpage{335}
+    \subitem {pinmap\_pinout}, \hyperpage{336}
+    \subitem {PortA}, \hyperpage{334}
+    \subitem {PortB}, \hyperpage{334}
+    \subitem {PortC}, \hyperpage{334}
+    \subitem {PortD}, \hyperpage{334}
+    \subitem {PortE}, \hyperpage{334}
+    \subitem {PortH}, \hyperpage{334}
+    \subitem {PortName}, \hyperpage{334}
+    \subitem {RCC\_ADC1\_CLK\_ENABLE}, \hyperpage{332}
+    \subitem {RCC\_GPIOA\_CLK\_ENABLE}, \hyperpage{332}
+    \subitem {RCC\_GPIOB\_CLK\_ENABLE}, \hyperpage{332}
+    \subitem {RCC\_GPIOC\_CLK\_ENABLE}, \hyperpage{332}
+    \subitem {STM\_MODE\_ANALOG}, \hyperpage{332}
+    \subitem {STM\_PIN}, \hyperpage{332}
+    \subitem {STM\_PIN\_AFNUM}, \hyperpage{332}
+    \subitem {STM\_PIN\_CHANNEL}, \hyperpage{333}
+    \subitem {STM\_PIN\_DATA\_EXT}, \hyperpage{333}
+    \subitem {STM\_PIN\_MODE}, \hyperpage{333}
+    \subitem {STM\_PIN\_PUPD}, \hyperpage{333}
+    \subitem {STM\_PORT}, \hyperpage{333}
+    \subitem {UNUSED}, \hyperpage{333}
+  \item {ADC1\_BASE}
+    \subitem {adc.h}, \hyperpage{328}
+  \item {ADC\_1}
+    \subitem {adc.h}, \hyperpage{333}
+  \item {ADC\_analog\_watchdog\_selection}, \hyperpage{82}
+    \subitem {ADC\_AnalogWatchdog\_AllInjecEnable}, \hyperpage{82}
+    \subitem {ADC\_AnalogWatchdog\_AllRegAllInjecEnable}, 
+		\hyperpage{82}
+    \subitem {ADC\_AnalogWatchdog\_AllRegEnable}, \hyperpage{82}
+    \subitem {ADC\_AnalogWatchdog\_None}, \hyperpage{82}
+    \subitem {ADC\_AnalogWatchdog\_SingleInjecEnable}, \hyperpage{82}
+    \subitem {ADC\_AnalogWatchdog\_SingleRegEnable}, \hyperpage{82}
+    \subitem {ADC\_AnalogWatchdog\_SingleRegOrInjecEnable}, 
+		\hyperpage{82}
+    \subitem {IS\_ADC\_ANALOG\_WATCHDOG}, \hyperpage{82}
+  \item {ADC\_AnalogWatchdog\_AllInjecEnable}
+    \subitem {ADC\_analog\_watchdog\_selection}, \hyperpage{82}
+  \item {ADC\_AnalogWatchdog\_AllRegAllInjecEnable}
+    \subitem {ADC\_analog\_watchdog\_selection}, \hyperpage{82}
+  \item {ADC\_AnalogWatchdog\_AllRegEnable}
+    \subitem {ADC\_analog\_watchdog\_selection}, \hyperpage{82}
+  \item {ADC\_AnalogWatchdog\_None}
+    \subitem {ADC\_analog\_watchdog\_selection}, \hyperpage{82}
+  \item {ADC\_AnalogWatchdog\_SingleInjecEnable}
+    \subitem {ADC\_analog\_watchdog\_selection}, \hyperpage{82}
+  \item {ADC\_AnalogWatchdog\_SingleRegEnable}
+    \subitem {ADC\_analog\_watchdog\_selection}, \hyperpage{82}
+  \item {ADC\_AnalogWatchdog\_SingleRegOrInjecEnable}
+    \subitem {ADC\_analog\_watchdog\_selection}, \hyperpage{82}
+  \item {ADC\_AnalogWatchdogCmd}
+    \subitem {ADC}, \hyperpage{14}
+    \subitem {Analog Watchdog configuration functions}, \hyperpage{38}
+  \item {ADC\_AnalogWatchdogSingleChannelConfig}
+    \subitem {ADC}, \hyperpage{14}
+    \subitem {Analog Watchdog configuration functions}, \hyperpage{38}
+  \item {ADC\_AnalogWatchdogThresholdsConfig}
+    \subitem {ADC}, \hyperpage{15}
+    \subitem {Analog Watchdog configuration functions}, \hyperpage{39}
+  \item {ADC\_AutoInjectedConvCmd}
+    \subitem {ADC}, \hyperpage{16}
+    \subitem {Injected channels Configuration functions}, 
+		\hyperpage{50}
+  \item {ADC\_BITS}
+    \subitem {platform.h}, \hyperpage{352}
+  \item {ADC\_CHANNEL\_0}
+    \subitem {adc.h}, \hyperpage{328}
+  \item {ADC\_Channel\_0}
+    \subitem {ADC\_channels}, \hyperpage{73}
+  \item {ADC\_CHANNEL\_1}
+    \subitem {adc.h}, \hyperpage{328}
+  \item {ADC\_Channel\_1}
+    \subitem {ADC\_channels}, \hyperpage{73}
+  \item {ADC\_CHANNEL\_10}
+    \subitem {adc.h}, \hyperpage{328}
+  \item {ADC\_Channel\_10}
+    \subitem {ADC\_channels}, \hyperpage{74}
+  \item {ADC\_CHANNEL\_11}
+    \subitem {adc.h}, \hyperpage{328}
+  \item {ADC\_Channel\_11}
+    \subitem {ADC\_channels}, \hyperpage{74}
+  \item {ADC\_CHANNEL\_12}
+    \subitem {adc.h}, \hyperpage{328}
+  \item {ADC\_Channel\_12}
+    \subitem {ADC\_channels}, \hyperpage{74}
+  \item {ADC\_CHANNEL\_13}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_13}
+    \subitem {ADC\_channels}, \hyperpage{74}
+  \item {ADC\_CHANNEL\_14}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_14}
+    \subitem {ADC\_channels}, \hyperpage{74}
+  \item {ADC\_CHANNEL\_15}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_15}
+    \subitem {ADC\_channels}, \hyperpage{74}
+  \item {ADC\_CHANNEL\_16}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_16}
+    \subitem {ADC\_channels}, \hyperpage{74}
+  \item {ADC\_CHANNEL\_17}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_17}
+    \subitem {ADC\_channels}, \hyperpage{74}
+  \item {ADC\_CHANNEL\_18}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_18}
+    \subitem {ADC\_channels}, \hyperpage{74}
+  \item {ADC\_CHANNEL\_2}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_2}
+    \subitem {ADC\_channels}, \hyperpage{74}
+  \item {ADC\_CHANNEL\_3}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_3}
+    \subitem {ADC\_channels}, \hyperpage{75}
+  \item {ADC\_CHANNEL\_4}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_4}
+    \subitem {ADC\_channels}, \hyperpage{75}
+  \item {ADC\_CHANNEL\_5}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_5}
+    \subitem {ADC\_channels}, \hyperpage{75}
+  \item {ADC\_CHANNEL\_6}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_6}
+    \subitem {ADC\_channels}, \hyperpage{75}
+  \item {ADC\_CHANNEL\_7}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_7}
+    \subitem {ADC\_channels}, \hyperpage{75}
+  \item {ADC\_CHANNEL\_8}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_8}
+    \subitem {ADC\_channels}, \hyperpage{75}
+  \item {ADC\_CHANNEL\_9}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_9}
+    \subitem {ADC\_channels}, \hyperpage{75}
+  \item {ADC\_CHANNEL\_TEMPSENSOR}
+    \subitem {adc.h}, \hyperpage{329}
+  \item {ADC\_Channel\_TempSensor}
+    \subitem {ADC\_channels}, \hyperpage{75}
+  \item {ADC\_CHANNEL\_VBAT}
+    \subitem {adc.h}, \hyperpage{330}
+  \item {ADC\_Channel\_Vbat}
+    \subitem {ADC\_channels}, \hyperpage{75}
+  \item {ADC\_CHANNEL\_VREFINT}
+    \subitem {adc.h}, \hyperpage{330}
+  \item {ADC\_Channel\_Vrefint}
+    \subitem {ADC\_channels}, \hyperpage{75}
+  \item {ADC\_ChannelConfTypeDef}, \hyperpage{312}
+    \subitem {Channel}, \hyperpage{313}
+    \subitem {Offset}, \hyperpage{313}
+    \subitem {Rank}, \hyperpage{313}
+    \subitem {SamplingTime}, \hyperpage{313}
+  \item {ADC\_channels}, \hyperpage{73}
+    \subitem {ADC\_Channel\_0}, \hyperpage{73}
+    \subitem {ADC\_Channel\_1}, \hyperpage{73}
+    \subitem {ADC\_Channel\_10}, \hyperpage{74}
+    \subitem {ADC\_Channel\_11}, \hyperpage{74}
+    \subitem {ADC\_Channel\_12}, \hyperpage{74}
+    \subitem {ADC\_Channel\_13}, \hyperpage{74}
+    \subitem {ADC\_Channel\_14}, \hyperpage{74}
+    \subitem {ADC\_Channel\_15}, \hyperpage{74}
+    \subitem {ADC\_Channel\_16}, \hyperpage{74}
+    \subitem {ADC\_Channel\_17}, \hyperpage{74}
+    \subitem {ADC\_Channel\_18}, \hyperpage{74}
+    \subitem {ADC\_Channel\_2}, \hyperpage{74}
+    \subitem {ADC\_Channel\_3}, \hyperpage{75}
+    \subitem {ADC\_Channel\_4}, \hyperpage{75}
+    \subitem {ADC\_Channel\_5}, \hyperpage{75}
+    \subitem {ADC\_Channel\_6}, \hyperpage{75}
+    \subitem {ADC\_Channel\_7}, \hyperpage{75}
+    \subitem {ADC\_Channel\_8}, \hyperpage{75}
+    \subitem {ADC\_Channel\_9}, \hyperpage{75}
+    \subitem {ADC\_Channel\_TempSensor}, \hyperpage{75}
+    \subitem {ADC\_Channel\_Vbat}, \hyperpage{75}
+    \subitem {ADC\_Channel\_Vrefint}, \hyperpage{75}
+    \subitem {IS\_ADC\_CHANNEL}, \hyperpage{76}
+  \item {ADC\_ClearFlag}
+    \subitem {ADC}, \hyperpage{16}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{58}
+  \item {ADC\_ClearITPendingBit}
+    \subitem {ADC}, \hyperpage{17}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{58}
+  \item {ADC\_Cmd}
+    \subitem {ADC}, \hyperpage{17}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{35}
+  \item {ADC\_Common\_mode}, \hyperpage{62}
+    \subitem {ADC\_DualMode\_AlterTrig}, \hyperpage{62}
+    \subitem {ADC\_DualMode\_InjecSimult}, \hyperpage{62}
+    \subitem {ADC\_DualMode\_Interl}, \hyperpage{62}
+    \subitem {ADC\_DualMode\_RegSimult}, \hyperpage{62}
+    \subitem {ADC\_DualMode\_RegSimult\_AlterTrig}, \hyperpage{62}
+    \subitem {ADC\_DualMode\_RegSimult\_InjecSimult}, \hyperpage{62}
+    \subitem {ADC\_Mode\_Independent}, \hyperpage{62}
+    \subitem {ADC\_TripleMode\_AlterTrig}, \hyperpage{63}
+    \subitem {ADC\_TripleMode\_InjecSimult}, \hyperpage{63}
+    \subitem {ADC\_TripleMode\_Interl}, \hyperpage{63}
+    \subitem {ADC\_TripleMode\_RegSimult}, \hyperpage{63}
+    \subitem {ADC\_TripleMode\_RegSimult\_AlterTrig}, \hyperpage{63}
+    \subitem {ADC\_TripleMode\_RegSimult\_InjecSimult}, \hyperpage{63}
+    \subitem {IS\_ADC\_MODE}, \hyperpage{63}
+  \item {ADC\_CommonInit}
+    \subitem {ADC}, \hyperpage{17}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{35}
+  \item {ADC\_CommonInitTypeDef}, \hyperpage{313}
+    \subitem {ADC\_DMAAccessMode}, \hyperpage{313}
+    \subitem {ADC\_Mode}, \hyperpage{313}
+    \subitem {ADC\_Prescaler}, \hyperpage{314}
+    \subitem {ADC\_TwoSamplingDelay}, \hyperpage{314}
+  \item {ADC\_CommonStructInit}
+    \subitem {ADC}, \hyperpage{18}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{35}
+  \item {ADC\_ContinuousConvMode}
+    \subitem {ADC\_InitTypeDef}, \hyperpage{315}
+  \item {ADC\_ContinuousModeCmd}
+    \subitem {ADC}, \hyperpage{18}
+    \subitem {Regular Channels Configuration functions}, \hyperpage{42}
+  \item {ADC\_CR1\_DISCONTINUOUS}
+    \subitem {adc.h}, \hyperpage{330}
+  \item {ADC\_CR1\_SCANCONV}
+    \subitem {adc.h}, \hyperpage{330}
+  \item {ADC\_CR2\_CONTINUOUS}
+    \subitem {adc.h}, \hyperpage{330}
+  \item {ADC\_CR2\_DMAContReq}
+    \subitem {adc.h}, \hyperpage{330}
+  \item {ADC\_CR2\_EOCSelection}
+    \subitem {adc.h}, \hyperpage{330}
+  \item {ADC\_data\_align}, \hyperpage{72}
+    \subitem {ADC\_DataAlign\_Left}, \hyperpage{72}
+    \subitem {ADC\_DataAlign\_Right}, \hyperpage{72}
+    \subitem {IS\_ADC\_DATA\_ALIGN}, \hyperpage{73}
+  \item {ADC\_DataAlign}
+    \subitem {ADC\_InitTypeDef}, \hyperpage{315}
+  \item {ADC\_DataAlign\_Left}
+    \subitem {ADC\_data\_align}, \hyperpage{72}
+  \item {ADC\_DataAlign\_Right}
+    \subitem {ADC\_data\_align}, \hyperpage{72}
+  \item {ADC\_DeInit}
+    \subitem {ADC}, \hyperpage{19}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{36}
+  \item {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{66}
+    \subitem {ADC\_TwoSamplingDelay\_10Cycles}, \hyperpage{66}
+    \subitem {ADC\_TwoSamplingDelay\_11Cycles}, \hyperpage{66}
+    \subitem {ADC\_TwoSamplingDelay\_12Cycles}, \hyperpage{66}
+    \subitem {ADC\_TwoSamplingDelay\_13Cycles}, \hyperpage{66}
+    \subitem {ADC\_TwoSamplingDelay\_14Cycles}, \hyperpage{66}
+    \subitem {ADC\_TwoSamplingDelay\_15Cycles}, \hyperpage{66}
+    \subitem {ADC\_TwoSamplingDelay\_16Cycles}, \hyperpage{67}
+    \subitem {ADC\_TwoSamplingDelay\_17Cycles}, \hyperpage{67}
+    \subitem {ADC\_TwoSamplingDelay\_18Cycles}, \hyperpage{67}
+    \subitem {ADC\_TwoSamplingDelay\_19Cycles}, \hyperpage{67}
+    \subitem {ADC\_TwoSamplingDelay\_20Cycles}, \hyperpage{67}
+    \subitem {ADC\_TwoSamplingDelay\_5Cycles}, \hyperpage{67}
+    \subitem {ADC\_TwoSamplingDelay\_6Cycles}, \hyperpage{67}
+    \subitem {ADC\_TwoSamplingDelay\_7Cycles}, \hyperpage{67}
+    \subitem {ADC\_TwoSamplingDelay\_8Cycles}, \hyperpage{67}
+    \subitem {ADC\_TwoSamplingDelay\_9Cycles}, \hyperpage{67}
+    \subitem {IS\_ADC\_SAMPLING\_DELAY}, \hyperpage{68}
+  \item {ADC\_Direct\_memory\_access\_mode\_for\_multi\_mode}, 
+		\hyperpage{65}
+    \subitem {ADC\_DMAAccessMode\_1}, \hyperpage{65}
+    \subitem {ADC\_DMAAccessMode\_2}, \hyperpage{65}
+    \subitem {ADC\_DMAAccessMode\_3}, \hyperpage{65}
+    \subitem {ADC\_DMAAccessMode\_Disabled}, \hyperpage{65}
+    \subitem {IS\_ADC\_DMA\_ACCESS\_MODE}, \hyperpage{65}
+  \item {ADC\_DiscModeChannelCountConfig}
+    \subitem {ADC}, \hyperpage{19}
+    \subitem {Regular Channels Configuration functions}, \hyperpage{42}
+  \item {ADC\_DiscModeCmd}
+    \subitem {ADC}, \hyperpage{19}
+    \subitem {Regular Channels Configuration functions}, \hyperpage{43}
+  \item {ADC\_DMAAccessMode}
+    \subitem {ADC\_CommonInitTypeDef}, \hyperpage{313}
+  \item {ADC\_DMAAccessMode\_1}
+    \subitem {ADC\_Direct\_memory\_access\_mode\_for\_multi\_mode}, 
+		\hyperpage{65}
+  \item {ADC\_DMAAccessMode\_2}
+    \subitem {ADC\_Direct\_memory\_access\_mode\_for\_multi\_mode}, 
+		\hyperpage{65}
+  \item {ADC\_DMAAccessMode\_3}
+    \subitem {ADC\_Direct\_memory\_access\_mode\_for\_multi\_mode}, 
+		\hyperpage{65}
+  \item {ADC\_DMAAccessMode\_Disabled}
+    \subitem {ADC\_Direct\_memory\_access\_mode\_for\_multi\_mode}, 
+		\hyperpage{65}
+  \item {ADC\_DMACmd}
+    \subitem {ADC}, \hyperpage{20}
+    \subitem {Regular Channels DMA Configuration functions}, 
+		\hyperpage{48}
+  \item {ADC\_DMARequestAfterLastTransferCmd}
+    \subitem {ADC}, \hyperpage{20}
+    \subitem {Regular Channels DMA Configuration functions}, 
+		\hyperpage{48}
+  \item {ADC\_DualMode\_AlterTrig}
+    \subitem {ADC\_Common\_mode}, \hyperpage{62}
+  \item {ADC\_DualMode\_InjecSimult}
+    \subitem {ADC\_Common\_mode}, \hyperpage{62}
+  \item {ADC\_DualMode\_Interl}
+    \subitem {ADC\_Common\_mode}, \hyperpage{62}
+  \item {ADC\_DualMode\_RegSimult}
+    \subitem {ADC\_Common\_mode}, \hyperpage{62}
+  \item {ADC\_DualMode\_RegSimult\_AlterTrig}
+    \subitem {ADC\_Common\_mode}, \hyperpage{62}
+  \item {ADC\_DualMode\_RegSimult\_InjecSimult}
+    \subitem {ADC\_Common\_mode}, \hyperpage{62}
+  \item {ADC\_EOCOnEachRegularChannelCmd}
+    \subitem {ADC}, \hyperpage{20}
+    \subitem {Regular Channels Configuration functions}, \hyperpage{43}
+  \item {ADC\_Exported\_Constants}, \hyperpage{61}
+    \subitem {IS\_ADC\_ALL\_PERIPH}, \hyperpage{61}
+  \item {ADC\_external\_trigger\_edge\_for\_injected\_channels\_conversion}, 
+		\hyperpage{77}
+    \subitem {ADC\_ExternalTrigInjecConvEdge\_Falling}, \hyperpage{78}
+    \subitem {ADC\_ExternalTrigInjecConvEdge\_None}, \hyperpage{78}
+    \subitem {ADC\_ExternalTrigInjecConvEdge\_Rising}, \hyperpage{78}
+    \subitem {ADC\_ExternalTrigInjecConvEdge\_RisingFalling}, 
+		\hyperpage{78}
+    \subitem {IS\_ADC\_EXT\_INJEC\_TRIG\_EDGE}, \hyperpage{78}
+  \item {ADC\_external\_trigger\_edge\_for\_regular\_channels\_conversion}, 
+		\hyperpage{69}
+    \subitem {ADC\_ExternalTrigConvEdge\_Falling}, \hyperpage{69}
+    \subitem {ADC\_ExternalTrigConvEdge\_None}, \hyperpage{69}
+    \subitem {ADC\_ExternalTrigConvEdge\_Rising}, \hyperpage{69}
+    \subitem {ADC\_ExternalTrigConvEdge\_RisingFalling}, \hyperpage{69}
+    \subitem {IS\_ADC\_EXT\_TRIG\_EDGE}, \hyperpage{69}
+  \item {ADC\_ExternalTrigConv}
+    \subitem {ADC\_InitTypeDef}, \hyperpage{315}
+  \item {ADC\_ExternalTrigConv\_Ext\_IT11}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{70}
+  \item {ADC\_ExternalTrigConv\_T1\_CC1}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{70}
+  \item {ADC\_ExternalTrigConv\_T1\_CC2}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{70}
+  \item {ADC\_ExternalTrigConv\_T1\_CC3}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{70}
+  \item {ADC\_ExternalTrigConv\_T2\_CC2}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{71}
+  \item {ADC\_ExternalTrigConv\_T2\_CC3}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{71}
+  \item {ADC\_ExternalTrigConv\_T2\_CC4}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{71}
+  \item {ADC\_ExternalTrigConv\_T2\_TRGO}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{71}
+  \item {ADC\_ExternalTrigConv\_T3\_CC1}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{71}
+  \item {ADC\_ExternalTrigConv\_T3\_TRGO}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{71}
+  \item {ADC\_ExternalTrigConv\_T4\_CC4}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{71}
+  \item {ADC\_ExternalTrigConv\_T5\_CC1}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{71}
+  \item {ADC\_ExternalTrigConv\_T5\_CC2}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{71}
+  \item {ADC\_ExternalTrigConv\_T5\_CC3}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{71}
+  \item {ADC\_ExternalTrigConv\_T8\_CC1}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{72}
+  \item {ADC\_ExternalTrigConv\_T8\_TRGO}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{72}
+  \item {ADC\_ExternalTrigConvEdge}
+    \subitem {ADC\_InitTypeDef}, \hyperpage{315}
+  \item {ADC\_ExternalTrigConvEdge\_Falling}
+    \subitem {ADC\_external\_trigger\_edge\_for\_regular\_channels\_conversion}, 
+		\hyperpage{69}
+  \item {ADC\_ExternalTrigConvEdge\_None}
+    \subitem {ADC\_external\_trigger\_edge\_for\_regular\_channels\_conversion}, 
+		\hyperpage{69}
+  \item {ADC\_ExternalTrigConvEdge\_Rising}
+    \subitem {ADC\_external\_trigger\_edge\_for\_regular\_channels\_conversion}, 
+		\hyperpage{69}
+  \item {ADC\_ExternalTrigConvEdge\_RisingFalling}
+    \subitem {ADC\_external\_trigger\_edge\_for\_regular\_channels\_conversion}, 
+		\hyperpage{69}
+  \item {ADC\_ExternalTrigInjecConv\_Ext\_IT15}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{79}
+  \item {ADC\_ExternalTrigInjecConv\_T1\_CC4}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{79}
+  \item {ADC\_ExternalTrigInjecConv\_T1\_TRGO}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{79}
+  \item {ADC\_ExternalTrigInjecConv\_T2\_CC1}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{79}
+  \item {ADC\_ExternalTrigInjecConv\_T2\_TRGO}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{79}
+  \item {ADC\_ExternalTrigInjecConv\_T3\_CC2}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{79}
+  \item {ADC\_ExternalTrigInjecConv\_T3\_CC4}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{79}
+  \item {ADC\_ExternalTrigInjecConv\_T4\_CC1}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{79}
+  \item {ADC\_ExternalTrigInjecConv\_T4\_CC2}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{79}
+  \item {ADC\_ExternalTrigInjecConv\_T4\_CC3}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{79}
+  \item {ADC\_ExternalTrigInjecConv\_T4\_TRGO}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{80}
+  \item {ADC\_ExternalTrigInjecConv\_T5\_CC4}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{80}
+  \item {ADC\_ExternalTrigInjecConv\_T5\_TRGO}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{80}
+  \item {ADC\_ExternalTrigInjecConv\_T8\_CC2}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{80}
+  \item {ADC\_ExternalTrigInjecConv\_T8\_CC3}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{80}
+  \item {ADC\_ExternalTrigInjecConv\_T8\_CC4}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{80}
+  \item {ADC\_ExternalTrigInjecConvEdge\_Falling}
+    \subitem {ADC\_external\_trigger\_edge\_for\_injected\_channels\_conversion}, 
+		\hyperpage{78}
+  \item {ADC\_ExternalTrigInjecConvEdge\_None}
+    \subitem {ADC\_external\_trigger\_edge\_for\_injected\_channels\_conversion}, 
+		\hyperpage{78}
+  \item {ADC\_ExternalTrigInjecConvEdge\_Rising}
+    \subitem {ADC\_external\_trigger\_edge\_for\_injected\_channels\_conversion}, 
+		\hyperpage{78}
+  \item {ADC\_ExternalTrigInjecConvEdge\_RisingFalling}
+    \subitem {ADC\_external\_trigger\_edge\_for\_injected\_channels\_conversion}, 
+		\hyperpage{78}
+  \item {ADC\_ExternalTrigInjectedConvConfig}
+    \subitem {ADC}, \hyperpage{21}
+    \subitem {Injected channels Configuration functions}, 
+		\hyperpage{50}
+  \item {ADC\_ExternalTrigInjectedConvEdgeConfig}
+    \subitem {ADC}, \hyperpage{22}
+    \subitem {Injected channels Configuration functions}, 
+		\hyperpage{51}
+  \item {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{78}
+    \subitem {ADC\_ExternalTrigInjecConv\_Ext\_IT15}, \hyperpage{79}
+    \subitem {ADC\_ExternalTrigInjecConv\_T1\_CC4}, \hyperpage{79}
+    \subitem {ADC\_ExternalTrigInjecConv\_T1\_TRGO}, \hyperpage{79}
+    \subitem {ADC\_ExternalTrigInjecConv\_T2\_CC1}, \hyperpage{79}
+    \subitem {ADC\_ExternalTrigInjecConv\_T2\_TRGO}, \hyperpage{79}
+    \subitem {ADC\_ExternalTrigInjecConv\_T3\_CC2}, \hyperpage{79}
+    \subitem {ADC\_ExternalTrigInjecConv\_T3\_CC4}, \hyperpage{79}
+    \subitem {ADC\_ExternalTrigInjecConv\_T4\_CC1}, \hyperpage{79}
+    \subitem {ADC\_ExternalTrigInjecConv\_T4\_CC2}, \hyperpage{79}
+    \subitem {ADC\_ExternalTrigInjecConv\_T4\_CC3}, \hyperpage{79}
+    \subitem {ADC\_ExternalTrigInjecConv\_T4\_TRGO}, \hyperpage{80}
+    \subitem {ADC\_ExternalTrigInjecConv\_T5\_CC4}, \hyperpage{80}
+    \subitem {ADC\_ExternalTrigInjecConv\_T5\_TRGO}, \hyperpage{80}
+    \subitem {ADC\_ExternalTrigInjecConv\_T8\_CC2}, \hyperpage{80}
+    \subitem {ADC\_ExternalTrigInjecConv\_T8\_CC3}, \hyperpage{80}
+    \subitem {ADC\_ExternalTrigInjecConv\_T8\_CC4}, \hyperpage{80}
+    \subitem {IS\_ADC\_EXT\_INJEC\_TRIG}, \hyperpage{80}
+  \item {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{70}
+    \subitem {ADC\_ExternalTrigConv\_Ext\_IT11}, \hyperpage{70}
+    \subitem {ADC\_ExternalTrigConv\_T1\_CC1}, \hyperpage{70}
+    \subitem {ADC\_ExternalTrigConv\_T1\_CC2}, \hyperpage{70}
+    \subitem {ADC\_ExternalTrigConv\_T1\_CC3}, \hyperpage{70}
+    \subitem {ADC\_ExternalTrigConv\_T2\_CC2}, \hyperpage{71}
+    \subitem {ADC\_ExternalTrigConv\_T2\_CC3}, \hyperpage{71}
+    \subitem {ADC\_ExternalTrigConv\_T2\_CC4}, \hyperpage{71}
+    \subitem {ADC\_ExternalTrigConv\_T2\_TRGO}, \hyperpage{71}
+    \subitem {ADC\_ExternalTrigConv\_T3\_CC1}, \hyperpage{71}
+    \subitem {ADC\_ExternalTrigConv\_T3\_TRGO}, \hyperpage{71}
+    \subitem {ADC\_ExternalTrigConv\_T4\_CC4}, \hyperpage{71}
+    \subitem {ADC\_ExternalTrigConv\_T5\_CC1}, \hyperpage{71}
+    \subitem {ADC\_ExternalTrigConv\_T5\_CC2}, \hyperpage{71}
+    \subitem {ADC\_ExternalTrigConv\_T5\_CC3}, \hyperpage{71}
+    \subitem {ADC\_ExternalTrigConv\_T8\_CC1}, \hyperpage{72}
+    \subitem {ADC\_ExternalTrigConv\_T8\_TRGO}, \hyperpage{72}
+    \subitem {IS\_ADC\_EXT\_TRIG}, \hyperpage{72}
+  \item {ADC\_FLAG\_AWD}
+    \subitem {ADC\_flags\_definition}, \hyperpage{84}
+  \item {ADC\_FLAG\_EOC}
+    \subitem {ADC\_flags\_definition}, \hyperpage{84}
+  \item {ADC\_FLAG\_JEOC}
+    \subitem {ADC\_flags\_definition}, \hyperpage{84}
+  \item {ADC\_FLAG\_JSTRT}
+    \subitem {ADC\_flags\_definition}, \hyperpage{84}
+  \item {ADC\_FLAG\_OVR}
+    \subitem {ADC\_flags\_definition}, \hyperpage{84}
+  \item {ADC\_FLAG\_STRT}
+    \subitem {ADC\_flags\_definition}, \hyperpage{84}
+  \item {ADC\_flags\_definition}, \hyperpage{84}
+    \subitem {ADC\_FLAG\_AWD}, \hyperpage{84}
+    \subitem {ADC\_FLAG\_EOC}, \hyperpage{84}
+    \subitem {ADC\_FLAG\_JEOC}, \hyperpage{84}
+    \subitem {ADC\_FLAG\_JSTRT}, \hyperpage{84}
+    \subitem {ADC\_FLAG\_OVR}, \hyperpage{84}
+    \subitem {ADC\_FLAG\_STRT}, \hyperpage{84}
+    \subitem {IS\_ADC\_CLEAR\_FLAG}, \hyperpage{84}
+    \subitem {IS\_ADC\_GET\_FLAG}, \hyperpage{84}
+  \item {ADC\_GetConversionValue}
+    \subitem {ADC}, \hyperpage{23}
+    \subitem {Regular Channels Configuration functions}, \hyperpage{44}
+  \item {ADC\_GetFlagStatus}
+    \subitem {ADC}, \hyperpage{23}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{59}
+  \item {ADC\_GetInjectedConversionValue}
+    \subitem {ADC}, \hyperpage{24}
+    \subitem {Injected channels Configuration functions}, 
+		\hyperpage{52}
+  \item {ADC\_GetITStatus}
+    \subitem {ADC}, \hyperpage{24}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{59}
+  \item {ADC\_GetMultiModeConversionValue}
+    \subitem {ADC}, \hyperpage{25}
+    \subitem {Regular Channels Configuration functions}, \hyperpage{44}
+  \item {ADC\_GetSoftwareStartConvStatus}
+    \subitem {ADC}, \hyperpage{25}
+    \subitem {Regular Channels Configuration functions}, \hyperpage{44}
+  \item {ADC\_GetSoftwareStartInjectedConvCmdStatus}
+    \subitem {ADC}, \hyperpage{26}
+    \subitem {Injected channels Configuration functions}, 
+		\hyperpage{52}
+  \item {ADC\_HandleTypeDef}, \hyperpage{314}
+    \subitem {ErrorCode}, \hyperpage{314}
+    \subitem {Init}, \hyperpage{314}
+    \subitem {Instance}, \hyperpage{314}
+    \subitem {Lock}, \hyperpage{314}
+    \subitem {NbrOfCurrentConversionRank}, \hyperpage{314}
+    \subitem {State}, \hyperpage{314}
+  \item {ADC\_Init}
+    \subitem {ADC}, \hyperpage{26}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{36}
+  \item {adc\_init}
+    \subitem {adc.c}, \hyperpage{324}
+    \subitem {adc.h}, \hyperpage{335}
+  \item {ADC\_InitTypeDef}, \hyperpage{315}
+    \subitem {ADC\_ContinuousConvMode}, \hyperpage{315}
+    \subitem {ADC\_DataAlign}, \hyperpage{315}
+    \subitem {ADC\_ExternalTrigConv}, \hyperpage{315}
+    \subitem {ADC\_ExternalTrigConvEdge}, \hyperpage{315}
+    \subitem {ADC\_NbrOfConversion}, \hyperpage{315}
+    \subitem {ADC\_Resolution}, \hyperpage{315}
+    \subitem {ADC\_ScanConvMode}, \hyperpage{316}
+  \item {ADC\_injected\_channel\_selection}, \hyperpage{81}
+    \subitem {ADC\_InjectedChannel\_1}, \hyperpage{81}
+    \subitem {ADC\_InjectedChannel\_2}, \hyperpage{81}
+    \subitem {ADC\_InjectedChannel\_3}, \hyperpage{81}
+    \subitem {ADC\_InjectedChannel\_4}, \hyperpage{81}
+    \subitem {IS\_ADC\_INJECTED\_CHANNEL}, \hyperpage{81}
+  \item {ADC\_injected\_length}, \hyperpage{85}
+    \subitem {IS\_ADC\_INJECTED\_LENGTH}, \hyperpage{86}
+  \item {ADC\_injected\_offset}, \hyperpage{85}
+    \subitem {IS\_ADC\_OFFSET}, \hyperpage{85}
+  \item {ADC\_injected\_rank}, \hyperpage{86}
+    \subitem {IS\_ADC\_INJECTED\_RANK}, \hyperpage{86}
+  \item {ADC\_InjectedChannel\_1}
+    \subitem {ADC\_injected\_channel\_selection}, \hyperpage{81}
+  \item {ADC\_InjectedChannel\_2}
+    \subitem {ADC\_injected\_channel\_selection}, \hyperpage{81}
+  \item {ADC\_InjectedChannel\_3}
+    \subitem {ADC\_injected\_channel\_selection}, \hyperpage{81}
+  \item {ADC\_InjectedChannel\_4}
+    \subitem {ADC\_injected\_channel\_selection}, \hyperpage{81}
+  \item {ADC\_InjectedChannelConfig}
+    \subitem {ADC}, \hyperpage{27}
+    \subitem {Injected channels Configuration functions}, 
+		\hyperpage{53}
+  \item {ADC\_InjectedDiscModeCmd}
+    \subitem {ADC}, \hyperpage{28}
+    \subitem {Injected channels Configuration functions}, 
+		\hyperpage{55}
+  \item {ADC\_InjectedSequencerLengthConfig}
+    \subitem {ADC}, \hyperpage{28}
+    \subitem {Injected channels Configuration functions}, 
+		\hyperpage{55}
+  \item {ADC\_interrupts\_definition}, \hyperpage{83}
+    \subitem {ADC\_IT\_AWD}, \hyperpage{83}
+    \subitem {ADC\_IT\_EOC}, \hyperpage{83}
+    \subitem {ADC\_IT\_JEOC}, \hyperpage{83}
+    \subitem {ADC\_IT\_OVR}, \hyperpage{83}
+    \subitem {IS\_ADC\_IT}, \hyperpage{83}
+  \item {ADC\_IT\_AWD}
+    \subitem {ADC\_interrupts\_definition}, \hyperpage{83}
+  \item {ADC\_IT\_EOC}
+    \subitem {ADC\_interrupts\_definition}, \hyperpage{83}
+  \item {ADC\_IT\_JEOC}
+    \subitem {ADC\_interrupts\_definition}, \hyperpage{83}
+  \item {ADC\_IT\_OVR}
+    \subitem {ADC\_interrupts\_definition}, \hyperpage{83}
+  \item {ADC\_ITConfig}
+    \subitem {ADC}, \hyperpage{29}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{60}
+  \item {ADC\_MASK}
+    \subitem {platform.h}, \hyperpage{352}
+  \item {ADC\_Mode}
+    \subitem {ADC\_CommonInitTypeDef}, \hyperpage{313}
+  \item {ADC\_Mode\_Independent}
+    \subitem {ADC\_Common\_mode}, \hyperpage{62}
+  \item {ADC\_MultiModeDMARequestAfterLastTransferCmd}
+    \subitem {ADC}, \hyperpage{29}
+    \subitem {Regular Channels DMA Configuration functions}, 
+		\hyperpage{48}
+  \item {ADC\_NbrOfConversion}
+    \subitem {ADC\_InitTypeDef}, \hyperpage{315}
+  \item {ADC\_Prescaler}, \hyperpage{64}
+    \subitem {ADC\_CommonInitTypeDef}, \hyperpage{314}
+    \subitem {ADC\_Prescaler\_Div2}, \hyperpage{64}
+    \subitem {ADC\_Prescaler\_Div4}, \hyperpage{64}
+    \subitem {ADC\_Prescaler\_Div6}, \hyperpage{64}
+    \subitem {ADC\_Prescaler\_Div8}, \hyperpage{64}
+    \subitem {IS\_ADC\_PRESCALER}, \hyperpage{64}
+  \item {ADC\_Prescaler\_Div2}
+    \subitem {ADC\_Prescaler}, \hyperpage{64}
+  \item {ADC\_Prescaler\_Div4}
+    \subitem {ADC\_Prescaler}, \hyperpage{64}
+  \item {ADC\_Prescaler\_Div6}
+    \subitem {ADC\_Prescaler}, \hyperpage{64}
+  \item {ADC\_Prescaler\_Div8}
+    \subitem {ADC\_Prescaler}, \hyperpage{64}
+  \item {ADC\_Private\_Functions}, \hyperpage{33}
+  \item {adc\_read}
+    \subitem {adc.c}, \hyperpage{324}
+    \subitem {adc.h}, \hyperpage{335}
+  \item {ADC\_regular\_discontinuous\_mode\_number}, \hyperpage{87}
+    \subitem {IS\_ADC\_REGULAR\_DISC\_NUMBER}, \hyperpage{87}
+  \item {ADC\_regular\_length}, \hyperpage{86}
+    \subitem {IS\_ADC\_REGULAR\_LENGTH}, \hyperpage{86}
+  \item {ADC\_regular\_rank}, \hyperpage{86}
+    \subitem {IS\_ADC\_REGULAR\_RANK}, \hyperpage{87}
+  \item {ADC\_RegularChannelConfig}
+    \subitem {ADC}, \hyperpage{30}
+    \subitem {Regular Channels Configuration functions}, \hyperpage{45}
+  \item {ADC\_Resolution}
+    \subitem {ADC\_InitTypeDef}, \hyperpage{315}
+  \item {ADC\_resolution}, \hyperpage{68}
+    \subitem {ADC\_Resolution\_10b}, \hyperpage{68}
+    \subitem {ADC\_Resolution\_12b}, \hyperpage{68}
+    \subitem {ADC\_Resolution\_6b}, \hyperpage{68}
+    \subitem {ADC\_Resolution\_8b}, \hyperpage{68}
+    \subitem {IS\_ADC\_RESOLUTION}, \hyperpage{69}
+  \item {ADC\_Resolution\_10b}
+    \subitem {ADC\_resolution}, \hyperpage{68}
+  \item {ADC\_Resolution\_12b}
+    \subitem {ADC\_resolution}, \hyperpage{68}
+  \item {ADC\_Resolution\_6b}
+    \subitem {ADC\_resolution}, \hyperpage{68}
+  \item {ADC\_Resolution\_8b}
+    \subitem {ADC\_resolution}, \hyperpage{68}
+  \item {ADC\_SampleTime\_112Cycles}
+    \subitem {ADC\_sampling\_times}, \hyperpage{76}
+  \item {ADC\_SampleTime\_144Cycles}
+    \subitem {ADC\_sampling\_times}, \hyperpage{76}
+  \item {ADC\_SampleTime\_15Cycles}
+    \subitem {ADC\_sampling\_times}, \hyperpage{76}
+  \item {ADC\_SampleTime\_28Cycles}
+    \subitem {ADC\_sampling\_times}, \hyperpage{77}
+  \item {ADC\_SampleTime\_3Cycles}
+    \subitem {ADC\_sampling\_times}, \hyperpage{77}
+  \item {ADC\_SampleTime\_480Cycles}
+    \subitem {ADC\_sampling\_times}, \hyperpage{77}
+  \item {ADC\_SampleTime\_56Cycles}
+    \subitem {ADC\_sampling\_times}, \hyperpage{77}
+  \item {ADC\_SampleTime\_84Cycles}
+    \subitem {ADC\_sampling\_times}, \hyperpage{77}
+  \item {ADC\_sampling\_times}, \hyperpage{76}
+    \subitem {ADC\_SampleTime\_112Cycles}, \hyperpage{76}
+    \subitem {ADC\_SampleTime\_144Cycles}, \hyperpage{76}
+    \subitem {ADC\_SampleTime\_15Cycles}, \hyperpage{76}
+    \subitem {ADC\_SampleTime\_28Cycles}, \hyperpage{77}
+    \subitem {ADC\_SampleTime\_3Cycles}, \hyperpage{77}
+    \subitem {ADC\_SampleTime\_480Cycles}, \hyperpage{77}
+    \subitem {ADC\_SampleTime\_56Cycles}, \hyperpage{77}
+    \subitem {ADC\_SampleTime\_84Cycles}, \hyperpage{77}
+    \subitem {IS\_ADC\_SAMPLE\_TIME}, \hyperpage{77}
+  \item {ADC\_ScanConvMode}
+    \subitem {ADC\_InitTypeDef}, \hyperpage{316}
+  \item {ADC\_SetInjectedOffset}
+    \subitem {ADC}, \hyperpage{31}
+    \subitem {Injected channels Configuration functions}, 
+		\hyperpage{55}
+  \item {ADC\_SMPR1}
+    \subitem {adc.h}, \hyperpage{330}
+  \item {ADC\_SMPR2}
+    \subitem {adc.h}, \hyperpage{330}
+  \item {ADC\_SOFTWARE\_START}
+    \subitem {adc.h}, \hyperpage{330}
+  \item {ADC\_SoftwareStartConv}
+    \subitem {ADC}, \hyperpage{32}
+    \subitem {Regular Channels Configuration functions}, \hyperpage{47}
+  \item {ADC\_SoftwareStartInjectedConv}
+    \subitem {ADC}, \hyperpage{32}
+    \subitem {Injected channels Configuration functions}, 
+		\hyperpage{56}
+  \item {ADC\_SQR1}
+    \subitem {adc.h}, \hyperpage{330}
+  \item {ADC\_SQR1\_RK}
+    \subitem {adc.h}, \hyperpage{330}
+  \item {ADC\_SQR2\_RK}
+    \subitem {adc.h}, \hyperpage{331}
+  \item {ADC\_SQR3\_RK}
+    \subitem {adc.h}, \hyperpage{331}
+  \item {ADC\_STAB\_DELAY\_US}
+    \subitem {adc.h}, \hyperpage{331}
+  \item {ADC\_StructInit}
+    \subitem {ADC}, \hyperpage{32}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{36}
+  \item {ADC\_TempSensorVrefintCmd}
+    \subitem {ADC}, \hyperpage{33}
+    \subitem {Temperature Sensor, Vrefint (Voltage Reference internal)}, 
+		\hyperpage{40}
+  \item {ADC\_thresholds}, \hyperpage{85}
+    \subitem {IS\_ADC\_THRESHOLD}, \hyperpage{85}
+  \item {ADC\_TripleMode\_AlterTrig}
+    \subitem {ADC\_Common\_mode}, \hyperpage{63}
+  \item {ADC\_TripleMode\_InjecSimult}
+    \subitem {ADC\_Common\_mode}, \hyperpage{63}
+  \item {ADC\_TripleMode\_Interl}
+    \subitem {ADC\_Common\_mode}, \hyperpage{63}
+  \item {ADC\_TripleMode\_RegSimult}
+    \subitem {ADC\_Common\_mode}, \hyperpage{63}
+  \item {ADC\_TripleMode\_RegSimult\_AlterTrig}
+    \subitem {ADC\_Common\_mode}, \hyperpage{63}
+  \item {ADC\_TripleMode\_RegSimult\_InjecSimult}
+    \subitem {ADC\_Common\_mode}, \hyperpage{63}
+  \item {ADC\_TwoSamplingDelay}
+    \subitem {ADC\_CommonInitTypeDef}, \hyperpage{314}
+  \item {ADC\_TwoSamplingDelay\_10Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{66}
+  \item {ADC\_TwoSamplingDelay\_11Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{66}
+  \item {ADC\_TwoSamplingDelay\_12Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{66}
+  \item {ADC\_TwoSamplingDelay\_13Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{66}
+  \item {ADC\_TwoSamplingDelay\_14Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{66}
+  \item {ADC\_TwoSamplingDelay\_15Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{66}
+  \item {ADC\_TwoSamplingDelay\_16Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{67}
+  \item {ADC\_TwoSamplingDelay\_17Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{67}
+  \item {ADC\_TwoSamplingDelay\_18Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{67}
+  \item {ADC\_TwoSamplingDelay\_19Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{67}
+  \item {ADC\_TwoSamplingDelay\_20Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{67}
+  \item {ADC\_TwoSamplingDelay\_5Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{67}
+  \item {ADC\_TwoSamplingDelay\_6Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{67}
+  \item {ADC\_TwoSamplingDelay\_7Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{67}
+  \item {ADC\_TwoSamplingDelay\_8Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{67}
+  \item {ADC\_TwoSamplingDelay\_9Cycles}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{67}
+  \item {ADC\_VBATCmd}
+    \subitem {ADC}, \hyperpage{33}
+    \subitem {Temperature Sensor, Vrefint (Voltage Reference internal)}, 
+		\hyperpage{41}
+  \item {AdcHandle}
+    \subitem {adc.c}, \hyperpage{325}
+  \item {ADCName}
+    \subitem {adc.h}, \hyperpage{333}
+  \item {AHBPrescTable}
+    \subitem {STM32F4xx\_System\_Private\_Variables}, \hyperpage{308}
+  \item {Alternate}
+    \subitem {GPIO\_InitTypeDef}, \hyperpage{317}
+  \item {Analog Watchdog configuration functions}, \hyperpage{37}
+    \subitem {ADC\_AnalogWatchdogCmd}, \hyperpage{38}
+    \subitem {ADC\_AnalogWatchdogSingleChannelConfig}, \hyperpage{38}
+    \subitem {ADC\_AnalogWatchdogThresholdsConfig}, \hyperpage{39}
+  \item {analogin\_init}
+    \subitem {adc.c}, \hyperpage{324}
+    \subitem {adc.h}, \hyperpage{335}
+  \item {analogin\_s}, \hyperpage{316}
+    \subitem {adc}, \hyperpage{316}
+    \subitem {channel}, \hyperpage{316}
+    \subitem {pin}, \hyperpage{316}
+  \item {APBPrescTable}
+    \subitem {STM32F4xx\_System\_Private\_Variables}, \hyperpage{308}
+
+  \indexspace
+
+  \item {BDCR\_ADDRESS}
+    \subitem {RCC}, \hyperpage{182}
+  \item {BDCR\_BDRST\_BB}
+    \subitem {RCC}, \hyperpage{182}
+  \item {BDCR\_OFFSET}
+    \subitem {RCC}, \hyperpage{182}
+  \item {BDCR\_RTCEN\_BB}
+    \subitem {RCC}, \hyperpage{182}
+  \item {BDRST\_BitNumber}
+    \subitem {RCC}, \hyperpage{182}
+  \item {Bit\_RESET}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {Bit\_SET}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {BitAction}
+    \subitem {GPIO}, \hyperpage{89}
+
+  \indexspace
+
+  \item {CDR\_ADDRESS}
+    \subitem {ADC}, \hyperpage{12}
+  \item {CFGR\_I2SSRC\_BB}
+    \subitem {RCC}, \hyperpage{182}
+  \item {CFGR\_MCO1\_RESET\_MASK}
+    \subitem {RCC}, \hyperpage{183}
+  \item {CFGR\_MCO2\_RESET\_MASK}
+    \subitem {RCC}, \hyperpage{183}
+  \item {CFGR\_OFFSET}
+    \subitem {RCC}, \hyperpage{183}
+  \item {Channel}
+    \subitem {ADC\_ChannelConfTypeDef}, \hyperpage{313}
+  \item {channel}
+    \subitem {analogin\_s}, \hyperpage{316}
+  \item {CIR\_BYTE2\_ADDRESS}
+    \subitem {RCC}, \hyperpage{183}
+  \item {CIR\_BYTE3\_ADDRESS}
+    \subitem {RCC}, \hyperpage{183}
+  \item {CLK\_FREQ}
+    \subitem {platform.h}, \hyperpage{352}
+  \item {ClockPrescaler}
+    \subitem {\_ADC\_InitTypeDef}, \hyperpage{311}
+  \item {CMSIS}, \hyperpage{307}
+  \item {CMSIS\_device\_header}
+    \subitem {RTE\_Components.h}, \hyperpage{422}
+  \item {comparator.c}
+    \subitem {comparator\_init}, \hyperpage{339}
+    \subitem {comparator\_read}, \hyperpage{339}
+  \item {comparator.h}
+    \subitem {comparator\_init}, \hyperpage{340}
+    \subitem {comparator\_read}, \hyperpage{340}
+    \subitem {comparator\_set\_callback}, \hyperpage{340}
+    \subitem {comparator\_set\_trigger}, \hyperpage{340}
+    \subitem {ComparatorTriggerMode}, \hyperpage{339}
+    \subitem {CompBoth}, \hyperpage{339}
+    \subitem {CompFalling}, \hyperpage{339}
+    \subitem {CompNone}, \hyperpage{339}
+    \subitem {CompRising}, \hyperpage{339}
+  \item {comparator\_init}
+    \subitem {comparator.c}, \hyperpage{339}
+    \subitem {comparator.h}, \hyperpage{340}
+  \item {comparator\_read}
+    \subitem {comparator.c}, \hyperpage{339}
+    \subitem {comparator.h}, \hyperpage{340}
+  \item {comparator\_set\_callback}
+    \subitem {comparator.h}, \hyperpage{340}
+  \item {comparator\_set\_trigger}
+    \subitem {comparator.h}, \hyperpage{340}
+  \item {ComparatorTriggerMode}
+    \subitem {comparator.h}, \hyperpage{339}
+  \item {CompBoth}
+    \subitem {comparator.h}, \hyperpage{339}
+  \item {CompFalling}
+    \subitem {comparator.h}, \hyperpage{339}
+  \item {CompNone}
+    \subitem {comparator.h}, \hyperpage{339}
+  \item {CompRising}
+    \subitem {comparator.h}, \hyperpage{339}
+  \item {ContinuousConvMode}
+    \subitem {\_ADC\_InitTypeDef}, \hyperpage{311}
+  \item {CR1\_AWDCH\_RESET}
+    \subitem {ADC}, \hyperpage{12}
+  \item {CR1\_AWDMode\_RESET}
+    \subitem {ADC}, \hyperpage{12}
+  \item {CR1\_CLEAR\_MASK}
+    \subitem {ADC}, \hyperpage{12}
+    \subitem {I2C}, \hyperpage{124}
+    \subitem {USART}, \hyperpage{266}
+  \item {CR1\_DISCNUM\_RESET}
+    \subitem {ADC}, \hyperpage{12}
+  \item {CR2\_CLEAR\_MASK}
+    \subitem {ADC}, \hyperpage{12}
+  \item {CR2\_CLOCK\_CLEAR\_MASK}
+    \subitem {USART}, \hyperpage{266}
+  \item {CR2\_EXTEN\_RESET}
+    \subitem {ADC}, \hyperpage{12}
+  \item {CR2\_JEXTEN\_RESET}
+    \subitem {ADC}, \hyperpage{12}
+  \item {CR2\_JEXTSEL\_RESET}
+    \subitem {ADC}, \hyperpage{12}
+  \item {CR3\_CLEAR\_MASK}
+    \subitem {USART}, \hyperpage{267}
+  \item {CR\_BYTE3\_ADDRESS}
+    \subitem {RCC}, \hyperpage{183}
+  \item {CR\_CLEAR\_MASK}
+    \subitem {ADC}, \hyperpage{13}
+  \item {CR\_CSSON\_BB}
+    \subitem {RCC}, \hyperpage{183}
+  \item {CR\_HSION\_BB}
+    \subitem {RCC}, \hyperpage{183}
+  \item {CR\_OFFSET}
+    \subitem {RCC}, \hyperpage{183}
+  \item {CR\_PLLI2SON\_BB}
+    \subitem {RCC}, \hyperpage{183}
+  \item {CR\_PLLON\_BB}
+    \subitem {RCC}, \hyperpage{183}
+  \item {CSR\_LSION\_BB}
+    \subitem {RCC}, \hyperpage{183}
+  \item {CSR\_OFFSET}
+    \subitem {RCC}, \hyperpage{183}
+  \item {CSSON\_BitNumber}
+    \subitem {RCC}, \hyperpage{183}
+
+  \indexspace
+
+  \item {DAC\_BITS}
+    \subitem {platform.h}, \hyperpage{352}
+  \item {DAC\_MASK}
+    \subitem {platform.h}, \hyperpage{352}
+  \item {Data transfers functions}, \hyperpage{149}, \hyperpage{283}
+    \subitem {I2C\_ReceiveData}, \hyperpage{149}
+    \subitem {I2C\_SendData}, \hyperpage{149}
+    \subitem {USART\_ReceiveData}, \hyperpage{283}
+    \subitem {USART\_SendData}, \hyperpage{283}
+  \item {DataAlign}
+    \subitem {\_ADC\_InitTypeDef}, \hyperpage{311}
+  \item {DiscontinuousConvMode}
+    \subitem {\_ADC\_InitTypeDef}, \hyperpage{311}
+  \item {DMA transfers management functions}, \hyperpage{152}, 
+		\hyperpage{292}
+    \subitem {I2C\_DMACmd}, \hyperpage{152}
+    \subitem {I2C\_DMALastTransferCmd}, \hyperpage{153}
+    \subitem {USART\_DMACmd}, \hyperpage{292}
+  \item {DMAContinuousRequests}
+    \subitem {\_ADC\_InitTypeDef}, \hyperpage{311}
+  \item {drivers/adc.c}, \hyperpage{323}
+  \item {drivers/adc.h}, \hyperpage{325}, \hyperpage{336}
+  \item {drivers/comparator.c}, \hyperpage{338}
+  \item {drivers/comparator.h}, \hyperpage{339, 340}
+  \item {drivers/gpio.c}, \hyperpage{341}
+  \item {drivers/gpio.h}, \hyperpage{345}, \hyperpage{348}
+  \item {drivers/i2c.c}, \hyperpage{349}
+  \item {drivers/i2c.h}, \hyperpage{350, 351}
+  \item {drivers/platform.h}, \hyperpage{351}, \hyperpage{356}
+  \item {drivers/stm32f4xx\_adc.c}, \hyperpage{358}
+  \item {drivers/stm32f4xx\_adc.h}, \hyperpage{361}, \hyperpage{367}
+  \item {drivers/stm32f4xx\_gpio.c}, \hyperpage{371}
+  \item {drivers/stm32f4xx\_gpio.h}, \hyperpage{373}, \hyperpage{377}
+  \item {drivers/stm32f4xx\_i2c.c}, \hyperpage{380}
+  \item {drivers/stm32f4xx\_i2c.h}, \hyperpage{383}, \hyperpage{388}
+  \item {drivers/stm32f4xx\_rcc.c}, \hyperpage{392}
+  \item {drivers/stm32f4xx\_rcc.h}, \hyperpage{396}, \hyperpage{402}
+  \item {drivers/stm32f4xx\_usart.c}, \hyperpage{406}
+  \item {drivers/stm32f4xx\_usart.h}, \hyperpage{409}, \hyperpage{413}
+  \item {drivers/timer.c}, \hyperpage{415}
+  \item {drivers/timer.h}, \hyperpage{417, 418}
+  \item {drivers/uart.c}, \hyperpage{418}
+  \item {drivers/uart.h}, \hyperpage{420, 421}
+
+  \indexspace
+
+  \item {EOCSelection}
+    \subitem {\_ADC\_InitTypeDef}, \hyperpage{312}
+  \item {ErrorCode}
+    \subitem {ADC\_HandleTypeDef}, \hyperpage{314}
+  \item {ExternalTrigConv}
+    \subitem {\_ADC\_InitTypeDef}, \hyperpage{312}
+  \item {ExternalTrigConvEdge}
+    \subitem {\_ADC\_InitTypeDef}, \hyperpage{312}
+  \item {EXTI0\_IRQHandler}
+    \subitem {gpio.c}, \hyperpage{341}
+  \item {EXTI15\_10\_IRQHandler}
+    \subitem {gpio.c}, \hyperpage{341}
+  \item {EXTI1\_IRQHandler}
+    \subitem {gpio.c}, \hyperpage{342}
+  \item {EXTI2\_IRQHandler}
+    \subitem {gpio.c}, \hyperpage{342}
+  \item {EXTI3\_IRQHandler}
+    \subitem {gpio.c}, \hyperpage{342}
+  \item {EXTI4\_IRQHandler}
+    \subitem {gpio.c}, \hyperpage{342}
+  \item {EXTI9\_5\_IRQHandler}
+    \subitem {gpio.c}, \hyperpage{342}
+  \item {EXTI\_port\_set}
+    \subitem {gpio.c}, \hyperpage{344}
+
+  \indexspace
+
+  \item {Falling}
+    \subitem {gpio.h}, \hyperpage{346}
+  \item {FLAG\_MASK}
+    \subitem {I2C}, \hyperpage{124}
+    \subitem {RCC}, \hyperpage{183}
+  \item {function}
+    \subitem {PinMap}, \hyperpage{319}
+
+  \indexspace
+
+  \item {GET\_PIN\_INDEX}
+    \subitem {platform.h}, \hyperpage{352}
+  \item {GET\_PORT}
+    \subitem {platform.h}, \hyperpage{352}
+  \item {GET\_PORT\_INDEX}
+    \subitem {platform.h}, \hyperpage{352}
+  \item {GPIO}, \hyperpage{87}
+    \subitem {Bit\_RESET}, \hyperpage{90}
+    \subitem {Bit\_SET}, \hyperpage{90}
+    \subitem {BitAction}, \hyperpage{89}
+    \subitem {GPIO\_DeInit}, \hyperpage{92}
+    \subitem {GPIO\_Init}, \hyperpage{92}
+    \subitem {GPIO\_Mode\_AF}, \hyperpage{90}
+    \subitem {GPIO\_Mode\_AN}, \hyperpage{90}
+    \subitem {GPIO\_Mode\_IN}, \hyperpage{90}
+    \subitem {GPIO\_Mode\_OUT}, \hyperpage{90}
+    \subitem {GPIO\_OType\_OD}, \hyperpage{90}
+    \subitem {GPIO\_OType\_PP}, \hyperpage{90}
+    \subitem {GPIO\_PinAFConfig}, \hyperpage{92}
+    \subitem {GPIO\_PinLockConfig}, \hyperpage{95}
+    \subitem {GPIO\_PuPd\_DOWN}, \hyperpage{90}
+    \subitem {GPIO\_PuPd\_NOPULL}, \hyperpage{90}
+    \subitem {GPIO\_PuPd\_UP}, \hyperpage{90}
+    \subitem {GPIO\_ReadInputData}, \hyperpage{95}
+    \subitem {GPIO\_ReadInputDataBit}, \hyperpage{95}
+    \subitem {GPIO\_ReadOutputData}, \hyperpage{96}
+    \subitem {GPIO\_ReadOutputDataBit}, \hyperpage{96}
+    \subitem {GPIO\_ResetBits}, \hyperpage{97}
+    \subitem {GPIO\_SetBits}, \hyperpage{97}
+    \subitem {GPIO\_Speed\_100MHz}, \hyperpage{92}
+    \subitem {GPIO\_Speed\_25MHz}, \hyperpage{92}
+    \subitem {GPIO\_Speed\_2MHz}, \hyperpage{92}
+    \subitem {GPIO\_Speed\_50MHz}, \hyperpage{92}
+    \subitem {GPIO\_StructInit}, \hyperpage{98}
+    \subitem {GPIO\_ToggleBits}, \hyperpage{98}
+    \subitem {GPIO\_Write}, \hyperpage{98}
+    \subitem {GPIO\_WriteBit}, \hyperpage{99}
+    \subitem {GPIOMode\_TypeDef}, \hyperpage{90}
+    \subitem {GPIOOType\_TypeDef}, \hyperpage{90}
+    \subitem {GPIOPuPd\_TypeDef}, \hyperpage{90}
+    \subitem {GPIOSpeed\_TypeDef}, \hyperpage{90}
+    \subitem {IS\_GPIO\_ALL\_PERIPH}, \hyperpage{89}
+    \subitem {IS\_GPIO\_BIT\_ACTION}, \hyperpage{89}
+    \subitem {IS\_GPIO\_MODE}, \hyperpage{89}
+    \subitem {IS\_GPIO\_OTYPE}, \hyperpage{89}
+    \subitem {IS\_GPIO\_PUPD}, \hyperpage{89}
+    \subitem {IS\_GPIO\_SPEED}, \hyperpage{89}
+  \item {GPIO Alternate functions configuration function}, 
+		\hyperpage{107}
+    \subitem {GPIO\_PinAFConfig}, \hyperpage{107}
+  \item {GPIO Read and Write}, \hyperpage{102}
+    \subitem {GPIO\_ReadInputData}, \hyperpage{102}
+    \subitem {GPIO\_ReadInputDataBit}, \hyperpage{103}
+    \subitem {GPIO\_ReadOutputData}, \hyperpage{103}
+    \subitem {GPIO\_ReadOutputDataBit}, \hyperpage{103}
+    \subitem {GPIO\_ResetBits}, \hyperpage{105}
+    \subitem {GPIO\_SetBits}, \hyperpage{105}
+    \subitem {GPIO\_ToggleBits}, \hyperpage{106}
+    \subitem {GPIO\_Write}, \hyperpage{106}
+    \subitem {GPIO\_WriteBit}, \hyperpage{106}
+  \item {gpio.c}
+    \subitem {EXTI0\_IRQHandler}, \hyperpage{341}
+    \subitem {EXTI15\_10\_IRQHandler}, \hyperpage{341}
+    \subitem {EXTI1\_IRQHandler}, \hyperpage{342}
+    \subitem {EXTI2\_IRQHandler}, \hyperpage{342}
+    \subitem {EXTI3\_IRQHandler}, \hyperpage{342}
+    \subitem {EXTI4\_IRQHandler}, \hyperpage{342}
+    \subitem {EXTI9\_5\_IRQHandler}, \hyperpage{342}
+    \subitem {EXTI\_port\_set}, \hyperpage{344}
+    \subitem {gpio\_get}, \hyperpage{342}
+    \subitem {gpio\_get\_range}, \hyperpage{342}
+    \subitem {gpio\_set}, \hyperpage{343}
+    \subitem {gpio\_set\_callback}, \hyperpage{343}
+    \subitem {gpio\_set\_mode}, \hyperpage{343}
+    \subitem {gpio\_set\_range}, \hyperpage{343}
+    \subitem {gpio\_set\_trigger}, \hyperpage{344}
+    \subitem {gpio\_toggle}, \hyperpage{344}
+    \subitem {IRQ\_pin\_index}, \hyperpage{344}
+    \subitem {IRQ\_port\_num}, \hyperpage{344}
+    \subitem {IRQ\_status}, \hyperpage{344}
+    \subitem {priority}, \hyperpage{344}
+    \subitem {prioritygroup}, \hyperpage{344}
+  \item {gpio.h}
+    \subitem {Falling}, \hyperpage{346}
+    \subitem {gpio\_get}, \hyperpage{346}
+    \subitem {gpio\_get\_range}, \hyperpage{346}
+    \subitem {gpio\_set}, \hyperpage{346}
+    \subitem {gpio\_set\_callback}, \hyperpage{347}
+    \subitem {gpio\_set\_mode}, \hyperpage{347}
+    \subitem {gpio\_set\_range}, \hyperpage{347}
+    \subitem {gpio\_set\_trigger}, \hyperpage{348}
+    \subitem {gpio\_toggle}, \hyperpage{348}
+    \subitem {Input}, \hyperpage{345}
+    \subitem {None}, \hyperpage{346}
+    \subitem {Output}, \hyperpage{346}
+    \subitem {PinMode}, \hyperpage{345}
+    \subitem {PullDown}, \hyperpage{346}
+    \subitem {PullUp}, \hyperpage{346}
+    \subitem {Reset}, \hyperpage{345}
+    \subitem {Rising}, \hyperpage{346}
+    \subitem {TriggerMode}, \hyperpage{346}
+  \item {GPIO\_AF\_CAN1}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{116}
+  \item {GPIO\_AF\_CAN2}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{116}
+  \item {GPIO\_AF\_DCMI}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{117}
+  \item {GPIO\_AF\_ETH}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{117}
+  \item {GPIO\_AF\_EVENTOUT}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{117}
+  \item {GPIO\_AF\_FSMC}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{117}
+  \item {GPIO\_AF\_I2C1}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{117}
+  \item {GPIO\_AF\_I2C2}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{117}
+  \item {GPIO\_AF\_I2C3}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{117}
+  \item {GPIO\_AF\_I2S3ext}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{117}
+  \item {GPIO\_AF\_MCO}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{118}
+  \item {GPIO\_AF\_OTG1\_FS}
+    \subitem {GPIO\_Legacy}, \hyperpage{122}
+  \item {GPIO\_AF\_OTG2\_FS}
+    \subitem {GPIO\_Legacy}, \hyperpage{122}
+  \item {GPIO\_AF\_OTG2\_HS}
+    \subitem {GPIO\_Legacy}, \hyperpage{122}
+  \item {GPIO\_AF\_OTG\_FS}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{118}
+  \item {GPIO\_AF\_OTG\_HS}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{118}
+  \item {GPIO\_AF\_OTG\_HS\_FS}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{118}
+  \item {GPIO\_AF\_RTC\_50Hz}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{118}
+  \item {GPIO\_AF\_SDIO}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{118}
+  \item {GPIO\_AF\_SPI1}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{118}
+  \item {GPIO\_AF\_SPI2}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{118}
+  \item {GPIO\_AF\_SPI3}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{119}
+  \item {GPIO\_AF\_SWJ}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{119}
+  \item {GPIO\_AF\_TAMPER}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{119}
+  \item {GPIO\_AF\_TIM1}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{119}
+  \item {GPIO\_AF\_TIM10}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{119}
+  \item {GPIO\_AF\_TIM11}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{119}
+  \item {GPIO\_AF\_TIM12}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{119}
+  \item {GPIO\_AF\_TIM13}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{119}
+  \item {GPIO\_AF\_TIM14}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{119}
+  \item {GPIO\_AF\_TIM2}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{120}
+  \item {GPIO\_AF\_TIM3}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{120}
+  \item {GPIO\_AF\_TIM4}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{120}
+  \item {GPIO\_AF\_TIM5}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{120}
+  \item {GPIO\_AF\_TIM8}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{120}
+  \item {GPIO\_AF\_TIM9}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{120}
+  \item {GPIO\_AF\_TRACE}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{120}
+  \item {GPIO\_AF\_UART4}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{120}
+  \item {GPIO\_AF\_UART5}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{120}
+  \item {GPIO\_AF\_USART1}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{121}
+  \item {GPIO\_AF\_USART2}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{121}
+  \item {GPIO\_AF\_USART3}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{121}
+  \item {GPIO\_AF\_USART6}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{121}
+  \item {GPIO\_Alternat\_function\_selection\_define}, \hyperpage{115}
+    \subitem {GPIO\_AF\_CAN1}, \hyperpage{116}
+    \subitem {GPIO\_AF\_CAN2}, \hyperpage{116}
+    \subitem {GPIO\_AF\_DCMI}, \hyperpage{117}
+    \subitem {GPIO\_AF\_ETH}, \hyperpage{117}
+    \subitem {GPIO\_AF\_EVENTOUT}, \hyperpage{117}
+    \subitem {GPIO\_AF\_FSMC}, \hyperpage{117}
+    \subitem {GPIO\_AF\_I2C1}, \hyperpage{117}
+    \subitem {GPIO\_AF\_I2C2}, \hyperpage{117}
+    \subitem {GPIO\_AF\_I2C3}, \hyperpage{117}
+    \subitem {GPIO\_AF\_I2S3ext}, \hyperpage{117}
+    \subitem {GPIO\_AF\_MCO}, \hyperpage{118}
+    \subitem {GPIO\_AF\_OTG\_FS}, \hyperpage{118}
+    \subitem {GPIO\_AF\_OTG\_HS}, \hyperpage{118}
+    \subitem {GPIO\_AF\_OTG\_HS\_FS}, \hyperpage{118}
+    \subitem {GPIO\_AF\_RTC\_50Hz}, \hyperpage{118}
+    \subitem {GPIO\_AF\_SDIO}, \hyperpage{118}
+    \subitem {GPIO\_AF\_SPI1}, \hyperpage{118}
+    \subitem {GPIO\_AF\_SPI2}, \hyperpage{118}
+    \subitem {GPIO\_AF\_SPI3}, \hyperpage{119}
+    \subitem {GPIO\_AF\_SWJ}, \hyperpage{119}
+    \subitem {GPIO\_AF\_TAMPER}, \hyperpage{119}
+    \subitem {GPIO\_AF\_TIM1}, \hyperpage{119}
+    \subitem {GPIO\_AF\_TIM10}, \hyperpage{119}
+    \subitem {GPIO\_AF\_TIM11}, \hyperpage{119}
+    \subitem {GPIO\_AF\_TIM12}, \hyperpage{119}
+    \subitem {GPIO\_AF\_TIM13}, \hyperpage{119}
+    \subitem {GPIO\_AF\_TIM14}, \hyperpage{119}
+    \subitem {GPIO\_AF\_TIM2}, \hyperpage{120}
+    \subitem {GPIO\_AF\_TIM3}, \hyperpage{120}
+    \subitem {GPIO\_AF\_TIM4}, \hyperpage{120}
+    \subitem {GPIO\_AF\_TIM5}, \hyperpage{120}
+    \subitem {GPIO\_AF\_TIM8}, \hyperpage{120}
+    \subitem {GPIO\_AF\_TIM9}, \hyperpage{120}
+    \subitem {GPIO\_AF\_TRACE}, \hyperpage{120}
+    \subitem {GPIO\_AF\_UART4}, \hyperpage{120}
+    \subitem {GPIO\_AF\_UART5}, \hyperpage{120}
+    \subitem {GPIO\_AF\_USART1}, \hyperpage{121}
+    \subitem {GPIO\_AF\_USART2}, \hyperpage{121}
+    \subitem {GPIO\_AF\_USART3}, \hyperpage{121}
+    \subitem {GPIO\_AF\_USART6}, \hyperpage{121}
+    \subitem {IS\_GPIO\_AF}, \hyperpage{121}
+  \item {GPIO\_DeInit}
+    \subitem {GPIO}, \hyperpage{92}
+    \subitem {Initialization and Configuration}, \hyperpage{100}
+  \item {GPIO\_Exported\_Constants}, \hyperpage{110}
+  \item {gpio\_get}
+    \subitem {gpio.c}, \hyperpage{342}
+    \subitem {gpio.h}, \hyperpage{346}
+  \item {gpio\_get\_range}
+    \subitem {gpio.c}, \hyperpage{342}
+    \subitem {gpio.h}, \hyperpage{346}
+  \item {GPIO\_Init}
+    \subitem {GPIO}, \hyperpage{92}
+    \subitem {Initialization and Configuration}, \hyperpage{100}
+  \item {GPIO\_InitTypeDef}, \hyperpage{316}
+    \subitem {Alternate}, \hyperpage{317}
+    \subitem {GPIO\_Mode}, \hyperpage{317}
+    \subitem {GPIO\_OType}, \hyperpage{317}
+    \subitem {GPIO\_Pin}, \hyperpage{317}
+    \subitem {GPIO\_PuPd}, \hyperpage{317}
+    \subitem {GPIO\_Speed}, \hyperpage{317}
+    \subitem {Mode}, \hyperpage{317}
+    \subitem {Pin}, \hyperpage{317}
+    \subitem {Pull}, \hyperpage{317}
+    \subitem {Speed}, \hyperpage{317}
+  \item {GPIO\_Legacy}, \hyperpage{121}
+    \subitem {GPIO\_AF\_OTG1\_FS}, \hyperpage{122}
+    \subitem {GPIO\_AF\_OTG2\_FS}, \hyperpage{122}
+    \subitem {GPIO\_AF\_OTG2\_HS}, \hyperpage{122}
+    \subitem {GPIO\_Mode\_AIN}, \hyperpage{122}
+  \item {GPIO\_MODE}
+    \subitem {adc.h}, \hyperpage{331}
+  \item {GPIO\_Mode}
+    \subitem {GPIO\_InitTypeDef}, \hyperpage{317}
+  \item {GPIO\_Mode\_AF}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {GPIO\_Mode\_AIN}
+    \subitem {GPIO\_Legacy}, \hyperpage{122}
+  \item {GPIO\_Mode\_AN}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {GPIO\_Mode\_IN}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {GPIO\_Mode\_OUT}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {GPIO\_NOPULL}
+    \subitem {adc.h}, \hyperpage{331}
+  \item {GPIO\_OType}
+    \subitem {GPIO\_InitTypeDef}, \hyperpage{317}
+  \item {GPIO\_OType\_OD}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {GPIO\_OType\_PP}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {GPIO\_Pin}
+    \subitem {GPIO\_InitTypeDef}, \hyperpage{317}
+  \item {GPIO\_Pin\_0}
+    \subitem {GPIO\_pins\_define}, \hyperpage{110}
+  \item {GPIO\_Pin\_1}
+    \subitem {GPIO\_pins\_define}, \hyperpage{110}
+  \item {GPIO\_Pin\_10}
+    \subitem {GPIO\_pins\_define}, \hyperpage{111}
+  \item {GPIO\_Pin\_11}
+    \subitem {GPIO\_pins\_define}, \hyperpage{111}
+  \item {GPIO\_Pin\_12}
+    \subitem {GPIO\_pins\_define}, \hyperpage{111}
+  \item {GPIO\_Pin\_13}
+    \subitem {GPIO\_pins\_define}, \hyperpage{111}
+  \item {GPIO\_Pin\_14}
+    \subitem {GPIO\_pins\_define}, \hyperpage{111}
+  \item {GPIO\_Pin\_15}
+    \subitem {GPIO\_pins\_define}, \hyperpage{111}
+  \item {GPIO\_Pin\_2}
+    \subitem {GPIO\_pins\_define}, \hyperpage{111}
+  \item {GPIO\_Pin\_3}
+    \subitem {GPIO\_pins\_define}, \hyperpage{111}
+  \item {GPIO\_Pin\_4}
+    \subitem {GPIO\_pins\_define}, \hyperpage{111}
+  \item {GPIO\_Pin\_5}
+    \subitem {GPIO\_pins\_define}, \hyperpage{111}
+  \item {GPIO\_Pin\_6}
+    \subitem {GPIO\_pins\_define}, \hyperpage{112}
+  \item {GPIO\_Pin\_7}
+    \subitem {GPIO\_pins\_define}, \hyperpage{112}
+  \item {GPIO\_Pin\_8}
+    \subitem {GPIO\_pins\_define}, \hyperpage{112}
+  \item {GPIO\_Pin\_9}
+    \subitem {GPIO\_pins\_define}, \hyperpage{112}
+  \item {GPIO\_Pin\_All}
+    \subitem {GPIO\_pins\_define}, \hyperpage{112}
+  \item {GPIO\_Pin\_sources}, \hyperpage{113}
+    \subitem {GPIO\_PinSource0}, \hyperpage{113}
+    \subitem {GPIO\_PinSource1}, \hyperpage{113}
+    \subitem {GPIO\_PinSource10}, \hyperpage{113}
+    \subitem {GPIO\_PinSource11}, \hyperpage{113}
+    \subitem {GPIO\_PinSource12}, \hyperpage{113}
+    \subitem {GPIO\_PinSource13}, \hyperpage{113}
+    \subitem {GPIO\_PinSource14}, \hyperpage{114}
+    \subitem {GPIO\_PinSource15}, \hyperpage{114}
+    \subitem {GPIO\_PinSource2}, \hyperpage{114}
+    \subitem {GPIO\_PinSource3}, \hyperpage{114}
+    \subitem {GPIO\_PinSource4}, \hyperpage{114}
+    \subitem {GPIO\_PinSource5}, \hyperpage{114}
+    \subitem {GPIO\_PinSource6}, \hyperpage{114}
+    \subitem {GPIO\_PinSource7}, \hyperpage{114}
+    \subitem {GPIO\_PinSource8}, \hyperpage{114}
+    \subitem {GPIO\_PinSource9}, \hyperpage{114}
+    \subitem {IS\_GPIO\_PIN\_SOURCE}, \hyperpage{115}
+  \item {GPIO\_PinAFConfig}
+    \subitem {GPIO}, \hyperpage{92}
+    \subitem {GPIO Alternate functions configuration function}, 
+		\hyperpage{107}
+  \item {GPIO\_PinLockConfig}
+    \subitem {GPIO}, \hyperpage{95}
+    \subitem {Initialization and Configuration}, \hyperpage{101}
+  \item {GPIO\_pins\_define}, \hyperpage{110}
+    \subitem {GPIO\_Pin\_0}, \hyperpage{110}
+    \subitem {GPIO\_Pin\_1}, \hyperpage{110}
+    \subitem {GPIO\_Pin\_10}, \hyperpage{111}
+    \subitem {GPIO\_Pin\_11}, \hyperpage{111}
+    \subitem {GPIO\_Pin\_12}, \hyperpage{111}
+    \subitem {GPIO\_Pin\_13}, \hyperpage{111}
+    \subitem {GPIO\_Pin\_14}, \hyperpage{111}
+    \subitem {GPIO\_Pin\_15}, \hyperpage{111}
+    \subitem {GPIO\_Pin\_2}, \hyperpage{111}
+    \subitem {GPIO\_Pin\_3}, \hyperpage{111}
+    \subitem {GPIO\_Pin\_4}, \hyperpage{111}
+    \subitem {GPIO\_Pin\_5}, \hyperpage{111}
+    \subitem {GPIO\_Pin\_6}, \hyperpage{112}
+    \subitem {GPIO\_Pin\_7}, \hyperpage{112}
+    \subitem {GPIO\_Pin\_8}, \hyperpage{112}
+    \subitem {GPIO\_Pin\_9}, \hyperpage{112}
+    \subitem {GPIO\_Pin\_All}, \hyperpage{112}
+    \subitem {IS\_GET\_GPIO\_PIN}, \hyperpage{112}
+    \subitem {IS\_GPIO\_PIN}, \hyperpage{112}
+  \item {GPIO\_PinSource0}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{113}
+  \item {GPIO\_PinSource1}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{113}
+  \item {GPIO\_PinSource10}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{113}
+  \item {GPIO\_PinSource11}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{113}
+  \item {GPIO\_PinSource12}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{113}
+  \item {GPIO\_PinSource13}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{113}
+  \item {GPIO\_PinSource14}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{114}
+  \item {GPIO\_PinSource15}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{114}
+  \item {GPIO\_PinSource2}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{114}
+  \item {GPIO\_PinSource3}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{114}
+  \item {GPIO\_PinSource4}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{114}
+  \item {GPIO\_PinSource5}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{114}
+  \item {GPIO\_PinSource6}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{114}
+  \item {GPIO\_PinSource7}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{114}
+  \item {GPIO\_PinSource8}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{114}
+  \item {GPIO\_PinSource9}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{114}
+  \item {GPIO\_Private\_Functions}, \hyperpage{99}
+  \item {GPIO\_PULLDOWN}
+    \subitem {adc.h}, \hyperpage{331}
+  \item {GPIO\_PULLUP}
+    \subitem {adc.h}, \hyperpage{331}
+  \item {GPIO\_PuPd}
+    \subitem {GPIO\_InitTypeDef}, \hyperpage{317}
+  \item {GPIO\_PuPd\_DOWN}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {GPIO\_PuPd\_NOPULL}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {GPIO\_PuPd\_UP}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {GPIO\_ReadInputData}
+    \subitem {GPIO}, \hyperpage{95}
+    \subitem {GPIO Read and Write}, \hyperpage{102}
+  \item {GPIO\_ReadInputDataBit}
+    \subitem {GPIO}, \hyperpage{95}
+    \subitem {GPIO Read and Write}, \hyperpage{103}
+  \item {GPIO\_ReadOutputData}
+    \subitem {GPIO}, \hyperpage{96}
+    \subitem {GPIO Read and Write}, \hyperpage{103}
+  \item {GPIO\_ReadOutputDataBit}
+    \subitem {GPIO}, \hyperpage{96}
+    \subitem {GPIO Read and Write}, \hyperpage{103}
+  \item {GPIO\_ResetBits}
+    \subitem {GPIO}, \hyperpage{97}
+    \subitem {GPIO Read and Write}, \hyperpage{105}
+  \item {gpio\_set}
+    \subitem {gpio.c}, \hyperpage{343}
+    \subitem {gpio.h}, \hyperpage{346}
+  \item {gpio\_set\_callback}
+    \subitem {gpio.c}, \hyperpage{343}
+    \subitem {gpio.h}, \hyperpage{347}
+  \item {gpio\_set\_mode}
+    \subitem {gpio.c}, \hyperpage{343}
+    \subitem {gpio.h}, \hyperpage{347}
+  \item {gpio\_set\_range}
+    \subitem {gpio.c}, \hyperpage{343}
+    \subitem {gpio.h}, \hyperpage{347}
+  \item {gpio\_set\_trigger}
+    \subitem {gpio.c}, \hyperpage{344}
+    \subitem {gpio.h}, \hyperpage{348}
+  \item {GPIO\_SetBits}
+    \subitem {GPIO}, \hyperpage{97}
+    \subitem {GPIO Read and Write}, \hyperpage{105}
+  \item {GPIO\_Speed}
+    \subitem {GPIO\_InitTypeDef}, \hyperpage{317}
+  \item {GPIO\_Speed\_100MHz}
+    \subitem {GPIO}, \hyperpage{92}
+  \item {GPIO\_Speed\_25MHz}
+    \subitem {GPIO}, \hyperpage{92}
+  \item {GPIO\_Speed\_2MHz}
+    \subitem {GPIO}, \hyperpage{92}
+  \item {GPIO\_Speed\_50MHz}
+    \subitem {GPIO}, \hyperpage{92}
+  \item {GPIO\_SPEED\_FAST}
+    \subitem {adc.h}, \hyperpage{331}
+  \item {GPIO\_SPEED\_HIGH}
+    \subitem {adc.h}, \hyperpage{331}
+  \item {GPIO\_SPEED\_LOW}
+    \subitem {adc.h}, \hyperpage{331}
+  \item {GPIO\_SPEED\_MEDIUM}
+    \subitem {adc.h}, \hyperpage{331}
+  \item {GPIO\_StructInit}
+    \subitem {GPIO}, \hyperpage{98}
+    \subitem {Initialization and Configuration}, \hyperpage{101}
+  \item {gpio\_toggle}
+    \subitem {gpio.c}, \hyperpage{344}
+    \subitem {gpio.h}, \hyperpage{348}
+  \item {GPIO\_ToggleBits}
+    \subitem {GPIO}, \hyperpage{98}
+    \subitem {GPIO Read and Write}, \hyperpage{106}
+  \item {GPIO\_Write}
+    \subitem {GPIO}, \hyperpage{98}
+    \subitem {GPIO Read and Write}, \hyperpage{106}
+  \item {GPIO\_WriteBit}
+    \subitem {GPIO}, \hyperpage{99}
+    \subitem {GPIO Read and Write}, \hyperpage{106}
+  \item {GPIOA\_BASE}
+    \subitem {adc.h}, \hyperpage{332}
+  \item {GPIOMode\_TypeDef}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {GPIOOType\_TypeDef}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {GPIOPuPd\_TypeDef}
+    \subitem {GPIO}, \hyperpage{90}
+  \item {GPIOSpeed\_TypeDef}
+    \subitem {GPIO}, \hyperpage{90}
+
+  \indexspace
+
+  \item {HAL\_ADC\_STATE\_AWD}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_ADC\_STATE\_BUSY}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_ADC\_STATE\_BUSY\_INJ}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_ADC\_STATE\_BUSY\_INJ\_REG}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_ADC\_STATE\_BUSY\_REG}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_ADC\_STATE\_EOC}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_ADC\_STATE\_EOC\_INJ}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_ADC\_STATE\_EOC\_INJ\_REG}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_ADC\_STATE\_EOC\_REG}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_ADC\_STATE\_ERROR}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_ADC\_STATE\_READY}
+    \subitem {adc.h}, \hyperpage{333}
+  \item {HAL\_ADC\_STATE\_RESET}
+    \subitem {adc.h}, \hyperpage{333}
+  \item {HAL\_ADC\_STATE\_TIMEOUT}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_ADC\_StateTypeDef}
+    \subitem {adc.h}, \hyperpage{333}
+  \item {HAL\_LOCKED}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_LockTypeDef}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {HAL\_UNLOCKED}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {Halfduplex mode function}, \hyperpage{287}
+    \subitem {USART\_HalfDuplexCmd}, \hyperpage{288}
+  \item {HCLK\_Frequency}
+    \subitem {RCC\_ClocksTypeDef}, \hyperpage{319}
+  \item {HSE\_STARTUP\_TIMEOUT}
+    \subitem {stm32f4xx\_rcc.c}, \hyperpage{396}
+  \item {HSE\_VALUE}
+    \subitem {stm32f4xx\_rcc.c}, \hyperpage{396}
+    \subitem {STM32F4xx\_System\_Private\_Includes}, \hyperpage{308}
+  \item {HSI\_VALUE}
+    \subitem {stm32f4xx\_rcc.c}, \hyperpage{396}
+    \subitem {STM32F4xx\_System\_Private\_Includes}, \hyperpage{308}
+  \item {HSION\_BitNumber}
+    \subitem {RCC}, \hyperpage{184}
+
+  \indexspace
+
+  \item {I2C}, \hyperpage{122}
+    \subitem {CR1\_CLEAR\_MASK}, \hyperpage{124}
+    \subitem {FLAG\_MASK}, \hyperpage{124}
+    \subitem {I2C\_AcknowledgeConfig}, \hyperpage{124}
+    \subitem {I2C\_ARPCmd}, \hyperpage{125}
+    \subitem {I2C\_CalculatePEC}, \hyperpage{125}
+    \subitem {I2C\_CheckEvent}, \hyperpage{125}
+    \subitem {I2C\_ClearFlag}, \hyperpage{127}
+    \subitem {I2C\_ClearITPendingBit}, \hyperpage{127}
+    \subitem {I2C\_Cmd}, \hyperpage{128}
+    \subitem {I2C\_DeInit}, \hyperpage{129}
+    \subitem {I2C\_DMACmd}, \hyperpage{129}
+    \subitem {I2C\_DMALastTransferCmd}, \hyperpage{129}
+    \subitem {I2C\_DualAddressCmd}, \hyperpage{130}
+    \subitem {I2C\_FastModeDutyCycleConfig}, \hyperpage{130}
+    \subitem {I2C\_GeneralCallCmd}, \hyperpage{130}
+    \subitem {I2C\_GenerateSTART}, \hyperpage{131}
+    \subitem {I2C\_GenerateSTOP}, \hyperpage{131}
+    \subitem {I2C\_GetFlagStatus}, \hyperpage{131}
+    \subitem {I2C\_GetITStatus}, \hyperpage{132}
+    \subitem {I2C\_GetLastEvent}, \hyperpage{133}
+    \subitem {I2C\_GetPEC}, \hyperpage{134}
+    \subitem {I2C\_Init}, \hyperpage{134}
+    \subitem {I2C\_ITConfig}, \hyperpage{134}
+    \subitem {I2C\_NACKPositionConfig}, \hyperpage{135}
+    \subitem {I2C\_OwnAddress2Config}, \hyperpage{136}
+    \subitem {I2C\_PECPositionConfig}, \hyperpage{136}
+    \subitem {I2C\_ReadRegister}, \hyperpage{137}
+    \subitem {I2C\_ReceiveData}, \hyperpage{137}
+    \subitem {I2C\_Send7bitAddress}, \hyperpage{138}
+    \subitem {I2C\_SendData}, \hyperpage{138}
+    \subitem {I2C\_SMBusAlertConfig}, \hyperpage{138}
+    \subitem {I2C\_SoftwareResetCmd}, \hyperpage{139}
+    \subitem {I2C\_StretchClockCmd}, \hyperpage{139}
+    \subitem {I2C\_StructInit}, \hyperpage{140}
+    \subitem {I2C\_TransmitPEC}, \hyperpage{140}
+    \subitem {ITEN\_MASK}, \hyperpage{124}
+  \item {i2c.c}
+    \subitem {i2c\_init}, \hyperpage{349}
+    \subitem {i2c\_read}, \hyperpage{349}
+    \subitem {i2c\_write}, \hyperpage{349}
+  \item {i2c.h}
+    \subitem {i2c\_init}, \hyperpage{350}
+    \subitem {i2c\_read}, \hyperpage{350}
+    \subitem {i2c\_write}, \hyperpage{350}
+  \item {I2C\_Ack}
+    \subitem {I2C\_InitTypeDef}, \hyperpage{318}
+  \item {I2C\_Ack\_Disable}
+    \subitem {I2C\_acknowledgement}, \hyperpage{164}
+  \item {I2C\_Ack\_Enable}
+    \subitem {I2C\_acknowledgement}, \hyperpage{164}
+  \item {I2C\_AcknowledgeConfig}
+    \subitem {I2C}, \hyperpage{124}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{142}
+  \item {I2C\_acknowledged\_address}, \hyperpage{165}
+    \subitem {I2C\_AcknowledgedAddress\_10bit}, \hyperpage{165}
+    \subitem {I2C\_AcknowledgedAddress\_7bit}, \hyperpage{165}
+    \subitem {IS\_I2C\_ACKNOWLEDGE\_ADDRESS}, \hyperpage{166}
+  \item {I2C\_AcknowledgedAddress}
+    \subitem {I2C\_InitTypeDef}, \hyperpage{318}
+  \item {I2C\_AcknowledgedAddress\_10bit}
+    \subitem {I2C\_acknowledged\_address}, \hyperpage{165}
+  \item {I2C\_AcknowledgedAddress\_7bit}
+    \subitem {I2C\_acknowledged\_address}, \hyperpage{165}
+  \item {I2C\_acknowledgement}, \hyperpage{164}
+    \subitem {I2C\_Ack\_Disable}, \hyperpage{164}
+    \subitem {I2C\_Ack\_Enable}, \hyperpage{164}
+    \subitem {IS\_I2C\_ACK\_STATE}, \hyperpage{164}
+  \item {I2C\_ARPCmd}
+    \subitem {I2C}, \hyperpage{125}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{142}
+  \item {I2C\_CalculatePEC}
+    \subitem {I2C}, \hyperpage{125}
+    \subitem {PEC management functions}, \hyperpage{150}
+  \item {I2C\_CheckEvent}
+    \subitem {I2C}, \hyperpage{125}
+    \subitem {Interrupts events and flags management functions}, 
+		\hyperpage{155}
+  \item {I2C\_ClearFlag}
+    \subitem {I2C}, \hyperpage{127}
+    \subitem {Interrupts events and flags management functions}, 
+		\hyperpage{156}
+  \item {I2C\_ClearITPendingBit}
+    \subitem {I2C}, \hyperpage{127}
+    \subitem {Interrupts events and flags management functions}, 
+		\hyperpage{157}
+  \item {I2C\_clock\_speed}, \hyperpage{179}
+    \subitem {IS\_I2C\_CLOCK\_SPEED}, \hyperpage{179}
+  \item {I2C\_ClockSpeed}
+    \subitem {I2C\_InitTypeDef}, \hyperpage{318}
+  \item {I2C\_Cmd}
+    \subitem {I2C}, \hyperpage{128}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{142}
+  \item {I2C\_DeInit}
+    \subitem {I2C}, \hyperpage{129}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{143}
+  \item {I2C\_Direction\_Receiver}
+    \subitem {I2C\_transfer\_direction}, \hyperpage{165}
+  \item {I2C\_Direction\_Transmitter}
+    \subitem {I2C\_transfer\_direction}, \hyperpage{165}
+  \item {I2C\_DMACmd}
+    \subitem {DMA transfers management functions}, \hyperpage{152}
+    \subitem {I2C}, \hyperpage{129}
+  \item {I2C\_DMALastTransferCmd}
+    \subitem {DMA transfers management functions}, \hyperpage{153}
+    \subitem {I2C}, \hyperpage{129}
+  \item {I2C\_DualAddressCmd}
+    \subitem {I2C}, \hyperpage{130}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{143}
+  \item {I2C\_duty\_cycle\_in\_fast\_mode}, \hyperpage{163}
+    \subitem {I2C\_DutyCycle\_16\_9}, \hyperpage{163}
+    \subitem {I2C\_DutyCycle\_2}, \hyperpage{163}
+    \subitem {IS\_I2C\_DUTY\_CYCLE}, \hyperpage{164}
+  \item {I2C\_DutyCycle}
+    \subitem {I2C\_InitTypeDef}, \hyperpage{318}
+  \item {I2C\_DutyCycle\_16\_9}
+    \subitem {I2C\_duty\_cycle\_in\_fast\_mode}, \hyperpage{163}
+  \item {I2C\_DutyCycle\_2}
+    \subitem {I2C\_duty\_cycle\_in\_fast\_mode}, \hyperpage{163}
+  \item {I2C\_EVENT\_MASTER\_BYTE\_RECEIVED}
+    \subitem {I2C\_Events}, \hyperpage{176}
+  \item {I2C\_EVENT\_MASTER\_BYTE\_TRANSMITTED}
+    \subitem {I2C\_Events}, \hyperpage{176}
+  \item {I2C\_EVENT\_MASTER\_BYTE\_TRANSMITTING}
+    \subitem {I2C\_Events}, \hyperpage{176}
+  \item {I2C\_EVENT\_MASTER\_MODE\_ADDRESS10}
+    \subitem {I2C\_Events}, \hyperpage{176}
+  \item {I2C\_EVENT\_MASTER\_MODE\_SELECT}
+    \subitem {I2C\_Events}, \hyperpage{177}
+  \item {I2C\_EVENT\_MASTER\_RECEIVER\_MODE\_SELECTED}
+    \subitem {I2C\_Events}, \hyperpage{177}
+  \item {I2C\_EVENT\_MASTER\_TRANSMITTER\_MODE\_SELECTED}
+    \subitem {I2C\_Events}, \hyperpage{177}
+  \item {I2C\_EVENT\_SLAVE\_ACK\_FAILURE}
+    \subitem {I2C\_Events}, \hyperpage{177}
+  \item {I2C\_EVENT\_SLAVE\_BYTE\_RECEIVED}
+    \subitem {I2C\_Events}, \hyperpage{177}
+  \item {I2C\_EVENT\_SLAVE\_BYTE\_TRANSMITTED}
+    \subitem {I2C\_Events}, \hyperpage{178}
+  \item {I2C\_EVENT\_SLAVE\_BYTE\_TRANSMITTING}
+    \subitem {I2C\_Events}, \hyperpage{178}
+  \item {I2C\_EVENT\_SLAVE\_GENERALCALLADDRESS\_MATCHED}
+    \subitem {I2C\_Events}, \hyperpage{178}
+  \item {I2C\_EVENT\_SLAVE\_RECEIVER\_ADDRESS\_MATCHED}
+    \subitem {I2C\_Events}, \hyperpage{178}
+  \item {I2C\_EVENT\_SLAVE\_RECEIVER\_SECONDADDRESS\_MATCHED}
+    \subitem {I2C\_Events}, \hyperpage{178}
+  \item {I2C\_EVENT\_SLAVE\_STOP\_DETECTED}
+    \subitem {I2C\_Events}, \hyperpage{178}
+  \item {I2C\_EVENT\_SLAVE\_TRANSMITTER\_ADDRESS\_MATCHED}
+    \subitem {I2C\_Events}, \hyperpage{178}
+  \item {I2C\_EVENT\_SLAVE\_TRANSMITTER\_SECONDADDRESS\_MATCHED}
+    \subitem {I2C\_Events}, \hyperpage{179}
+  \item {I2C\_Events}, \hyperpage{175}
+    \subitem {I2C\_EVENT\_MASTER\_BYTE\_RECEIVED}, \hyperpage{176}
+    \subitem {I2C\_EVENT\_MASTER\_BYTE\_TRANSMITTED}, \hyperpage{176}
+    \subitem {I2C\_EVENT\_MASTER\_BYTE\_TRANSMITTING}, \hyperpage{176}
+    \subitem {I2C\_EVENT\_MASTER\_MODE\_ADDRESS10}, \hyperpage{176}
+    \subitem {I2C\_EVENT\_MASTER\_MODE\_SELECT}, \hyperpage{177}
+    \subitem {I2C\_EVENT\_MASTER\_RECEIVER\_MODE\_SELECTED}, 
+		\hyperpage{177}
+    \subitem {I2C\_EVENT\_MASTER\_TRANSMITTER\_MODE\_SELECTED}, 
+		\hyperpage{177}
+    \subitem {I2C\_EVENT\_SLAVE\_ACK\_FAILURE}, \hyperpage{177}
+    \subitem {I2C\_EVENT\_SLAVE\_BYTE\_RECEIVED}, \hyperpage{177}
+    \subitem {I2C\_EVENT\_SLAVE\_BYTE\_TRANSMITTED}, \hyperpage{178}
+    \subitem {I2C\_EVENT\_SLAVE\_BYTE\_TRANSMITTING}, \hyperpage{178}
+    \subitem {I2C\_EVENT\_SLAVE\_GENERALCALLADDRESS\_MATCHED}, 
+		\hyperpage{178}
+    \subitem {I2C\_EVENT\_SLAVE\_RECEIVER\_ADDRESS\_MATCHED}, 
+		\hyperpage{178}
+    \subitem {I2C\_EVENT\_SLAVE\_RECEIVER\_SECONDADDRESS\_MATCHED}, 
+		\hyperpage{178}
+    \subitem {I2C\_EVENT\_SLAVE\_STOP\_DETECTED}, \hyperpage{178}
+    \subitem {I2C\_EVENT\_SLAVE\_TRANSMITTER\_ADDRESS\_MATCHED}, 
+		\hyperpage{178}
+    \subitem {I2C\_EVENT\_SLAVE\_TRANSMITTER\_SECONDADDRESS\_MATCHED}, 
+		\hyperpage{179}
+    \subitem {IS\_I2C\_EVENT}, \hyperpage{179}
+  \item {I2C\_Exported\_Constants}, \hyperpage{162}
+    \subitem {IS\_I2C\_ALL\_PERIPH}, \hyperpage{162}
+  \item {I2C\_FastModeDutyCycleConfig}
+    \subitem {I2C}, \hyperpage{130}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{143}
+  \item {I2C\_FLAG\_ADD10}
+    \subitem {I2C\_flags\_definition}, \hyperpage{172}
+  \item {I2C\_FLAG\_ADDR}
+    \subitem {I2C\_flags\_definition}, \hyperpage{172}
+  \item {I2C\_FLAG\_AF}
+    \subitem {I2C\_flags\_definition}, \hyperpage{173}
+  \item {I2C\_FLAG\_ARLO}
+    \subitem {I2C\_flags\_definition}, \hyperpage{173}
+  \item {I2C\_FLAG\_BERR}
+    \subitem {I2C\_flags\_definition}, \hyperpage{173}
+  \item {I2C\_FLAG\_BTF}
+    \subitem {I2C\_flags\_definition}, \hyperpage{173}
+  \item {I2C\_FLAG\_BUSY}
+    \subitem {I2C\_flags\_definition}, \hyperpage{173}
+  \item {I2C\_FLAG\_DUALF}
+    \subitem {I2C\_flags\_definition}, \hyperpage{173}
+  \item {I2C\_FLAG\_GENCALL}
+    \subitem {I2C\_flags\_definition}, \hyperpage{173}
+  \item {I2C\_FLAG\_MSL}
+    \subitem {I2C\_flags\_definition}, \hyperpage{173}
+  \item {I2C\_FLAG\_OVR}
+    \subitem {I2C\_flags\_definition}, \hyperpage{173}
+  \item {I2C\_FLAG\_PECERR}
+    \subitem {I2C\_flags\_definition}, \hyperpage{173}
+  \item {I2C\_FLAG\_RXNE}
+    \subitem {I2C\_flags\_definition}, \hyperpage{174}
+  \item {I2C\_FLAG\_SB}
+    \subitem {I2C\_flags\_definition}, \hyperpage{174}
+  \item {I2C\_FLAG\_SMBALERT}
+    \subitem {I2C\_flags\_definition}, \hyperpage{174}
+  \item {I2C\_FLAG\_SMBDEFAULT}
+    \subitem {I2C\_flags\_definition}, \hyperpage{174}
+  \item {I2C\_FLAG\_SMBHOST}
+    \subitem {I2C\_flags\_definition}, \hyperpage{174}
+  \item {I2C\_FLAG\_STOPF}
+    \subitem {I2C\_flags\_definition}, \hyperpage{174}
+  \item {I2C\_FLAG\_TIMEOUT}
+    \subitem {I2C\_flags\_definition}, \hyperpage{174}
+  \item {I2C\_FLAG\_TRA}
+    \subitem {I2C\_flags\_definition}, \hyperpage{174}
+  \item {I2C\_FLAG\_TXE}
+    \subitem {I2C\_flags\_definition}, \hyperpage{174}
+  \item {I2C\_flags\_definition}, \hyperpage{172}
+    \subitem {I2C\_FLAG\_ADD10}, \hyperpage{172}
+    \subitem {I2C\_FLAG\_ADDR}, \hyperpage{172}
+    \subitem {I2C\_FLAG\_AF}, \hyperpage{173}
+    \subitem {I2C\_FLAG\_ARLO}, \hyperpage{173}
+    \subitem {I2C\_FLAG\_BERR}, \hyperpage{173}
+    \subitem {I2C\_FLAG\_BTF}, \hyperpage{173}
+    \subitem {I2C\_FLAG\_BUSY}, \hyperpage{173}
+    \subitem {I2C\_FLAG\_DUALF}, \hyperpage{173}
+    \subitem {I2C\_FLAG\_GENCALL}, \hyperpage{173}
+    \subitem {I2C\_FLAG\_MSL}, \hyperpage{173}
+    \subitem {I2C\_FLAG\_OVR}, \hyperpage{173}
+    \subitem {I2C\_FLAG\_PECERR}, \hyperpage{173}
+    \subitem {I2C\_FLAG\_RXNE}, \hyperpage{174}
+    \subitem {I2C\_FLAG\_SB}, \hyperpage{174}
+    \subitem {I2C\_FLAG\_SMBALERT}, \hyperpage{174}
+    \subitem {I2C\_FLAG\_SMBDEFAULT}, \hyperpage{174}
+    \subitem {I2C\_FLAG\_SMBHOST}, \hyperpage{174}
+    \subitem {I2C\_FLAG\_STOPF}, \hyperpage{174}
+    \subitem {I2C\_FLAG\_TIMEOUT}, \hyperpage{174}
+    \subitem {I2C\_FLAG\_TRA}, \hyperpage{174}
+    \subitem {I2C\_FLAG\_TXE}, \hyperpage{174}
+    \subitem {IS\_I2C\_CLEAR\_FLAG}, \hyperpage{174}
+    \subitem {IS\_I2C\_GET\_FLAG}, \hyperpage{175}
+  \item {I2C\_GeneralCallCmd}
+    \subitem {I2C}, \hyperpage{130}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{144}
+  \item {I2C\_GenerateSTART}
+    \subitem {I2C}, \hyperpage{131}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{144}
+  \item {I2C\_GenerateSTOP}
+    \subitem {I2C}, \hyperpage{131}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{145}
+  \item {I2C\_GetFlagStatus}
+    \subitem {I2C}, \hyperpage{131}
+    \subitem {Interrupts events and flags management functions}, 
+		\hyperpage{158}
+  \item {I2C\_GetITStatus}
+    \subitem {I2C}, \hyperpage{132}
+    \subitem {Interrupts events and flags management functions}, 
+		\hyperpage{159}
+  \item {I2C\_GetLastEvent}
+    \subitem {I2C}, \hyperpage{133}
+    \subitem {Interrupts events and flags management functions}, 
+		\hyperpage{160}
+  \item {I2C\_GetPEC}
+    \subitem {I2C}, \hyperpage{134}
+    \subitem {PEC management functions}, \hyperpage{151}
+  \item {I2C\_Init}
+    \subitem {I2C}, \hyperpage{134}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{145}
+  \item {i2c\_init}
+    \subitem {i2c.c}, \hyperpage{349}
+    \subitem {i2c.h}, \hyperpage{350}
+  \item {I2C\_InitTypeDef}, \hyperpage{318}
+    \subitem {I2C\_Ack}, \hyperpage{318}
+    \subitem {I2C\_AcknowledgedAddress}, \hyperpage{318}
+    \subitem {I2C\_ClockSpeed}, \hyperpage{318}
+    \subitem {I2C\_DutyCycle}, \hyperpage{318}
+    \subitem {I2C\_Mode}, \hyperpage{318}
+    \subitem {I2C\_OwnAddress1}, \hyperpage{318}
+  \item {I2C\_interrupts\_definition}, \hyperpage{169}
+    \subitem {I2C\_IT\_ADD10}, \hyperpage{170}
+    \subitem {I2C\_IT\_ADDR}, \hyperpage{170}
+    \subitem {I2C\_IT\_AF}, \hyperpage{170}
+    \subitem {I2C\_IT\_ARLO}, \hyperpage{170}
+    \subitem {I2C\_IT\_BERR}, \hyperpage{170}
+    \subitem {I2C\_IT\_BTF}, \hyperpage{170}
+    \subitem {I2C\_IT\_BUF}, \hyperpage{170}
+    \subitem {I2C\_IT\_ERR}, \hyperpage{170}
+    \subitem {I2C\_IT\_EVT}, \hyperpage{170}
+    \subitem {I2C\_IT\_OVR}, \hyperpage{170}
+    \subitem {I2C\_IT\_PECERR}, \hyperpage{171}
+    \subitem {I2C\_IT\_RXNE}, \hyperpage{171}
+    \subitem {I2C\_IT\_SB}, \hyperpage{171}
+    \subitem {I2C\_IT\_SMBALERT}, \hyperpage{171}
+    \subitem {I2C\_IT\_STOPF}, \hyperpage{171}
+    \subitem {I2C\_IT\_TIMEOUT}, \hyperpage{171}
+    \subitem {I2C\_IT\_TXE}, \hyperpage{171}
+    \subitem {IS\_I2C\_CLEAR\_IT}, \hyperpage{171}
+    \subitem {IS\_I2C\_CONFIG\_IT}, \hyperpage{171}
+    \subitem {IS\_I2C\_GET\_IT}, \hyperpage{171}
+  \item {I2C\_IT\_ADD10}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{170}
+  \item {I2C\_IT\_ADDR}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{170}
+  \item {I2C\_IT\_AF}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{170}
+  \item {I2C\_IT\_ARLO}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{170}
+  \item {I2C\_IT\_BERR}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{170}
+  \item {I2C\_IT\_BTF}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{170}
+  \item {I2C\_IT\_BUF}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{170}
+  \item {I2C\_IT\_ERR}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{170}
+  \item {I2C\_IT\_EVT}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{170}
+  \item {I2C\_IT\_OVR}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{170}
+  \item {I2C\_IT\_PECERR}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{171}
+  \item {I2C\_IT\_RXNE}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{171}
+  \item {I2C\_IT\_SB}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{171}
+  \item {I2C\_IT\_SMBALERT}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{171}
+  \item {I2C\_IT\_STOPF}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{171}
+  \item {I2C\_IT\_TIMEOUT}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{171}
+  \item {I2C\_IT\_TXE}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{171}
+  \item {I2C\_ITConfig}
+    \subitem {I2C}, \hyperpage{134}
+    \subitem {Interrupts events and flags management functions}, 
+		\hyperpage{161}
+  \item {I2C\_Mode}
+    \subitem {I2C\_InitTypeDef}, \hyperpage{318}
+  \item {I2C\_mode}, \hyperpage{162}
+    \subitem {I2C\_Mode\_I2C}, \hyperpage{163}
+    \subitem {I2C\_Mode\_SMBusDevice}, \hyperpage{163}
+    \subitem {I2C\_Mode\_SMBusHost}, \hyperpage{163}
+    \subitem {IS\_I2C\_MODE}, \hyperpage{163}
+  \item {I2C\_Mode\_I2C}
+    \subitem {I2C\_mode}, \hyperpage{163}
+  \item {I2C\_Mode\_SMBusDevice}
+    \subitem {I2C\_mode}, \hyperpage{163}
+  \item {I2C\_Mode\_SMBusHost}
+    \subitem {I2C\_mode}, \hyperpage{163}
+  \item {I2C\_NACK\_position}, \hyperpage{167}
+    \subitem {I2C\_NACKPosition\_Current}, \hyperpage{167}
+    \subitem {I2C\_NACKPosition\_Next}, \hyperpage{167}
+    \subitem {IS\_I2C\_NACK\_POSITION}, \hyperpage{168}
+  \item {I2C\_NACKPosition\_Current}
+    \subitem {I2C\_NACK\_position}, \hyperpage{167}
+  \item {I2C\_NACKPosition\_Next}
+    \subitem {I2C\_NACK\_position}, \hyperpage{167}
+  \item {I2C\_NACKPositionConfig}
+    \subitem {I2C}, \hyperpage{135}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{145}
+  \item {I2C\_own\_address1}, \hyperpage{179}
+    \subitem {IS\_I2C\_OWN\_ADDRESS1}, \hyperpage{179}
+  \item {I2C\_OwnAddress1}
+    \subitem {I2C\_InitTypeDef}, \hyperpage{318}
+  \item {I2C\_OwnAddress2Config}
+    \subitem {I2C}, \hyperpage{136}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{146}
+  \item {I2C\_PEC\_position}, \hyperpage{168}
+    \subitem {I2C\_PECPosition\_Current}, \hyperpage{169}
+    \subitem {I2C\_PECPosition\_Next}, \hyperpage{169}
+    \subitem {IS\_I2C\_PEC\_POSITION}, \hyperpage{169}
+  \item {I2C\_PECPosition\_Current}
+    \subitem {I2C\_PEC\_position}, \hyperpage{169}
+  \item {I2C\_PECPosition\_Next}
+    \subitem {I2C\_PEC\_position}, \hyperpage{169}
+  \item {I2C\_PECPositionConfig}
+    \subitem {I2C}, \hyperpage{136}
+    \subitem {PEC management functions}, \hyperpage{151}
+  \item {I2C\_Private\_Functions}, \hyperpage{140}
+  \item {i2c\_read}
+    \subitem {i2c.c}, \hyperpage{349}
+    \subitem {i2c.h}, \hyperpage{350}
+  \item {I2C\_ReadRegister}
+    \subitem {I2C}, \hyperpage{137}
+    \subitem {Interrupts events and flags management functions}, 
+		\hyperpage{161}
+  \item {I2C\_ReceiveData}
+    \subitem {Data transfers functions}, \hyperpage{149}
+    \subitem {I2C}, \hyperpage{137}
+  \item {I2C\_Register\_CCR}
+    \subitem {I2C\_registers}, \hyperpage{166}
+  \item {I2C\_Register\_CR1}
+    \subitem {I2C\_registers}, \hyperpage{166}
+  \item {I2C\_Register\_CR2}
+    \subitem {I2C\_registers}, \hyperpage{166}
+  \item {I2C\_Register\_DR}
+    \subitem {I2C\_registers}, \hyperpage{166}
+  \item {I2C\_Register\_OAR1}
+    \subitem {I2C\_registers}, \hyperpage{166}
+  \item {I2C\_Register\_OAR2}
+    \subitem {I2C\_registers}, \hyperpage{167}
+  \item {I2C\_Register\_SR1}
+    \subitem {I2C\_registers}, \hyperpage{167}
+  \item {I2C\_Register\_SR2}
+    \subitem {I2C\_registers}, \hyperpage{167}
+  \item {I2C\_Register\_TRISE}
+    \subitem {I2C\_registers}, \hyperpage{167}
+  \item {I2C\_registers}, \hyperpage{166}
+    \subitem {I2C\_Register\_CCR}, \hyperpage{166}
+    \subitem {I2C\_Register\_CR1}, \hyperpage{166}
+    \subitem {I2C\_Register\_CR2}, \hyperpage{166}
+    \subitem {I2C\_Register\_DR}, \hyperpage{166}
+    \subitem {I2C\_Register\_OAR1}, \hyperpage{166}
+    \subitem {I2C\_Register\_OAR2}, \hyperpage{167}
+    \subitem {I2C\_Register\_SR1}, \hyperpage{167}
+    \subitem {I2C\_Register\_SR2}, \hyperpage{167}
+    \subitem {I2C\_Register\_TRISE}, \hyperpage{167}
+    \subitem {IS\_I2C\_REGISTER}, \hyperpage{167}
+  \item {I2C\_Send7bitAddress}
+    \subitem {I2C}, \hyperpage{138}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{147}
+  \item {I2C\_SendData}
+    \subitem {Data transfers functions}, \hyperpage{149}
+    \subitem {I2C}, \hyperpage{138}
+  \item {I2C\_SMBus\_alert\_pin\_level}, \hyperpage{168}
+    \subitem {I2C\_SMBusAlert\_High}, \hyperpage{168}
+    \subitem {I2C\_SMBusAlert\_Low}, \hyperpage{168}
+    \subitem {IS\_I2C\_SMBUS\_ALERT}, \hyperpage{168}
+  \item {I2C\_SMBusAlert\_High}
+    \subitem {I2C\_SMBus\_alert\_pin\_level}, \hyperpage{168}
+  \item {I2C\_SMBusAlert\_Low}
+    \subitem {I2C\_SMBus\_alert\_pin\_level}, \hyperpage{168}
+  \item {I2C\_SMBusAlertConfig}
+    \subitem {I2C}, \hyperpage{138}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{147}
+  \item {I2C\_SoftwareResetCmd}
+    \subitem {I2C}, \hyperpage{139}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{147}
+  \item {I2C\_StretchClockCmd}
+    \subitem {I2C}, \hyperpage{139}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{148}
+  \item {I2C\_StructInit}
+    \subitem {I2C}, \hyperpage{140}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{148}
+  \item {I2C\_transfer\_direction}, \hyperpage{165}
+    \subitem {I2C\_Direction\_Receiver}, \hyperpage{165}
+    \subitem {I2C\_Direction\_Transmitter}, \hyperpage{165}
+    \subitem {IS\_I2C\_DIRECTION}, \hyperpage{165}
+  \item {I2C\_TransmitPEC}
+    \subitem {I2C}, \hyperpage{140}
+    \subitem {PEC management functions}, \hyperpage{152}
+  \item {i2c\_write}
+    \subitem {i2c.c}, \hyperpage{349}
+    \subitem {i2c.h}, \hyperpage{350}
+  \item {I2SSRC\_BitNumber}
+    \subitem {RCC}, \hyperpage{184}
+  \item {Init}
+    \subitem {ADC\_HandleTypeDef}, \hyperpage{314}
+  \item {Initialization and Configuration}, \hyperpage{99}
+    \subitem {GPIO\_DeInit}, \hyperpage{100}
+    \subitem {GPIO\_Init}, \hyperpage{100}
+    \subitem {GPIO\_PinLockConfig}, \hyperpage{101}
+    \subitem {GPIO\_StructInit}, \hyperpage{101}
+  \item {Initialization and Configuration functions}, \hyperpage{34}, 
+		\hyperpage{141}, \hyperpage{279}
+    \subitem {ADC\_Cmd}, \hyperpage{35}
+    \subitem {ADC\_CommonInit}, \hyperpage{35}
+    \subitem {ADC\_CommonStructInit}, \hyperpage{35}
+    \subitem {ADC\_DeInit}, \hyperpage{36}
+    \subitem {ADC\_Init}, \hyperpage{36}
+    \subitem {ADC\_StructInit}, \hyperpage{36}
+    \subitem {I2C\_AcknowledgeConfig}, \hyperpage{142}
+    \subitem {I2C\_ARPCmd}, \hyperpage{142}
+    \subitem {I2C\_Cmd}, \hyperpage{142}
+    \subitem {I2C\_DeInit}, \hyperpage{143}
+    \subitem {I2C\_DualAddressCmd}, \hyperpage{143}
+    \subitem {I2C\_FastModeDutyCycleConfig}, \hyperpage{143}
+    \subitem {I2C\_GeneralCallCmd}, \hyperpage{144}
+    \subitem {I2C\_GenerateSTART}, \hyperpage{144}
+    \subitem {I2C\_GenerateSTOP}, \hyperpage{145}
+    \subitem {I2C\_Init}, \hyperpage{145}
+    \subitem {I2C\_NACKPositionConfig}, \hyperpage{145}
+    \subitem {I2C\_OwnAddress2Config}, \hyperpage{146}
+    \subitem {I2C\_Send7bitAddress}, \hyperpage{147}
+    \subitem {I2C\_SMBusAlertConfig}, \hyperpage{147}
+    \subitem {I2C\_SoftwareResetCmd}, \hyperpage{147}
+    \subitem {I2C\_StretchClockCmd}, \hyperpage{148}
+    \subitem {I2C\_StructInit}, \hyperpage{148}
+    \subitem {USART\_ClockInit}, \hyperpage{280}
+    \subitem {USART\_ClockStructInit}, \hyperpage{280}
+    \subitem {USART\_Cmd}, \hyperpage{280}
+    \subitem {USART\_DeInit}, \hyperpage{281}
+    \subitem {USART\_Init}, \hyperpage{281}
+    \subitem {USART\_OneBitMethodCmd}, \hyperpage{281}
+    \subitem {USART\_OverSampling8Cmd}, \hyperpage{281}
+    \subitem {USART\_SetPrescaler}, \hyperpage{282}
+    \subitem {USART\_StructInit}, \hyperpage{282}
+  \item {Injected channels Configuration functions}, \hyperpage{49}
+    \subitem {ADC\_AutoInjectedConvCmd}, \hyperpage{50}
+    \subitem {ADC\_ExternalTrigInjectedConvConfig}, \hyperpage{50}
+    \subitem {ADC\_ExternalTrigInjectedConvEdgeConfig}, \hyperpage{51}
+    \subitem {ADC\_GetInjectedConversionValue}, \hyperpage{52}
+    \subitem {ADC\_GetSoftwareStartInjectedConvCmdStatus}, 
+		\hyperpage{52}
+    \subitem {ADC\_InjectedChannelConfig}, \hyperpage{53}
+    \subitem {ADC\_InjectedDiscModeCmd}, \hyperpage{55}
+    \subitem {ADC\_InjectedSequencerLengthConfig}, \hyperpage{55}
+    \subitem {ADC\_SetInjectedOffset}, \hyperpage{55}
+    \subitem {ADC\_SoftwareStartInjectedConv}, \hyperpage{56}
+  \item {Input}
+    \subitem {gpio.h}, \hyperpage{345}
+  \item {Instance}
+    \subitem {ADC\_HandleTypeDef}, \hyperpage{314}
+  \item {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{212}
+    \subitem {RCC\_AdjustHSICalibrationValue}, \hyperpage{213}
+    \subitem {RCC\_ClockSecuritySystemCmd}, \hyperpage{214}
+    \subitem {RCC\_DeInit}, \hyperpage{214}
+    \subitem {RCC\_HSEConfig}, \hyperpage{215}
+    \subitem {RCC\_HSICmd}, \hyperpage{215}
+    \subitem {RCC\_LSEConfig}, \hyperpage{216}
+    \subitem {RCC\_LSICmd}, \hyperpage{216}
+    \subitem {RCC\_MCO1Config}, \hyperpage{217}
+    \subitem {RCC\_MCO2Config}, \hyperpage{217}
+    \subitem {RCC\_PLLCmd}, \hyperpage{218}
+    \subitem {RCC\_PLLConfig}, \hyperpage{218}
+    \subitem {RCC\_PLLI2SCmd}, \hyperpage{220}
+    \subitem {RCC\_PLLI2SConfig}, \hyperpage{220}
+    \subitem {RCC\_WaitForHSEStartUp}, \hyperpage{221}
+  \item {Interrupts and flags management functions}, \hyperpage{56}, 
+		\hyperpage{241}, \hyperpage{292}
+    \subitem {ADC\_ClearFlag}, \hyperpage{58}
+    \subitem {ADC\_ClearITPendingBit}, \hyperpage{58}
+    \subitem {ADC\_GetFlagStatus}, \hyperpage{59}
+    \subitem {ADC\_GetITStatus}, \hyperpage{59}
+    \subitem {ADC\_ITConfig}, \hyperpage{60}
+    \subitem {RCC\_ClearFlag}, \hyperpage{241}
+    \subitem {RCC\_ClearITPendingBit}, \hyperpage{242}
+    \subitem {RCC\_GetFlagStatus}, \hyperpage{242}
+    \subitem {RCC\_GetITStatus}, \hyperpage{243}
+    \subitem {RCC\_ITConfig}, \hyperpage{244}
+    \subitem {USART\_ClearFlag}, \hyperpage{294}
+    \subitem {USART\_ClearITPendingBit}, \hyperpage{294}
+    \subitem {USART\_GetFlagStatus}, \hyperpage{295}
+    \subitem {USART\_GetITStatus}, \hyperpage{296}
+    \subitem {USART\_ITConfig}, \hyperpage{296}
+  \item {Interrupts events and flags management functions}, 
+		\hyperpage{153}
+    \subitem {I2C\_CheckEvent}, \hyperpage{155}
+    \subitem {I2C\_ClearFlag}, \hyperpage{156}
+    \subitem {I2C\_ClearITPendingBit}, \hyperpage{157}
+    \subitem {I2C\_GetFlagStatus}, \hyperpage{158}
+    \subitem {I2C\_GetITStatus}, \hyperpage{159}
+    \subitem {I2C\_GetLastEvent}, \hyperpage{160}
+    \subitem {I2C\_ITConfig}, \hyperpage{161}
+    \subitem {I2C\_ReadRegister}, \hyperpage{161}
+  \item {IrDA mode functions}, \hyperpage{290}
+    \subitem {USART\_IrDACmd}, \hyperpage{291}
+    \subitem {USART\_IrDAConfig}, \hyperpage{291}
+  \item {IRQ\_pin\_index}
+    \subitem {gpio.c}, \hyperpage{344}
+  \item {IRQ\_port\_num}
+    \subitem {gpio.c}, \hyperpage{344}
+  \item {IRQ\_status}
+    \subitem {gpio.c}, \hyperpage{344}
+  \item {IS\_ADC\_ALL\_PERIPH}
+    \subitem {ADC\_Exported\_Constants}, \hyperpage{61}
+  \item {IS\_ADC\_ANALOG\_WATCHDOG}
+    \subitem {ADC\_analog\_watchdog\_selection}, \hyperpage{82}
+  \item {IS\_ADC\_CHANNEL}
+    \subitem {ADC\_channels}, \hyperpage{76}
+  \item {IS\_ADC\_CLEAR\_FLAG}
+    \subitem {ADC\_flags\_definition}, \hyperpage{84}
+  \item {IS\_ADC\_DATA\_ALIGN}
+    \subitem {ADC\_data\_align}, \hyperpage{73}
+  \item {IS\_ADC\_DMA\_ACCESS\_MODE}
+    \subitem {ADC\_Direct\_memory\_access\_mode\_for\_multi\_mode}, 
+		\hyperpage{65}
+  \item {IS\_ADC\_EXT\_INJEC\_TRIG}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_injected\_channels\_conversion}, 
+		\hyperpage{80}
+  \item {IS\_ADC\_EXT\_INJEC\_TRIG\_EDGE}
+    \subitem {ADC\_external\_trigger\_edge\_for\_injected\_channels\_conversion}, 
+		\hyperpage{78}
+  \item {IS\_ADC\_EXT\_TRIG}
+    \subitem {ADC\_extrenal\_trigger\_sources\_for\_regular\_channels\_conversion}, 
+		\hyperpage{72}
+  \item {IS\_ADC\_EXT\_TRIG\_EDGE}
+    \subitem {ADC\_external\_trigger\_edge\_for\_regular\_channels\_conversion}, 
+		\hyperpage{69}
+  \item {IS\_ADC\_GET\_FLAG}
+    \subitem {ADC\_flags\_definition}, \hyperpage{84}
+  \item {IS\_ADC\_INJECTED\_CHANNEL}
+    \subitem {ADC\_injected\_channel\_selection}, \hyperpage{81}
+  \item {IS\_ADC\_INJECTED\_LENGTH}
+    \subitem {ADC\_injected\_length}, \hyperpage{86}
+  \item {IS\_ADC\_INJECTED\_RANK}
+    \subitem {ADC\_injected\_rank}, \hyperpage{86}
+  \item {IS\_ADC\_IT}
+    \subitem {ADC\_interrupts\_definition}, \hyperpage{83}
+  \item {IS\_ADC\_MODE}
+    \subitem {ADC\_Common\_mode}, \hyperpage{63}
+  \item {IS\_ADC\_OFFSET}
+    \subitem {ADC\_injected\_offset}, \hyperpage{85}
+  \item {IS\_ADC\_PRESCALER}
+    \subitem {ADC\_Prescaler}, \hyperpage{64}
+  \item {IS\_ADC\_REGULAR\_DISC\_NUMBER}
+    \subitem {ADC\_regular\_discontinuous\_mode\_number}, 
+		\hyperpage{87}
+  \item {IS\_ADC\_REGULAR\_LENGTH}
+    \subitem {ADC\_regular\_length}, \hyperpage{86}
+  \item {IS\_ADC\_REGULAR\_RANK}
+    \subitem {ADC\_regular\_rank}, \hyperpage{87}
+  \item {IS\_ADC\_RESOLUTION}
+    \subitem {ADC\_resolution}, \hyperpage{69}
+  \item {IS\_ADC\_SAMPLE\_TIME}
+    \subitem {ADC\_sampling\_times}, \hyperpage{77}
+  \item {IS\_ADC\_SAMPLING\_DELAY}
+    \subitem {ADC\_delay\_between\_2\_sampling\_phases}, \hyperpage{68}
+  \item {IS\_ADC\_THRESHOLD}
+    \subitem {ADC\_thresholds}, \hyperpage{85}
+  \item {IS\_GET\_GPIO\_PIN}
+    \subitem {GPIO\_pins\_define}, \hyperpage{112}
+  \item {IS\_GPIO\_AF}
+    \subitem {GPIO\_Alternat\_function\_selection\_define}, 
+		\hyperpage{121}
+  \item {IS\_GPIO\_ALL\_PERIPH}
+    \subitem {GPIO}, \hyperpage{89}
+  \item {IS\_GPIO\_BIT\_ACTION}
+    \subitem {GPIO}, \hyperpage{89}
+  \item {IS\_GPIO\_MODE}
+    \subitem {GPIO}, \hyperpage{89}
+  \item {IS\_GPIO\_OTYPE}
+    \subitem {GPIO}, \hyperpage{89}
+  \item {IS\_GPIO\_PIN}
+    \subitem {GPIO\_pins\_define}, \hyperpage{112}
+  \item {IS\_GPIO\_PIN\_SOURCE}
+    \subitem {GPIO\_Pin\_sources}, \hyperpage{115}
+  \item {IS\_GPIO\_PUPD}
+    \subitem {GPIO}, \hyperpage{89}
+  \item {IS\_GPIO\_SPEED}
+    \subitem {GPIO}, \hyperpage{89}
+  \item {IS\_I2C\_ACK\_STATE}
+    \subitem {I2C\_acknowledgement}, \hyperpage{164}
+  \item {IS\_I2C\_ACKNOWLEDGE\_ADDRESS}
+    \subitem {I2C\_acknowledged\_address}, \hyperpage{166}
+  \item {IS\_I2C\_ALL\_PERIPH}
+    \subitem {I2C\_Exported\_Constants}, \hyperpage{162}
+  \item {IS\_I2C\_CLEAR\_FLAG}
+    \subitem {I2C\_flags\_definition}, \hyperpage{174}
+  \item {IS\_I2C\_CLEAR\_IT}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{171}
+  \item {IS\_I2C\_CLOCK\_SPEED}
+    \subitem {I2C\_clock\_speed}, \hyperpage{179}
+  \item {IS\_I2C\_CONFIG\_IT}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{171}
+  \item {IS\_I2C\_DIRECTION}
+    \subitem {I2C\_transfer\_direction}, \hyperpage{165}
+  \item {IS\_I2C\_DUTY\_CYCLE}
+    \subitem {I2C\_duty\_cycle\_in\_fast\_mode}, \hyperpage{164}
+  \item {IS\_I2C\_EVENT}
+    \subitem {I2C\_Events}, \hyperpage{179}
+  \item {IS\_I2C\_GET\_FLAG}
+    \subitem {I2C\_flags\_definition}, \hyperpage{175}
+  \item {IS\_I2C\_GET\_IT}
+    \subitem {I2C\_interrupts\_definition}, \hyperpage{171}
+  \item {IS\_I2C\_MODE}
+    \subitem {I2C\_mode}, \hyperpage{163}
+  \item {IS\_I2C\_NACK\_POSITION}
+    \subitem {I2C\_NACK\_position}, \hyperpage{168}
+  \item {IS\_I2C\_OWN\_ADDRESS1}
+    \subitem {I2C\_own\_address1}, \hyperpage{179}
+  \item {IS\_I2C\_PEC\_POSITION}
+    \subitem {I2C\_PEC\_position}, \hyperpage{169}
+  \item {IS\_I2C\_REGISTER}
+    \subitem {I2C\_registers}, \hyperpage{167}
+  \item {IS\_I2C\_SMBUS\_ALERT}
+    \subitem {I2C\_SMBus\_alert\_pin\_level}, \hyperpage{168}
+  \item {IS\_RCC\_AHB1\_CLOCK\_PERIPH}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{254}
+  \item {IS\_RCC\_AHB1\_LPMODE\_PERIPH}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{254}
+  \item {IS\_RCC\_AHB1\_RESET\_PERIPH}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{254}
+  \item {IS\_RCC\_AHB2\_PERIPH}
+    \subitem {RCC\_AHB2\_Peripherals}, \hyperpage{256}
+  \item {IS\_RCC\_AHB3\_PERIPH}
+    \subitem {RCC\_AHB3\_Peripherals}, \hyperpage{257}
+  \item {IS\_RCC\_APB1\_PERIPH}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{257}
+  \item {IS\_RCC\_APB2\_PERIPH}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{259}
+  \item {IS\_RCC\_APB2\_RESET\_PERIPH}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{259}
+  \item {IS\_RCC\_CALIBRATION\_VALUE}
+    \subitem {RCC\_Flag}, \hyperpage{263}
+  \item {IS\_RCC\_CLEAR\_IT}
+    \subitem {RCC\_Interrupt\_Source}, \hyperpage{249}
+  \item {IS\_RCC\_FLAG}
+    \subitem {RCC\_Flag}, \hyperpage{263}
+  \item {IS\_RCC\_GET\_IT}
+    \subitem {RCC\_Interrupt\_Source}, \hyperpage{249}
+  \item {IS\_RCC\_HCLK}
+    \subitem {RCC\_AHB\_Clock\_Source}, \hyperpage{247}
+  \item {IS\_RCC\_HSE}
+    \subitem {RCC\_HSE\_configuration}, \hyperpage{245}
+  \item {IS\_RCC\_I2SCLK\_SOURCE}
+    \subitem {RCC\_I2S\_Clock\_Source}, \hyperpage{253}
+  \item {IS\_RCC\_IT}
+    \subitem {RCC\_Interrupt\_Source}, \hyperpage{249}
+  \item {IS\_RCC\_LSE}
+    \subitem {RCC\_LSE\_Configuration}, \hyperpage{250}
+  \item {IS\_RCC\_MCO1DIV}
+    \subitem {RCC\_MCO1\_Clock\_Source\_Prescaler}, \hyperpage{261}
+  \item {IS\_RCC\_MCO1SOURCE}
+    \subitem {RCC\_MCO1\_Clock\_Source\_Prescaler}, \hyperpage{261}
+  \item {IS\_RCC\_MCO2DIV}
+    \subitem {RCC\_MCO2\_Clock\_Source\_Prescaler}, \hyperpage{262}
+  \item {IS\_RCC\_MCO2SOURCE}
+    \subitem {RCC\_MCO2\_Clock\_Source\_Prescaler}, \hyperpage{262}
+  \item {IS\_RCC\_PCLK}
+    \subitem {RCC\_APB1\_APB2\_Clock\_Source}, \hyperpage{248}
+  \item {IS\_RCC\_PLL\_SOURCE}
+    \subitem {RCC\_PLL\_Clock\_Source}, \hyperpage{245}
+  \item {IS\_RCC\_PLLI2SN\_VALUE}
+    \subitem {RCC\_PLL\_Clock\_Source}, \hyperpage{245}
+  \item {IS\_RCC\_PLLI2SR\_VALUE}
+    \subitem {RCC\_PLL\_Clock\_Source}, \hyperpage{246}
+  \item {IS\_RCC\_PLLM\_VALUE}
+    \subitem {RCC\_PLL\_Clock\_Source}, \hyperpage{246}
+  \item {IS\_RCC\_PLLN\_VALUE}
+    \subitem {RCC\_PLL\_Clock\_Source}, \hyperpage{246}
+  \item {IS\_RCC\_PLLP\_VALUE}
+    \subitem {RCC\_PLL\_Clock\_Source}, \hyperpage{246}
+  \item {IS\_RCC\_PLLQ\_VALUE}
+    \subitem {RCC\_PLL\_Clock\_Source}, \hyperpage{246}
+  \item {IS\_RCC\_RTCCLK\_SOURCE}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{251}
+  \item {IS\_RCC\_SYSCLK\_SOURCE}
+    \subitem {RCC\_System\_Clock\_Source}, \hyperpage{246}
+  \item {IS\_USART\_1236\_PERIPH}
+    \subitem {USART\_Exported\_Constants}, \hyperpage{297}
+  \item {IS\_USART\_ADDRESS}
+    \subitem {USART\_Flags}, \hyperpage{306}
+  \item {IS\_USART\_ALL\_PERIPH}
+    \subitem {USART\_Exported\_Constants}, \hyperpage{298}
+  \item {IS\_USART\_BAUDRATE}
+    \subitem {USART\_Flags}, \hyperpage{306}
+  \item {IS\_USART\_CLEAR\_FLAG}
+    \subitem {USART\_Flags}, \hyperpage{306}
+  \item {IS\_USART\_CLEAR\_IT}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{303}
+  \item {IS\_USART\_CLOCK}
+    \subitem {USART\_Clock}, \hyperpage{301}
+  \item {IS\_USART\_CONFIG\_IT}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{303}
+  \item {IS\_USART\_CPHA}
+    \subitem {USART\_Clock\_Phase}, \hyperpage{301}
+  \item {IS\_USART\_CPOL}
+    \subitem {USART\_Clock\_Polarity}, \hyperpage{301}
+  \item {IS\_USART\_DATA}
+    \subitem {USART\_Flags}, \hyperpage{306}
+  \item {IS\_USART\_DMAREQ}
+    \subitem {USART\_DMA\_Requests}, \hyperpage{304}
+  \item {IS\_USART\_FLAG}
+    \subitem {USART\_Flags}, \hyperpage{307}
+  \item {IS\_USART\_GET\_IT}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{303}
+  \item {IS\_USART\_HARDWARE\_FLOW\_CONTROL}
+    \subitem {USART\_Hardware\_Flow\_Control}, \hyperpage{300}
+  \item {IS\_USART\_IRDA\_MODE}
+    \subitem {USART\_IrDA\_Low\_Power}, \hyperpage{306}
+  \item {IS\_USART\_LASTBIT}
+    \subitem {USART\_Last\_Bit}, \hyperpage{302}
+  \item {IS\_USART\_LIN\_BREAK\_DETECT\_LENGTH}
+    \subitem {USART\_LIN\_Break\_Detection\_Length}, \hyperpage{305}
+  \item {IS\_USART\_MODE}
+    \subitem {USART\_Mode}, \hyperpage{300}
+  \item {IS\_USART\_PARITY}
+    \subitem {USART\_Parity}, \hyperpage{299}
+  \item {IS\_USART\_STOPBITS}
+    \subitem {USART\_Stop\_Bits}, \hyperpage{298}
+  \item {IS\_USART\_WAKEUP}
+    \subitem {USART\_WakeUp\_methods}, \hyperpage{305}
+  \item {IS\_USART\_WORD\_LENGTH}
+    \subitem {USART\_Word\_Length}, \hyperpage{298}
+  \item {IT\_MASK}
+    \subitem {USART}, \hyperpage{267}
+  \item {ITEN\_MASK}
+    \subitem {I2C}, \hyperpage{124}
+
+  \indexspace
+
+  \item {JDR\_OFFSET}
+    \subitem {ADC}, \hyperpage{13}
+  \item {JSQR\_JL\_RESET}
+    \subitem {ADC}, \hyperpage{13}
+  \item {JSQR\_JL\_SET}
+    \subitem {ADC}, \hyperpage{13}
+  \item {JSQR\_JSQ\_SET}
+    \subitem {ADC}, \hyperpage{13}
+
+  \indexspace
+
+  \item {LED\_OFF}
+    \subitem {platform.h}, \hyperpage{352}
+  \item {LED\_ON}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {LIN mode functions}, \hyperpage{285}
+    \subitem {USART\_LINBreakDetectLengthConfig}, \hyperpage{286}
+    \subitem {USART\_LINCmd}, \hyperpage{287}
+    \subitem {USART\_SendBreak}, \hyperpage{287}
+  \item {Lock}
+    \subitem {ADC\_HandleTypeDef}, \hyperpage{314}
+  \item {LSION\_BitNumber}
+    \subitem {RCC}, \hyperpage{184}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.c}, \hyperpage{424}
+  \item {main.c}
+    \subitem {main}, \hyperpage{424}
+    \subitem {my\_sqrt\_fixed\_point}, \hyperpage{424}
+    \subitem {my\_sqrt\_int}, \hyperpage{426}
+  \item {Mode}
+    \subitem {GPIO\_InitTypeDef}, \hyperpage{317}
+  \item {MultiProcessor Communication functions}, \hyperpage{284}
+    \subitem {USART\_ReceiverWakeUpCmd}, \hyperpage{284}
+    \subitem {USART\_SetAddress}, \hyperpage{285}
+    \subitem {USART\_WakeUpConfig}, \hyperpage{285}
+  \item {my\_sqrt\_fixed\_point}
+    \subitem {main.c}, \hyperpage{424}
+  \item {my\_sqrt\_int}
+    \subitem {main.c}, \hyperpage{426}
+
+  \indexspace
+
+  \item {NbrOfConversion}
+    \subitem {\_ADC\_InitTypeDef}, \hyperpage{312}
+  \item {NbrOfCurrentConversionRank}
+    \subitem {ADC\_HandleTypeDef}, \hyperpage{314}
+  \item {NbrOfDiscConversion}
+    \subitem {\_ADC\_InitTypeDef}, \hyperpage{312}
+  \item {NC}
+    \subitem {platform.h}, \hyperpage{356}
+  \item {None}
+    \subitem {gpio.h}, \hyperpage{346}
+
+  \indexspace
+
+  \item {Objects/adc.d}, \hyperpage{422}
+  \item {Objects/comparator.d}, \hyperpage{422}
+  \item {Objects/gpio.d}, \hyperpage{422}
+  \item {Objects/i2c.d}, \hyperpage{422}
+  \item {Objects/main.d}, \hyperpage{422}
+  \item {Objects/startup\_stm32f401xe.d}, \hyperpage{422}
+  \item {Objects/stm32f4xx\_adc.d}, \hyperpage{422}
+  \item {Objects/stm32f4xx\_gpio.d}, \hyperpage{422}
+  \item {Objects/stm32f4xx\_i2c.d}, \hyperpage{422}
+  \item {Objects/stm32f4xx\_rcc.d}, \hyperpage{422}
+  \item {Objects/stm32f4xx\_usart.d}, \hyperpage{422}
+  \item {Objects/system\_stm32f4xx.d}, \hyperpage{422}
+  \item {Objects/timer.d}, \hyperpage{422}
+  \item {Objects/uart.d}, \hyperpage{422}
+  \item {Offset}
+    \subitem {ADC\_ChannelConfTypeDef}, \hyperpage{313}
+  \item {Output}
+    \subitem {gpio.h}, \hyperpage{346}
+
+  \indexspace
+
+  \item {P\_ADC}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_CMP\_NEG}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_CMP\_PLUS}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_DBG\_ISR}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_DBG\_MAIN}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_IR}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_LCD\_DATA4}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_LCD\_DATA5}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_LCD\_DATA6}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_LCD\_DATA7}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_LCD\_E}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_LCD\_RS}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_LCD\_RW}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_LED\_B}
+    \subitem {platform.h}, \hyperpage{353}
+  \item {P\_LED\_G}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_LED\_R}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_PERIOD}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_RX}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_SAMPLE}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_SCL}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_SDA}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_SPEAKER}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_SW}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_SW\_CR}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_SW\_DN}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_SW\_LT}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_SW\_RT}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_SW\_UP}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {P\_TX}
+    \subitem {platform.h}, \hyperpage{354}
+  \item {PA\_0}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_1}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_10}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_11}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_12}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_13}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_14}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_15}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_2}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_3}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_4}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_5}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_6}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_7}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_8}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PA\_9}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_0}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_1}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_10}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_12}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_13}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_14}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_15}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_2}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_3}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_4}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_5}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_6}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_7}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_8}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PB\_9}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PC\_0}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PC\_1}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PC\_10}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PC\_11}
+    \subitem {platform.h}, \hyperpage{356}
+  \item {PC\_12}
+    \subitem {platform.h}, \hyperpage{356}
+  \item {PC\_13}
+    \subitem {platform.h}, \hyperpage{356}
+  \item {PC\_14}
+    \subitem {platform.h}, \hyperpage{356}
+  \item {PC\_15}
+    \subitem {platform.h}, \hyperpage{356}
+  \item {PC\_2}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PC\_3}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PC\_4}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PC\_5}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PC\_6}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PC\_7}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PC\_8}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PC\_9}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {PCLK1\_Frequency}
+    \subitem {RCC\_ClocksTypeDef}, \hyperpage{319}
+  \item {PCLK2\_Frequency}
+    \subitem {RCC\_ClocksTypeDef}, \hyperpage{319}
+  \item {PD\_2}
+    \subitem {platform.h}, \hyperpage{356}
+  \item {PEC management functions}, \hyperpage{150}
+    \subitem {I2C\_CalculatePEC}, \hyperpage{150}
+    \subitem {I2C\_GetPEC}, \hyperpage{151}
+    \subitem {I2C\_PECPositionConfig}, \hyperpage{151}
+    \subitem {I2C\_TransmitPEC}, \hyperpage{152}
+  \item {peripheral}
+    \subitem {PinMap}, \hyperpage{319}
+  \item {Peripheral clocks configuration functions}, \hyperpage{226}
+    \subitem {RCC\_AHB1PeriphClockCmd}, \hyperpage{227}
+    \subitem {RCC\_AHB1PeriphClockLPModeCmd}, \hyperpage{228}
+    \subitem {RCC\_AHB1PeriphResetCmd}, \hyperpage{229}
+    \subitem {RCC\_AHB2PeriphClockCmd}, \hyperpage{230}
+    \subitem {RCC\_AHB2PeriphClockLPModeCmd}, \hyperpage{231}
+    \subitem {RCC\_AHB2PeriphResetCmd}, \hyperpage{231}
+    \subitem {RCC\_AHB3PeriphClockCmd}, \hyperpage{232}
+    \subitem {RCC\_AHB3PeriphClockLPModeCmd}, \hyperpage{232}
+    \subitem {RCC\_AHB3PeriphResetCmd}, \hyperpage{233}
+    \subitem {RCC\_APB1PeriphClockCmd}, \hyperpage{233}
+    \subitem {RCC\_APB1PeriphClockLPModeCmd}, \hyperpage{234}
+    \subitem {RCC\_APB1PeriphResetCmd}, \hyperpage{235}
+    \subitem {RCC\_APB2PeriphClockCmd}, \hyperpage{236}
+    \subitem {RCC\_APB2PeriphClockLPModeCmd}, \hyperpage{237}
+    \subitem {RCC\_APB2PeriphResetCmd}, \hyperpage{238}
+    \subitem {RCC\_BackupResetCmd}, \hyperpage{239}
+    \subitem {RCC\_I2SCLKConfig}, \hyperpage{239}
+    \subitem {RCC\_RTCCLKCmd}, \hyperpage{240}
+    \subitem {RCC\_RTCCLKConfig}, \hyperpage{240}
+  \item {PH\_0}
+    \subitem {platform.h}, \hyperpage{356}
+  \item {PH\_1}
+    \subitem {platform.h}, \hyperpage{356}
+  \item {Pin}
+    \subitem {GPIO\_InitTypeDef}, \hyperpage{317}
+    \subitem {platform.h}, \hyperpage{355}
+  \item {pin}
+    \subitem {analogin\_s}, \hyperpage{316}
+    \subitem {PinMap}, \hyperpage{319}
+  \item {pin\_function}
+    \subitem {adc.c}, \hyperpage{324}
+    \subitem {adc.h}, \hyperpage{335}
+  \item {PinMap}, \hyperpage{319}
+    \subitem {function}, \hyperpage{319}
+    \subitem {peripheral}, \hyperpage{319}
+    \subitem {pin}, \hyperpage{319}
+  \item {PinMap\_ADC}
+    \subitem {adc.c}, \hyperpage{325}
+  \item {pinmap\_find\_function}
+    \subitem {adc.c}, \hyperpage{324}
+  \item {pinmap\_find\_peripheral}
+    \subitem {adc.c}, \hyperpage{325}
+    \subitem {adc.h}, \hyperpage{335}
+  \item {pinmap\_function}
+    \subitem {adc.c}, \hyperpage{325}
+    \subitem {adc.h}, \hyperpage{335}
+  \item {pinmap\_peripheral}
+    \subitem {adc.c}, \hyperpage{325}
+    \subitem {adc.h}, \hyperpage{335}
+  \item {pinmap\_pinout}
+    \subitem {adc.c}, \hyperpage{325}
+    \subitem {adc.h}, \hyperpage{336}
+  \item {PinMode}
+    \subitem {gpio.h}, \hyperpage{345}
+  \item {platform.h}
+    \subitem {ADC\_BITS}, \hyperpage{352}
+    \subitem {ADC\_MASK}, \hyperpage{352}
+    \subitem {CLK\_FREQ}, \hyperpage{352}
+    \subitem {DAC\_BITS}, \hyperpage{352}
+    \subitem {DAC\_MASK}, \hyperpage{352}
+    \subitem {GET\_PIN\_INDEX}, \hyperpage{352}
+    \subitem {GET\_PORT}, \hyperpage{352}
+    \subitem {GET\_PORT\_INDEX}, \hyperpage{352}
+    \subitem {LED\_OFF}, \hyperpage{352}
+    \subitem {LED\_ON}, \hyperpage{353}
+    \subitem {NC}, \hyperpage{356}
+    \subitem {P\_ADC}, \hyperpage{353}
+    \subitem {P\_CMP\_NEG}, \hyperpage{353}
+    \subitem {P\_CMP\_PLUS}, \hyperpage{353}
+    \subitem {P\_DBG\_ISR}, \hyperpage{353}
+    \subitem {P\_DBG\_MAIN}, \hyperpage{353}
+    \subitem {P\_IR}, \hyperpage{353}
+    \subitem {P\_LCD\_DATA4}, \hyperpage{353}
+    \subitem {P\_LCD\_DATA5}, \hyperpage{353}
+    \subitem {P\_LCD\_DATA6}, \hyperpage{353}
+    \subitem {P\_LCD\_DATA7}, \hyperpage{353}
+    \subitem {P\_LCD\_E}, \hyperpage{353}
+    \subitem {P\_LCD\_RS}, \hyperpage{353}
+    \subitem {P\_LCD\_RW}, \hyperpage{353}
+    \subitem {P\_LED\_B}, \hyperpage{353}
+    \subitem {P\_LED\_G}, \hyperpage{354}
+    \subitem {P\_LED\_R}, \hyperpage{354}
+    \subitem {P\_PERIOD}, \hyperpage{354}
+    \subitem {P\_RX}, \hyperpage{354}
+    \subitem {P\_SAMPLE}, \hyperpage{354}
+    \subitem {P\_SCL}, \hyperpage{354}
+    \subitem {P\_SDA}, \hyperpage{354}
+    \subitem {P\_SPEAKER}, \hyperpage{354}
+    \subitem {P\_SW}, \hyperpage{354}
+    \subitem {P\_SW\_CR}, \hyperpage{354}
+    \subitem {P\_SW\_DN}, \hyperpage{354}
+    \subitem {P\_SW\_LT}, \hyperpage{354}
+    \subitem {P\_SW\_RT}, \hyperpage{354}
+    \subitem {P\_SW\_UP}, \hyperpage{354}
+    \subitem {P\_TX}, \hyperpage{354}
+    \subitem {PA\_0}, \hyperpage{355}
+    \subitem {PA\_1}, \hyperpage{355}
+    \subitem {PA\_10}, \hyperpage{355}
+    \subitem {PA\_11}, \hyperpage{355}
+    \subitem {PA\_12}, \hyperpage{355}
+    \subitem {PA\_13}, \hyperpage{355}
+    \subitem {PA\_14}, \hyperpage{355}
+    \subitem {PA\_15}, \hyperpage{355}
+    \subitem {PA\_2}, \hyperpage{355}
+    \subitem {PA\_3}, \hyperpage{355}
+    \subitem {PA\_4}, \hyperpage{355}
+    \subitem {PA\_5}, \hyperpage{355}
+    \subitem {PA\_6}, \hyperpage{355}
+    \subitem {PA\_7}, \hyperpage{355}
+    \subitem {PA\_8}, \hyperpage{355}
+    \subitem {PA\_9}, \hyperpage{355}
+    \subitem {PB\_0}, \hyperpage{355}
+    \subitem {PB\_1}, \hyperpage{355}
+    \subitem {PB\_10}, \hyperpage{355}
+    \subitem {PB\_12}, \hyperpage{355}
+    \subitem {PB\_13}, \hyperpage{355}
+    \subitem {PB\_14}, \hyperpage{355}
+    \subitem {PB\_15}, \hyperpage{355}
+    \subitem {PB\_2}, \hyperpage{355}
+    \subitem {PB\_3}, \hyperpage{355}
+    \subitem {PB\_4}, \hyperpage{355}
+    \subitem {PB\_5}, \hyperpage{355}
+    \subitem {PB\_6}, \hyperpage{355}
+    \subitem {PB\_7}, \hyperpage{355}
+    \subitem {PB\_8}, \hyperpage{355}
+    \subitem {PB\_9}, \hyperpage{355}
+    \subitem {PC\_0}, \hyperpage{355}
+    \subitem {PC\_1}, \hyperpage{355}
+    \subitem {PC\_10}, \hyperpage{355}
+    \subitem {PC\_11}, \hyperpage{356}
+    \subitem {PC\_12}, \hyperpage{356}
+    \subitem {PC\_13}, \hyperpage{356}
+    \subitem {PC\_14}, \hyperpage{356}
+    \subitem {PC\_15}, \hyperpage{356}
+    \subitem {PC\_2}, \hyperpage{355}
+    \subitem {PC\_3}, \hyperpage{355}
+    \subitem {PC\_4}, \hyperpage{355}
+    \subitem {PC\_5}, \hyperpage{355}
+    \subitem {PC\_6}, \hyperpage{355}
+    \subitem {PC\_7}, \hyperpage{355}
+    \subitem {PC\_8}, \hyperpage{355}
+    \subitem {PC\_9}, \hyperpage{355}
+    \subitem {PD\_2}, \hyperpage{356}
+    \subitem {PH\_0}, \hyperpage{356}
+    \subitem {PH\_1}, \hyperpage{356}
+    \subitem {Pin}, \hyperpage{355}
+  \item {PLLI2SON\_BitNumber}
+    \subitem {RCC}, \hyperpage{184}
+  \item {PLLON\_BitNumber}
+    \subitem {RCC}, \hyperpage{184}
+  \item {PortA}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {PortB}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {PortC}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {PortD}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {PortE}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {PortH}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {PortName}
+    \subitem {adc.h}, \hyperpage{334}
+  \item {priority}
+    \subitem {gpio.c}, \hyperpage{344}
+  \item {prioritygroup}
+    \subitem {gpio.c}, \hyperpage{344}
+  \item {Pull}
+    \subitem {GPIO\_InitTypeDef}, \hyperpage{317}
+  \item {PullDown}
+    \subitem {gpio.h}, \hyperpage{346}
+  \item {PullUp}
+    \subitem {gpio.h}, \hyperpage{346}
+
+  \indexspace
+
+  \item {Rank}
+    \subitem {ADC\_ChannelConfTypeDef}, \hyperpage{313}
+  \item {RCC}, \hyperpage{179}
+    \subitem {BDCR\_ADDRESS}, \hyperpage{182}
+    \subitem {BDCR\_BDRST\_BB}, \hyperpage{182}
+    \subitem {BDCR\_OFFSET}, \hyperpage{182}
+    \subitem {BDCR\_RTCEN\_BB}, \hyperpage{182}
+    \subitem {BDRST\_BitNumber}, \hyperpage{182}
+    \subitem {CFGR\_I2SSRC\_BB}, \hyperpage{182}
+    \subitem {CFGR\_MCO1\_RESET\_MASK}, \hyperpage{183}
+    \subitem {CFGR\_MCO2\_RESET\_MASK}, \hyperpage{183}
+    \subitem {CFGR\_OFFSET}, \hyperpage{183}
+    \subitem {CIR\_BYTE2\_ADDRESS}, \hyperpage{183}
+    \subitem {CIR\_BYTE3\_ADDRESS}, \hyperpage{183}
+    \subitem {CR\_BYTE3\_ADDRESS}, \hyperpage{183}
+    \subitem {CR\_CSSON\_BB}, \hyperpage{183}
+    \subitem {CR\_HSION\_BB}, \hyperpage{183}
+    \subitem {CR\_OFFSET}, \hyperpage{183}
+    \subitem {CR\_PLLI2SON\_BB}, \hyperpage{183}
+    \subitem {CR\_PLLON\_BB}, \hyperpage{183}
+    \subitem {CSR\_LSION\_BB}, \hyperpage{183}
+    \subitem {CSR\_OFFSET}, \hyperpage{183}
+    \subitem {CSSON\_BitNumber}, \hyperpage{183}
+    \subitem {FLAG\_MASK}, \hyperpage{183}
+    \subitem {HSION\_BitNumber}, \hyperpage{184}
+    \subitem {I2SSRC\_BitNumber}, \hyperpage{184}
+    \subitem {LSION\_BitNumber}, \hyperpage{184}
+    \subitem {PLLI2SON\_BitNumber}, \hyperpage{184}
+    \subitem {PLLON\_BitNumber}, \hyperpage{184}
+    \subitem {RCC\_AdjustHSICalibrationValue}, \hyperpage{184}
+    \subitem {RCC\_AHB1PeriphClockCmd}, \hyperpage{184}
+    \subitem {RCC\_AHB1PeriphClockLPModeCmd}, \hyperpage{185}
+    \subitem {RCC\_AHB1PeriphResetCmd}, \hyperpage{186}
+    \subitem {RCC\_AHB2PeriphClockCmd}, \hyperpage{187}
+    \subitem {RCC\_AHB2PeriphClockLPModeCmd}, \hyperpage{188}
+    \subitem {RCC\_AHB2PeriphResetCmd}, \hyperpage{188}
+    \subitem {RCC\_AHB3PeriphClockCmd}, \hyperpage{189}
+    \subitem {RCC\_AHB3PeriphClockLPModeCmd}, \hyperpage{189}
+    \subitem {RCC\_AHB3PeriphResetCmd}, \hyperpage{190}
+    \subitem {RCC\_APB1PeriphClockCmd}, \hyperpage{190}
+    \subitem {RCC\_APB1PeriphClockLPModeCmd}, \hyperpage{191}
+    \subitem {RCC\_APB1PeriphResetCmd}, \hyperpage{192}
+    \subitem {RCC\_APB2PeriphClockCmd}, \hyperpage{193}
+    \subitem {RCC\_APB2PeriphClockLPModeCmd}, \hyperpage{194}
+    \subitem {RCC\_APB2PeriphResetCmd}, \hyperpage{195}
+    \subitem {RCC\_BackupResetCmd}, \hyperpage{196}
+    \subitem {RCC\_ClearFlag}, \hyperpage{196}
+    \subitem {RCC\_ClearITPendingBit}, \hyperpage{197}
+    \subitem {RCC\_ClockSecuritySystemCmd}, \hyperpage{197}
+    \subitem {RCC\_DeInit}, \hyperpage{198}
+    \subitem {RCC\_GetClocksFreq}, \hyperpage{198}
+    \subitem {RCC\_GetFlagStatus}, \hyperpage{199}
+    \subitem {RCC\_GetITStatus}, \hyperpage{200}
+    \subitem {RCC\_GetSYSCLKSource}, \hyperpage{200}
+    \subitem {RCC\_HCLKConfig}, \hyperpage{200}
+    \subitem {RCC\_HSEConfig}, \hyperpage{201}
+    \subitem {RCC\_HSICmd}, \hyperpage{202}
+    \subitem {RCC\_I2SCLKConfig}, \hyperpage{202}
+    \subitem {RCC\_ITConfig}, \hyperpage{203}
+    \subitem {RCC\_LSEConfig}, \hyperpage{203}
+    \subitem {RCC\_LSICmd}, \hyperpage{204}
+    \subitem {RCC\_MCO1Config}, \hyperpage{204}
+    \subitem {RCC\_MCO2Config}, \hyperpage{205}
+    \subitem {RCC\_OFFSET}, \hyperpage{184}
+    \subitem {RCC\_PCLK1Config}, \hyperpage{206}
+    \subitem {RCC\_PCLK2Config}, \hyperpage{206}
+    \subitem {RCC\_PLLCmd}, \hyperpage{207}
+    \subitem {RCC\_PLLConfig}, \hyperpage{207}
+    \subitem {RCC\_PLLI2SCmd}, \hyperpage{209}
+    \subitem {RCC\_PLLI2SConfig}, \hyperpage{209}
+    \subitem {RCC\_RTCCLKCmd}, \hyperpage{210}
+    \subitem {RCC\_RTCCLKConfig}, \hyperpage{210}
+    \subitem {RCC\_SYSCLKConfig}, \hyperpage{211}
+    \subitem {RCC\_WaitForHSEStartUp}, \hyperpage{211}
+    \subitem {RTCEN\_BitNumber}, \hyperpage{184}
+  \item {RCC\_ADC1\_CLK\_ENABLE}
+    \subitem {adc.h}, \hyperpage{332}
+  \item {RCC\_AdjustHSICalibrationValue}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{213}
+    \subitem {RCC}, \hyperpage{184}
+  \item {RCC\_AHB1\_Peripherals}, \hyperpage{254}
+    \subitem {IS\_RCC\_AHB1\_CLOCK\_PERIPH}, \hyperpage{254}
+    \subitem {IS\_RCC\_AHB1\_LPMODE\_PERIPH}, \hyperpage{254}
+    \subitem {IS\_RCC\_AHB1\_RESET\_PERIPH}, \hyperpage{254}
+    \subitem {RCC\_AHB1Periph\_BKPSRAM}, \hyperpage{254}
+    \subitem {RCC\_AHB1Periph\_CCMDATARAMEN}, \hyperpage{254}
+    \subitem {RCC\_AHB1Periph\_CRC}, \hyperpage{254}
+    \subitem {RCC\_AHB1Periph\_DMA1}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_DMA2}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_ETH\_MAC}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_ETH\_MAC\_PTP}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_ETH\_MAC\_Rx}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_ETH\_MAC\_Tx}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_FLITF}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_GPIOA}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_GPIOB}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_GPIOC}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_GPIOD}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_GPIOE}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_GPIOF}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_GPIOG}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_GPIOH}, \hyperpage{255}
+    \subitem {RCC\_AHB1Periph\_GPIOI}, \hyperpage{256}
+    \subitem {RCC\_AHB1Periph\_OTG\_HS}, \hyperpage{256}
+    \subitem {RCC\_AHB1Periph\_OTG\_HS\_ULPI}, \hyperpage{256}
+    \subitem {RCC\_AHB1Periph\_SRAM1}, \hyperpage{256}
+    \subitem {RCC\_AHB1Periph\_SRAM2}, \hyperpage{256}
+  \item {RCC\_AHB1Periph\_BKPSRAM}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{254}
+  \item {RCC\_AHB1Periph\_CCMDATARAMEN}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{254}
+  \item {RCC\_AHB1Periph\_CRC}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{254}
+  \item {RCC\_AHB1Periph\_DMA1}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_DMA2}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_ETH\_MAC}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_ETH\_MAC\_PTP}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_ETH\_MAC\_Rx}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_ETH\_MAC\_Tx}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_FLITF}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_GPIOA}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_GPIOB}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_GPIOC}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_GPIOD}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_GPIOE}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_GPIOF}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_GPIOG}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_GPIOH}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{255}
+  \item {RCC\_AHB1Periph\_GPIOI}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{256}
+  \item {RCC\_AHB1Periph\_OTG\_HS}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{256}
+  \item {RCC\_AHB1Periph\_OTG\_HS\_ULPI}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{256}
+  \item {RCC\_AHB1Periph\_SRAM1}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{256}
+  \item {RCC\_AHB1Periph\_SRAM2}
+    \subitem {RCC\_AHB1\_Peripherals}, \hyperpage{256}
+  \item {RCC\_AHB1PeriphClockCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{227}
+    \subitem {RCC}, \hyperpage{184}
+  \item {RCC\_AHB1PeriphClockLPModeCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{228}
+    \subitem {RCC}, \hyperpage{185}
+  \item {RCC\_AHB1PeriphResetCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{229}
+    \subitem {RCC}, \hyperpage{186}
+  \item {RCC\_AHB2\_Peripherals}, \hyperpage{256}
+    \subitem {IS\_RCC\_AHB2\_PERIPH}, \hyperpage{256}
+    \subitem {RCC\_AHB2Periph\_CRYP}, \hyperpage{256}
+    \subitem {RCC\_AHB2Periph\_DCMI}, \hyperpage{256}
+    \subitem {RCC\_AHB2Periph\_HASH}, \hyperpage{256}
+    \subitem {RCC\_AHB2Periph\_OTG\_FS}, \hyperpage{256}
+    \subitem {RCC\_AHB2Periph\_RNG}, \hyperpage{256}
+  \item {RCC\_AHB2Periph\_CRYP}
+    \subitem {RCC\_AHB2\_Peripherals}, \hyperpage{256}
+  \item {RCC\_AHB2Periph\_DCMI}
+    \subitem {RCC\_AHB2\_Peripherals}, \hyperpage{256}
+  \item {RCC\_AHB2Periph\_HASH}
+    \subitem {RCC\_AHB2\_Peripherals}, \hyperpage{256}
+  \item {RCC\_AHB2Periph\_OTG\_FS}
+    \subitem {RCC\_AHB2\_Peripherals}, \hyperpage{256}
+  \item {RCC\_AHB2Periph\_RNG}
+    \subitem {RCC\_AHB2\_Peripherals}, \hyperpage{256}
+  \item {RCC\_AHB2PeriphClockCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{230}
+    \subitem {RCC}, \hyperpage{187}
+  \item {RCC\_AHB2PeriphClockLPModeCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{231}
+    \subitem {RCC}, \hyperpage{188}
+  \item {RCC\_AHB2PeriphResetCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{231}
+    \subitem {RCC}, \hyperpage{188}
+  \item {RCC\_AHB3\_Peripherals}, \hyperpage{257}
+    \subitem {IS\_RCC\_AHB3\_PERIPH}, \hyperpage{257}
+    \subitem {RCC\_AHB3Periph\_FSMC}, \hyperpage{257}
+  \item {RCC\_AHB3Periph\_FSMC}
+    \subitem {RCC\_AHB3\_Peripherals}, \hyperpage{257}
+  \item {RCC\_AHB3PeriphClockCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{232}
+    \subitem {RCC}, \hyperpage{189}
+  \item {RCC\_AHB3PeriphClockLPModeCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{232}
+    \subitem {RCC}, \hyperpage{189}
+  \item {RCC\_AHB3PeriphResetCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{233}
+    \subitem {RCC}, \hyperpage{190}
+  \item {RCC\_AHB\_Clock\_Source}, \hyperpage{247}
+    \subitem {IS\_RCC\_HCLK}, \hyperpage{247}
+    \subitem {RCC\_SYSCLK\_Div1}, \hyperpage{247}
+    \subitem {RCC\_SYSCLK\_Div128}, \hyperpage{247}
+    \subitem {RCC\_SYSCLK\_Div16}, \hyperpage{247}
+    \subitem {RCC\_SYSCLK\_Div2}, \hyperpage{247}
+    \subitem {RCC\_SYSCLK\_Div256}, \hyperpage{247}
+    \subitem {RCC\_SYSCLK\_Div4}, \hyperpage{247}
+    \subitem {RCC\_SYSCLK\_Div512}, \hyperpage{247}
+    \subitem {RCC\_SYSCLK\_Div64}, \hyperpage{248}
+    \subitem {RCC\_SYSCLK\_Div8}, \hyperpage{248}
+  \item {RCC\_APB1\_APB2\_Clock\_Source}, \hyperpage{248}
+    \subitem {IS\_RCC\_PCLK}, \hyperpage{248}
+    \subitem {RCC\_HCLK\_Div1}, \hyperpage{248}
+    \subitem {RCC\_HCLK\_Div16}, \hyperpage{248}
+    \subitem {RCC\_HCLK\_Div2}, \hyperpage{248}
+    \subitem {RCC\_HCLK\_Div4}, \hyperpage{248}
+    \subitem {RCC\_HCLK\_Div8}, \hyperpage{248}
+  \item {RCC\_APB1\_Peripherals}, \hyperpage{257}
+    \subitem {IS\_RCC\_APB1\_PERIPH}, \hyperpage{257}
+    \subitem {RCC\_APB1Periph\_CAN1}, \hyperpage{257}
+    \subitem {RCC\_APB1Periph\_CAN2}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_DAC}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_I2C1}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_I2C2}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_I2C3}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_PWR}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_SPI2}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_SPI3}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_TIM12}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_TIM13}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_TIM14}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_TIM2}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_TIM3}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_TIM4}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_TIM5}, \hyperpage{258}
+    \subitem {RCC\_APB1Periph\_TIM6}, \hyperpage{259}
+    \subitem {RCC\_APB1Periph\_TIM7}, \hyperpage{259}
+    \subitem {RCC\_APB1Periph\_UART4}, \hyperpage{259}
+    \subitem {RCC\_APB1Periph\_UART5}, \hyperpage{259}
+    \subitem {RCC\_APB1Periph\_USART2}, \hyperpage{259}
+    \subitem {RCC\_APB1Periph\_USART3}, \hyperpage{259}
+    \subitem {RCC\_APB1Periph\_WWDG}, \hyperpage{259}
+  \item {RCC\_APB1Periph\_CAN1}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{257}
+  \item {RCC\_APB1Periph\_CAN2}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_DAC}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_I2C1}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_I2C2}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_I2C3}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_PWR}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_SPI2}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_SPI3}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_TIM12}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_TIM13}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_TIM14}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_TIM2}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_TIM3}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_TIM4}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_TIM5}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{258}
+  \item {RCC\_APB1Periph\_TIM6}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{259}
+  \item {RCC\_APB1Periph\_TIM7}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{259}
+  \item {RCC\_APB1Periph\_UART4}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{259}
+  \item {RCC\_APB1Periph\_UART5}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{259}
+  \item {RCC\_APB1Periph\_USART2}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{259}
+  \item {RCC\_APB1Periph\_USART3}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{259}
+  \item {RCC\_APB1Periph\_WWDG}
+    \subitem {RCC\_APB1\_Peripherals}, \hyperpage{259}
+  \item {RCC\_APB1PeriphClockCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{233}
+    \subitem {RCC}, \hyperpage{190}
+  \item {RCC\_APB1PeriphClockLPModeCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{234}
+    \subitem {RCC}, \hyperpage{191}
+  \item {RCC\_APB1PeriphResetCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{235}
+    \subitem {RCC}, \hyperpage{192}
+  \item {RCC\_APB2\_Peripherals}, \hyperpage{259}
+    \subitem {IS\_RCC\_APB2\_PERIPH}, \hyperpage{259}
+    \subitem {IS\_RCC\_APB2\_RESET\_PERIPH}, \hyperpage{259}
+    \subitem {RCC\_APB2Periph\_ADC}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_ADC1}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_ADC2}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_ADC3}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_SDIO}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_SPI1}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_SYSCFG}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_TIM1}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_TIM10}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_TIM11}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_TIM8}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_TIM9}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_USART1}, \hyperpage{260}
+    \subitem {RCC\_APB2Periph\_USART6}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_ADC}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_ADC1}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_ADC2}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_ADC3}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_SDIO}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_SPI1}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_SYSCFG}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_TIM1}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_TIM10}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_TIM11}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_TIM8}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_TIM9}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_USART1}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2Periph\_USART6}
+    \subitem {RCC\_APB2\_Peripherals}, \hyperpage{260}
+  \item {RCC\_APB2PeriphClockCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{236}
+    \subitem {RCC}, \hyperpage{193}
+  \item {RCC\_APB2PeriphClockLPModeCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{237}
+    \subitem {RCC}, \hyperpage{194}
+  \item {RCC\_APB2PeriphResetCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{238}
+    \subitem {RCC}, \hyperpage{195}
+  \item {RCC\_BackupResetCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{239}
+    \subitem {RCC}, \hyperpage{196}
+  \item {RCC\_ClearFlag}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{241}
+    \subitem {RCC}, \hyperpage{196}
+  \item {RCC\_ClearITPendingBit}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{242}
+    \subitem {RCC}, \hyperpage{197}
+  \item {RCC\_ClockSecuritySystemCmd}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{214}
+    \subitem {RCC}, \hyperpage{197}
+  \item {RCC\_ClocksTypeDef}, \hyperpage{319}
+    \subitem {HCLK\_Frequency}, \hyperpage{319}
+    \subitem {PCLK1\_Frequency}, \hyperpage{319}
+    \subitem {PCLK2\_Frequency}, \hyperpage{319}
+    \subitem {SYSCLK\_Frequency}, \hyperpage{319}
+  \item {RCC\_DeInit}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{214}
+    \subitem {RCC}, \hyperpage{198}
+  \item {RCC\_Exported\_Constants}, \hyperpage{244}
+  \item {RCC\_Flag}, \hyperpage{263}
+    \subitem {IS\_RCC\_CALIBRATION\_VALUE}, \hyperpage{263}
+    \subitem {IS\_RCC\_FLAG}, \hyperpage{263}
+    \subitem {RCC\_FLAG\_BORRST}, \hyperpage{264}
+    \subitem {RCC\_FLAG\_HSERDY}, \hyperpage{264}
+    \subitem {RCC\_FLAG\_HSIRDY}, \hyperpage{264}
+    \subitem {RCC\_FLAG\_IWDGRST}, \hyperpage{264}
+    \subitem {RCC\_FLAG\_LPWRRST}, \hyperpage{264}
+    \subitem {RCC\_FLAG\_LSERDY}, \hyperpage{264}
+    \subitem {RCC\_FLAG\_LSIRDY}, \hyperpage{264}
+    \subitem {RCC\_FLAG\_PINRST}, \hyperpage{264}
+    \subitem {RCC\_FLAG\_PLLI2SRDY}, \hyperpage{264}
+    \subitem {RCC\_FLAG\_PLLRDY}, \hyperpage{264}
+    \subitem {RCC\_FLAG\_PORRST}, \hyperpage{264}
+    \subitem {RCC\_FLAG\_SFTRST}, \hyperpage{264}
+    \subitem {RCC\_FLAG\_WWDGRST}, \hyperpage{264}
+  \item {RCC\_FLAG\_BORRST}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_FLAG\_HSERDY}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_FLAG\_HSIRDY}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_FLAG\_IWDGRST}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_FLAG\_LPWRRST}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_FLAG\_LSERDY}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_FLAG\_LSIRDY}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_FLAG\_PINRST}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_FLAG\_PLLI2SRDY}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_FLAG\_PLLRDY}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_FLAG\_PORRST}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_FLAG\_SFTRST}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_FLAG\_WWDGRST}
+    \subitem {RCC\_Flag}, \hyperpage{264}
+  \item {RCC\_GetClocksFreq}
+    \subitem {RCC}, \hyperpage{198}
+    \subitem {System AHB and APB busses clocks configuration functions}, 
+		\hyperpage{222}
+  \item {RCC\_GetFlagStatus}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{242}
+    \subitem {RCC}, \hyperpage{199}
+  \item {RCC\_GetITStatus}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{243}
+    \subitem {RCC}, \hyperpage{200}
+  \item {RCC\_GetSYSCLKSource}
+    \subitem {RCC}, \hyperpage{200}
+    \subitem {System AHB and APB busses clocks configuration functions}, 
+		\hyperpage{223}
+  \item {RCC\_GPIOA\_CLK\_ENABLE}
+    \subitem {adc.h}, \hyperpage{332}
+  \item {RCC\_GPIOB\_CLK\_ENABLE}
+    \subitem {adc.h}, \hyperpage{332}
+  \item {RCC\_GPIOC\_CLK\_ENABLE}
+    \subitem {adc.h}, \hyperpage{332}
+  \item {RCC\_HCLK\_Div1}
+    \subitem {RCC\_APB1\_APB2\_Clock\_Source}, \hyperpage{248}
+  \item {RCC\_HCLK\_Div16}
+    \subitem {RCC\_APB1\_APB2\_Clock\_Source}, \hyperpage{248}
+  \item {RCC\_HCLK\_Div2}
+    \subitem {RCC\_APB1\_APB2\_Clock\_Source}, \hyperpage{248}
+  \item {RCC\_HCLK\_Div4}
+    \subitem {RCC\_APB1\_APB2\_Clock\_Source}, \hyperpage{248}
+  \item {RCC\_HCLK\_Div8}
+    \subitem {RCC\_APB1\_APB2\_Clock\_Source}, \hyperpage{248}
+  \item {RCC\_HCLKConfig}
+    \subitem {RCC}, \hyperpage{200}
+    \subitem {System AHB and APB busses clocks configuration functions}, 
+		\hyperpage{223}
+  \item {RCC\_HSE\_Bypass}
+    \subitem {RCC\_HSE\_configuration}, \hyperpage{245}
+  \item {RCC\_HSE\_configuration}, \hyperpage{245}
+    \subitem {IS\_RCC\_HSE}, \hyperpage{245}
+    \subitem {RCC\_HSE\_Bypass}, \hyperpage{245}
+    \subitem {RCC\_HSE\_OFF}, \hyperpage{245}
+    \subitem {RCC\_HSE\_ON}, \hyperpage{245}
+  \item {RCC\_HSE\_OFF}
+    \subitem {RCC\_HSE\_configuration}, \hyperpage{245}
+  \item {RCC\_HSE\_ON}
+    \subitem {RCC\_HSE\_configuration}, \hyperpage{245}
+  \item {RCC\_HSEConfig}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{215}
+    \subitem {RCC}, \hyperpage{201}
+  \item {RCC\_HSICmd}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{215}
+    \subitem {RCC}, \hyperpage{202}
+  \item {RCC\_I2S2CLKSource\_Ext}
+    \subitem {RCC\_I2S\_Clock\_Source}, \hyperpage{253}
+  \item {RCC\_I2S2CLKSource\_PLLI2S}
+    \subitem {RCC\_I2S\_Clock\_Source}, \hyperpage{253}
+  \item {RCC\_I2S\_Clock\_Source}, \hyperpage{253}
+    \subitem {IS\_RCC\_I2SCLK\_SOURCE}, \hyperpage{253}
+    \subitem {RCC\_I2S2CLKSource\_Ext}, \hyperpage{253}
+    \subitem {RCC\_I2S2CLKSource\_PLLI2S}, \hyperpage{253}
+  \item {RCC\_I2SCLKConfig}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{239}
+    \subitem {RCC}, \hyperpage{202}
+  \item {RCC\_Interrupt\_Source}, \hyperpage{249}
+    \subitem {IS\_RCC\_CLEAR\_IT}, \hyperpage{249}
+    \subitem {IS\_RCC\_GET\_IT}, \hyperpage{249}
+    \subitem {IS\_RCC\_IT}, \hyperpage{249}
+    \subitem {RCC\_IT\_CSS}, \hyperpage{249}
+    \subitem {RCC\_IT\_HSERDY}, \hyperpage{249}
+    \subitem {RCC\_IT\_HSIRDY}, \hyperpage{249}
+    \subitem {RCC\_IT\_LSERDY}, \hyperpage{249}
+    \subitem {RCC\_IT\_LSIRDY}, \hyperpage{249}
+    \subitem {RCC\_IT\_PLLI2SRDY}, \hyperpage{249}
+    \subitem {RCC\_IT\_PLLRDY}, \hyperpage{249}
+  \item {RCC\_IT\_CSS}
+    \subitem {RCC\_Interrupt\_Source}, \hyperpage{249}
+  \item {RCC\_IT\_HSERDY}
+    \subitem {RCC\_Interrupt\_Source}, \hyperpage{249}
+  \item {RCC\_IT\_HSIRDY}
+    \subitem {RCC\_Interrupt\_Source}, \hyperpage{249}
+  \item {RCC\_IT\_LSERDY}
+    \subitem {RCC\_Interrupt\_Source}, \hyperpage{249}
+  \item {RCC\_IT\_LSIRDY}
+    \subitem {RCC\_Interrupt\_Source}, \hyperpage{249}
+  \item {RCC\_IT\_PLLI2SRDY}
+    \subitem {RCC\_Interrupt\_Source}, \hyperpage{249}
+  \item {RCC\_IT\_PLLRDY}
+    \subitem {RCC\_Interrupt\_Source}, \hyperpage{249}
+  \item {RCC\_ITConfig}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{244}
+    \subitem {RCC}, \hyperpage{203}
+  \item {RCC\_LSE\_Bypass}
+    \subitem {RCC\_LSE\_Configuration}, \hyperpage{250}
+  \item {RCC\_LSE\_Configuration}, \hyperpage{250}
+    \subitem {IS\_RCC\_LSE}, \hyperpage{250}
+    \subitem {RCC\_LSE\_Bypass}, \hyperpage{250}
+    \subitem {RCC\_LSE\_OFF}, \hyperpage{250}
+    \subitem {RCC\_LSE\_ON}, \hyperpage{250}
+  \item {RCC\_LSE\_OFF}
+    \subitem {RCC\_LSE\_Configuration}, \hyperpage{250}
+  \item {RCC\_LSE\_ON}
+    \subitem {RCC\_LSE\_Configuration}, \hyperpage{250}
+  \item {RCC\_LSEConfig}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{216}
+    \subitem {RCC}, \hyperpage{203}
+  \item {RCC\_LSICmd}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{216}
+    \subitem {RCC}, \hyperpage{204}
+  \item {RCC\_MCO1\_Clock\_Source\_Prescaler}, \hyperpage{261}
+    \subitem {IS\_RCC\_MCO1DIV}, \hyperpage{261}
+    \subitem {IS\_RCC\_MCO1SOURCE}, \hyperpage{261}
+    \subitem {RCC\_MCO1Div\_1}, \hyperpage{261}
+    \subitem {RCC\_MCO1Div\_2}, \hyperpage{261}
+    \subitem {RCC\_MCO1Div\_3}, \hyperpage{261}
+    \subitem {RCC\_MCO1Div\_4}, \hyperpage{261}
+    \subitem {RCC\_MCO1Div\_5}, \hyperpage{261}
+    \subitem {RCC\_MCO1Source\_HSE}, \hyperpage{261}
+    \subitem {RCC\_MCO1Source\_HSI}, \hyperpage{261}
+    \subitem {RCC\_MCO1Source\_LSE}, \hyperpage{262}
+    \subitem {RCC\_MCO1Source\_PLLCLK}, \hyperpage{262}
+  \item {RCC\_MCO1Config}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{217}
+    \subitem {RCC}, \hyperpage{204}
+  \item {RCC\_MCO1Div\_1}
+    \subitem {RCC\_MCO1\_Clock\_Source\_Prescaler}, \hyperpage{261}
+  \item {RCC\_MCO1Div\_2}
+    \subitem {RCC\_MCO1\_Clock\_Source\_Prescaler}, \hyperpage{261}
+  \item {RCC\_MCO1Div\_3}
+    \subitem {RCC\_MCO1\_Clock\_Source\_Prescaler}, \hyperpage{261}
+  \item {RCC\_MCO1Div\_4}
+    \subitem {RCC\_MCO1\_Clock\_Source\_Prescaler}, \hyperpage{261}
+  \item {RCC\_MCO1Div\_5}
+    \subitem {RCC\_MCO1\_Clock\_Source\_Prescaler}, \hyperpage{261}
+  \item {RCC\_MCO1Source\_HSE}
+    \subitem {RCC\_MCO1\_Clock\_Source\_Prescaler}, \hyperpage{261}
+  \item {RCC\_MCO1Source\_HSI}
+    \subitem {RCC\_MCO1\_Clock\_Source\_Prescaler}, \hyperpage{261}
+  \item {RCC\_MCO1Source\_LSE}
+    \subitem {RCC\_MCO1\_Clock\_Source\_Prescaler}, \hyperpage{262}
+  \item {RCC\_MCO1Source\_PLLCLK}
+    \subitem {RCC\_MCO1\_Clock\_Source\_Prescaler}, \hyperpage{262}
+  \item {RCC\_MCO2\_Clock\_Source\_Prescaler}, \hyperpage{262}
+    \subitem {IS\_RCC\_MCO2DIV}, \hyperpage{262}
+    \subitem {IS\_RCC\_MCO2SOURCE}, \hyperpage{262}
+    \subitem {RCC\_MCO2Div\_1}, \hyperpage{262}
+    \subitem {RCC\_MCO2Div\_2}, \hyperpage{262}
+    \subitem {RCC\_MCO2Div\_3}, \hyperpage{262}
+    \subitem {RCC\_MCO2Div\_4}, \hyperpage{262}
+    \subitem {RCC\_MCO2Div\_5}, \hyperpage{263}
+    \subitem {RCC\_MCO2Source\_HSE}, \hyperpage{263}
+    \subitem {RCC\_MCO2Source\_PLLCLK}, \hyperpage{263}
+    \subitem {RCC\_MCO2Source\_PLLI2SCLK}, \hyperpage{263}
+    \subitem {RCC\_MCO2Source\_SYSCLK}, \hyperpage{263}
+  \item {RCC\_MCO2Config}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{217}
+    \subitem {RCC}, \hyperpage{205}
+  \item {RCC\_MCO2Div\_1}
+    \subitem {RCC\_MCO2\_Clock\_Source\_Prescaler}, \hyperpage{262}
+  \item {RCC\_MCO2Div\_2}
+    \subitem {RCC\_MCO2\_Clock\_Source\_Prescaler}, \hyperpage{262}
+  \item {RCC\_MCO2Div\_3}
+    \subitem {RCC\_MCO2\_Clock\_Source\_Prescaler}, \hyperpage{262}
+  \item {RCC\_MCO2Div\_4}
+    \subitem {RCC\_MCO2\_Clock\_Source\_Prescaler}, \hyperpage{262}
+  \item {RCC\_MCO2Div\_5}
+    \subitem {RCC\_MCO2\_Clock\_Source\_Prescaler}, \hyperpage{263}
+  \item {RCC\_MCO2Source\_HSE}
+    \subitem {RCC\_MCO2\_Clock\_Source\_Prescaler}, \hyperpage{263}
+  \item {RCC\_MCO2Source\_PLLCLK}
+    \subitem {RCC\_MCO2\_Clock\_Source\_Prescaler}, \hyperpage{263}
+  \item {RCC\_MCO2Source\_PLLI2SCLK}
+    \subitem {RCC\_MCO2\_Clock\_Source\_Prescaler}, \hyperpage{263}
+  \item {RCC\_MCO2Source\_SYSCLK}
+    \subitem {RCC\_MCO2\_Clock\_Source\_Prescaler}, \hyperpage{263}
+  \item {RCC\_OFFSET}
+    \subitem {RCC}, \hyperpage{184}
+  \item {RCC\_PCLK1Config}
+    \subitem {RCC}, \hyperpage{206}
+    \subitem {System AHB and APB busses clocks configuration functions}, 
+		\hyperpage{224}
+  \item {RCC\_PCLK2Config}
+    \subitem {RCC}, \hyperpage{206}
+    \subitem {System AHB and APB busses clocks configuration functions}, 
+		\hyperpage{225}
+  \item {RCC\_PLL\_Clock\_Source}, \hyperpage{245}
+    \subitem {IS\_RCC\_PLL\_SOURCE}, \hyperpage{245}
+    \subitem {IS\_RCC\_PLLI2SN\_VALUE}, \hyperpage{245}
+    \subitem {IS\_RCC\_PLLI2SR\_VALUE}, \hyperpage{246}
+    \subitem {IS\_RCC\_PLLM\_VALUE}, \hyperpage{246}
+    \subitem {IS\_RCC\_PLLN\_VALUE}, \hyperpage{246}
+    \subitem {IS\_RCC\_PLLP\_VALUE}, \hyperpage{246}
+    \subitem {IS\_RCC\_PLLQ\_VALUE}, \hyperpage{246}
+    \subitem {RCC\_PLLSource\_HSE}, \hyperpage{246}
+    \subitem {RCC\_PLLSource\_HSI}, \hyperpage{246}
+  \item {RCC\_PLLCmd}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{218}
+    \subitem {RCC}, \hyperpage{207}
+  \item {RCC\_PLLConfig}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{218}
+    \subitem {RCC}, \hyperpage{207}
+  \item {RCC\_PLLI2SCmd}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{220}
+    \subitem {RCC}, \hyperpage{209}
+  \item {RCC\_PLLI2SConfig}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{220}
+    \subitem {RCC}, \hyperpage{209}
+  \item {RCC\_PLLSource\_HSE}
+    \subitem {RCC\_PLL\_Clock\_Source}, \hyperpage{246}
+  \item {RCC\_PLLSource\_HSI}
+    \subitem {RCC\_PLL\_Clock\_Source}, \hyperpage{246}
+  \item {RCC\_Private\_Functions}, \hyperpage{212}
+  \item {RCC\_RTC\_Clock\_Source}, \hyperpage{250}
+    \subitem {IS\_RCC\_RTCCLK\_SOURCE}, \hyperpage{251}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div10}, \hyperpage{251}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div11}, \hyperpage{251}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div12}, \hyperpage{251}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div13}, \hyperpage{251}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div14}, \hyperpage{251}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div15}, \hyperpage{251}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div16}, \hyperpage{251}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div17}, \hyperpage{251}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div18}, \hyperpage{251}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div19}, \hyperpage{251}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div2}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div20}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div21}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div22}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div23}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div24}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div25}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div26}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div27}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div28}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div29}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div3}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div30}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div31}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div4}, \hyperpage{252}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div5}, \hyperpage{253}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div6}, \hyperpage{253}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div7}, \hyperpage{253}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div8}, \hyperpage{253}
+    \subitem {RCC\_RTCCLKSource\_HSE\_Div9}, \hyperpage{253}
+    \subitem {RCC\_RTCCLKSource\_LSE}, \hyperpage{253}
+    \subitem {RCC\_RTCCLKSource\_LSI}, \hyperpage{253}
+  \item {RCC\_RTCCLKCmd}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{240}
+    \subitem {RCC}, \hyperpage{210}
+  \item {RCC\_RTCCLKConfig}
+    \subitem {Peripheral clocks configuration functions}, 
+		\hyperpage{240}
+    \subitem {RCC}, \hyperpage{210}
+  \item {RCC\_RTCCLKSource\_HSE\_Div10}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{251}
+  \item {RCC\_RTCCLKSource\_HSE\_Div11}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{251}
+  \item {RCC\_RTCCLKSource\_HSE\_Div12}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{251}
+  \item {RCC\_RTCCLKSource\_HSE\_Div13}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{251}
+  \item {RCC\_RTCCLKSource\_HSE\_Div14}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{251}
+  \item {RCC\_RTCCLKSource\_HSE\_Div15}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{251}
+  \item {RCC\_RTCCLKSource\_HSE\_Div16}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{251}
+  \item {RCC\_RTCCLKSource\_HSE\_Div17}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{251}
+  \item {RCC\_RTCCLKSource\_HSE\_Div18}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{251}
+  \item {RCC\_RTCCLKSource\_HSE\_Div19}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{251}
+  \item {RCC\_RTCCLKSource\_HSE\_Div2}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div20}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div21}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div22}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div23}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div24}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div25}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div26}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div27}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div28}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div29}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div3}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div30}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div31}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div4}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{252}
+  \item {RCC\_RTCCLKSource\_HSE\_Div5}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{253}
+  \item {RCC\_RTCCLKSource\_HSE\_Div6}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{253}
+  \item {RCC\_RTCCLKSource\_HSE\_Div7}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{253}
+  \item {RCC\_RTCCLKSource\_HSE\_Div8}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{253}
+  \item {RCC\_RTCCLKSource\_HSE\_Div9}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{253}
+  \item {RCC\_RTCCLKSource\_LSE}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{253}
+  \item {RCC\_RTCCLKSource\_LSI}
+    \subitem {RCC\_RTC\_Clock\_Source}, \hyperpage{253}
+  \item {RCC\_SYSCLK\_Div1}
+    \subitem {RCC\_AHB\_Clock\_Source}, \hyperpage{247}
+  \item {RCC\_SYSCLK\_Div128}
+    \subitem {RCC\_AHB\_Clock\_Source}, \hyperpage{247}
+  \item {RCC\_SYSCLK\_Div16}
+    \subitem {RCC\_AHB\_Clock\_Source}, \hyperpage{247}
+  \item {RCC\_SYSCLK\_Div2}
+    \subitem {RCC\_AHB\_Clock\_Source}, \hyperpage{247}
+  \item {RCC\_SYSCLK\_Div256}
+    \subitem {RCC\_AHB\_Clock\_Source}, \hyperpage{247}
+  \item {RCC\_SYSCLK\_Div4}
+    \subitem {RCC\_AHB\_Clock\_Source}, \hyperpage{247}
+  \item {RCC\_SYSCLK\_Div512}
+    \subitem {RCC\_AHB\_Clock\_Source}, \hyperpage{247}
+  \item {RCC\_SYSCLK\_Div64}
+    \subitem {RCC\_AHB\_Clock\_Source}, \hyperpage{248}
+  \item {RCC\_SYSCLK\_Div8}
+    \subitem {RCC\_AHB\_Clock\_Source}, \hyperpage{248}
+  \item {RCC\_SYSCLKConfig}
+    \subitem {RCC}, \hyperpage{211}
+    \subitem {System AHB and APB busses clocks configuration functions}, 
+		\hyperpage{225}
+  \item {RCC\_SYSCLKSource\_HSE}
+    \subitem {RCC\_System\_Clock\_Source}, \hyperpage{246}
+  \item {RCC\_SYSCLKSource\_HSI}
+    \subitem {RCC\_System\_Clock\_Source}, \hyperpage{246}
+  \item {RCC\_SYSCLKSource\_PLLCLK}
+    \subitem {RCC\_System\_Clock\_Source}, \hyperpage{247}
+  \item {RCC\_System\_Clock\_Source}, \hyperpage{246}
+    \subitem {IS\_RCC\_SYSCLK\_SOURCE}, \hyperpage{246}
+    \subitem {RCC\_SYSCLKSource\_HSE}, \hyperpage{246}
+    \subitem {RCC\_SYSCLKSource\_HSI}, \hyperpage{246}
+    \subitem {RCC\_SYSCLKSource\_PLLCLK}, \hyperpage{247}
+  \item {RCC\_WaitForHSEStartUp}
+    \subitem {Internal and external clocks, PLL, CSS and MCO configuration functions}, 
+		\hyperpage{221}
+    \subitem {RCC}, \hyperpage{211}
+  \item {Regular Channels Configuration functions}, \hyperpage{41}
+    \subitem {ADC\_ContinuousModeCmd}, \hyperpage{42}
+    \subitem {ADC\_DiscModeChannelCountConfig}, \hyperpage{42}
+    \subitem {ADC\_DiscModeCmd}, \hyperpage{43}
+    \subitem {ADC\_EOCOnEachRegularChannelCmd}, \hyperpage{43}
+    \subitem {ADC\_GetConversionValue}, \hyperpage{44}
+    \subitem {ADC\_GetMultiModeConversionValue}, \hyperpage{44}
+    \subitem {ADC\_GetSoftwareStartConvStatus}, \hyperpage{44}
+    \subitem {ADC\_RegularChannelConfig}, \hyperpage{45}
+    \subitem {ADC\_SoftwareStartConv}, \hyperpage{47}
+  \item {Regular Channels DMA Configuration functions}, \hyperpage{47}
+    \subitem {ADC\_DMACmd}, \hyperpage{48}
+    \subitem {ADC\_DMARequestAfterLastTransferCmd}, \hyperpage{48}
+    \subitem {ADC\_MultiModeDMARequestAfterLastTransferCmd}, 
+		\hyperpage{48}
+  \item {Reset}
+    \subitem {gpio.h}, \hyperpage{345}
+  \item {Resolution}
+    \subitem {\_ADC\_InitTypeDef}, \hyperpage{312}
+  \item {Rising}
+    \subitem {gpio.h}, \hyperpage{346}
+  \item {RTCEN\_BitNumber}
+    \subitem {RCC}, \hyperpage{184}
+  \item {RTE/\_Target\_1/RTE\_Components.h}, \hyperpage{422}
+  \item {RTE/Device/STM32F401RETx/system\_stm32f4xx.c}, \hyperpage{423}
+  \item {RTE\_Components.h}
+    \subitem {CMSIS\_device\_header}, \hyperpage{422}
+    \subitem {RTE\_DEVICE\_STARTUP\_STM32F4XX}, \hyperpage{422}
+  \item {RTE\_DEVICE\_STARTUP\_STM32F4XX}
+    \subitem {RTE\_Components.h}, \hyperpage{422}
+
+  \indexspace
+
+  \item {SamplingTime}
+    \subitem {ADC\_ChannelConfTypeDef}, \hyperpage{313}
+  \item {ScanConvMode}
+    \subitem {\_ADC\_InitTypeDef}, \hyperpage{312}
+  \item {Smartcard mode functions}, \hyperpage{288}
+    \subitem {USART\_SetGuardTime}, \hyperpage{289}
+    \subitem {USART\_SmartCardCmd}, \hyperpage{289}
+    \subitem {USART\_SmartCardNACKCmd}, \hyperpage{290}
+  \item {SMPR1\_SMP\_SET}
+    \subitem {ADC}, \hyperpage{13}
+  \item {SMPR2\_SMP\_SET}
+    \subitem {ADC}, \hyperpage{13}
+  \item {Speed}
+    \subitem {GPIO\_InitTypeDef}, \hyperpage{317}
+  \item {SQR1\_L\_RESET}
+    \subitem {ADC}, \hyperpage{13}
+  \item {SQR1\_SQ\_SET}
+    \subitem {ADC}, \hyperpage{13}
+  \item {SQR2\_SQ\_SET}
+    \subitem {ADC}, \hyperpage{13}
+  \item {SQR3\_SQ\_SET}
+    \subitem {ADC}, \hyperpage{14}
+  \item {src/main.c}, \hyperpage{424}
+  \item {State}
+    \subitem {ADC\_HandleTypeDef}, \hyperpage{314}
+  \item {stm32f4xx\_rcc.c}
+    \subitem {HSE\_STARTUP\_TIMEOUT}, \hyperpage{396}
+    \subitem {HSE\_VALUE}, \hyperpage{396}
+    \subitem {HSI\_VALUE}, \hyperpage{396}
+  \item {STM32F4xx\_StdPeriph\_Driver}, \hyperpage{9}
+  \item {Stm32f4xx\_system}, \hyperpage{308}
+  \item {STM32F4xx\_System\_Private\_Defines}, \hyperpage{308}
+  \item {STM32F4xx\_System\_Private\_FunctionPrototypes}, 
+		\hyperpage{309}
+  \item {STM32F4xx\_System\_Private\_Functions}, \hyperpage{309}
+    \subitem {SystemCoreClockUpdate}, \hyperpage{309}
+    \subitem {SystemInit}, \hyperpage{309}
+  \item {STM32F4xx\_System\_Private\_Includes}, \hyperpage{308}
+    \subitem {HSE\_VALUE}, \hyperpage{308}
+    \subitem {HSI\_VALUE}, \hyperpage{308}
+  \item {STM32F4xx\_System\_Private\_Macros}, \hyperpage{308}
+  \item {STM32F4xx\_System\_Private\_TypesDefinitions}, \hyperpage{308}
+  \item {STM32F4xx\_System\_Private\_Variables}, \hyperpage{308}
+    \subitem {AHBPrescTable}, \hyperpage{308}
+    \subitem {APBPrescTable}, \hyperpage{308}
+    \subitem {SystemCoreClock}, \hyperpage{308}
+  \item {STM\_MODE\_ANALOG}
+    \subitem {adc.h}, \hyperpage{332}
+  \item {STM\_PIN}
+    \subitem {adc.h}, \hyperpage{332}
+  \item {STM\_PIN\_AFNUM}
+    \subitem {adc.h}, \hyperpage{332}
+  \item {STM\_PIN\_CHANNEL}
+    \subitem {adc.h}, \hyperpage{333}
+  \item {STM\_PIN\_DATA\_EXT}
+    \subitem {adc.h}, \hyperpage{333}
+  \item {STM\_PIN\_MODE}
+    \subitem {adc.h}, \hyperpage{333}
+  \item {STM\_PIN\_PUPD}
+    \subitem {adc.h}, \hyperpage{333}
+  \item {STM\_PORT}
+    \subitem {adc.h}, \hyperpage{333}
+  \item {SYSCLK\_Frequency}
+    \subitem {RCC\_ClocksTypeDef}, \hyperpage{319}
+  \item {System AHB and APB busses clocks configuration functions}, 
+		\hyperpage{221}
+    \subitem {RCC\_GetClocksFreq}, \hyperpage{222}
+    \subitem {RCC\_GetSYSCLKSource}, \hyperpage{223}
+    \subitem {RCC\_HCLKConfig}, \hyperpage{223}
+    \subitem {RCC\_PCLK1Config}, \hyperpage{224}
+    \subitem {RCC\_PCLK2Config}, \hyperpage{225}
+    \subitem {RCC\_SYSCLKConfig}, \hyperpage{225}
+  \item {SystemCoreClock}
+    \subitem {STM32F4xx\_System\_Private\_Variables}, \hyperpage{308}
+  \item {SystemCoreClockUpdate}
+    \subitem {STM32F4xx\_System\_Private\_Functions}, \hyperpage{309}
+  \item {SystemInit}
+    \subitem {STM32F4xx\_System\_Private\_Functions}, \hyperpage{309}
+  \item {SysTick\_Handler}
+    \subitem {timer.c}, \hyperpage{416}
+
+  \indexspace
+
+  \item {Temperature Sensor, Vrefint (Voltage Reference internal)}, 
+		\hyperpage{40}
+    \subitem {ADC\_TempSensorVrefintCmd}, \hyperpage{40}
+    \subitem {ADC\_VBATCmd}, \hyperpage{41}
+  \item {timer.c}
+    \subitem {SysTick\_Handler}, \hyperpage{416}
+    \subitem {timer\_disable}, \hyperpage{416}
+    \subitem {timer\_enable}, \hyperpage{416}
+    \subitem {timer\_init}, \hyperpage{416}
+    \subitem {timer\_period}, \hyperpage{416}
+    \subitem {timer\_set\_callback}, \hyperpage{416}
+  \item {timer.h}
+    \subitem {timer\_disable}, \hyperpage{417}
+    \subitem {timer\_enable}, \hyperpage{417}
+    \subitem {timer\_init}, \hyperpage{417}
+    \subitem {timer\_irq\_handler}, \hyperpage{417}
+    \subitem {timer\_set\_callback}, \hyperpage{417}
+  \item {timer\_disable}
+    \subitem {timer.c}, \hyperpage{416}
+    \subitem {timer.h}, \hyperpage{417}
+  \item {timer\_enable}
+    \subitem {timer.c}, \hyperpage{416}
+    \subitem {timer.h}, \hyperpage{417}
+  \item {timer\_init}
+    \subitem {timer.c}, \hyperpage{416}
+    \subitem {timer.h}, \hyperpage{417}
+  \item {timer\_irq\_handler}
+    \subitem {timer.h}, \hyperpage{417}
+  \item {timer\_period}
+    \subitem {timer.c}, \hyperpage{416}
+  \item {timer\_set\_callback}
+    \subitem {timer.c}, \hyperpage{416}
+    \subitem {timer.h}, \hyperpage{417}
+  \item {TriggerMode}
+    \subitem {gpio.h}, \hyperpage{346}
+
+  \indexspace
+
+  \item {uart.c}
+    \subitem {uart\_enable}, \hyperpage{418}
+    \subitem {uart\_init}, \hyperpage{418}
+    \subitem {uart\_print}, \hyperpage{419}
+    \subitem {uart\_rx}, \hyperpage{419}
+    \subitem {uart\_set\_rx\_callback}, \hyperpage{419}
+    \subitem {uart\_tx}, \hyperpage{419}
+    \subitem {USART2\_IRQHandler}, \hyperpage{419}
+  \item {uart.h}
+    \subitem {uart\_enable}, \hyperpage{420}
+    \subitem {uart\_init}, \hyperpage{420}
+    \subitem {uart\_print}, \hyperpage{420}
+    \subitem {uart\_rx}, \hyperpage{420}
+    \subitem {uart\_set\_rx\_callback}, \hyperpage{421}
+    \subitem {uart\_tx}, \hyperpage{421}
+  \item {uart\_enable}
+    \subitem {uart.c}, \hyperpage{418}
+    \subitem {uart.h}, \hyperpage{420}
+  \item {uart\_init}
+    \subitem {uart.c}, \hyperpage{418}
+    \subitem {uart.h}, \hyperpage{420}
+  \item {uart\_print}
+    \subitem {uart.c}, \hyperpage{419}
+    \subitem {uart.h}, \hyperpage{420}
+  \item {uart\_rx}
+    \subitem {uart.c}, \hyperpage{419}
+    \subitem {uart.h}, \hyperpage{420}
+  \item {uart\_set\_rx\_callback}
+    \subitem {uart.c}, \hyperpage{419}
+    \subitem {uart.h}, \hyperpage{421}
+  \item {uart\_tx}
+    \subitem {uart.c}, \hyperpage{419}
+    \subitem {uart.h}, \hyperpage{421}
+  \item {UNUSED}
+    \subitem {adc.h}, \hyperpage{333}
+  \item {USART}, \hyperpage{265}
+    \subitem {CR1\_CLEAR\_MASK}, \hyperpage{266}
+    \subitem {CR2\_CLOCK\_CLEAR\_MASK}, \hyperpage{266}
+    \subitem {CR3\_CLEAR\_MASK}, \hyperpage{267}
+    \subitem {IT\_MASK}, \hyperpage{267}
+    \subitem {USART\_ClearFlag}, \hyperpage{267}
+    \subitem {USART\_ClearITPendingBit}, \hyperpage{267}
+    \subitem {USART\_ClockInit}, \hyperpage{268}
+    \subitem {USART\_ClockStructInit}, \hyperpage{268}
+    \subitem {USART\_Cmd}, \hyperpage{269}
+    \subitem {USART\_DeInit}, \hyperpage{269}
+    \subitem {USART\_DMACmd}, \hyperpage{269}
+    \subitem {USART\_GetFlagStatus}, \hyperpage{270}
+    \subitem {USART\_GetITStatus}, \hyperpage{270}
+    \subitem {USART\_HalfDuplexCmd}, \hyperpage{271}
+    \subitem {USART\_Init}, \hyperpage{271}
+    \subitem {USART\_IrDACmd}, \hyperpage{272}
+    \subitem {USART\_IrDAConfig}, \hyperpage{272}
+    \subitem {USART\_ITConfig}, \hyperpage{272}
+    \subitem {USART\_LINBreakDetectLengthConfig}, \hyperpage{273}
+    \subitem {USART\_LINCmd}, \hyperpage{273}
+    \subitem {USART\_OneBitMethodCmd}, \hyperpage{274}
+    \subitem {USART\_OverSampling8Cmd}, \hyperpage{274}
+    \subitem {USART\_ReceiveData}, \hyperpage{274}
+    \subitem {USART\_ReceiverWakeUpCmd}, \hyperpage{275}
+    \subitem {USART\_SendBreak}, \hyperpage{275}
+    \subitem {USART\_SendData}, \hyperpage{275}
+    \subitem {USART\_SetAddress}, \hyperpage{276}
+    \subitem {USART\_SetGuardTime}, \hyperpage{276}
+    \subitem {USART\_SetPrescaler}, \hyperpage{276}
+    \subitem {USART\_SmartCardCmd}, \hyperpage{277}
+    \subitem {USART\_SmartCardNACKCmd}, \hyperpage{277}
+    \subitem {USART\_StructInit}, \hyperpage{277}
+    \subitem {USART\_WakeUpConfig}, \hyperpage{278}
+  \item {USART2\_IRQHandler}
+    \subitem {uart.c}, \hyperpage{419}
+  \item {USART\_BaudRate}
+    \subitem {USART\_InitTypeDef}, \hyperpage{321}
+  \item {USART\_ClearFlag}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{294}
+    \subitem {USART}, \hyperpage{267}
+  \item {USART\_ClearITPendingBit}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{294}
+    \subitem {USART}, \hyperpage{267}
+  \item {USART\_Clock}, \hyperpage{300}
+    \subitem {IS\_USART\_CLOCK}, \hyperpage{301}
+    \subitem {USART\_Clock\_Disable}, \hyperpage{301}
+    \subitem {USART\_Clock\_Enable}, \hyperpage{301}
+    \subitem {USART\_ClockInitTypeDef}, \hyperpage{320}
+  \item {USART\_Clock\_Disable}
+    \subitem {USART\_Clock}, \hyperpage{301}
+  \item {USART\_Clock\_Enable}
+    \subitem {USART\_Clock}, \hyperpage{301}
+  \item {USART\_Clock\_Phase}, \hyperpage{301}
+    \subitem {IS\_USART\_CPHA}, \hyperpage{301}
+    \subitem {USART\_CPHA\_1Edge}, \hyperpage{301}
+    \subitem {USART\_CPHA\_2Edge}, \hyperpage{302}
+  \item {USART\_Clock\_Polarity}, \hyperpage{301}
+    \subitem {IS\_USART\_CPOL}, \hyperpage{301}
+    \subitem {USART\_CPOL\_High}, \hyperpage{301}
+    \subitem {USART\_CPOL\_Low}, \hyperpage{301}
+  \item {USART\_ClockInit}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{280}
+    \subitem {USART}, \hyperpage{268}
+  \item {USART\_ClockInitTypeDef}, \hyperpage{320}
+    \subitem {USART\_Clock}, \hyperpage{320}
+    \subitem {USART\_CPHA}, \hyperpage{320}
+    \subitem {USART\_CPOL}, \hyperpage{320}
+    \subitem {USART\_LastBit}, \hyperpage{320}
+  \item {USART\_ClockStructInit}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{280}
+    \subitem {USART}, \hyperpage{268}
+  \item {USART\_Cmd}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{280}
+    \subitem {USART}, \hyperpage{269}
+  \item {USART\_CPHA}
+    \subitem {USART\_ClockInitTypeDef}, \hyperpage{320}
+  \item {USART\_CPHA\_1Edge}
+    \subitem {USART\_Clock\_Phase}, \hyperpage{301}
+  \item {USART\_CPHA\_2Edge}
+    \subitem {USART\_Clock\_Phase}, \hyperpage{302}
+  \item {USART\_CPOL}
+    \subitem {USART\_ClockInitTypeDef}, \hyperpage{320}
+  \item {USART\_CPOL\_High}
+    \subitem {USART\_Clock\_Polarity}, \hyperpage{301}
+  \item {USART\_CPOL\_Low}
+    \subitem {USART\_Clock\_Polarity}, \hyperpage{301}
+  \item {USART\_DeInit}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{281}
+    \subitem {USART}, \hyperpage{269}
+  \item {USART\_DMA\_Requests}, \hyperpage{304}
+    \subitem {IS\_USART\_DMAREQ}, \hyperpage{304}
+    \subitem {USART\_DMAReq\_Rx}, \hyperpage{304}
+    \subitem {USART\_DMAReq\_Tx}, \hyperpage{304}
+  \item {USART\_DMACmd}
+    \subitem {DMA transfers management functions}, \hyperpage{292}
+    \subitem {USART}, \hyperpage{269}
+  \item {USART\_DMAReq\_Rx}
+    \subitem {USART\_DMA\_Requests}, \hyperpage{304}
+  \item {USART\_DMAReq\_Tx}
+    \subitem {USART\_DMA\_Requests}, \hyperpage{304}
+  \item {USART\_Exported\_Constants}, \hyperpage{297}
+    \subitem {IS\_USART\_1236\_PERIPH}, \hyperpage{297}
+    \subitem {IS\_USART\_ALL\_PERIPH}, \hyperpage{298}
+  \item {USART\_FLAG\_CTS}
+    \subitem {USART\_Flags}, \hyperpage{307}
+  \item {USART\_FLAG\_FE}
+    \subitem {USART\_Flags}, \hyperpage{307}
+  \item {USART\_FLAG\_IDLE}
+    \subitem {USART\_Flags}, \hyperpage{307}
+  \item {USART\_FLAG\_LBD}
+    \subitem {USART\_Flags}, \hyperpage{307}
+  \item {USART\_FLAG\_NE}
+    \subitem {USART\_Flags}, \hyperpage{307}
+  \item {USART\_FLAG\_ORE}
+    \subitem {USART\_Flags}, \hyperpage{307}
+  \item {USART\_FLAG\_PE}
+    \subitem {USART\_Flags}, \hyperpage{307}
+  \item {USART\_FLAG\_RXNE}
+    \subitem {USART\_Flags}, \hyperpage{307}
+  \item {USART\_FLAG\_TC}
+    \subitem {USART\_Flags}, \hyperpage{307}
+  \item {USART\_FLAG\_TXE}
+    \subitem {USART\_Flags}, \hyperpage{307}
+  \item {USART\_Flags}, \hyperpage{306}
+    \subitem {IS\_USART\_ADDRESS}, \hyperpage{306}
+    \subitem {IS\_USART\_BAUDRATE}, \hyperpage{306}
+    \subitem {IS\_USART\_CLEAR\_FLAG}, \hyperpage{306}
+    \subitem {IS\_USART\_DATA}, \hyperpage{306}
+    \subitem {IS\_USART\_FLAG}, \hyperpage{307}
+    \subitem {USART\_FLAG\_CTS}, \hyperpage{307}
+    \subitem {USART\_FLAG\_FE}, \hyperpage{307}
+    \subitem {USART\_FLAG\_IDLE}, \hyperpage{307}
+    \subitem {USART\_FLAG\_LBD}, \hyperpage{307}
+    \subitem {USART\_FLAG\_NE}, \hyperpage{307}
+    \subitem {USART\_FLAG\_ORE}, \hyperpage{307}
+    \subitem {USART\_FLAG\_PE}, \hyperpage{307}
+    \subitem {USART\_FLAG\_RXNE}, \hyperpage{307}
+    \subitem {USART\_FLAG\_TC}, \hyperpage{307}
+    \subitem {USART\_FLAG\_TXE}, \hyperpage{307}
+  \item {USART\_GetFlagStatus}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{295}
+    \subitem {USART}, \hyperpage{270}
+  \item {USART\_GetITStatus}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{296}
+    \subitem {USART}, \hyperpage{270}
+  \item {USART\_HalfDuplexCmd}
+    \subitem {Halfduplex mode function}, \hyperpage{288}
+    \subitem {USART}, \hyperpage{271}
+  \item {USART\_Hardware\_Flow\_Control}, \hyperpage{300}
+    \subitem {IS\_USART\_HARDWARE\_FLOW\_CONTROL}, \hyperpage{300}
+    \subitem {USART\_HardwareFlowControl\_CTS}, \hyperpage{300}
+    \subitem {USART\_HardwareFlowControl\_None}, \hyperpage{300}
+    \subitem {USART\_HardwareFlowControl\_RTS}, \hyperpage{300}
+    \subitem {USART\_HardwareFlowControl\_RTS\_CTS}, \hyperpage{300}
+  \item {USART\_HardwareFlowControl}
+    \subitem {USART\_InitTypeDef}, \hyperpage{321}
+  \item {USART\_HardwareFlowControl\_CTS}
+    \subitem {USART\_Hardware\_Flow\_Control}, \hyperpage{300}
+  \item {USART\_HardwareFlowControl\_None}
+    \subitem {USART\_Hardware\_Flow\_Control}, \hyperpage{300}
+  \item {USART\_HardwareFlowControl\_RTS}
+    \subitem {USART\_Hardware\_Flow\_Control}, \hyperpage{300}
+  \item {USART\_HardwareFlowControl\_RTS\_CTS}
+    \subitem {USART\_Hardware\_Flow\_Control}, \hyperpage{300}
+  \item {USART\_Init}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{281}
+    \subitem {USART}, \hyperpage{271}
+  \item {USART\_InitTypeDef}, \hyperpage{320}
+    \subitem {USART\_BaudRate}, \hyperpage{321}
+    \subitem {USART\_HardwareFlowControl}, \hyperpage{321}
+    \subitem {USART\_Mode}, \hyperpage{321}
+    \subitem {USART\_Parity}, \hyperpage{321}
+    \subitem {USART\_StopBits}, \hyperpage{321}
+    \subitem {USART\_WordLength}, \hyperpage{321}
+  \item {USART\_Interrupt\_definition}, \hyperpage{302}
+    \subitem {IS\_USART\_CLEAR\_IT}, \hyperpage{303}
+    \subitem {IS\_USART\_CONFIG\_IT}, \hyperpage{303}
+    \subitem {IS\_USART\_GET\_IT}, \hyperpage{303}
+    \subitem {USART\_IT\_CTS}, \hyperpage{303}
+    \subitem {USART\_IT\_ERR}, \hyperpage{303}
+    \subitem {USART\_IT\_FE}, \hyperpage{303}
+    \subitem {USART\_IT\_IDLE}, \hyperpage{303}
+    \subitem {USART\_IT\_LBD}, \hyperpage{303}
+    \subitem {USART\_IT\_NE}, \hyperpage{303}
+    \subitem {USART\_IT\_ORE\_ER}, \hyperpage{303}
+    \subitem {USART\_IT\_ORE\_RX}, \hyperpage{303}
+    \subitem {USART\_IT\_PE}, \hyperpage{304}
+    \subitem {USART\_IT\_RXNE}, \hyperpage{304}
+    \subitem {USART\_IT\_TC}, \hyperpage{304}
+    \subitem {USART\_IT\_TXE}, \hyperpage{304}
+  \item {USART\_IrDA\_Low\_Power}, \hyperpage{305}
+    \subitem {IS\_USART\_IRDA\_MODE}, \hyperpage{306}
+    \subitem {USART\_IrDAMode\_LowPower}, \hyperpage{306}
+    \subitem {USART\_IrDAMode\_Normal}, \hyperpage{306}
+  \item {USART\_IrDACmd}
+    \subitem {IrDA mode functions}, \hyperpage{291}
+    \subitem {USART}, \hyperpage{272}
+  \item {USART\_IrDAConfig}
+    \subitem {IrDA mode functions}, \hyperpage{291}
+    \subitem {USART}, \hyperpage{272}
+  \item {USART\_IrDAMode\_LowPower}
+    \subitem {USART\_IrDA\_Low\_Power}, \hyperpage{306}
+  \item {USART\_IrDAMode\_Normal}
+    \subitem {USART\_IrDA\_Low\_Power}, \hyperpage{306}
+  \item {USART\_IT\_CTS}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{303}
+  \item {USART\_IT\_ERR}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{303}
+  \item {USART\_IT\_FE}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{303}
+  \item {USART\_IT\_IDLE}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{303}
+  \item {USART\_IT\_LBD}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{303}
+  \item {USART\_IT\_NE}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{303}
+  \item {USART\_IT\_ORE}
+    \subitem {USART\_Legacy}, \hyperpage{304}
+  \item {USART\_IT\_ORE\_ER}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{303}
+  \item {USART\_IT\_ORE\_RX}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{303}
+  \item {USART\_IT\_PE}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{304}
+  \item {USART\_IT\_RXNE}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{304}
+  \item {USART\_IT\_TC}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{304}
+  \item {USART\_IT\_TXE}
+    \subitem {USART\_Interrupt\_definition}, \hyperpage{304}
+  \item {USART\_ITConfig}
+    \subitem {Interrupts and flags management functions}, 
+		\hyperpage{296}
+    \subitem {USART}, \hyperpage{272}
+  \item {USART\_Last\_Bit}, \hyperpage{302}
+    \subitem {IS\_USART\_LASTBIT}, \hyperpage{302}
+    \subitem {USART\_LastBit\_Disable}, \hyperpage{302}
+    \subitem {USART\_LastBit\_Enable}, \hyperpage{302}
+  \item {USART\_LastBit}
+    \subitem {USART\_ClockInitTypeDef}, \hyperpage{320}
+  \item {USART\_LastBit\_Disable}
+    \subitem {USART\_Last\_Bit}, \hyperpage{302}
+  \item {USART\_LastBit\_Enable}
+    \subitem {USART\_Last\_Bit}, \hyperpage{302}
+  \item {USART\_Legacy}, \hyperpage{304}
+    \subitem {USART\_IT\_ORE}, \hyperpage{304}
+  \item {USART\_LIN\_Break\_Detection\_Length}, \hyperpage{305}
+    \subitem {IS\_USART\_LIN\_BREAK\_DETECT\_LENGTH}, \hyperpage{305}
+    \subitem {USART\_LINBreakDetectLength\_10b}, \hyperpage{305}
+    \subitem {USART\_LINBreakDetectLength\_11b}, \hyperpage{305}
+  \item {USART\_LINBreakDetectLength\_10b}
+    \subitem {USART\_LIN\_Break\_Detection\_Length}, \hyperpage{305}
+  \item {USART\_LINBreakDetectLength\_11b}
+    \subitem {USART\_LIN\_Break\_Detection\_Length}, \hyperpage{305}
+  \item {USART\_LINBreakDetectLengthConfig}
+    \subitem {LIN mode functions}, \hyperpage{286}
+    \subitem {USART}, \hyperpage{273}
+  \item {USART\_LINCmd}
+    \subitem {LIN mode functions}, \hyperpage{287}
+    \subitem {USART}, \hyperpage{273}
+  \item {USART\_Mode}, \hyperpage{299}
+    \subitem {IS\_USART\_MODE}, \hyperpage{300}
+    \subitem {USART\_InitTypeDef}, \hyperpage{321}
+    \subitem {USART\_Mode\_Rx}, \hyperpage{300}
+    \subitem {USART\_Mode\_Tx}, \hyperpage{300}
+  \item {USART\_Mode\_Rx}
+    \subitem {USART\_Mode}, \hyperpage{300}
+  \item {USART\_Mode\_Tx}
+    \subitem {USART\_Mode}, \hyperpage{300}
+  \item {USART\_OneBitMethodCmd}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{281}
+    \subitem {USART}, \hyperpage{274}
+  \item {USART\_OverSampling8Cmd}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{281}
+    \subitem {USART}, \hyperpage{274}
+  \item {USART\_Parity}, \hyperpage{299}
+    \subitem {IS\_USART\_PARITY}, \hyperpage{299}
+    \subitem {USART\_InitTypeDef}, \hyperpage{321}
+    \subitem {USART\_Parity\_Even}, \hyperpage{299}
+    \subitem {USART\_Parity\_No}, \hyperpage{299}
+    \subitem {USART\_Parity\_Odd}, \hyperpage{299}
+  \item {USART\_Parity\_Even}
+    \subitem {USART\_Parity}, \hyperpage{299}
+  \item {USART\_Parity\_No}
+    \subitem {USART\_Parity}, \hyperpage{299}
+  \item {USART\_Parity\_Odd}
+    \subitem {USART\_Parity}, \hyperpage{299}
+  \item {USART\_Private\_Functions}, \hyperpage{278}
+  \item {USART\_ReceiveData}
+    \subitem {Data transfers functions}, \hyperpage{283}
+    \subitem {USART}, \hyperpage{274}
+  \item {USART\_ReceiverWakeUpCmd}
+    \subitem {MultiProcessor Communication functions}, \hyperpage{284}
+    \subitem {USART}, \hyperpage{275}
+  \item {USART\_SendBreak}
+    \subitem {LIN mode functions}, \hyperpage{287}
+    \subitem {USART}, \hyperpage{275}
+  \item {USART\_SendData}
+    \subitem {Data transfers functions}, \hyperpage{283}
+    \subitem {USART}, \hyperpage{275}
+  \item {USART\_SetAddress}
+    \subitem {MultiProcessor Communication functions}, \hyperpage{285}
+    \subitem {USART}, \hyperpage{276}
+  \item {USART\_SetGuardTime}
+    \subitem {Smartcard mode functions}, \hyperpage{289}
+    \subitem {USART}, \hyperpage{276}
+  \item {USART\_SetPrescaler}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{282}
+    \subitem {USART}, \hyperpage{276}
+  \item {USART\_SmartCardCmd}
+    \subitem {Smartcard mode functions}, \hyperpage{289}
+    \subitem {USART}, \hyperpage{277}
+  \item {USART\_SmartCardNACKCmd}
+    \subitem {Smartcard mode functions}, \hyperpage{290}
+    \subitem {USART}, \hyperpage{277}
+  \item {USART\_Stop\_Bits}, \hyperpage{298}
+    \subitem {IS\_USART\_STOPBITS}, \hyperpage{298}
+    \subitem {USART\_StopBits\_0\_5}, \hyperpage{299}
+    \subitem {USART\_StopBits\_1}, \hyperpage{299}
+    \subitem {USART\_StopBits\_1\_5}, \hyperpage{299}
+    \subitem {USART\_StopBits\_2}, \hyperpage{299}
+  \item {USART\_StopBits}
+    \subitem {USART\_InitTypeDef}, \hyperpage{321}
+  \item {USART\_StopBits\_0\_5}
+    \subitem {USART\_Stop\_Bits}, \hyperpage{299}
+  \item {USART\_StopBits\_1}
+    \subitem {USART\_Stop\_Bits}, \hyperpage{299}
+  \item {USART\_StopBits\_1\_5}
+    \subitem {USART\_Stop\_Bits}, \hyperpage{299}
+  \item {USART\_StopBits\_2}
+    \subitem {USART\_Stop\_Bits}, \hyperpage{299}
+  \item {USART\_StructInit}
+    \subitem {Initialization and Configuration functions}, 
+		\hyperpage{282}
+    \subitem {USART}, \hyperpage{277}
+  \item {USART\_WakeUp\_AddressMark}
+    \subitem {USART\_WakeUp\_methods}, \hyperpage{305}
+  \item {USART\_WakeUp\_IdleLine}
+    \subitem {USART\_WakeUp\_methods}, \hyperpage{305}
+  \item {USART\_WakeUp\_methods}, \hyperpage{305}
+    \subitem {IS\_USART\_WAKEUP}, \hyperpage{305}
+    \subitem {USART\_WakeUp\_AddressMark}, \hyperpage{305}
+    \subitem {USART\_WakeUp\_IdleLine}, \hyperpage{305}
+  \item {USART\_WakeUpConfig}
+    \subitem {MultiProcessor Communication functions}, \hyperpage{285}
+    \subitem {USART}, \hyperpage{278}
+  \item {USART\_Word\_Length}, \hyperpage{298}
+    \subitem {IS\_USART\_WORD\_LENGTH}, \hyperpage{298}
+    \subitem {USART\_WordLength\_8b}, \hyperpage{298}
+    \subitem {USART\_WordLength\_9b}, \hyperpage{298}
+  \item {USART\_WordLength}
+    \subitem {USART\_InitTypeDef}, \hyperpage{321}
+  \item {USART\_WordLength\_8b}
+    \subitem {USART\_Word\_Length}, \hyperpage{298}
+  \item {USART\_WordLength\_9b}
+    \subitem {USART\_Word\_Length}, \hyperpage{298}
+
+\end{theindex}

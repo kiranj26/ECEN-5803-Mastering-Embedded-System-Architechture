@@ -1,0 +1,243 @@
+\doxysection{drivers/stm32f4xx\+\_\+rcc.c File Reference}
+\label{stm32f4xx__rcc_8c}\index{drivers/stm32f4xx\_rcc.c@{drivers/stm32f4xx\_rcc.c}}
+
+
+This file provides firmware functions to manage the following functionalities of the Reset and clock control (RCC) peripheral\+:  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+rcc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ HSE\+\_\+\+VALUE}~((uint32\+\_\+t)25000000)
+\item 
+\#define \textbf{ HSE\+\_\+\+STARTUP\+\_\+\+TIMEOUT}~((uint16\+\_\+t)0x0500)
+\begin{DoxyCompactList}\small\item\em In the following line adjust the External High Speed oscillator (HSE) Startup Timeout value. \end{DoxyCompactList}\item 
+\#define \textbf{ HSI\+\_\+\+VALUE}~((uint32\+\_\+t)16000000)
+\item 
+\#define \textbf{ RCC\+\_\+\+OFFSET}~(RCC\+\_\+\+BASE -\/ PERIPH\+\_\+\+BASE)
+\item 
+\#define \textbf{ CR\+\_\+\+OFFSET}~(\textbf{ RCC\+\_\+\+OFFSET} + 0x00)
+\item 
+\#define \textbf{ HSION\+\_\+\+Bit\+Number}~0x00
+\item 
+\#define \textbf{ CR\+\_\+\+HSION\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\textbf{ CR\+\_\+\+OFFSET} $\ast$ 32) + (\textbf{ HSION\+\_\+\+Bit\+Number} $\ast$ 4))
+\item 
+\#define \textbf{ CSSON\+\_\+\+Bit\+Number}~0x13
+\item 
+\#define \textbf{ CR\+\_\+\+CSSON\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\textbf{ CR\+\_\+\+OFFSET} $\ast$ 32) + (\textbf{ CSSON\+\_\+\+Bit\+Number} $\ast$ 4))
+\item 
+\#define \textbf{ PLLON\+\_\+\+Bit\+Number}~0x18
+\item 
+\#define \textbf{ CR\+\_\+\+PLLON\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\textbf{ CR\+\_\+\+OFFSET} $\ast$ 32) + (\textbf{ PLLON\+\_\+\+Bit\+Number} $\ast$ 4))
+\item 
+\#define \textbf{ PLLI2\+SON\+\_\+\+Bit\+Number}~0x1A
+\item 
+\#define \textbf{ CR\+\_\+\+PLLI2\+SON\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\textbf{ CR\+\_\+\+OFFSET} $\ast$ 32) + (\textbf{ PLLI2\+SON\+\_\+\+Bit\+Number} $\ast$ 4))
+\item 
+\#define \textbf{ CFGR\+\_\+\+OFFSET}~(\textbf{ RCC\+\_\+\+OFFSET} + 0x08)
+\item 
+\#define \textbf{ I2\+SSRC\+\_\+\+Bit\+Number}~0x17
+\item 
+\#define \textbf{ CFGR\+\_\+\+I2\+SSRC\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\textbf{ CFGR\+\_\+\+OFFSET} $\ast$ 32) + (\textbf{ I2\+SSRC\+\_\+\+Bit\+Number} $\ast$ 4))
+\item 
+\#define \textbf{ BDCR\+\_\+\+OFFSET}~(\textbf{ RCC\+\_\+\+OFFSET} + 0x70)
+\item 
+\#define \textbf{ RTCEN\+\_\+\+Bit\+Number}~0x0F
+\item 
+\#define \textbf{ BDCR\+\_\+\+RTCEN\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\textbf{ BDCR\+\_\+\+OFFSET} $\ast$ 32) + (\textbf{ RTCEN\+\_\+\+Bit\+Number} $\ast$ 4))
+\item 
+\#define \textbf{ BDRST\+\_\+\+Bit\+Number}~0x10
+\item 
+\#define \textbf{ BDCR\+\_\+\+BDRST\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\textbf{ BDCR\+\_\+\+OFFSET} $\ast$ 32) + (\textbf{ BDRST\+\_\+\+Bit\+Number} $\ast$ 4))
+\item 
+\#define \textbf{ CSR\+\_\+\+OFFSET}~(\textbf{ RCC\+\_\+\+OFFSET} + 0x74)
+\item 
+\#define \textbf{ LSION\+\_\+\+Bit\+Number}~0x00
+\item 
+\#define \textbf{ CSR\+\_\+\+LSION\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\textbf{ CSR\+\_\+\+OFFSET} $\ast$ 32) + (\textbf{ LSION\+\_\+\+Bit\+Number} $\ast$ 4))
+\item 
+\#define \textbf{ CFGR\+\_\+\+MCO2\+\_\+\+RESET\+\_\+\+MASK}~((uint32\+\_\+t)0x07\+FFFFFF)
+\item 
+\#define \textbf{ CFGR\+\_\+\+MCO1\+\_\+\+RESET\+\_\+\+MASK}~((uint32\+\_\+t)0x\+F89\+FFFFF)
+\item 
+\#define \textbf{ FLAG\+\_\+\+MASK}~((uint8\+\_\+t)0x1F)
+\item 
+\#define \textbf{ CR\+\_\+\+BYTE3\+\_\+\+ADDRESS}~((uint32\+\_\+t)0x40023802)
+\item 
+\#define \textbf{ CIR\+\_\+\+BYTE2\+\_\+\+ADDRESS}~((uint32\+\_\+t)(RCC\+\_\+\+BASE + 0x0C + 0x01))
+\item 
+\#define \textbf{ CIR\+\_\+\+BYTE3\+\_\+\+ADDRESS}~((uint32\+\_\+t)(RCC\+\_\+\+BASE + 0x0C + 0x02))
+\item 
+\#define \textbf{ BDCR\+\_\+\+ADDRESS}~(PERIPH\+\_\+\+BASE + \textbf{ BDCR\+\_\+\+OFFSET})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ RCC\+\_\+\+De\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Resets the RCC clock configuration to the default reset state. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+HSEConfig} (uint8\+\_\+t RCC\+\_\+\+HSE)
+\begin{DoxyCompactList}\small\item\em Configures the External High Speed oscillator (HSE). \end{DoxyCompactList}\item 
+Error\+Status \textbf{ RCC\+\_\+\+Wait\+For\+HSEStart\+Up} (void)
+\begin{DoxyCompactList}\small\item\em Waits for HSE start-\/up. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+Adjust\+HSICalibration\+Value} (uint8\+\_\+t HSICalibration\+Value)
+\begin{DoxyCompactList}\small\item\em Adjusts the Internal High Speed oscillator (HSI) calibration value. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+HSICmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Internal High Speed oscillator (HSI). \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+LSEConfig} (uint8\+\_\+t RCC\+\_\+\+LSE)
+\begin{DoxyCompactList}\small\item\em Configures the External Low Speed oscillator (LSE). \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+LSICmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Internal Low Speed oscillator (LSI). \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+PLLConfig} (uint32\+\_\+t RCC\+\_\+\+PLLSource, uint32\+\_\+t PLLM, uint32\+\_\+t PLLN, uint32\+\_\+t PLLP, uint32\+\_\+t PLLQ)
+\begin{DoxyCompactList}\small\item\em Configures the main PLL clock source, multiplication and division factors. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+PLLCmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the main PLL. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+PLLI2\+SConfig} (uint32\+\_\+t PLLI2\+SN, uint32\+\_\+t PLLI2\+SR)
+\begin{DoxyCompactList}\small\item\em Configures the PLLI2S clock multiplication and division factors. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+PLLI2\+SCmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the PLLI2S. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+Clock\+Security\+System\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Clock Security System. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+MCO1\+Config} (uint32\+\_\+t RCC\+\_\+\+MCO1\+Source, uint32\+\_\+t RCC\+\_\+\+MCO1\+Div)
+\begin{DoxyCompactList}\small\item\em Selects the clock source to output on MCO1 pin(\+PA8). \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+MCO2\+Config} (uint32\+\_\+t RCC\+\_\+\+MCO2\+Source, uint32\+\_\+t RCC\+\_\+\+MCO2\+Div)
+\begin{DoxyCompactList}\small\item\em Selects the clock source to output on MCO2 pin(\+PC9). \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+SYSCLKConfig} (uint32\+\_\+t RCC\+\_\+\+SYSCLKSource)
+\begin{DoxyCompactList}\small\item\em Configures the system clock (SYSCLK). \end{DoxyCompactList}\item 
+uint8\+\_\+t \textbf{ RCC\+\_\+\+Get\+SYSCLKSource} (void)
+\begin{DoxyCompactList}\small\item\em Returns the clock source used as system clock. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+HCLKConfig} (uint32\+\_\+t RCC\+\_\+\+SYSCLK)
+\begin{DoxyCompactList}\small\item\em Configures the AHB clock (HCLK). \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+PCLK1\+Config} (uint32\+\_\+t RCC\+\_\+\+HCLK)
+\begin{DoxyCompactList}\small\item\em Configures the Low Speed APB clock (PCLK1). \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+PCLK2\+Config} (uint32\+\_\+t RCC\+\_\+\+HCLK)
+\begin{DoxyCompactList}\small\item\em Configures the High Speed APB clock (PCLK2). \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+Get\+Clocks\+Freq} (\textbf{ RCC\+\_\+\+Clocks\+Type\+Def} $\ast$RCC\+\_\+\+Clocks)
+\begin{DoxyCompactList}\small\item\em Returns the frequencies of different on chip clocks; SYSCLK, HCLK, PCLK1 and PCLK2. ~\newline
+ \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+RTCCLKConfig} (uint32\+\_\+t RCC\+\_\+\+RTCCLKSource)
+\begin{DoxyCompactList}\small\item\em Configures the RTC clock (RTCCLK). \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+RTCCLKCmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the RTC clock. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+Backup\+Reset\+Cmd} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases the Backup domain reset. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+I2\+SCLKConfig} (uint32\+\_\+t RCC\+\_\+\+I2\+SCLKSource)
+\begin{DoxyCompactList}\small\item\em Configures the I2S clock source (I2\+SCLK). \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+AHB1\+Periph\+Clock\+Cmd} (uint32\+\_\+t RCC\+\_\+\+AHB1\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the AHB1 peripheral clock. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+AHB2\+Periph\+Clock\+Cmd} (uint32\+\_\+t RCC\+\_\+\+AHB2\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the AHB2 peripheral clock. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+AHB3\+Periph\+Clock\+Cmd} (uint32\+\_\+t RCC\+\_\+\+AHB3\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the AHB3 peripheral clock. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+APB1\+Periph\+Clock\+Cmd} (uint32\+\_\+t RCC\+\_\+\+APB1\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Low Speed APB (APB1) peripheral clock. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+APB2\+Periph\+Clock\+Cmd} (uint32\+\_\+t RCC\+\_\+\+APB2\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the High Speed APB (APB2) peripheral clock. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+AHB1\+Periph\+Reset\+Cmd} (uint32\+\_\+t RCC\+\_\+\+AHB1\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases AHB1 peripheral reset. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+AHB2\+Periph\+Reset\+Cmd} (uint32\+\_\+t RCC\+\_\+\+AHB2\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases AHB2 peripheral reset. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+AHB3\+Periph\+Reset\+Cmd} (uint32\+\_\+t RCC\+\_\+\+AHB3\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases AHB3 peripheral reset. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+APB1\+Periph\+Reset\+Cmd} (uint32\+\_\+t RCC\+\_\+\+APB1\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases Low Speed APB (APB1) peripheral reset. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+APB2\+Periph\+Reset\+Cmd} (uint32\+\_\+t RCC\+\_\+\+APB2\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases High Speed APB (APB2) peripheral reset. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+AHB1\+Periph\+Clock\+LPMode\+Cmd} (uint32\+\_\+t RCC\+\_\+\+AHB1\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the AHB1 peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+AHB2\+Periph\+Clock\+LPMode\+Cmd} (uint32\+\_\+t RCC\+\_\+\+AHB2\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the AHB2 peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+AHB3\+Periph\+Clock\+LPMode\+Cmd} (uint32\+\_\+t RCC\+\_\+\+AHB3\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the AHB3 peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+APB1\+Periph\+Clock\+LPMode\+Cmd} (uint32\+\_\+t RCC\+\_\+\+APB1\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the APB1 peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+APB2\+Periph\+Clock\+LPMode\+Cmd} (uint32\+\_\+t RCC\+\_\+\+APB2\+Periph, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the APB2 peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+ITConfig} (uint8\+\_\+t RCC\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified RCC interrupts. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ RCC\+\_\+\+Get\+Flag\+Status} (uint8\+\_\+t RCC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified RCC flag is set or not. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+Clear\+Flag} (void)
+\begin{DoxyCompactList}\small\item\em Clears the RCC reset flags. The reset flags are\+: RCC\+\_\+\+FLAG\+\_\+\+PINRST, RCC\+\_\+\+FLAG\+\_\+\+PORRST, RCC\+\_\+\+FLAG\+\_\+\+SFTRST, RCC\+\_\+\+FLAG\+\_\+\+IWDGRST, RCC\+\_\+\+FLAG\+\_\+\+WWDGRST, RCC\+\_\+\+FLAG\+\_\+\+LPWRRST. \end{DoxyCompactList}\item 
+ITStatus \textbf{ RCC\+\_\+\+Get\+ITStatus} (uint8\+\_\+t RCC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified RCC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \textbf{ RCC\+\_\+\+Clear\+ITPending\+Bit} (uint8\+\_\+t RCC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the RCC\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides firmware functions to manage the following functionalities of the Reset and clock control (RCC) peripheral\+: 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30-\/September-\/2011
+\begin{DoxyItemize}
+\item Internal/external clocks, PLL, CSS and MCO configuration
+\item System, AHB and APB busses clocks configuration
+\item Peripheral clocks configuration
+\item Interrupts and flags management
+\end{DoxyItemize}
+\end{DoxyDate}
+\begin{DoxyVerb}*               
+*          ===================================================================
+*                               RCC specific features
+*          ===================================================================
+*    
+*          After reset the device is running from Internal High Speed oscillator 
+*          (HSI 16MHz) with Flash 0 wait state, Flash prefetch buffer, D-Cache 
+*          and I-Cache are disabled, and all peripherals are off except internal
+*          SRAM, Flash and JTAG.
+*           - There is no prescaler on High speed (AHB) and Low speed (APB) busses;
+*             all peripherals mapped on these busses are running at HSI speed.
+*             - The clock for all peripherals is switched off, except the SRAM and FLASH.
+*           - All GPIOs are in input floating state, except the JTAG pins which
+*             are assigned to be used for debug purpose.
+*        
+*          Once the device started from reset, the user application has to:        
+*           - Configure the clock source to be used to drive the System clock
+*             (if the application needs higher frequency/performance)
+*           - Configure the System clock frequency and Flash settings  
+*           - Configure the AHB and APB busses prescalers
+*           - Enable the clock for the peripheral(s) to be used
+*           - Configure the clock source(s) for peripherals which clocks are not
+*             derived from the System clock (I2S, RTC, ADC, USB OTG FS/SDIO/RNG)      
+*                        
+*  \end{DoxyVerb}
+
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }
+
+\doxysubsection{Macro Definition Documentation}
+\label{stm32f4xx__rcc_8c_a68ecbc9b0a1a40a1ec9d18d5e9747c4f} 
+\index{stm32f4xx\_rcc.c@{stm32f4xx\_rcc.c}!HSE\_STARTUP\_TIMEOUT@{HSE\_STARTUP\_TIMEOUT}}
+\index{HSE\_STARTUP\_TIMEOUT@{HSE\_STARTUP\_TIMEOUT}!stm32f4xx\_rcc.c@{stm32f4xx\_rcc.c}}
+\doxysubsubsection{HSE\_STARTUP\_TIMEOUT}
+{\footnotesize\ttfamily \#define HSE\+\_\+\+STARTUP\+\_\+\+TIMEOUT~((uint16\+\_\+t)0x0500)}
+
+
+
+In the following line adjust the External High Speed oscillator (HSE) Startup Timeout value. 
+
+Time out for HSE start up \label{stm32f4xx__rcc_8c_aeafcff4f57440c60e64812dddd13e7cb} 
+\index{stm32f4xx\_rcc.c@{stm32f4xx\_rcc.c}!HSE\_VALUE@{HSE\_VALUE}}
+\index{HSE\_VALUE@{HSE\_VALUE}!stm32f4xx\_rcc.c@{stm32f4xx\_rcc.c}}
+\doxysubsubsection{HSE\_VALUE}
+{\footnotesize\ttfamily \#define HSE\+\_\+\+VALUE~((uint32\+\_\+t)25000000)}
+
+Value of the External oscillator in Hz \label{stm32f4xx__rcc_8c_aaa8c76e274d0f6dd2cefb5d0b17fbc37} 
+\index{stm32f4xx\_rcc.c@{stm32f4xx\_rcc.c}!HSI\_VALUE@{HSI\_VALUE}}
+\index{HSI\_VALUE@{HSI\_VALUE}!stm32f4xx\_rcc.c@{stm32f4xx\_rcc.c}}
+\doxysubsubsection{HSI\_VALUE}
+{\footnotesize\ttfamily \#define HSI\+\_\+\+VALUE~((uint32\+\_\+t)16000000)}
+
+Value of the Internal oscillator in Hz 

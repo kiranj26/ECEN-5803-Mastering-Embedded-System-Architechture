@@ -1,0 +1,75 @@
+\doxysection{I2\+C\+\_\+\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_i2_c___init_type_def}{}\label{struct_i2_c___init_type_def}\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+
+
+I2C Init structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+i2c.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_i2_c___init_type_def_af8d72d15cd29b7e69591ce3edab497f6}{I2\+C\+\_\+\+Clock\+Speed}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_i2_c___init_type_def_a165269b65702e348e32ccd8029e65af1}{I2\+C\+\_\+\+Mode}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_i2_c___init_type_def_a349afc2bb8534c072349a6061f29344a}{I2\+C\+\_\+\+Duty\+Cycle}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_i2_c___init_type_def_ae62dca9cea4fdb3eb8f9554b5f35fe4f}{I2\+C\+\_\+\+Own\+Address1}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_i2_c___init_type_def_ab21d61d68d06e97d7c0ab90c8e396464}{I2\+C\+\_\+\+Ack}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_i2_c___init_type_def_af46be2bc866a7dbf0d529dd770b105b3}{I2\+C\+\_\+\+Acknowledged\+Address}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I2C Init structure definition ~\newline
+ 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_i2_c___init_type_def_ab21d61d68d06e97d7c0ab90c8e396464}\label{struct_i2_c___init_type_def_ab21d61d68d06e97d7c0ab90c8e396464} 
+\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}!I2C\_Ack@{I2C\_Ack}}
+\index{I2C\_Ack@{I2C\_Ack}!I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{I2C\_Ack}{I2C\_Ack}}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+\_\+\+Ack}
+
+Enables or disables the acknowledgement. This parameter can be a value of \doxylink{group___i2_c__acknowledgement}{I2\+C\+\_\+acknowledgement} \Hypertarget{struct_i2_c___init_type_def_af46be2bc866a7dbf0d529dd770b105b3}\label{struct_i2_c___init_type_def_af46be2bc866a7dbf0d529dd770b105b3} 
+\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}!I2C\_AcknowledgedAddress@{I2C\_AcknowledgedAddress}}
+\index{I2C\_AcknowledgedAddress@{I2C\_AcknowledgedAddress}!I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{I2C\_AcknowledgedAddress}{I2C\_AcknowledgedAddress}}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+\_\+\+Acknowledged\+Address}
+
+Specifies if 7-\/bit or 10-\/bit address is acknowledged. This parameter can be a value of \doxylink{group___i2_c__acknowledged__address}{I2\+C\+\_\+acknowledged\+\_\+address} \Hypertarget{struct_i2_c___init_type_def_af8d72d15cd29b7e69591ce3edab497f6}\label{struct_i2_c___init_type_def_af8d72d15cd29b7e69591ce3edab497f6} 
+\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}!I2C\_ClockSpeed@{I2C\_ClockSpeed}}
+\index{I2C\_ClockSpeed@{I2C\_ClockSpeed}!I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{I2C\_ClockSpeed}{I2C\_ClockSpeed}}
+{\footnotesize\ttfamily uint32\+\_\+t I2\+C\+\_\+\+Clock\+Speed}
+
+Specifies the clock frequency. This parameter must be set to a value lower than 400k\+Hz \Hypertarget{struct_i2_c___init_type_def_a349afc2bb8534c072349a6061f29344a}\label{struct_i2_c___init_type_def_a349afc2bb8534c072349a6061f29344a} 
+\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}!I2C\_DutyCycle@{I2C\_DutyCycle}}
+\index{I2C\_DutyCycle@{I2C\_DutyCycle}!I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{I2C\_DutyCycle}{I2C\_DutyCycle}}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+\_\+\+Duty\+Cycle}
+
+Specifies the I2C fast mode duty cycle. This parameter can be a value of \doxylink{group___i2_c__duty__cycle__in__fast__mode}{I2\+C\+\_\+duty\+\_\+cycle\+\_\+in\+\_\+fast\+\_\+mode} \Hypertarget{struct_i2_c___init_type_def_a165269b65702e348e32ccd8029e65af1}\label{struct_i2_c___init_type_def_a165269b65702e348e32ccd8029e65af1} 
+\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}!I2C\_Mode@{I2C\_Mode}}
+\index{I2C\_Mode@{I2C\_Mode}!I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{I2C\_Mode}{I2C\_Mode}}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+\_\+\+Mode}
+
+Specifies the I2C mode. This parameter can be a value of \doxylink{group___i2_c__mode}{I2\+C\+\_\+mode} \Hypertarget{struct_i2_c___init_type_def_ae62dca9cea4fdb3eb8f9554b5f35fe4f}\label{struct_i2_c___init_type_def_ae62dca9cea4fdb3eb8f9554b5f35fe4f} 
+\index{I2C\_InitTypeDef@{I2C\_InitTypeDef}!I2C\_OwnAddress1@{I2C\_OwnAddress1}}
+\index{I2C\_OwnAddress1@{I2C\_OwnAddress1}!I2C\_InitTypeDef@{I2C\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{I2C\_OwnAddress1}{I2C\_OwnAddress1}}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+\_\+\+Own\+Address1}
+
+Specifies the first device own address. This parameter can be a 7-\/bit or 10-\/bit address. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+drivers/\mbox{\hyperlink{stm32f4xx__i2c_8h}{stm32f4xx\+\_\+i2c.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,164 @@
+\doxysection{drivers/stm32f4xx\+\_\+usart.c File Reference}
+\label{stm32f4xx__usart_8c}\index{drivers/stm32f4xx\_usart.c@{drivers/stm32f4xx\_usart.c}}
+
+
+This file provides firmware functions to manage the following functionalities of the Universal synchronous asynchronous receiver transmitter (USART)\+: ~\newline
+  
+
+
+{\ttfamily \#include "{}stm32f4xx\+\_\+rcc.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f4xx\+\_\+usart.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ CR1\+\_\+\+CLEAR\+\_\+\+MASK}
+\item 
+\#define \textbf{ CR2\+\_\+\+CLOCK\+\_\+\+CLEAR\+\_\+\+MASK}
+\item 
+\#define \textbf{ CR3\+\_\+\+CLEAR\+\_\+\+MASK}~((uint16\+\_\+t)(USART\+\_\+\+CR3\+\_\+\+RTSE $\vert$ USART\+\_\+\+CR3\+\_\+\+CTSE))
+\item 
+\#define \textbf{ IT\+\_\+\+MASK}~((uint16\+\_\+t)0x001F)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ USART\+\_\+\+De\+Init} (USART\+\_\+\+Type\+Def $\ast$USARTx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the USARTx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Init} (USART\+\_\+\+Type\+Def $\ast$USARTx, \textbf{ USART\+\_\+\+Init\+Type\+Def} $\ast$USART\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the USARTx peripheral according to the specified parameters in the USART\+\_\+\+Init\+Struct . \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Struct\+Init} (\textbf{ USART\+\_\+\+Init\+Type\+Def} $\ast$USART\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each USART\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Clock\+Init} (USART\+\_\+\+Type\+Def $\ast$USARTx, \textbf{ USART\+\_\+\+Clock\+Init\+Type\+Def} $\ast$USART\+\_\+\+Clock\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the USARTx peripheral Clock according to the specified parameters in the USART\+\_\+\+Clock\+Init\+Struct . \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Clock\+Struct\+Init} (\textbf{ USART\+\_\+\+Clock\+Init\+Type\+Def} $\ast$USART\+\_\+\+Clock\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each USART\+\_\+\+Clock\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified USART peripheral. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Set\+Prescaler} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint8\+\_\+t USART\+\_\+\+Prescaler)
+\begin{DoxyCompactList}\small\item\em Sets the system clock prescaler. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Over\+Sampling8\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s 8x oversampling mode. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+One\+Bit\+Method\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s one bit sampling method. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Send\+Data} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Transmits single data through the USARTx peripheral. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ USART\+\_\+\+Receive\+Data} (USART\+\_\+\+Type\+Def $\ast$USARTx)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the USARTx peripheral. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Set\+Address} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint8\+\_\+t USART\+\_\+\+Address)
+\begin{DoxyCompactList}\small\item\em Sets the address of the USART node. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Receiver\+Wake\+Up\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Determines if the USART is in mute mode or not. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Wake\+Up\+Config} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+Wake\+Up)
+\begin{DoxyCompactList}\small\item\em Selects the USART Wake\+Up method. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+LINBreak\+Detect\+Length\+Config} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+LINBreak\+Detect\+Length)
+\begin{DoxyCompactList}\small\item\em Sets the USART LIN Break detection length. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+LINCmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s LIN mode. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Send\+Break} (USART\+\_\+\+Type\+Def $\ast$USARTx)
+\begin{DoxyCompactList}\small\item\em Transmits break characters. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Half\+Duplex\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s Half Duplex communication. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Set\+Guard\+Time} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint8\+\_\+t USART\+\_\+\+Guard\+Time)
+\begin{DoxyCompactList}\small\item\em Sets the specified USART guard time. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Smart\+Card\+Cmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s Smart Card mode. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Smart\+Card\+NACKCmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables NACK transmission. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Ir\+DAConfig} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+Ir\+DAMode)
+\begin{DoxyCompactList}\small\item\em Configures the USART\textquotesingle{}s Ir\+DA interface. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Ir\+DACmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s Ir\+DA interface. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+DMACmd} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+DMAReq, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s DMA interface. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+ITConfig} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified USART interrupts. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ USART\+\_\+\+Get\+Flag\+Status} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified USART flag is set or not. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Clear\+Flag} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the USARTx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \textbf{ USART\+\_\+\+Get\+ITStatus} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified USART interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \textbf{ USART\+\_\+\+Clear\+ITPending\+Bit} (USART\+\_\+\+Type\+Def $\ast$USARTx, uint16\+\_\+t USART\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the USARTx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides firmware functions to manage the following functionalities of the Universal synchronous asynchronous receiver transmitter (USART)\+: ~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+30-\/September-\/2011
+\begin{DoxyItemize}
+\item Initialization and Configuration
+\item Data transfers
+\item Multi-\/\+Processor Communication
+\item LIN mode
+\item Half-\/duplex mode
+\item Smartcard mode
+\item Ir\+DA mode
+\item DMA transfers management
+\item Interrupts and flags management
+\end{DoxyItemize}
+\end{DoxyDate}
+\begin{DoxyVerb}*      
+*          ===================================================================
+*                                 How to use this driver
+*          ===================================================================
+*          1. Enable peripheral clock using the follwoing functions
+*             RCC_APB2PeriphClockCmd(RCC_APB2Periph_USARTx, ENABLE) for USART1 and USART6 
+*             RCC_APB1PeriphClockCmd(RCC_APB1Periph_USARTx, ENABLE) for USART2, USART3, UART4 or UART5.
+*
+*          2.  According to the USART mode, enable the GPIO clocks using 
+*              RCC_AHB1PeriphClockCmd() function. (The I/O can be TX, RX, CTS, 
+*              or/and SCLK). 
+*
+*          3. Peripheral's alternate function: 
+*                 - Connect the pin to the desired peripherals' Alternate 
+*                   Function (AF) using GPIO_PinAFConfig() function
+*                 - Configure the desired pin in alternate function by:
+*                   GPIO_InitStruct->GPIO_Mode = GPIO_Mode_AF
+*                 - Select the type, pull-up/pull-down and output speed via 
+*                   GPIO_PuPd, GPIO_OType and GPIO_Speed members
+*                 - Call GPIO_Init() function
+*        
+*          4. Program the Baud Rate, Word Length , Stop Bit, Parity, Hardware 
+*             flow control and Mode(Receiver/Transmitter) using the USART_Init()
+*             function.
+*
+*          5. For synchronous mode, enable the clock and program the polarity,
+*             phase and last bit using the USART_ClockInit() function.
+*
+*          5. Enable the NVIC and the corresponding interrupt using the function 
+*             USART_ITConfig() if you need to use interrupt mode. 
+*
+*          6. When using the DMA mode 
+*                   - Configure the DMA using DMA_Init() function
+*                   - Active the needed channel Request using USART_DMACmd() function
+* 
+*          7. Enable the USART using the USART_Cmd() function.
+* 
+*          8. Enable the DMA using the DMA_Cmd() function, when using DMA mode. 
+*
+*          Refer to Multi-Processor, LIN, half-duplex, Smartcard, IrDA sub-sections
+*          for more details
+*          
+*          In order to reach higher communication baudrates, it is possible to
+*          enable the oversampling by 8 mode using the function USART_OverSampling8Cmd().
+*          This function should be called after enabling the USART clock (RCC_APBxPeriphClockCmd())
+*          and before calling the function USART_Init().
+*          
+*  \end{DoxyVerb}
+
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

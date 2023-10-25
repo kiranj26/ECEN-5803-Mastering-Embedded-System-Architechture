@@ -1,0 +1,40 @@
+.TH "USART_Last_Bit" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_Last_Bit \- USART_Last_Bit
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBUSART_LastBit_Disable\fP   ((uint16_t)0x0000)"
+.br
+.ti -1c
+.RI "#define \fBUSART_LastBit_Enable\fP   ((uint16_t)0x0100)"
+.br
+.ti -1c
+.RI "#define \fBIS_USART_LASTBIT\fP(LASTBIT)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_USART_LASTBIT(LASTBIT)"
+\fBValue:\fP.PP
+.nf
+                                   (((LASTBIT) == USART_LastBit_Disable) || \\
+                                   ((LASTBIT) == USART_LastBit_Enable))
+.fi
+
+.SS "#define USART_LastBit_Disable   ((uint16_t)0x0000)"
+
+.SS "#define USART_LastBit_Enable   ((uint16_t)0x0100)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

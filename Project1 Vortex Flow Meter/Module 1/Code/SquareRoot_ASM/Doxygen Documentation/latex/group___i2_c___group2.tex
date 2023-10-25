@@ -1,0 +1,67 @@
+\doxysubsubsubsection{Data transfers functions}
+\hypertarget{group___i2_c___group2}{}\label{group___i2_c___group2}\index{Data transfers functions@{Data transfers functions}}
+
+
+Data transfers functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___i2_c___group2_ga7bd9e70b8eafde0dd5eb42b0d95fe1a9}{I2\+C\+\_\+\+Send\+Data}} (I2\+C\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}I2\+Cx, uint8\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Sends a data byte through the I2\+Cx peripheral. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___i2_c___group2_gaeaaa4b6f77f50eb57465148c55d27fb2}{I2\+C\+\_\+\+Receive\+Data}} (I2\+C\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the I2\+Cx peripheral. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Data transfers functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                        Data transfers functions
+ ===============================================================================  \end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\Hypertarget{group___i2_c___group2_gaeaaa4b6f77f50eb57465148c55d27fb2}\label{group___i2_c___group2_gaeaaa4b6f77f50eb57465148c55d27fb2} 
+\index{Data transfers functions@{Data transfers functions}!I2C\_ReceiveData@{I2C\_ReceiveData}}
+\index{I2C\_ReceiveData@{I2C\_ReceiveData}!Data transfers functions@{Data transfers functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{I2C\_ReceiveData()}{I2C\_ReceiveData()}}
+{\footnotesize\ttfamily uint8\+\_\+t I2\+C\+\_\+\+Receive\+Data (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{I2\+Cx }\end{DoxyParamCaption})}
+
+
+
+Returns the most recent received data by the I2\+Cx peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & value of the received data. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i2_c___group2_ga7bd9e70b8eafde0dd5eb42b0d95fe1a9}\label{group___i2_c___group2_ga7bd9e70b8eafde0dd5eb42b0d95fe1a9} 
+\index{Data transfers functions@{Data transfers functions}!I2C\_SendData@{I2C\_SendData}}
+\index{I2C\_SendData@{I2C\_SendData}!Data transfers functions@{Data transfers functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{I2C\_SendData()}{I2C\_SendData()}}
+{\footnotesize\ttfamily void I2\+C\+\_\+\+Send\+Data (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{I2\+Cx,  }\item[{uint8\+\_\+t}]{Data }\end{DoxyParamCaption})}
+
+
+
+Sends a data byte through the I2\+Cx peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I2\+Cx} & where x can be 1, 2 or 3 to select the I2C peripheral. \\
+\hline
+{\em Data} & Byte to be transmitted.. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

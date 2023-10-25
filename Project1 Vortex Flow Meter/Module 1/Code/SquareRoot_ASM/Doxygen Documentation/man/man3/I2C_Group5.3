@@ -1,0 +1,516 @@
+.TH "I2C_Group5" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_Group5 \- Interrupts events and flags management functions
+.PP
+ \- Interrupts, events and flags management functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "uint16_t \fBI2C_ReadRegister\fP (I2C_TypeDef *I2Cx, uint8_t I2C_Register)"
+.br
+.RI "Reads the specified I2C register and returns its value\&. "
+.ti -1c
+.RI "void \fBI2C_ITConfig\fP (I2C_TypeDef *I2Cx, uint16_t I2C_IT, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C interrupts\&. "
+.ti -1c
+.RI "ErrorStatus \fBI2C_CheckEvent\fP (I2C_TypeDef *I2Cx, uint32_t I2C_EVENT)"
+.br
+.RI "Checks whether the last I2Cx Event is equal to the one passed as parameter\&. "
+.ti -1c
+.RI "uint32_t \fBI2C_GetLastEvent\fP (I2C_TypeDef *I2Cx)"
+.br
+.RI "Returns the last I2Cx Event\&. "
+.ti -1c
+.RI "FlagStatus \fBI2C_GetFlagStatus\fP (I2C_TypeDef *I2Cx, uint32_t I2C_FLAG)"
+.br
+.RI "Checks whether the specified I2C flag is set or not\&. "
+.ti -1c
+.RI "void \fBI2C_ClearFlag\fP (I2C_TypeDef *I2Cx, uint32_t I2C_FLAG)"
+.br
+.RI "Clears the I2Cx's pending flags\&. "
+.ti -1c
+.RI "ITStatus \fBI2C_GetITStatus\fP (I2C_TypeDef *I2Cx, uint32_t I2C_IT)"
+.br
+.RI "Checks whether the specified I2C interrupt has occurred or not\&. "
+.ti -1c
+.RI "void \fBI2C_ClearITPendingBit\fP (I2C_TypeDef *I2Cx, uint32_t I2C_IT)"
+.br
+.RI "Clears the I2Cx's interrupt pending bits\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interrupts, events and flags management functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                Interrupts, events and flags management functions
+ ===============================================================================  
+  This section provides functions allowing to configure the I2C Interrupts 
+  sources and check or clear the flags or pending bits status\&.
+  The user should identify which mode will be used in his application to manage 
+  the communication: Polling mode, Interrupt mode or DMA mode\&. 
+
+ ===============================================================================
+                          I2C State Monitoring Functions                    
+ ===============================================================================   
+  This I2C driver provides three different ways for I2C state monitoring
+  depending on the application requirements and constraints:
+         
+   
+     1\&. Basic state monitoring (Using I2C_CheckEvent() function)
+     -----------------------------------------------------------
+        It compares the status registers (SR1 and SR2) content to a given event
+        (can be the combination of one or more flags)\&.
+        It returns SUCCESS if the current status includes the given flags 
+        and returns ERROR if one or more flags are missing in the current status\&.
+
+          - When to use
+             - This function is suitable for most applications as well as for startup 
+               activity since the events are fully described in the product reference 
+               manual (RM0090)\&.
+             - It is also suitable for users who need to define their own events\&.
+
+          - Limitations
+             - If an error occurs (ie\&. error flags are set besides to the monitored 
+               flags), the I2C_CheckEvent() function may return SUCCESS despite 
+               the communication hold or corrupted real state\&. 
+               In this case, it is advised to use error interrupts to monitor 
+               the error events and handle them in the interrupt IRQ handler\&.
+         
+     @note 
+         For error management, it is advised to use the following functions:
+           - I2C_ITConfig() to configure and enable the error interrupts (I2C_IT_ERR)\&.
+           - I2Cx_ER_IRQHandler() which is called when the error interrupt occurs\&.
+             Where x is the peripheral instance (I2C1, I2C2 \&.\&.\&.)
+           - I2C_GetFlagStatus() or I2C_GetITStatus()  to be called into the 
+             I2Cx_ER_IRQHandler() function in order to determine which error occurred\&.
+           - I2C_ClearFlag() or I2C_ClearITPendingBit() and/or I2C_SoftwareResetCmd() 
+             and/or I2C_GenerateStop() in order to clear the error flag and source 
+             and return to correct  communication status\&.
+             
+ 
+     2\&. Advanced state monitoring (Using the function I2C_GetLastEvent())
+     -------------------------------------------------------------------- 
+        Using the function I2C_GetLastEvent() which returns the image of both status 
+        registers in a single word (uint32_t) (Status Register 2 value is shifted left 
+        by 16 bits and concatenated to Status Register 1)\&.
+
+          - When to use
+             - This function is suitable for the same applications above but it 
+               allows to overcome the mentioned limitation of I2C_GetFlagStatus() 
+               function\&.
+             - The returned value could be compared to events already defined in 
+               the library (stm32f4xx_i2c\&.h) or to custom values defined by user\&.
+               This function is suitable when multiple flags are monitored at the 
+               same time\&.
+             - At the opposite of I2C_CheckEvent() function, this function allows 
+               user to choose when an event is accepted (when all events flags are 
+               set and no other flags are set or just when the needed flags are set 
+               like I2C_CheckEvent() function\&.
+
+          - Limitations
+             - User may need to define his own events\&.
+             - Same remark concerning the error management is applicable for this 
+               function if user decides to check only regular communication flags 
+               (and ignores error flags)\&.
+      
+ 
+     3\&. Flag-based state monitoring (Using the function I2C_GetFlagStatus())
+     -----------------------------------------------------------------------
+     
+      Using the function I2C_GetFlagStatus() which simply returns the status of 
+      one single flag (ie\&. I2C_FLAG_RXNE \&.\&.\&.)\&. 
+
+          - When to use
+             - This function could be used for specific applications or in debug 
+               phase\&.
+             - It is suitable when only one flag checking is needed (most I2C 
+               events are monitored through multiple flags)\&.
+          - Limitations: 
+             - When calling this function, the Status register is accessed\&. 
+               Some flags are cleared when the status register is accessed\&. 
+               So checking the status of one Flag, may clear other ones\&.
+             - Function may need to be called twice or more in order to monitor 
+               one single event\&.
+ 
+   For detailed description of Events, please refer to section I2C_Events in 
+   stm32f4xx_i2c\&.h file\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "ErrorStatus I2C_CheckEvent (I2C_TypeDef * I2Cx, uint32_t I2C_EVENT)"
+
+.PP
+Checks whether the last I2Cx Event is equal to the one passed as parameter\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fII2C_EVENT\fP specifies the event to be checked\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+I2C_EVENT_SLAVE_TRANSMITTER_ADDRESS_MATCHED: EV1 
+.IP "\(bu" 1
+I2C_EVENT_SLAVE_RECEIVER_ADDRESS_MATCHED: EV1 
+.IP "\(bu" 1
+I2C_EVENT_SLAVE_TRANSMITTER_SECONDADDRESS_MATCHED: EV1 
+.IP "\(bu" 1
+I2C_EVENT_SLAVE_RECEIVER_SECONDADDRESS_MATCHED: EV1 
+.IP "\(bu" 1
+I2C_EVENT_SLAVE_GENERALCALLADDRESS_MATCHED: EV1 
+.IP "\(bu" 1
+I2C_EVENT_SLAVE_BYTE_RECEIVED: EV2 
+.IP "\(bu" 1
+(I2C_EVENT_SLAVE_BYTE_RECEIVED | I2C_FLAG_DUALF): EV2 
+.IP "\(bu" 1
+(I2C_EVENT_SLAVE_BYTE_RECEIVED | I2C_FLAG_GENCALL): EV2 
+.IP "\(bu" 1
+I2C_EVENT_SLAVE_BYTE_TRANSMITTED: EV3 
+.IP "\(bu" 1
+(I2C_EVENT_SLAVE_BYTE_TRANSMITTED | I2C_FLAG_DUALF): EV3 
+.IP "\(bu" 1
+(I2C_EVENT_SLAVE_BYTE_TRANSMITTED | I2C_FLAG_GENCALL): EV3 
+.IP "\(bu" 1
+I2C_EVENT_SLAVE_ACK_FAILURE: EV3_2 
+.IP "\(bu" 1
+I2C_EVENT_SLAVE_STOP_DETECTED: EV4 
+.IP "\(bu" 1
+I2C_EVENT_MASTER_MODE_SELECT: EV5 
+.IP "\(bu" 1
+I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED: EV6 
+.br
+ 
+.IP "\(bu" 1
+I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED: EV6 
+.IP "\(bu" 1
+I2C_EVENT_MASTER_BYTE_RECEIVED: EV7 
+.IP "\(bu" 1
+I2C_EVENT_MASTER_BYTE_TRANSMITTING: EV8 
+.IP "\(bu" 1
+I2C_EVENT_MASTER_BYTE_TRANSMITTED: EV8_2 
+.IP "\(bu" 1
+I2C_EVENT_MASTER_MODE_ADDRESS10: EV9
+.PP
+.RE
+.PP
+\fBNote\fP
+.RS 4
+For detailed description of Events, please refer to section I2C_Events in \fBstm32f4xx_i2c\&.h\fP file\&.
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIAn\fP ErrorStatus enumeration value:
+.IP "\(bu" 2
+SUCCESS: Last event is equal to the I2C_EVENT
+.IP "\(bu" 2
+ERROR: Last event is different from the I2C_EVENT 
+.PP
+.RE
+.PP
+
+.SS "void I2C_ClearFlag (I2C_TypeDef * I2Cx, uint32_t I2C_FLAG)"
+
+.PP
+Clears the I2Cx's pending flags\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fII2C_FLAG\fP specifies the flag to clear\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+I2C_FLAG_SMBALERT: SMBus Alert flag 
+.IP "\(bu" 1
+I2C_FLAG_TIMEOUT: Timeout or Tlow error flag 
+.IP "\(bu" 1
+I2C_FLAG_PECERR: PEC error in reception flag 
+.IP "\(bu" 1
+I2C_FLAG_OVR: Overrun/Underrun flag (Slave mode) 
+.IP "\(bu" 1
+I2C_FLAG_AF: Acknowledge failure flag 
+.IP "\(bu" 1
+I2C_FLAG_ARLO: Arbitration lost flag (Master mode) 
+.IP "\(bu" 1
+I2C_FLAG_BERR: Bus error flag
+.PP
+.RE
+.PP
+\fBNote\fP
+.RS 4
+STOPF (STOP detection) is cleared by software sequence: a read operation to I2C_SR1 register (\fBI2C_GetFlagStatus()\fP) followed by a write operation to I2C_CR1 register (\fBI2C_Cmd()\fP to re-enable the I2C peripheral)\&. 
+.PP
+ADD10 (10-bit header sent) is cleared by software sequence: a read operation to I2C_SR1 (\fBI2C_GetFlagStatus()\fP) followed by writing the second byte of the address in DR register\&. 
+.PP
+BTF (Byte Transfer Finished) is cleared by software sequence: a read operation to I2C_SR1 register (\fBI2C_GetFlagStatus()\fP) followed by a read/write to I2C_DR register (\fBI2C_SendData()\fP)\&. 
+.PP
+ADDR (Address sent) is cleared by software sequence: a read operation to I2C_SR1 register (\fBI2C_GetFlagStatus()\fP) followed by a read operation to I2C_SR2 register ((void)(I2Cx->SR2))\&. 
+.PP
+SB (Start Bit) is cleared software sequence: a read operation to I2C_SR1 register (\fBI2C_GetFlagStatus()\fP) followed by a write operation to I2C_DR register (\fBI2C_SendData()\fP)\&.
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_ClearITPendingBit (I2C_TypeDef * I2Cx, uint32_t I2C_IT)"
+
+.PP
+Clears the I2Cx's interrupt pending bits\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fII2C_IT\fP specifies the interrupt pending bit to clear\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+I2C_IT_SMBALERT: SMBus Alert interrupt 
+.IP "\(bu" 1
+I2C_IT_TIMEOUT: Timeout or Tlow error interrupt 
+.IP "\(bu" 1
+I2C_IT_PECERR: PEC error in reception interrupt 
+.IP "\(bu" 1
+I2C_IT_OVR: Overrun/Underrun interrupt (Slave mode) 
+.IP "\(bu" 1
+I2C_IT_AF: Acknowledge failure interrupt 
+.IP "\(bu" 1
+I2C_IT_ARLO: Arbitration lost interrupt (Master mode) 
+.IP "\(bu" 1
+I2C_IT_BERR: Bus error interrupt
+.PP
+.RE
+.PP
+\fBNote\fP
+.RS 4
+STOPF (STOP detection) is cleared by software sequence: a read operation to I2C_SR1 register (\fBI2C_GetITStatus()\fP) followed by a write operation to I2C_CR1 register (\fBI2C_Cmd()\fP to re-enable the I2C peripheral)\&. 
+.PP
+ADD10 (10-bit header sent) is cleared by software sequence: a read operation to I2C_SR1 (\fBI2C_GetITStatus()\fP) followed by writing the second byte of the address in I2C_DR register\&. 
+.PP
+BTF (Byte Transfer Finished) is cleared by software sequence: a read operation to I2C_SR1 register (\fBI2C_GetITStatus()\fP) followed by a read/write to I2C_DR register (\fBI2C_SendData()\fP)\&. 
+.PP
+ADDR (Address sent) is cleared by software sequence: a read operation to I2C_SR1 register (\fBI2C_GetITStatus()\fP) followed by a read operation to I2C_SR2 register ((void)(I2Cx->SR2))\&. 
+.PP
+SB (Start Bit) is cleared by software sequence: a read operation to I2C_SR1 register (\fBI2C_GetITStatus()\fP) followed by a write operation to I2C_DR register (\fBI2C_SendData()\fP)\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "FlagStatus I2C_GetFlagStatus (I2C_TypeDef * I2Cx, uint32_t I2C_FLAG)"
+
+.PP
+Checks whether the specified I2C flag is set or not\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fII2C_FLAG\fP specifies the flag to check\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+I2C_FLAG_DUALF: Dual flag (Slave mode) 
+.IP "\(bu" 1
+I2C_FLAG_SMBHOST: SMBus host header (Slave mode) 
+.IP "\(bu" 1
+I2C_FLAG_SMBDEFAULT: SMBus default header (Slave mode) 
+.IP "\(bu" 1
+I2C_FLAG_GENCALL: General call header flag (Slave mode) 
+.IP "\(bu" 1
+I2C_FLAG_TRA: Transmitter/Receiver flag 
+.IP "\(bu" 1
+I2C_FLAG_BUSY: Bus busy flag 
+.IP "\(bu" 1
+I2C_FLAG_MSL: Master/Slave flag 
+.IP "\(bu" 1
+I2C_FLAG_SMBALERT: SMBus Alert flag 
+.IP "\(bu" 1
+I2C_FLAG_TIMEOUT: Timeout or Tlow error flag 
+.IP "\(bu" 1
+I2C_FLAG_PECERR: PEC error in reception flag 
+.IP "\(bu" 1
+I2C_FLAG_OVR: Overrun/Underrun flag (Slave mode) 
+.IP "\(bu" 1
+I2C_FLAG_AF: Acknowledge failure flag 
+.IP "\(bu" 1
+I2C_FLAG_ARLO: Arbitration lost flag (Master mode) 
+.IP "\(bu" 1
+I2C_FLAG_BERR: Bus error flag 
+.IP "\(bu" 1
+I2C_FLAG_TXE: Data register empty flag (Transmitter) 
+.IP "\(bu" 1
+I2C_FLAG_RXNE: Data register not empty (Receiver) flag 
+.IP "\(bu" 1
+I2C_FLAG_STOPF: Stop detection flag (Slave mode) 
+.IP "\(bu" 1
+I2C_FLAG_ADD10: 10-bit header sent flag (Master mode) 
+.IP "\(bu" 1
+I2C_FLAG_BTF: Byte transfer finished flag 
+.IP "\(bu" 1
+I2C_FLAG_ADDR: Address sent flag (Master mode) 'ADSL' Address matched flag (Slave mode)'ENDAD' 
+.IP "\(bu" 1
+I2C_FLAG_SB: Start bit flag (Master mode) 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of I2C_FLAG (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "ITStatus I2C_GetITStatus (I2C_TypeDef * I2Cx, uint32_t I2C_IT)"
+
+.PP
+Checks whether the specified I2C interrupt has occurred or not\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fII2C_IT\fP specifies the interrupt source to check\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+I2C_IT_SMBALERT: SMBus Alert flag 
+.IP "\(bu" 1
+I2C_IT_TIMEOUT: Timeout or Tlow error flag 
+.IP "\(bu" 1
+I2C_IT_PECERR: PEC error in reception flag 
+.IP "\(bu" 1
+I2C_IT_OVR: Overrun/Underrun flag (Slave mode) 
+.IP "\(bu" 1
+I2C_IT_AF: Acknowledge failure flag 
+.IP "\(bu" 1
+I2C_IT_ARLO: Arbitration lost flag (Master mode) 
+.IP "\(bu" 1
+I2C_IT_BERR: Bus error flag 
+.IP "\(bu" 1
+I2C_IT_TXE: Data register empty flag (Transmitter) 
+.IP "\(bu" 1
+I2C_IT_RXNE: Data register not empty (Receiver) flag 
+.IP "\(bu" 1
+I2C_IT_STOPF: Stop detection flag (Slave mode) 
+.IP "\(bu" 1
+I2C_IT_ADD10: 10-bit header sent flag (Master mode) 
+.IP "\(bu" 1
+I2C_IT_BTF: Byte transfer finished flag 
+.IP "\(bu" 1
+I2C_IT_ADDR: Address sent flag (Master mode) 'ADSL' Address matched flag (Slave mode)'ENDAD' 
+.IP "\(bu" 1
+I2C_IT_SB: Start bit flag (Master mode) 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of I2C_IT (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "uint32_t I2C_GetLastEvent (I2C_TypeDef * I2Cx)"
+
+.PP
+Returns the last I2Cx Event\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&.
+.RE
+.PP
+\fBNote\fP
+.RS 4
+For detailed description of Events, please refer to section I2C_Events in \fBstm32f4xx_i2c\&.h\fP file\&.
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP last event 
+.RE
+.PP
+
+.SS "void I2C_ITConfig (I2C_TypeDef * I2Cx, uint16_t I2C_IT, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified I2C interrupts\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fII2C_IT\fP specifies the I2C interrupts sources to be enabled or disabled\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+I2C_IT_BUF: Buffer interrupt mask 
+.IP "\(bu" 1
+I2C_IT_EVT: Event interrupt mask 
+.IP "\(bu" 1
+I2C_IT_ERR: Error interrupt mask 
+.PP
+.br
+\fINewState\fP new state of the specified I2C interrupts\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "uint16_t I2C_ReadRegister (I2C_TypeDef * I2Cx, uint8_t I2C_Register)"
+
+.PP
+Reads the specified I2C register and returns its value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2C_Register\fP specifies the register to read\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+I2C_Register_CR1: CR1 register\&. 
+.IP "\(bu" 1
+I2C_Register_CR2: CR2 register\&. 
+.IP "\(bu" 1
+I2C_Register_OAR1: OAR1 register\&. 
+.IP "\(bu" 1
+I2C_Register_OAR2: OAR2 register\&. 
+.IP "\(bu" 1
+I2C_Register_DR: DR register\&. 
+.IP "\(bu" 1
+I2C_Register_SR1: SR1 register\&. 
+.IP "\(bu" 1
+I2C_Register_SR2: SR2 register\&. 
+.IP "\(bu" 1
+I2C_Register_CCR: CCR register\&. 
+.IP "\(bu" 1
+I2C_Register_TRISE: TRISE register\&. 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP value of the read register\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

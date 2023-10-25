@@ -1,0 +1,77 @@
+.TH "RCC_Interrupt_Source" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCC_Interrupt_Source \- RCC_Interrupt_Source
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRCC_IT_LSIRDY\fP   ((uint8_t)0x01)"
+.br
+.ti -1c
+.RI "#define \fBRCC_IT_LSERDY\fP   ((uint8_t)0x02)"
+.br
+.ti -1c
+.RI "#define \fBRCC_IT_HSIRDY\fP   ((uint8_t)0x04)"
+.br
+.ti -1c
+.RI "#define \fBRCC_IT_HSERDY\fP   ((uint8_t)0x08)"
+.br
+.ti -1c
+.RI "#define \fBRCC_IT_PLLRDY\fP   ((uint8_t)0x10)"
+.br
+.ti -1c
+.RI "#define \fBRCC_IT_PLLI2SRDY\fP   ((uint8_t)0x20)"
+.br
+.ti -1c
+.RI "#define \fBRCC_IT_CSS\fP   ((uint8_t)0x80)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_IT\fP(IT)   ((((IT) & (uint8_t)0xC0) == 0x00) && ((IT) != 0x00))"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_GET_IT\fP(IT)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_CLEAR_IT\fP(IT)   ((((IT) & (uint8_t)0x40) == 0x00) && ((IT) != 0x00))"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_RCC_CLEAR_IT(IT)   ((((IT) & (uint8_t)0x40) == 0x00) && ((IT) != 0x00))"
+
+.SS "#define IS_RCC_GET_IT(IT)"
+\fBValue:\fP.PP
+.nf
+                           (((IT) == RCC_IT_LSIRDY) || ((IT) == RCC_IT_LSERDY) || \\
+                           ((IT) == RCC_IT_HSIRDY) || ((IT) == RCC_IT_HSERDY) || \\
+                           ((IT) == RCC_IT_PLLRDY) || ((IT) == RCC_IT_CSS) || \\
+                           ((IT) == RCC_IT_PLLI2SRDY))
+.fi
+
+.SS "#define IS_RCC_IT(IT)   ((((IT) & (uint8_t)0xC0) == 0x00) && ((IT) != 0x00))"
+
+.SS "#define RCC_IT_CSS   ((uint8_t)0x80)"
+
+.SS "#define RCC_IT_HSERDY   ((uint8_t)0x08)"
+
+.SS "#define RCC_IT_HSIRDY   ((uint8_t)0x04)"
+
+.SS "#define RCC_IT_LSERDY   ((uint8_t)0x02)"
+
+.SS "#define RCC_IT_LSIRDY   ((uint8_t)0x01)"
+
+.SS "#define RCC_IT_PLLI2SRDY   ((uint8_t)0x20)"
+
+.SS "#define RCC_IT_PLLRDY   ((uint8_t)0x10)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

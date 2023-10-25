@@ -1,0 +1,124 @@
+.TH "ADC_extrenal_trigger_sources_for_regular_channels_conversion" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_extrenal_trigger_sources_for_regular_channels_conversion \- ADC_extrenal_trigger_sources_for_regular_channels_conversion
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T1_CC1\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T1_CC2\fP   ((uint32_t)0x01000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T1_CC3\fP   ((uint32_t)0x02000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T2_CC2\fP   ((uint32_t)0x03000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T2_CC3\fP   ((uint32_t)0x04000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T2_CC4\fP   ((uint32_t)0x05000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T2_TRGO\fP   ((uint32_t)0x06000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T3_CC1\fP   ((uint32_t)0x07000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T3_TRGO\fP   ((uint32_t)0x08000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T4_CC4\fP   ((uint32_t)0x09000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T5_CC1\fP   ((uint32_t)0x0A000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T5_CC2\fP   ((uint32_t)0x0B000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T5_CC3\fP   ((uint32_t)0x0C000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T8_CC1\fP   ((uint32_t)0x0D000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_T8_TRGO\fP   ((uint32_t)0x0E000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConv_Ext_IT11\fP   ((uint32_t)0x0F000000)"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_EXT_TRIG\fP(REGTRIG)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_ExternalTrigConv_Ext_IT11   ((uint32_t)0x0F000000)"
+
+.SS "#define ADC_ExternalTrigConv_T1_CC1   ((uint32_t)0x00000000)"
+
+.SS "#define ADC_ExternalTrigConv_T1_CC2   ((uint32_t)0x01000000)"
+
+.SS "#define ADC_ExternalTrigConv_T1_CC3   ((uint32_t)0x02000000)"
+
+.SS "#define ADC_ExternalTrigConv_T2_CC2   ((uint32_t)0x03000000)"
+
+.SS "#define ADC_ExternalTrigConv_T2_CC3   ((uint32_t)0x04000000)"
+
+.SS "#define ADC_ExternalTrigConv_T2_CC4   ((uint32_t)0x05000000)"
+
+.SS "#define ADC_ExternalTrigConv_T2_TRGO   ((uint32_t)0x06000000)"
+
+.SS "#define ADC_ExternalTrigConv_T3_CC1   ((uint32_t)0x07000000)"
+
+.SS "#define ADC_ExternalTrigConv_T3_TRGO   ((uint32_t)0x08000000)"
+
+.SS "#define ADC_ExternalTrigConv_T4_CC4   ((uint32_t)0x09000000)"
+
+.SS "#define ADC_ExternalTrigConv_T5_CC1   ((uint32_t)0x0A000000)"
+
+.SS "#define ADC_ExternalTrigConv_T5_CC2   ((uint32_t)0x0B000000)"
+
+.SS "#define ADC_ExternalTrigConv_T5_CC3   ((uint32_t)0x0C000000)"
+
+.SS "#define ADC_ExternalTrigConv_T8_CC1   ((uint32_t)0x0D000000)"
+
+.SS "#define ADC_ExternalTrigConv_T8_TRGO   ((uint32_t)0x0E000000)"
+
+.SS "#define IS_ADC_EXT_TRIG(REGTRIG)"
+\fBValue:\fP.PP
+.nf
+                                  (((REGTRIG) == ADC_ExternalTrigConv_T1_CC1) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T1_CC2) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T1_CC3) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T2_CC2) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T2_CC3) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T2_CC4) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T2_TRGO) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T3_CC1) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T3_TRGO) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T4_CC4) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T5_CC1) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T5_CC2) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T5_CC3) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T8_CC1) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_T8_TRGO) || \\
+                                  ((REGTRIG) == ADC_ExternalTrigConv_Ext_IT11))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

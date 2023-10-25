@@ -1,0 +1,58 @@
+.TH "I2C_InitTypeDef" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_InitTypeDef \- I2C Init structure definition 
+.br
+  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <stm32f4xx_i2c\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBI2C_ClockSpeed\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBI2C_Mode\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBI2C_DutyCycle\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBI2C_OwnAddress1\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBI2C_Ack\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBI2C_AcknowledgedAddress\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+I2C Init structure definition 
+.br
+ 
+.SH "Field Documentation"
+.PP 
+.SS "uint16_t I2C_Ack"
+Enables or disables the acknowledgement\&. This parameter can be a value of \fBI2C_acknowledgement\fP 
+.SS "uint16_t I2C_AcknowledgedAddress"
+Specifies if 7-bit or 10-bit address is acknowledged\&. This parameter can be a value of \fBI2C_acknowledged_address\fP 
+.SS "uint32_t I2C_ClockSpeed"
+Specifies the clock frequency\&. This parameter must be set to a value lower than 400kHz 
+.SS "uint16_t I2C_DutyCycle"
+Specifies the I2C fast mode duty cycle\&. This parameter can be a value of \fBI2C_duty_cycle_in_fast_mode\fP 
+.SS "uint16_t I2C_Mode"
+Specifies the I2C mode\&. This parameter can be a value of \fBI2C_mode\fP 
+.SS "uint16_t I2C_OwnAddress1"
+Specifies the first device own address\&. This parameter can be a 7-bit or 10-bit address\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

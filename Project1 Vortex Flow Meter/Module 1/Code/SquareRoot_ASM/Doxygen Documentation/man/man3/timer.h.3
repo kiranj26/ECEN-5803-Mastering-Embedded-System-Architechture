@@ -1,0 +1,84 @@
+.TH "drivers/timer.h" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/timer.h \- Controller for a hardware timer module\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdint\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBtimer_irq_handler\fP (void)"
+.br
+.RI "Initialises the timer with a specified period\&. "
+.ti -1c
+.RI "void \fBtimer_init\fP (uint32_t timestamp)"
+.br
+.ti -1c
+.RI "void \fBtimer_set_callback\fP (void(*callback)(void))"
+.br
+.RI "Pass a callback to the API, which is executed during the interrupt handler\&. "
+.ti -1c
+.RI "void \fBtimer_enable\fP (void)"
+.br
+.RI "Enables the timer operation\&. "
+.ti -1c
+.RI "void \fBtimer_disable\fP (void)"
+.br
+.RI "Disables the timer\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Controller for a hardware timer module\&. 
+
+
+.PP
+\fBCopyright\fP
+.RS 4
+ARM University Program (C) ARM Ltd 2014\&. 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "void timer_disable (void)"
+
+.PP
+Disables the timer\&. 
+.SS "void timer_enable (void)"
+
+.PP
+Enables the timer operation\&. 
+.SS "void timer_init (uint32_t timestamp)"
+
+.SS "void timer_irq_handler (void)"
+
+.PP
+Initialises the timer with a specified period\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIperiod\fP Period of the timer tick (in cpu \fIcycles\fP)\&. 
+.RE
+.PP
+
+.SS "void timer_set_callback (void(*)(void) callback)"
+
+.PP
+Pass a callback to the API, which is executed during the interrupt handler\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcallback\fP Callback function\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

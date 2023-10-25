@@ -1,0 +1,502 @@
+.TH "drivers/stm32f4xx_i2c.h" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+drivers/stm32f4xx_i2c.h \- This file contains all the functions prototypes for the I2C firmware library\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'stm32f4xx\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBI2C_InitTypeDef\fP"
+.br
+.RI "I2C Init structure definition 
+.br
+ "
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBIS_I2C_ALL_PERIPH\fP(PERIPH)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Mode_I2C\fP   ((uint16_t)0x0000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Mode_SMBusDevice\fP   ((uint16_t)0x0002)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Mode_SMBusHost\fP   ((uint16_t)0x000A)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_MODE\fP(MODE)"
+.br
+.ti -1c
+.RI "#define \fBI2C_DutyCycle_16_9\fP   ((uint16_t)0x4000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_DutyCycle_2\fP   ((uint16_t)0xBFFF)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_DUTY_CYCLE\fP(CYCLE)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Ack_Enable\fP   ((uint16_t)0x0400)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Ack_Disable\fP   ((uint16_t)0x0000)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_ACK_STATE\fP(STATE)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Direction_Transmitter\fP   ((uint8_t)0x00)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Direction_Receiver\fP   ((uint8_t)0x01)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_DIRECTION\fP(DIRECTION)"
+.br
+.ti -1c
+.RI "#define \fBI2C_AcknowledgedAddress_7bit\fP   ((uint16_t)0x4000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_AcknowledgedAddress_10bit\fP   ((uint16_t)0xC000)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_ACKNOWLEDGE_ADDRESS\fP(ADDRESS)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_CR1\fP   ((uint8_t)0x00)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_CR2\fP   ((uint8_t)0x04)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_OAR1\fP   ((uint8_t)0x08)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_OAR2\fP   ((uint8_t)0x0C)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_DR\fP   ((uint8_t)0x10)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_SR1\fP   ((uint8_t)0x14)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_SR2\fP   ((uint8_t)0x18)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_CCR\fP   ((uint8_t)0x1C)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Register_TRISE\fP   ((uint8_t)0x20)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_REGISTER\fP(REGISTER)"
+.br
+.ti -1c
+.RI "#define \fBI2C_NACKPosition_Next\fP   ((uint16_t)0x0800)"
+.br
+.ti -1c
+.RI "#define \fBI2C_NACKPosition_Current\fP   ((uint16_t)0xF7FF)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_NACK_POSITION\fP(POSITION)"
+.br
+.ti -1c
+.RI "#define \fBI2C_SMBusAlert_Low\fP   ((uint16_t)0x2000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_SMBusAlert_High\fP   ((uint16_t)0xDFFF)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_SMBUS_ALERT\fP(ALERT)"
+.br
+.ti -1c
+.RI "#define \fBI2C_PECPosition_Next\fP   ((uint16_t)0x0800)"
+.br
+.ti -1c
+.RI "#define \fBI2C_PECPosition_Current\fP   ((uint16_t)0xF7FF)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_PEC_POSITION\fP(POSITION)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_BUF\fP   ((uint16_t)0x0400)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_EVT\fP   ((uint16_t)0x0200)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_ERR\fP   ((uint16_t)0x0100)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_CONFIG_IT\fP(IT)   ((((IT) & (uint16_t)0xF8FF) == 0x00) && ((IT) != 0x00))"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_SMBALERT\fP   ((uint32_t)0x01008000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_TIMEOUT\fP   ((uint32_t)0x01004000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_PECERR\fP   ((uint32_t)0x01001000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_OVR\fP   ((uint32_t)0x01000800)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_AF\fP   ((uint32_t)0x01000400)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_ARLO\fP   ((uint32_t)0x01000200)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_BERR\fP   ((uint32_t)0x01000100)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_TXE\fP   ((uint32_t)0x06000080)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_RXNE\fP   ((uint32_t)0x06000040)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_STOPF\fP   ((uint32_t)0x02000010)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_ADD10\fP   ((uint32_t)0x02000008)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_BTF\fP   ((uint32_t)0x02000004)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_ADDR\fP   ((uint32_t)0x02000002)"
+.br
+.ti -1c
+.RI "#define \fBI2C_IT_SB\fP   ((uint32_t)0x02000001)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_CLEAR_IT\fP(IT)   ((((IT) & (uint16_t)0x20FF) == 0x00) && ((IT) != (uint16_t)0x00))"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_GET_IT\fP(IT)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_DUALF\fP   ((uint32_t)0x00800000)"
+.br
+.RI "SR2 register flags 
+.br
+ "
+.ti -1c
+.RI "#define \fBI2C_FLAG_SMBHOST\fP   ((uint32_t)0x00400000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_SMBDEFAULT\fP   ((uint32_t)0x00200000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_GENCALL\fP   ((uint32_t)0x00100000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_TRA\fP   ((uint32_t)0x00040000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_BUSY\fP   ((uint32_t)0x00020000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_MSL\fP   ((uint32_t)0x00010000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_SMBALERT\fP   ((uint32_t)0x10008000)"
+.br
+.RI "SR1 register flags 
+.br
+ "
+.ti -1c
+.RI "#define \fBI2C_FLAG_TIMEOUT\fP   ((uint32_t)0x10004000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_PECERR\fP   ((uint32_t)0x10001000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_OVR\fP   ((uint32_t)0x10000800)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_AF\fP   ((uint32_t)0x10000400)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_ARLO\fP   ((uint32_t)0x10000200)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_BERR\fP   ((uint32_t)0x10000100)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_TXE\fP   ((uint32_t)0x10000080)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_RXNE\fP   ((uint32_t)0x10000040)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_STOPF\fP   ((uint32_t)0x10000010)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_ADD10\fP   ((uint32_t)0x10000008)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_BTF\fP   ((uint32_t)0x10000004)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_ADDR\fP   ((uint32_t)0x10000002)"
+.br
+.ti -1c
+.RI "#define \fBI2C_FLAG_SB\fP   ((uint32_t)0x10000001)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_CLEAR_FLAG\fP(FLAG)   ((((FLAG) & (uint16_t)0x20FF) == 0x00) && ((FLAG) != (uint16_t)0x00))"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_GET_FLAG\fP(FLAG)"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_MODE_SELECT\fP   ((uint32_t)0x00030001)  /* BUSY, MSL and SB flag */"
+.br
+.RI "Communication start\&. "
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED\fP   ((uint32_t)0x00070082)  /* BUSY, MSL, ADDR, TXE and TRA flags */"
+.br
+.RI "Address Acknowledge\&. "
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_RECEIVER_MODE_SELECTED\fP   ((uint32_t)0x00030002)  /* BUSY, MSL and ADDR flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_MODE_ADDRESS10\fP   ((uint32_t)0x00030008)  /* BUSY, MSL and ADD10 flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_BYTE_RECEIVED\fP   ((uint32_t)0x00030040)  /* BUSY, MSL and RXNE flags */"
+.br
+.RI "Communication events\&. "
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_BYTE_TRANSMITTING\fP   ((uint32_t)0x00070080) /* TRA, BUSY, MSL, TXE flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_MASTER_BYTE_TRANSMITTED\fP   ((uint32_t)0x00070084)  /* TRA, BUSY, MSL, TXE and BTF flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_RECEIVER_ADDRESS_MATCHED\fP   ((uint32_t)0x00020002) /* BUSY and ADDR flags */"
+.br
+.RI "Communication start events\&. "
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_TRANSMITTER_ADDRESS_MATCHED\fP   ((uint32_t)0x00060082) /* TRA, BUSY, TXE and ADDR flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_RECEIVER_SECONDADDRESS_MATCHED\fP   ((uint32_t)0x00820000)  /* DUALF and BUSY flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_TRANSMITTER_SECONDADDRESS_MATCHED\fP   ((uint32_t)0x00860080)  /* DUALF, TRA, BUSY and TXE flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_GENERALCALLADDRESS_MATCHED\fP   ((uint32_t)0x00120000)  /* GENCALL and BUSY flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_BYTE_RECEIVED\fP   ((uint32_t)0x00020040)  /* BUSY and RXNE flags */"
+.br
+.RI "Communication events\&. "
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_STOP_DETECTED\fP   ((uint32_t)0x00000010)  /* STOPF flag */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_BYTE_TRANSMITTED\fP   ((uint32_t)0x00060084)  /* TRA, BUSY, TXE and BTF flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_BYTE_TRANSMITTING\fP   ((uint32_t)0x00060080)  /* TRA, BUSY and TXE flags */"
+.br
+.ti -1c
+.RI "#define \fBI2C_EVENT_SLAVE_ACK_FAILURE\fP   ((uint32_t)0x00000400)  /* AF flag */"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_EVENT\fP(EVENT)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_OWN_ADDRESS1\fP(ADDRESS1)   ((ADDRESS1) <= 0x3FF)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_CLOCK_SPEED\fP(SPEED)   (((SPEED) >= 0x1) && ((SPEED) <= 400000))"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBI2C_DeInit\fP (I2C_TypeDef *I2Cx)"
+.br
+.RI "Deinitialize the I2Cx peripheral registers to their default reset values\&. "
+.ti -1c
+.RI "void \fBI2C_Init\fP (I2C_TypeDef *I2Cx, \fBI2C_InitTypeDef\fP *I2C_InitStruct)"
+.br
+.RI "Initializes the I2Cx peripheral according to the specified parameters in the I2C_InitStruct\&. "
+.ti -1c
+.RI "void \fBI2C_StructInit\fP (\fBI2C_InitTypeDef\fP *I2C_InitStruct)"
+.br
+.RI "Fills each I2C_InitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBI2C_Cmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C peripheral\&. "
+.ti -1c
+.RI "void \fBI2C_GenerateSTART\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Generates I2Cx communication START condition\&. "
+.ti -1c
+.RI "void \fBI2C_GenerateSTOP\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Generates I2Cx communication STOP condition\&. "
+.ti -1c
+.RI "void \fBI2C_Send7bitAddress\fP (I2C_TypeDef *I2Cx, uint8_t Address, uint8_t I2C_Direction)"
+.br
+.RI "Transmits the address byte to select the slave device\&. "
+.ti -1c
+.RI "void \fBI2C_AcknowledgeConfig\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C acknowledge feature\&. "
+.ti -1c
+.RI "void \fBI2C_OwnAddress2Config\fP (I2C_TypeDef *I2Cx, uint8_t Address)"
+.br
+.RI "Configures the specified I2C own address2\&. "
+.ti -1c
+.RI "void \fBI2C_DualAddressCmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C dual addressing mode\&. "
+.ti -1c
+.RI "void \fBI2C_GeneralCallCmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C general call feature\&. "
+.ti -1c
+.RI "void \fBI2C_SoftwareResetCmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C software reset\&. "
+.ti -1c
+.RI "void \fBI2C_StretchClockCmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C Clock stretching\&. "
+.ti -1c
+.RI "void \fBI2C_FastModeDutyCycleConfig\fP (I2C_TypeDef *I2Cx, uint16_t I2C_DutyCycle)"
+.br
+.RI "Selects the specified I2C fast mode duty cycle\&. "
+.ti -1c
+.RI "void \fBI2C_NACKPositionConfig\fP (I2C_TypeDef *I2Cx, uint16_t I2C_NACKPosition)"
+.br
+.RI "Selects the specified I2C NACK position in master receiver mode\&. "
+.ti -1c
+.RI "void \fBI2C_SMBusAlertConfig\fP (I2C_TypeDef *I2Cx, uint16_t I2C_SMBusAlert)"
+.br
+.RI "Drives the SMBusAlert pin high or low for the specified I2C\&. "
+.ti -1c
+.RI "void \fBI2C_ARPCmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C ARP\&. "
+.ti -1c
+.RI "void \fBI2C_SendData\fP (I2C_TypeDef *I2Cx, uint8_t Data)"
+.br
+.RI "Sends a data byte through the I2Cx peripheral\&. "
+.ti -1c
+.RI "uint8_t \fBI2C_ReceiveData\fP (I2C_TypeDef *I2Cx)"
+.br
+.RI "Returns the most recent received data by the I2Cx peripheral\&. "
+.ti -1c
+.RI "void \fBI2C_TransmitPEC\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C PEC transfer\&. "
+.ti -1c
+.RI "void \fBI2C_PECPositionConfig\fP (I2C_TypeDef *I2Cx, uint16_t I2C_PECPosition)"
+.br
+.RI "Selects the specified I2C PEC position\&. "
+.ti -1c
+.RI "void \fBI2C_CalculatePEC\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the PEC value calculation of the transferred bytes\&. "
+.ti -1c
+.RI "uint8_t \fBI2C_GetPEC\fP (I2C_TypeDef *I2Cx)"
+.br
+.RI "Returns the PEC value for the specified I2C\&. "
+.ti -1c
+.RI "void \fBI2C_DMACmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C DMA requests\&. "
+.ti -1c
+.RI "void \fBI2C_DMALastTransferCmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Specifies that the next DMA transfer is the last one\&. "
+.ti -1c
+.RI "uint16_t \fBI2C_ReadRegister\fP (I2C_TypeDef *I2Cx, uint8_t I2C_Register)"
+.br
+.RI "Reads the specified I2C register and returns its value\&. "
+.ti -1c
+.RI "void \fBI2C_ITConfig\fP (I2C_TypeDef *I2Cx, uint16_t I2C_IT, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C interrupts\&. "
+.ti -1c
+.RI "ErrorStatus \fBI2C_CheckEvent\fP (I2C_TypeDef *I2Cx, uint32_t I2C_EVENT)"
+.br
+.RI "Checks whether the last I2Cx Event is equal to the one passed as parameter\&. "
+.ti -1c
+.RI "uint32_t \fBI2C_GetLastEvent\fP (I2C_TypeDef *I2Cx)"
+.br
+.RI "Returns the last I2Cx Event\&. "
+.ti -1c
+.RI "FlagStatus \fBI2C_GetFlagStatus\fP (I2C_TypeDef *I2Cx, uint32_t I2C_FLAG)"
+.br
+.RI "Checks whether the specified I2C flag is set or not\&. "
+.ti -1c
+.RI "void \fBI2C_ClearFlag\fP (I2C_TypeDef *I2Cx, uint32_t I2C_FLAG)"
+.br
+.RI "Clears the I2Cx's pending flags\&. "
+.ti -1c
+.RI "ITStatus \fBI2C_GetITStatus\fP (I2C_TypeDef *I2Cx, uint32_t I2C_IT)"
+.br
+.RI "Checks whether the specified I2C interrupt has occurred or not\&. "
+.ti -1c
+.RI "void \fBI2C_ClearITPendingBit\fP (I2C_TypeDef *I2Cx, uint32_t I2C_IT)"
+.br
+.RI "Clears the I2Cx's interrupt pending bits\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file contains all the functions prototypes for the I2C firmware library\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+MCD Application Team 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+V1\&.0\&.0 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+30-September-2011 
+.RE
+.PP
+\fBAttention\fP
+.RS 4
+.RE
+.PP
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME\&. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS\&.
+.PP
+.SS "(C) COPYRIGHT 2011 STMicroelectronics"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

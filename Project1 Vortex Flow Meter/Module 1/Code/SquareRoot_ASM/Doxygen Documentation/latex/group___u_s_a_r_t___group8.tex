@@ -1,0 +1,50 @@
+\doxysubsubsubsection{DMA transfers management functions}
+\hypertarget{group___u_s_a_r_t___group8}{}\label{group___u_s_a_r_t___group8}\index{DMA transfers management functions@{DMA transfers management functions}}
+
+
+DMA transfers management functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___group8_ga902857f199ebfba21c63d725354af66f}{USART\+\_\+\+DMACmd}} (USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+DMAReq, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s DMA interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+DMA transfers management functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                      DMA transfers management functions
+ ===============================================================================  \end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\Hypertarget{group___u_s_a_r_t___group8_ga902857f199ebfba21c63d725354af66f}\label{group___u_s_a_r_t___group8_ga902857f199ebfba21c63d725354af66f} 
+\index{DMA transfers management functions@{DMA transfers management functions}!USART\_DMACmd@{USART\_DMACmd}}
+\index{USART\_DMACmd@{USART\_DMACmd}!DMA transfers management functions@{DMA transfers management functions}}
+\doxysubsubsubsubsubsection{\texorpdfstring{USART\_DMACmd()}{USART\_DMACmd()}}
+{\footnotesize\ttfamily void USART\+\_\+\+DMACmd (\begin{DoxyParamCaption}\item[{USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+DMAReq,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the USART\textquotesingle{}s DMA interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral. \\
+\hline
+{\em USART\+\_\+\+DMAReq} & specifies the DMA request. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+DMAReq\+\_\+\+Tx\+: USART DMA transmit request \item USART\+\_\+\+DMAReq\+\_\+\+Rx\+: USART DMA receive request \end{DoxyItemize}
+\\
+\hline
+{\em New\+State} & new state of the DMA Request sources. This parameter can be\+: ENABLE or DISABLE. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

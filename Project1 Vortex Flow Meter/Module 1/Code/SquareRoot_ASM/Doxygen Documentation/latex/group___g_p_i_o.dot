@@ -1,0 +1,15 @@
+digraph "GPIO"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir=LR;
+  Node1 [id="Node000001",label="GPIO",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="GPIO driver modules."];
+  Node4 [id="Node000004",label="GPIO_Exported_Constants",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group___g_p_i_o___exported___constants.html",tooltip=" "];
+  Node3 [id="Node000003",label="GPIO_Private_Functions",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group___g_p_i_o___private___functions.html",tooltip=" "];
+  Node2 [id="Node000002",label="STM32F4xx_StdPeriph\l_Driver",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group___s_t_m32_f4xx___std_periph___driver.html",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+}

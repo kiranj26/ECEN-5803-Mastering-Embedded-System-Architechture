@@ -1,0 +1,879 @@
+.TH "USART" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART \- USART
+.PP
+ \- USART driver modules\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Modules"
+
+.in +1c
+.ti -1c
+.RI "\fBUSART_Private_Functions\fP"
+.br
+.ti -1c
+.RI "\fBUSART_Exported_Constants\fP"
+.br
+.in -1c
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBUSART_InitTypeDef\fP"
+.br
+.RI "USART Init Structure definition 
+.br
+ "
+.ti -1c
+.RI "struct \fBUSART_ClockInitTypeDef\fP"
+.br
+.RI "USART Clock Init Structure definition 
+.br
+ "
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCR1_CLEAR_MASK\fP"
+.br
+.ti -1c
+.RI "#define \fBCR2_CLOCK_CLEAR_MASK\fP"
+.br
+.ti -1c
+.RI "#define \fBCR3_CLEAR_MASK\fP   ((uint16_t)(USART_CR3_RTSE | USART_CR3_CTSE))"
+.br
+.ti -1c
+.RI "#define \fBIT_MASK\fP   ((uint16_t)0x001F)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUSART_DeInit\fP (USART_TypeDef *USARTx)"
+.br
+.RI "Deinitializes the USARTx peripheral registers to their default reset values\&. "
+.ti -1c
+.RI "void \fBUSART_Init\fP (USART_TypeDef *USARTx, \fBUSART_InitTypeDef\fP *USART_InitStruct)"
+.br
+.RI "Initializes the USARTx peripheral according to the specified parameters in the USART_InitStruct \&. "
+.ti -1c
+.RI "void \fBUSART_StructInit\fP (\fBUSART_InitTypeDef\fP *USART_InitStruct)"
+.br
+.RI "Fills each USART_InitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBUSART_ClockInit\fP (USART_TypeDef *USARTx, \fBUSART_ClockInitTypeDef\fP *USART_ClockInitStruct)"
+.br
+.RI "Initializes the USARTx peripheral Clock according to the specified parameters in the USART_ClockInitStruct \&. "
+.ti -1c
+.RI "void \fBUSART_ClockStructInit\fP (\fBUSART_ClockInitTypeDef\fP *USART_ClockInitStruct)"
+.br
+.RI "Fills each USART_ClockInitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBUSART_Cmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified USART peripheral\&. "
+.ti -1c
+.RI "void \fBUSART_SetPrescaler\fP (USART_TypeDef *USARTx, uint8_t USART_Prescaler)"
+.br
+.RI "Sets the system clock prescaler\&. "
+.ti -1c
+.RI "void \fBUSART_OverSampling8Cmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's 8x oversampling mode\&. "
+.ti -1c
+.RI "void \fBUSART_OneBitMethodCmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's one bit sampling method\&. "
+.ti -1c
+.RI "void \fBUSART_SendData\fP (USART_TypeDef *USARTx, uint16_t Data)"
+.br
+.RI "Transmits single data through the USARTx peripheral\&. "
+.ti -1c
+.RI "uint16_t \fBUSART_ReceiveData\fP (USART_TypeDef *USARTx)"
+.br
+.RI "Returns the most recent received data by the USARTx peripheral\&. "
+.ti -1c
+.RI "void \fBUSART_SetAddress\fP (USART_TypeDef *USARTx, uint8_t USART_Address)"
+.br
+.RI "Sets the address of the USART node\&. "
+.ti -1c
+.RI "void \fBUSART_WakeUpConfig\fP (USART_TypeDef *USARTx, uint16_t USART_WakeUp)"
+.br
+.RI "Selects the USART WakeUp method\&. "
+.ti -1c
+.RI "void \fBUSART_ReceiverWakeUpCmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Determines if the USART is in mute mode or not\&. "
+.ti -1c
+.RI "void \fBUSART_LINBreakDetectLengthConfig\fP (USART_TypeDef *USARTx, uint16_t USART_LINBreakDetectLength)"
+.br
+.RI "Sets the USART LIN Break detection length\&. "
+.ti -1c
+.RI "void \fBUSART_LINCmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's LIN mode\&. "
+.ti -1c
+.RI "void \fBUSART_SendBreak\fP (USART_TypeDef *USARTx)"
+.br
+.RI "Transmits break characters\&. "
+.ti -1c
+.RI "void \fBUSART_HalfDuplexCmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's Half Duplex communication\&. "
+.ti -1c
+.RI "void \fBUSART_SmartCardCmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's Smart Card mode\&. "
+.ti -1c
+.RI "void \fBUSART_SmartCardNACKCmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables NACK transmission\&. "
+.ti -1c
+.RI "void \fBUSART_SetGuardTime\fP (USART_TypeDef *USARTx, uint8_t USART_GuardTime)"
+.br
+.RI "Sets the specified USART guard time\&. "
+.ti -1c
+.RI "void \fBUSART_IrDAConfig\fP (USART_TypeDef *USARTx, uint16_t USART_IrDAMode)"
+.br
+.RI "Configures the USART's IrDA interface\&. "
+.ti -1c
+.RI "void \fBUSART_IrDACmd\fP (USART_TypeDef *USARTx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's IrDA interface\&. "
+.ti -1c
+.RI "void \fBUSART_DMACmd\fP (USART_TypeDef *USARTx, uint16_t USART_DMAReq, FunctionalState NewState)"
+.br
+.RI "Enables or disables the USART's DMA interface\&. "
+.ti -1c
+.RI "void \fBUSART_ITConfig\fP (USART_TypeDef *USARTx, uint16_t USART_IT, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified USART interrupts\&. "
+.ti -1c
+.RI "FlagStatus \fBUSART_GetFlagStatus\fP (USART_TypeDef *USARTx, uint16_t USART_FLAG)"
+.br
+.RI "Checks whether the specified USART flag is set or not\&. "
+.ti -1c
+.RI "void \fBUSART_ClearFlag\fP (USART_TypeDef *USARTx, uint16_t USART_FLAG)"
+.br
+.RI "Clears the USARTx's pending flags\&. "
+.ti -1c
+.RI "ITStatus \fBUSART_GetITStatus\fP (USART_TypeDef *USARTx, uint16_t USART_IT)"
+.br
+.RI "Checks whether the specified USART interrupt has occurred or not\&. "
+.ti -1c
+.RI "void \fBUSART_ClearITPendingBit\fP (USART_TypeDef *USARTx, uint16_t USART_IT)"
+.br
+.RI "Clears the USARTx's interrupt pending bits\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+USART driver modules\&. 
+
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CR1_CLEAR_MASK"
+\fBValue:\fP.PP
+.nf
+                                              ((uint16_t)(USART_CR1_M | USART_CR1_PCE | \\
+                                              USART_CR1_PS | USART_CR1_TE | \\
+                                              USART_CR1_RE))
+.fi
+< USART CR1 register clear Mask ((~(uint16_t)0xE9F3)) 
+.SS "#define CR2_CLOCK_CLEAR_MASK"
+\fBValue:\fP.PP
+.nf
+                                              ((uint16_t)(USART_CR2_CLKEN | USART_CR2_CPOL | \\
+                                              USART_CR2_CPHA | USART_CR2_LBCL))
+.fi
+< USART CR2 register clock bits clear Mask ((~(uint16_t)0xF0FF)) 
+.SS "#define CR3_CLEAR_MASK   ((uint16_t)(USART_CR3_RTSE | USART_CR3_CTSE))"
+< USART CR3 register clear Mask ((~(uint16_t)0xFCFF)) USART Interrupts mask 
+.SS "#define IT_MASK   ((uint16_t)0x001F)"
+
+.SH "Function Documentation"
+.PP 
+.SS "void USART_ClearFlag (USART_TypeDef * USARTx, uint16_t USART_FLAG)"
+
+.PP
+Clears the USARTx's pending flags\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_FLAG\fP specifies the flag to clear\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_FLAG_CTS: CTS Change flag (not available for UART4 and UART5)\&. 
+.IP "\(bu" 1
+USART_FLAG_LBD: LIN Break detection flag\&. 
+.IP "\(bu" 1
+USART_FLAG_TC: Transmission Complete flag\&. 
+.IP "\(bu" 1
+USART_FLAG_RXNE: Receive data register not empty flag\&.
+.PP
+.RE
+.PP
+\fBNote\fP
+.RS 4
+PE (Parity error), FE (Framing error), NE (Noise error), ORE (OverRun error) and IDLE (Idle line detected) flags are cleared by software sequence: a read operation to USART_SR register (\fBUSART_GetFlagStatus()\fP) followed by a read operation to USART_DR register (\fBUSART_ReceiveData()\fP)\&. 
+.PP
+RXNE flag can be also cleared by a read to the USART_DR register (\fBUSART_ReceiveData()\fP)\&. 
+.PP
+TC flag can be also cleared by software sequence: a read operation to USART_SR register (\fBUSART_GetFlagStatus()\fP) followed by a write operation to USART_DR register (\fBUSART_SendData()\fP)\&. 
+.PP
+TXE flag is cleared only by a write to the USART_DR register (\fBUSART_SendData()\fP)\&.
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_ClearITPendingBit (USART_TypeDef * USARTx, uint16_t USART_IT)"
+
+.PP
+Clears the USARTx's interrupt pending bits\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_IT\fP specifies the interrupt pending bit to clear\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_IT_CTS: CTS change interrupt (not available for UART4 and UART5) 
+.IP "\(bu" 1
+USART_IT_LBD: LIN Break detection interrupt 
+.IP "\(bu" 1
+USART_IT_TC: Transmission complete interrupt\&. 
+.IP "\(bu" 1
+USART_IT_RXNE: Receive Data register not empty interrupt\&.
+.PP
+.RE
+.PP
+\fBNote\fP
+.RS 4
+PE (Parity error), FE (Framing error), NE (Noise error), ORE (OverRun error) and IDLE (Idle line detected) pending bits are cleared by software sequence: a read operation to USART_SR register (\fBUSART_GetITStatus()\fP) followed by a read operation to USART_DR register (\fBUSART_ReceiveData()\fP)\&. 
+.PP
+RXNE pending bit can be also cleared by a read to the USART_DR register (\fBUSART_ReceiveData()\fP)\&. 
+.PP
+TC pending bit can be also cleared by software sequence: a read operation to USART_SR register (\fBUSART_GetITStatus()\fP) followed by a write operation to USART_DR register (\fBUSART_SendData()\fP)\&. 
+.PP
+TXE pending bit is cleared only by a write to the USART_DR register (\fBUSART_SendData()\fP)\&.
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_ClockInit (USART_TypeDef * USARTx, \fBUSART_ClockInitTypeDef\fP * USART_ClockInitStruct)"
+
+.PP
+Initializes the USARTx peripheral Clock according to the specified parameters in the USART_ClockInitStruct \&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3 or 6 to select the USART peripheral\&. 
+.br
+\fIUSART_ClockInitStruct\fP pointer to a \fBUSART_ClockInitTypeDef\fP structure that contains the configuration information for the specified USART peripheral\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+The Smart Card and Synchronous modes are not available for UART4 and UART5\&. 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_ClockStructInit (\fBUSART_ClockInitTypeDef\fP * USART_ClockInitStruct)"
+
+.PP
+Fills each USART_ClockInitStruct member with its default value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSART_ClockInitStruct\fP pointer to a \fBUSART_ClockInitTypeDef\fP structure which will be initialized\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_Cmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified USART peripheral\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the USARTx peripheral\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_DeInit (USART_TypeDef * USARTx)"
+
+.PP
+Deinitializes the USARTx peripheral registers to their default reset values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_DMACmd (USART_TypeDef * USARTx, uint16_t USART_DMAReq, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's DMA interface\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_DMAReq\fP specifies the DMA request\&. This parameter can be any combination of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_DMAReq_Tx: USART DMA transmit request 
+.IP "\(bu" 1
+USART_DMAReq_Rx: USART DMA receive request 
+.PP
+.br
+\fINewState\fP new state of the DMA Request sources\&. This parameter can be: ENABLE or DISABLE\&. 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "FlagStatus USART_GetFlagStatus (USART_TypeDef * USARTx, uint16_t USART_FLAG)"
+
+.PP
+Checks whether the specified USART flag is set or not\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_FLAG\fP specifies the flag to check\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_FLAG_CTS: CTS Change flag (not available for UART4 and UART5) 
+.IP "\(bu" 1
+USART_FLAG_LBD: LIN Break detection flag 
+.IP "\(bu" 1
+USART_FLAG_TXE: Transmit data register empty flag 
+.IP "\(bu" 1
+USART_FLAG_TC: Transmission Complete flag 
+.IP "\(bu" 1
+USART_FLAG_RXNE: Receive data register not empty flag 
+.IP "\(bu" 1
+USART_FLAG_IDLE: Idle Line detection flag 
+.IP "\(bu" 1
+USART_FLAG_ORE: OverRun Error flag 
+.IP "\(bu" 1
+USART_FLAG_NE: Noise Error flag 
+.IP "\(bu" 1
+USART_FLAG_FE: Framing Error flag 
+.IP "\(bu" 1
+USART_FLAG_PE: Parity Error flag 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of USART_FLAG (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "ITStatus USART_GetITStatus (USART_TypeDef * USARTx, uint16_t USART_IT)"
+
+.PP
+Checks whether the specified USART interrupt has occurred or not\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_IT\fP specifies the USART interrupt source to check\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_IT_CTS: CTS change interrupt (not available for UART4 and UART5) 
+.IP "\(bu" 1
+USART_IT_LBD: LIN Break detection interrupt 
+.IP "\(bu" 1
+USART_IT_TXE: Transmit Data Register empty interrupt 
+.IP "\(bu" 1
+USART_IT_TC: Transmission complete interrupt 
+.IP "\(bu" 1
+USART_IT_RXNE: Receive Data register not empty interrupt 
+.IP "\(bu" 1
+USART_IT_IDLE: Idle line detection interrupt 
+.IP "\(bu" 1
+USART_IT_ORE_RX : OverRun Error interrupt if the RXNEIE bit is set 
+.IP "\(bu" 1
+USART_IT_ORE_ER : OverRun Error interrupt if the EIE bit is set 
+.br
+ 
+.IP "\(bu" 1
+USART_IT_NE: Noise Error interrupt 
+.IP "\(bu" 1
+USART_IT_FE: Framing Error interrupt 
+.IP "\(bu" 1
+USART_IT_PE: Parity Error interrupt 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP new state of USART_IT (SET or RESET)\&. 
+.RE
+.PP
+
+.SS "void USART_HalfDuplexCmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's Half Duplex communication\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the USART Communication\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_Init (USART_TypeDef * USARTx, \fBUSART_InitTypeDef\fP * USART_InitStruct)"
+
+.PP
+Initializes the USARTx peripheral according to the specified parameters in the USART_InitStruct \&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_InitStruct\fP pointer to a \fBUSART_InitTypeDef\fP structure that contains the configuration information for the specified USART peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_IrDACmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's IrDA interface\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the IrDA mode\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_IrDAConfig (USART_TypeDef * USARTx, uint16_t USART_IrDAMode)"
+
+.PP
+Configures the USART's IrDA interface\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_IrDAMode\fP specifies the IrDA mode\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_IrDAMode_LowPower 
+.IP "\(bu" 1
+USART_IrDAMode_Normal 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_ITConfig (USART_TypeDef * USARTx, uint16_t USART_IT, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified USART interrupts\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_IT\fP specifies the USART interrupt sources to be enabled or disabled\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_IT_CTS: CTS change interrupt 
+.IP "\(bu" 1
+USART_IT_LBD: LIN Break detection interrupt 
+.IP "\(bu" 1
+USART_IT_TXE: Transmit Data Register empty interrupt 
+.IP "\(bu" 1
+USART_IT_TC: Transmission complete interrupt 
+.IP "\(bu" 1
+USART_IT_RXNE: Receive Data register not empty interrupt 
+.IP "\(bu" 1
+USART_IT_IDLE: Idle line detection interrupt 
+.IP "\(bu" 1
+USART_IT_PE: Parity Error interrupt 
+.IP "\(bu" 1
+USART_IT_ERR: Error interrupt(Frame error, noise error, overrun error) 
+.PP
+.br
+\fINewState\fP new state of the specified USARTx interrupts\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_LINBreakDetectLengthConfig (USART_TypeDef * USARTx, uint16_t USART_LINBreakDetectLength)"
+
+.PP
+Sets the USART LIN Break detection length\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_LINBreakDetectLength\fP specifies the LIN break detection length\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_LINBreakDetectLength_10b: 10-bit break detection 
+.IP "\(bu" 1
+USART_LINBreakDetectLength_11b: 11-bit break detection 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_LINCmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's LIN mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the USART LIN mode\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_OneBitMethodCmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's one bit sampling method\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the USART one bit sampling method\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_OverSampling8Cmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's 8x oversampling mode\&. 
+.PP
+\fBNote\fP
+.RS 4
+This function has to be called before calling \fBUSART_Init()\fP function in order to have correct baudrate Divider value\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the USART 8x oversampling mode\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "uint16_t USART_ReceiveData (USART_TypeDef * USARTx)"
+
+.PP
+Returns the most recent received data by the USARTx peripheral\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fIThe\fP received data\&. 
+.RE
+.PP
+
+.SS "void USART_ReceiverWakeUpCmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Determines if the USART is in mute mode or not\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the USART mute mode\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_SendBreak (USART_TypeDef * USARTx)"
+
+.PP
+Transmits break characters\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_SendData (USART_TypeDef * USARTx, uint16_t Data)"
+
+.PP
+Transmits single data through the USARTx peripheral\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIData\fP the data to transmit\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_SetAddress (USART_TypeDef * USARTx, uint8_t USART_Address)"
+
+.PP
+Sets the address of the USART node\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_Address\fP Indicates the address of the USART node\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_SetGuardTime (USART_TypeDef * USARTx, uint8_t USART_GuardTime)"
+
+.PP
+Sets the specified USART guard time\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_GuardTime\fP specifies the guard time\&. 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_SetPrescaler (USART_TypeDef * USARTx, uint8_t USART_Prescaler)"
+
+.PP
+Sets the system clock prescaler\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_Prescaler\fP specifies the prescaler clock\&. 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+The function is used for IrDA mode with UART4 and UART5\&. 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_SmartCardCmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables the USART's Smart Card mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the Smart Card mode\&. This parameter can be: ENABLE or DISABLE\&. 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_SmartCardNACKCmd (USART_TypeDef * USARTx, FunctionalState NewState)"
+
+.PP
+Enables or disables NACK transmission\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3 or 6 to select the USART or UART peripheral\&. 
+.br
+\fINewState\fP new state of the NACK transmission\&. This parameter can be: ENABLE or DISABLE\&. 
+.br
+ 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_StructInit (\fBUSART_InitTypeDef\fP * USART_InitStruct)"
+
+.PP
+Fills each USART_InitStruct member with its default value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSART_InitStruct\fP pointer to a \fBUSART_InitTypeDef\fP structure which will be initialized\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void USART_WakeUpConfig (USART_TypeDef * USARTx, uint16_t USART_WakeUp)"
+
+.PP
+Selects the USART WakeUp method\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIUSARTx\fP where x can be 1, 2, 3, 4, 5 or 6 to select the USART or UART peripheral\&. 
+.br
+\fIUSART_WakeUp\fP specifies the USART wakeup method\&. This parameter can be one of the following values: 
+.PD 0
+.IP "\(bu" 1
+USART_WakeUp_IdleLine: WakeUp by an idle line detection 
+.IP "\(bu" 1
+USART_WakeUp_AddressMark: WakeUp by an address mark 
+.PP
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

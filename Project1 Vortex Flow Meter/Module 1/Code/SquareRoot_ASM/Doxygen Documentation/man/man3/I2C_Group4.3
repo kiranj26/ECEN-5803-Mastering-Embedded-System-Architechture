@@ -1,0 +1,79 @@
+.TH "I2C_Group4" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_Group4 \- DMA transfers management functions
+.PP
+ \- DMA transfers management functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBI2C_DMACmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Enables or disables the specified I2C DMA requests\&. "
+.ti -1c
+.RI "void \fBI2C_DMALastTransferCmd\fP (I2C_TypeDef *I2Cx, FunctionalState NewState)"
+.br
+.RI "Specifies that the next DMA transfer is the last one\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+DMA transfers management functions\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                         DMA transfers management functions
+ ===============================================================================  
+  This section provides functions allowing to configure the I2C DMA channels 
+  requests\&.
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void I2C_DMACmd (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Enables or disables the specified I2C DMA requests\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2C DMA transfer\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void I2C_DMALastTransferCmd (I2C_TypeDef * I2Cx, FunctionalState NewState)"
+
+.PP
+Specifies that the next DMA transfer is the last one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fII2Cx\fP where x can be 1, 2 or 3 to select the I2C peripheral\&. 
+.br
+\fINewState\fP new state of the I2C DMA last transfer\&. This parameter can be: ENABLE or DISABLE\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

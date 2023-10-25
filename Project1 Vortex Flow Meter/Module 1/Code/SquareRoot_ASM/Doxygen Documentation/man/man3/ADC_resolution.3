@@ -1,0 +1,52 @@
+.TH "ADC_resolution" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_resolution \- ADC_resolution
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC_Resolution_12b\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_Resolution_10b\fP   ((uint32_t)0x01000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_Resolution_8b\fP   ((uint32_t)0x02000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_Resolution_6b\fP   ((uint32_t)0x03000000)"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_RESOLUTION\fP(RESOLUTION)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_Resolution_10b   ((uint32_t)0x01000000)"
+
+.SS "#define ADC_Resolution_12b   ((uint32_t)0x00000000)"
+
+.SS "#define ADC_Resolution_6b   ((uint32_t)0x03000000)"
+
+.SS "#define ADC_Resolution_8b   ((uint32_t)0x02000000)"
+
+.SS "#define IS_ADC_RESOLUTION(RESOLUTION)"
+\fBValue:\fP.PP
+.nf
+                                       (((RESOLUTION) == ADC_Resolution_12b) || \\
+                                       ((RESOLUTION) == ADC_Resolution_10b) || \\
+                                       ((RESOLUTION) == ADC_Resolution_8b) || \\
+                                       ((RESOLUTION) == ADC_Resolution_6b))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

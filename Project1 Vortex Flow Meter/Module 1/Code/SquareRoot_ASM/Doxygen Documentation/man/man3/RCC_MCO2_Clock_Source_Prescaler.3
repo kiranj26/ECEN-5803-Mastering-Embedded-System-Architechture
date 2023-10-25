@@ -1,0 +1,86 @@
+.TH "RCC_MCO2_Clock_Source_Prescaler" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCC_MCO2_Clock_Source_Prescaler \- RCC_MCO2_Clock_Source_Prescaler
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRCC_MCO2Source_SYSCLK\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO2Source_PLLI2SCLK\fP   ((uint32_t)0x40000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO2Source_HSE\fP   ((uint32_t)0x80000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO2Source_PLLCLK\fP   ((uint32_t)0xC0000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO2Div_1\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO2Div_2\fP   ((uint32_t)0x20000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO2Div_3\fP   ((uint32_t)0x28000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO2Div_4\fP   ((uint32_t)0x30000000)"
+.br
+.ti -1c
+.RI "#define \fBRCC_MCO2Div_5\fP   ((uint32_t)0x38000000)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_MCO2SOURCE\fP(SOURCE)"
+.br
+.ti -1c
+.RI "#define \fBIS_RCC_MCO2DIV\fP(DIV)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_RCC_MCO2DIV(DIV)"
+\fBValue:\fP.PP
+.nf
+                             (((DIV) == RCC_MCO2Div_1) || ((DIV) == RCC_MCO2Div_2) || \\
+                             ((DIV) == RCC_MCO2Div_3) || ((DIV) == RCC_MCO2Div_4) || \\
+                             ((DIV) == RCC_MCO2Div_5))
+.fi
+
+.SS "#define IS_RCC_MCO2SOURCE(SOURCE)"
+\fBValue:\fP.PP
+.nf
+                                   (((SOURCE) == RCC_MCO2Source_SYSCLK) || ((SOURCE) == RCC_MCO2Source_PLLI2SCLK)|| \\
+                                   ((SOURCE) == RCC_MCO2Source_HSE) || ((SOURCE) == RCC_MCO2Source_PLLCLK))
+.fi
+
+.SS "#define RCC_MCO2Div_1   ((uint32_t)0x00000000)"
+
+.SS "#define RCC_MCO2Div_2   ((uint32_t)0x20000000)"
+
+.SS "#define RCC_MCO2Div_3   ((uint32_t)0x28000000)"
+
+.SS "#define RCC_MCO2Div_4   ((uint32_t)0x30000000)"
+
+.SS "#define RCC_MCO2Div_5   ((uint32_t)0x38000000)"
+
+.SS "#define RCC_MCO2Source_HSE   ((uint32_t)0x80000000)"
+
+.SS "#define RCC_MCO2Source_PLLCLK   ((uint32_t)0xC0000000)"
+
+.SS "#define RCC_MCO2Source_PLLI2SCLK   ((uint32_t)0x40000000)"
+
+.SS "#define RCC_MCO2Source_SYSCLK   ((uint32_t)0x00000000)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

@@ -1,0 +1,224 @@
+\doxysection{stm32f4xx\+\_\+usart.\+h}
+\label{stm32f4xx__usart_8h_source}\index{drivers/stm32f4xx\_usart.h@{drivers/stm32f4xx\_usart.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F4xx\_USART\_H}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \_\_STM32F4xx\_USART\_H}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx.h"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ uint32\_t\ USART\_BaudRate;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ uint16\_t\ USART\_WordLength;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ uint16\_t\ USART\_StopBits;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ uint16\_t\ USART\_Parity;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ uint16\_t\ USART\_Mode;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ uint16\_t\ USART\_HardwareFlowControl;\ }
+\DoxyCodeLine{00075\ \}\ USART\_InitTypeDef;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ uint16\_t\ USART\_Clock;\ \ \ }
+\DoxyCodeLine{00087\ \ \ uint16\_t\ USART\_CPOL;\ \ \ \ }
+\DoxyCodeLine{00090\ \ \ uint16\_t\ USART\_CPHA;\ \ \ \ }
+\DoxyCodeLine{00093\ \ \ uint16\_t\ USART\_LastBit;\ }
+\DoxyCodeLine{00096\ \}\ USART\_ClockInitTypeDef;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ IS\_USART\_ALL\_PERIPH(PERIPH)\ (((PERIPH)\ ==\ USART1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ USART2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ USART3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ UART4)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ UART5)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ USART6))}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ IS\_USART\_1236\_PERIPH(PERIPH)\ (((PERIPH)\ ==\ USART1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ USART2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ USART3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ USART6))}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ USART\_WordLength\_8b\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ USART\_WordLength\_9b\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x1000)}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ IS\_USART\_WORD\_LENGTH(LENGTH)\ (((LENGTH)\ ==\ USART\_WordLength\_8b)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LENGTH)\ ==\ USART\_WordLength\_9b))}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ USART\_StopBits\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ USART\_StopBits\_0\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x1000)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ USART\_StopBits\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x2000)}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ USART\_StopBits\_1\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x3000)}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ IS\_USART\_STOPBITS(STOPBITS)\ (((STOPBITS)\ ==\ USART\_StopBits\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STOPBITS)\ ==\ USART\_StopBits\_0\_5)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STOPBITS)\ ==\ USART\_StopBits\_2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STOPBITS)\ ==\ USART\_StopBits\_1\_5))}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ USART\_Parity\_No\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ USART\_Parity\_Even\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0400)}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ USART\_Parity\_Odd\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0600)\ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ IS\_USART\_PARITY(PARITY)\ (((PARITY)\ ==\ USART\_Parity\_No)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PARITY)\ ==\ USART\_Parity\_Even)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PARITY)\ ==\ USART\_Parity\_Odd))}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ USART\_Mode\_Rx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0004)}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ USART\_Mode\_Tx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0008)}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ IS\_USART\_MODE(MODE)\ ((((MODE)\ \&\ (uint16\_t)0xFFF3)\ ==\ 0x00)\ \&\&\ ((MODE)\ !=\ (uint16\_t)0x00))}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ USART\_HardwareFlowControl\_None\ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ USART\_HardwareFlowControl\_RTS\ \ \ \ \ \ \ \ ((uint16\_t)0x0100)}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ USART\_HardwareFlowControl\_CTS\ \ \ \ \ \ \ \ ((uint16\_t)0x0200)}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ USART\_HardwareFlowControl\_RTS\_CTS\ \ \ \ ((uint16\_t)0x0300)}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ IS\_USART\_HARDWARE\_FLOW\_CONTROL(CONTROL)\(\backslash\)}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((CONTROL)\ ==\ USART\_HardwareFlowControl\_None)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CONTROL)\ ==\ USART\_HardwareFlowControl\_RTS)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CONTROL)\ ==\ USART\_HardwareFlowControl\_CTS)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CONTROL)\ ==\ USART\_HardwareFlowControl\_RTS\_CTS))}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ USART\_Clock\_Disable\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ USART\_Clock\_Enable\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0800)}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ IS\_USART\_CLOCK(CLOCK)\ (((CLOCK)\ ==\ USART\_Clock\_Disable)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CLOCK)\ ==\ USART\_Clock\_Enable))}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ USART\_CPOL\_Low\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ USART\_CPOL\_High\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0400)}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ IS\_USART\_CPOL(CPOL)\ (((CPOL)\ ==\ USART\_CPOL\_Low)\ ||\ ((CPOL)\ ==\ USART\_CPOL\_High))}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ USART\_CPHA\_1Edge\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ USART\_CPHA\_2Edge\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0200)}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ IS\_USART\_CPHA(CPHA)\ (((CPHA)\ ==\ USART\_CPHA\_1Edge)\ ||\ ((CPHA)\ ==\ USART\_CPHA\_2Edge))}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ USART\_LastBit\_Disable\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ USART\_LastBit\_Enable\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0100)}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ IS\_USART\_LASTBIT(LASTBIT)\ (((LASTBIT)\ ==\ USART\_LastBit\_Disable)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LASTBIT)\ ==\ USART\_LastBit\_Enable))}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ USART\_IT\_PE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0028)}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#define\ USART\_IT\_TXE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0727)}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ USART\_IT\_TC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0626)}}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ USART\_IT\_RXNE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0525)}}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#define\ USART\_IT\_ORE\_RX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0325)\ }\textcolor{comment}{/*\ In\ case\ interrupt\ is\ generated\ if\ the\ RXNEIE\ bit\ is\ set\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ USART\_IT\_IDLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0424)}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ USART\_IT\_LBD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0846)}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ USART\_IT\_CTS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x096A)}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#define\ USART\_IT\_ERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0060)}}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ USART\_IT\_ORE\_ER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0360)\ }\textcolor{comment}{/*\ In\ case\ interrupt\ is\ generated\ if\ the\ EIE\ bit\ is\ set\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#define\ USART\_IT\_NE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0260)}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#define\ USART\_IT\_FE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0160)}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ USART\_IT\_ORE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ USART\_IT\_ORE\_ER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ IS\_USART\_CONFIG\_IT(IT)\ (((IT)\ ==\ USART\_IT\_PE)\ ||\ ((IT)\ ==\ USART\_IT\_TXE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_TC)\ ||\ ((IT)\ ==\ USART\_IT\_RXNE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_IDLE)\ ||\ ((IT)\ ==\ USART\_IT\_LBD)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_CTS)\ ||\ ((IT)\ ==\ USART\_IT\_ERR))}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ IS\_USART\_GET\_IT(IT)\ (((IT)\ ==\ USART\_IT\_PE)\ ||\ ((IT)\ ==\ USART\_IT\_TXE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_TC)\ ||\ ((IT)\ ==\ USART\_IT\_RXNE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_IDLE)\ ||\ ((IT)\ ==\ USART\_IT\_LBD)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_CTS)\ ||\ ((IT)\ ==\ USART\_IT\_ORE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_ORE\_RX)\ ||\ ((IT)\ ==\ USART\_IT\_ORE\_ER)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_NE)\ ||\ ((IT)\ ==\ USART\_IT\_FE))}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#define\ IS\_USART\_CLEAR\_IT(IT)\ (((IT)\ ==\ USART\_IT\_TC)\ ||\ ((IT)\ ==\ USART\_IT\_RXNE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_LBD)\ ||\ ((IT)\ ==\ USART\_IT\_CTS))}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ USART\_DMAReq\_Tx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0080)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#define\ USART\_DMAReq\_Rx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0040)}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ IS\_USART\_DMAREQ(DMAREQ)\ ((((DMAREQ)\ \&\ (uint16\_t)0xFF3F)\ ==\ 0x00)\ \&\&\ ((DMAREQ)\ !=\ (uint16\_t)0x00))}}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#define\ USART\_WakeUp\_IdleLine\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#define\ USART\_WakeUp\_AddressMark\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0800)}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ IS\_USART\_WAKEUP(WAKEUP)\ (((WAKEUP)\ ==\ USART\_WakeUp\_IdleLine)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WAKEUP)\ ==\ USART\_WakeUp\_AddressMark))}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ USART\_LINBreakDetectLength\_10b\ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ USART\_LINBreakDetectLength\_11b\ \ \ \ \ \ ((uint16\_t)0x0020)}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ IS\_USART\_LIN\_BREAK\_DETECT\_LENGTH(LENGTH)\ \(\backslash\)}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((LENGTH)\ ==\ USART\_LINBreakDetectLength\_10b)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LENGTH)\ ==\ USART\_LINBreakDetectLength\_11b))}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ USART\_IrDAMode\_LowPower\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0004)}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#define\ USART\_IrDAMode\_Normal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ IS\_USART\_IRDA\_MODE(MODE)\ (((MODE)\ ==\ USART\_IrDAMode\_LowPower)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ USART\_IrDAMode\_Normal))}}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\#define\ USART\_FLAG\_CTS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0200)}}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\#define\ USART\_FLAG\_LBD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0100)}}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#define\ USART\_FLAG\_TXE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0080)}}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#define\ USART\_FLAG\_TC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0040)}}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#define\ USART\_FLAG\_RXNE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0020)}}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#define\ USART\_FLAG\_IDLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0010)}}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ USART\_FLAG\_ORE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0008)}}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#define\ USART\_FLAG\_NE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0004)}}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ USART\_FLAG\_FE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0002)}}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ USART\_FLAG\_PE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0001)}}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ IS\_USART\_FLAG(FLAG)\ (((FLAG)\ ==\ USART\_FLAG\_PE)\ ||\ ((FLAG)\ ==\ USART\_FLAG\_TXE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ USART\_FLAG\_TC)\ ||\ ((FLAG)\ ==\ USART\_FLAG\_RXNE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ USART\_FLAG\_IDLE)\ ||\ ((FLAG)\ ==\ USART\_FLAG\_LBD)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ USART\_FLAG\_CTS)\ ||\ ((FLAG)\ ==\ USART\_FLAG\_ORE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ USART\_FLAG\_NE)\ ||\ ((FLAG)\ ==\ USART\_FLAG\_FE))}}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ IS\_USART\_CLEAR\_FLAG(FLAG)\ ((((FLAG)\ \&\ (uint16\_t)0xFC9F)\ ==\ 0x00)\ \&\&\ ((FLAG)\ !=\ (uint16\_t)0x00))}}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ IS\_USART\_BAUDRATE(BAUDRATE)\ (((BAUDRATE)\ >\ 0)\ \&\&\ ((BAUDRATE)\ <\ 7500001))}}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ IS\_USART\_ADDRESS(ADDRESS)\ ((ADDRESS)\ <=\ 0xF)}}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ IS\_USART\_DATA(DATA)\ ((DATA)\ <=\ 0x1FF)}}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00357\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00358\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ \ }
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \textcolor{comment}{/*\ \ Function\ used\ to\ set\ the\ USART\ configuration\ to\ the\ default\ reset\ state\ ***/}\ }
+\DoxyCodeLine{00361\ \textcolor{keywordtype}{void}\ USART\_DeInit(USART\_TypeDef*\ USARTx);}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \textcolor{comment}{/*\ Initialization\ and\ Configuration\ functions\ *********************************/}}
+\DoxyCodeLine{00364\ \textcolor{keywordtype}{void}\ USART\_Init(USART\_TypeDef*\ USARTx,\ USART\_InitTypeDef*\ USART\_InitStruct);}
+\DoxyCodeLine{00365\ \textcolor{keywordtype}{void}\ USART\_StructInit(USART\_InitTypeDef*\ USART\_InitStruct);}
+\DoxyCodeLine{00366\ \textcolor{keywordtype}{void}\ USART\_ClockInit(USART\_TypeDef*\ USARTx,\ USART\_ClockInitTypeDef*\ USART\_ClockInitStruct);}
+\DoxyCodeLine{00367\ \textcolor{keywordtype}{void}\ USART\_ClockStructInit(USART\_ClockInitTypeDef*\ USART\_ClockInitStruct);}
+\DoxyCodeLine{00368\ \textcolor{keywordtype}{void}\ USART\_Cmd(USART\_TypeDef*\ USARTx,\ FunctionalState\ NewState);}
+\DoxyCodeLine{00369\ \textcolor{keywordtype}{void}\ USART\_SetPrescaler(USART\_TypeDef*\ USARTx,\ uint8\_t\ USART\_Prescaler);}
+\DoxyCodeLine{00370\ \textcolor{keywordtype}{void}\ USART\_OverSampling8Cmd(USART\_TypeDef*\ USARTx,\ FunctionalState\ NewState);}
+\DoxyCodeLine{00371\ \textcolor{keywordtype}{void}\ USART\_OneBitMethodCmd(USART\_TypeDef*\ USARTx,\ FunctionalState\ NewState);}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \textcolor{comment}{/*\ Data\ transfers\ functions\ ***************************************************/}\ }
+\DoxyCodeLine{00374\ \textcolor{keywordtype}{void}\ USART\_SendData(USART\_TypeDef*\ USARTx,\ uint16\_t\ Data);}
+\DoxyCodeLine{00375\ uint16\_t\ USART\_ReceiveData(USART\_TypeDef*\ USARTx);}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \textcolor{comment}{/*\ Multi-\/Processor\ Communication\ functions\ ************************************/}}
+\DoxyCodeLine{00378\ \textcolor{keywordtype}{void}\ USART\_SetAddress(USART\_TypeDef*\ USARTx,\ uint8\_t\ USART\_Address);}
+\DoxyCodeLine{00379\ \textcolor{keywordtype}{void}\ USART\_WakeUpConfig(USART\_TypeDef*\ USARTx,\ uint16\_t\ USART\_WakeUp);}
+\DoxyCodeLine{00380\ \textcolor{keywordtype}{void}\ USART\_ReceiverWakeUpCmd(USART\_TypeDef*\ USARTx,\ FunctionalState\ NewState);}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \textcolor{comment}{/*\ LIN\ mode\ functions\ *********************************************************/}}
+\DoxyCodeLine{00383\ \textcolor{keywordtype}{void}\ USART\_LINBreakDetectLengthConfig(USART\_TypeDef*\ USARTx,\ uint16\_t\ USART\_LINBreakDetectLength);}
+\DoxyCodeLine{00384\ \textcolor{keywordtype}{void}\ USART\_LINCmd(USART\_TypeDef*\ USARTx,\ FunctionalState\ NewState);}
+\DoxyCodeLine{00385\ \textcolor{keywordtype}{void}\ USART\_SendBreak(USART\_TypeDef*\ USARTx);}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \textcolor{comment}{/*\ Half-\/duplex\ mode\ function\ **************************************************/}}
+\DoxyCodeLine{00388\ \textcolor{keywordtype}{void}\ USART\_HalfDuplexCmd(USART\_TypeDef*\ USARTx,\ FunctionalState\ NewState);}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \textcolor{comment}{/*\ Smartcard\ mode\ functions\ ***************************************************/}}
+\DoxyCodeLine{00391\ \textcolor{keywordtype}{void}\ USART\_SmartCardCmd(USART\_TypeDef*\ USARTx,\ FunctionalState\ NewState);}
+\DoxyCodeLine{00392\ \textcolor{keywordtype}{void}\ USART\_SmartCardNACKCmd(USART\_TypeDef*\ USARTx,\ FunctionalState\ NewState);}
+\DoxyCodeLine{00393\ \textcolor{keywordtype}{void}\ USART\_SetGuardTime(USART\_TypeDef*\ USARTx,\ uint8\_t\ USART\_GuardTime);}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \textcolor{comment}{/*\ IrDA\ mode\ functions\ ********************************************************/}}
+\DoxyCodeLine{00396\ \textcolor{keywordtype}{void}\ USART\_IrDAConfig(USART\_TypeDef*\ USARTx,\ uint16\_t\ USART\_IrDAMode);}
+\DoxyCodeLine{00397\ \textcolor{keywordtype}{void}\ USART\_IrDACmd(USART\_TypeDef*\ USARTx,\ FunctionalState\ NewState);}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \textcolor{comment}{/*\ DMA\ transfers\ management\ functions\ *****************************************/}}
+\DoxyCodeLine{00400\ \textcolor{keywordtype}{void}\ USART\_DMACmd(USART\_TypeDef*\ USARTx,\ uint16\_t\ USART\_DMAReq,\ FunctionalState\ NewState);}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \textcolor{comment}{/*\ Interrupts\ and\ flags\ management\ functions\ **********************************/}}
+\DoxyCodeLine{00403\ \textcolor{keywordtype}{void}\ USART\_ITConfig(USART\_TypeDef*\ USARTx,\ uint16\_t\ USART\_IT,\ FunctionalState\ NewState);}
+\DoxyCodeLine{00404\ FlagStatus\ USART\_GetFlagStatus(USART\_TypeDef*\ USARTx,\ uint16\_t\ USART\_FLAG);}
+\DoxyCodeLine{00405\ \textcolor{keywordtype}{void}\ USART\_ClearFlag(USART\_TypeDef*\ USARTx,\ uint16\_t\ USART\_FLAG);}
+\DoxyCodeLine{00406\ ITStatus\ USART\_GetITStatus(USART\_TypeDef*\ USARTx,\ uint16\_t\ USART\_IT);}
+\DoxyCodeLine{00407\ \textcolor{keywordtype}{void}\ USART\_ClearITPendingBit(USART\_TypeDef*\ USARTx,\ uint16\_t\ USART\_IT);}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00410\ \}}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F4xx\_USART\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00423\ \textcolor{comment}{/*******************\ (C)\ COPYRIGHT\ 2011\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

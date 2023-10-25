@@ -1,0 +1,52 @@
+.TH "ADC_external_trigger_edge_for_regular_channels_conversion" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADC_external_trigger_edge_for_regular_channels_conversion \- ADC_external_trigger_edge_for_regular_channels_conversion
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConvEdge_None\fP   ((uint32_t)0x00000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConvEdge_Rising\fP   ((uint32_t)0x10000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConvEdge_Falling\fP   ((uint32_t)0x20000000)"
+.br
+.ti -1c
+.RI "#define \fBADC_ExternalTrigConvEdge_RisingFalling\fP   ((uint32_t)0x30000000)"
+.br
+.ti -1c
+.RI "#define \fBIS_ADC_EXT_TRIG_EDGE\fP(EDGE)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADC_ExternalTrigConvEdge_Falling   ((uint32_t)0x20000000)"
+
+.SS "#define ADC_ExternalTrigConvEdge_None   ((uint32_t)0x00000000)"
+
+.SS "#define ADC_ExternalTrigConvEdge_Rising   ((uint32_t)0x10000000)"
+
+.SS "#define ADC_ExternalTrigConvEdge_RisingFalling   ((uint32_t)0x30000000)"
+
+.SS "#define IS_ADC_EXT_TRIG_EDGE(EDGE)"
+\fBValue:\fP.PP
+.nf
+                             (((EDGE) == ADC_ExternalTrigConvEdge_None) || \\
+                             ((EDGE) == ADC_ExternalTrigConvEdge_Rising) || \\
+                             ((EDGE) == ADC_ExternalTrigConvEdge_Falling) || \\
+                             ((EDGE) == ADC_ExternalTrigConvEdge_RisingFalling))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

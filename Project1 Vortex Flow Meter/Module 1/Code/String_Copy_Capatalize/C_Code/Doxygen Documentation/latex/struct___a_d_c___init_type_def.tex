@@ -1,0 +1,114 @@
+\doxysection{\+\_\+\+ADC\+\_\+\+Init\+Type\+Def Struct Reference}
+\label{struct___a_d_c___init_type_def}\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+
+
+{\ttfamily \#include $<$adc.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \textbf{ Clock\+Prescaler}
+\item 
+uint32\+\_\+t \textbf{ Resolution}
+\item 
+uint32\+\_\+t \textbf{ Data\+Align}
+\item 
+uint32\+\_\+t \textbf{ Scan\+Conv\+Mode}
+\item 
+uint32\+\_\+t \textbf{ EOCSelection}
+\item 
+uint32\+\_\+t \textbf{ Continuous\+Conv\+Mode}
+\item 
+uint32\+\_\+t \textbf{ DMAContinuous\+Requests}
+\item 
+uint32\+\_\+t \textbf{ Nbr\+Of\+Conversion}
+\item 
+uint32\+\_\+t \textbf{ Discontinuous\+Conv\+Mode}
+\item 
+uint32\+\_\+t \textbf{ Nbr\+Of\+Disc\+Conversion}
+\item 
+uint32\+\_\+t \textbf{ External\+Trig\+Conv}
+\item 
+uint32\+\_\+t \textbf{ External\+Trig\+Conv\+Edge}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\label{struct___a_d_c___init_type_def_ab791f8fac403d508e1c53b6f27cf1f24} 
+\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}!ClockPrescaler@{ClockPrescaler}}
+\index{ClockPrescaler@{ClockPrescaler}!\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+\doxysubsubsection{ClockPrescaler}
+{\footnotesize\ttfamily uint32\+\_\+t Clock\+Prescaler}
+
+Select the frequency of the clock to the ADC. The clock is common for all the ADCs. This parameter can be a value of ADC\+\_\+\+Clock\+Prescaler \label{struct___a_d_c___init_type_def_a768ec42e36553ad0acb7ad029462a59d} 
+\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}!ContinuousConvMode@{ContinuousConvMode}}
+\index{ContinuousConvMode@{ContinuousConvMode}!\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+\doxysubsubsection{ContinuousConvMode}
+{\footnotesize\ttfamily uint32\+\_\+t Continuous\+Conv\+Mode}
+
+Specifies whether the conversion is performed in Continuous or Single mode. This parameter can be set to ENABLE or DISABLE. \label{struct___a_d_c___init_type_def_afe646b2571044212378bf5f722544359} 
+\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}!DataAlign@{DataAlign}}
+\index{DataAlign@{DataAlign}!\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+\doxysubsubsection{DataAlign}
+{\footnotesize\ttfamily uint32\+\_\+t Data\+Align}
+
+Specifies whether the ADC data alignment is left or right. ~\newline
+ This parameter can be a value of \doxyref{ADC\+\_\+data\+\_\+align}{p.}{group___a_d_c__data__align} \label{struct___a_d_c___init_type_def_a9029916649c9ed5db0a3d86c7a0841bb} 
+\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}!DiscontinuousConvMode@{DiscontinuousConvMode}}
+\index{DiscontinuousConvMode@{DiscontinuousConvMode}!\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+\doxysubsubsection{DiscontinuousConvMode}
+{\footnotesize\ttfamily uint32\+\_\+t Discontinuous\+Conv\+Mode}
+
+Specifies whether the conversion is performed in Discontinuous or not for regular channels. This parameter can be set to ENABLE or DISABLE. \label{struct___a_d_c___init_type_def_a304c6a7957f73ed08df4f8a5d467958f} 
+\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}!DMAContinuousRequests@{DMAContinuousRequests}}
+\index{DMAContinuousRequests@{DMAContinuousRequests}!\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+\doxysubsubsection{DMAContinuousRequests}
+{\footnotesize\ttfamily uint32\+\_\+t DMAContinuous\+Requests}
+
+Specifies whether the DMA requests is performed in Continuous or in Single mode. This parameter can be set to ENABLE or DISABLE. \label{struct___a_d_c___init_type_def_a92de48abe9cbd958145ce5bc090ea383} 
+\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}!EOCSelection@{EOCSelection}}
+\index{EOCSelection@{EOCSelection}!\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+\doxysubsubsection{EOCSelection}
+{\footnotesize\ttfamily uint32\+\_\+t EOCSelection}
+
+Specifies whether the EOC flag is set at the end of single channel conversion or at the end of all conversions. This parameter can be a value of ADC\+\_\+\+EOCSelection Note\+: Impact on overrun when not using DMA\+: When EOCSelection is set to ADC\+\_\+\+EOC\+\_\+\+SINGLE\+\_\+\+CONV, overrun detection is automatically enabled, in this case each conversion data must be read. To perform ADC conversions without having to read all conversion data, this parameter must be set to ADC\+\_\+\+EOC\+\_\+\+SEQ\+\_\+\+CONV \label{struct___a_d_c___init_type_def_a3f4a71424165638d6621d75a351cb5e0} 
+\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}!ExternalTrigConv@{ExternalTrigConv}}
+\index{ExternalTrigConv@{ExternalTrigConv}!\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+\doxysubsubsection{ExternalTrigConv}
+{\footnotesize\ttfamily uint32\+\_\+t External\+Trig\+Conv}
+
+Selects the external event used to trigger the conversion start of regular group. If set to ADC\+\_\+\+SOFTWARE\+\_\+\+START, external triggers are disabled. This parameter can be a value of ADC\+\_\+\+External\+\_\+trigger\+\_\+\+Source\+\_\+\+Regular Note\+: This parameter can be modified only if there is no conversion is ongoing. \label{struct___a_d_c___init_type_def_ace2c616b80bb7f1982e8a52131a2732c} 
+\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}!ExternalTrigConvEdge@{ExternalTrigConvEdge}}
+\index{ExternalTrigConvEdge@{ExternalTrigConvEdge}!\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+\doxysubsubsection{ExternalTrigConvEdge}
+{\footnotesize\ttfamily uint32\+\_\+t External\+Trig\+Conv\+Edge}
+
+Selects the external trigger edge of regular group. If trigger is set to ADC\+\_\+\+SOFTWARE\+\_\+\+START, this parameter is discarded. This parameter can be a value of ADC\+\_\+\+External\+\_\+trigger\+\_\+edge\+\_\+\+Regular Note\+: This parameter can be modified only if there is no conversion is ongoing. \label{struct___a_d_c___init_type_def_acc137bdcf502c586925ad8e99628b03f} 
+\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}!NbrOfConversion@{NbrOfConversion}}
+\index{NbrOfConversion@{NbrOfConversion}!\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+\doxysubsubsection{NbrOfConversion}
+{\footnotesize\ttfamily uint32\+\_\+t Nbr\+Of\+Conversion}
+
+Specifies the number of ADC conversions that will be done using the sequencer for regular channel group. This parameter must be a number between Min\+\_\+\+Data = 1 and Max\+\_\+\+Data = 16. \label{struct___a_d_c___init_type_def_a32f3fefba15f525dfc9b9d2cd8a5f9df} 
+\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}!NbrOfDiscConversion@{NbrOfDiscConversion}}
+\index{NbrOfDiscConversion@{NbrOfDiscConversion}!\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+\doxysubsubsection{NbrOfDiscConversion}
+{\footnotesize\ttfamily uint32\+\_\+t Nbr\+Of\+Disc\+Conversion}
+
+Specifies the number of ADC discontinuous conversions that will be done using the sequencer for regular channel group. This parameter must be a number between Min\+\_\+\+Data = 1 and Max\+\_\+\+Data = 8. \label{struct___a_d_c___init_type_def_a6613985e603e784c30fb3689f2c6fa5f} 
+\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}!Resolution@{Resolution}}
+\index{Resolution@{Resolution}!\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+\doxysubsubsection{Resolution}
+{\footnotesize\ttfamily uint32\+\_\+t Resolution}
+
+Configures the ADC resolution dual mode. This parameter can be a value of ADC\+\_\+\+Resolution \label{struct___a_d_c___init_type_def_a67902b5cdd3d1aa4af49654409412a08} 
+\index{\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}!ScanConvMode@{ScanConvMode}}
+\index{ScanConvMode@{ScanConvMode}!\_ADC\_InitTypeDef@{\_ADC\_InitTypeDef}}
+\doxysubsubsection{ScanConvMode}
+{\footnotesize\ttfamily uint32\+\_\+t Scan\+Conv\+Mode}
+
+Specifies whether the conversion is performed in Scan (multi channels) or Single (one channel) mode. This parameter can be set to ENABLE or DISABLE 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+drivers/\textbf{ adc.\+h}\end{DoxyCompactItemize}

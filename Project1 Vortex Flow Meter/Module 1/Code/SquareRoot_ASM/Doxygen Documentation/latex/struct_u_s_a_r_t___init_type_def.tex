@@ -1,0 +1,82 @@
+\doxysection{USART\+\_\+\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_u_s_a_r_t___init_type_def}{}\label{struct_u_s_a_r_t___init_type_def}\index{USART\_InitTypeDef@{USART\_InitTypeDef}}
+
+
+USART Init Structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f4xx\+\_\+usart.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_s_a_r_t___init_type_def_a8712e31ee9d088d83c84d38d88c6af0b}{USART\+\_\+\+Baud\+Rate}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_u_s_a_r_t___init_type_def_aa1248b67914e095c0de768223eea9328}{USART\+\_\+\+Word\+Length}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_u_s_a_r_t___init_type_def_aa58409990a6a0bc99f432eb90e204c0f}{USART\+\_\+\+Stop\+Bits}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_u_s_a_r_t___init_type_def_a4edcc84644c8553a1a6e841c48ea8413}{USART\+\_\+\+Parity}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_u_s_a_r_t___init_type_def_a1a581f24451bf5a4a210bab8d68998e2}{USART\+\_\+\+Mode}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_u_s_a_r_t___init_type_def_ab41fe3b9f5cb4ed89be23bff0a1f4114}{USART\+\_\+\+Hardware\+Flow\+Control}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+USART Init Structure definition ~\newline
+ 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_u_s_a_r_t___init_type_def_a8712e31ee9d088d83c84d38d88c6af0b}\label{struct_u_s_a_r_t___init_type_def_a8712e31ee9d088d83c84d38d88c6af0b} 
+\index{USART\_InitTypeDef@{USART\_InitTypeDef}!USART\_BaudRate@{USART\_BaudRate}}
+\index{USART\_BaudRate@{USART\_BaudRate}!USART\_InitTypeDef@{USART\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{USART\_BaudRate}{USART\_BaudRate}}
+{\footnotesize\ttfamily uint32\+\_\+t USART\+\_\+\+Baud\+Rate}
+
+This member configures the USART communication baud rate. The baud rate is computed using the following formula\+:
+\begin{DoxyItemize}
+\item Integer\+Divider = ((PCLKx) / (8 \texorpdfstring{$\ast$}{*} (OVR8+1) \texorpdfstring{$\ast$}{*} (USART\+\_\+\+Init\+Struct-\/\texorpdfstring{$>$}{>}USART\+\_\+\+Baud\+Rate)))
+\item Fractional\+Divider = ((Integer\+Divider -\/ ((u32) Integer\+Divider)) \texorpdfstring{$\ast$}{*} 8 \texorpdfstring{$\ast$}{*} (OVR8+1)) + 0.\+5 Where OVR8 is the "{}oversampling by 8 mode"{} configuration bit in the CR1 register. 
+\end{DoxyItemize}\Hypertarget{struct_u_s_a_r_t___init_type_def_ab41fe3b9f5cb4ed89be23bff0a1f4114}\label{struct_u_s_a_r_t___init_type_def_ab41fe3b9f5cb4ed89be23bff0a1f4114} 
+\index{USART\_InitTypeDef@{USART\_InitTypeDef}!USART\_HardwareFlowControl@{USART\_HardwareFlowControl}}
+\index{USART\_HardwareFlowControl@{USART\_HardwareFlowControl}!USART\_InitTypeDef@{USART\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{USART\_HardwareFlowControl}{USART\_HardwareFlowControl}}
+{\footnotesize\ttfamily uint16\+\_\+t USART\+\_\+\+Hardware\+Flow\+Control}
+
+Specifies wether the hardware flow control mode is enabled or disabled. This parameter can be a value of \doxylink{group___u_s_a_r_t___hardware___flow___control}{USART\+\_\+\+Hardware\+\_\+\+Flow\+\_\+\+Control} \Hypertarget{struct_u_s_a_r_t___init_type_def_a1a581f24451bf5a4a210bab8d68998e2}\label{struct_u_s_a_r_t___init_type_def_a1a581f24451bf5a4a210bab8d68998e2} 
+\index{USART\_InitTypeDef@{USART\_InitTypeDef}!USART\_Mode@{USART\_Mode}}
+\index{USART\_Mode@{USART\_Mode}!USART\_InitTypeDef@{USART\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{USART\_Mode}{USART\_Mode}}
+{\footnotesize\ttfamily uint16\+\_\+t USART\+\_\+\+Mode}
+
+Specifies wether the Receive or Transmit mode is enabled or disabled. This parameter can be a value of \doxylink{group___u_s_a_r_t___mode}{USART\+\_\+\+Mode} \Hypertarget{struct_u_s_a_r_t___init_type_def_a4edcc84644c8553a1a6e841c48ea8413}\label{struct_u_s_a_r_t___init_type_def_a4edcc84644c8553a1a6e841c48ea8413} 
+\index{USART\_InitTypeDef@{USART\_InitTypeDef}!USART\_Parity@{USART\_Parity}}
+\index{USART\_Parity@{USART\_Parity}!USART\_InitTypeDef@{USART\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{USART\_Parity}{USART\_Parity}}
+{\footnotesize\ttfamily uint16\+\_\+t USART\+\_\+\+Parity}
+
+Specifies the parity mode. This parameter can be a value of \doxylink{group___u_s_a_r_t___parity}{USART\+\_\+\+Parity} \begin{DoxyNote}{Note}
+When parity is enabled, the computed parity is inserted at the MSB position of the transmitted data (9th bit when the word length is set to 9 data bits; 8th bit when the word length is set to 8 data bits). 
+\end{DoxyNote}
+\Hypertarget{struct_u_s_a_r_t___init_type_def_aa58409990a6a0bc99f432eb90e204c0f}\label{struct_u_s_a_r_t___init_type_def_aa58409990a6a0bc99f432eb90e204c0f} 
+\index{USART\_InitTypeDef@{USART\_InitTypeDef}!USART\_StopBits@{USART\_StopBits}}
+\index{USART\_StopBits@{USART\_StopBits}!USART\_InitTypeDef@{USART\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{USART\_StopBits}{USART\_StopBits}}
+{\footnotesize\ttfamily uint16\+\_\+t USART\+\_\+\+Stop\+Bits}
+
+Specifies the number of stop bits transmitted. This parameter can be a value of \doxylink{group___u_s_a_r_t___stop___bits}{USART\+\_\+\+Stop\+\_\+\+Bits} \Hypertarget{struct_u_s_a_r_t___init_type_def_aa1248b67914e095c0de768223eea9328}\label{struct_u_s_a_r_t___init_type_def_aa1248b67914e095c0de768223eea9328} 
+\index{USART\_InitTypeDef@{USART\_InitTypeDef}!USART\_WordLength@{USART\_WordLength}}
+\index{USART\_WordLength@{USART\_WordLength}!USART\_InitTypeDef@{USART\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{USART\_WordLength}{USART\_WordLength}}
+{\footnotesize\ttfamily uint16\+\_\+t USART\+\_\+\+Word\+Length}
+
+Specifies the number of data bits transmitted or received in a frame. This parameter can be a value of \doxylink{group___u_s_a_r_t___word___length}{USART\+\_\+\+Word\+\_\+\+Length} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+drivers/\mbox{\hyperlink{stm32f4xx__usart_8h}{stm32f4xx\+\_\+usart.\+h}}\end{DoxyCompactItemize}

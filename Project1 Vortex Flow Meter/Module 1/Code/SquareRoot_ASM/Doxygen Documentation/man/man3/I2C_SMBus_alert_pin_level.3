@@ -1,0 +1,40 @@
+.TH "I2C_SMBus_alert_pin_level" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_SMBus_alert_pin_level \- I2C_SMBus_alert_pin_level
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBI2C_SMBusAlert_Low\fP   ((uint16_t)0x2000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_SMBusAlert_High\fP   ((uint16_t)0xDFFF)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_SMBUS_ALERT\fP(ALERT)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define I2C_SMBusAlert_High   ((uint16_t)0xDFFF)"
+
+.SS "#define I2C_SMBusAlert_Low   ((uint16_t)0x2000)"
+
+.SS "#define IS_I2C_SMBUS_ALERT(ALERT)"
+\fBValue:\fP.PP
+.nf
+                                   (((ALERT) == I2C_SMBusAlert_Low) || \\
+                                   ((ALERT) == I2C_SMBusAlert_High))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

@@ -1,0 +1,35 @@
+.TH "USART_Mode" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_Mode \- USART_Mode
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBUSART_Mode_Rx\fP   ((uint16_t)0x0004)"
+.br
+.ti -1c
+.RI "#define \fBUSART_Mode_Tx\fP   ((uint16_t)0x0008)"
+.br
+.ti -1c
+.RI "#define \fBIS_USART_MODE\fP(MODE)   ((((MODE) & (uint16_t)0xFFF3) == 0x00) && ((MODE) != (uint16_t)0x00))"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IS_USART_MODE(MODE)   ((((MODE) & (uint16_t)0xFFF3) == 0x00) && ((MODE) != (uint16_t)0x00))"
+
+.SS "#define USART_Mode_Rx   ((uint16_t)0x0004)"
+
+.SS "#define USART_Mode_Tx   ((uint16_t)0x0008)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

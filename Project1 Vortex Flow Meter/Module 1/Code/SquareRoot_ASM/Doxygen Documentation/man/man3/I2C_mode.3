@@ -1,0 +1,46 @@
+.TH "I2C_mode" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_mode \- I2C_mode
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBI2C_Mode_I2C\fP   ((uint16_t)0x0000)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Mode_SMBusDevice\fP   ((uint16_t)0x0002)"
+.br
+.ti -1c
+.RI "#define \fBI2C_Mode_SMBusHost\fP   ((uint16_t)0x000A)"
+.br
+.ti -1c
+.RI "#define \fBIS_I2C_MODE\fP(MODE)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define I2C_Mode_I2C   ((uint16_t)0x0000)"
+
+.SS "#define I2C_Mode_SMBusDevice   ((uint16_t)0x0002)"
+
+.SS "#define I2C_Mode_SMBusHost   ((uint16_t)0x000A)"
+
+.SS "#define IS_I2C_MODE(MODE)"
+\fBValue:\fP.PP
+.nf
+                           (((MODE) == I2C_Mode_I2C) || \\
+                           ((MODE) == I2C_Mode_SMBusDevice) || \\
+                           ((MODE) == I2C_Mode_SMBusHost))
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

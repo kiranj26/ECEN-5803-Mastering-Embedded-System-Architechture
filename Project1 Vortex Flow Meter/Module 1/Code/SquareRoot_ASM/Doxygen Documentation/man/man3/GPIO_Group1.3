@@ -1,0 +1,129 @@
+.TH "GPIO_Group1" 3 "Version 0.1.-" "Square Root Approximation" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GPIO_Group1 \- Initialization and Configuration
+.PP
+ \- Initialization and Configuration\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBGPIO_DeInit\fP (GPIO_TypeDef *GPIOx)"
+.br
+.RI "Deinitializes the GPIOx peripheral registers to their default reset values\&. "
+.ti -1c
+.RI "void \fBGPIO_Init\fP (GPIO_TypeDef *GPIOx, \fBGPIO_InitTypeDef\fP *GPIO_InitStruct)"
+.br
+.RI "Initializes the GPIOx peripheral according to the specified parameters in the GPIO_InitStruct\&. "
+.ti -1c
+.RI "void \fBGPIO_StructInit\fP (\fBGPIO_InitTypeDef\fP *GPIO_InitStruct)"
+.br
+.RI "Fills each GPIO_InitStruct member with its default value\&. "
+.ti -1c
+.RI "void \fBGPIO_PinLockConfig\fP (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)"
+.br
+.RI "Locks GPIO Pins configuration registers\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Initialization and Configuration\&. 
+
+
+.PP
+.nf
+ ===============================================================================
+                        Initialization and Configuration
+ ===============================================================================  
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "void GPIO_DeInit (GPIO_TypeDef * GPIOx)"
+
+.PP
+Deinitializes the GPIOx peripheral registers to their default reset values\&. 
+.PP
+\fBNote\fP
+.RS 4
+By default, The GPIO pins are configured in input floating mode (except JTAG pins)\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void GPIO_Init (GPIO_TypeDef * GPIOx, \fBGPIO_InitTypeDef\fP * GPIO_InitStruct)"
+
+.PP
+Initializes the GPIOx peripheral according to the specified parameters in the GPIO_InitStruct\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIGPIO_InitStruct\fP pointer to a \fBGPIO_InitTypeDef\fP structure that contains the configuration information for the specified GPIO peripheral\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void GPIO_PinLockConfig (GPIO_TypeDef * GPIOx, uint16_t GPIO_Pin)"
+
+.PP
+Locks GPIO Pins configuration registers\&. 
+.PP
+\fBNote\fP
+.RS 4
+The locked registers are GPIOx_MODER, GPIOx_OTYPER, GPIOx_OSPEEDR, GPIOx_PUPDR, GPIOx_AFRL and GPIOx_AFRH\&. 
+.PP
+The configuration of the locked GPIO pins can no longer be modified until the next reset\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIOx\fP where x can be (A\&.\&.I) to select the GPIO peripheral\&. 
+.br
+\fIGPIO_Pin\fP specifies the port bit to be locked\&. This parameter can be any combination of GPIO_Pin_x where x can be (0\&.\&.15)\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SS "void GPIO_StructInit (\fBGPIO_InitTypeDef\fP * GPIO_InitStruct)"
+
+.PP
+Fills each GPIO_InitStruct member with its default value\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIGPIO_InitStruct\fP : pointer to a \fBGPIO_InitTypeDef\fP structure which will be initialized\&. 
+.RE
+.PP
+\fBReturn values\fP
+.RS 4
+\fINone\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Square Root Approximation from the source code\&.

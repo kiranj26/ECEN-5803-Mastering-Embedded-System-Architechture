@@ -1,0 +1,45 @@
+\doxysection{gpio.\+h}
+\label{gpio_8h_source}\index{drivers/gpio.h@{drivers/gpio.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ PINS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ PINS\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <platform.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ Reset,\ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ Input,\ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ Output,\ \ }
+\DoxyCodeLine{00019\ \ \ \ \ PullUp,\ \ }
+\DoxyCodeLine{00020\ \ \ \ \ PullDown\ }
+\DoxyCodeLine{00021\ \}\ PinMode;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ None,\ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ Rising,\ }
+\DoxyCodeLine{00027\ \ \ \ \ Falling\ }
+\DoxyCodeLine{00028\ \}\ TriggerMode;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ gpio\_toggle(Pin\ pin);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ gpio\_set(Pin\ pin,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{int}\ gpio\_get(Pin\ pin);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ gpio\_set\_range(Pin\ pin\_base,\ \textcolor{keywordtype}{int}\ count,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ gpio\_get\_range(Pin\ pin\_base,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ gpio\_set\_mode(Pin\ pin,\ PinMode\ mode);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ gpio\_set\_trigger(Pin\ pin,\ TriggerMode\ trig);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ gpio\_set\_callback(Pin\ pin,\ \textcolor{keywordtype}{void}\ (*callback)(\textcolor{keywordtype}{int}\ status));}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PINS\_H}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ *******************************ARM\ University\ Program\ Copyright\ ©\ ARM\ Ltd\ 2016*************************************\ \ \ }}
+
+\end{DoxyCode}

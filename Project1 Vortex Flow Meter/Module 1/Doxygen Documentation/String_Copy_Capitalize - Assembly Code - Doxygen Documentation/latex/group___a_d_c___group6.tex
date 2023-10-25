@@ -1,0 +1,304 @@
+\doxysubsubsubsection{Injected channels Configuration functions}
+\label{group___a_d_c___group6}\index{Injected channels Configuration functions@{Injected channels Configuration functions}}
+
+
+Injected channels Configuration functions.  
+
+
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ ADC\+\_\+\+Injected\+Channel\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Channel, uint8\+\_\+t Rank, uint8\+\_\+t ADC\+\_\+\+Sample\+Time)
+\begin{DoxyCompactList}\small\item\em Configures for the selected ADC injected channel its corresponding rank in the sequencer and its sample time. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Injected\+Sequencer\+Length\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t Length)
+\begin{DoxyCompactList}\small\item\em Configures the sequencer length for injected channels. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Set\+Injected\+Offset} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Injected\+Channel, uint16\+\_\+t Offset)
+\begin{DoxyCompactList}\small\item\em Set the injected channels conversion value offset. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+External\+Trig\+Injected\+Conv\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint32\+\_\+t ADC\+\_\+\+External\+Trig\+Injec\+Conv)
+\begin{DoxyCompactList}\small\item\em Configures the ADCx external trigger for injected channels conversion. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+External\+Trig\+Injected\+Conv\+Edge\+Config} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint32\+\_\+t ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge)
+\begin{DoxyCompactList}\small\item\em Configures the ADCx external trigger edge for injected channels conversion. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Software\+Start\+Injected\+Conv} (ADC\+\_\+\+Type\+Def $\ast$ADCx)
+\begin{DoxyCompactList}\small\item\em Enables the selected ADC software start conversion of the injected channels. \end{DoxyCompactList}\item 
+Flag\+Status \textbf{ ADC\+\_\+\+Get\+Software\+Start\+Injected\+Conv\+Cmd\+Status} (ADC\+\_\+\+Type\+Def $\ast$ADCx)
+\begin{DoxyCompactList}\small\item\em Gets the selected ADC Software start injected conversion Status. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Auto\+Injected\+Conv\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the selected ADC automatic injected group conversion after regular one. \end{DoxyCompactList}\item 
+void \textbf{ ADC\+\_\+\+Injected\+Disc\+Mode\+Cmd} (ADC\+\_\+\+Type\+Def $\ast$ADCx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the discontinuous mode for injected group channel for the specified ADC. \end{DoxyCompactList}\item 
+uint16\+\_\+t \textbf{ ADC\+\_\+\+Get\+Injected\+Conversion\+Value} (ADC\+\_\+\+Type\+Def $\ast$ADCx, uint8\+\_\+t ADC\+\_\+\+Injected\+Channel)
+\begin{DoxyCompactList}\small\item\em Returns the ADC injected channel conversion result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Injected channels Configuration functions. 
+
+\begin{DoxyVerb} ===============================================================================
+                     Injected channels Configuration functions
+ ===============================================================================  
+
+  This section provide functions allowing to configure the ADC Injected channels,
+  it is composed of 2 sub sections : 
+    
+  1. Configuration functions for Injected channels: This subsection provides 
+     functions allowing to configure the ADC injected channels :    
+    - Configure the rank in the injected group sequencer for each channel
+    - Configure the sampling time for each channel    
+    - Activate the Auto injected Mode  
+    - Activate the Discontinuous Mode 
+    - scan mode activation  
+    - External/software trigger source   
+    - External trigger edge 
+    - injected channels sequencer.
+    
+   2. Get the Specified Injected channel conversion data: This subsection 
+      provides an important function in the ADC peripheral since it returns the 
+      converted data of the specific injected channel.\end{DoxyVerb}
+ 
+
+\doxysubsubsubsubsection{Function Documentation}
+\label{group___a_d_c___group6_ga1ff9c3b8e4bbdd2addfd227f1a506a66} 
+\index{Injected channels Configuration functions@{Injected channels Configuration functions}!ADC\_AutoInjectedConvCmd@{ADC\_AutoInjectedConvCmd}}
+\index{ADC\_AutoInjectedConvCmd@{ADC\_AutoInjectedConvCmd}!Injected channels Configuration functions@{Injected channels Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_AutoInjectedConvCmd()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Auto\+Injected\+Conv\+Cmd (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the selected ADC automatic injected group conversion after regular one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em New\+State} & new state of the selected ADC auto injected conversion This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group6_gafc02ce1e84e96b692adf085f61a0bca6} 
+\index{Injected channels Configuration functions@{Injected channels Configuration functions}!ADC\_ExternalTrigInjectedConvConfig@{ADC\_ExternalTrigInjectedConvConfig}}
+\index{ADC\_ExternalTrigInjectedConvConfig@{ADC\_ExternalTrigInjectedConvConfig}!Injected channels Configuration functions@{Injected channels Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_ExternalTrigInjectedConvConfig()}
+{\footnotesize\ttfamily void ADC\+\_\+\+External\+Trig\+Injected\+Conv\+Config (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{uint32\+\_\+t}]{ADC\+\_\+\+External\+Trig\+Injec\+Conv }\end{DoxyParamCaption})}
+
+
+
+Configures the ADCx external trigger for injected channels conversion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em ADC\+\_\+\+External\+Trig\+Injec\+Conv} & specifies the ADC trigger to start injected conversion. This parameter can be one of the following values\+: ~\newline
+ \begin{DoxyItemize}
+\item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T1\+\_\+\+CC4\+: Timer1 capture compare4 selected \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T1\+\_\+\+TRGO\+: Timer1 TRGO event selected \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T2\+\_\+\+CC1\+: Timer2 capture compare1 selected \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T2\+\_\+\+TRGO\+: Timer2 TRGO event selected \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T3\+\_\+\+CC2\+: Timer3 capture compare2 selected \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T3\+\_\+\+CC4\+: Timer3 capture compare4 selected \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T4\+\_\+\+CC1\+: Timer4 capture compare1 selected ~\newline
+ \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T4\+\_\+\+CC2\+: Timer4 capture compare2 selected \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T4\+\_\+\+CC3\+: Timer4 capture compare3 selected ~\newline
+ \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T4\+\_\+\+TRGO\+: Timer4 TRGO event selected \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T5\+\_\+\+CC4\+: Timer5 capture compare4 selected ~\newline
+ \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T5\+\_\+\+TRGO\+: Timer5 TRGO event selected ~\newline
+ \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T8\+\_\+\+CC2\+: Timer8 capture compare2 selected \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T8\+\_\+\+CC3\+: Timer8 capture compare3 selected ~\newline
+ \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+T8\+\_\+\+CC4\+: Timer8 capture compare4 selected \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+\_\+\+Ext\+\_\+\+IT15\+: External interrupt line 15 event selected ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group6_ga62bea56579f04374fbe830d9e55e6fb0} 
+\index{Injected channels Configuration functions@{Injected channels Configuration functions}!ADC\_ExternalTrigInjectedConvEdgeConfig@{ADC\_ExternalTrigInjectedConvEdgeConfig}}
+\index{ADC\_ExternalTrigInjectedConvEdgeConfig@{ADC\_ExternalTrigInjectedConvEdgeConfig}!Injected channels Configuration functions@{Injected channels Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_ExternalTrigInjectedConvEdgeConfig()}
+{\footnotesize\ttfamily void ADC\+\_\+\+External\+Trig\+Injected\+Conv\+Edge\+Config (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{uint32\+\_\+t}]{ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge }\end{DoxyParamCaption})}
+
+
+
+Configures the ADCx external trigger edge for injected channels conversion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge} & specifies the ADC external trigger edge to start injected conversion. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge\+\_\+\+None\+: external trigger disabled for injected conversion \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge\+\_\+\+Rising\+: detection on rising edge \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge\+\_\+\+Falling\+: detection on falling edge \item ADC\+\_\+\+External\+Trig\+Injec\+Conv\+Edge\+\_\+\+Rising\+Falling\+: detection on both rising and falling edge \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group6_ga1dea5ed24571a2e0ce4cbd41c9c1ec46} 
+\index{Injected channels Configuration functions@{Injected channels Configuration functions}!ADC\_GetInjectedConversionValue@{ADC\_GetInjectedConversionValue}}
+\index{ADC\_GetInjectedConversionValue@{ADC\_GetInjectedConversionValue}!Injected channels Configuration functions@{Injected channels Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_GetInjectedConversionValue()}
+{\footnotesize\ttfamily uint16\+\_\+t ADC\+\_\+\+Get\+Injected\+Conversion\+Value (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{uint8\+\_\+t}]{ADC\+\_\+\+Injected\+Channel }\end{DoxyParamCaption})}
+
+
+
+Returns the ADC injected channel conversion result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em ADC\+\_\+\+Injected\+Channel} & the converted ADC injected channel. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item ADC\+\_\+\+Injected\+Channel\+\_\+1\+: Injected Channel1 selected \item ADC\+\_\+\+Injected\+Channel\+\_\+2\+: Injected Channel2 selected \item ADC\+\_\+\+Injected\+Channel\+\_\+3\+: Injected Channel3 selected \item ADC\+\_\+\+Injected\+Channel\+\_\+4\+: Injected Channel4 selected \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & Data conversion value. \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group6_ga8765f8835b8cfed13dce3d8d71767dcc} 
+\index{Injected channels Configuration functions@{Injected channels Configuration functions}!ADC\_GetSoftwareStartInjectedConvCmdStatus@{ADC\_GetSoftwareStartInjectedConvCmdStatus}}
+\index{ADC\_GetSoftwareStartInjectedConvCmdStatus@{ADC\_GetSoftwareStartInjectedConvCmdStatus}!Injected channels Configuration functions@{Injected channels Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_GetSoftwareStartInjectedConvCmdStatus()}
+{\footnotesize\ttfamily Flag\+Status ADC\+\_\+\+Get\+Software\+Start\+Injected\+Conv\+Cmd\+Status (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx }\end{DoxyParamCaption})}
+
+
+
+Gets the selected ADC Software start injected conversion Status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of ADC software start injected conversion (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group6_gae2b44bff080184e1cf6f2cb6b9bb3e59} 
+\index{Injected channels Configuration functions@{Injected channels Configuration functions}!ADC\_InjectedChannelConfig@{ADC\_InjectedChannelConfig}}
+\index{ADC\_InjectedChannelConfig@{ADC\_InjectedChannelConfig}!Injected channels Configuration functions@{Injected channels Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_InjectedChannelConfig()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Injected\+Channel\+Config (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{uint8\+\_\+t}]{ADC\+\_\+\+Channel,  }\item[{uint8\+\_\+t}]{Rank,  }\item[{uint8\+\_\+t}]{ADC\+\_\+\+Sample\+Time }\end{DoxyParamCaption})}
+
+
+
+Configures for the selected ADC injected channel its corresponding rank in the sequencer and its sample time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em ADC\+\_\+\+Channel} & the ADC channel to configure. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item ADC\+\_\+\+Channel\+\_\+0\+: ADC Channel0 selected \item ADC\+\_\+\+Channel\+\_\+1\+: ADC Channel1 selected \item ADC\+\_\+\+Channel\+\_\+2\+: ADC Channel2 selected \item ADC\+\_\+\+Channel\+\_\+3\+: ADC Channel3 selected \item ADC\+\_\+\+Channel\+\_\+4\+: ADC Channel4 selected \item ADC\+\_\+\+Channel\+\_\+5\+: ADC Channel5 selected \item ADC\+\_\+\+Channel\+\_\+6\+: ADC Channel6 selected \item ADC\+\_\+\+Channel\+\_\+7\+: ADC Channel7 selected \item ADC\+\_\+\+Channel\+\_\+8\+: ADC Channel8 selected \item ADC\+\_\+\+Channel\+\_\+9\+: ADC Channel9 selected \item ADC\+\_\+\+Channel\+\_\+10\+: ADC Channel10 selected \item ADC\+\_\+\+Channel\+\_\+11\+: ADC Channel11 selected \item ADC\+\_\+\+Channel\+\_\+12\+: ADC Channel12 selected \item ADC\+\_\+\+Channel\+\_\+13\+: ADC Channel13 selected \item ADC\+\_\+\+Channel\+\_\+14\+: ADC Channel14 selected \item ADC\+\_\+\+Channel\+\_\+15\+: ADC Channel15 selected \item ADC\+\_\+\+Channel\+\_\+16\+: ADC Channel16 selected \item ADC\+\_\+\+Channel\+\_\+17\+: ADC Channel17 selected \item ADC\+\_\+\+Channel\+\_\+18\+: ADC Channel18 selected ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+{\em Rank} & The rank in the injected group sequencer. This parameter must be between 1 to 4. \\
+\hline
+{\em ADC\+\_\+\+Sample\+Time} & The sample time value to be set for the selected channel. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item ADC\+\_\+\+Sample\+Time\+\_\+3\+Cycles\+: Sample time equal to 3 cycles \item ADC\+\_\+\+Sample\+Time\+\_\+15\+Cycles\+: Sample time equal to 15 cycles \item ADC\+\_\+\+Sample\+Time\+\_\+28\+Cycles\+: Sample time equal to 28 cycles \item ADC\+\_\+\+Sample\+Time\+\_\+56\+Cycles\+: Sample time equal to 56 cycles \item ADC\+\_\+\+Sample\+Time\+\_\+84\+Cycles\+: Sample time equal to 84 cycles \item ADC\+\_\+\+Sample\+Time\+\_\+112\+Cycles\+: Sample time equal to 112 cycles ~\newline
+ \item ADC\+\_\+\+Sample\+Time\+\_\+144\+Cycles\+: Sample time equal to 144 cycles ~\newline
+ \item ADC\+\_\+\+Sample\+Time\+\_\+480\+Cycles\+: Sample time equal to 480 cycles ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group6_ga0b583b94183fa4ff287177b9ee808092} 
+\index{Injected channels Configuration functions@{Injected channels Configuration functions}!ADC\_InjectedDiscModeCmd@{ADC\_InjectedDiscModeCmd}}
+\index{ADC\_InjectedDiscModeCmd@{ADC\_InjectedDiscModeCmd}!Injected channels Configuration functions@{Injected channels Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_InjectedDiscModeCmd()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Injected\+Disc\+Mode\+Cmd (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the discontinuous mode for injected group channel for the specified ADC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em New\+State} & new state of the selected ADC discontinuous mode on injected group channel. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group6_ga24eba90bc3ee955e07659a605011710d} 
+\index{Injected channels Configuration functions@{Injected channels Configuration functions}!ADC\_InjectedSequencerLengthConfig@{ADC\_InjectedSequencerLengthConfig}}
+\index{ADC\_InjectedSequencerLengthConfig@{ADC\_InjectedSequencerLengthConfig}!Injected channels Configuration functions@{Injected channels Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_InjectedSequencerLengthConfig()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Injected\+Sequencer\+Length\+Config (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{uint8\+\_\+t}]{Length }\end{DoxyParamCaption})}
+
+
+
+Configures the sequencer length for injected channels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em Length} & The sequencer length. This parameter must be a number between 1 to 4. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group6_ga07a942613088ab3ecfc3d97a20475920} 
+\index{Injected channels Configuration functions@{Injected channels Configuration functions}!ADC\_SetInjectedOffset@{ADC\_SetInjectedOffset}}
+\index{ADC\_SetInjectedOffset@{ADC\_SetInjectedOffset}!Injected channels Configuration functions@{Injected channels Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_SetInjectedOffset()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Set\+Injected\+Offset (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx,  }\item[{uint8\+\_\+t}]{ADC\+\_\+\+Injected\+Channel,  }\item[{uint16\+\_\+t}]{Offset }\end{DoxyParamCaption})}
+
+
+
+Set the injected channels conversion value offset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+{\em ADC\+\_\+\+Injected\+Channel} & the ADC injected channel to set its offset. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item ADC\+\_\+\+Injected\+Channel\+\_\+1\+: Injected Channel1 selected \item ADC\+\_\+\+Injected\+Channel\+\_\+2\+: Injected Channel2 selected \item ADC\+\_\+\+Injected\+Channel\+\_\+3\+: Injected Channel3 selected \item ADC\+\_\+\+Injected\+Channel\+\_\+4\+: Injected Channel4 selected \end{DoxyItemize}
+\\
+\hline
+{\em Offset} & the offset value for the selected ADC injected channel This parameter must be a 12bit value. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\label{group___a_d_c___group6_ga79b2f6c3c77925b35495f2db228895de} 
+\index{Injected channels Configuration functions@{Injected channels Configuration functions}!ADC\_SoftwareStartInjectedConv@{ADC\_SoftwareStartInjectedConv}}
+\index{ADC\_SoftwareStartInjectedConv@{ADC\_SoftwareStartInjectedConv}!Injected channels Configuration functions@{Injected channels Configuration functions}}
+\doxysubsubsubsubsubsection{ADC\_SoftwareStartInjectedConv()}
+{\footnotesize\ttfamily void ADC\+\_\+\+Software\+Start\+Injected\+Conv (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Type\+Def $\ast$}]{ADCx }\end{DoxyParamCaption})}
+
+
+
+Enables the selected ADC software start conversion of the injected channels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ADCx} & where x can be 1, 2 or 3 to select the ADC peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

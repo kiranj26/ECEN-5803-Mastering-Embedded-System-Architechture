@@ -1,0 +1,161 @@
+\doxysubsubsubsection{USART\+\_\+\+Interrupt\+\_\+definition}
+\label{group___u_s_a_r_t___interrupt__definition}\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ USART\+\_\+\+Legacy}
+\end{DoxyCompactItemize}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+PE}~((uint16\+\_\+t)0x0028)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+TXE}~((uint16\+\_\+t)0x0727)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+TC}~((uint16\+\_\+t)0x0626)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+RXNE}~((uint16\+\_\+t)0x0525)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+ORE\+\_\+\+RX}~((uint16\+\_\+t)0x0325) /$\ast$ In case interrupt is generated if the RXNEIE bit is set $\ast$/
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+IDLE}~((uint16\+\_\+t)0x0424)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+LBD}~((uint16\+\_\+t)0x0846)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+CTS}~((uint16\+\_\+t)0x096A)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+ERR}~((uint16\+\_\+t)0x0060)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+ORE\+\_\+\+ER}~((uint16\+\_\+t)0x0360) /$\ast$ In case interrupt is generated if the EIE bit is set $\ast$/
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+NE}~((uint16\+\_\+t)0x0260)
+\item 
+\#define \textbf{ USART\+\_\+\+IT\+\_\+\+FE}~((uint16\+\_\+t)0x0160)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+CONFIG\+\_\+\+IT}(IT)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+GET\+\_\+\+IT}(IT)
+\item 
+\#define \textbf{ IS\+\_\+\+USART\+\_\+\+CLEAR\+\_\+\+IT}(IT)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\label{group___u_s_a_r_t___interrupt__definition_ga3ceda175140b84eea02a2261ebda4efd} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!IS\_USART\_CLEAR\_IT@{IS\_USART\_CLEAR\_IT}}
+\index{IS\_USART\_CLEAR\_IT@{IS\_USART\_CLEAR\_IT}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{IS\_USART\_CLEAR\_IT}
+{\footnotesize\ttfamily \#define IS\+\_\+\+USART\+\_\+\+CLEAR\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{IT }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((IT)\ ==\ USART\_IT\_TC)\ ||\ ((IT)\ ==\ USART\_IT\_RXNE)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_LBD)\ ||\ ((IT)\ ==\ USART\_IT\_CTS))}
+
+\end{DoxyCode}
+\label{group___u_s_a_r_t___interrupt__definition_ga37ce140eae1938a414ff32afed5ef236} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!IS\_USART\_CONFIG\_IT@{IS\_USART\_CONFIG\_IT}}
+\index{IS\_USART\_CONFIG\_IT@{IS\_USART\_CONFIG\_IT}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{IS\_USART\_CONFIG\_IT}
+{\footnotesize\ttfamily \#define IS\+\_\+\+USART\+\_\+\+CONFIG\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{IT }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((IT)\ ==\ USART\_IT\_PE)\ ||\ ((IT)\ ==\ USART\_IT\_TXE)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_TC)\ ||\ ((IT)\ ==\ USART\_IT\_RXNE)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_IDLE)\ ||\ ((IT)\ ==\ USART\_IT\_LBD)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_CTS)\ ||\ ((IT)\ ==\ USART\_IT\_ERR))}
+
+\end{DoxyCode}
+\label{group___u_s_a_r_t___interrupt__definition_ga9a8014793a383d710eaaf4185f2b795d} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!IS\_USART\_GET\_IT@{IS\_USART\_GET\_IT}}
+\index{IS\_USART\_GET\_IT@{IS\_USART\_GET\_IT}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{IS\_USART\_GET\_IT}
+{\footnotesize\ttfamily \#define IS\+\_\+\+USART\+\_\+\+GET\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{IT }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((IT)\ ==\ USART\_IT\_PE)\ ||\ ((IT)\ ==\ USART\_IT\_TXE)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_TC)\ ||\ ((IT)\ ==\ USART\_IT\_RXNE)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_IDLE)\ ||\ ((IT)\ ==\ USART\_IT\_LBD)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_CTS)\ ||\ ((IT)\ ==\ USART\_IT\_ORE)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_ORE\_RX)\ ||\ ((IT)\ ==\ USART\_IT\_ORE\_ER)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ USART\_IT\_NE)\ ||\ ((IT)\ ==\ USART\_IT\_FE))}
+
+\end{DoxyCode}
+\label{group___u_s_a_r_t___interrupt__definition_gab49efbefaca2921e8cbe8f5146e99dbd} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_CTS@{USART\_IT\_CTS}}
+\index{USART\_IT\_CTS@{USART\_IT\_CTS}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{USART\_IT\_CTS}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+CTS~((uint16\+\_\+t)0x096A)}
+
+\label{group___u_s_a_r_t___interrupt__definition_ga631e83efd4c4789128d80a9539faf78a} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_ERR@{USART\_IT\_ERR}}
+\index{USART\_IT\_ERR@{USART\_IT\_ERR}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{USART\_IT\_ERR}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+ERR~((uint16\+\_\+t)0x0060)}
+
+\label{group___u_s_a_r_t___interrupt__definition_ga9af8790f78f6cb1591506c57d0cc0fb3} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_FE@{USART\_IT\_FE}}
+\index{USART\_IT\_FE@{USART\_IT\_FE}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{USART\_IT\_FE}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+FE~((uint16\+\_\+t)0x0160)}
+
+\label{group___u_s_a_r_t___interrupt__definition_ga5d85aab24b7b2dfddb61ba2a49fa6185} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_IDLE@{USART\_IT\_IDLE}}
+\index{USART\_IT\_IDLE@{USART\_IT\_IDLE}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{USART\_IT\_IDLE}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+IDLE~((uint16\+\_\+t)0x0424)}
+
+\label{group___u_s_a_r_t___interrupt__definition_ga063628e16cdda199b07d380421afc4a5} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_LBD@{USART\_IT\_LBD}}
+\index{USART\_IT\_LBD@{USART\_IT\_LBD}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{USART\_IT\_LBD}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+LBD~((uint16\+\_\+t)0x0846)}
+
+\label{group___u_s_a_r_t___interrupt__definition_gad5de042f579b50f1e8643009176486b3} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_NE@{USART\_IT\_NE}}
+\index{USART\_IT\_NE@{USART\_IT\_NE}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{USART\_IT\_NE}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+NE~((uint16\+\_\+t)0x0260)}
+
+\label{group___u_s_a_r_t___interrupt__definition_ga1faa2d618b7c1038f8cad50fec7d0ba4} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_ORE\_ER@{USART\_IT\_ORE\_ER}}
+\index{USART\_IT\_ORE\_ER@{USART\_IT\_ORE\_ER}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{USART\_IT\_ORE\_ER}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+ORE\+\_\+\+ER~((uint16\+\_\+t)0x0360) /$\ast$ In case interrupt is generated if the EIE bit is set $\ast$/}
+
+\label{group___u_s_a_r_t___interrupt__definition_gaad8fd44c80b30285dc3088a0b3aa5bd9} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_ORE\_RX@{USART\_IT\_ORE\_RX}}
+\index{USART\_IT\_ORE\_RX@{USART\_IT\_ORE\_RX}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{USART\_IT\_ORE\_RX}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+ORE\+\_\+\+RX~((uint16\+\_\+t)0x0325) /$\ast$ In case interrupt is generated if the RXNEIE bit is set $\ast$/}
+
+\label{group___u_s_a_r_t___interrupt__definition_gae607c28a462c224c575b7541dc4f7067} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_PE@{USART\_IT\_PE}}
+\index{USART\_IT\_PE@{USART\_IT\_PE}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{USART\_IT\_PE}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+PE~((uint16\+\_\+t)0x0028)}
+
+\label{group___u_s_a_r_t___interrupt__definition_gacdd49b93072655a21a63a35e6431f8ae} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_RXNE@{USART\_IT\_RXNE}}
+\index{USART\_IT\_RXNE@{USART\_IT\_RXNE}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{USART\_IT\_RXNE}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+RXNE~((uint16\+\_\+t)0x0525)}
+
+\label{group___u_s_a_r_t___interrupt__definition_ga748e86162cc110513330079982821c39} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_TC@{USART\_IT\_TC}}
+\index{USART\_IT\_TC@{USART\_IT\_TC}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{USART\_IT\_TC}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+TC~((uint16\+\_\+t)0x0626)}
+
+\label{group___u_s_a_r_t___interrupt__definition_gab18d0fe889204a4c34f6d5817fb5147d} 
+\index{USART\_Interrupt\_definition@{USART\_Interrupt\_definition}!USART\_IT\_TXE@{USART\_IT\_TXE}}
+\index{USART\_IT\_TXE@{USART\_IT\_TXE}!USART\_Interrupt\_definition@{USART\_Interrupt\_definition}}
+\doxysubsubsubsubsubsection{USART\_IT\_TXE}
+{\footnotesize\ttfamily \#define USART\+\_\+\+IT\+\_\+\+TXE~((uint16\+\_\+t)0x0727)}
+
+\input{group___u_s_a_r_t___legacy}
