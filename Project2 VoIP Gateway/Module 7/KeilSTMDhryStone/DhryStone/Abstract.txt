@@ -1,0 +1,36 @@
+The DhryStone project is a simple program for the ST 'STM32F103RB' microcontroller
+using Keil 'MCBSTM32' Evaluation Board.
+Compliant to Cortex Microcontroller Software Interface Standard (CMSIS V2.0).
+
+Example functionality:
+ - Clock Settings:
+   - XTAL    =            8.00 MHz
+   - SYSCLK  =           72.00 MHz
+ - USART1 settings:
+   - 115200 baud, 8 data bits, no parity, 1 stop bit
+
+
+The DhryStone program performs the dhrystone benchmarks.
+
+Dhrystone is a general-performance benchmark test originally
+
+developed by Reinhold Weicker in 1984.  This benchmark is
+used to measure and compare the performance of different
+computers or, in this case, the efficiency of the code
+generated for the same computer by different compilers.
+The test reports general performance in dhrystones per second.
+
+Like most benchmark programs, dhrystone consists of standard
+code and concentrates on string handling.  It uses no
+floating-point operations.  It is heavily influenced by
+hardware and software design, compiler and linker options,
+code optimizing, cache memory, wait states, and integer
+data types.
+
+
+The program is available in different targets:
+
+  STM32F103 Simulator:  configured for software Simulator
+
+  STM32F103 Flash:      configured for on-chip Flash
+                        (used for production or target debugging)

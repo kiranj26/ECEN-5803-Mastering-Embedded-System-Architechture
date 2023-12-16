@@ -1,0 +1,28 @@
+
+
+ATOP - raspberrypi     2023/11/15  19:55:24     ----a-----------     25s elapsed
+PRC | sys   16.55s | user  16.10s | #proc    193 | #zombie    0 | #exit      1 |
+CPU | sys      98% | user     88% | irq       2% | idle    154% | wait     58% |
+cpu | sys      28% | user     21% | irq       1% | idle     35% | cpu000 w 15% |
+cpu | sys      23% | user     26% | irq       1% | idle     34% | cpu001 w 17% |
+cpu | sys      24% | user     20% | irq       0% | idle     42% | cpu003 w 13% |
+cpu | sys      22% | user     21% | irq       0% | idle     43% | cpu002 w 13% |
+CPL | avg1    2.81 | avg5    0.65 | avg15   0.21 | csw    99476 | intr  250881 |
+MEM | tot   909.6M | free  400.9M | cache 241.4M | buff   22.8M | slab   49.0M |
+SWP | tot   100.0M | free  100.0M | swcac   0.0M | vmcom 872.4M | vmlim 554.8M |
+DSK |      mmcblk0 | busy     73% | read    5971 | write    411 | avio 2.85 ms |
+NET | transport    | tcpi      19 | tcpo      19 | udpi      36 | udpo      23 |
+NET | network      | ipi       91 | ipo       86 | ipfrw      0 | deliv     81 |
+NET | wlan0     0% | pcki      40 | pcko      59 | si    1 Kbps | so    2 Kbps |
+NET | lo      ---- | pcki      34 | pcko      34 | si    0 Kbps | so    0 Kbps |
+                   *** system and process activity since boot ***
+NPROCS SYSCPU USRCPU  RSIZE  PSIZE  RDDSK  WRDSK  RNET  SNET  CPU RUID     
+   159 13.99s 10.35s 317.1M     0K 174.5M  9680K     0     0  97% root     
+    27  1.94s  4.78s 322.6M     0K 89264K    24K     0     0  27% pi       
+     1  0.18s  0.56s  4300K     0K   812K     0K     0     0   3% messageb 
+     1  0.28s  0.33s  3428K     0K   108K     0K     0     0   2% systemd- 
+     2  0.08s  0.06s  3148K     0K   480K     0K     0     0   1% avahi    
+     1  0.02s  0.01s  5800K     0K    32K     0K     0     0   0% lp       
+     1  0.02s  0.01s  2644K     0K    64K     0K     0     0   0% rtkit    
+     1  0.02s  0.00s  2388K     0K    72K     0K     0     0   0% nobody   
+     1  0.02s  0.00s  1276K     0K    52K     0K     0     0   0% epmd     

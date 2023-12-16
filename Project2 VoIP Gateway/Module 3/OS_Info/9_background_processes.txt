@@ -1,0 +1,225 @@
+
+
+ATOP - raspberrypi     2023/11/15  19:55:22     ----------------     23s elapsed
+PRC | sys   15.10s | user  12.39s | #proc    194 | #zombie    0 | #exit     12 |
+CPU | sys      98% | user     78% | irq       2% | idle    166% | wait     56% |
+cpu | sys      28% | user     19% | irq       1% | idle     38% | cpu000 w 14% |
+cpu | sys      23% | user     23% | irq       1% | idle     37% | cpu001 w 17% |
+cpu | sys      25% | user     17% | irq       0% | idle     45% | cpu003 w 13% |
+cpu | sys      22% | user     18% | irq       0% | idle     47% | cpu002 w 13% |
+CPL | avg1    2.18 | avg5    0.49 | avg15   0.16 | csw    87735 | intr  227713 |
+MEM | tot   909.6M | free  486.5M | cache 211.6M | buff   21.3M | slab   46.9M |
+SWP | tot   100.0M | free  100.0M | swcac   0.0M | vmcom 788.6M | vmlim 554.8M |
+DSK |      mmcblk0 | busy     71% | read    5426 | write    411 | avio 2.81 ms |
+NET | transport    | tcpi      12 | tcpo      12 | udpi      35 | udpo      22 |
+NET | network      | ipi       78 | ipo       71 | ipfrw      0 | deliv     68 |
+NET | wlan0     0% | pcki      38 | pcko      51 | si    1 Kbps | so    2 Kbps |
+NET | lo      ---- | pcki      27 | pcko      27 | si    0 Kbps | so    0 Kbps |
+                   *** system and process activity since boot ***
+    PID     TID S  CPU COMMAND-LINE (horizontal scroll with <- and -> keys) 
+      1       - S  17% /sbin/init splash 
+      9       - I   8% kworker/u8:0-wr 
+    173       - S   7% /lib/systemd/systemd-udevd 
+    140       - S   5% /lib/systemd/systemd-journald 
+    182       - S   4% /lib/systemd/systemd-udevd 
+    178       - S   4% /lib/systemd/systemd-udevd 
+    621       - S   3% /usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch 
+    175       - S   3% /lib/systemd/systemd-udevd 
+    185       - S   3% /lib/systemd/systemd-udevd 
+    181       - S   3% /lib/systemd/systemd-udevd 
+    177       - S   3% /lib/systemd/systemd-udevd 
+    179       - S   3% /lib/systemd/systemd-udevd 
+    702       - S   3% /usr/bin/pulseaudio --daemonize=no --log-target=journal 
+    443       - S   3% /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only 
+    343       - S   3% /lib/systemd/systemd-timesyncd 
+    180       - S   2% /lib/systemd/systemd-udevd 
+    184       - S   2% /lib/systemd/systemd-udevd 
+    183       - S   2% /lib/systemd/systemd-udevd 
+    516       - S   2% /lib/systemd/systemd-logind 
+    521       - S   2% /usr/libexec/udisks2/udisksd 
+    460       - S   2% /usr/libexec/polkitd --no-debug 
+    686       - S   2% /lib/systemd/systemd --user 
+    579       - S   2% /usr/bin/atop -R -w /var/log/atop/atop_20231115 600 
+    550       - S   2% python /home/pi/Desktop/MESA/Project 2/Module 3/main.py 
+     49       - I   2% kworker/3:1H-kb 
+    614       - S   1% /usr/sbin/ModemManager 
+    758       - S   1% /lib/systemd/systemd-hostnamed 
+    100       - I   1% kworker/1:1H-kb 
+    703       - S   1% /usr/bin/lxsession -s LXDE-pi -e LXDE -w openbox-lxde-pi 
+    427       - S   1% /bin/brltty --no-daemon 
+     98       - D   1% kworker/0:1H+kb 
+     39       - I   1% kworker/u8:1-ex 
+    601       - S   1% /usr/bin/vncserver-x11-core -service 
+    599       - S   1% /usr/sbin/lightdm 
+     59       - I   1% kworker/3:2-eve 
+    481       - S   1% /usr/sbin/rsyslogd -n -iNONE 
+     15       - I   1% rcu_preempt 
+    150       - I   1% kworker/1:3-eve 
+   1068       - R   1% openbox --config-file /home/pi/.config/openbox/lxde-pi-rc.xml 
+   1100       - R   1% /usr/bin/python3 /usr/bin/orca 
+   1112       - R   1% atop -c 
+     97       - I   1% kworker/2:1H-kb 
+    745       - S   1% /usr/libexec/bluetooth/bluetoothd 
+    588       - S   1% /usr/sbin/cupsd -l 
+    438       - S   1% avahi-daemon: running [raspberrypi.local] 
+     74       - I   1% kworker/u9:0-br 
+   1070       - S   0% lxpolkit 
+    607       - S   0% sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups 
+    627       - S   0% /usr/sbin/cups-browsed 
+    681       - S   0% lightdm --session-child 14 17 
+   1081       - D   0% pcmanfm --desktop --profile LXDE-pi 
+    865       - S   0% /bin/brltty -b ba -s no -x a2 -N 
+    655       - S   0% /usr/bin/vncagent service 0 
+    104       - I   0% kworker/2:2H-mm 
+    715       - S   0% /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only 
+     48       - I   0% kworker/3:1-eve 
+   1107       - D   0% /usr/libexec/at-spi-bus-launcher --launch-immediately 
+   1059       - S   0% /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f 
+    500       - S   0% sudo python /home/pi/Desktop/MESA/Project 2/Module 3/main.py 
+    441       - S   0% /usr/sbin/atopacctd 
+      7       - I   0% kworker/0:0-eve 
+    746       - S   0% /usr/bin/pipewire-media-session 
+   1077       - R   0% lxpanel --profile LXDE-pi 
+    701       - S   0% /usr/bin/pipewire 
+    523       - S   0% /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant 
+     54       - I   0% kworker/2:1-cgr 
+   1054       - S   0% /usr/libexec/gvfsd 
+    157       - S   0% /lib/systemd/systemd-fsckd 
+    278       - I   0% kworker/2:3-eve 
+     53       - I   0% kworker/1:1-eve 
+     99       - I   0% kworker/1:2-eve 
+   1094       - E   0% pactl 
+    626       - S   0% /usr/lib/cups/notifier/dbus dbus://  
+   1095       - S   0% /usr/libexec/geoclue-2.0/demos/agent 
+    732       - S   0% /lib/systemd/systemd-rfkill 
+    713       - S   0% /usr/libexec/rtkit-daemon 
+    442       - S   0% /usr/sbin/cron -f 
+    597       - S   0% /usr/bin/vncserver-x11-serviced -fg 
+    538       - S   0% /usr/sbin/dhcpcd -b -q 
+    103       - I   0% kworker/1:2H-mm 
+   1123       - E   0% pactl 
+   1116       - D   0% zenity --warning --width=400 --text=SSH is enabled and the default password for the 'pi' user has not been changed.\n\nThis is a security risk - please login as the 'pi' user and run Raspberry Pi Configuration to set a new password. 
+   1088       - S   0% lxsession-xdg-autostart -d LXDE 
+    517       - S   0% /usr/sbin/thd --triggers /etc/triggerhappy/triggers.d/ --socket /run/thd.socket --user nobody --deviceglob /dev/input/event* 
+    589       - S   0% /usr/bin/epmd -systemd 
+      2       - S   0% kthreadd 
+     14       - S   0% ksoftirqd/0 
+     20       - S   0% ksoftirqd/1 
+     30       - S   0% ksoftirqd/3 
+     70       - S   0% vchiq-slot/0 
+    124       - I   0% kworker/3:2H 
+    608       - S   0% wpa_supplicant -B -c/etc/wpa_supplicant/wpa_supplicant.conf -iwlan0  
+    624       - S   0% /sbin/agetty -o -p -- \u --keep-baud 115200,57600,38400,9600 ttyS0 vt220 
+    622       - S   0% /sbin/agetty --autologin pi --noclear tty1 linux 
+    584       - S   0% /usr/sbin/rngd -r /dev/hwrng 
+     25       - S   0% ksoftirqd/2 
+     33       - S   0% kdevtmpfs 
+     35       - I   0% kworker/0:1-eve 
+     37       - I   0% kworker/0:2-cgr 
+    106       - I   0% kworker/0:2H 
+    324       - S   0% brcmf_wdog/mmc1 
+    687       - S   0% (sd-pam) 
+    863       - S   0% /bin/xbrlapi 
+   1108       - S   0% sh -c timeout 2 atop -c > /home/pi/Desktop/OS_Info/9_background_processes.txt 
+   1111       - S   0% timeout 2 atop -c 
+   1102       - S   0% sh /etc/xdg/lxsession/LXDE-pi/sshpwd.sh 
+   1117       - S   0% /bin/sh /usr/lib/raspi-config/cmstart.sh 
+   1119       - S   0% /bin/sh /usr/bin/raspi-config nonint is_kms 
+    744       - S   0% sleep 5 
+   1096       - S   0% /usr/bin/ssh-agent -s 
+    869       - S   0% /usr/bin/ssh-agent x-session-manager 
+    452       - S   0% avahi-daemon: chroot helper 
+    733       - S   0% /usr/bin/hciattach /dev/serial1 bcm43xx 921600 noflow - b8:27:eb:9c:95:c6 
+    743       - S   0% /bin/sh /usr/bin/bthelper hci0 
+      3       - I   0% rcu_gp 
+      4       - I   0% rcu_par_gp 
+      5       - I   0% slub_flushwq 
+      6       - I   0% netns 
+      8       - I   0% kworker/0:0H-mm 
+     10       - I   0% mm_percpu_wq 
+     11       - I   0% rcu_tasks_kthre 
+     12       - I   0% rcu_tasks_rude_ 
+     13       - I   0% rcu_tasks_trace 
+     16       - S   0% migration/0 
+     17       - S   0% cpuhp/0 
+     18       - S   0% cpuhp/1 
+     19       - S   0% migration/1 
+     21       - I   0% kworker/1:0-eve 
+     22       - I   0% kworker/1:0H-mm 
+     23       - S   0% cpuhp/2 
+     24       - S   0% migration/2 
+     26       - I   0% kworker/2:0-eve 
+     27       - I   0% kworker/2:0H-kb 
+     28       - S   0% cpuhp/3 
+     29       - S   0% migration/3 
+     31       - I   0% kworker/3:0-eve 
+     32       - I   0% kworker/3:0H-ev 
+     34       - I   0% inet_frag_wq 
+     36       - S   0% kauditd 
+     38       - S   0% khungtaskd 
+     40       - S   0% oom_reaper 
+     41       - I   0% writeback 
+     42       - S   0% kcompactd0 
+     43       - I   0% kintegrityd 
+     44       - I   0% kblockd 
+     45       - I   0% blkcg_punt_bio 
+     46       - S   0% watchdogd 
+     47       - I   0% kworker/u8:2-ev 
+     50       - I   0% rpciod 
+     51       - I   0% xprtiod 
+     52       - I   0% kworker/u8:3 
+     55       - S   0% kswapd0 
+     56       - I   0% nfsiod 
+     57       - I   0% kthrotld 
+     62       - S   0% hwrng 
+     63       - I   0% iscsi_conn_clea 
+     64       - I   0% nvme-wq 
+     65       - I   0% nvme-reset-wq 
+     66       - I   0% nvme-delete-wq 
+     67       - I   0% dwc_otg 
+     68       - I   0% DWC Notificatio 
+     69       - I   0% uas 
+     71       - S   0% vchiq-recy/0 
+     72       - S   0% vchiq-sync/0 
+     73       - I   0% zswap-shrink 
+     95       - I   0% kworker/2:2-eve 
+     96       - I   0% mmc_complete 
+    101       - S   0% jbd2/mmcblk0p2- 
+    102       - I   0% ext4-rsv-conver 
+    107       - S   0% irq/184-usb-001 
+    108       - I   0% mld 
+    109       - I   0% ipv6_addrconf 
+    174       - I   0% kworker/0:3-eve 
+    196       - S   0% vchiq-keep/0 
+    197       - S   0% SMIO 
+    223       - S   0% spi0 
+    228       - I   0% mmal-vchiq 
+    230       - I   0% mmal-vchiq 
+    244       - I   0% mmal-vchiq 
+    245       - I   0% mmal-vchiq 
+    246       - I   0% mmal-vchiq 
+    248       - I   0% mmal-vchiq 
+    249       - I   0% mmal-vchiq 
+    299       - I   0% cfg80211 
+    309       - S   0% cec-vc4-hdmi 
+    310       - S   0% irq/82-vc4 hdmi 
+    319       - S   0% card0-crtc0 
+    320       - S   0% card0-crtc1 
+    321       - S   0% card0-crtc2 
+    322       - S   0% card0-crtc3 
+    323       - I   0% brcmf_wq/mmc1:0 
+    346       - I   0% kworker/3:3-eve 
+    350       - I   0% kworker/u9:1-hc 
+    730       - I   0% kworker/u9:2-br 
+    734       - I   0% kworker/u9:3-hc 
+    897       - S   0% krfcommd 
+   1114       - E   0% atop 
+   1113       - E   0% gettext 
+   1115       - E   0% lxsession-xdg-a 
+   1121       - E   0% who 
+   1122       - E   0% awk 
+   1120       - E   0% raspi-config 
+   1118       - E   0% lxsession-xdg-a 
+   1127       - E   0% lxsession-xdg-a 
+   1130       - E   0% lxsession-xdg-a 
+   1092       - E   0% start-pulseaudi 
